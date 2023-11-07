@@ -23,8 +23,6 @@ final class StartImport
 {
     public const OPERATION_ID    = 'migrations/start-import';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/import';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/import';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,7 +38,7 @@ final class StartImport
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Migrations\StartImport\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/import'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Import

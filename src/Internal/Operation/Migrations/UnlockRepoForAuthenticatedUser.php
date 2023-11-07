@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Migrations;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class UnlockRepoForAuthenticatedUser
 {
     public const OPERATION_ID    = 'migrations/unlock-repo-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/migrations/{migration_id}/repos/{repo_name}/lock';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/migrations/{migration_id}/repos/{repo_name}/lock';
     /**The unique identifier of the migration. **/
     private int $migrationId;
     /**repo_name parameter **/
@@ -37,11 +36,10 @@ final class UnlockRepoForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{migration_id}', '{repo_name}'], [$this->migrationId, $this->repoName], self::PATH));
+        return new Request('DELETE', str_replace(['{migration_id}', '{repo_name}'], [$this->migrationId, $this->repoName], '/user/migrations/{migration_id}/repos/{repo_name}/lock'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -82,13 +80,13 @@ final class UnlockRepoForAuthenticatedUser
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
             /**
              * Not modified
              **/
 
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

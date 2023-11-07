@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Put;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\EmptyObject;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,8 +20,7 @@ final class Dependabot
     {
     }
 
-    /** @return array{code:int} */
-    public function setSelectedReposForOrgSecret(array $params): array
+    public function setSelectedReposForOrgSecret(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -41,8 +40,7 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['secret_name'], $params);
     }
 
-    /** @return Schema\EmptyObject|array{code:int} */
-    public function createOrUpdateRepoSecret(array $params): EmptyObject|array
+    public function createOrUpdateRepoSecret(array $params): EmptyObject|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -68,8 +66,7 @@ final class Dependabot
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name'], $params);
     }
 
-    /** @return Schema\EmptyObject|array{code:int} */
-    public function createOrUpdateOrgSecret(array $params): EmptyObject|array
+    public function createOrUpdateOrgSecret(array $params): EmptyObject|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -89,8 +86,7 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['secret_name'], $params);
     }
 
-    /** @return array{code:int} */
-    public function addSelectedRepoToOrgSecret(array $params): array
+    public function addSelectedRepoToOrgSecret(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

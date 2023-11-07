@@ -9,6 +9,7 @@ use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\License;
 use ApiClients\Client\GitHub\Schema\LicenseContent;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -21,8 +22,8 @@ final class Licenses
     {
     }
 
-    /** @return Observable<Schema\LicenseSimple>|array{code:int} */
-    public function getAllCommonlyUsed(array $params): iterable
+    /** @return iterable<int,Schema\LicenseSimple>|WithoutBody */
+    public function getAllCommonlyUsed(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('featured', $params) === false) {
@@ -48,8 +49,7 @@ final class Licenses
         return $operator->call($arguments['featured'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\License|array{code:int} */
-    public function get(array $params): License|array
+    public function get(array $params): License|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('license', $params) === false) {
@@ -63,8 +63,7 @@ final class Licenses
         return $operator->call($arguments['license']);
     }
 
-    /** @return */
-    public function getForRepo(array $params): LicenseContent|array
+    public function getForRepo(array $params): LicenseContent
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

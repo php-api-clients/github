@@ -24,12 +24,11 @@ final readonly class GetRef
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $ref): GitRef|array
+    public function call(string $owner, string $repo, string $ref): GitRef
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Git\GetRef($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GitRef|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GitRef {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

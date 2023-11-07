@@ -26,8 +26,6 @@ final class SetTeamAccessRestrictions
 {
     public const OPERATION_ID    = 'repos/set-team-access-restrictions';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -46,7 +44,7 @@ final class SetTeamAccessRestrictions
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\SetTeamAccessRestrictions\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{branch}'], [$this->owner, $this->repo, $this->branch], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{owner}', '{repo}', '{branch}'], [$this->owner, $this->repo, $this->branch], '/repos/{owner}/{repo}/branches/{branch}/protection/restrictions/teams'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     /** @return Observable<Schema\Team> */
@@ -67,7 +65,7 @@ final class SetTeamAccessRestrictions
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Team::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Team::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Team::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

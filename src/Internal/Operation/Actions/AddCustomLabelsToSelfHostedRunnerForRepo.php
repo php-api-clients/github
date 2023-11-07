@@ -23,8 +23,6 @@ final class AddCustomLabelsToSelfHostedRunnerForRepo
 {
     public const OPERATION_ID    = 'actions/add-custom-labels-to-self-hosted-runner-for-repo';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/runners/{runner_id}/labels';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runners/{runner_id}/labels';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -43,7 +41,7 @@ final class AddCustomLabelsToSelfHostedRunnerForRepo
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\AddCustomLabelsToSelfHostedRunnerForRepo\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{runner_id}'], [$this->owner, $this->repo, $this->runnerId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}', '{runner_id}'], [$this->owner, $this->repo, $this->runnerId], '/repos/{owner}/{repo}/actions/runners/{runner_id}/labels'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok

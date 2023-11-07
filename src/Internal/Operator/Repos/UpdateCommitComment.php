@@ -24,12 +24,11 @@ final readonly class UpdateCommitComment
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $commentId, array $params): CommitComment|array
+    public function call(string $owner, string $repo, int $commentId, array $params): CommitComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdateCommitComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commentId);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CommitComment|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CommitComment {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

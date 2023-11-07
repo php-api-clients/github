@@ -23,8 +23,6 @@ final class CreateForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/create-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /user/codespaces';
-    private const METHOD         = 'POST';
-    private const PATH           = '/user/codespaces';
 
     public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\User\Codespaces $hydrator)
     {
@@ -34,7 +32,7 @@ final class CreateForAuthenticatedUser
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Codespaces\CreateForAuthenticatedUser\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace([], [], '/user/codespaces'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Codespace

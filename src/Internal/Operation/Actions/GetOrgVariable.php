@@ -21,8 +21,6 @@ final class GetOrgVariable
 {
     public const OPERATION_ID    = 'actions/get-org-variable';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/variables/{name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/variables/{name}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The name of the variable. **/
@@ -36,7 +34,7 @@ final class GetOrgVariable
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{name}'], [$this->org, $this->name], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{name}'], [$this->org, $this->name], '/orgs/{org}/actions/variables/{name}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\OrganizationActionsVariable

@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Dependabot
     {
     }
 
-    /** @return array{code:int} */
-    public function deleteRepoSecret(array $params): array
+    public function deleteRepoSecret(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -45,8 +45,7 @@ final class Dependabot
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name']);
     }
 
-    /** @return array{code:int} */
-    public function deleteOrgSecret(array $params): array
+    public function deleteOrgSecret(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -66,8 +65,7 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
-    /** @return array{code:int} */
-    public function removeSelectedRepoFromOrgSecret(array $params): array
+    public function removeSelectedRepoFromOrgSecret(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal\Routers;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\GistSimple;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Two
@@ -15,8 +15,7 @@ final class Two
     {
     }
 
-    /** @return Schema\GistSimple|array{code:int}|string */
-    public function call(string $call, array $params, array $pathChunks): GistSimple|string|array
+    public function call(string $call, array $params, array $pathChunks): GistSimple|WithoutBody|string
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'gists') {

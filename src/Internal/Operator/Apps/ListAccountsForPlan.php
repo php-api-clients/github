@@ -24,12 +24,12 @@ final readonly class ListAccountsForPlan
     {
     }
 
-    /** @return Observable<Schema\MarketplacePurchase> */
+    /** @return iterable<int,Schema\MarketplacePurchase> */
     public function call(int $planId, string $direction, string $sort = 'created', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\ListAccountsForPlan($this->responseSchemaValidator, $this->hydrator, $planId, $direction, $sort, $perPage, $page);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

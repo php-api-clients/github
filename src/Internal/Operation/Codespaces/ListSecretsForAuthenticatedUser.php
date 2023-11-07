@@ -21,8 +21,6 @@ final class ListSecretsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/list-secrets-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/codespaces/secrets';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/codespaces/secrets';
     /**The number of results per page (max 100). **/
     private int $perPage;
     /**Page number of the results to fetch. **/
@@ -36,7 +34,7 @@ final class ListSecretsForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{per_page}', '{page}'], [$this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{per_page}', '{page}'], [$this->perPage, $this->page], '/user/codespaces/secrets' . '?per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok

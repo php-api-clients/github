@@ -24,12 +24,11 @@ final readonly class ExportSbom
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo): DependencyGraphSpdxSbom|array
+    public function call(string $owner, string $repo): DependencyGraphSpdxSbom
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\DependencyGraph\ExportSbom($this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): DependencyGraphSpdxSbom|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): DependencyGraphSpdxSbom {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

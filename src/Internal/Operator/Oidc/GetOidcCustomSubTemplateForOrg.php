@@ -24,12 +24,11 @@ final readonly class GetOidcCustomSubTemplateForOrg
     {
     }
 
-    /** @return */
-    public function call(string $org): OidcCustomSub|array
+    public function call(string $org): OidcCustomSub
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Oidc\GetOidcCustomSubTemplateForOrg($this->responseSchemaValidator, $this->hydrator, $org);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OidcCustomSub|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OidcCustomSub {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

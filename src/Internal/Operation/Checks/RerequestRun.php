@@ -22,8 +22,6 @@ final class RerequestRun
 {
     public const OPERATION_ID    = 'checks/rerequest-run';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,7 +38,7 @@ final class RerequestRun
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{check_run_id}'], [$this->owner, $this->repo, $this->checkRunId], self::PATH));
+        return new Request('POST', str_replace(['{owner}', '{repo}', '{check_run_id}'], [$this->owner, $this->repo, $this->checkRunId], '/repos/{owner}/{repo}/check-runs/{check_run_id}/rerequest'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\EmptyObject

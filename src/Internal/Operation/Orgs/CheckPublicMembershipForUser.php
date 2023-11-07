@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Internal\Operation\Orgs;
 
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
@@ -15,8 +16,6 @@ final class CheckPublicMembershipForUser
 {
     public const OPERATION_ID    = 'orgs/check-public-membership-for-user';
     public const OPERATION_MATCH = 'GET /orgs/{org}/public_members/{username}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/public_members/{username}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The handle for the GitHub user account. **/
@@ -30,11 +29,10 @@ final class CheckPublicMembershipForUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{username}'], [$this->org, $this->username], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{username}'], [$this->org, $this->username], '/orgs/{org}/public_members/{username}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code = $response->getStatusCode();
         switch ($code) {
@@ -42,13 +40,13 @@ final class CheckPublicMembershipForUser
              * Response if user is a public member
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
             /**
              * Not Found if user is not a public member
              **/
 
             case 404:
-                return ['code' => 404];
+                return new WithoutBody(404, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

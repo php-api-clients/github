@@ -24,12 +24,11 @@ final readonly class GetGlobalAdvisory
     {
     }
 
-    /** @return */
-    public function call(string $ghsaId): GlobalAdvisory|array
+    public function call(string $ghsaId): GlobalAdvisory
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecurityAdvisories\GetGlobalAdvisory($this->responseSchemaValidator, $this->hydrator, $ghsaId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GlobalAdvisory|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GlobalAdvisory {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

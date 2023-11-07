@@ -22,8 +22,6 @@ final class CreateDeploymentProtectionRule
 {
     public const OPERATION_ID    = 'repos/create-deployment-protection-rule';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules';
     /**The name of the environment. **/
     private string $environmentName;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -42,7 +40,7 @@ final class CreateDeploymentProtectionRule
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\CreateDeploymentProtectionRule\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{environment_name}', '{repo}', '{owner}'], [$this->environmentName, $this->repo, $this->owner], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{environment_name}', '{repo}', '{owner}'], [$this->environmentName, $this->repo, $this->owner], '/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\DeploymentProtectionRule

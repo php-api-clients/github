@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Get;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails;
 use ApiClients\Client\GitHub\Schema\CopilotSeatDetails;
 use ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -22,8 +22,7 @@ final class Copilot
     {
     }
 
-    /** @return */
-    public function getCopilotOrganizationDetails(array $params): CopilotOrganizationDetails|array
+    public function getCopilotOrganizationDetails(array $params): CopilotOrganizationDetails
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -37,8 +36,7 @@ final class Copilot
         return $operator->call($arguments['org']);
     }
 
-    /** @return */
-    public function listCopilotSeats(array $params): Ok|array
+    public function listCopilotSeats(array $params): Ok
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -64,8 +62,7 @@ final class Copilot
         return $operator->call($arguments['org'], $arguments['page'], $arguments['per_page']);
     }
 
-    /** @return Schema\CopilotSeatDetails|array{code:int} */
-    public function getCopilotSeatDetailsForUser(array $params): CopilotSeatDetails|array
+    public function getCopilotSeatDetailsForUser(array $params): CopilotSeatDetails|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

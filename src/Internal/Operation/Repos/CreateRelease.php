@@ -23,8 +23,6 @@ final class CreateRelease
 {
     public const OPERATION_ID    = 'repos/create-release';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/releases';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/releases';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,7 +38,7 @@ final class CreateRelease
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\CreateRelease\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/releases'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Release

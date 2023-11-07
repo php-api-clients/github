@@ -24,12 +24,11 @@ final readonly class CreateDeploymentStatus
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $deploymentId, array $params): DeploymentStatus|array
+    public function call(string $owner, string $repo, int $deploymentId, array $params): DeploymentStatus
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateDeploymentStatus($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $deploymentId);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): DeploymentStatus|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): DeploymentStatus {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

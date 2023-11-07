@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\List;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,8 +21,8 @@ final class Teams
     {
     }
 
-    /** @return Observable<Schema\TeamFull>|array{code:int} */
-    public function listForAuthenticatedUserListing(array $params): iterable
+    /** @return iterable<int,Schema\TeamFull>|WithoutBody */
+    public function listForAuthenticatedUserListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
@@ -47,7 +48,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Team> */
+    /** @return iterable<int,Schema\Team> */
     public function listListing(array $params): iterable
     {
         $arguments = [];
@@ -80,7 +81,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\TeamDiscussion> */
+    /** @return iterable<int,Schema\TeamDiscussion> */
     public function listDiscussionsLegacyListing(array $params): iterable
     {
         $arguments = [];
@@ -119,7 +120,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\OrganizationInvitation> */
+    /** @return iterable<int,Schema\OrganizationInvitation> */
     public function listPendingInvitationsLegacyListing(array $params): iterable
     {
         $arguments = [];
@@ -152,7 +153,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function listMembersLegacyListing(array $params): iterable
     {
         $arguments = [];
@@ -191,7 +192,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\TeamProject> */
+    /** @return iterable<int,Schema\TeamProject> */
     public function listProjectsLegacyListing(array $params): iterable
     {
         $arguments = [];
@@ -224,7 +225,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listReposLegacyListing(array $params): iterable
     {
         $arguments = [];
@@ -257,7 +258,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Team> */
+    /** @return iterable<int,Schema\Team> */
     public function listChildLegacyListing(array $params): iterable
     {
         $arguments = [];
@@ -290,7 +291,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\TeamDiscussion> */
+    /** @return iterable<int,Schema\TeamDiscussion> */
     public function listDiscussionsInOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -341,7 +342,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\OrganizationInvitation> */
+    /** @return iterable<int,Schema\OrganizationInvitation> */
     public function listPendingInvitationsInOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -380,7 +381,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function listMembersInOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -425,7 +426,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\TeamProject> */
+    /** @return iterable<int,Schema\TeamProject> */
     public function listProjectsInOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -464,7 +465,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listReposInOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -503,7 +504,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Team> */
+    /** @return iterable<int,Schema\Team> */
     public function listChildInOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -542,7 +543,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\TeamDiscussionComment> */
+    /** @return iterable<int,Schema\TeamDiscussionComment> */
     public function listDiscussionCommentsLegacyListing(array $params): iterable
     {
         $arguments = [];
@@ -587,7 +588,7 @@ final class Teams
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\TeamDiscussionComment> */
+    /** @return iterable<int,Schema\TeamDiscussionComment> */
     public function listDiscussionCommentsInOrgListing(array $params): iterable
     {
         $arguments = [];

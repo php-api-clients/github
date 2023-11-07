@@ -14,7 +14,7 @@ final class One
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): Root|array
+    public function call(string $call, array $params, array $pathChunks): Root
     {
         if ($pathChunks[0] === '') {
             if ($call === 'GET /') {

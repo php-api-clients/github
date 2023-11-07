@@ -23,8 +23,6 @@ final class CreateForOrg
 {
     public const OPERATION_ID    = 'projects/create-for-org';
     public const OPERATION_MATCH = 'POST /orgs/{org}/projects';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/projects';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -37,7 +35,7 @@ final class CreateForOrg
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Projects\CreateForOrg\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{org}'], [$this->org], '/orgs/{org}/projects'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Project

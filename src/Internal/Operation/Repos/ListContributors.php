@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Repos;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -25,8 +26,6 @@ final class ListContributors
 {
     public const OPERATION_ID    = 'repos/list-contributors';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/contributors';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/contributors';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -49,11 +48,11 @@ final class ListContributors
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{anon}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->anon, $this->perPage, $this->page], self::PATH . '?anon={anon}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{anon}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->anon, $this->perPage, $this->page], '/repos/{owner}/{repo}/contributors' . '?anon={anon}&per_page={per_page}&page={page}'));
     }
 
-    /** @return Observable<Schema\Contributor>|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|array
+    /** @return Observable<Schema\Contributor>|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -70,7 +69,7 @@ final class ListContributors
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Contributor::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Contributor::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Contributor::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -104,7 +103,7 @@ final class ListContributors
              * Response if repository is empty
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

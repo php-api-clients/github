@@ -24,12 +24,11 @@ final readonly class ListSelectedReposForOrgSecret
     {
     }
 
-    /** @return */
-    public function call(string $org, string $secretName, int $page = 1, int $perPage = 30): Json|array
+    public function call(string $org, string $secretName, int $page = 1, int $perPage = 30): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\ListSelectedReposForOrgSecret($this->responseSchemaValidator, $this->hydrator, $org, $secretName, $page, $perPage);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

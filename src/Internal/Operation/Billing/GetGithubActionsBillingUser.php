@@ -21,8 +21,6 @@ final class GetGithubActionsBillingUser
 {
     public const OPERATION_ID    = 'billing/get-github-actions-billing-user';
     public const OPERATION_MATCH = 'GET /users/{username}/settings/billing/actions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/settings/billing/actions';
     /**The handle for the GitHub user account. **/
     private string $username;
 
@@ -33,7 +31,7 @@ final class GetGithubActionsBillingUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{username}'], [$this->username], self::PATH));
+        return new Request('GET', str_replace(['{username}'], [$this->username], '/users/{username}/settings/billing/actions'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\ActionsBillingUsage

@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Migrations
     {
     }
 
-    /** @return array{code:int} */
-    public function cancelImport(array $params): array
+    public function cancelImport(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -39,8 +39,7 @@ final class Migrations
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return array{code:int} */
-    public function deleteArchiveForAuthenticatedUser(array $params): array
+    public function deleteArchiveForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('migration_id', $params) === false) {
@@ -54,8 +53,7 @@ final class Migrations
         return $operator->call($arguments['migration_id']);
     }
 
-    /** @return array{code:int} */
-    public function unlockRepoForAuthenticatedUser(array $params): array
+    public function unlockRepoForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('migration_id', $params) === false) {
@@ -75,8 +73,7 @@ final class Migrations
         return $operator->call($arguments['migration_id'], $arguments['repo_name']);
     }
 
-    /** @return array{code:int} */
-    public function deleteArchiveForOrg(array $params): array
+    public function deleteArchiveForOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -96,8 +93,7 @@ final class Migrations
         return $operator->call($arguments['org'], $arguments['migration_id']);
     }
 
-    /** @return array{code:int} */
-    public function unlockRepoForOrg(array $params): array
+    public function unlockRepoForOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

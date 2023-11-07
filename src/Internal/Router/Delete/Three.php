@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal\Routers;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\Delete\Response\ApplicationJson\Accepted\Application\Json;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Three
@@ -14,8 +15,7 @@ final class Three
     {
     }
 
-    /** @return array{code:int}| */
-    public function call(string $call, array $params, array $pathChunks): Json|array
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|Json
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'gists') {

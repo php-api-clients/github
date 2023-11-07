@@ -24,12 +24,11 @@ final readonly class GetDefaultSetup
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo): CodeScanningDefaultSetup|array
+    public function call(string $owner, string $repo): CodeScanningDefaultSetup
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\GetDefaultSetup($this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodeScanningDefaultSetup|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodeScanningDefaultSetup {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

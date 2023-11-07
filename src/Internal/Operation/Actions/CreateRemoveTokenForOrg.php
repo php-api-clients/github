@@ -21,8 +21,6 @@ final class CreateRemoveTokenForOrg
 {
     public const OPERATION_ID    = 'actions/create-remove-token-for-org';
     public const OPERATION_MATCH = 'POST /orgs/{org}/actions/runners/remove-token';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/actions/runners/remove-token';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -33,7 +31,7 @@ final class CreateRemoveTokenForOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
+        return new Request('POST', str_replace(['{org}'], [$this->org], '/orgs/{org}/actions/runners/remove-token'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\AuthenticationToken

@@ -9,6 +9,7 @@ use ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy;
 use ApiClients\Client\GitHub\Schema\EmptyObject;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok;
 use ApiClients\Client\GitHub\Schema\PullRequestReview;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Eight
@@ -17,8 +18,7 @@ final class Eight
     {
     }
 
-    /** @return array{code:int}| */
-    public function call(string $call, array $params, array $pathChunks): EmptyObject|Ok|DeploymentBranchPolicy|PullRequestReview|array
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|EmptyObject|Ok|DeploymentBranchPolicy|PullRequestReview
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {

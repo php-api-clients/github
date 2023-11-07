@@ -25,8 +25,6 @@ final class ListReposForOrg
 {
     public const OPERATION_ID    = 'migrations/list-repos-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/migrations/{migration_id}/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/migrations/{migration_id}/repositories';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the migration. **/
@@ -46,7 +44,7 @@ final class ListReposForOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{migration_id}', '{per_page}', '{page}'], [$this->org, $this->migrationId, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{migration_id}', '{per_page}', '{page}'], [$this->org, $this->migrationId, $this->perPage, $this->page], '/orgs/{org}/migrations/{migration_id}/repositories' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\MinimalRepository> */
@@ -67,7 +65,7 @@ final class ListReposForOrg
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MinimalRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\MinimalRepository::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\MinimalRepository::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

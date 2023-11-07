@@ -22,8 +22,6 @@ final class ListDevcontainersInRepositoryForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/list-devcontainers-in-repository-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/codespaces/devcontainers';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/codespaces/devcontainers';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -43,7 +41,7 @@ final class ListDevcontainersInRepositoryForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->perPage, $this->page], '/repos/{owner}/{repo}/codespaces/devcontainers' . '?per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok

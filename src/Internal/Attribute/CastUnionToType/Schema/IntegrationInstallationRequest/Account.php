@@ -25,14 +25,14 @@ final class Account implements PropertyCaster
             $signatureChunks = array_unique(array_keys($value));
             sort($signatureChunks);
             $signature = implode('|', $signatureChunks);
-            if ($signature === 'name|email|login|id|node_id|avatar_url|gravatar_id|url|html_url|followers_url|following_url|gists_url|starred_url|subscriptions_url|organizations_url|repos_url|events_url|received_events_url|type|site_admin|starred_at') {
+            if ($signature === 'avatar_url|email|events_url|followers_url|following_url|gists_url|gravatar_id|html_url|id|login|name|node_id|organizations_url|received_events_url|repos_url|site_admin|starred_at|starred_url|subscriptions_url|type|url') {
                 try {
                     return $hydrator->hydrateObject(Schema\SimpleUser::class, $value);
                 } catch (Throwable) {
                 }
             }
 
-            if ($signature === 'description|html_url|website_url|id|node_id|name|slug|created_at|updated_at|avatar_url') {
+            if ($signature === 'avatar_url|created_at|description|html_url|id|name|node_id|slug|updated_at|website_url') {
                 try {
                     return $hydrator->hydrateObject(Schema\Enterprise::class, $value);
                 } catch (Throwable) {

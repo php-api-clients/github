@@ -94,7 +94,8 @@ final readonly class Job
             "enum": [
                 "queued",
                 "in_progress",
-                "completed"
+                "completed",
+                "waiting"
             ],
             "type": "string",
             "description": "The phase of the lifecycle that the job is currently in.",

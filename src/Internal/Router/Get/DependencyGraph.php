@@ -20,8 +20,7 @@ final class DependencyGraph
     {
     }
 
-    /** @return */
-    public function exportSbom(array $params): DependencyGraphSpdxSbom|array
+    public function exportSbom(array $params): DependencyGraphSpdxSbom
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -41,7 +40,7 @@ final class DependencyGraph
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return Observable<Schema\DependencyGraphDiff> */
+    /** @return iterable<int,Schema\DependencyGraphDiff> */
     public function diffRange(array $params): iterable
     {
         $arguments = [];

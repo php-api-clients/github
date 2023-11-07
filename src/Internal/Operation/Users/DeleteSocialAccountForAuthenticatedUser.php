@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Users;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -23,8 +24,6 @@ final class DeleteSocialAccountForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/delete-social-account-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/social_accounts';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/social_accounts';
 
     public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\User\SocialAccounts $hydrator)
     {
@@ -34,11 +33,10 @@ final class DeleteSocialAccountForAuthenticatedUser
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Users\DeleteSocialAccountForAuthenticatedUser\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('DELETE', str_replace([], [], '/user/social_accounts'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -87,13 +85,13 @@ final class DeleteSocialAccountForAuthenticatedUser
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
             /**
              * Not modified
              **/
 
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

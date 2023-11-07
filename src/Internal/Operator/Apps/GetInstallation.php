@@ -24,12 +24,11 @@ final readonly class GetInstallation
     {
     }
 
-    /** @return */
-    public function call(int $installationId): Installation|array
+    public function call(int $installationId): Installation
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetInstallation($this->responseSchemaValidator, $this->hydrator, $installationId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Installation|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Installation {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

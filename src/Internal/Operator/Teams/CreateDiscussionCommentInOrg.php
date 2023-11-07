@@ -24,12 +24,11 @@ final readonly class CreateDiscussionCommentInOrg
     {
     }
 
-    /** @return */
-    public function call(string $org, string $teamSlug, int $discussionNumber, array $params): TeamDiscussionComment|array
+    public function call(string $org, string $teamSlug, int $discussionNumber, array $params): TeamDiscussionComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\CreateDiscussionCommentInOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $discussionNumber);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): TeamDiscussionComment|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): TeamDiscussionComment {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

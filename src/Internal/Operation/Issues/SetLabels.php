@@ -26,8 +26,6 @@ final class SetLabels
 {
     public const OPERATION_ID    = 'issues/set-labels';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/issues/{issue_number}/labels';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/labels';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -46,7 +44,7 @@ final class SetLabels
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Issues\SetLabels\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{issue_number}'], [$this->owner, $this->repo, $this->issueNumber], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{owner}', '{repo}', '{issue_number}'], [$this->owner, $this->repo, $this->issueNumber], '/repos/{owner}/{repo}/issues/{issue_number}/labels'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     /** @return Observable<Schema\Label>|Schema\BasicError */
@@ -67,7 +65,7 @@ final class SetLabels
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Label::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Label::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Label::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

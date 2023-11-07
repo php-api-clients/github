@@ -22,8 +22,6 @@ final class ListLabelsForSelfHostedRunnerForOrg
 {
     public const OPERATION_ID    = 'actions/list-labels-for-self-hosted-runner-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/runners/{runner_id}/labels';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/runners/{runner_id}/labels';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**Unique identifier of the self-hosted runner. **/
@@ -37,7 +35,7 @@ final class ListLabelsForSelfHostedRunnerForOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{runner_id}'], [$this->org, $this->runnerId], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{runner_id}'], [$this->org, $this->runnerId], '/orgs/{org}/actions/runners/{runner_id}/labels'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok

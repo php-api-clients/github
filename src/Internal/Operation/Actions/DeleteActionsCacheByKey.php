@@ -21,8 +21,6 @@ final class DeleteActionsCacheByKey
 {
     public const OPERATION_ID    = 'actions/delete-actions-cache-by-key';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/actions/caches';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/actions/caches';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -42,7 +40,7 @@ final class DeleteActionsCacheByKey
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{key}', '{ref}'], [$this->owner, $this->repo, $this->key, $this->ref], self::PATH . '?key={key}&ref={ref}'));
+        return new Request('DELETE', str_replace(['{owner}', '{repo}', '{key}', '{ref}'], [$this->owner, $this->repo, $this->key, $this->ref], '/repos/{owner}/{repo}/actions/caches' . '?key={key}&ref={ref}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\ActionsCacheList

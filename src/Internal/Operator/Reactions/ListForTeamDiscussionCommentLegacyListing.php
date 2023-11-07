@@ -24,12 +24,12 @@ final readonly class ListForTeamDiscussionCommentLegacyListing
     {
     }
 
-    /** @return Observable<Schema\Reaction> */
+    /** @return iterable<int,Schema\Reaction> */
     public function call(int $teamId, int $discussionNumber, int $commentNumber, string $content, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Reactions\ListForTeamDiscussionCommentLegacyListing($this->responseSchemaValidator, $this->hydrator, $teamId, $discussionNumber, $commentNumber, $content, $perPage, $page);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

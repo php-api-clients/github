@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Project;
 use ApiClients\Client\GitHub\Schema\ProjectCard;
 use ApiClients\Client\GitHub\Schema\ProjectColumn;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -22,8 +22,7 @@ final class Projects
     {
     }
 
-    /** @return Schema\ProjectColumn|array{code:int} */
-    public function updateColumn(array $params): ProjectColumn|array
+    public function updateColumn(array $params): ProjectColumn|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('column_id', $params) === false) {
@@ -37,8 +36,7 @@ final class Projects
         return $operator->call($arguments['column_id'], $params);
     }
 
-    /** @return Schema\Project|array{code:int} */
-    public function update(array $params): Project|array
+    public function update(array $params): Project|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
@@ -52,8 +50,7 @@ final class Projects
         return $operator->call($arguments['project_id'], $params);
     }
 
-    /** @return Schema\ProjectCard|array{code:int} */
-    public function updateCard(array $params): ProjectCard|array
+    public function updateCard(array $params): ProjectCard|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('card_id', $params) === false) {

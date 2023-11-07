@@ -25,8 +25,6 @@ final class GetAllPackageVersionsForPackageOwnedByUser
 {
     public const OPERATION_ID    = 'packages/get-all-package-versions-for-package-owned-by-user';
     public const OPERATION_MATCH = 'GET /users/{username}/packages/{package_type}/{package_name}/versions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/packages/{package_type}/{package_name}/versions';
     /**The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry. **/
     private string $packageType;
     /**The name of the package. **/
@@ -43,7 +41,7 @@ final class GetAllPackageVersionsForPackageOwnedByUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{package_type}', '{package_name}', '{username}'], [$this->packageType, $this->packageName, $this->username], self::PATH));
+        return new Request('GET', str_replace(['{package_type}', '{package_name}', '{username}'], [$this->packageType, $this->packageName, $this->username], '/users/{username}/packages/{package_type}/{package_name}/versions'));
     }
 
     /** @return Observable<Schema\PackageVersion> */
@@ -64,7 +62,7 @@ final class GetAllPackageVersionsForPackageOwnedByUser
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PackageVersion::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\PackageVersion::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\PackageVersion::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

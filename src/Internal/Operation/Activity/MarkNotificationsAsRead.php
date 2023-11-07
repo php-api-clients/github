@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Activity;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -23,8 +24,6 @@ final class MarkNotificationsAsRead
 {
     public const OPERATION_ID    = 'activity/mark-notifications-as-read';
     public const OPERATION_MATCH = 'PUT /notifications';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/notifications';
 
     public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Notifications $hydrator)
     {
@@ -34,11 +33,10 @@ final class MarkNotificationsAsRead
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Activity\MarkNotificationsAsRead\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace([], [], '/notifications'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -79,13 +77,13 @@ final class MarkNotificationsAsRead
              * Reset Content
              **/
             case 205:
-                return ['code' => 205];
+                return new WithoutBody(205, []);
             /**
              * Not modified
              **/
 
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

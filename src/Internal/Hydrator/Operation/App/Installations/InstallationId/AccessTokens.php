@@ -425,6 +425,17 @@ class AccessTokens implements ObjectMapper
 
             after_organizationCustomRoles:
 
+            $value = $payload['organization_custom_properties'] ?? null;
+
+            if ($value === null) {
+                $properties['organizationCustomProperties'] = null;
+                goto after_organizationCustomProperties;
+            }
+
+            $properties['organizationCustomProperties'] = $value;
+
+            after_organizationCustomProperties:
+
             $value = $payload['organization_announcement_banners'] ?? null;
 
             if ($value === null) {
@@ -1037,6 +1048,14 @@ class AccessTokens implements ObjectMapper
         }
 
         after_organizationCustomRoles:        $result['organization_custom_roles'] = $organizationCustomRoles;
+
+        $organizationCustomProperties = $object->organizationCustomProperties;
+
+        if ($organizationCustomProperties === null) {
+            goto after_organizationCustomProperties;
+        }
+
+        after_organizationCustomProperties:        $result['organization_custom_properties'] = $organizationCustomProperties;
 
         $organizationAnnouncementBanners = $object->organizationAnnouncementBanners;
 

@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operator\Teams;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
@@ -23,12 +24,11 @@ final readonly class DeleteLegacy
     {
     }
 
-    /** @return array{code:int} */
-    public function call(int $teamId): array
+    public function call(int $teamId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\DeleteLegacy($this->responseSchemaValidator, $this->hydrator, $teamId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): WithoutBody {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

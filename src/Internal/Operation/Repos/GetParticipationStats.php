@@ -22,8 +22,6 @@ final class GetParticipationStats
 {
     public const OPERATION_ID    = 'repos/get-participation-stats';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/stats/participation';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/stats/participation';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -37,7 +35,7 @@ final class GetParticipationStats
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/stats/participation'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\ParticipationStats

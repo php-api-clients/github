@@ -24,12 +24,11 @@ final readonly class GetEnvironmentSecret
     {
     }
 
-    /** @return */
-    public function call(int $repositoryId, string $environmentName, string $secretName): ActionsSecret|array
+    public function call(int $repositoryId, string $environmentName, string $secretName): ActionsSecret
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetEnvironmentSecret($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $secretName);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsSecret|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsSecret {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

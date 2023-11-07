@@ -24,12 +24,11 @@ final readonly class CreateForRepo
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, array $params): Project|array
+    public function call(string $owner, string $repo, array $params): Project
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\CreateForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Project|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Project {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

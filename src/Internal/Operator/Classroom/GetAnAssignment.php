@@ -24,12 +24,11 @@ final readonly class GetAnAssignment
     {
     }
 
-    /** @return */
-    public function call(int $assignmentId): ClassroomAssignment|array
+    public function call(int $assignmentId): ClassroomAssignment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Classroom\GetAnAssignment($this->responseSchemaValidator, $this->hydrator, $assignmentId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ClassroomAssignment|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ClassroomAssignment {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

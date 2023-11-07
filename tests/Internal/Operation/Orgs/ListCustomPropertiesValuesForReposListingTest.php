@@ -31,12 +31,13 @@ final class ListCustomPropertiesValuesForReposListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/properties/values?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/properties/values?repository_query=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Orgs\ListCustomPropertiesValuesForReposListing::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']      = 'generated';
-            $data['per_page'] = 8;
-            $data['page']     = 1;
+            $data['org']              = 'generated';
+            $data['repository_query'] = 'generated';
+            $data['per_page']         = 8;
+            $data['page']             = 1;
 
             return $data;
         })([]));
@@ -54,9 +55,9 @@ final class ListCustomPropertiesValuesForReposListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/properties/values?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/properties/values?repository_query=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->orgs()->listCustomPropertiesValuesForReposListing('generated', 8, 1);
+        $result = $client->operations()->orgs()->listCustomPropertiesValuesForReposListing('generated', 'generated', 8, 1);
         foreach ($result as $item) {
         }
     }
@@ -71,12 +72,13 @@ final class ListCustomPropertiesValuesForReposListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/properties/values?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/properties/values?repository_query=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Orgs\ListCustomPropertiesValuesForReposListing::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']      = 'generated';
-            $data['per_page'] = 8;
-            $data['page']     = 1;
+            $data['org']              = 'generated';
+            $data['repository_query'] = 'generated';
+            $data['per_page']         = 8;
+            $data['page']             = 1;
 
             return $data;
         })([]));
@@ -94,9 +96,9 @@ final class ListCustomPropertiesValuesForReposListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/properties/values?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/properties/values?repository_query=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->orgs()->listCustomPropertiesValuesForReposListing('generated', 8, 1);
+        $result = $client->operations()->orgs()->listCustomPropertiesValuesForReposListing('generated', 'generated', 8, 1);
         foreach ($result as $item) {
         }
     }

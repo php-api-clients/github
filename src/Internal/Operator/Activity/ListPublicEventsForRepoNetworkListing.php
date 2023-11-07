@@ -8,6 +8,7 @@ use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
@@ -25,12 +26,12 @@ final readonly class ListPublicEventsForRepoNetworkListing
     {
     }
 
-    /** @return Observable<Schema\Event>|Schema\BasicError|array{code:int} */
-    public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable|BasicError
+    /** @return iterable<int,Schema\Event>|Schema\BasicError|WithoutBody */
+    public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable|BasicError|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\ListPublicEventsForRepoNetworkListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|BasicError|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|BasicError|WithoutBody {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

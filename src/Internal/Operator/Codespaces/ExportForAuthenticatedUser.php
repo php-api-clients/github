@@ -24,12 +24,11 @@ final readonly class ExportForAuthenticatedUser
     {
     }
 
-    /** @return */
-    public function call(string $codespaceName): CodespaceExportDetails|array
+    public function call(string $codespaceName): CodespaceExportDetails
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\ExportForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $codespaceName);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodespaceExportDetails|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodespaceExportDetails {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

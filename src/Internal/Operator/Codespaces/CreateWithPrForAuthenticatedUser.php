@@ -24,12 +24,11 @@ final readonly class CreateWithPrForAuthenticatedUser
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $pullNumber, array $params): Codespace|array
+    public function call(string $owner, string $repo, int $pullNumber, array $params): Codespace
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\CreateWithPrForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Codespace|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Codespace {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

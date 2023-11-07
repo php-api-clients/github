@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Teams
     {
     }
 
-    /** @return array{code:int} */
-    public function deleteInOrg(array $params): array
+    public function deleteInOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -39,8 +39,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug']);
     }
 
-    /** @return array{code:int} */
-    public function deleteDiscussionLegacy(array $params): array
+    public function deleteDiscussionLegacy(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
@@ -60,8 +59,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number']);
     }
 
-    /** @return array{code:int} */
-    public function removeMemberLegacy(array $params): array
+    public function removeMemberLegacy(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
@@ -81,8 +79,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['username']);
     }
 
-    /** @return array{code:int} */
-    public function removeMembershipForUserLegacy(array $params): array
+    public function removeMembershipForUserLegacy(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
@@ -102,8 +99,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['username']);
     }
 
-    /** @return array{code:int} */
-    public function removeProjectLegacy(array $params): array
+    public function removeProjectLegacy(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
@@ -123,8 +119,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['project_id']);
     }
 
-    /** @return array{code:int} */
-    public function deleteLegacy(array $params): array
+    public function deleteLegacy(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
@@ -138,8 +133,7 @@ final class Teams
         return $operator->call($arguments['team_id']);
     }
 
-    /** @return array{code:int} */
-    public function deleteDiscussionInOrg(array $params): array
+    public function deleteDiscussionInOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -165,8 +159,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['discussion_number']);
     }
 
-    /** @return array{code:int} */
-    public function removeMembershipForUserInOrg(array $params): array
+    public function removeMembershipForUserInOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -192,8 +185,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['username']);
     }
 
-    /** @return array{code:int} */
-    public function removeProjectInOrg(array $params): array
+    public function removeProjectInOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -219,8 +211,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['project_id']);
     }
 
-    /** @return array{code:int} */
-    public function deleteDiscussionCommentLegacy(array $params): array
+    public function deleteDiscussionCommentLegacy(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
@@ -246,8 +237,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $arguments['comment_number']);
     }
 
-    /** @return array{code:int} */
-    public function removeRepoLegacy(array $params): array
+    public function removeRepoLegacy(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
@@ -273,8 +263,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['owner'], $arguments['repo']);
     }
 
-    /** @return array{code:int} */
-    public function removeRepoInOrg(array $params): array
+    public function removeRepoInOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -306,8 +295,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['owner'], $arguments['repo']);
     }
 
-    /** @return array{code:int} */
-    public function deleteDiscussionCommentInOrg(array $params): array
+    public function deleteDiscussionCommentInOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

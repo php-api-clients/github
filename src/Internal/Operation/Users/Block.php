@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Users;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class Block
 {
     public const OPERATION_ID    = 'users/block';
     public const OPERATION_MATCH = 'PUT /user/blocks/{username}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/user/blocks/{username}';
     /**The handle for the GitHub user account. **/
     private string $username;
 
@@ -34,11 +33,10 @@ final class Block
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{username}'], [$this->username], self::PATH));
+        return new Request('PUT', str_replace(['{username}'], [$this->username], '/user/blocks/{username}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -87,13 +85,13 @@ final class Block
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
             /**
              * Not modified
              **/
 
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

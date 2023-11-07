@@ -24,8 +24,6 @@ final class GetPendingDeploymentsForRun
 {
     public const OPERATION_ID    = 'actions/get-pending-deployments-for-run';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -42,7 +40,7 @@ final class GetPendingDeploymentsForRun
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{run_id}'], [$this->owner, $this->repo, $this->runId], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{run_id}'], [$this->owner, $this->repo, $this->runId], '/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments'));
     }
 
     /** @return Observable<Schema\PendingDeployment> */
@@ -63,7 +61,7 @@ final class GetPendingDeploymentsForRun
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PendingDeployment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\PendingDeployment::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\PendingDeployment::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

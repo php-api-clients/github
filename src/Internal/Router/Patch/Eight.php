@@ -15,7 +15,7 @@ final class Eight
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): ProtectedBranchPullRequestReview|StatusCheckPolicy|array
+    public function call(string $call, array $params, array $pathChunks): ProtectedBranchPullRequestReview|StatusCheckPolicy
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'repos') {

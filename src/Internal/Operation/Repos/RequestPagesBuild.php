@@ -21,8 +21,6 @@ final class RequestPagesBuild
 {
     public const OPERATION_ID    = 'repos/request-pages-build';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/pages/builds';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/pages/builds';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -36,7 +34,7 @@ final class RequestPagesBuild
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH));
+        return new Request('POST', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/pages/builds'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\PageBuildStatus

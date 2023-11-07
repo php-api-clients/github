@@ -20,7 +20,7 @@ final class Classroom
     {
     }
 
-    /** @return Observable<Schema\SimpleClassroom> */
+    /** @return iterable<int,Schema\SimpleClassroom> */
     public function listClassrooms(array $params): iterable
     {
         $arguments = [];
@@ -41,8 +41,7 @@ final class Classroom
         return $operator->call($arguments['page'], $arguments['per_page']);
     }
 
-    /** @return */
-    public function getAnAssignment(array $params): ClassroomAssignment|array
+    public function getAnAssignment(array $params): ClassroomAssignment
     {
         $arguments = [];
         if (array_key_exists('assignment_id', $params) === false) {
@@ -56,8 +55,7 @@ final class Classroom
         return $operator->call($arguments['assignment_id']);
     }
 
-    /** @return */
-    public function getAClassroom(array $params): \ApiClients\Client\GitHub\Schema\Classroom|array
+    public function getAClassroom(array $params): \ApiClients\Client\GitHub\Schema\Classroom
     {
         $arguments = [];
         if (array_key_exists('classroom_id', $params) === false) {
@@ -71,7 +69,7 @@ final class Classroom
         return $operator->call($arguments['classroom_id']);
     }
 
-    /** @return Observable<Schema\ClassroomAcceptedAssignment> */
+    /** @return iterable<int,Schema\ClassroomAcceptedAssignment> */
     public function listAcceptedAssigmentsForAnAssignment(array $params): iterable
     {
         $arguments = [];
@@ -98,7 +96,7 @@ final class Classroom
         return $operator->call($arguments['assignment_id'], $arguments['page'], $arguments['per_page']);
     }
 
-    /** @return Observable<Schema\ClassroomAssignmentGrade> */
+    /** @return iterable<int,Schema\ClassroomAssignmentGrade> */
     public function getAssignmentGrades(array $params): iterable
     {
         $arguments = [];
@@ -113,7 +111,7 @@ final class Classroom
         return $operator->call($arguments['assignment_id']);
     }
 
-    /** @return Observable<Schema\SimpleClassroomAssignment> */
+    /** @return iterable<int,Schema\SimpleClassroomAssignment> */
     public function listAssignmentsForAClassroom(array $params): iterable
     {
         $arguments = [];

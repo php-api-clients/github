@@ -19,8 +19,7 @@ final class DependencyGraph
     {
     }
 
-    /** @return */
-    public function createRepositorySnapshot(array $params): Created|array
+    public function createRepositorySnapshot(array $params): Created
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

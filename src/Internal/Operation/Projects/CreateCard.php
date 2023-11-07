@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Projects;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -24,8 +25,6 @@ final class CreateCard
 {
     public const OPERATION_ID    = 'projects/create-card';
     public const OPERATION_MATCH = 'POST /projects/columns/{column_id}/cards';
-    private const METHOD         = 'POST';
-    private const PATH           = '/projects/columns/{column_id}/cards';
     /**The unique identifier of the column. **/
     private int $columnId;
 
@@ -38,11 +37,10 @@ final class CreateCard
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Projects\CreateCard\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{column_id}'], [$this->columnId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{column_id}'], [$this->columnId], '/projects/columns/{column_id}/cards'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\ProjectCard|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\ProjectCard|array
+    public function createResponse(ResponseInterface $response): Schema\ProjectCard|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -82,7 +80,7 @@ final class CreateCard
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrators->hydrateObject(Schema\ValidationError::class, $body);
+                            return $this->hydrator->hydrateObject(Schema\ValidationError::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_four_hundred_twenty_two_aaaaa;
                         }
@@ -91,7 +89,7 @@ final class CreateCard
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationErrorSimple::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrators->hydrateObject(Schema\ValidationErrorSimple::class, $body);
+                            return $this->hydrator->hydrateObject(Schema\ValidationErrorSimple::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_four_hundred_twenty_two_aaaab;
                         }
@@ -115,7 +113,7 @@ final class CreateCard
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

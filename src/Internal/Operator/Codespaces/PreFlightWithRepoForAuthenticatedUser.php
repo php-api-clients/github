@@ -24,12 +24,11 @@ final readonly class PreFlightWithRepoForAuthenticatedUser
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $ref, string $clientIp): Ok|array
+    public function call(string $owner, string $repo, string $ref, string $clientIp): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\PreFlightWithRepoForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $clientIp);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

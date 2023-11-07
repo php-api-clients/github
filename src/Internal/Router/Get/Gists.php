@@ -9,6 +9,7 @@ use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\GistComment;
 use ApiClients\Client\GitHub\Schema\GistSimple;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -21,8 +22,8 @@ final class Gists
     {
     }
 
-    /** @return Observable<Schema\BaseGist>|array{code:int} */
-    public function list(array $params): iterable
+    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    public function list(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('since', $params) === false) {
@@ -48,8 +49,8 @@ final class Gists
         return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\BaseGist>|array{code:int} */
-    public function listPublic(array $params): iterable
+    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    public function listPublic(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('since', $params) === false) {
@@ -75,8 +76,8 @@ final class Gists
         return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\BaseGist>|array{code:int} */
-    public function listStarred(array $params): iterable
+    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    public function listStarred(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('since', $params) === false) {
@@ -102,8 +103,7 @@ final class Gists
         return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\GistSimple|array{code:int} */
-    public function get(array $params): GistSimple|array
+    public function get(array $params): GistSimple|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
@@ -117,8 +117,8 @@ final class Gists
         return $operator->call($arguments['gist_id']);
     }
 
-    /** @return Observable<Schema\GistComment>|array{code:int} */
-    public function listComments(array $params): iterable
+    /** @return iterable<int,Schema\GistComment>|WithoutBody */
+    public function listComments(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
@@ -144,8 +144,8 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\GistCommit>|array{code:int} */
-    public function listCommits(array $params): iterable
+    /** @return iterable<int,Schema\GistCommit>|WithoutBody */
+    public function listCommits(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
@@ -171,8 +171,8 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\GistSimple>|array{code:int} */
-    public function listForks(array $params): iterable
+    /** @return iterable<int,Schema\GistSimple>|WithoutBody */
+    public function listForks(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
@@ -198,8 +198,7 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return array{code:int} */
-    public function checkIsStarred(array $params): array
+    public function checkIsStarred(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
@@ -213,8 +212,7 @@ final class Gists
         return $operator->call($arguments['gist_id']);
     }
 
-    /** @return */
-    public function getRevision(array $params): GistSimple|array
+    public function getRevision(array $params): GistSimple
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
@@ -234,7 +232,7 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['sha']);
     }
 
-    /** @return Observable<Schema\BaseGist> */
+    /** @return iterable<int,Schema\BaseGist> */
     public function listForUser(array $params): iterable
     {
         $arguments = [];
@@ -267,8 +265,7 @@ final class Gists
         return $operator->call($arguments['username'], $arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\GistComment|array{code:int} */
-    public function getComment(array $params): GistComment|array
+    public function getComment(array $params): GistComment|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {

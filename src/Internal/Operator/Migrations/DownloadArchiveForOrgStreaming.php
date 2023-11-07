@@ -23,12 +23,12 @@ final readonly class DownloadArchiveForOrgStreaming
     {
     }
 
-    /** @return Observable<string> */
+    /** @return iterable<int,string> */
     public function call(string $org, int $migrationId): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\DownloadArchiveForOrgStreaming($this->responseSchemaValidator, $this->hydrator, $this->browser, $org, $migrationId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

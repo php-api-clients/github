@@ -22,8 +22,6 @@ final class Update
 {
     public const OPERATION_ID    = 'checks/update';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/check-runs/{check_run_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/check-runs/{check_run_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -42,7 +40,7 @@ final class Update
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Checks\Update\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{check_run_id}'], [$this->owner, $this->repo, $this->checkRunId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{owner}', '{repo}', '{check_run_id}'], [$this->owner, $this->repo, $this->checkRunId], '/repos/{owner}/{repo}/check-runs/{check_run_id}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\CheckRun

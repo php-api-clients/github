@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Get;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\Codespace;
 use ApiClients\Client\GitHub\Schema\FullRepository;
@@ -25,6 +26,7 @@ use ApiClients\Client\GitHub\Schema\SshSigningKey;
 use ApiClients\Client\GitHub\Schema\StarredRepository;
 use ApiClients\Client\GitHub\Schema\Thread;
 use ApiClients\Client\GitHub\Schema\WebhookConfig;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Four
@@ -33,8 +35,8 @@ final class Four
     {
     }
 
-    /** @return |Observable<Schema\HookDeliveryItem>|Observable<Schema\ClassroomAcceptedAssignment>|Observable<Schema\ClassroomAssignmentGrade>|Observable<Schema\SimpleClassroomAssignment>|Observable<Schema\GistComment>|array{code:int}|Observable<Schema\GistCommit>|Observable<Schema\GistSimple>|Schema\GitignoreTemplate|Observable<Schema\MarketplaceListingPlan>|Schema\Thread|Observable<Schema\SimpleUser>|Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok|Observable<Schema\Event>|Observable<Schema\OrganizationInvitation>|Observable<Schema\OrgHook>|Observable<Schema\Issue>|Observable<Schema\Migration>|Observable<Schema\Package>|Observable<Schema\OrganizationProgrammaticAccessGrantRequest>|Observable<Schema\OrganizationProgrammaticAccessGrant>|Observable<Schema\Project>|Observable<Schema\MinimalRepository>|Observable<Schema\RepositoryRuleset>|Observable<Schema\RepositoryAdvisory>|Observable<Schema\TeamSimple>|Observable<Schema\Team>|Schema\ProjectColumn|Observable<Schema\ProjectColumn>|Observable<Schema\TeamDiscussion>|Observable<Schema\TeamProject>|Schema\Codespace|Schema\GpgKey|Schema\Key|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\OrgMembership>|Schema\Migration|Schema\SshSigningKey|Observable<Schema\BaseGist>|Observable<Schema\GpgKey>|Observable<Schema\KeySimple>|Observable<Schema\OrganizationSimple>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey> */
-    public function call(string $call, array $params, array $pathChunks): WebhookConfig|iterable|Installation|GistSimple|GitignoreTemplate|MarketplacePurchase|Thread|Ok|\ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok|InteractionLimitResponse|One|ProjectColumn|FullRepository|BasicError|\ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok|Codespace|GpgKey|Key|Migration|SshSigningKey|Hovercard|StarredRepository|Repository
+    /** @return Schema\WebhookConfig|iterable<int,Schema\HookDeliveryItem>|Schema\Installation|iterable<int,Schema\ClassroomAcceptedAssignment>|iterable<int,Schema\ClassroomAssignmentGrade>|iterable<int,Schema\SimpleClassroomAssignment>|iterable<int,Schema\GistComment>|WithoutBody|iterable<int,Schema\GistCommit>|iterable<int,Schema\GistSimple>|Schema\GistSimple|Schema\GitignoreTemplate|Schema\MarketplacePurchase|iterable<int,Schema\MarketplaceListingPlan>|Schema\Thread|iterable<int,Schema\SimpleUser>|Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok|iterable<int,Schema\Event>|iterable<int,Schema\OrganizationInvitation>|iterable<int,Schema\OrgHook>|Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok|Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One|iterable<int,Schema\Issue>|iterable<int,Schema\Migration>|iterable<int,Schema\Package>|iterable<int,Schema\OrganizationProgrammaticAccessGrantRequest>|iterable<int,Schema\OrganizationProgrammaticAccessGrant>|iterable<int,Schema\Project>|iterable<int,Schema\MinimalRepository>|iterable<int,Schema\RepositoryRuleset>|iterable<int,Schema\RepositoryAdvisory>|iterable<int,Schema\TeamSimple>|iterable<int,Schema\Team>|Schema\ProjectColumn|iterable<int,Schema\ProjectColumn>|Schema\FullRepository|Schema\BasicError|iterable<int,Schema\TeamDiscussion>|iterable<int,Schema\TeamProject>|Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok|Schema\Codespace|Schema\GpgKey|Schema\Key|iterable<int,Schema\UserMarketplacePurchase>|iterable<int,Schema\OrgMembership>|Schema\Migration|Schema\SshSigningKey|iterable<int,Schema\BaseGist>|iterable<int,Schema\GpgKey>|Schema\Hovercard|iterable<int,Schema\KeySimple>|iterable<int,Schema\OrganizationSimple>|iterable<int,Schema\SocialAccount>|iterable<int,Schema\SshSigningKey>|Schema\StarredRepository|Schema\Repository */
+    public function call(string $call, array $params, array $pathChunks): WebhookConfig|iterable|Installation|WithoutBody|GistSimple|GitignoreTemplate|MarketplacePurchase|Thread|Ok|\ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok|InteractionLimitResponse|One|ProjectColumn|FullRepository|BasicError|\ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok|Codespace|GpgKey|Key|Migration|SshSigningKey|Hovercard|StarredRepository|Repository
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {

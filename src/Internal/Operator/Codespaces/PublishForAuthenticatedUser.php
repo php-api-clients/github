@@ -24,12 +24,11 @@ final readonly class PublishForAuthenticatedUser
     {
     }
 
-    /** @return */
-    public function call(string $codespaceName, array $params): CodespaceWithFullRepository|array
+    public function call(string $codespaceName, array $params): CodespaceWithFullRepository
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\PublishForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $codespaceName);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodespaceWithFullRepository|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodespaceWithFullRepository {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

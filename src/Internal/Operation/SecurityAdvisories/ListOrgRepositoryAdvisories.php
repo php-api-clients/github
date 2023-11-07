@@ -25,8 +25,6 @@ final class ListOrgRepositoryAdvisories
 {
     public const OPERATION_ID    = 'security-advisories/list-org-repository-advisories';
     public const OPERATION_MATCH = 'GET /orgs/{org}/security-advisories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/security-advisories';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. **/
@@ -55,7 +53,7 @@ final class ListOrgRepositoryAdvisories
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{before}', '{after}', '{state}', '{direction}', '{sort}', '{per_page}'], [$this->org, $this->before, $this->after, $this->state, $this->direction, $this->sort, $this->perPage], self::PATH . '?before={before}&after={after}&state={state}&direction={direction}&sort={sort}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{org}', '{before}', '{after}', '{state}', '{direction}', '{sort}', '{per_page}'], [$this->org, $this->before, $this->after, $this->state, $this->direction, $this->sort, $this->perPage], '/orgs/{org}/security-advisories' . '?before={before}&after={after}&state={state}&direction={direction}&sort={sort}&per_page={per_page}'));
     }
 
     /** @return Observable<Schema\RepositoryAdvisory> */
@@ -76,7 +74,7 @@ final class ListOrgRepositoryAdvisories
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryAdvisory::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\RepositoryAdvisory::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\RepositoryAdvisory::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\List;
 use ApiClients\Client\GitHub\Internal\Routers;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Five
@@ -15,8 +16,8 @@ final class Five
     {
     }
 
-    /** @return Observable<Schema\MarketplacePurchase>|Observable<Schema\Event>|Schema\BasicError|array{code:int}|Observable<Schema\CodeScanningOrganizationAlertItems>|Observable<Schema\OrgRepoCustomPropertyValues>|Observable<Schema\RuleSuites>|Observable<Schema\OrganizationSecretScanningAlert>|Observable<Schema\ProjectCard>|Observable<Schema\SimpleUser>|Observable<Schema\ShortBranch>|Observable<Schema\Collaborator>|Observable<Schema\CommitComment>|Observable<Schema\Commit>|Observable<Schema\Contributor>|Observable<Schema\Deployment>|Observable<Schema\MinimalRepository>|Observable<Schema\Hook>|Observable<Schema\RepositoryInvitation>|Observable<Schema\Issue>|Observable<Schema\DeployKey>|Observable<Schema\Label>|Observable<Schema\Milestone>|Observable<Schema\Thread>|Observable<Schema\Project>|Observable<Schema\PullRequestSimple>|Observable<Schema\Release>|Observable<Schema\RepositoryRuleset>|Observable<Schema\Tag>|Observable<Schema\Team> */
-    public function call(string $call, array $params, array $pathChunks): iterable|BasicError
+    /** @return iterable<int,Schema\MarketplacePurchase>|iterable<int,Schema\Event>|Schema\BasicError|WithoutBody|iterable<int,Schema\CodeScanningOrganizationAlertItems>|iterable<int,Schema\OrgRepoCustomPropertyValues>|iterable<int,Schema\RuleSuites>|iterable<int,Schema\OrganizationSecretScanningAlert>|iterable<int,Schema\ProjectCard>|iterable<int,Schema\SimpleUser>|iterable<int,Schema\ShortBranch>|iterable<int,Schema\Collaborator>|iterable<int,Schema\CommitComment>|iterable<int,Schema\Commit>|iterable<int,Schema\Contributor>|iterable<int,Schema\Deployment>|iterable<int,Schema\MinimalRepository>|iterable<int,Schema\Hook>|iterable<int,Schema\RepositoryInvitation>|iterable<int,Schema\Issue>|iterable<int,Schema\DeployKey>|iterable<int,Schema\Label>|iterable<int,Schema\Milestone>|iterable<int,Schema\Thread>|iterable<int,Schema\Project>|iterable<int,Schema\PullRequestSimple>|iterable<int,Schema\Release>|iterable<int,Schema\RepositoryRuleset>|iterable<int,Schema\Tag>|iterable<int,Schema\Team> */
+    public function call(string $call, array $params, array $pathChunks): iterable|BasicError|WithoutBody
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'marketplace_listing') {

@@ -23,12 +23,12 @@ final readonly class DownloadArtifactStreaming
     {
     }
 
-    /** @return Observable<string> */
+    /** @return iterable<int,string> */
     public function call(string $owner, string $repo, int $artifactId, string $archiveFormat): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DownloadArtifactStreaming($this->responseSchemaValidator, $this->hydrator, $this->browser, $owner, $repo, $artifactId, $archiveFormat);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

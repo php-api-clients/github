@@ -24,12 +24,11 @@ final readonly class GetByName
     {
     }
 
-    /** @return */
-    public function call(string $org, string $teamSlug): TeamFull|array
+    public function call(string $org, string $teamSlug): TeamFull
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\GetByName($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): TeamFull|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): TeamFull {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

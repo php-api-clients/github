@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Internal\Operation\Reactions;
 
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
@@ -15,8 +16,6 @@ final class DeleteForTeamDiscussionComment
 {
     public const OPERATION_ID    = 'reactions/delete-for-team-discussion-comment';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The slug of the team name. **/
@@ -39,11 +38,10 @@ final class DeleteForTeamDiscussionComment
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{team_slug}', '{discussion_number}', '{comment_number}', '{reaction_id}'], [$this->org, $this->teamSlug, $this->discussionNumber, $this->commentNumber, $this->reactionId], self::PATH));
+        return new Request('DELETE', str_replace(['{org}', '{team_slug}', '{discussion_number}', '{comment_number}', '{reaction_id}'], [$this->org, $this->teamSlug, $this->discussionNumber, $this->commentNumber, $this->reactionId], '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}/reactions/{reaction_id}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code = $response->getStatusCode();
         switch ($code) {
@@ -51,7 +49,7 @@ final class DeleteForTeamDiscussionComment
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

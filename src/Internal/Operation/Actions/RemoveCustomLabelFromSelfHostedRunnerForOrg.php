@@ -22,8 +22,6 @@ final class RemoveCustomLabelFromSelfHostedRunnerForOrg
 {
     public const OPERATION_ID    = 'actions/remove-custom-label-from-self-hosted-runner-for-org';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/actions/runners/{runner_id}/labels/{name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/actions/runners/{runner_id}/labels/{name}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**Unique identifier of the self-hosted runner. **/
@@ -40,7 +38,7 @@ final class RemoveCustomLabelFromSelfHostedRunnerForOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{runner_id}', '{name}'], [$this->org, $this->runnerId, $this->name], self::PATH));
+        return new Request('DELETE', str_replace(['{org}', '{runner_id}', '{name}'], [$this->org, $this->runnerId, $this->name], '/orgs/{org}/actions/runners/{runner_id}/labels/{name}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok

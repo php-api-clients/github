@@ -22,8 +22,6 @@ final class UpdateWebhookConfigForApp
 {
     public const OPERATION_ID    = 'apps/update-webhook-config-for-app';
     public const OPERATION_MATCH = 'PATCH /app/hook/config';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/app/hook/config';
 
     public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\App\Hook\Config $hydrator)
     {
@@ -33,7 +31,7 @@ final class UpdateWebhookConfigForApp
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Apps\UpdateWebhookConfigForApp\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace([], [], '/app/hook/config'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\WebhookConfig

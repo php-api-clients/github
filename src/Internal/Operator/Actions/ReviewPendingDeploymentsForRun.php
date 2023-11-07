@@ -24,12 +24,12 @@ final readonly class ReviewPendingDeploymentsForRun
     {
     }
 
-    /** @return Observable<Schema\Deployment> */
+    /** @return iterable<int,Schema\Deployment> */
     public function call(string $owner, string $repo, int $runId, array $params): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ReviewPendingDeploymentsForRun($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

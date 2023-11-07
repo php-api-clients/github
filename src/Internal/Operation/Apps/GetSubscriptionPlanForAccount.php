@@ -22,8 +22,6 @@ final class GetSubscriptionPlanForAccount
 {
     public const OPERATION_ID    = 'apps/get-subscription-plan-for-account';
     public const OPERATION_MATCH = 'GET /marketplace_listing/accounts/{account_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/marketplace_listing/accounts/{account_id}';
     /**account_id parameter **/
     private int $accountId;
 
@@ -34,7 +32,7 @@ final class GetSubscriptionPlanForAccount
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{account_id}'], [$this->accountId], self::PATH));
+        return new Request('GET', str_replace(['{account_id}'], [$this->accountId], '/marketplace_listing/accounts/{account_id}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\MarketplacePurchase

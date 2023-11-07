@@ -24,12 +24,11 @@ final readonly class GetCommunityProfileMetrics
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo): CommunityProfile|array
+    public function call(string $owner, string $repo): CommunityProfile
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetCommunityProfileMetrics($this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CommunityProfile|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CommunityProfile {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

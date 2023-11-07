@@ -24,12 +24,11 @@ final readonly class GetPagesBuild
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $buildId): PageBuild|array
+    public function call(string $owner, string $repo, int $buildId): PageBuild
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetPagesBuild($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $buildId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PageBuild|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PageBuild {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

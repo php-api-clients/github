@@ -24,12 +24,12 @@ final readonly class ListForRepoListing
     {
     }
 
-    /** @return Observable<Schema\Project> */
+    /** @return iterable<int,Schema\Project> */
     public function call(string $owner, string $repo, string $state = 'open', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\ListForRepoListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $state, $perPage, $page);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

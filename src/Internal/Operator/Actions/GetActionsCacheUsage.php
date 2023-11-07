@@ -24,12 +24,11 @@ final readonly class GetActionsCacheUsage
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo): ActionsCacheUsageByRepository|array
+    public function call(string $owner, string $repo): ActionsCacheUsageByRepository
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetActionsCacheUsage($this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsCacheUsageByRepository|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsCacheUsageByRepository {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

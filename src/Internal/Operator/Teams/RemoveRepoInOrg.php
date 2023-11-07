@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Teams;
 
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
 use Rx\Observable;
@@ -21,12 +22,11 @@ final readonly class RemoveRepoInOrg
     {
     }
 
-    /** @return array{code:int} */
-    public function call(string $org, string $teamSlug, string $owner, string $repo): array
+    public function call(string $org, string $teamSlug, string $owner, string $repo): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\RemoveRepoInOrg($org, $teamSlug, $owner, $repo);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): WithoutBody {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

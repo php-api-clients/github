@@ -22,8 +22,6 @@ final class GetOrgRuleset
 {
     public const OPERATION_ID    = 'repos/get-org-ruleset';
     public const OPERATION_MATCH = 'GET /orgs/{org}/rulesets/{ruleset_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/rulesets/{ruleset_id}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The ID of the ruleset. **/
@@ -37,7 +35,7 @@ final class GetOrgRuleset
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{ruleset_id}'], [$this->org, $this->rulesetId], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{ruleset_id}'], [$this->org, $this->rulesetId], '/orgs/{org}/rulesets/{ruleset_id}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\RepositoryRuleset

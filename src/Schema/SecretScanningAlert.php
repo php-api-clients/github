@@ -452,6 +452,15 @@ final readonly class SecretScanningAlert
             ],
             "description": "The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.",
             "format": "date-time"
+        },
+        "validity": {
+            "enum": [
+                "active",
+                "inactive",
+                "unknown"
+            ],
+            "type": "string",
+            "description": "The token status as of the latest validity check."
         }
     }
 }';
@@ -518,7 +527,8 @@ final readonly class SecretScanningAlert
         "site_admin": false,
         "starred_at": "\\"2020-07-09T00:17:55Z\\""
     },
-    "push_protection_bypassed_at": "1970-01-01T00:00:00+00:00"
+    "push_protection_bypassed_at": "1970-01-01T00:00:00+00:00",
+    "validity": "unknown"
 }';
 
     /**
@@ -537,6 +547,7 @@ final readonly class SecretScanningAlert
      * secret: The secret that was detected.
      * pushProtectionBypassed: Whether push protection was bypassed for the detected secret.
      * pushProtectionBypassedAt: The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     * validity: The token status as of the latest validity check.
      */
     public function __construct(public int|null $number, #[MapFrom('created_at')]
     public string|null $createdAt, #[MapFrom('updated_at')]
@@ -550,7 +561,7 @@ final readonly class SecretScanningAlert
     public string|null $secretTypeDisplayName, public string|null $secret, #[MapFrom('push_protection_bypassed')]
     public bool|null $pushProtectionBypassed, #[MapFrom('push_protection_bypassed_by')]
     public Schema\SimpleUser|null $pushProtectionBypassedBy, #[MapFrom('push_protection_bypassed_at')]
-    public string|null $pushProtectionBypassedAt,)
+    public string|null $pushProtectionBypassedAt, public string|null $validity,)
     {
     }
 }

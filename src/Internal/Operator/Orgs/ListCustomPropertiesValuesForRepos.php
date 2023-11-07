@@ -24,12 +24,12 @@ final readonly class ListCustomPropertiesValuesForRepos
     {
     }
 
-    /** @return Observable<Schema\OrgRepoCustomPropertyValues> */
-    public function call(string $org, int $perPage = 30, int $page = 1): iterable
+    /** @return iterable<int,Schema\OrgRepoCustomPropertyValues> */
+    public function call(string $org, string $repositoryQuery, int $perPage = 30, int $page = 1): iterable
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListCustomPropertiesValuesForRepos($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListCustomPropertiesValuesForRepos($this->responseSchemaValidator, $this->hydrator, $org, $repositoryQuery, $perPage, $page);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

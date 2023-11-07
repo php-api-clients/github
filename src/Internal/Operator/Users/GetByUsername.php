@@ -25,12 +25,11 @@ final readonly class GetByUsername
     {
     }
 
-    /** @return */
-    public function call(string $username): PrivateUser|PublicUser|array
+    public function call(string $username): PrivateUser|PublicUser
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\GetByUsername($this->responseSchemaValidator, $this->hydrator, $username);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PrivateUser|PublicUser|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PrivateUser|PublicUser {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

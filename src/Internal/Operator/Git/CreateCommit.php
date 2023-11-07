@@ -24,12 +24,11 @@ final readonly class CreateCommit
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, array $params): GitCommit|array
+    public function call(string $owner, string $repo, array $params): GitCommit
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Git\CreateCommit($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GitCommit|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GitCommit {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

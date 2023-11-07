@@ -22,8 +22,6 @@ final class Create
 {
     public const OPERATION_ID    = 'checks/create';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/check-runs';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/check-runs';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -39,7 +37,7 @@ final class Create
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Checks\Create\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/check-runs'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\CheckRun

@@ -23,8 +23,6 @@ final class UpdateWebhook
 {
     public const OPERATION_ID    = 'orgs/update-webhook';
     public const OPERATION_MATCH = 'PATCH /orgs/{org}/hooks/{hook_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/orgs/{org}/hooks/{hook_id}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery. **/
@@ -40,7 +38,7 @@ final class UpdateWebhook
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Orgs\UpdateWebhook\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}', '{hook_id}'], [$this->org, $this->hookId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{org}', '{hook_id}'], [$this->org, $this->hookId], '/orgs/{org}/hooks/{hook_id}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\OrgHook

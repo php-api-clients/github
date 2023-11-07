@@ -22,8 +22,6 @@ final class GetExportDetailsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/get-export-details-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/codespaces/{codespace_name}/exports/{export_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/codespaces/{codespace_name}/exports/{export_id}';
     /**The name of the codespace. **/
     private string $codespaceName;
     /**The ID of the export operation, or `latest`. Currently only `latest` is currently supported. **/
@@ -37,7 +35,7 @@ final class GetExportDetailsForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{codespace_name}', '{export_id}'], [$this->codespaceName, $this->exportId], self::PATH));
+        return new Request('GET', str_replace(['{codespace_name}', '{export_id}'], [$this->codespaceName, $this->exportId], '/user/codespaces/{codespace_name}/exports/{export_id}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\CodespaceExportDetails

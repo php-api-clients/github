@@ -5,10 +5,12 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Client\GitHub\Schema\PullRequestReview;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Eight
@@ -17,8 +19,8 @@ final class Eight
     {
     }
 
-    /** @return |array{code:int}|Observable<Schema\Label>|Schema\BasicError */
-    public function call(string $call, array $params, array $pathChunks): Ok|Json|iterable|BasicError|PullRequestReview
+    /** @return Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok|WithoutBody|Schema\Operations\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\ApplicationJson\Ok\Application\Json|iterable<int,Schema\Label>|Schema\BasicError|Schema\PullRequestReview */
+    public function call(string $call, array $params, array $pathChunks): Ok|WithoutBody|Json|iterable|BasicError|PullRequestReview
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {

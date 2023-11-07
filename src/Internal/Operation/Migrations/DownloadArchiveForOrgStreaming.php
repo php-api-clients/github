@@ -28,8 +28,6 @@ final class DownloadArchiveForOrgStreaming
 {
     public const OPERATION_ID    = 'migrations/download-archive-for-org';
     public const OPERATION_MATCH = 'STREAM /orgs/{org}/migrations/{migration_id}/archive';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/migrations/{migration_id}/archive';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the migration. **/
@@ -43,7 +41,7 @@ final class DownloadArchiveForOrgStreaming
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{migration_id}'], [$this->org, $this->migrationId], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{migration_id}'], [$this->org, $this->migrationId], '/orgs/{org}/migrations/{migration_id}/archive'));
     }
 
     /** @return Observable<string> */

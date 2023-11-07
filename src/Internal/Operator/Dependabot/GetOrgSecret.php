@@ -24,12 +24,11 @@ final readonly class GetOrgSecret
     {
     }
 
-    /** @return */
-    public function call(string $org, string $secretName): OrganizationDependabotSecret|array
+    public function call(string $org, string $secretName): OrganizationDependabotSecret
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Dependabot\GetOrgSecret($this->responseSchemaValidator, $this->hydrator, $org, $secretName);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrganizationDependabotSecret|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrganizationDependabotSecret {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

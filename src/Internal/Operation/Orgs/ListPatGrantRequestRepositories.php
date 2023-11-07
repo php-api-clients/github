@@ -25,8 +25,6 @@ final class ListPatGrantRequestRepositories
 {
     public const OPERATION_ID    = 'orgs/list-pat-grant-request-repositories';
     public const OPERATION_MATCH = 'GET /orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**Unique identifier of the request for access via fine-grained personal access token. **/
@@ -46,7 +44,7 @@ final class ListPatGrantRequestRepositories
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{pat_request_id}', '{per_page}', '{page}'], [$this->org, $this->patRequestId, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{pat_request_id}', '{per_page}', '{page}'], [$this->org, $this->patRequestId, $this->perPage, $this->page], '/orgs/{org}/personal-access-token-requests/{pat_request_id}/repositories' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\MinimalRepository> */
@@ -91,7 +89,7 @@ final class ListPatGrantRequestRepositories
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MinimalRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\MinimalRepository::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\MinimalRepository::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Projects;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class GetCard
 {
     public const OPERATION_ID    = 'projects/get-card';
     public const OPERATION_MATCH = 'GET /projects/columns/cards/{card_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/projects/columns/cards/{card_id}';
     /**The unique identifier of the card. **/
     private int $cardId;
 
@@ -34,11 +33,10 @@ final class GetCard
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{card_id}'], [$this->cardId], self::PATH));
+        return new Request('GET', str_replace(['{card_id}'], [$this->cardId], '/projects/columns/cards/{card_id}'));
     }
 
-    /** @return Schema\ProjectCard|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\ProjectCard|array
+    public function createResponse(ResponseInterface $response): Schema\ProjectCard|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -87,7 +85,7 @@ final class GetCard
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

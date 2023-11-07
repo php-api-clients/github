@@ -23,8 +23,7 @@ final class Issues
     {
     }
 
-    /** @return */
-    public function update(array $params): Issue|BasicError|array
+    public function update(array $params): Issue|BasicError
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -50,8 +49,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
-    /** @return */
-    public function updateLabel(array $params): Label|array
+    public function updateLabel(array $params): Label
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -77,8 +75,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name'], $params);
     }
 
-    /** @return */
-    public function updateMilestone(array $params): Milestone|array
+    public function updateMilestone(array $params): Milestone
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -104,8 +101,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone_number'], $params);
     }
 
-    /** @return */
-    public function updateComment(array $params): IssueComment|array
+    public function updateComment(array $params): IssueComment
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

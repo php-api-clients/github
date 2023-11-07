@@ -25,8 +25,6 @@ final class ListPlansListing
 {
     public const OPERATION_ID    = 'apps/list-plans';
     public const OPERATION_MATCH = 'LIST /marketplace_listing/plans';
-    private const METHOD         = 'GET';
-    private const PATH           = '/marketplace_listing/plans';
     /**The number of results per page (max 100). **/
     private int $perPage;
     /**Page number of the results to fetch. **/
@@ -40,7 +38,7 @@ final class ListPlansListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{per_page}', '{page}'], [$this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{per_page}', '{page}'], [$this->perPage, $this->page], '/marketplace_listing/plans' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\MarketplaceListingPlan> */
@@ -61,7 +59,7 @@ final class ListPlansListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MarketplaceListingPlan::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\MarketplaceListingPlan::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\MarketplaceListingPlan::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

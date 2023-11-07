@@ -5,12 +5,14 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Authorization;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\Codespace;
 use ApiClients\Client\GitHub\Schema\FullRepository;
 use ApiClients\Client\GitHub\Schema\ProjectColumn;
 use ApiClients\Client\GitHub\Schema\WebhookConfig;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Four
@@ -19,8 +21,8 @@ final class Four
     {
     }
 
-    /** @return |array{code:int}|Schema\ProjectColumn|Observable<Schema\Email> */
-    public function call(string $call, array $params, array $pathChunks): WebhookConfig|Authorization|ProjectColumn|FullRepository|BasicError|Codespace|iterable
+    /** @return Schema\WebhookConfig|Schema\Authorization|WithoutBody|Schema\ProjectColumn|Schema\FullRepository|Schema\BasicError|Schema\Codespace|iterable<int,Schema\Email> */
+    public function call(string $call, array $params, array $pathChunks): WebhookConfig|Authorization|WithoutBody|ProjectColumn|FullRepository|BasicError|Codespace|iterable
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {

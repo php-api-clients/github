@@ -25,8 +25,6 @@ final class ListRepositoryAdvisories
 {
     public const OPERATION_ID    = 'security-advisories/list-repository-advisories';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/security-advisories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/security-advisories';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -58,7 +56,7 @@ final class ListRepositoryAdvisories
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{before}', '{after}', '{state}', '{direction}', '{sort}', '{per_page}'], [$this->owner, $this->repo, $this->before, $this->after, $this->state, $this->direction, $this->sort, $this->perPage], self::PATH . '?before={before}&after={after}&state={state}&direction={direction}&sort={sort}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{before}', '{after}', '{state}', '{direction}', '{sort}', '{per_page}'], [$this->owner, $this->repo, $this->before, $this->after, $this->state, $this->direction, $this->sort, $this->perPage], '/repos/{owner}/{repo}/security-advisories' . '?before={before}&after={after}&state={state}&direction={direction}&sort={sort}&per_page={per_page}'));
     }
 
     /** @return Observable<Schema\RepositoryAdvisory> */
@@ -79,7 +77,7 @@ final class ListRepositoryAdvisories
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryAdvisory::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\RepositoryAdvisory::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\RepositoryAdvisory::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

@@ -24,12 +24,12 @@ final readonly class GetRepoRulesets
     {
     }
 
-    /** @return Observable<Schema\RepositoryRuleset> */
+    /** @return iterable<int,Schema\RepositoryRuleset> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1, bool $includesParents = true): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetRepoRulesets($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page, $includesParents);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

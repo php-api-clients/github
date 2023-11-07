@@ -24,8 +24,6 @@ final class ListDiscussionsInOrg
 {
     public const OPERATION_ID    = 'teams/list-discussions-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/discussions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/discussions';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The slug of the team name. **/
@@ -51,7 +49,7 @@ final class ListDiscussionsInOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{team_slug}', '{pinned}', '{direction}', '{per_page}', '{page}'], [$this->org, $this->teamSlug, $this->pinned, $this->direction, $this->perPage, $this->page], self::PATH . '?pinned={pinned}&direction={direction}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{team_slug}', '{pinned}', '{direction}', '{per_page}', '{page}'], [$this->org, $this->teamSlug, $this->pinned, $this->direction, $this->perPage, $this->page], '/orgs/{org}/teams/{team_slug}/discussions' . '?pinned={pinned}&direction={direction}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\TeamDiscussion> */
@@ -72,7 +70,7 @@ final class ListDiscussionsInOrg
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\TeamDiscussion::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\TeamDiscussion::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\TeamDiscussion::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

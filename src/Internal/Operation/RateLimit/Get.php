@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\RateLimit;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class Get
 {
     public const OPERATION_ID    = 'rate-limit/get';
     public const OPERATION_MATCH = 'GET /rate_limit';
-    private const METHOD         = 'GET';
-    private const PATH           = '/rate_limit';
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\RateLimit $hydrator)
     {
@@ -31,11 +30,10 @@ final class Get
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace([], [], self::PATH));
+        return new Request('GET', str_replace([], [], '/rate_limit'));
     }
 
-    /** @return Schema\RateLimitOverview|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\RateLimitOverview|array
+    public function createResponse(ResponseInterface $response): Schema\RateLimitOverview|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -68,7 +66,7 @@ final class Get
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

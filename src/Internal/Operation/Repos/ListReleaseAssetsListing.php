@@ -24,8 +24,6 @@ final class ListReleaseAssetsListing
 {
     public const OPERATION_ID    = 'repos/list-release-assets';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/releases/{release_id}/assets';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/releases/{release_id}/assets';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -48,7 +46,7 @@ final class ListReleaseAssetsListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{release_id}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->releaseId, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{release_id}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->releaseId, $this->perPage, $this->page], '/repos/{owner}/{repo}/releases/{release_id}/assets' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\ReleaseAsset> */
@@ -69,7 +67,7 @@ final class ListReleaseAssetsListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ReleaseAsset::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\ReleaseAsset::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\ReleaseAsset::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

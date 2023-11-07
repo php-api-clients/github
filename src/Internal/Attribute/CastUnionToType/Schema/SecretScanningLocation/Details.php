@@ -25,7 +25,7 @@ final class Details implements PropertyCaster
             $signatureChunks = array_unique(array_keys($value));
             sort($signatureChunks);
             $signature = implode('|', $signatureChunks);
-            if ($signature === 'path|start_line|end_line|start_column|end_column|blob_sha|blob_url|commit_sha|commit_url') {
+            if ($signature === 'blob_sha|blob_url|commit_sha|commit_url|end_column|end_line|path|start_column|start_line') {
                 try {
                     return $hydrator->hydrateObject(Schema\SecretScanningLocationCommit::class, $value);
                 } catch (Throwable) {

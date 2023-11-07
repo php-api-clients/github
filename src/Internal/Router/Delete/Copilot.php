@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForTeams\Response\ApplicationJson\Ok;
 use ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -21,8 +21,7 @@ final class Copilot
     {
     }
 
-    /** @return Schema\Operations\Copilot\CancelCopilotSeatAssignmentForTeams\Response\ApplicationJson\Ok|array{code:int} */
-    public function cancelCopilotSeatAssignmentForTeams(array $params): Ok|array
+    public function cancelCopilotSeatAssignmentForTeams(array $params): Ok|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -36,8 +35,7 @@ final class Copilot
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json|array{code:int} */
-    public function cancelCopilotSeatAssignmentForUsers(array $params): Json|array
+    public function cancelCopilotSeatAssignmentForUsers(array $params): Json|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

@@ -14,7 +14,7 @@ final class Three
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): InteractionLimitResponse|array
+    public function call(string $call, array $params, array $pathChunks): InteractionLimitResponse
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'user') {

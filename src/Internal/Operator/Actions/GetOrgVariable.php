@@ -24,12 +24,11 @@ final readonly class GetOrgVariable
     {
     }
 
-    /** @return */
-    public function call(string $org, string $name): OrganizationActionsVariable|array
+    public function call(string $org, string $name): OrganizationActionsVariable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetOrgVariable($this->responseSchemaValidator, $this->hydrator, $org, $name);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrganizationActionsVariable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrganizationActionsVariable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

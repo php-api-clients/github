@@ -23,8 +23,6 @@ final class UpdatePullRequestReviewProtection
 {
     public const OPERATION_ID    = 'repos/update-pull-request-review-protection';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -43,7 +41,7 @@ final class UpdatePullRequestReviewProtection
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\UpdatePullRequestReviewProtection\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{branch}'], [$this->owner, $this->repo, $this->branch], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{owner}', '{repo}', '{branch}'], [$this->owner, $this->repo, $this->branch], '/repos/{owner}/{repo}/branches/{branch}/protection/required_pull_request_reviews'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\ProtectedBranchPullRequestReview

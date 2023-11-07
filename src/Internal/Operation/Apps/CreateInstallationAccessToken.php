@@ -23,8 +23,6 @@ final class CreateInstallationAccessToken
 {
     public const OPERATION_ID    = 'apps/create-installation-access-token';
     public const OPERATION_MATCH = 'POST /app/installations/{installation_id}/access_tokens';
-    private const METHOD         = 'POST';
-    private const PATH           = '/app/installations/{installation_id}/access_tokens';
     /**The unique identifier of the installation. **/
     private int $installationId;
 
@@ -37,7 +35,7 @@ final class CreateInstallationAccessToken
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Apps\CreateInstallationAccessToken\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{installation_id}'], [$this->installationId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{installation_id}'], [$this->installationId], '/app/installations/{installation_id}/access_tokens'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\InstallationToken

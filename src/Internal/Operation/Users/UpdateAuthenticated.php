@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Users;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -23,8 +24,6 @@ final class UpdateAuthenticated
 {
     public const OPERATION_ID    = 'users/update-authenticated';
     public const OPERATION_MATCH = 'PATCH /user';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/user';
 
     public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\User $hydrator)
     {
@@ -34,11 +33,10 @@ final class UpdateAuthenticated
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Users\UpdateAuthenticated\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace([], [], '/user'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\PrivateUser|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\PrivateUser|array
+    public function createResponse(ResponseInterface $response): Schema\PrivateUser|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -95,7 +93,7 @@ final class UpdateAuthenticated
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

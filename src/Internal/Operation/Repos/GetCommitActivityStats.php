@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Repos;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -24,8 +25,6 @@ final class GetCommitActivityStats
 {
     public const OPERATION_ID    = 'repos/get-commit-activity-stats';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/stats/commit_activity';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/stats/commit_activity';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -39,11 +38,11 @@ final class GetCommitActivityStats
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/stats/commit_activity'));
     }
 
-    /** @return Observable<Schema\CommitActivity>|Schema\Operations\Repos\GetCommitActivityStats\Response\ApplicationJson\Accepted\Application\Json|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|Schema\Operations\Repos\GetCommitActivityStats\Response\ApplicationJson\Accepted\Application\Json|array
+    /** @return Observable<Schema\CommitActivity>|Schema\Operations\Repos\GetCommitActivityStats\Response\ApplicationJson\Accepted\Application\Json|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|Schema\Operations\Repos\GetCommitActivityStats\Response\ApplicationJson\Accepted\Application\Json|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -60,7 +59,7 @@ final class GetCommitActivityStats
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CommitActivity::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\CommitActivity::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\CommitActivity::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -86,7 +85,7 @@ final class GetCommitActivityStats
              * A header with no content is returned.
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

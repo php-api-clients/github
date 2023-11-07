@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Users;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -26,8 +27,6 @@ final class AddEmailForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/add-email-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /user/emails';
-    private const METHOD         = 'POST';
-    private const PATH           = '/user/emails';
 
     public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\User\Emails $hydrator)
     {
@@ -37,11 +36,11 @@ final class AddEmailForAuthenticatedUser
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Users\AddEmailForAuthenticatedUser\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace([], [], '/user/emails'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Observable<Schema\Email>|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|array
+    /** @return Observable<Schema\Email>|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -58,7 +57,7 @@ final class AddEmailForAuthenticatedUser
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Email::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Email::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Email::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_one_aaaaa;
                             }
@@ -108,7 +107,7 @@ final class AddEmailForAuthenticatedUser
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

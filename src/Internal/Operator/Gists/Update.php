@@ -24,12 +24,11 @@ final readonly class Update
     {
     }
 
-    /** @return */
-    public function call(string $gistId, array $params): GistSimple|array
+    public function call(string $gistId, array $params): GistSimple
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $gistId);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GistSimple|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GistSimple {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

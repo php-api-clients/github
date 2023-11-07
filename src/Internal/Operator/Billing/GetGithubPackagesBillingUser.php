@@ -24,12 +24,11 @@ final readonly class GetGithubPackagesBillingUser
     {
     }
 
-    /** @return */
-    public function call(string $username): PackagesBillingUsage|array
+    public function call(string $username): PackagesBillingUsage
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Billing\GetGithubPackagesBillingUser($this->responseSchemaValidator, $this->hydrator, $username);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PackagesBillingUsage|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PackagesBillingUsage {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

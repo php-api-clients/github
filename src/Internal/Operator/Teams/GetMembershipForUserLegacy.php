@@ -24,12 +24,11 @@ final readonly class GetMembershipForUserLegacy
     {
     }
 
-    /** @return */
-    public function call(int $teamId, string $username): TeamMembership|array
+    public function call(int $teamId, string $username): TeamMembership
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\GetMembershipForUserLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $username);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): TeamMembership|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): TeamMembership {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

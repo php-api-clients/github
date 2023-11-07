@@ -25,7 +25,7 @@ final class AssigningTeam implements PropertyCaster
             $signatureChunks = array_unique(array_keys($value));
             sort($signatureChunks);
             $signature = implode('|', $signatureChunks);
-            if ($signature === 'id|node_id|name|slug|description|privacy|notification_setting|permission|permissions|url|html_url|members_url|repositories_url|parent') {
+            if ($signature === 'description|html_url|id|members_url|name|node_id|notification_setting|parent|permission|permissions|privacy|repositories_url|slug|url') {
                 try {
                     return $hydrator->hydrateObject(Schema\Team::class, $value);
                 } catch (Throwable) {

@@ -24,12 +24,11 @@ final readonly class GetComment
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $commentId): IssueComment|array
+    public function call(string $owner, string $repo, int $commentId): IssueComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\GetComment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commentId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): IssueComment|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): IssueComment {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

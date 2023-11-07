@@ -24,12 +24,11 @@ final readonly class CreateForIssue
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $issueNumber, array $params): Reaction|array
+    public function call(string $owner, string $repo, int $issueNumber, array $params): Reaction
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Reactions\CreateForIssue($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Reaction|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Reaction {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

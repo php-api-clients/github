@@ -24,12 +24,11 @@ final readonly class GetPublicKeyForAuthenticatedUser
     {
     }
 
-    /** @return */
-    public function call(): CodespacesUserPublicKey|array
+    public function call(): CodespacesUserPublicKey
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\GetPublicKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodespacesUserPublicKey|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodespacesUserPublicKey {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

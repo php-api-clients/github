@@ -25,8 +25,6 @@ final class GetOrgRulesetsListing
 {
     public const OPERATION_ID    = 'repos/get-org-rulesets';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/rulesets';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/rulesets';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The number of results per page (max 100). **/
@@ -43,7 +41,7 @@ final class GetOrgRulesetsListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{per_page}', '{page}'], [$this->org, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{per_page}', '{page}'], [$this->org, $this->perPage, $this->page], '/orgs/{org}/rulesets' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\RepositoryRuleset> */
@@ -64,7 +62,7 @@ final class GetOrgRulesetsListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleset::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\RepositoryRuleset::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\RepositoryRuleset::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

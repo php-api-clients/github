@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Put;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted;
 use ApiClients\Client\GitHub\Schema\RepositorySubscription;
 use ApiClients\Client\GitHub\Schema\ThreadSubscription;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -22,8 +22,7 @@ final class Activity
     {
     }
 
-    /** @return Schema\ThreadSubscription|array{code:int} */
-    public function setThreadSubscription(array $params): ThreadSubscription|array
+    public function setThreadSubscription(array $params): ThreadSubscription|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('thread_id', $params) === false) {
@@ -37,8 +36,7 @@ final class Activity
         return $operator->call($arguments['thread_id'], $params);
     }
 
-    /** @return Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted|array{code:int} */
-    public function markRepoNotificationsAsRead(array $params): Accepted|array
+    public function markRepoNotificationsAsRead(array $params): Accepted|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -58,8 +56,7 @@ final class Activity
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
-    public function setRepoSubscription(array $params): RepositorySubscription|array
+    public function setRepoSubscription(array $params): RepositorySubscription
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -79,8 +76,7 @@ final class Activity
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return array{code:int} */
-    public function starRepoForAuthenticatedUser(array $params): array
+    public function starRepoForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -100,8 +96,7 @@ final class Activity
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted|array{code:int} */
-    public function markNotificationsAsRead(array $params): \ApiClients\Client\GitHub\Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted|array
+    public function markNotificationsAsRead(array $params): \ApiClients\Client\GitHub\Schema\Operations\Activity\MarkNotificationsAsRead\Response\ApplicationJson\Accepted|WithoutBody
     {
         $operator = new Internal\Operator\Activity\MarkNotificationsAsRead($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Notifications());
 

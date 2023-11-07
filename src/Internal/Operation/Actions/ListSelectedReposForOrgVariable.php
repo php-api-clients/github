@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Actions;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -21,8 +22,6 @@ final class ListSelectedReposForOrgVariable
 {
     public const OPERATION_ID    = 'actions/list-selected-repos-for-org-variable';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/variables/{name}/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/variables/{name}/repositories';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The name of the variable. **/
@@ -42,11 +41,10 @@ final class ListSelectedReposForOrgVariable
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{name}', '{page}', '{per_page}'], [$this->org, $this->name, $this->page, $this->perPage], self::PATH . '?page={page}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{org}', '{name}', '{page}', '{per_page}'], [$this->org, $this->name, $this->page, $this->perPage], '/orgs/{org}/actions/variables/{name}/repositories' . '?page={page}&per_page={per_page}'));
     }
 
-    /** @return Schema\Operations\Actions\ListSelectedReposForOrgVariable\Response\ApplicationJson\Ok\Application\Json|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListSelectedReposForOrgVariable\Response\ApplicationJson\Ok\Application\Json|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListSelectedReposForOrgVariable\Response\ApplicationJson\Ok\Application\Json|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -71,7 +69,7 @@ final class ListSelectedReposForOrgVariable
              * Response when the visibility of the variable is not set to `selected`
              **/
             case 409:
-                return ['code' => 409];
+                return new WithoutBody(409, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

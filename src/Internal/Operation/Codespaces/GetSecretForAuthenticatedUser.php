@@ -21,8 +21,6 @@ final class GetSecretForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/get-secret-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/codespaces/secrets/{secret_name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/codespaces/secrets/{secret_name}';
     /**The name of the secret. **/
     private string $secretName;
 
@@ -33,7 +31,7 @@ final class GetSecretForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{secret_name}'], [$this->secretName], self::PATH));
+        return new Request('GET', str_replace(['{secret_name}'], [$this->secretName], '/user/codespaces/secrets/{secret_name}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\CodespacesSecret

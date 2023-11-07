@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Projects;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -23,8 +24,6 @@ final class MoveColumn
 {
     public const OPERATION_ID    = 'projects/move-column';
     public const OPERATION_MATCH = 'POST /projects/columns/{column_id}/moves';
-    private const METHOD         = 'POST';
-    private const PATH           = '/projects/columns/{column_id}/moves';
     /**The unique identifier of the column. **/
     private int $columnId;
 
@@ -37,11 +36,10 @@ final class MoveColumn
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Projects\MoveColumn\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{column_id}'], [$this->columnId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{column_id}'], [$this->columnId], '/projects/columns/{column_id}/moves'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -90,7 +88,7 @@ final class MoveColumn
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

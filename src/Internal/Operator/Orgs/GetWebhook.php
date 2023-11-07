@@ -24,12 +24,11 @@ final readonly class GetWebhook
     {
     }
 
-    /** @return */
-    public function call(string $org, int $hookId): OrgHook|array
+    public function call(string $org, int $hookId): OrgHook
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\GetWebhook($this->responseSchemaValidator, $this->hydrator, $org, $hookId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrgHook|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrgHook {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

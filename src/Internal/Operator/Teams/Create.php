@@ -24,12 +24,11 @@ final readonly class Create
     {
     }
 
-    /** @return */
-    public function call(string $org, array $params): TeamFull|array
+    public function call(string $org, array $params): TeamFull
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\Create($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): TeamFull|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): TeamFull {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -19,8 +19,7 @@ final class Dependabot
     {
     }
 
-    /** @return */
-    public function updateAlert(array $params): DependabotAlert|array
+    public function updateAlert(array $params): DependabotAlert
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

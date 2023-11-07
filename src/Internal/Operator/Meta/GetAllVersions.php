@@ -23,12 +23,12 @@ final readonly class GetAllVersions
     {
     }
 
-    /** @return Observable<string> */
+    /** @return iterable<int,string> */
     public function call(): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Meta\GetAllVersions($this->responseSchemaValidator, $this->hydrator);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

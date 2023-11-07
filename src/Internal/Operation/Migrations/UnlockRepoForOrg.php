@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Migrations;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class UnlockRepoForOrg
 {
     public const OPERATION_ID    = 'migrations/unlock-repo-for-org';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the migration. **/
@@ -40,11 +39,10 @@ final class UnlockRepoForOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{migration_id}', '{repo_name}'], [$this->org, $this->migrationId, $this->repoName], self::PATH));
+        return new Request('DELETE', str_replace(['{org}', '{migration_id}', '{repo_name}'], [$this->org, $this->migrationId, $this->repoName], '/orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -69,7 +67,7 @@ final class UnlockRepoForOrg
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

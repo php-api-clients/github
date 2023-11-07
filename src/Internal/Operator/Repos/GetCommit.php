@@ -24,12 +24,11 @@ final readonly class GetCommit
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $ref, int $page = 1, int $perPage = 30): Commit|array
+    public function call(string $owner, string $repo, string $ref, int $page = 1, int $perPage = 30): Commit
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetCommit($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $page, $perPage);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Commit|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Commit {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

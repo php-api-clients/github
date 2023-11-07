@@ -24,12 +24,11 @@ final readonly class CreateLabel
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, array $params): Label|array
+    public function call(string $owner, string $repo, array $params): Label
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\CreateLabel($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Label|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Label {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

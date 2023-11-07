@@ -24,12 +24,11 @@ final readonly class UpdatePullRequestReviewProtection
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $branch, array $params): ProtectedBranchPullRequestReview|array
+    public function call(string $owner, string $repo, string $branch, array $params): ProtectedBranchPullRequestReview
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdatePullRequestReviewProtection($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ProtectedBranchPullRequestReview|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ProtectedBranchPullRequestReview {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

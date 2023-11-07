@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\List;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,8 +21,8 @@ final class Gists
     {
     }
 
-    /** @return Observable<Schema\BaseGist>|array{code:int} */
-    public function listPublicListing(array $params): iterable
+    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    public function listPublicListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('since', $params) === false) {
@@ -53,8 +54,8 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\BaseGist>|array{code:int} */
-    public function listStarredListing(array $params): iterable
+    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    public function listStarredListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('since', $params) === false) {
@@ -86,8 +87,8 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\GistComment>|array{code:int} */
-    public function listCommentsListing(array $params): iterable
+    /** @return iterable<int,Schema\GistComment>|WithoutBody */
+    public function listCommentsListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
@@ -119,8 +120,8 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\GistCommit>|array{code:int} */
-    public function listCommitsListing(array $params): iterable
+    /** @return iterable<int,Schema\GistCommit>|WithoutBody */
+    public function listCommitsListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
@@ -152,8 +153,8 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\GistSimple>|array{code:int} */
-    public function listForksListing(array $params): iterable
+    /** @return iterable<int,Schema\GistSimple>|WithoutBody */
+    public function listForksListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
@@ -185,7 +186,7 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\BaseGist> */
+    /** @return iterable<int,Schema\BaseGist> */
     public function listForUserListing(array $params): iterable
     {
         $arguments = [];
@@ -224,8 +225,8 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\BaseGist>|array{code:int} */
-    public function listListing(array $params): iterable
+    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    public function listListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('since', $params) === false) {

@@ -22,8 +22,6 @@ final class GetBySlug
 {
     public const OPERATION_ID    = 'apps/get-by-slug';
     public const OPERATION_MATCH = 'GET /apps/{app_slug}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/apps/{app_slug}';
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Apps\AppSlug $hydrator, private string $appSlug)
     {
@@ -31,7 +29,7 @@ final class GetBySlug
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{app_slug}'], [$this->appSlug], self::PATH));
+        return new Request('GET', str_replace(['{app_slug}'], [$this->appSlug], '/apps/{app_slug}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Integration

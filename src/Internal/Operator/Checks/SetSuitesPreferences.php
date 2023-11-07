@@ -24,12 +24,11 @@ final readonly class SetSuitesPreferences
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, array $params): CheckSuitePreference|array
+    public function call(string $owner, string $repo, array $params): CheckSuitePreference
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\SetSuitesPreferences($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CheckSuitePreference|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CheckSuitePreference {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

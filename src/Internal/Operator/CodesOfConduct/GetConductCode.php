@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\CodesOfConduct;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CodeOfConduct;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
@@ -25,12 +25,11 @@ final readonly class GetConductCode
     {
     }
 
-    /** @return Schema\CodeOfConduct|array{code:int} */
-    public function call(string $key): CodeOfConduct|array
+    public function call(string $key): CodeOfConduct|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodesOfConduct\GetConductCode($this->responseSchemaValidator, $this->hydrator, $key);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodeOfConduct|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodeOfConduct|WithoutBody {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

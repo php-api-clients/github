@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Gists;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -25,8 +26,6 @@ final class ListCommits
 {
     public const OPERATION_ID    = 'gists/list-commits';
     public const OPERATION_MATCH = 'GET /gists/{gist_id}/commits';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gists/{gist_id}/commits';
     /**The unique identifier of the gist. **/
     private string $gistId;
     /**The number of results per page (max 100). **/
@@ -43,11 +42,11 @@ final class ListCommits
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{gist_id}', '{per_page}', '{page}'], [$this->gistId, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{gist_id}', '{per_page}', '{page}'], [$this->gistId, $this->perPage, $this->page], '/gists/{gist_id}/commits' . '?per_page={per_page}&page={page}'));
     }
 
-    /** @return Observable<Schema\GistCommit>|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|array
+    /** @return Observable<Schema\GistCommit>|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -64,7 +63,7 @@ final class ListCommits
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\GistCommit::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\GistCommit::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\GistCommit::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -98,7 +97,7 @@ final class ListCommits
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

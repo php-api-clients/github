@@ -24,12 +24,11 @@ final readonly class CreateCommitComment
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $commitSha, array $params): CommitComment|array
+    public function call(string $owner, string $repo, string $commitSha, array $params): CommitComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateCommitComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commitSha);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CommitComment|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CommitComment {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

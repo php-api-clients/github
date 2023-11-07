@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Interactions
     {
     }
 
-    /** @return array{code:int} */
-    public function removeRestrictionsForOrg(array $params): array
+    public function removeRestrictionsForOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -33,8 +33,7 @@ final class Interactions
         return $operator->call($arguments['org']);
     }
 
-    /** @return array{code:int} */
-    public function removeRestrictionsForRepo(array $params): array
+    public function removeRestrictionsForRepo(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -54,8 +53,7 @@ final class Interactions
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return array{code:int} */
-    public function removeRestrictionsForAuthenticatedUser(array $params): array
+    public function removeRestrictionsForAuthenticatedUser(array $params): WithoutBody
     {
         $operator = new Internal\Operator\Interactions\RemoveRestrictionsForAuthenticatedUser($this->browser, $this->authentication);
 

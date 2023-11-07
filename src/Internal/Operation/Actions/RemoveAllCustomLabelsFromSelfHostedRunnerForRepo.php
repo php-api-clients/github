@@ -22,8 +22,6 @@ final class RemoveAllCustomLabelsFromSelfHostedRunnerForRepo
 {
     public const OPERATION_ID    = 'actions/remove-all-custom-labels-from-self-hosted-runner-for-repo';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runners/{runner_id}/labels';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,7 +38,7 @@ final class RemoveAllCustomLabelsFromSelfHostedRunnerForRepo
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{runner_id}'], [$this->owner, $this->repo, $this->runnerId], self::PATH));
+        return new Request('DELETE', str_replace(['{owner}', '{repo}', '{runner_id}'], [$this->owner, $this->repo, $this->runnerId], '/repos/{owner}/{repo}/actions/runners/{runner_id}/labels'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForRepo\Response\ApplicationJson\Ok\Application\Json

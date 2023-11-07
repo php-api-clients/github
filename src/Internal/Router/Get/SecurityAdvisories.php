@@ -21,7 +21,7 @@ final class SecurityAdvisories
     {
     }
 
-    /** @return Observable<Schema\GlobalAdvisory> */
+    /** @return iterable<int,Schema\GlobalAdvisory> */
     public function listGlobalAdvisories(array $params): iterable
     {
         $arguments = [];
@@ -126,8 +126,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['ghsa_id'], $arguments['cve_id'], $arguments['ecosystem'], $arguments['severity'], $arguments['cwes'], $arguments['is_withdrawn'], $arguments['affects'], $arguments['published'], $arguments['updated'], $arguments['modified'], $arguments['before'], $arguments['after'], $arguments['type'], $arguments['direction'], $arguments['per_page'], $arguments['sort']);
     }
 
-    /** @return */
-    public function getGlobalAdvisory(array $params): GlobalAdvisory|array
+    public function getGlobalAdvisory(array $params): GlobalAdvisory
     {
         $arguments = [];
         if (array_key_exists('ghsa_id', $params) === false) {
@@ -141,7 +140,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['ghsa_id']);
     }
 
-    /** @return Observable<Schema\RepositoryAdvisory> */
+    /** @return iterable<int,Schema\RepositoryAdvisory> */
     public function listOrgRepositoryAdvisories(array $params): iterable
     {
         $arguments = [];
@@ -192,7 +191,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['org'], $arguments['before'], $arguments['after'], $arguments['state'], $arguments['direction'], $arguments['sort'], $arguments['per_page']);
     }
 
-    /** @return Observable<Schema\RepositoryAdvisory> */
+    /** @return iterable<int,Schema\RepositoryAdvisory> */
     public function listRepositoryAdvisories(array $params): iterable
     {
         $arguments = [];
@@ -249,8 +248,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['before'], $arguments['after'], $arguments['state'], $arguments['direction'], $arguments['sort'], $arguments['per_page']);
     }
 
-    /** @return */
-    public function getRepositoryAdvisory(array $params): RepositoryAdvisory|array
+    public function getRepositoryAdvisory(array $params): RepositoryAdvisory
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

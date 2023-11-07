@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operation\Actions;
 
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -19,8 +20,6 @@ final class SetGithubActionsPermissionsOrganization
 {
     public const OPERATION_ID    = 'actions/set-github-actions-permissions-organization';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/actions/permissions';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/actions/permissions';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -33,11 +32,10 @@ final class SetGithubActionsPermissionsOrganization
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\SetGithubActionsPermissionsOrganization\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{org}'], [$this->org], '/orgs/{org}/actions/permissions'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code = $response->getStatusCode();
         switch ($code) {
@@ -45,7 +43,7 @@ final class SetGithubActionsPermissionsOrganization
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

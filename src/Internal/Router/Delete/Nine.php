@@ -5,7 +5,9 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Nine
@@ -14,8 +16,8 @@ final class Nine
     {
     }
 
-    /** @return array{code:int}||Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser> */
-    public function call(string $call, array $params, array $pathChunks): Ok|iterable
+    /** @return WithoutBody|Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok|iterable<int,string>|iterable<int,Schema\Integration>|iterable<int,Schema\Team>|iterable<int,Schema\SimpleUser> */
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|Ok|iterable
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {

@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Codespaces;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class GetCodespacesForUserInOrg
 {
     public const OPERATION_ID    = 'codespaces/get-codespaces-for-user-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/members/{username}/codespaces';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/members/{username}/codespaces';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The handle for the GitHub user account. **/
@@ -43,11 +42,10 @@ final class GetCodespacesForUserInOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{username}', '{per_page}', '{page}'], [$this->org, $this->username, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{username}', '{per_page}', '{page}'], [$this->org, $this->username, $this->perPage, $this->page], '/orgs/{org}/members/{username}/codespaces' . '?per_page={per_page}&page={page}'));
     }
 
-    /** @return Schema\Operations\Codespaces\GetCodespacesForUserInOrg\Response\ApplicationJson\Ok\Application\Json|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\GetCodespacesForUserInOrg\Response\ApplicationJson\Ok\Application\Json|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\GetCodespacesForUserInOrg\Response\ApplicationJson\Ok\Application\Json|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -104,7 +102,7 @@ final class GetCodespacesForUserInOrg
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

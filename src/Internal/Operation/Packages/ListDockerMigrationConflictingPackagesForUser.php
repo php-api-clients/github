@@ -25,8 +25,6 @@ final class ListDockerMigrationConflictingPackagesForUser
 {
     public const OPERATION_ID    = 'packages/list-docker-migration-conflicting-packages-for-user';
     public const OPERATION_MATCH = 'GET /users/{username}/docker/conflicts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/docker/conflicts';
     /**The handle for the GitHub user account. **/
     private string $username;
 
@@ -37,7 +35,7 @@ final class ListDockerMigrationConflictingPackagesForUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{username}'], [$this->username], self::PATH));
+        return new Request('GET', str_replace(['{username}'], [$this->username], '/users/{username}/docker/conflicts'));
     }
 
     /** @return Observable<Schema\Package> */
@@ -58,7 +56,7 @@ final class ListDockerMigrationConflictingPackagesForUser
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Package::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Package::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Package::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\List;
 
 use ApiClients\Client\GitHub\Internal\Routers;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Four
@@ -14,8 +15,8 @@ final class Four
     {
     }
 
-    /** @return Observable<Schema\ClassroomAcceptedAssignment>|Observable<Schema\SimpleClassroomAssignment>|Observable<Schema\GistComment>|array{code:int}|Observable<Schema\GistCommit>|Observable<Schema\GistSimple>|Observable<Schema\MarketplaceListingPlan>|Observable<Schema\SimpleUser>|Observable<Schema\Event>|Observable<Schema\OrganizationInvitation>|Observable<Schema\OrgHook>|Observable<Schema\Issue>|Observable<Schema\Migration>|Observable<Schema\Package>|Observable<Schema\OrganizationProgrammaticAccessGrantRequest>|Observable<Schema\OrganizationProgrammaticAccessGrant>|Observable<Schema\Project>|Observable<Schema\MinimalRepository>|Observable<Schema\RepositoryRuleset>|Observable<Schema\Team>|Observable<Schema\ProjectColumn>|Observable<Schema\TeamDiscussion>|Observable<Schema\TeamProject>|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\OrgMembership>|Observable<Schema\BaseGist>|Observable<Schema\GpgKey>|Observable<Schema\KeySimple>|Observable<Schema\OrganizationSimple>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey> */
-    public function call(string $call, array $params, array $pathChunks): iterable
+    /** @return iterable<int,Schema\ClassroomAcceptedAssignment>|iterable<int,Schema\SimpleClassroomAssignment>|iterable<int,Schema\GistComment>|WithoutBody|iterable<int,Schema\GistCommit>|iterable<int,Schema\GistSimple>|iterable<int,Schema\MarketplaceListingPlan>|iterable<int,Schema\SimpleUser>|iterable<int,Schema\Event>|iterable<int,Schema\OrganizationInvitation>|iterable<int,Schema\OrgHook>|iterable<int,Schema\Issue>|iterable<int,Schema\Migration>|iterable<int,Schema\Package>|iterable<int,Schema\OrganizationProgrammaticAccessGrantRequest>|iterable<int,Schema\OrganizationProgrammaticAccessGrant>|iterable<int,Schema\Project>|iterable<int,Schema\MinimalRepository>|iterable<int,Schema\RepositoryRuleset>|iterable<int,Schema\Team>|iterable<int,Schema\ProjectColumn>|iterable<int,Schema\TeamDiscussion>|iterable<int,Schema\TeamProject>|iterable<int,Schema\UserMarketplacePurchase>|iterable<int,Schema\OrgMembership>|iterable<int,Schema\BaseGist>|iterable<int,Schema\GpgKey>|iterable<int,Schema\KeySimple>|iterable<int,Schema\OrganizationSimple>|iterable<int,Schema\SocialAccount>|iterable<int,Schema\SshSigningKey> */
+    public function call(string $call, array $params, array $pathChunks): iterable|WithoutBody
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'assignments') {

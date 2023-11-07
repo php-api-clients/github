@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operation\Actions;
 
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -19,8 +20,6 @@ final class SetGithubActionsDefaultWorkflowPermissionsRepository
 {
     public const OPERATION_ID    = 'actions/set-github-actions-default-workflow-permissions-repository';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/actions/permissions/workflow';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/actions/permissions/workflow';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -36,11 +35,10 @@ final class SetGithubActionsDefaultWorkflowPermissionsRepository
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\ActionsSetDefaultWorkflowPermissions::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/actions/permissions/workflow'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code = $response->getStatusCode();
         switch ($code) {
@@ -48,13 +46,13 @@ final class SetGithubActionsDefaultWorkflowPermissionsRepository
              * Success response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
             /**
              * Conflict response when changing a setting is prevented by the owning organization
              **/
 
             case 409:
-                return ['code' => 409];
+                return new WithoutBody(409, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

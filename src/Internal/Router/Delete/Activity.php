@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Activity
     {
     }
 
-    /** @return array{code:int} */
-    public function deleteThreadSubscription(array $params): array
+    public function deleteThreadSubscription(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('thread_id', $params) === false) {
@@ -33,8 +33,7 @@ final class Activity
         return $operator->call($arguments['thread_id']);
     }
 
-    /** @return array{code:int} */
-    public function deleteRepoSubscription(array $params): array
+    public function deleteRepoSubscription(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -54,8 +53,7 @@ final class Activity
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return array{code:int} */
-    public function unstarRepoForAuthenticatedUser(array $params): array
+    public function unstarRepoForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

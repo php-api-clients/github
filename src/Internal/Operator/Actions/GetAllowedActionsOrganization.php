@@ -24,12 +24,11 @@ final readonly class GetAllowedActionsOrganization
     {
     }
 
-    /** @return */
-    public function call(string $org): SelectedActions|array
+    public function call(string $org): SelectedActions
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetAllowedActionsOrganization($this->responseSchemaValidator, $this->hydrator, $org);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): SelectedActions|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): SelectedActions {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

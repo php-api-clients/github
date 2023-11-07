@@ -24,12 +24,11 @@ final readonly class CreateDeployKey
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, array $params): DeployKey|array
+    public function call(string $owner, string $repo, array $params): DeployKey
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateDeployKey($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): DeployKey|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): DeployKey {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

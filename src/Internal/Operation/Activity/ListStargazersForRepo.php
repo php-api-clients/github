@@ -23,8 +23,6 @@ final class ListStargazersForRepo
 {
     public const OPERATION_ID    = 'activity/list-stargazers-for-repo';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/stargazers';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/stargazers';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -44,7 +42,7 @@ final class ListStargazersForRepo
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->perPage, $this->page], '/repos/{owner}/{repo}/stargazers' . '?per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\SimpleUser|Schema\Stargazer
@@ -63,7 +61,7 @@ final class ListStargazersForRepo
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\SimpleUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrators->hydrateObject(Schema\SimpleUser::class, $body);
+                            return $this->hydrator->hydrateObject(Schema\SimpleUser::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaaa;
                         }
@@ -72,7 +70,7 @@ final class ListStargazersForRepo
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Stargazer::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrators->hydrateObject(Schema\Stargazer::class, $body);
+                            return $this->hydrator->hydrateObject(Schema\Stargazer::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaab;
                         }

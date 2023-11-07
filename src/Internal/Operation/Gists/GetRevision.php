@@ -22,8 +22,6 @@ final class GetRevision
 {
     public const OPERATION_ID    = 'gists/get-revision';
     public const OPERATION_MATCH = 'GET /gists/{gist_id}/{sha}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gists/{gist_id}/{sha}';
     /**The unique identifier of the gist. **/
     private string $gistId;
 
@@ -34,7 +32,7 @@ final class GetRevision
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{gist_id}', '{sha}'], [$this->gistId, $this->sha], self::PATH));
+        return new Request('GET', str_replace(['{gist_id}', '{sha}'], [$this->gistId, $this->sha], '/gists/{gist_id}/{sha}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\GistSimple

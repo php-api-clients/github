@@ -24,12 +24,11 @@ final readonly class ListInRepositoryForAuthenticatedUser
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): Json|array
+    public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\ListInRepositoryForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -24,12 +24,11 @@ final readonly class GetCopilotOrganizationDetails
     {
     }
 
-    /** @return */
-    public function call(string $org): CopilotOrganizationDetails|array
+    public function call(string $org): CopilotOrganizationDetails
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Copilot\GetCopilotOrganizationDetails($this->responseSchemaValidator, $this->hydrator, $org);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CopilotOrganizationDetails|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CopilotOrganizationDetails {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

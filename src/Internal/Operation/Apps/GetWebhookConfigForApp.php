@@ -21,8 +21,6 @@ final class GetWebhookConfigForApp
 {
     public const OPERATION_ID    = 'apps/get-webhook-config-for-app';
     public const OPERATION_MATCH = 'GET /app/hook/config';
-    private const METHOD         = 'GET';
-    private const PATH           = '/app/hook/config';
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\App\Hook\Config $hydrator)
     {
@@ -30,7 +28,7 @@ final class GetWebhookConfigForApp
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace([], [], self::PATH));
+        return new Request('GET', str_replace([], [], '/app/hook/config'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\WebhookConfig

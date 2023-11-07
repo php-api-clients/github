@@ -25,8 +25,6 @@ final class ListAlertInstancesListing
 {
     public const OPERATION_ID    = 'code-scanning/list-alert-instances';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -52,7 +50,7 @@ final class ListAlertInstancesListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{alert_number}', '{ref}', '{page}', '{per_page}'], [$this->owner, $this->repo, $this->alertNumber, $this->ref, $this->page, $this->perPage], self::PATH . '?ref={ref}&page={page}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{alert_number}', '{ref}', '{page}', '{per_page}'], [$this->owner, $this->repo, $this->alertNumber, $this->ref, $this->page, $this->perPage], '/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances' . '?ref={ref}&page={page}&per_page={per_page}'));
     }
 
     /** @return Observable<Schema\CodeScanningAlertInstance> */
@@ -73,7 +71,7 @@ final class ListAlertInstancesListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CodeScanningAlertInstance::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\CodeScanningAlertInstance::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\CodeScanningAlertInstance::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

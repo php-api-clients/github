@@ -24,12 +24,11 @@ final readonly class GetAClassroom
     {
     }
 
-    /** @return */
-    public function call(int $classroomId): Classroom|array
+    public function call(int $classroomId): Classroom
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Classroom\GetAClassroom($this->responseSchemaValidator, $this->hydrator, $classroomId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Classroom|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Classroom {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

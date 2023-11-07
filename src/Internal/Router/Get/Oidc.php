@@ -19,8 +19,7 @@ final class Oidc
     {
     }
 
-    /** @return */
-    public function getOidcCustomSubTemplateForOrg(array $params): OidcCustomSub|array
+    public function getOidcCustomSubTemplateForOrg(array $params): OidcCustomSub
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

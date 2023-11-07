@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Codespaces;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class RepoMachinesForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/repo-machines-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/codespaces/machines';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/codespaces/machines';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -46,11 +45,10 @@ final class RepoMachinesForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{location}', '{client_ip}', '{ref}'], [$this->owner, $this->repo, $this->location, $this->clientIp, $this->ref], self::PATH . '?location={location}&client_ip={client_ip}&ref={ref}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{location}', '{client_ip}', '{ref}'], [$this->owner, $this->repo, $this->location, $this->clientIp, $this->ref], '/repos/{owner}/{repo}/codespaces/machines' . '?location={location}&client_ip={client_ip}&ref={ref}'));
     }
 
-    /** @return Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\RepoMachinesForAuthenticatedUser\Response\ApplicationJson\Ok|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -107,7 +105,7 @@ final class RepoMachinesForAuthenticatedUser
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

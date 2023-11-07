@@ -176,6 +176,11 @@ final readonly class OldRepository
                 }
             ]
         },
+        "custom_properties": {
+            "type": "object",
+            "description": "The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.",
+            "additionalProperties": true
+        },
         "default_branch": {
             "type": "string",
             "description": "The default branch of the repository."
@@ -649,6 +654,7 @@ final readonly class OldRepository
     "contents_url": "generated",
     "contributors_url": "https:\\/\\/example.com\\/",
     "created_at": null,
+    "custom_properties": [],
     "default_branch": "generated",
     "delete_branch_on_merge": false,
     "deployments_url": "https:\\/\\/example.com\\/",
@@ -767,6 +773,7 @@ final readonly class OldRepository
      * allowRebaseMerge: Whether to allow rebase merges for pull requests.
      * allowSquashMerge: Whether to allow squash merges for pull requests.
      * archived: Whether the repository is archived.
+     * customProperties: The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
      * defaultBranch: The default branch of the repository.
      * deleteBranchOnMerge: Whether to delete head branches when pull requests are merged
      * disabled: Returns whether or not this repository is disabled.
@@ -798,7 +805,8 @@ final readonly class OldRepository
     public string $compareUrl, #[MapFrom('contents_url')]
     public string $contentsUrl, #[MapFrom('contributors_url')]
     public string $contributorsUrl, #[MapFrom('created_at')]
-    public int|string $createdAt, #[MapFrom('default_branch')]
+    public int|string $createdAt, #[MapFrom('custom_properties')]
+    public Schema\WebhookIssuesOpened\Changes\OldRepository\CustomProperties|null $customProperties, #[MapFrom('default_branch')]
     public string $defaultBranch, #[MapFrom('delete_branch_on_merge')]
     public bool|null $deleteBranchOnMerge, #[MapFrom('deployments_url')]
     public string $deploymentsUrl, public string|null $description, public bool|null $disabled, #[MapFrom('downloads_url')]

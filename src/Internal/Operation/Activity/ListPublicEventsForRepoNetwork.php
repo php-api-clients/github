@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Activity;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -25,8 +26,6 @@ final class ListPublicEventsForRepoNetwork
 {
     public const OPERATION_ID    = 'activity/list-public-events-for-repo-network';
     public const OPERATION_MATCH = 'GET /networks/{owner}/{repo}/events';
-    private const METHOD         = 'GET';
-    private const PATH           = '/networks/{owner}/{repo}/events';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -46,11 +45,11 @@ final class ListPublicEventsForRepoNetwork
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->perPage, $this->page], '/networks/{owner}/{repo}/events' . '?per_page={per_page}&page={page}'));
     }
 
-    /** @return Observable<Schema\Event>|Schema\BasicError|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|Schema\BasicError|array
+    /** @return Observable<Schema\Event>|Schema\BasicError|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|Schema\BasicError|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -67,7 +66,7 @@ final class ListPublicEventsForRepoNetwork
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Event::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Event::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Event::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -109,7 +108,7 @@ final class ListPublicEventsForRepoNetwork
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

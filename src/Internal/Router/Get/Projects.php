@@ -11,6 +11,7 @@ use ApiClients\Client\GitHub\Schema\ProjectCard;
 use ApiClients\Client\GitHub\Schema\ProjectCollaboratorPermission;
 use ApiClients\Client\GitHub\Schema\ProjectColumn;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -23,8 +24,7 @@ final class Projects
     {
     }
 
-    /** @return Schema\Project|array{code:int} */
-    public function get(array $params): Project|array
+    public function get(array $params): Project|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
@@ -38,7 +38,7 @@ final class Projects
         return $operator->call($arguments['project_id']);
     }
 
-    /** @return Observable<Schema\Project> */
+    /** @return iterable<int,Schema\Project> */
     public function listForOrg(array $params): iterable
     {
         $arguments = [];
@@ -71,8 +71,7 @@ final class Projects
         return $operator->call($arguments['org'], $arguments['state'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\ProjectColumn|array{code:int} */
-    public function getColumn(array $params): ProjectColumn|array
+    public function getColumn(array $params): ProjectColumn|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('column_id', $params) === false) {
@@ -86,8 +85,8 @@ final class Projects
         return $operator->call($arguments['column_id']);
     }
 
-    /** @return Observable<Schema\SimpleUser>|array{code:int} */
-    public function listCollaborators(array $params): iterable
+    /** @return iterable<int,Schema\SimpleUser>|WithoutBody */
+    public function listCollaborators(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
@@ -119,8 +118,8 @@ final class Projects
         return $operator->call($arguments['project_id'], $arguments['affiliation'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\ProjectColumn>|array{code:int} */
-    public function listColumns(array $params): iterable
+    /** @return iterable<int,Schema\ProjectColumn>|WithoutBody */
+    public function listColumns(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
@@ -146,7 +145,7 @@ final class Projects
         return $operator->call($arguments['project_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Project> */
+    /** @return iterable<int,Schema\Project> */
     public function listForUser(array $params): iterable
     {
         $arguments = [];
@@ -179,8 +178,7 @@ final class Projects
         return $operator->call($arguments['username'], $arguments['state'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\ProjectCard|array{code:int} */
-    public function getCard(array $params): ProjectCard|array
+    public function getCard(array $params): ProjectCard|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('card_id', $params) === false) {
@@ -194,8 +192,8 @@ final class Projects
         return $operator->call($arguments['card_id']);
     }
 
-    /** @return Observable<Schema\ProjectCard>|array{code:int} */
-    public function listCards(array $params): iterable
+    /** @return iterable<int,Schema\ProjectCard>|WithoutBody */
+    public function listCards(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('column_id', $params) === false) {
@@ -227,7 +225,7 @@ final class Projects
         return $operator->call($arguments['column_id'], $arguments['archived_state'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Project> */
+    /** @return iterable<int,Schema\Project> */
     public function listForRepo(array $params): iterable
     {
         $arguments = [];
@@ -266,8 +264,7 @@ final class Projects
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\ProjectCollaboratorPermission|array{code:int} */
-    public function getPermissionForUser(array $params): ProjectCollaboratorPermission|array
+    public function getPermissionForUser(array $params): ProjectCollaboratorPermission|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {

@@ -18,7 +18,7 @@ final class Actions
     {
     }
 
-    /** @return Observable<string> */
+    /** @return iterable<int,string> */
     public function downloadArtifactStreaming(array $params): iterable
     {
         $arguments = [];
@@ -51,7 +51,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['artifact_id'], $arguments['archive_format']);
     }
 
-    /** @return Observable<string> */
+    /** @return iterable<int,string> */
     public function downloadJobLogsForWorkflowRunStreaming(array $params): iterable
     {
         $arguments = [];
@@ -78,7 +78,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['job_id']);
     }
 
-    /** @return Observable<string> */
+    /** @return iterable<int,string> */
     public function downloadWorkflowRunLogsStreaming(array $params): iterable
     {
         $arguments = [];
@@ -105,7 +105,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['run_id']);
     }
 
-    /** @return Observable<string> */
+    /** @return iterable<int,string> */
     public function downloadWorkflowRunAttemptLogsStreaming(array $params): iterable
     {
         $arguments = [];

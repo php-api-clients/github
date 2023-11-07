@@ -23,8 +23,6 @@ final class Update
 {
     public const OPERATION_ID    = 'pulls/update';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/pulls/{pull_number}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -43,7 +41,7 @@ final class Update
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Pulls\Update\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{pull_number}'], [$this->owner, $this->repo, $this->pullNumber], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{owner}', '{repo}', '{pull_number}'], [$this->owner, $this->repo, $this->pullNumber], '/repos/{owner}/{repo}/pulls/{pull_number}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\PullRequest

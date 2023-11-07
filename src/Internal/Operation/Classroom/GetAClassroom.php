@@ -22,8 +22,6 @@ final class GetAClassroom
 {
     public const OPERATION_ID    = 'classroom/get-a-classroom';
     public const OPERATION_MATCH = 'GET /classrooms/{classroom_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/classrooms/{classroom_id}';
     /**The unique identifier of the classroom. **/
     private int $classroomId;
 
@@ -34,7 +32,7 @@ final class GetAClassroom
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{classroom_id}'], [$this->classroomId], self::PATH));
+        return new Request('GET', str_replace(['{classroom_id}'], [$this->classroomId], '/classrooms/{classroom_id}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Classroom

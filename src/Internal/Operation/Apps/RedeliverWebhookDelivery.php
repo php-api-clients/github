@@ -22,8 +22,6 @@ final class RedeliverWebhookDelivery
 {
     public const OPERATION_ID    = 'apps/redeliver-webhook-delivery';
     public const OPERATION_MATCH = 'POST /app/hook/deliveries/{delivery_id}/attempts';
-    private const METHOD         = 'POST';
-    private const PATH           = '/app/hook/deliveries/{delivery_id}/attempts';
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\App\Hook\Deliveries\DeliveryId\Attempts $hydrator, private int $deliveryId)
     {
@@ -31,7 +29,7 @@ final class RedeliverWebhookDelivery
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{delivery_id}'], [$this->deliveryId], self::PATH));
+        return new Request('POST', str_replace(['{delivery_id}'], [$this->deliveryId], '/app/hook/deliveries/{delivery_id}/attempts'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Apps\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json

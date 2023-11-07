@@ -24,12 +24,11 @@ final readonly class SetMembershipForUser
     {
     }
 
-    /** @return */
-    public function call(string $org, string $username, array $params): OrgMembership|array
+    public function call(string $org, string $username, array $params): OrgMembership
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\SetMembershipForUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $username);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrgMembership|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrgMembership {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Apps
     {
     }
 
-    /** @return array{code:int} */
-    public function deleteInstallation(array $params): array
+    public function deleteInstallation(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('installation_id', $params) === false) {
@@ -33,8 +33,7 @@ final class Apps
         return $operator->call($arguments['installation_id']);
     }
 
-    /** @return array{code:int} */
-    public function deleteAuthorization(array $params): array
+    public function deleteAuthorization(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('client_id', $params) === false) {
@@ -48,8 +47,7 @@ final class Apps
         return $operator->call($arguments['client_id'], $params);
     }
 
-    /** @return array{code:int} */
-    public function deleteToken(array $params): array
+    public function deleteToken(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('client_id', $params) === false) {
@@ -63,8 +61,7 @@ final class Apps
         return $operator->call($arguments['client_id'], $params);
     }
 
-    /** @return array{code:int} */
-    public function unsuspendInstallation(array $params): array
+    public function unsuspendInstallation(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('installation_id', $params) === false) {
@@ -78,16 +75,14 @@ final class Apps
         return $operator->call($arguments['installation_id']);
     }
 
-    /** @return array{code:int} */
-    public function revokeInstallationAccessToken(array $params): array
+    public function revokeInstallationAccessToken(array $params): WithoutBody
     {
         $operator = new Internal\Operator\Apps\RevokeInstallationAccessToken($this->browser, $this->authentication);
 
         return $operator->call();
     }
 
-    /** @return array{code:int} */
-    public function removeRepoFromInstallationForAuthenticatedUser(array $params): array
+    public function removeRepoFromInstallationForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('installation_id', $params) === false) {

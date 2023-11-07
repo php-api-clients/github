@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Apps;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -23,8 +24,6 @@ final class DeleteAuthorization
 {
     public const OPERATION_ID    = 'apps/delete-authorization';
     public const OPERATION_MATCH = 'DELETE /applications/{client_id}/grant';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/applications/{client_id}/grant';
     /**The client ID of the GitHub app. **/
     private string $clientId;
 
@@ -37,11 +36,10 @@ final class DeleteAuthorization
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Apps\DeleteAuthorization\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{client_id}'], [$this->clientId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('DELETE', str_replace(['{client_id}'], [$this->clientId], '/applications/{client_id}/grant'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -66,7 +64,7 @@ final class DeleteAuthorization
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

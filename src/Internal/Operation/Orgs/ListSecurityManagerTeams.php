@@ -24,8 +24,6 @@ final class ListSecurityManagerTeams
 {
     public const OPERATION_ID    = 'orgs/list-security-manager-teams';
     public const OPERATION_MATCH = 'GET /orgs/{org}/security-managers';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/security-managers';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -36,7 +34,7 @@ final class ListSecurityManagerTeams
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
+        return new Request('GET', str_replace(['{org}'], [$this->org], '/orgs/{org}/security-managers'));
     }
 
     /** @return Observable<Schema\TeamSimple> */
@@ -57,7 +55,7 @@ final class ListSecurityManagerTeams
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\TeamSimple::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\TeamSimple::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\TeamSimple::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

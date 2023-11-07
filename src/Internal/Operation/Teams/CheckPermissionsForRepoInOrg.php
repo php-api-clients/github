@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Teams;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -21,8 +22,6 @@ final class CheckPermissionsForRepoInOrg
 {
     public const OPERATION_ID    = 'teams/check-permissions-for-repo-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The slug of the team name. **/
@@ -42,11 +41,10 @@ final class CheckPermissionsForRepoInOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{team_slug}', '{owner}', '{repo}'], [$this->org, $this->teamSlug, $this->owner, $this->repo], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{team_slug}', '{owner}', '{repo}'], [$this->org, $this->teamSlug, $this->owner, $this->repo], '/orgs/{org}/teams/{team_slug}/repos/{owner}/{repo}'));
     }
 
-    /** @return Schema\TeamRepository|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\TeamRepository|array
+    public function createResponse(ResponseInterface $response): Schema\TeamRepository|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -71,13 +69,13 @@ final class CheckPermissionsForRepoInOrg
              * Response if team has permission for the repository. This is the response when the repository media type hasn't been provded in the Accept header.
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
             /**
              * Not Found if team does not have permission for the repository
              **/
 
             case 404:
-                return ['code' => 404];
+                return new WithoutBody(404, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Gists;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -25,8 +26,6 @@ final class ListPublic
 {
     public const OPERATION_ID    = 'gists/list-public';
     public const OPERATION_MATCH = 'GET /gists/public';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gists/public';
     /**Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
     private string $since;
     /**The number of results per page (max 100). **/
@@ -43,11 +42,11 @@ final class ListPublic
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{since}', '{per_page}', '{page}'], [$this->since, $this->perPage, $this->page], self::PATH . '?since={since}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{since}', '{per_page}', '{page}'], [$this->since, $this->perPage, $this->page], '/gists/public' . '?since={since}&per_page={per_page}&page={page}'));
     }
 
-    /** @return Observable<Schema\BaseGist>|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|array
+    /** @return Observable<Schema\BaseGist>|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -64,7 +63,7 @@ final class ListPublic
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BaseGist::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\BaseGist::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\BaseGist::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -98,7 +97,7 @@ final class ListPublic
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

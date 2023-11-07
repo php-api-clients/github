@@ -11,6 +11,7 @@ use ApiClients\Client\GitHub\Schema\PullRequestReview;
 use ApiClients\Client\GitHub\Schema\PullRequestReviewComment;
 use ApiClients\Client\GitHub\Schema\PullRequestReviewRequest;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -23,8 +24,8 @@ final class Pulls
     {
     }
 
-    /** @return Observable<Schema\PullRequestSimple>|array{code:int} */
-    public function list(array $params): iterable
+    /** @return iterable<int,Schema\PullRequestSimple>|WithoutBody */
+    public function list(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -86,7 +87,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['head'], $arguments['base'], $arguments['direction'], $arguments['state'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\PullRequestReviewComment> */
+    /** @return iterable<int,Schema\PullRequestReviewComment> */
     public function listReviewCommentsForRepo(array $params): iterable
     {
         $arguments = [];
@@ -137,8 +138,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['sort'], $arguments['direction'], $arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\PullRequest|array{code:int} */
-    public function get(array $params): PullRequest|array
+    public function get(array $params): PullRequest|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -164,8 +164,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number']);
     }
 
-    /** @return */
-    public function getReviewComment(array $params): PullRequestReviewComment|array
+    public function getReviewComment(array $params): PullRequestReviewComment
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -191,7 +190,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
-    /** @return Observable<Schema\PullRequestReviewComment> */
+    /** @return iterable<int,Schema\PullRequestReviewComment> */
     public function listReviewComments(array $params): iterable
     {
         $arguments = [];
@@ -248,7 +247,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['direction'], $arguments['since'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Commit> */
+    /** @return iterable<int,Schema\Commit> */
     public function listCommits(array $params): iterable
     {
         $arguments = [];
@@ -287,7 +286,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\DiffEntry> */
+    /** @return iterable<int,Schema\DiffEntry> */
     public function listFiles(array $params): iterable
     {
         $arguments = [];
@@ -326,8 +325,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return array{code:int} */
-    public function checkIfMerged(array $params): array
+    public function checkIfMerged(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -353,8 +351,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number']);
     }
 
-    /** @return */
-    public function listRequestedReviewers(array $params): PullRequestReviewRequest|array
+    public function listRequestedReviewers(array $params): PullRequestReviewRequest
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -380,7 +377,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number']);
     }
 
-    /** @return Observable<Schema\PullRequestReview> */
+    /** @return iterable<int,Schema\PullRequestReview> */
     public function listReviews(array $params): iterable
     {
         $arguments = [];
@@ -419,8 +416,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
-    public function getReview(array $params): PullRequestReview|array
+    public function getReview(array $params): PullRequestReview
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -452,7 +448,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['review_id']);
     }
 
-    /** @return Observable<Schema\ReviewComment> */
+    /** @return iterable<int,Schema\ReviewComment> */
     public function listCommentsForReview(array $params): iterable
     {
         $arguments = [];

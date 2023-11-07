@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Codespaces;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class DeleteFromOrganization
 {
     public const OPERATION_ID    = 'codespaces/delete-from-organization';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/members/{username}/codespaces/{codespace_name}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The handle for the GitHub user account. **/
@@ -40,11 +39,10 @@ final class DeleteFromOrganization
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{username}', '{codespace_name}'], [$this->org, $this->username, $this->codespaceName], self::PATH));
+        return new Request('DELETE', str_replace(['{org}', '{username}', '{codespace_name}'], [$this->org, $this->username, $this->codespaceName], '/orgs/{org}/members/{username}/codespaces/{codespace_name}'));
     }
 
-    /** @return Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -101,7 +99,7 @@ final class DeleteFromOrganization
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

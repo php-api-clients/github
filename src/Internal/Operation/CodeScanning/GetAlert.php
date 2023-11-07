@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\CodeScanning;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class GetAlert
 {
     public const OPERATION_ID    = 'code-scanning/get-alert';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,11 +39,10 @@ final class GetAlert
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{alert_number}'], [$this->owner, $this->repo, $this->alertNumber], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{alert_number}'], [$this->owner, $this->repo, $this->alertNumber], '/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}'));
     }
 
-    /** @return Schema\CodeScanningAlert|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\CodeScanningAlert|array
+    public function createResponse(ResponseInterface $response): Schema\CodeScanningAlert|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -93,7 +91,7 @@ final class GetAlert
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

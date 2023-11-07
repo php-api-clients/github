@@ -24,12 +24,11 @@ final readonly class GetAllDeploymentProtectionRules
     {
     }
 
-    /** @return */
-    public function call(string $environmentName, string $repo, string $owner): Ok|array
+    public function call(string $environmentName, string $repo, string $owner): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetAllDeploymentProtectionRules($this->responseSchemaValidator, $this->hydrator, $environmentName, $repo, $owner);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

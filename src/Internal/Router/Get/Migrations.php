@@ -9,6 +9,7 @@ use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Import;
 use ApiClients\Client\GitHub\Schema\Migration;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -21,8 +22,8 @@ final class Migrations
     {
     }
 
-    /** @return Observable<Schema\Migration>|array{code:int} */
-    public function listForAuthenticatedUser(array $params): iterable
+    /** @return iterable<int,Schema\Migration>|WithoutBody */
+    public function listForAuthenticatedUser(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
@@ -42,7 +43,7 @@ final class Migrations
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Migration> */
+    /** @return iterable<int,Schema\Migration> */
     public function listForOrg(array $params): iterable
     {
         $arguments = [];
@@ -75,8 +76,7 @@ final class Migrations
         return $operator->call($arguments['org'], $arguments['exclude'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\Migration|array{code:int} */
-    public function getStatusForAuthenticatedUser(array $params): Migration|array
+    public function getStatusForAuthenticatedUser(array $params): Migration|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('migration_id', $params) === false) {
@@ -96,8 +96,7 @@ final class Migrations
         return $operator->call($arguments['migration_id'], $arguments['exclude']);
     }
 
-    /** @return */
-    public function getStatusForOrg(array $params): Migration|array
+    public function getStatusForOrg(array $params): Migration
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -123,8 +122,7 @@ final class Migrations
         return $operator->call($arguments['org'], $arguments['migration_id'], $arguments['exclude']);
     }
 
-    /** @return */
-    public function getImportStatus(array $params): Import|array
+    public function getImportStatus(array $params): Import
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -144,8 +142,7 @@ final class Migrations
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return array{code:int} */
-    public function getArchiveForAuthenticatedUser(array $params): array
+    public function getArchiveForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('migration_id', $params) === false) {
@@ -159,7 +156,7 @@ final class Migrations
         return $operator->call($arguments['migration_id']);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listReposForAuthenticatedUser(array $params): iterable
     {
         $arguments = [];
@@ -186,8 +183,7 @@ final class Migrations
         return $operator->call($arguments['migration_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return array{code:int} */
-    public function downloadArchiveForOrg(array $params): array
+    public function downloadArchiveForOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -207,7 +203,7 @@ final class Migrations
         return $operator->call($arguments['org'], $arguments['migration_id']);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listReposForOrg(array $params): iterable
     {
         $arguments = [];
@@ -240,7 +236,7 @@ final class Migrations
         return $operator->call($arguments['org'], $arguments['migration_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\PorterAuthor> */
+    /** @return iterable<int,Schema\PorterAuthor> */
     public function getCommitAuthors(array $params): iterable
     {
         $arguments = [];
@@ -267,7 +263,7 @@ final class Migrations
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['since']);
     }
 
-    /** @return Observable<Schema\PorterLargeFile> */
+    /** @return iterable<int,Schema\PorterLargeFile> */
     public function getLargeFiles(array $params): iterable
     {
         $arguments = [];

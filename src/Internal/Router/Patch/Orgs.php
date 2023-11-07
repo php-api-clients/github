@@ -11,6 +11,7 @@ use ApiClients\Client\GitHub\Schema\OrgHook;
 use ApiClients\Client\GitHub\Schema\OrgMembership;
 use ApiClients\Client\GitHub\Schema\WebhookConfig;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -23,8 +24,7 @@ final class Orgs
     {
     }
 
-    /** @return */
-    public function update(array $params): OrganizationFull|array
+    public function update(array $params): OrganizationFull
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -38,8 +38,7 @@ final class Orgs
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return */
-    public function updateWebhook(array $params): OrgHook|array
+    public function updateWebhook(array $params): OrgHook
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -59,7 +58,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['hook_id'], $params);
     }
 
-    /** @return Observable<Schema\OrgCustomProperty> */
+    /** @return iterable<int,Schema\OrgCustomProperty> */
     public function createOrUpdateCustomProperties(array $params): iterable
     {
         $arguments = [];
@@ -74,8 +73,7 @@ final class Orgs
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return Observable<Schema\OrgRepoCustomPropertyValues> */
-    public function createOrUpdateCustomPropertiesValuesForRepos(array $params): iterable
+    public function createOrUpdateCustomPropertiesValuesForRepos(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -89,8 +87,7 @@ final class Orgs
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return */
-    public function updateMembershipForAuthenticatedUser(array $params): OrgMembership|array
+    public function updateMembershipForAuthenticatedUser(array $params): OrgMembership
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -104,8 +101,7 @@ final class Orgs
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return */
-    public function updateWebhookConfigForOrg(array $params): WebhookConfig|array
+    public function updateWebhookConfigForOrg(array $params): WebhookConfig
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

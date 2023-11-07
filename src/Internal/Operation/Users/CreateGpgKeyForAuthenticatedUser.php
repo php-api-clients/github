@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Users;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -23,8 +24,6 @@ final class CreateGpgKeyForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/create-gpg-key-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /user/gpg_keys';
-    private const METHOD         = 'POST';
-    private const PATH           = '/user/gpg_keys';
 
     public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\User\GpgKeys $hydrator)
     {
@@ -34,11 +33,10 @@ final class CreateGpgKeyForAuthenticatedUser
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Users\CreateGpgKeyForAuthenticatedUser\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace([], [], '/user/gpg_keys'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\GpgKey|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\GpgKey|array
+    public function createResponse(ResponseInterface $response): Schema\GpgKey|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -95,7 +93,7 @@ final class CreateGpgKeyForAuthenticatedUser
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

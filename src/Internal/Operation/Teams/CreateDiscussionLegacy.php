@@ -22,8 +22,6 @@ final class CreateDiscussionLegacy
 {
     public const OPERATION_ID    = 'teams/create-discussion-legacy';
     public const OPERATION_MATCH = 'POST /teams/{team_id}/discussions';
-    private const METHOD         = 'POST';
-    private const PATH           = '/teams/{team_id}/discussions';
     /**The unique identifier of the team. **/
     private int $teamId;
 
@@ -36,7 +34,7 @@ final class CreateDiscussionLegacy
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Teams\CreateDiscussionLegacy\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{team_id}'], [$this->teamId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{team_id}'], [$this->teamId], '/teams/{team_id}/discussions'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\TeamDiscussion

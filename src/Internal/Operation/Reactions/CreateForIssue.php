@@ -23,8 +23,6 @@ final class CreateForIssue
 {
     public const OPERATION_ID    = 'reactions/create-for-issue';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/issues/{issue_number}/reactions';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/reactions';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -43,7 +41,7 @@ final class CreateForIssue
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Reactions\CreateForIssue\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{issue_number}'], [$this->owner, $this->repo, $this->issueNumber], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}', '{issue_number}'], [$this->owner, $this->repo, $this->issueNumber], '/repos/{owner}/{repo}/issues/{issue_number}/reactions'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Reaction

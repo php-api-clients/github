@@ -24,12 +24,11 @@ final readonly class GetRevision
     {
     }
 
-    /** @return */
-    public function call(string $gistId, string $sha): GistSimple|array
+    public function call(string $gistId, string $sha): GistSimple
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\GetRevision($this->responseSchemaValidator, $this->hydrator, $gistId, $sha);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GistSimple|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GistSimple {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

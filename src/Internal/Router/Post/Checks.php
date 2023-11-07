@@ -21,8 +21,7 @@ final class Checks
     {
     }
 
-    /** @return */
-    public function create(array $params): CheckRun|array
+    public function create(array $params): CheckRun
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -42,8 +41,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
-    public function createSuite(array $params): CheckSuite|array
+    public function createSuite(array $params): CheckSuite
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -63,8 +61,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
-    public function rerequestRun(array $params): EmptyObject|array
+    public function rerequestRun(array $params): EmptyObject
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -90,8 +87,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['check_run_id']);
     }
 
-    /** @return */
-    public function rerequestSuite(array $params): EmptyObject|array
+    public function rerequestSuite(array $params): EmptyObject
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

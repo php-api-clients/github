@@ -24,8 +24,6 @@ final class ListReceivedEventsForUser
 {
     public const OPERATION_ID    = 'activity/list-received-events-for-user';
     public const OPERATION_MATCH = 'GET /users/{username}/received_events';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/received_events';
     /**The handle for the GitHub user account. **/
     private string $username;
     /**The number of results per page (max 100). **/
@@ -42,7 +40,7 @@ final class ListReceivedEventsForUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{username}', '{per_page}', '{page}'], [$this->username, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{username}', '{per_page}', '{page}'], [$this->username, $this->perPage, $this->page], '/users/{username}/received_events' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\Event> */
@@ -63,7 +61,7 @@ final class ListReceivedEventsForUser
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Event::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Event::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Event::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

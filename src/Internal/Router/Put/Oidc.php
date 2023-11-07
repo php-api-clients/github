@@ -19,8 +19,7 @@ final class Oidc
     {
     }
 
-    /** @return */
-    public function updateOidcCustomSubTemplateForOrg(array $params): EmptyObject|array
+    public function updateOidcCustomSubTemplateForOrg(array $params): EmptyObject
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

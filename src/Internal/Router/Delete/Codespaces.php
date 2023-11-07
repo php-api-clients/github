@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Codespaces\DeleteForAuthenticatedUser\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,8 +20,7 @@ final class Codespaces
     {
     }
 
-    /** @return Schema\Operations\Codespaces\DeleteForAuthenticatedUser\Response\ApplicationJson\Accepted\Application\Json|array{code:int} */
-    public function deleteForAuthenticatedUser(array $params): Json|array
+    public function deleteForAuthenticatedUser(array $params): Json|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {
@@ -35,8 +34,7 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
-    /** @return array{code:int} */
-    public function deleteSecretForAuthenticatedUser(array $params): array
+    public function deleteSecretForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('secret_name', $params) === false) {
@@ -50,8 +48,7 @@ final class Codespaces
         return $operator->call($arguments['secret_name']);
     }
 
-    /** @return Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|array{code:int} */
-    public function deleteFromOrganization(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|array
+    public function deleteFromOrganization(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -77,8 +74,7 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['username'], $arguments['codespace_name']);
     }
 
-    /** @return array{code:int} */
-    public function deleteRepoSecret(array $params): array
+    public function deleteRepoSecret(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -104,8 +100,7 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name']);
     }
 
-    /** @return array{code:int} */
-    public function removeRepositoryForSecretForAuthenticatedUser(array $params): array
+    public function removeRepositoryForSecretForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('secret_name', $params) === false) {
@@ -125,8 +120,7 @@ final class Codespaces
         return $operator->call($arguments['secret_name'], $arguments['repository_id']);
     }
 
-    /** @return array{code:int} */
-    public function deleteCodespacesAccessUsers(array $params): array
+    public function deleteCodespacesAccessUsers(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -140,8 +134,7 @@ final class Codespaces
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return array{code:int} */
-    public function deleteOrgSecret(array $params): array
+    public function deleteOrgSecret(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -161,8 +154,7 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
-    /** @return array{code:int} */
-    public function removeSelectedRepoFromOrgSecret(array $params): array
+    public function removeSelectedRepoFromOrgSecret(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

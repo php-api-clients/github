@@ -8,6 +8,7 @@ use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\License;
 use ApiClients\Client\GitHub\Schema\LicenseContent;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 
 final class Licenses
 {
@@ -15,26 +16,24 @@ final class Licenses
     {
     }
 
-    /** @return Observable<Schema\LicenseSimple>|array{code:int} */
-    public function getAllCommonlyUsed(bool $featured, int $perPage, int $page): iterable
+    /** @return iterable<int,Schema\LicenseSimple>|WithoutBody */
+    public function getAllCommonlyUsed(bool $featured, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->licenses👷GetAllCommonlyUsed()->call($featured, $perPage, $page);
     }
 
-    /** @return Observable<Schema\LicenseSimple>|array{code:int} */
-    public function getAllCommonlyUsedListing(bool $featured, int $perPage, int $page): iterable
+    /** @return iterable<int,Schema\LicenseSimple>|WithoutBody */
+    public function getAllCommonlyUsedListing(bool $featured, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->licenses👷GetAllCommonlyUsedListing()->call($featured, $perPage, $page);
     }
 
-    /** @return Schema\License|array{code:int} */
-    public function get(string $license): License|array
+    public function get(string $license): License|WithoutBody
     {
         return $this->operators->licenses👷Get()->call($license);
     }
 
-    /** @return */
-    public function getForRepo(string $owner, string $repo): LicenseContent|array
+    public function getForRepo(string $owner, string $repo): LicenseContent
     {
         return $this->operators->licenses👷GetForRepo()->call($owner, $repo);
     }

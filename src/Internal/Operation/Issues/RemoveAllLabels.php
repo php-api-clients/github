@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Issues;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class RemoveAllLabels
 {
     public const OPERATION_ID    = 'issues/remove-all-labels';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/issues/{issue_number}/labels';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/labels';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,11 +39,10 @@ final class RemoveAllLabels
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{issue_number}'], [$this->owner, $this->repo, $this->issueNumber], self::PATH));
+        return new Request('DELETE', str_replace(['{owner}', '{repo}', '{issue_number}'], [$this->owner, $this->repo, $this->issueNumber], '/repos/{owner}/{repo}/issues/{issue_number}/labels'));
     }
 
-    /** @return Schema\BasicError|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\BasicError|array
+    public function createResponse(ResponseInterface $response): Schema\BasicError|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -85,7 +83,7 @@ final class RemoveAllLabels
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

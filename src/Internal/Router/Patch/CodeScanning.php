@@ -21,8 +21,7 @@ final class CodeScanning
     {
     }
 
-    /** @return */
-    public function updateDefaultSetup(array $params): EmptyObject|CodeScanningDefaultSetupUpdateResponse|array
+    public function updateDefaultSetup(array $params): EmptyObject|CodeScanningDefaultSetupUpdateResponse
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -42,8 +41,7 @@ final class CodeScanning
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
-    public function updateAlert(array $params): CodeScanningAlert|array
+    public function updateAlert(array $params): CodeScanningAlert
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

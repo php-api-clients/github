@@ -25,21 +25,21 @@ final class Assignee implements PropertyCaster
             $signatureChunks = array_unique(array_keys($value));
             sort($signatureChunks);
             $signature = implode('|', $signatureChunks);
-            if ($signature === 'name|email|login|id|node_id|avatar_url|gravatar_id|url|html_url|followers_url|following_url|gists_url|starred_url|subscriptions_url|organizations_url|repos_url|events_url|received_events_url|type|site_admin|starred_at') {
+            if ($signature === 'avatar_url|email|events_url|followers_url|following_url|gists_url|gravatar_id|html_url|id|login|name|node_id|organizations_url|received_events_url|repos_url|site_admin|starred_at|starred_url|subscriptions_url|type|url') {
                 try {
                     return $hydrator->hydrateObject(Schema\SimpleUser::class, $value);
                 } catch (Throwable) {
                 }
             }
 
-            if ($signature === 'id|node_id|name|slug|description|privacy|notification_setting|permission|permissions|url|html_url|members_url|repositories_url|parent') {
+            if ($signature === 'description|html_url|id|members_url|name|node_id|notification_setting|parent|permission|permissions|privacy|repositories_url|slug|url') {
                 try {
                     return $hydrator->hydrateObject(Schema\Team::class, $value);
                 } catch (Throwable) {
                 }
             }
 
-            if ($signature === 'login|url|id|node_id|repos_url|events_url|hooks_url|issues_url|members_url|public_members_url|avatar_url|description|blog|html_url|name|company|location|email|has_organization_projects|has_repository_projects|is_verified|public_repos|public_gists|followers|following|type|created_at|updated_at|plan') {
+            if ($signature === 'avatar_url|blog|company|created_at|description|email|events_url|followers|following|has_organization_projects|has_repository_projects|hooks_url|html_url|id|is_verified|issues_url|location|login|members_url|name|node_id|plan|public_gists|public_members_url|public_repos|repos_url|type|updated_at|url') {
                 try {
                     return $hydrator->hydrateObject(Schema\Organization::class, $value);
                 } catch (Throwable) {

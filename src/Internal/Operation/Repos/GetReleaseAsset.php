@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Repos;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class GetReleaseAsset
 {
     public const OPERATION_ID    = 'repos/get-release-asset';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/releases/assets/{asset_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/releases/assets/{asset_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,11 +39,10 @@ final class GetReleaseAsset
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{asset_id}'], [$this->owner, $this->repo, $this->assetId], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{asset_id}'], [$this->owner, $this->repo, $this->assetId], '/repos/{owner}/{repo}/releases/assets/{asset_id}'));
     }
 
-    /** @return Schema\ReleaseAsset|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\ReleaseAsset|array
+    public function createResponse(ResponseInterface $response): Schema\ReleaseAsset|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -77,7 +75,7 @@ final class GetReleaseAsset
              * Found
              **/
             case 302:
-                return ['code' => 302];
+                return new WithoutBody(302, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

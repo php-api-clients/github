@@ -21,8 +21,7 @@ final class Pulls
     {
     }
 
-    /** @return */
-    public function merge(array $params): PullRequestMergeResult|array
+    public function merge(array $params): PullRequestMergeResult
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -48,8 +47,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    /** @return */
-    public function updateBranch(array $params): Json|array
+    public function updateBranch(array $params): Json
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -75,8 +73,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    /** @return */
-    public function updateReview(array $params): PullRequestReview|array
+    public function updateReview(array $params): PullRequestReview
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -108,8 +105,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['review_id'], $params);
     }
 
-    /** @return */
-    public function dismissReview(array $params): PullRequestReview|array
+    public function dismissReview(array $params): PullRequestReview
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

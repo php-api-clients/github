@@ -25,8 +25,6 @@ final class ListForUserListing
 {
     public const OPERATION_ID    = 'projects/list-for-user';
     public const OPERATION_MATCH = 'LIST /users/{username}/projects';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/projects';
     /**The handle for the GitHub user account. **/
     private string $username;
     /**Indicates the state of the projects to return. **/
@@ -46,7 +44,7 @@ final class ListForUserListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{username}', '{state}', '{per_page}', '{page}'], [$this->username, $this->state, $this->perPage, $this->page], self::PATH . '?state={state}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{username}', '{state}', '{per_page}', '{page}'], [$this->username, $this->state, $this->perPage, $this->page], '/users/{username}/projects' . '?state={state}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\Project> */
@@ -67,7 +65,7 @@ final class ListForUserListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Project::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Project::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Project::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

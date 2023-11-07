@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Apps;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class ListReposAccessibleToInstallation
 {
     public const OPERATION_ID    = 'apps/list-repos-accessible-to-installation';
     public const OPERATION_MATCH = 'GET /installation/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/installation/repositories';
     /**The number of results per page (max 100). **/
     private int $perPage;
     /**Page number of the results to fetch. **/
@@ -37,11 +36,10 @@ final class ListReposAccessibleToInstallation
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{per_page}', '{page}'], [$this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{per_page}', '{page}'], [$this->perPage, $this->page], '/installation/repositories' . '?per_page={per_page}&page={page}'));
     }
 
-    /** @return Schema\Operations\Apps\ListReposAccessibleToInstallation\Response\ApplicationJson\Ok|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Apps\ListReposAccessibleToInstallation\Response\ApplicationJson\Ok|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Apps\ListReposAccessibleToInstallation\Response\ApplicationJson\Ok|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -82,7 +80,7 @@ final class ListReposAccessibleToInstallation
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Gists;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class Fork
 {
     public const OPERATION_ID    = 'gists/fork';
     public const OPERATION_MATCH = 'POST /gists/{gist_id}/forks';
-    private const METHOD         = 'POST';
-    private const PATH           = '/gists/{gist_id}/forks';
     /**The unique identifier of the gist. **/
     private string $gistId;
 
@@ -34,11 +33,10 @@ final class Fork
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{gist_id}'], [$this->gistId], self::PATH));
+        return new Request('POST', str_replace(['{gist_id}'], [$this->gistId], '/gists/{gist_id}/forks'));
     }
 
-    /** @return Schema\BaseGist|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\BaseGist|array
+    public function createResponse(ResponseInterface $response): Schema\BaseGist|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -87,7 +85,7 @@ final class Fork
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

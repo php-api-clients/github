@@ -24,12 +24,11 @@ final readonly class GetRepoVariable
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $name): ActionsVariable|array
+    public function call(string $owner, string $repo, string $name): ActionsVariable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetRepoVariable($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $name);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsVariable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsVariable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

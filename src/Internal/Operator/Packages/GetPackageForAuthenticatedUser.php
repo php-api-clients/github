@@ -24,12 +24,11 @@ final readonly class GetPackageForAuthenticatedUser
     {
     }
 
-    /** @return */
-    public function call(string $packageType, string $packageName): Package|array
+    public function call(string $packageType, string $packageName): Package
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\GetPackageForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Package|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Package {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

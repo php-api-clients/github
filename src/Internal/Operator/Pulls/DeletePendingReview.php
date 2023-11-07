@@ -24,12 +24,11 @@ final readonly class DeletePendingReview
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $pullNumber, int $reviewId): PullRequestReview|array
+    public function call(string $owner, string $repo, int $pullNumber, int $reviewId): PullRequestReview
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\DeletePendingReview($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber, $reviewId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PullRequestReview|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PullRequestReview {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

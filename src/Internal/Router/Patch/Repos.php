@@ -16,6 +16,7 @@ use ApiClients\Client\GitHub\Schema\RepositoryInvitation;
 use ApiClients\Client\GitHub\Schema\StatusCheckPolicy;
 use ApiClients\Client\GitHub\Schema\WebhookConfig;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -28,8 +29,7 @@ final class Repos
     {
     }
 
-    /** @return */
-    public function update(array $params): FullRepository|BasicError|array
+    public function update(array $params): FullRepository|BasicError
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -49,8 +49,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return array{code:int} */
-    public function acceptInvitationForAuthenticatedUser(array $params): array
+    public function acceptInvitationForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('invitation_id', $params) === false) {
@@ -64,8 +63,7 @@ final class Repos
         return $operator->call($arguments['invitation_id']);
     }
 
-    /** @return */
-    public function updateCommitComment(array $params): CommitComment|array
+    public function updateCommitComment(array $params): CommitComment
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -91,8 +89,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $params);
     }
 
-    /** @return */
-    public function updateWebhook(array $params): Hook|array
+    public function updateWebhook(array $params): Hook
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -118,8 +115,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id'], $params);
     }
 
-    /** @return */
-    public function updateInvitation(array $params): RepositoryInvitation|array
+    public function updateInvitation(array $params): RepositoryInvitation
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -145,8 +141,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['invitation_id'], $params);
     }
 
-    /** @return */
-    public function updateRelease(array $params): Release|array
+    public function updateRelease(array $params): Release
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -172,8 +167,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id'], $params);
     }
 
-    /** @return */
-    public function updateWebhookConfigForRepo(array $params): WebhookConfig|array
+    public function updateWebhookConfigForRepo(array $params): WebhookConfig
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -199,8 +193,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id'], $params);
     }
 
-    /** @return */
-    public function updateReleaseAsset(array $params): ReleaseAsset|array
+    public function updateReleaseAsset(array $params): ReleaseAsset
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -226,8 +219,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['asset_id'], $params);
     }
 
-    /** @return */
-    public function updatePullRequestReviewProtection(array $params): ProtectedBranchPullRequestReview|array
+    public function updatePullRequestReviewProtection(array $params): ProtectedBranchPullRequestReview
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -253,8 +245,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch'], $params);
     }
 
-    /** @return */
-    public function updateStatusCheckProtection(array $params): StatusCheckPolicy|array
+    public function updateStatusCheckProtection(array $params): StatusCheckPolicy
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

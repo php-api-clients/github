@@ -24,8 +24,6 @@ final class ListClassroomsListing
 {
     public const OPERATION_ID    = 'classroom/list-classrooms';
     public const OPERATION_MATCH = 'LIST /classrooms';
-    private const METHOD         = 'GET';
-    private const PATH           = '/classrooms';
     /**Page number of the results to fetch. **/
     private int $page;
     /**The number of results per page (max 100). **/
@@ -39,7 +37,7 @@ final class ListClassroomsListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{page}', '{per_page}'], [$this->page, $this->perPage], self::PATH . '?page={page}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{page}', '{per_page}'], [$this->page, $this->perPage], '/classrooms' . '?page={page}&per_page={per_page}'));
     }
 
     /** @return Observable<Schema\SimpleClassroom> */
@@ -60,7 +58,7 @@ final class ListClassroomsListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\SimpleClassroom::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\SimpleClassroom::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\SimpleClassroom::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

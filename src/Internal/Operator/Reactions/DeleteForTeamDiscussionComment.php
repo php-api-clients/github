@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Reactions;
 
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
 use Rx\Observable;
@@ -21,12 +22,11 @@ final readonly class DeleteForTeamDiscussionComment
     {
     }
 
-    /** @return array{code:int} */
-    public function call(string $org, string $teamSlug, int $discussionNumber, int $commentNumber, int $reactionId): array
+    public function call(string $org, string $teamSlug, int $discussionNumber, int $commentNumber, int $reactionId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Reactions\DeleteForTeamDiscussionComment($org, $teamSlug, $discussionNumber, $commentNumber, $reactionId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): WithoutBody {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -22,8 +22,6 @@ final class CreateOrgVariable
 {
     public const OPERATION_ID    = 'actions/create-org-variable';
     public const OPERATION_MATCH = 'POST /orgs/{org}/actions/variables';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/actions/variables';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -36,7 +34,7 @@ final class CreateOrgVariable
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\CreateOrgVariable\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{org}'], [$this->org], '/orgs/{org}/actions/variables'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\EmptyObject

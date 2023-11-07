@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\List;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,8 +21,8 @@ final class Licenses
     {
     }
 
-    /** @return Observable<Schema\LicenseSimple>|array{code:int} */
-    public function getAllCommonlyUsedListing(array $params): iterable
+    /** @return iterable<int,Schema\LicenseSimple>|WithoutBody */
+    public function getAllCommonlyUsedListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('featured', $params) === false) {

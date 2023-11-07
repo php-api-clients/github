@@ -24,8 +24,6 @@ final class ListOrgEventsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'activity/list-org-events-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /users/{username}/events/orgs/{org}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/events/orgs/{org}';
     /**The handle for the GitHub user account. **/
     private string $username;
     /**The organization name. The name is not case sensitive. **/
@@ -45,7 +43,7 @@ final class ListOrgEventsForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{username}', '{org}', '{per_page}', '{page}'], [$this->username, $this->org, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{username}', '{org}', '{per_page}', '{page}'], [$this->username, $this->org, $this->perPage, $this->page], '/users/{username}/events/orgs/{org}' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\Event> */
@@ -66,7 +64,7 @@ final class ListOrgEventsForAuthenticatedUser
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Event::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Event::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Event::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

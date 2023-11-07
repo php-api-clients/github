@@ -25,25 +25,26 @@ final class ListCustomPropertiesValuesForReposListing
 {
     public const OPERATION_ID    = 'orgs/list-custom-properties-values-for-repos';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/properties/values';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/properties/values';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
+    /**Finds repositories in the organization with a query containing one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as the web interface for GitHub. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/rest/search/search#constructing-a-search-query). See "[Searching for repositories](https://docs.github.com/articles/searching-for-repositories/)" for a detailed list of qualifiers. **/
+    private string $repositoryQuery;
     /**The number of results per page (max 100). **/
     private int $perPage;
     /**Page number of the results to fetch. **/
     private int $page;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Properties\Values $hydrator, string $org, int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Properties\Values $hydrator, string $org, string $repositoryQuery, int $perPage = 30, int $page = 1)
     {
-        $this->org     = $org;
-        $this->perPage = $perPage;
-        $this->page    = $page;
+        $this->org             = $org;
+        $this->repositoryQuery = $repositoryQuery;
+        $this->perPage         = $perPage;
+        $this->page            = $page;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{per_page}', '{page}'], [$this->org, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{repository_query}', '{per_page}', '{page}'], [$this->org, $this->repositoryQuery, $this->perPage, $this->page], '/orgs/{org}/properties/values' . '?repository_query={repository_query}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\OrgRepoCustomPropertyValues> */
@@ -64,7 +65,7 @@ final class ListCustomPropertiesValuesForReposListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrgRepoCustomPropertyValues::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\OrgRepoCustomPropertyValues::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\OrgRepoCustomPropertyValues::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

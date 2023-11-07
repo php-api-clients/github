@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Packages;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class RestorePackageForUser
 {
     public const OPERATION_ID    = 'packages/restore-package-for-user';
     public const OPERATION_MATCH = 'POST /users/{username}/packages/{package_type}/{package_name}/restore';
-    private const METHOD         = 'POST';
-    private const PATH           = '/users/{username}/packages/{package_type}/{package_name}/restore';
     /**The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry. **/
     private string $packageType;
     /**The name of the package. **/
@@ -43,11 +42,10 @@ final class RestorePackageForUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{package_type}', '{package_name}', '{username}', '{token}'], [$this->packageType, $this->packageName, $this->username, $this->token], self::PATH . '?token={token}'));
+        return new Request('POST', str_replace(['{package_type}', '{package_name}', '{username}', '{token}'], [$this->packageType, $this->packageName, $this->username, $this->token], '/users/{username}/packages/{package_type}/{package_name}/restore' . '?token={token}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -88,7 +86,7 @@ final class RestorePackageForUser
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

@@ -21,8 +21,6 @@ final class ListEnvironmentVariables
 {
     public const OPERATION_ID    = 'actions/list-environment-variables';
     public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/variables';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/variables';
     /**The unique identifier of the repository. **/
     private int $repositoryId;
     /**The name of the environment. **/
@@ -42,7 +40,7 @@ final class ListEnvironmentVariables
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{repository_id}', '{environment_name}', '{per_page}', '{page}'], [$this->repositoryId, $this->environmentName, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{repository_id}', '{environment_name}', '{per_page}', '{page}'], [$this->repositoryId, $this->environmentName, $this->perPage, $this->page], '/repositories/{repository_id}/environments/{environment_name}/variables' . '?per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListEnvironmentVariables\Response\ApplicationJson\Ok\Application\Json

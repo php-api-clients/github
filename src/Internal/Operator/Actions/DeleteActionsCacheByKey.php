@@ -24,12 +24,11 @@ final readonly class DeleteActionsCacheByKey
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $key, string $ref): ActionsCacheList|array
+    public function call(string $owner, string $repo, string $key, string $ref): ActionsCacheList
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DeleteActionsCacheByKey($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $key, $ref);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsCacheList|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsCacheList {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

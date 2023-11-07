@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Codespace;
 use ApiClients\Client\GitHub\Schema\GpgKey;
 use ApiClients\Client\GitHub\Schema\Key;
@@ -12,6 +13,7 @@ use ApiClients\Client\GitHub\Schema\Migration;
 use ApiClients\Client\GitHub\Schema\Project;
 use ApiClients\Client\GitHub\Schema\Repository;
 use ApiClients\Client\GitHub\Schema\SshSigningKey;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Three
@@ -20,8 +22,8 @@ final class Three
     {
     }
 
-    /** @return string|array{code:int}||Observable<Schema\Email>|Schema\GpgKey|Schema\Key|Schema\Migration|Schema\Project|Schema\Repository|Observable<Schema\SocialAccount>|Schema\SshSigningKey */
-    public function call(string $call, array $params, array $pathChunks): string|Codespace|iterable|GpgKey|Key|Migration|Project|Repository|SshSigningKey
+    /** @return string|WithoutBody|Schema\Codespace|iterable<int,Schema\Email>|Schema\GpgKey|Schema\Key|Schema\Migration|Schema\Project|Schema\Repository|iterable<int,Schema\SocialAccount>|Schema\SshSigningKey */
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|string|Codespace|iterable|GpgKey|Key|Migration|Project|Repository|SshSigningKey
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'markdown') {

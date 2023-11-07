@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Internal\Operation\Interactions;
 
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
@@ -15,8 +16,6 @@ final class RemoveRestrictionsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'interactions/remove-restrictions-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/interaction-limits';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/interaction-limits';
 
     public function __construct()
     {
@@ -24,11 +23,10 @@ final class RemoveRestrictionsForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace([], [], self::PATH));
+        return new Request('DELETE', str_replace([], [], '/user/interaction-limits'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code = $response->getStatusCode();
         switch ($code) {
@@ -36,7 +34,7 @@ final class RemoveRestrictionsForAuthenticatedUser
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

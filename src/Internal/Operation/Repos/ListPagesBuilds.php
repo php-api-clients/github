@@ -24,8 +24,6 @@ final class ListPagesBuilds
 {
     public const OPERATION_ID    = 'repos/list-pages-builds';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/pages/builds';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/pages/builds';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -45,7 +43,7 @@ final class ListPagesBuilds
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->perPage, $this->page], '/repos/{owner}/{repo}/pages/builds' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\PageBuild> */
@@ -66,7 +64,7 @@ final class ListPagesBuilds
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PageBuild::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\PageBuild::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\PageBuild::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

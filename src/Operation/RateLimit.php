@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operation;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\RateLimitOverview;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 
 final class RateLimit
 {
@@ -14,8 +14,7 @@ final class RateLimit
     {
     }
 
-    /** @return Schema\RateLimitOverview|array{code:int} */
-    public function get(): RateLimitOverview|array
+    public function get(): RateLimitOverview|WithoutBody
     {
         return $this->operators->rateLimit👷Get()->call();
     }

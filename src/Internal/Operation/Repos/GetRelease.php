@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Repos;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -21,8 +22,6 @@ final class GetRelease
 {
     public const OPERATION_ID    = 'repos/get-release';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/releases/{release_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/releases/{release_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -39,11 +38,10 @@ final class GetRelease
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{release_id}'], [$this->owner, $this->repo, $this->releaseId], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{release_id}'], [$this->owner, $this->repo, $this->releaseId], '/repos/{owner}/{repo}/releases/{release_id}'));
     }
 
-    /** @return Schema\Release|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Release|array
+    public function createResponse(ResponseInterface $response): Schema\Release|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -68,7 +66,7 @@ final class GetRelease
              * Unauthorized
              **/
             case 401:
-                return ['code' => 401];
+                return new WithoutBody(401, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

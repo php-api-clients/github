@@ -23,8 +23,6 @@ final class ResetToken
 {
     public const OPERATION_ID    = 'apps/reset-token';
     public const OPERATION_MATCH = 'PATCH /applications/{client_id}/token';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/applications/{client_id}/token';
     /**The client ID of the GitHub app. **/
     private string $clientId;
 
@@ -37,7 +35,7 @@ final class ResetToken
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Apps\ResetToken\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{client_id}'], [$this->clientId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{client_id}'], [$this->clientId], '/applications/{client_id}/token'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Authorization

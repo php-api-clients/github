@@ -21,8 +21,6 @@ final class GetDiscussionInOrg
 {
     public const OPERATION_ID    = 'teams/get-discussion-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The slug of the team name. **/
@@ -39,7 +37,7 @@ final class GetDiscussionInOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{team_slug}', '{discussion_number}'], [$this->org, $this->teamSlug, $this->discussionNumber], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{team_slug}', '{discussion_number}'], [$this->org, $this->teamSlug, $this->discussionNumber], '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\TeamDiscussion

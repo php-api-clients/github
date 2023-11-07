@@ -22,8 +22,6 @@ final class GetReadme
 {
     public const OPERATION_ID    = 'repos/get-readme';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/readme';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/readme';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,7 +38,7 @@ final class GetReadme
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{ref}'], [$this->owner, $this->repo, $this->ref], self::PATH . '?ref={ref}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{ref}'], [$this->owner, $this->repo, $this->ref], '/repos/{owner}/{repo}/readme' . '?ref={ref}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\ContentFile

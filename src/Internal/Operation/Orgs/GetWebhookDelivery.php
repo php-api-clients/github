@@ -22,8 +22,6 @@ final class GetWebhookDelivery
 {
     public const OPERATION_ID    = 'orgs/get-webhook-delivery';
     public const OPERATION_MATCH = 'GET /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery. **/
@@ -37,7 +35,7 @@ final class GetWebhookDelivery
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{hook_id}', '{delivery_id}'], [$this->org, $this->hookId, $this->deliveryId], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{hook_id}', '{delivery_id}'], [$this->org, $this->hookId, $this->deliveryId], '/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\HookDelivery

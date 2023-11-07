@@ -24,12 +24,11 @@ final readonly class GetViews
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $per = 'day'): ViewTraffic|array
+    public function call(string $owner, string $repo, string $per = 'day'): ViewTraffic
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetViews($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $per);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ViewTraffic|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ViewTraffic {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

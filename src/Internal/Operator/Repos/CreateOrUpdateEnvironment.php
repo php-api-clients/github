@@ -24,12 +24,11 @@ final readonly class CreateOrUpdateEnvironment
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $environmentName, array $params): Environment|array
+    public function call(string $owner, string $repo, string $environmentName, array $params): Environment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateOrUpdateEnvironment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Environment|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Environment {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -15,38 +15,32 @@ final class Billing
     {
     }
 
-    /** @return */
-    public function getGithubActionsBillingOrg(string $org): ActionsBillingUsage|array
+    public function getGithubActionsBillingOrg(string $org): ActionsBillingUsage
     {
         return $this->operators->billing👷GetGithubActionsBillingOrg()->call($org);
     }
 
-    /** @return */
-    public function getGithubPackagesBillingOrg(string $org): PackagesBillingUsage|array
+    public function getGithubPackagesBillingOrg(string $org): PackagesBillingUsage
     {
         return $this->operators->billing👷GetGithubPackagesBillingOrg()->call($org);
     }
 
-    /** @return */
-    public function getSharedStorageBillingOrg(string $org): CombinedBillingUsage|array
+    public function getSharedStorageBillingOrg(string $org): CombinedBillingUsage
     {
         return $this->operators->billing👷GetSharedStorageBillingOrg()->call($org);
     }
 
-    /** @return */
-    public function getGithubActionsBillingUser(string $username): ActionsBillingUsage|array
+    public function getGithubActionsBillingUser(string $username): ActionsBillingUsage
     {
         return $this->operators->billing👷GetGithubActionsBillingUser()->call($username);
     }
 
-    /** @return */
-    public function getGithubPackagesBillingUser(string $username): PackagesBillingUsage|array
+    public function getGithubPackagesBillingUser(string $username): PackagesBillingUsage
     {
         return $this->operators->billing👷GetGithubPackagesBillingUser()->call($username);
     }
 
-    /** @return */
-    public function getSharedStorageBillingUser(string $username): CombinedBillingUsage|array
+    public function getSharedStorageBillingUser(string $username): CombinedBillingUsage
     {
         return $this->operators->billing👷GetSharedStorageBillingUser()->call($username);
     }

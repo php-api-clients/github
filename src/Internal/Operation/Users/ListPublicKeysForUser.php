@@ -24,8 +24,6 @@ final class ListPublicKeysForUser
 {
     public const OPERATION_ID    = 'users/list-public-keys-for-user';
     public const OPERATION_MATCH = 'GET /users/{username}/keys';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/keys';
     /**The handle for the GitHub user account. **/
     private string $username;
     /**The number of results per page (max 100). **/
@@ -42,7 +40,7 @@ final class ListPublicKeysForUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{username}', '{per_page}', '{page}'], [$this->username, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{username}', '{per_page}', '{page}'], [$this->username, $this->perPage, $this->page], '/users/{username}/keys' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\KeySimple> */
@@ -63,7 +61,7 @@ final class ListPublicKeysForUser
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\KeySimple::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\KeySimple::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\KeySimple::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

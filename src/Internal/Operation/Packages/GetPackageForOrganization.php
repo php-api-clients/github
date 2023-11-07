@@ -21,8 +21,6 @@ final class GetPackageForOrganization
 {
     public const OPERATION_ID    = 'packages/get-package-for-organization';
     public const OPERATION_MATCH = 'GET /orgs/{org}/packages/{package_type}/{package_name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/packages/{package_type}/{package_name}';
     /**The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry. **/
     private string $packageType;
     /**The name of the package. **/
@@ -39,7 +37,7 @@ final class GetPackageForOrganization
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{package_type}', '{package_name}', '{org}'], [$this->packageType, $this->packageName, $this->org], self::PATH));
+        return new Request('GET', str_replace(['{package_type}', '{package_name}', '{org}'], [$this->packageType, $this->packageName, $this->org], '/orgs/{org}/packages/{package_type}/{package_name}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Package

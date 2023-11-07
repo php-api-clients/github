@@ -25,8 +25,6 @@ final class ListReposForAuthenticatedUserListing
 {
     public const OPERATION_ID    = 'migrations/list-repos-for-authenticated-user';
     public const OPERATION_MATCH = 'LIST /user/migrations/{migration_id}/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/migrations/{migration_id}/repositories';
     /**The unique identifier of the migration. **/
     private int $migrationId;
     /**The number of results per page (max 100). **/
@@ -43,7 +41,7 @@ final class ListReposForAuthenticatedUserListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{migration_id}', '{per_page}', '{page}'], [$this->migrationId, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{migration_id}', '{per_page}', '{page}'], [$this->migrationId, $this->perPage, $this->page], '/user/migrations/{migration_id}/repositories' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\MinimalRepository> */
@@ -64,7 +62,7 @@ final class ListReposForAuthenticatedUserListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MinimalRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\MinimalRepository::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\MinimalRepository::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

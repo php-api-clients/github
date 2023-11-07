@@ -24,12 +24,11 @@ final readonly class CompareCommits
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $basehead, int $page = 1, int $perPage = 30): CommitComparison|array
+    public function call(string $owner, string $repo, string $basehead, int $page = 1, int $perPage = 30): CommitComparison
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CompareCommits($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $basehead, $page, $perPage);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CommitComparison|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CommitComparison {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

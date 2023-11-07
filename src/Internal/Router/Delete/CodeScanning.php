@@ -19,8 +19,7 @@ final class CodeScanning
     {
     }
 
-    /** @return */
-    public function deleteAnalysis(array $params): CodeScanningAnalysisDeletion|array
+    public function deleteAnalysis(array $params): CodeScanningAnalysisDeletion
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

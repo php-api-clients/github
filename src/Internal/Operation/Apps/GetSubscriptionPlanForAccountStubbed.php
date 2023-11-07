@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Apps;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class GetSubscriptionPlanForAccountStubbed
 {
     public const OPERATION_ID    = 'apps/get-subscription-plan-for-account-stubbed';
     public const OPERATION_MATCH = 'GET /marketplace_listing/stubbed/accounts/{account_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/marketplace_listing/stubbed/accounts/{account_id}';
     /**account_id parameter **/
     private int $accountId;
 
@@ -34,11 +33,10 @@ final class GetSubscriptionPlanForAccountStubbed
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{account_id}'], [$this->accountId], self::PATH));
+        return new Request('GET', str_replace(['{account_id}'], [$this->accountId], '/marketplace_listing/stubbed/accounts/{account_id}'));
     }
 
-    /** @return Schema\MarketplacePurchase|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\MarketplacePurchase|array
+    public function createResponse(ResponseInterface $response): Schema\MarketplacePurchase|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -71,7 +69,7 @@ final class GetSubscriptionPlanForAccountStubbed
              * Not Found when the account has not purchased the listing
              **/
             case 404:
-                return ['code' => 404];
+                return new WithoutBody(404, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

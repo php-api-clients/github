@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Users
     {
     }
 
-    /** @return array{code:int} */
-    public function unblock(array $params): array
+    public function unblock(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('username', $params) === false) {
@@ -33,8 +33,7 @@ final class Users
         return $operator->call($arguments['username']);
     }
 
-    /** @return array{code:int} */
-    public function unfollow(array $params): array
+    public function unfollow(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('username', $params) === false) {
@@ -48,8 +47,7 @@ final class Users
         return $operator->call($arguments['username']);
     }
 
-    /** @return array{code:int} */
-    public function deleteGpgKeyForAuthenticatedUser(array $params): array
+    public function deleteGpgKeyForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('gpg_key_id', $params) === false) {
@@ -63,8 +61,7 @@ final class Users
         return $operator->call($arguments['gpg_key_id']);
     }
 
-    /** @return array{code:int} */
-    public function deletePublicSshKeyForAuthenticatedUser(array $params): array
+    public function deletePublicSshKeyForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('key_id', $params) === false) {
@@ -78,8 +75,7 @@ final class Users
         return $operator->call($arguments['key_id']);
     }
 
-    /** @return array{code:int} */
-    public function deleteSshSigningKeyForAuthenticatedUser(array $params): array
+    public function deleteSshSigningKeyForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('ssh_signing_key_id', $params) === false) {
@@ -93,16 +89,14 @@ final class Users
         return $operator->call($arguments['ssh_signing_key_id']);
     }
 
-    /** @return array{code:int} */
-    public function deleteEmailForAuthenticatedUser(array $params): array
+    public function deleteEmailForAuthenticatedUser(array $params): WithoutBody
     {
         $operator = new Internal\Operator\Users\DeleteEmailForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Emails());
 
         return $operator->call($params);
     }
 
-    /** @return array{code:int} */
-    public function deleteSocialAccountForAuthenticatedUser(array $params): array
+    public function deleteSocialAccountForAuthenticatedUser(array $params): WithoutBody
     {
         $operator = new Internal\Operator\Users\DeleteSocialAccountForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀SocialAccounts());
 

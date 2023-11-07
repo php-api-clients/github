@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Teams;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class AddOrUpdateMembershipForUserInOrg
 {
     public const OPERATION_ID    = 'teams/add-or-update-membership-for-user-in-org';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/teams/{team_slug}/memberships/{username}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/memberships/{username}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The slug of the team name. **/
@@ -42,11 +41,10 @@ final class AddOrUpdateMembershipForUserInOrg
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Teams\AddOrUpdateMembershipForUserInOrg\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}', '{team_slug}', '{username}'], [$this->org, $this->teamSlug, $this->username], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{org}', '{team_slug}', '{username}'], [$this->org, $this->teamSlug, $this->username], '/orgs/{org}/teams/{team_slug}/memberships/{username}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\TeamMembership|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\TeamMembership|array
+    public function createResponse(ResponseInterface $response): Schema\TeamMembership|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -71,13 +69,13 @@ final class AddOrUpdateMembershipForUserInOrg
              * Forbidden if team synchronization is set up
              **/
             case 403:
-                return ['code' => 403];
+                return new WithoutBody(403, []);
             /**
              * Unprocessable Entity if you attempt to add an organization to a team
              **/
 
             case 422:
-                return ['code' => 422];
+                return new WithoutBody(422, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

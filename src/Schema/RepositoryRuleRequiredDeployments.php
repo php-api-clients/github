@@ -37,10 +37,10 @@ final readonly class RepositoryRuleRequiredDeployments
             }
         }
     },
-    "description": "Choose which environments must be successfully deployed to before refs can be merged into a branch that matches this rule."
+    "description": "Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule."
 }';
     public const SCHEMA_TITLE        = 'required_deployments';
-    public const SCHEMA_DESCRIPTION  = 'Choose which environments must be successfully deployed to before refs can be merged into a branch that matches this rule.';
+    public const SCHEMA_DESCRIPTION  = 'Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "type": "required_deployments",
     "parameters": {

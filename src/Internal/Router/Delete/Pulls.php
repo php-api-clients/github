@@ -8,6 +8,7 @@ use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema\PullRequestReview;
 use ApiClients\Client\GitHub\Schema\PullRequestSimple;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,8 +21,7 @@ final class Pulls
     {
     }
 
-    /** @return array{code:int} */
-    public function deleteReviewComment(array $params): array
+    public function deleteReviewComment(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -47,8 +47,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
-    /** @return */
-    public function removeRequestedReviewers(array $params): PullRequestSimple|array
+    public function removeRequestedReviewers(array $params): PullRequestSimple
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -74,8 +73,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    /** @return */
-    public function deletePendingReview(array $params): PullRequestReview|array
+    public function deletePendingReview(array $params): PullRequestReview
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

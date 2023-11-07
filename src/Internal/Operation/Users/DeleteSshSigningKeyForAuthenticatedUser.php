@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Users;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class DeleteSshSigningKeyForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/delete-ssh-signing-key-for-authenticated-user';
     public const OPERATION_MATCH = 'DELETE /user/ssh_signing_keys/{ssh_signing_key_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/user/ssh_signing_keys/{ssh_signing_key_id}';
     /**The unique identifier of the SSH signing key. **/
     private int $sshSigningKeyId;
 
@@ -34,11 +33,10 @@ final class DeleteSshSigningKeyForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{ssh_signing_key_id}'], [$this->sshSigningKeyId], self::PATH));
+        return new Request('DELETE', str_replace(['{ssh_signing_key_id}'], [$this->sshSigningKeyId], '/user/ssh_signing_keys/{ssh_signing_key_id}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -79,13 +77,13 @@ final class DeleteSshSigningKeyForAuthenticatedUser
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
             /**
              * Not modified
              **/
 
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

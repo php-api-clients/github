@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Activity;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class MarkThreadAsRead
 {
     public const OPERATION_ID    = 'activity/mark-thread-as-read';
     public const OPERATION_MATCH = 'PATCH /notifications/threads/{thread_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/notifications/threads/{thread_id}';
     /**The unique identifier of the notification thread. This corresponds to the value returned in the `id` field when you retrieve notifications (for example with the [`GET /notifications` operation](https://docs.github.com/rest/activity/notifications#list-notifications-for-the-authenticated-user)). **/
     private int $threadId;
 
@@ -34,11 +33,10 @@ final class MarkThreadAsRead
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{thread_id}'], [$this->threadId], self::PATH));
+        return new Request('PATCH', str_replace(['{thread_id}'], [$this->threadId], '/notifications/threads/{thread_id}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -63,13 +61,13 @@ final class MarkThreadAsRead
              * Reset Content
              **/
             case 205:
-                return ['code' => 205];
+                return new WithoutBody(205, []);
             /**
              * Not modified
              **/
 
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

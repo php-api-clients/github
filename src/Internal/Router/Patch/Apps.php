@@ -20,16 +20,14 @@ final class Apps
     {
     }
 
-    /** @return */
-    public function updateWebhookConfigForApp(array $params): WebhookConfig|array
+    public function updateWebhookConfigForApp(array $params): WebhookConfig
     {
         $operator = new Internal\Operator\Apps\UpdateWebhookConfigForApp($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Hook🌀Config());
 
         return $operator->call($params);
     }
 
-    /** @return */
-    public function resetToken(array $params): Authorization|array
+    public function resetToken(array $params): Authorization
     {
         $arguments = [];
         if (array_key_exists('client_id', $params) === false) {

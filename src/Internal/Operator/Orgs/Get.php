@@ -24,12 +24,11 @@ final readonly class Get
     {
     }
 
-    /** @return */
-    public function call(string $org): OrganizationFull|array
+    public function call(string $org): OrganizationFull
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\Get($this->responseSchemaValidator, $this->hydrator, $org);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrganizationFull|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OrganizationFull {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

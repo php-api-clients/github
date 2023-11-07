@@ -22,8 +22,6 @@ final class UpdateReleaseAsset
 {
     public const OPERATION_ID    = 'repos/update-release-asset';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/releases/assets/{asset_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/releases/assets/{asset_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -42,7 +40,7 @@ final class UpdateReleaseAsset
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\UpdateReleaseAsset\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{asset_id}'], [$this->owner, $this->repo, $this->assetId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{owner}', '{repo}', '{asset_id}'], [$this->owner, $this->repo, $this->assetId], '/repos/{owner}/{repo}/releases/assets/{asset_id}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\ReleaseAsset

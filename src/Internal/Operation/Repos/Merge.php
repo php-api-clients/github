@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Repos;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -23,8 +24,6 @@ final class Merge
 {
     public const OPERATION_ID    = 'repos/merge';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/merges';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/merges';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,11 +39,10 @@ final class Merge
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\Merge\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/merges'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\Commit|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Commit|array
+    public function createResponse(ResponseInterface $response): Schema\Commit|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -85,19 +83,19 @@ final class Merge
              * Response when already merged
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
             /**
              * Not Found when the base or head does not exist
              **/
 
             case 404:
-                return ['code' => 404];
+                return new WithoutBody(404, []);
             /**
              * Conflict when there is a merge conflict
              **/
 
             case 409:
-                return ['code' => 409];
+                return new WithoutBody(409, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

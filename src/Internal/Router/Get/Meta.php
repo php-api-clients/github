@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Get;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\ApiOverview;
 use ApiClients\Client\GitHub\Schema\Root;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
@@ -22,24 +22,21 @@ final class Meta
     {
     }
 
-    /** @return */
-    public function root(array $params): Root|array
+    public function root(array $params): Root
     {
         $operator = new Internal\Operator\Meta\Root($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Root());
 
         return $operator->call();
     }
 
-    /** @return Schema\ApiOverview|array{code:int} */
-    public function get(array $params): ApiOverview|array
+    public function get(array $params): ApiOverview|WithoutBody
     {
         $operator = new Internal\Operator\Meta\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Meta());
 
         return $operator->call();
     }
 
-    /** @return */
-    public function getOctocat(array $params): ResponseInterface|array
+    public function getOctocat(array $params): ResponseInterface
     {
         $arguments = [];
         if (array_key_exists('s', $params) === false) {
@@ -53,7 +50,7 @@ final class Meta
         return $operator->call($arguments['s']);
     }
 
-    /** @return Observable<string> */
+    /** @return iterable<int,string> */
     public function getAllVersions(array $params): iterable
     {
         $operator = new Internal\Operator\Meta\GetAllVersions($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Versions());
@@ -61,8 +58,7 @@ final class Meta
         return $operator->call();
     }
 
-    /** @return */
-    public function getZen(array $params): string|array
+    public function getZen(array $params): string
     {
         $operator = new Internal\Operator\Meta\GetZen($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Zen());
 

@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Issues;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class Get
 {
     public const OPERATION_ID    = 'issues/get';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/issues/{issue_number}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,11 +39,10 @@ final class Get
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{issue_number}'], [$this->owner, $this->repo, $this->issueNumber], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{issue_number}'], [$this->owner, $this->repo, $this->issueNumber], '/repos/{owner}/{repo}/issues/{issue_number}'));
     }
 
-    /** @return Schema\Issue|Schema\BasicError|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Issue|Schema\BasicError|array
+    public function createResponse(ResponseInterface $response): Schema\Issue|Schema\BasicError|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -93,7 +91,7 @@ final class Get
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

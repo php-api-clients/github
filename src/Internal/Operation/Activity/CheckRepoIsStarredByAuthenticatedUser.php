@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Activity;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class CheckRepoIsStarredByAuthenticatedUser
 {
     public const OPERATION_ID    = 'activity/check-repo-is-starred-by-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/starred/{owner}/{repo}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/starred/{owner}/{repo}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -37,11 +36,10 @@ final class CheckRepoIsStarredByAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/user/starred/{owner}/{repo}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -82,13 +80,13 @@ final class CheckRepoIsStarredByAuthenticatedUser
              * Response if this repository is starred by you
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
             /**
              * Not modified
              **/
 
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

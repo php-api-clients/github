@@ -21,8 +21,6 @@ final class GetEnvironmentVariable
 {
     public const OPERATION_ID    = 'actions/get-environment-variable';
     public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/variables/{name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/variables/{name}';
     /**The unique identifier of the repository. **/
     private int $repositoryId;
     /**The name of the environment. **/
@@ -39,7 +37,7 @@ final class GetEnvironmentVariable
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{repository_id}', '{environment_name}', '{name}'], [$this->repositoryId, $this->environmentName, $this->name], self::PATH));
+        return new Request('GET', str_replace(['{repository_id}', '{environment_name}', '{name}'], [$this->repositoryId, $this->environmentName, $this->name], '/repositories/{repository_id}/environments/{environment_name}/variables/{name}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\ActionsVariable

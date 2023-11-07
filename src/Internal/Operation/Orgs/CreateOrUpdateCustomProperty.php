@@ -23,8 +23,6 @@ final class CreateOrUpdateCustomProperty
 {
     public const OPERATION_ID    = 'orgs/create-or-update-custom-property';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/properties/schema/{custom_property_name}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/properties/schema/{custom_property_name}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The custom property name. The name is case sensitive. **/
@@ -40,7 +38,7 @@ final class CreateOrUpdateCustomProperty
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Orgs\CreateOrUpdateCustomProperty\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}', '{custom_property_name}'], [$this->org, $this->customPropertyName], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{org}', '{custom_property_name}'], [$this->org, $this->customPropertyName], '/orgs/{org}/properties/schema/{custom_property_name}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\OrgCustomProperty

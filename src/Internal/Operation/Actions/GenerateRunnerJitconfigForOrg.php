@@ -23,8 +23,6 @@ final class GenerateRunnerJitconfigForOrg
 {
     public const OPERATION_ID    = 'actions/generate-runner-jitconfig-for-org';
     public const OPERATION_MATCH = 'POST /orgs/{org}/actions/runners/generate-jitconfig';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/actions/runners/generate-jitconfig';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -37,7 +35,7 @@ final class GenerateRunnerJitconfigForOrg
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\GenerateRunnerJitconfigForOrg\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{org}'], [$this->org], '/orgs/{org}/actions/runners/generate-jitconfig'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\GenerateRunnerJitconfigForOrg\Response\ApplicationJson\Created

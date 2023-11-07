@@ -21,8 +21,6 @@ final class GetDiscussionCommentLegacy
 {
     public const OPERATION_ID    = 'teams/get-discussion-comment-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}';
     /**The unique identifier of the team. **/
     private int $teamId;
     /**The number that identifies the discussion. **/
@@ -39,7 +37,7 @@ final class GetDiscussionCommentLegacy
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{team_id}', '{discussion_number}', '{comment_number}'], [$this->teamId, $this->discussionNumber, $this->commentNumber], self::PATH));
+        return new Request('GET', str_replace(['{team_id}', '{discussion_number}', '{comment_number}'], [$this->teamId, $this->discussionNumber, $this->commentNumber], '/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\TeamDiscussionComment

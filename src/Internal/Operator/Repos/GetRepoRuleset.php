@@ -24,12 +24,11 @@ final readonly class GetRepoRuleset
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $rulesetId, bool $includesParents = true): RepositoryRuleset|array
+    public function call(string $owner, string $repo, int $rulesetId, bool $includesParents = true): RepositoryRuleset
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetRepoRuleset($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $rulesetId, $includesParents);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RepositoryRuleset|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RepositoryRuleset {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -24,12 +24,11 @@ final readonly class GetArtifact
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $artifactId): Artifact|array
+    public function call(string $owner, string $repo, int $artifactId): Artifact
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetArtifact($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $artifactId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Artifact|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Artifact {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -21,8 +21,6 @@ final class ListOrgSecrets
 {
     public const OPERATION_ID    = 'dependabot/list-org-secrets';
     public const OPERATION_MATCH = 'GET /orgs/{org}/dependabot/secrets';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/dependabot/secrets';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The number of results per page (max 100). **/
@@ -39,7 +37,7 @@ final class ListOrgSecrets
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{per_page}', '{page}'], [$this->org, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{per_page}', '{page}'], [$this->org, $this->perPage, $this->page], '/orgs/{org}/dependabot/secrets' . '?per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Dependabot\ListOrgSecrets\Response\ApplicationJson\Ok

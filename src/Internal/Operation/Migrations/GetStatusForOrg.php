@@ -22,8 +22,6 @@ final class GetStatusForOrg
 {
     public const OPERATION_ID    = 'migrations/get-status-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/migrations/{migration_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/migrations/{migration_id}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the migration. **/
@@ -40,7 +38,7 @@ final class GetStatusForOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{migration_id}', '{exclude}'], [$this->org, $this->migrationId, $this->exclude], self::PATH . '?exclude={exclude}'));
+        return new Request('GET', str_replace(['{org}', '{migration_id}', '{exclude}'], [$this->org, $this->migrationId, $this->exclude], '/orgs/{org}/migrations/{migration_id}' . '?exclude={exclude}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Migration

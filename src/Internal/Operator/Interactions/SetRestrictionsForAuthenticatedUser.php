@@ -24,12 +24,11 @@ final readonly class SetRestrictionsForAuthenticatedUser
     {
     }
 
-    /** @return */
-    public function call(array $params): InteractionLimitResponse|array
+    public function call(array $params): InteractionLimitResponse
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Interactions\SetRestrictionsForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): InteractionLimitResponse|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): InteractionLimitResponse {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

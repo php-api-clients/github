@@ -19,8 +19,7 @@ final class Git
     {
     }
 
-    /** @return */
-    public function updateRef(array $params): GitRef|array
+    public function updateRef(array $params): GitRef
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

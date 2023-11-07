@@ -24,12 +24,12 @@ final readonly class ListAlertsForOrgListing
     {
     }
 
-    /** @return Observable<Schema\OrganizationSecretScanningAlert> */
-    public function call(string $org, string $state, string $secretType, string $resolution, string $before, string $after, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30): iterable
+    /** @return iterable<int,Schema\OrganizationSecretScanningAlert> */
+    public function call(string $org, string $state, string $secretType, string $resolution, string $before, string $after, string $validity, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30): iterable
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecretScanning\ListAlertsForOrgListing($this->responseSchemaValidator, $this->hydrator, $org, $state, $secretType, $resolution, $before, $after, $sort, $direction, $page, $perPage);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecretScanning\ListAlertsForOrgListing($this->responseSchemaValidator, $this->hydrator, $org, $state, $secretType, $resolution, $before, $after, $validity, $sort, $direction, $page, $perPage);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

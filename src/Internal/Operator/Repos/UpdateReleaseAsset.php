@@ -24,12 +24,11 @@ final readonly class UpdateReleaseAsset
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $assetId, array $params): ReleaseAsset|array
+    public function call(string $owner, string $repo, int $assetId, array $params): ReleaseAsset
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdateReleaseAsset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $assetId);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ReleaseAsset|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ReleaseAsset {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

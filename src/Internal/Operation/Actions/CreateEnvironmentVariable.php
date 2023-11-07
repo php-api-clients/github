@@ -22,8 +22,6 @@ final class CreateEnvironmentVariable
 {
     public const OPERATION_ID    = 'actions/create-environment-variable';
     public const OPERATION_MATCH = 'POST /repositories/{repository_id}/environments/{environment_name}/variables';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/variables';
     /**The unique identifier of the repository. **/
     private int $repositoryId;
     /**The name of the environment. **/
@@ -39,7 +37,7 @@ final class CreateEnvironmentVariable
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\CreateEnvironmentVariable\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{repository_id}', '{environment_name}'], [$this->repositoryId, $this->environmentName], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{repository_id}', '{environment_name}'], [$this->repositoryId, $this->environmentName], '/repositories/{repository_id}/environments/{environment_name}/variables'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\EmptyObject

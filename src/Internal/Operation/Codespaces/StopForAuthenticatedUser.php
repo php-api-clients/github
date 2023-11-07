@@ -22,8 +22,6 @@ final class StopForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/stop-for-authenticated-user';
     public const OPERATION_MATCH = 'POST /user/codespaces/{codespace_name}/stop';
-    private const METHOD         = 'POST';
-    private const PATH           = '/user/codespaces/{codespace_name}/stop';
     /**The name of the codespace. **/
     private string $codespaceName;
 
@@ -34,7 +32,7 @@ final class StopForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{codespace_name}'], [$this->codespaceName], self::PATH));
+        return new Request('POST', str_replace(['{codespace_name}'], [$this->codespaceName], '/user/codespaces/{codespace_name}/stop'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Codespace

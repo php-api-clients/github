@@ -24,12 +24,11 @@ final readonly class CreateReviewComment
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $pullNumber, array $params): PullRequestReviewComment|array
+    public function call(string $owner, string $repo, int $pullNumber, array $params): PullRequestReviewComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\CreateReviewComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PullRequestReviewComment|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PullRequestReviewComment {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -24,12 +24,11 @@ final readonly class GetCombinedStatusForRef
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $ref, int $perPage = 30, int $page = 1): CombinedCommitStatus|array
+    public function call(string $owner, string $repo, string $ref, int $perPage = 30, int $page = 1): CombinedCommitStatus
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetCombinedStatusForRef($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $perPage, $page);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CombinedCommitStatus|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CombinedCommitStatus {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

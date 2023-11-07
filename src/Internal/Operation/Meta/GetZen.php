@@ -19,8 +19,6 @@ final class GetZen
 {
     public const OPERATION_ID    = 'meta/get-zen';
     public const OPERATION_MATCH = 'GET /zen';
-    private const METHOD         = 'GET';
-    private const PATH           = '/zen';
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Zen $hydrator)
     {
@@ -28,7 +26,7 @@ final class GetZen
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace([], [], self::PATH));
+        return new Request('GET', str_replace([], [], '/zen'));
     }
 
     public function createResponse(ResponseInterface $response): string

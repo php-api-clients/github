@@ -22,8 +22,6 @@ final class ReRunWorkflowFailedJobs
 {
     public const OPERATION_ID    = 'actions/re-run-workflow-failed-jobs';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -42,7 +40,7 @@ final class ReRunWorkflowFailedJobs
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\ReRunWorkflowFailedJobs\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{run_id}'], [$this->owner, $this->repo, $this->runId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}', '{run_id}'], [$this->owner, $this->repo, $this->runId], '/repos/{owner}/{repo}/actions/runs/{run_id}/rerun-failed-jobs'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\EmptyObject

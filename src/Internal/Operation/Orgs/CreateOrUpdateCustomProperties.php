@@ -26,8 +26,6 @@ final class CreateOrUpdateCustomProperties
 {
     public const OPERATION_ID    = 'orgs/create-or-update-custom-properties';
     public const OPERATION_MATCH = 'PATCH /orgs/{org}/properties/schema';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/orgs/{org}/properties/schema';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -40,7 +38,7 @@ final class CreateOrUpdateCustomProperties
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Orgs\CreateOrUpdateCustomProperties\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{org}'], [$this->org], '/orgs/{org}/properties/schema'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     /** @return Observable<Schema\OrgCustomProperty> */
@@ -61,7 +59,7 @@ final class CreateOrUpdateCustomProperties
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrgCustomProperty::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\OrgCustomProperty::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\OrgCustomProperty::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

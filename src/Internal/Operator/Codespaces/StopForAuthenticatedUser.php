@@ -24,12 +24,11 @@ final readonly class StopForAuthenticatedUser
     {
     }
 
-    /** @return */
-    public function call(string $codespaceName): Codespace|array
+    public function call(string $codespaceName): Codespace
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\StopForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $codespaceName);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Codespace|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Codespace {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -23,8 +23,6 @@ final class Update
 {
     public const OPERATION_ID    = 'gists/update';
     public const OPERATION_MATCH = 'PATCH /gists/{gist_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/gists/{gist_id}';
     /**The unique identifier of the gist. **/
     private string $gistId;
 
@@ -37,7 +35,7 @@ final class Update
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Gists\Update\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{gist_id}'], [$this->gistId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{gist_id}'], [$this->gistId], '/gists/{gist_id}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\GistSimple

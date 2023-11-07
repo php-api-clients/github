@@ -24,12 +24,11 @@ final readonly class MapCommitAuthor
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $authorId, array $params): PorterAuthor|array
+    public function call(string $owner, string $repo, int $authorId, array $params): PorterAuthor
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\MapCommitAuthor($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $authorId);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PorterAuthor|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PorterAuthor {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

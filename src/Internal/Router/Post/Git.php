@@ -23,8 +23,7 @@ final class Git
     {
     }
 
-    /** @return */
-    public function createBlob(array $params): ShortBlob|array
+    public function createBlob(array $params): ShortBlob
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -44,8 +43,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
-    public function createCommit(array $params): GitCommit|array
+    public function createCommit(array $params): GitCommit
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -65,8 +63,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
-    public function createRef(array $params): GitRef|array
+    public function createRef(array $params): GitRef
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -86,8 +83,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
-    public function createTag(array $params): GitTag|array
+    public function createTag(array $params): GitTag
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -107,8 +103,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
-    public function createTree(array $params): GitTree|array
+    public function createTree(array $params): GitTree
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

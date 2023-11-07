@@ -13,6 +13,7 @@ use ApiClients\Client\GitHub\Schema\Operations\Dependabot\ListOrgSecrets\Respons
 use ApiClients\Client\GitHub\Schema\Operations\Dependabot\ListSelectedReposForOrgSecret\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Client\GitHub\Schema\OrganizationDependabotSecret;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -25,8 +26,8 @@ final class Dependabot
     {
     }
 
-    /** @return Observable<Schema\DependabotAlertWithRepository>|array{code:int} */
-    public function listAlertsForEnterprise(array $params): iterable
+    /** @return iterable<int,Schema\DependabotAlertWithRepository>|WithoutBody */
+    public function listAlertsForEnterprise(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('enterprise', $params) === false) {
@@ -112,8 +113,8 @@ final class Dependabot
         return $operator->call($arguments['enterprise'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['first'], $arguments['per_page']);
     }
 
-    /** @return Observable<Schema\DependabotAlertWithRepository>|array{code:int} */
-    public function listAlertsForOrg(array $params): iterable
+    /** @return iterable<int,Schema\DependabotAlertWithRepository>|WithoutBody */
+    public function listAlertsForOrg(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -199,8 +200,7 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['first'], $arguments['per_page']);
     }
 
-    /** @return */
-    public function listOrgSecrets(array $params): Ok|array
+    public function listOrgSecrets(array $params): Ok
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -226,8 +226,7 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
-    public function getOrgPublicKey(array $params): DependabotPublicKey|array
+    public function getOrgPublicKey(array $params): DependabotPublicKey
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -241,8 +240,7 @@ final class Dependabot
         return $operator->call($arguments['org']);
     }
 
-    /** @return */
-    public function getOrgSecret(array $params): OrganizationDependabotSecret|array
+    public function getOrgSecret(array $params): OrganizationDependabotSecret
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -262,8 +260,8 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
-    /** @return Observable<Schema\DependabotAlert>|array{code:int} */
-    public function listAlertsForRepo(array $params): iterable
+    /** @return iterable<int,Schema\DependabotAlert>|WithoutBody */
+    public function listAlertsForRepo(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -367,8 +365,7 @@ final class Dependabot
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['manifest'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page'], $arguments['first']);
     }
 
-    /** @return */
-    public function listRepoSecrets(array $params): \ApiClients\Client\GitHub\Schema\Operations\Dependabot\ListRepoSecrets\Response\ApplicationJson\Ok|array
+    public function listRepoSecrets(array $params): \ApiClients\Client\GitHub\Schema\Operations\Dependabot\ListRepoSecrets\Response\ApplicationJson\Ok
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -400,8 +397,7 @@ final class Dependabot
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
-    public function listSelectedReposForOrgSecret(array $params): Json|array
+    public function listSelectedReposForOrgSecret(array $params): Json
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -433,8 +429,7 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['secret_name'], $arguments['page'], $arguments['per_page']);
     }
 
-    /** @return Schema\DependabotAlert|array{code:int} */
-    public function getAlert(array $params): DependabotAlert|array
+    public function getAlert(array $params): DependabotAlert|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -460,8 +455,7 @@ final class Dependabot
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['alert_number']);
     }
 
-    /** @return */
-    public function getRepoPublicKey(array $params): DependabotPublicKey|array
+    public function getRepoPublicKey(array $params): DependabotPublicKey
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -481,8 +475,7 @@ final class Dependabot
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return */
-    public function getRepoSecret(array $params): DependabotSecret|array
+    public function getRepoSecret(array $params): DependabotSecret
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

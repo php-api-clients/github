@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operation;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\ApiOverview;
 use ApiClients\Client\GitHub\Schema\Root;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use Psr\Http\Message\ResponseInterface;
 
 final class Meta
@@ -16,32 +16,28 @@ final class Meta
     {
     }
 
-    /** @return */
-    public function root(): Root|array
+    public function root(): Root
     {
         return $this->operators->meta👷Root()->call();
     }
 
-    /** @return Schema\ApiOverview|array{code:int} */
-    public function get(): ApiOverview|array
+    public function get(): ApiOverview|WithoutBody
     {
         return $this->operators->meta👷Get()->call();
     }
 
-    /** @return */
-    public function getOctocat(string $s): ResponseInterface|array
+    public function getOctocat(string $s): ResponseInterface
     {
         return $this->operators->meta👷GetOctocat()->call($s);
     }
 
-    /** @return Observable<string> */
+    /** @return iterable<int,string> */
     public function getAllVersions(): iterable
     {
         return $this->operators->meta👷GetAllVersions()->call();
     }
 
-    /** @return */
-    public function getZen(): array|string
+    public function getZen(): string
     {
         return $this->operators->meta👷GetZen()->call();
     }

@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Gists;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -23,8 +24,6 @@ final class Create
 {
     public const OPERATION_ID    = 'gists/create';
     public const OPERATION_MATCH = 'POST /gists';
-    private const METHOD         = 'POST';
-    private const PATH           = '/gists';
 
     public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Gists $hydrator)
     {
@@ -34,11 +33,10 @@ final class Create
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Gists\Create\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace([], [], '/gists'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\GistSimple|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\GistSimple|array
+    public function createResponse(ResponseInterface $response): Schema\GistSimple|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -87,7 +85,7 @@ final class Create
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

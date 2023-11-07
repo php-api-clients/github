@@ -24,12 +24,11 @@ final readonly class GetSubscriptionPlanForAccount
     {
     }
 
-    /** @return */
-    public function call(int $accountId): MarketplacePurchase|array
+    public function call(int $accountId): MarketplacePurchase
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetSubscriptionPlanForAccount($this->responseSchemaValidator, $this->hydrator, $accountId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): MarketplacePurchase|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): MarketplacePurchase {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

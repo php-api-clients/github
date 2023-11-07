@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Get;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\InteractionLimitResponse;
 use ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json\One;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -21,16 +21,14 @@ final class Interactions
     {
     }
 
-    /** @return Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json\One|array{code:int} */
-    public function getRestrictionsForAuthenticatedUser(array $params): InteractionLimitResponse|One|array
+    public function getRestrictionsForAuthenticatedUser(array $params): InteractionLimitResponse|One|WithoutBody
     {
         $operator = new Internal\Operator\Interactions\GetRestrictionsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀InteractionLimits());
 
         return $operator->call();
     }
 
-    /** @return */
-    public function getRestrictionsForOrg(array $params): InteractionLimitResponse|\ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One|array
+    public function getRestrictionsForOrg(array $params): InteractionLimitResponse|\ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -44,8 +42,7 @@ final class Interactions
         return $operator->call($arguments['org']);
     }
 
-    /** @return */
-    public function getRestrictionsForRepo(array $params): InteractionLimitResponse|\ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One|array
+    public function getRestrictionsForRepo(array $params): InteractionLimitResponse|\ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

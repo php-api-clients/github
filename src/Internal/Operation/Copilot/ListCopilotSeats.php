@@ -22,8 +22,6 @@ final class ListCopilotSeats
 {
     public const OPERATION_ID    = 'copilot/list-copilot-seats';
     public const OPERATION_MATCH = 'GET /orgs/{org}/copilot/billing/seats';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/copilot/billing/seats';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**Page number of the results to fetch. **/
@@ -40,7 +38,7 @@ final class ListCopilotSeats
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{page}', '{per_page}'], [$this->org, $this->page, $this->perPage], self::PATH . '?page={page}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{org}', '{page}', '{per_page}'], [$this->org, $this->page, $this->perPage], '/orgs/{org}/copilot/billing/seats' . '?page={page}&per_page={per_page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok

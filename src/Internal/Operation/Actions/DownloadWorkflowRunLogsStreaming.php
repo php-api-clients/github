@@ -21,8 +21,6 @@ final class DownloadWorkflowRunLogsStreaming
 {
     public const OPERATION_ID    = 'actions/download-workflow-run-logs';
     public const OPERATION_MATCH = 'STREAM /repos/{owner}/{repo}/actions/runs/{run_id}/logs';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/logs';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -39,7 +37,7 @@ final class DownloadWorkflowRunLogsStreaming
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{run_id}'], [$this->owner, $this->repo, $this->runId], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{run_id}'], [$this->owner, $this->repo, $this->runId], '/repos/{owner}/{repo}/actions/runs/{run_id}/logs'));
     }
 
     /** @return Observable<string> */

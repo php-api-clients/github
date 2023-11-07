@@ -21,8 +21,6 @@ final class GetEnvironmentSecret
 {
     public const OPERATION_ID    = 'actions/get-environment-secret';
     public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
     /**The unique identifier of the repository. **/
     private int $repositoryId;
     /**The name of the environment. **/
@@ -39,7 +37,7 @@ final class GetEnvironmentSecret
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{repository_id}', '{environment_name}', '{secret_name}'], [$this->repositoryId, $this->environmentName, $this->secretName], self::PATH));
+        return new Request('GET', str_replace(['{repository_id}', '{environment_name}', '{secret_name}'], [$this->repositoryId, $this->environmentName, $this->secretName], '/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\ActionsSecret

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Internal\Operation\Actions;
 
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
@@ -15,8 +16,6 @@ final class DeleteEnvironmentVariable
 {
     public const OPERATION_ID    = 'actions/delete-environment-variable';
     public const OPERATION_MATCH = 'DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/variables/{name}';
     /**The unique identifier of the repository. **/
     private int $repositoryId;
     /**The name of the variable. **/
@@ -33,11 +32,10 @@ final class DeleteEnvironmentVariable
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{repository_id}', '{name}', '{environment_name}'], [$this->repositoryId, $this->name, $this->environmentName], self::PATH));
+        return new Request('DELETE', str_replace(['{repository_id}', '{name}', '{environment_name}'], [$this->repositoryId, $this->name, $this->environmentName], '/repositories/{repository_id}/environments/{environment_name}/variables/{name}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code = $response->getStatusCode();
         switch ($code) {
@@ -45,7 +43,7 @@ final class DeleteEnvironmentVariable
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

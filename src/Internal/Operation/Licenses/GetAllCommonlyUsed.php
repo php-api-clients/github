@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Licenses;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -24,8 +25,6 @@ final class GetAllCommonlyUsed
 {
     public const OPERATION_ID    = 'licenses/get-all-commonly-used';
     public const OPERATION_MATCH = 'GET /licenses';
-    private const METHOD         = 'GET';
-    private const PATH           = '/licenses';
     /**The number of results per page (max 100). **/
     private int $perPage;
     /**Page number of the results to fetch. **/
@@ -39,11 +38,11 @@ final class GetAllCommonlyUsed
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{featured}', '{per_page}', '{page}'], [$this->featured, $this->perPage, $this->page], self::PATH . '?featured={featured}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{featured}', '{per_page}', '{page}'], [$this->featured, $this->perPage, $this->page], '/licenses' . '?featured={featured}&per_page={per_page}&page={page}'));
     }
 
-    /** @return Observable<Schema\LicenseSimple>|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|array
+    /** @return Observable<Schema\LicenseSimple>|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -60,7 +59,7 @@ final class GetAllCommonlyUsed
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\LicenseSimple::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\LicenseSimple::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\LicenseSimple::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -78,7 +77,7 @@ final class GetAllCommonlyUsed
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

@@ -22,8 +22,6 @@ final class UpdateMilestone
 {
     public const OPERATION_ID    = 'issues/update-milestone';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/milestones/{milestone_number}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/milestones/{milestone_number}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -42,7 +40,7 @@ final class UpdateMilestone
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Issues\UpdateMilestone\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{milestone_number}'], [$this->owner, $this->repo, $this->milestoneNumber], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{owner}', '{repo}', '{milestone_number}'], [$this->owner, $this->repo, $this->milestoneNumber], '/repos/{owner}/{repo}/milestones/{milestone_number}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Milestone

@@ -25,8 +25,6 @@ final class ListActivities
 {
     public const OPERATION_ID    = 'repos/list-activities';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/activity';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/activity';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -70,7 +68,7 @@ final class ListActivities
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{before}', '{after}', '{ref}', '{actor}', '{time_period}', '{activity_type}', '{direction}', '{per_page}'], [$this->owner, $this->repo, $this->before, $this->after, $this->ref, $this->actor, $this->timePeriod, $this->activityType, $this->direction, $this->perPage], self::PATH . '?before={before}&after={after}&ref={ref}&actor={actor}&time_period={time_period}&activity_type={activity_type}&direction={direction}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{before}', '{after}', '{ref}', '{actor}', '{time_period}', '{activity_type}', '{direction}', '{per_page}'], [$this->owner, $this->repo, $this->before, $this->after, $this->ref, $this->actor, $this->timePeriod, $this->activityType, $this->direction, $this->perPage], '/repos/{owner}/{repo}/activity' . '?before={before}&after={after}&ref={ref}&actor={actor}&time_period={time_period}&activity_type={activity_type}&direction={direction}&per_page={per_page}'));
     }
 
     /** @return Observable<Schema\Activity> */
@@ -91,7 +89,7 @@ final class ListActivities
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Activity::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Activity::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Activity::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

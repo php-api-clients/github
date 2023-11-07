@@ -19,8 +19,7 @@ final class Codespaces
     {
     }
 
-    /** @return */
-    public function updateForAuthenticatedUser(array $params): Codespace|array
+    public function updateForAuthenticatedUser(array $params): Codespace
     {
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {

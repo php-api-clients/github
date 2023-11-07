@@ -24,12 +24,11 @@ final readonly class GetCollaboratorPermissionLevel
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $username): RepositoryCollaboratorPermission|array
+    public function call(string $owner, string $repo, string $username): RepositoryCollaboratorPermission
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetCollaboratorPermissionLevel($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $username);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RepositoryCollaboratorPermission|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RepositoryCollaboratorPermission {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Copilot;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -23,8 +24,6 @@ final class CancelCopilotSeatAssignmentForUsers
 {
     public const OPERATION_ID    = 'copilot/cancel-copilot-seat-assignment-for-users';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/copilot/billing/selected_users';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/copilot/billing/selected_users';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -37,11 +36,10 @@ final class CancelCopilotSeatAssignmentForUsers
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Copilot\CancelCopilotSeatAssignmentForUsers\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('DELETE', str_replace(['{org}'], [$this->org], '/orgs/{org}/copilot/billing/selected_users'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -98,7 +96,7 @@ final class CancelCopilotSeatAssignmentForUsers
              * Copilot for Business is not enabled for this organization, billing has not been set up for this organization, a public code suggestions policy has not been set for this organization, the seat management setting is set to enable Copilot for all users or is unconfigured, or a user's seat cannot be cancelled because it was assigned to them via a team.
              **/
             case 422:
-                return ['code' => 422];
+                return new WithoutBody(422, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

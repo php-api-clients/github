@@ -22,8 +22,6 @@ final class GetMembershipForUser
 {
     public const OPERATION_ID    = 'orgs/get-membership-for-user';
     public const OPERATION_MATCH = 'GET /orgs/{org}/memberships/{username}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/memberships/{username}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The handle for the GitHub user account. **/
@@ -37,7 +35,7 @@ final class GetMembershipForUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{username}'], [$this->org, $this->username], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{username}'], [$this->org, $this->username], '/orgs/{org}/memberships/{username}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\OrgMembership

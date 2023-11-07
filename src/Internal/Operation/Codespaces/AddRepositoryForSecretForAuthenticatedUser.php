@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Codespaces;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class AddRepositoryForSecretForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/add-repository-for-secret-for-authenticated-user';
     public const OPERATION_MATCH = 'PUT /user/codespaces/secrets/{secret_name}/repositories/{repository_id}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/user/codespaces/secrets/{secret_name}/repositories/{repository_id}';
     /**The name of the secret. **/
     private string $secretName;
 
@@ -34,11 +33,10 @@ final class AddRepositoryForSecretForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{secret_name}', '{repository_id}'], [$this->secretName, $this->repositoryId], self::PATH));
+        return new Request('PUT', str_replace(['{secret_name}', '{repository_id}'], [$this->secretName, $this->repositoryId], '/user/codespaces/secrets/{secret_name}/repositories/{repository_id}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -87,7 +85,7 @@ final class AddRepositoryForSecretForAuthenticatedUser
              * No Content when repository was added to the selected list
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

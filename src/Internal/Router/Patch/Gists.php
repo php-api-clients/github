@@ -20,8 +20,7 @@ final class Gists
     {
     }
 
-    /** @return */
-    public function update(array $params): GistSimple|array
+    public function update(array $params): GistSimple
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
@@ -35,8 +34,7 @@ final class Gists
         return $operator->call($arguments['gist_id'], $params);
     }
 
-    /** @return */
-    public function updateComment(array $params): GistComment|array
+    public function updateComment(array $params): GistComment
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {

@@ -24,12 +24,11 @@ final readonly class GetTag
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $tagSha): GitTag|array
+    public function call(string $owner, string $repo, string $tagSha): GitTag
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Git\GetTag($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $tagSha);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GitTag|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GitTag {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -23,8 +23,6 @@ final class UpdateWebhook
 {
     public const OPERATION_ID    = 'repos/update-webhook';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/hooks/{hook_id}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/hooks/{hook_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -43,7 +41,7 @@ final class UpdateWebhook
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\UpdateWebhook\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{hook_id}'], [$this->owner, $this->repo, $this->hookId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{owner}', '{repo}', '{hook_id}'], [$this->owner, $this->repo, $this->hookId], '/repos/{owner}/{repo}/hooks/{hook_id}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Hook

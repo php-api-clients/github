@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Actions;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class CreateOrUpdateEnvironmentSecret
 {
     public const OPERATION_ID    = 'actions/create-or-update-environment-secret';
     public const OPERATION_MATCH = 'PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
     /**The unique identifier of the repository. **/
     private int $repositoryId;
     /**The name of the environment. **/
@@ -42,11 +41,10 @@ final class CreateOrUpdateEnvironmentSecret
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\CreateOrUpdateEnvironmentSecret\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{repository_id}', '{environment_name}', '{secret_name}'], [$this->repositoryId, $this->environmentName, $this->secretName], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{repository_id}', '{environment_name}', '{secret_name}'], [$this->repositoryId, $this->environmentName, $this->secretName], '/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\EmptyObject|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\EmptyObject|array
+    public function createResponse(ResponseInterface $response): Schema\EmptyObject|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -71,7 +69,7 @@ final class CreateOrUpdateEnvironmentSecret
              * Response when updating a secret
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

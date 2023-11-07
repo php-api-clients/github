@@ -22,8 +22,6 @@ final class GetRestrictionsForOrg
 {
     public const OPERATION_ID    = 'interactions/get-restrictions-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/interaction-limits';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/interaction-limits';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -34,7 +32,7 @@ final class GetRestrictionsForOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
+        return new Request('GET', str_replace(['{org}'], [$this->org], '/orgs/{org}/interaction-limits'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One
@@ -53,7 +51,7 @@ final class GetRestrictionsForOrg
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\InteractionLimitResponse::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrators->hydrateObject(Schema\InteractionLimitResponse::class, $body);
+                            return $this->hydrator->hydrateObject(Schema\InteractionLimitResponse::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaaa;
                         }
@@ -62,7 +60,7 @@ final class GetRestrictionsForOrg
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrators->hydrateObject(Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One::class, $body);
+                            return $this->hydrator->hydrateObject(Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaab;
                         }

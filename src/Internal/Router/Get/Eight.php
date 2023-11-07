@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Get;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy;
 use ApiClients\Client\GitHub\Schema\CodeScanningCodeqlDatabase;
 use ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy;
@@ -22,6 +23,7 @@ use ApiClients\Client\GitHub\Schema\StatusCheckPolicy;
 use ApiClients\Client\GitHub\Schema\TeamRepository;
 use ApiClients\Client\GitHub\Schema\WorkflowRunUsage;
 use ApiClients\Client\GitHub\Schema\WorkflowUsage;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Eight
@@ -30,8 +32,8 @@ final class Eight
     {
     }
 
-    /** @return |Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Schema\TeamRepository|array{code:int}|array{code:int,location:string}|Observable<Schema\EnvironmentApprovals>|Observable<Schema\PendingDeployment>|Observable<Schema\CodeScanningAlertInstance>|Schema\CodeScanningCodeqlDatabase|Observable<Schema\SecretScanningLocation> */
-    public function call(string $call, array $params, array $pathChunks): PackageVersion|iterable|TeamRepository|OidcCustomSubRepo|Ok|Json|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|WorkflowRunUsage|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|WorkflowUsage|ProtectedBranchAdminEnforced|ProtectedBranchPullRequestReview|StatusCheckPolicy|BranchRestrictionPolicy|CodeScanningCodeqlDatabase|DeploymentStatus|DeploymentBranchPolicy|\ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|DeploymentProtectionRule|HookDelivery|PullRequestReview
+    /** @return Schema\PackageVersion|iterable<int,Schema\TeamDiscussionComment>|iterable<int,Schema\Reaction>|Schema\TeamRepository|WithoutBody|Schema\OidcCustomSubRepo|Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok|iterable<int,Schema\EnvironmentApprovals>|Schema\Operations\Actions\ListWorkflowRunArtifacts\Response\ApplicationJson\Ok\Application\Json|Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|iterable<int,Schema\PendingDeployment>|Schema\WorkflowRunUsage|Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|Schema\WorkflowUsage|Schema\ProtectedBranchAdminEnforced|Schema\ProtectedBranchPullRequestReview|Schema\StatusCheckPolicy|Schema\BranchRestrictionPolicy|iterable<int,Schema\CodeScanningAlertInstance>|Schema\CodeScanningCodeqlDatabase|Schema\DeploymentStatus|Schema\DeploymentBranchPolicy|Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|Schema\DeploymentProtectionRule|Schema\HookDelivery|Schema\PullRequestReview|iterable<int,Schema\SecretScanningLocation> */
+    public function call(string $call, array $params, array $pathChunks): PackageVersion|iterable|TeamRepository|WithoutBody|OidcCustomSubRepo|Ok|Json|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|WorkflowRunUsage|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|WorkflowUsage|ProtectedBranchAdminEnforced|ProtectedBranchPullRequestReview|StatusCheckPolicy|BranchRestrictionPolicy|CodeScanningCodeqlDatabase|DeploymentStatus|DeploymentBranchPolicy|\ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|DeploymentProtectionRule|HookDelivery|PullRequestReview
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {

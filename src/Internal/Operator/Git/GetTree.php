@@ -24,12 +24,11 @@ final readonly class GetTree
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $treeSha, string $recursive): GitTree|array
+    public function call(string $owner, string $repo, string $treeSha, string $recursive): GitTree
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Git\GetTree($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $treeSha, $recursive);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GitTree|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GitTree {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

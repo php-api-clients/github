@@ -995,6 +995,15 @@ final readonly class OrganizationSecretScanningAlert
                 "null"
             ],
             "description": "The comment that was optionally added when this alert was closed"
+        },
+        "validity": {
+            "enum": [
+                "active",
+                "inactive",
+                "unknown"
+            ],
+            "type": "string",
+            "description": "The token status as of the latest validity check."
         }
     }
 }';
@@ -1131,7 +1140,8 @@ final readonly class OrganizationSecretScanningAlert
         "starred_at": "\\"2020-07-09T00:17:55Z\\""
     },
     "push_protection_bypassed_at": "1970-01-01T00:00:00+00:00",
-    "resolution_comment": "generated"
+    "resolution_comment": "generated",
+    "validity": "unknown"
 }';
 
     /**
@@ -1151,6 +1161,7 @@ final readonly class OrganizationSecretScanningAlert
      * pushProtectionBypassed: Whether push protection was bypassed for the detected secret.
      * pushProtectionBypassedAt: The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      * resolutionComment: The comment that was optionally added when this alert was closed
+     * validity: The token status as of the latest validity check.
      */
     public function __construct(public int|null $number, #[MapFrom('created_at')]
     public string|null $createdAt, #[MapFrom('updated_at')]
@@ -1164,7 +1175,7 @@ final readonly class OrganizationSecretScanningAlert
     public bool|null $pushProtectionBypassed, #[MapFrom('push_protection_bypassed_by')]
     public Schema\SimpleUser|null $pushProtectionBypassedBy, #[MapFrom('push_protection_bypassed_at')]
     public string|null $pushProtectionBypassedAt, #[MapFrom('resolution_comment')]
-    public string|null $resolutionComment,)
+    public string|null $resolutionComment, public string|null $validity,)
     {
     }
 }

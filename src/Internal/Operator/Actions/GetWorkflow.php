@@ -24,12 +24,11 @@ final readonly class GetWorkflow
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, $workflowId): Workflow|array
+    public function call(string $owner, string $repo, $workflowId): Workflow
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetWorkflow($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $workflowId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Workflow|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Workflow {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -23,8 +23,6 @@ final class UpdatePatAccesses
 {
     public const OPERATION_ID    = 'orgs/update-pat-accesses';
     public const OPERATION_MATCH = 'POST /orgs/{org}/personal-access-tokens';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/personal-access-tokens';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -37,7 +35,7 @@ final class UpdatePatAccesses
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Orgs\UpdatePatAccesses\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{org}'], [$this->org], '/orgs/{org}/personal-access-tokens'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Orgs\UpdatePatAccesses\Response\ApplicationJson\Accepted\Application\Json

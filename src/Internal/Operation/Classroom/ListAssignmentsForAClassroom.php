@@ -24,8 +24,6 @@ final class ListAssignmentsForAClassroom
 {
     public const OPERATION_ID    = 'classroom/list-assignments-for-a-classroom';
     public const OPERATION_MATCH = 'GET /classrooms/{classroom_id}/assignments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/classrooms/{classroom_id}/assignments';
     /**The unique identifier of the classroom. **/
     private int $classroomId;
     /**Page number of the results to fetch. **/
@@ -42,7 +40,7 @@ final class ListAssignmentsForAClassroom
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{classroom_id}', '{page}', '{per_page}'], [$this->classroomId, $this->page, $this->perPage], self::PATH . '?page={page}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{classroom_id}', '{page}', '{per_page}'], [$this->classroomId, $this->page, $this->perPage], '/classrooms/{classroom_id}/assignments' . '?page={page}&per_page={per_page}'));
     }
 
     /** @return Observable<Schema\SimpleClassroomAssignment> */
@@ -63,7 +61,7 @@ final class ListAssignmentsForAClassroom
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\SimpleClassroomAssignment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\SimpleClassroomAssignment::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\SimpleClassroomAssignment::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

@@ -24,8 +24,6 @@ final class ListForOrg
 {
     public const OPERATION_ID    = 'migrations/list-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/migrations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/migrations';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**Exclude attributes from the API response to improve performance **/
@@ -45,7 +43,7 @@ final class ListForOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{exclude}', '{per_page}', '{page}'], [$this->org, $this->exclude, $this->perPage, $this->page], self::PATH . '?exclude={exclude}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{exclude}', '{per_page}', '{page}'], [$this->org, $this->exclude, $this->perPage, $this->page], '/orgs/{org}/migrations' . '?exclude={exclude}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\Migration> */
@@ -66,7 +64,7 @@ final class ListForOrg
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Migration::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Migration::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Migration::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

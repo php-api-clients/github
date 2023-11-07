@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\CodeScanning;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -25,8 +26,6 @@ final class ListAlertsForRepo
 {
     public const OPERATION_ID    = 'code-scanning/list-alerts-for-repo';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/code-scanning/alerts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/code-scanning/alerts';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -67,11 +66,11 @@ final class ListAlertsForRepo
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{ref}', '{state}', '{severity}', '{page}', '{per_page}', '{direction}', '{sort}'], [$this->owner, $this->repo, $this->toolName, $this->toolGuid, $this->ref, $this->state, $this->severity, $this->page, $this->perPage, $this->direction, $this->sort], self::PATH . '?tool_name={tool_name}&tool_guid={tool_guid}&ref={ref}&state={state}&severity={severity}&page={page}&per_page={per_page}&direction={direction}&sort={sort}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{ref}', '{state}', '{severity}', '{page}', '{per_page}', '{direction}', '{sort}'], [$this->owner, $this->repo, $this->toolName, $this->toolGuid, $this->ref, $this->state, $this->severity, $this->page, $this->perPage, $this->direction, $this->sort], '/repos/{owner}/{repo}/code-scanning/alerts' . '?tool_name={tool_name}&tool_guid={tool_guid}&ref={ref}&state={state}&severity={severity}&page={page}&per_page={per_page}&direction={direction}&sort={sort}'));
     }
 
-    /** @return Observable<Schema\CodeScanningAlertItems>|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|array
+    /** @return Observable<Schema\CodeScanningAlertItems>|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -88,7 +87,7 @@ final class ListAlertsForRepo
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CodeScanningAlertItems::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\CodeScanningAlertItems::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\CodeScanningAlertItems::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -130,7 +129,7 @@ final class ListAlertsForRepo
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

@@ -33,6 +33,7 @@ use ApiClients\Client\GitHub\Schema\Release;
 use ApiClients\Client\GitHub\Schema\Repository;
 use ApiClients\Client\GitHub\Schema\RepositoryAdvisory;
 use ApiClients\Client\GitHub\Schema\RepositoryRuleset;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Five
@@ -41,8 +42,7 @@ final class Five
     {
     }
 
-    /** @return |array{code:int}|Schema\ProjectCard|Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|Schema\MergedUpstream|Schema\Commit|Schema\Codespace */
-    public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|EmptyObject|ProjectCard|Json|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|Repository|CodespaceExportDetails|CodespaceWithFullRepository|array
+    public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|EmptyObject|WithoutBody|ProjectCard|Json|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|Repository|CodespaceExportDetails|CodespaceWithFullRepository
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {

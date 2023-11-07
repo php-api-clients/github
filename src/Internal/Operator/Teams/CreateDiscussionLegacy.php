@@ -24,12 +24,11 @@ final readonly class CreateDiscussionLegacy
     {
     }
 
-    /** @return */
-    public function call(int $teamId, array $params): TeamDiscussion|array
+    public function call(int $teamId, array $params): TeamDiscussion
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\CreateDiscussionLegacy($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $teamId);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): TeamDiscussion|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): TeamDiscussion {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -24,12 +24,11 @@ final readonly class GetActionsCacheList
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $ref, string $key, int $perPage = 30, int $page = 1, string $sort = 'last_accessed_at', string $direction = 'desc'): ActionsCacheList|array
+    public function call(string $owner, string $repo, string $ref, string $key, int $perPage = 30, int $page = 1, string $sort = 'last_accessed_at', string $direction = 'desc'): ActionsCacheList
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetActionsCacheList($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $key, $perPage, $page, $sort, $direction);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsCacheList|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsCacheList {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

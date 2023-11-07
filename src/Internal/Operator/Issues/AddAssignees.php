@@ -24,12 +24,11 @@ final readonly class AddAssignees
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $issueNumber, array $params): Issue|array
+    public function call(string $owner, string $repo, int $issueNumber, array $params): Issue
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\AddAssignees($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Issue|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Issue {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

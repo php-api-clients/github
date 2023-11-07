@@ -22,8 +22,6 @@ final class GetGlobalAdvisory
 {
     public const OPERATION_ID    = 'security-advisories/get-global-advisory';
     public const OPERATION_MATCH = 'GET /advisories/{ghsa_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/advisories/{ghsa_id}';
     /**The GHSA (GitHub Security Advisory) identifier of the advisory. **/
     private string $ghsaId;
 
@@ -34,7 +32,7 @@ final class GetGlobalAdvisory
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{ghsa_id}'], [$this->ghsaId], self::PATH));
+        return new Request('GET', str_replace(['{ghsa_id}'], [$this->ghsaId], '/advisories/{ghsa_id}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\GlobalAdvisory

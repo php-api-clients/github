@@ -5,9 +5,11 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\PullRequestReview;
 use ApiClients\Client\GitHub\Schema\PullRequestReviewComment;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Nine
@@ -16,8 +18,8 @@ final class Nine
     {
     }
 
-    /** @return array{code:int}|Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser>| */
-    public function call(string $call, array $params, array $pathChunks): iterable|Json|PullRequestReviewComment|PullRequestReview
+    /** @return WithoutBody|iterable<int,string>|iterable<int,Schema\Integration>|iterable<int,Schema\Team>|iterable<int,Schema\SimpleUser>|Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json|Schema\PullRequestReviewComment|Schema\PullRequestReview */
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|iterable|Json|PullRequestReviewComment|PullRequestReview
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {

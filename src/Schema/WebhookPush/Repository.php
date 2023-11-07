@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookPush;
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Repository extends Schema\AliasAbstract\Tiet0974F8A2\TietC4E2BC26\Tiet68B9FD34\Tiet172D517C
+final readonly class Repository extends Schema\AliasAbstract\Tiet50E90A81\TietC28AD061\Tiet3E2243BE\TietC859F456
 {
 }

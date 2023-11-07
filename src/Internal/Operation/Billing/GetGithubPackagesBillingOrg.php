@@ -21,8 +21,6 @@ final class GetGithubPackagesBillingOrg
 {
     public const OPERATION_ID    = 'billing/get-github-packages-billing-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/settings/billing/packages';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/settings/billing/packages';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -33,7 +31,7 @@ final class GetGithubPackagesBillingOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
+        return new Request('GET', str_replace(['{org}'], [$this->org], '/orgs/{org}/settings/billing/packages'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\PackagesBillingUsage

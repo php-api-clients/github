@@ -25,8 +25,6 @@ final class ListCommentsForRepo
 {
     public const OPERATION_ID    = 'issues/list-comments-for-repo';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/issues/comments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/issues/comments';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -55,7 +53,7 @@ final class ListCommentsForRepo
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{direction}', '{since}', '{sort}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->direction, $this->since, $this->sort, $this->perPage, $this->page], self::PATH . '?direction={direction}&since={since}&sort={sort}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{direction}', '{since}', '{sort}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->direction, $this->since, $this->sort, $this->perPage, $this->page], '/repos/{owner}/{repo}/issues/comments' . '?direction={direction}&since={since}&sort={sort}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\IssueComment> */
@@ -76,7 +74,7 @@ final class ListCommentsForRepo
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\IssueComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\IssueComment::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\IssueComment::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

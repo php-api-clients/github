@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Internal\Operation\Users;
 
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
@@ -15,8 +16,6 @@ final class CheckFollowingForUser
 {
     public const OPERATION_ID    = 'users/check-following-for-user';
     public const OPERATION_MATCH = 'GET /users/{username}/following/{target_user}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/following/{target_user}';
     /**The handle for the GitHub user account. **/
     private string $username;
 
@@ -27,11 +26,10 @@ final class CheckFollowingForUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{username}', '{target_user}'], [$this->username, $this->targetUser], self::PATH));
+        return new Request('GET', str_replace(['{username}', '{target_user}'], [$this->username, $this->targetUser], '/users/{username}/following/{target_user}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code = $response->getStatusCode();
         switch ($code) {
@@ -39,13 +37,13 @@ final class CheckFollowingForUser
              * if the user follows the target user
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
             /**
              * if the user does not follow the target user
              **/
 
             case 404:
-                return ['code' => 404];
+                return new WithoutBody(404, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

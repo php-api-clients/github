@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Apps;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class AddRepoToInstallationForAuthenticatedUser
 {
     public const OPERATION_ID    = 'apps/add-repo-to-installation-for-authenticated-user';
     public const OPERATION_MATCH = 'PUT /user/installations/{installation_id}/repositories/{repository_id}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/user/installations/{installation_id}/repositories/{repository_id}';
     /**The unique identifier of the installation. **/
     private int $installationId;
     /**The unique identifier of the repository. **/
@@ -37,11 +36,10 @@ final class AddRepoToInstallationForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{installation_id}', '{repository_id}'], [$this->installationId, $this->repositoryId], self::PATH));
+        return new Request('PUT', str_replace(['{installation_id}', '{repository_id}'], [$this->installationId, $this->repositoryId], '/user/installations/{installation_id}/repositories/{repository_id}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -74,13 +72,13 @@ final class AddRepoToInstallationForAuthenticatedUser
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
             /**
              * Not modified
              **/
 
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

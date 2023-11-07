@@ -196,6 +196,15 @@ final readonly class AppPermissions
             "type": "string",
             "description": "The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change."
         },
+        "organization_custom_properties": {
+            "enum": [
+                "read",
+                "write",
+                "admin"
+            ],
+            "type": "string",
+            "description": "The level of permission to grant the access token for custom property management."
+        },
         "organization_announcement_banners": {
             "enum": [
                 "read",
@@ -319,6 +328,7 @@ final readonly class AppPermissions
     "members": "read",
     "organization_administration": "read",
     "organization_custom_roles": "read",
+    "organization_custom_properties": "admin",
     "organization_announcement_banners": "read",
     "organization_hooks": "write",
     "organization_personal_access_tokens": "read",
@@ -356,6 +366,7 @@ final readonly class AppPermissions
      * members: The level of permission to grant the access token for organization teams and members.
      * organizationAdministration: The level of permission to grant the access token to manage access to an organization.
      * organizationCustomRoles: The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change.
+     * organizationCustomProperties: The level of permission to grant the access token for custom property management.
      * organizationAnnouncementBanners: The level of permission to grant the access token to view and manage announcement banners for an organization.
      * organizationHooks: The level of permission to grant the access token to manage the post-receive hooks for an organization.
      * organizationPersonalAccessTokens: The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
@@ -377,7 +388,8 @@ final readonly class AppPermissions
     public string|null $singleFile, public string|null $statuses, #[MapFrom('vulnerability_alerts')]
     public string|null $vulnerabilityAlerts, public string|null $workflows, public string|null $members, #[MapFrom('organization_administration')]
     public string|null $organizationAdministration, #[MapFrom('organization_custom_roles')]
-    public string|null $organizationCustomRoles, #[MapFrom('organization_announcement_banners')]
+    public string|null $organizationCustomRoles, #[MapFrom('organization_custom_properties')]
+    public string|null $organizationCustomProperties, #[MapFrom('organization_announcement_banners')]
     public string|null $organizationAnnouncementBanners, #[MapFrom('organization_hooks')]
     public string|null $organizationHooks, #[MapFrom('organization_personal_access_tokens')]
     public string|null $organizationPersonalAccessTokens, #[MapFrom('organization_personal_access_token_requests')]

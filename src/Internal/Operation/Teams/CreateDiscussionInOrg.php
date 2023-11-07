@@ -22,8 +22,6 @@ final class CreateDiscussionInOrg
 {
     public const OPERATION_ID    = 'teams/create-discussion-in-org';
     public const OPERATION_MATCH = 'POST /orgs/{org}/teams/{team_slug}/discussions';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/discussions';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The slug of the team name. **/
@@ -39,7 +37,7 @@ final class CreateDiscussionInOrg
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Teams\CreateDiscussionInOrg\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}', '{team_slug}'], [$this->org, $this->teamSlug], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{org}', '{team_slug}'], [$this->org, $this->teamSlug], '/orgs/{org}/teams/{team_slug}/discussions'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\TeamDiscussion

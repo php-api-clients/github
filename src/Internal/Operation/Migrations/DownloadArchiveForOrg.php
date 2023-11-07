@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Migrations;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class DownloadArchiveForOrg
 {
     public const OPERATION_ID    = 'migrations/download-archive-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/migrations/{migration_id}/archive';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/migrations/{migration_id}/archive';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the migration. **/
@@ -37,11 +36,10 @@ final class DownloadArchiveForOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{migration_id}'], [$this->org, $this->migrationId], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{migration_id}'], [$this->org, $this->migrationId], '/orgs/{org}/migrations/{migration_id}/archive'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -66,7 +64,7 @@ final class DownloadArchiveForOrg
              * Response
              **/
             case 302:
-                return ['code' => 302];
+                return new WithoutBody(302, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

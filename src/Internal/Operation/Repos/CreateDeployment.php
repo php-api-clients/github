@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Repos;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -23,8 +24,6 @@ final class CreateDeployment
 {
     public const OPERATION_ID    = 'repos/create-deployment';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/deployments';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/deployments';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,11 +39,10 @@ final class CreateDeployment
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\CreateDeployment\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/deployments'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|array
+    public function createResponse(ResponseInterface $response): Schema\Deployment|Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -85,7 +83,7 @@ final class CreateDeployment
              * Conflict when there is a merge conflict or the commit's status checks failed
              **/
             case 409:
-                return ['code' => 409];
+                return new WithoutBody(409, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

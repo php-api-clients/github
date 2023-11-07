@@ -24,12 +24,11 @@ final readonly class CheckToken
     {
     }
 
-    /** @return */
-    public function call(string $clientId, array $params): Authorization|array
+    public function call(string $clientId, array $params): Authorization
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\CheckToken($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $clientId);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Authorization|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Authorization {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -14,7 +14,7 @@ final class Ten
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): Reaction|array
+    public function call(string $call, array $params, array $pathChunks): Reaction
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {

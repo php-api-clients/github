@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Projects;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -25,8 +26,6 @@ final class ListCollaboratorsListing
 {
     public const OPERATION_ID    = 'projects/list-collaborators';
     public const OPERATION_MATCH = 'LIST /projects/{project_id}/collaborators';
-    private const METHOD         = 'GET';
-    private const PATH           = '/projects/{project_id}/collaborators';
     /**The unique identifier of the project. **/
     private int $projectId;
     /**Filters the collaborators by their affiliation. `outside` means outside collaborators of a project that are not a member of the project's organization. `direct` means collaborators with permissions to a project, regardless of organization membership status. `all` means all collaborators the authenticated user can see. **/
@@ -46,11 +45,11 @@ final class ListCollaboratorsListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{project_id}', '{affiliation}', '{per_page}', '{page}'], [$this->projectId, $this->affiliation, $this->perPage, $this->page], self::PATH . '?affiliation={affiliation}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{project_id}', '{affiliation}', '{per_page}', '{page}'], [$this->projectId, $this->affiliation, $this->perPage, $this->page], '/projects/{project_id}/collaborators' . '?affiliation={affiliation}&per_page={per_page}&page={page}'));
     }
 
-    /** @return Observable<Schema\SimpleUser>|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|array
+    /** @return Observable<Schema\SimpleUser>|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -67,7 +66,7 @@ final class ListCollaboratorsListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\SimpleUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\SimpleUser::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\SimpleUser::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -117,7 +116,7 @@ final class ListCollaboratorsListing
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

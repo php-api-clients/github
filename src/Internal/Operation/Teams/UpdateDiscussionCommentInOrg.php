@@ -22,8 +22,6 @@ final class UpdateDiscussionCommentInOrg
 {
     public const OPERATION_ID    = 'teams/update-discussion-comment-in-org';
     public const OPERATION_MATCH = 'PATCH /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The slug of the team name. **/
@@ -45,7 +43,7 @@ final class UpdateDiscussionCommentInOrg
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Teams\UpdateDiscussionCommentInOrg\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}', '{team_slug}', '{discussion_number}', '{comment_number}'], [$this->org, $this->teamSlug, $this->discussionNumber, $this->commentNumber], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{org}', '{team_slug}', '{discussion_number}', '{comment_number}'], [$this->org, $this->teamSlug, $this->discussionNumber, $this->commentNumber], '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments/{comment_number}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\TeamDiscussionComment

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operation\Actions;
 
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -19,8 +20,6 @@ final class UpdateOrgVariable
 {
     public const OPERATION_ID    = 'actions/update-org-variable';
     public const OPERATION_MATCH = 'PATCH /orgs/{org}/actions/variables/{name}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/orgs/{org}/actions/variables/{name}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The name of the variable. **/
@@ -36,11 +35,10 @@ final class UpdateOrgVariable
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\UpdateOrgVariable\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}', '{name}'], [$this->org, $this->name], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{org}', '{name}'], [$this->org, $this->name], '/orgs/{org}/actions/variables/{name}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code = $response->getStatusCode();
         switch ($code) {
@@ -48,7 +46,7 @@ final class UpdateOrgVariable
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

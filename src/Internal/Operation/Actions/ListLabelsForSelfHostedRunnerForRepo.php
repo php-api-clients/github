@@ -22,8 +22,6 @@ final class ListLabelsForSelfHostedRunnerForRepo
 {
     public const OPERATION_ID    = 'actions/list-labels-for-self-hosted-runner-for-repo';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/runners/{runner_id}/labels';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runners/{runner_id}/labels';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,7 +38,7 @@ final class ListLabelsForSelfHostedRunnerForRepo
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{runner_id}'], [$this->owner, $this->repo, $this->runnerId], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{runner_id}'], [$this->owner, $this->repo, $this->runnerId], '/repos/{owner}/{repo}/actions/runners/{runner_id}/labels'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok

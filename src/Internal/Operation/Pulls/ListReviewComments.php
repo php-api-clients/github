@@ -24,8 +24,6 @@ final class ListReviewComments
 {
     public const OPERATION_ID    = 'pulls/list-review-comments';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/pulls/{pull_number}/comments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/comments';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -57,7 +55,7 @@ final class ListReviewComments
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{pull_number}', '{direction}', '{since}', '{sort}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->pullNumber, $this->direction, $this->since, $this->sort, $this->perPage, $this->page], self::PATH . '?direction={direction}&since={since}&sort={sort}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{pull_number}', '{direction}', '{since}', '{sort}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->pullNumber, $this->direction, $this->since, $this->sort, $this->perPage, $this->page], '/repos/{owner}/{repo}/pulls/{pull_number}/comments' . '?direction={direction}&since={since}&sort={sort}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\PullRequestReviewComment> */
@@ -78,7 +76,7 @@ final class ListReviewComments
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PullRequestReviewComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\PullRequestReviewComment::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\PullRequestReviewComment::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

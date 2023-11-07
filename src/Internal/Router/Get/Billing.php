@@ -21,8 +21,7 @@ final class Billing
     {
     }
 
-    /** @return */
-    public function getGithubActionsBillingOrg(array $params): ActionsBillingUsage|array
+    public function getGithubActionsBillingOrg(array $params): ActionsBillingUsage
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -36,8 +35,7 @@ final class Billing
         return $operator->call($arguments['org']);
     }
 
-    /** @return */
-    public function getGithubPackagesBillingOrg(array $params): PackagesBillingUsage|array
+    public function getGithubPackagesBillingOrg(array $params): PackagesBillingUsage
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -51,8 +49,7 @@ final class Billing
         return $operator->call($arguments['org']);
     }
 
-    /** @return */
-    public function getSharedStorageBillingOrg(array $params): CombinedBillingUsage|array
+    public function getSharedStorageBillingOrg(array $params): CombinedBillingUsage
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -66,8 +63,7 @@ final class Billing
         return $operator->call($arguments['org']);
     }
 
-    /** @return */
-    public function getGithubActionsBillingUser(array $params): ActionsBillingUsage|array
+    public function getGithubActionsBillingUser(array $params): ActionsBillingUsage
     {
         $arguments = [];
         if (array_key_exists('username', $params) === false) {
@@ -81,8 +77,7 @@ final class Billing
         return $operator->call($arguments['username']);
     }
 
-    /** @return */
-    public function getGithubPackagesBillingUser(array $params): PackagesBillingUsage|array
+    public function getGithubPackagesBillingUser(array $params): PackagesBillingUsage
     {
         $arguments = [];
         if (array_key_exists('username', $params) === false) {
@@ -96,8 +91,7 @@ final class Billing
         return $operator->call($arguments['username']);
     }
 
-    /** @return */
-    public function getSharedStorageBillingUser(array $params): CombinedBillingUsage|array
+    public function getSharedStorageBillingUser(array $params): CombinedBillingUsage
     {
         $arguments = [];
         if (array_key_exists('username', $params) === false) {

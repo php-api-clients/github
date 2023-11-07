@@ -14,7 +14,7 @@ final class Nine
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): TeamDiscussionComment|array
+    public function call(string $call, array $params, array $pathChunks): TeamDiscussionComment
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {

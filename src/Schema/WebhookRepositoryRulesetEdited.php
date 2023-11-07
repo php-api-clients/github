@@ -1125,6 +1125,11 @@ final readonly class WebhookRepositoryRulesetEdited
                         "type": "string"
                     }
                 },
+                "custom_properties": {
+                    "type": "object",
+                    "description": "The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.",
+                    "additionalProperties": true
+                },
                 "has_issues": {
                     "type": "boolean",
                     "description": "Whether issues are enabled.",
@@ -2096,7 +2101,7 @@ final readonly class WebhookRepositoryRulesetEdited
                                         }
                                     }
                                 },
-                                "description": "Choose which environments must be successfully deployed to before refs can be merged into a branch that matches this rule."
+                                "description": "Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule."
                             },
                             {
                                 "title": "required_signatures",
@@ -2213,7 +2218,7 @@ final readonly class WebhookRepositoryRulesetEdited
                                         }
                                     }
                                 },
-                                "description": "Choose which status checks must pass before branches can be merged into a branch that matches this rule. When enabled, commits must first be pushed to another branch, then merged or pushed directly to a ref that matches this rule after status checks have passed."
+                                "description": "Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass."
                             },
                             {
                                 "title": "non_fast_forward",
@@ -2809,7 +2814,7 @@ final readonly class WebhookRepositoryRulesetEdited
                                                 }
                                             }
                                         },
-                                        "description": "Choose which environments must be successfully deployed to before refs can be merged into a branch that matches this rule."
+                                        "description": "Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule."
                                     },
                                     {
                                         "title": "required_signatures",
@@ -2926,7 +2931,7 @@ final readonly class WebhookRepositoryRulesetEdited
                                                 }
                                             }
                                         },
-                                        "description": "Choose which status checks must pass before branches can be merged into a branch that matches this rule. When enabled, commits must first be pushed to another branch, then merged or pushed directly to a ref that matches this rule after status checks have passed."
+                                        "description": "Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass."
                                     },
                                     {
                                         "title": "non_fast_forward",
@@ -3349,7 +3354,7 @@ final readonly class WebhookRepositoryRulesetEdited
                                                 }
                                             }
                                         },
-                                        "description": "Choose which environments must be successfully deployed to before refs can be merged into a branch that matches this rule."
+                                        "description": "Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule."
                                     },
                                     {
                                         "title": "required_signatures",
@@ -3466,7 +3471,7 @@ final readonly class WebhookRepositoryRulesetEdited
                                                 }
                                             }
                                         },
-                                        "description": "Choose which status checks must pass before branches can be merged into a branch that matches this rule. When enabled, commits must first be pushed to another branch, then merged or pushed directly to a ref that matches this rule after status checks have passed."
+                                        "description": "Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass."
                                     },
                                     {
                                         "title": "non_fast_forward",
@@ -3892,7 +3897,7 @@ final readonly class WebhookRepositoryRulesetEdited
                                                         }
                                                     }
                                                 },
-                                                "description": "Choose which environments must be successfully deployed to before refs can be merged into a branch that matches this rule."
+                                                "description": "Choose which environments must be successfully deployed to before refs can be pushed into a ref that matches this rule."
                                             },
                                             {
                                                 "title": "required_signatures",
@@ -4009,7 +4014,7 @@ final readonly class WebhookRepositoryRulesetEdited
                                                         }
                                                     }
                                                 },
-                                                "description": "Choose which status checks must pass before branches can be merged into a branch that matches this rule. When enabled, commits must first be pushed to another branch, then merged or pushed directly to a ref that matches this rule after status checks have passed."
+                                                "description": "Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass."
                                             },
                                             {
                                                 "title": "non_fast_forward",
@@ -4679,6 +4684,7 @@ final readonly class WebhookRepositoryRulesetEdited
             "generated",
             "generated"
         ],
+        "custom_properties": [],
         "has_issues": true,
         "has_projects": true,
         "has_wiki": true,

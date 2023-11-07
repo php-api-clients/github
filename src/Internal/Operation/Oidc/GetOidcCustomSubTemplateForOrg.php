@@ -21,8 +21,6 @@ final class GetOidcCustomSubTemplateForOrg
 {
     public const OPERATION_ID    = 'oidc/get-oidc-custom-sub-template-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/oidc/customization/sub';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/oidc/customization/sub';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -33,7 +31,7 @@ final class GetOidcCustomSubTemplateForOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
+        return new Request('GET', str_replace(['{org}'], [$this->org], '/orgs/{org}/actions/oidc/customization/sub'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\OidcCustomSub

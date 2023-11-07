@@ -22,8 +22,6 @@ final class GetContextForUser
 {
     public const OPERATION_ID    = 'users/get-context-for-user';
     public const OPERATION_MATCH = 'GET /users/{username}/hovercard';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/hovercard';
     /**The handle for the GitHub user account. **/
     private string $username;
     /**Identifies which additional information you'd like to receive about the person's hovercard. Can be `organization`, `repository`, `issue`, `pull_request`. **Required** when using `subject_id`. **/
@@ -40,7 +38,7 @@ final class GetContextForUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{username}', '{subject_type}', '{subject_id}'], [$this->username, $this->subjectType, $this->subjectId], self::PATH . '?subject_type={subject_type}&subject_id={subject_id}'));
+        return new Request('GET', str_replace(['{username}', '{subject_type}', '{subject_id}'], [$this->username, $this->subjectType, $this->subjectId], '/users/{username}/hovercard' . '?subject_type={subject_type}&subject_id={subject_id}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Hovercard

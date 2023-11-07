@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal\Routers;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\Operations\Codespaces\DeleteForAuthenticatedUser\Response\ApplicationJson\Accepted\Application\Json;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Four
@@ -16,8 +16,7 @@ final class Four
     {
     }
 
-    /** @return array{code:int}|Schema\BasicError|Schema\Operations\Codespaces\DeleteForAuthenticatedUser\Response\ApplicationJson\Accepted\Application\Json */
-    public function call(string $call, array $params, array $pathChunks): BasicError|Json|array
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|BasicError|Json
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {

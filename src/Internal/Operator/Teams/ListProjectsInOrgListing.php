@@ -24,12 +24,12 @@ final readonly class ListProjectsInOrgListing
     {
     }
 
-    /** @return Observable<Schema\TeamProject> */
+    /** @return iterable<int,Schema\TeamProject> */
     public function call(string $org, string $teamSlug, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\ListProjectsInOrgListing($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $perPage, $page);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Get;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Search\Code\Response\ApplicationJson\Ok;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,8 +20,7 @@ final class Search
     {
     }
 
-    /** @return Schema\Operations\Search\Code\Response\ApplicationJson\Ok|array{code:int} */
-    public function code(array $params): Ok|array
+    public function code(array $params): Ok|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('q', $params) === false) {
@@ -59,8 +58,7 @@ final class Search
         return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\Operations\Search\Commits\Response\ApplicationJson\Ok|array{code:int} */
-    public function commits(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Commits\Response\ApplicationJson\Ok|array
+    public function commits(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Commits\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('q', $params) === false) {
@@ -98,8 +96,7 @@ final class Search
         return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|array{code:int} */
-    public function issuesAndPullRequests(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|array
+    public function issuesAndPullRequests(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('q', $params) === false) {
@@ -137,8 +134,7 @@ final class Search
         return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\Operations\Search\Labels\Response\ApplicationJson\Ok|array{code:int} */
-    public function labels(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Labels\Response\ApplicationJson\Ok|array
+    public function labels(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Labels\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('repository_id', $params) === false) {
@@ -182,8 +178,7 @@ final class Search
         return $operator->call($arguments['repository_id'], $arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\Operations\Search\Repos\Response\ApplicationJson\Ok|array{code:int} */
-    public function repos(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Repos\Response\ApplicationJson\Ok|array
+    public function repos(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Repos\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('q', $params) === false) {
@@ -221,8 +216,7 @@ final class Search
         return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\Operations\Search\Topics\Response\ApplicationJson\Ok|array{code:int} */
-    public function topics(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Topics\Response\ApplicationJson\Ok|array
+    public function topics(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Topics\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('q', $params) === false) {
@@ -248,8 +242,7 @@ final class Search
         return $operator->call($arguments['q'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\Operations\Search\Users\Response\ApplicationJson\Ok|array{code:int} */
-    public function users(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Users\Response\ApplicationJson\Ok|array
+    public function users(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Users\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('q', $params) === false) {

@@ -1424,6 +1424,11 @@ final readonly class WebhookIssuesOpened
                                 }
                             ]
                         },
+                        "custom_properties": {
+                            "type": "object",
+                            "description": "The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.",
+                            "additionalProperties": true
+                        },
                         "default_branch": {
                             "type": "string",
                             "description": "The default branch of the repository."
@@ -4206,6 +4211,11 @@ final readonly class WebhookIssuesOpened
                         "type": "string"
                     }
                 },
+                "custom_properties": {
+                    "type": "object",
+                    "description": "The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.",
+                    "additionalProperties": true
+                },
                 "has_issues": {
                     "type": "boolean",
                     "description": "Whether issues are enabled.",
@@ -5248,6 +5258,7 @@ final readonly class WebhookIssuesOpened
             "contents_url": "generated",
             "contributors_url": "https:\\/\\/example.com\\/",
             "created_at": null,
+            "custom_properties": [],
             "default_branch": "generated",
             "delete_branch_on_merge": false,
             "deployments_url": "https:\\/\\/example.com\\/",
@@ -5787,6 +5798,7 @@ final readonly class WebhookIssuesOpened
             "generated",
             "generated"
         ],
+        "custom_properties": [],
         "has_issues": true,
         "has_projects": true,
         "has_wiki": true,

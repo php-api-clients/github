@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Put;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Projects
     {
     }
 
-    /** @return array{code:int} */
-    public function addCollaborator(array $params): array
+    public function addCollaborator(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {

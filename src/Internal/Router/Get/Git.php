@@ -24,8 +24,7 @@ final class Git
     {
     }
 
-    /** @return */
-    public function getBlob(array $params): Blob|array
+    public function getBlob(array $params): Blob
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -51,8 +50,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['file_sha']);
     }
 
-    /** @return */
-    public function getCommit(array $params): GitCommit|array
+    public function getCommit(array $params): GitCommit
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -78,7 +76,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['commit_sha']);
     }
 
-    /** @return Observable<Schema\GitRef> */
+    /** @return iterable<int,Schema\GitRef> */
     public function listMatchingRefs(array $params): iterable
     {
         $arguments = [];
@@ -105,8 +103,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref']);
     }
 
-    /** @return */
-    public function getRef(array $params): GitRef|array
+    public function getRef(array $params): GitRef
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -132,8 +129,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref']);
     }
 
-    /** @return */
-    public function getTag(array $params): GitTag|array
+    public function getTag(array $params): GitTag
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -159,8 +155,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['tag_sha']);
     }
 
-    /** @return */
-    public function getTree(array $params): GitTree|array
+    public function getTree(array $params): GitTree
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

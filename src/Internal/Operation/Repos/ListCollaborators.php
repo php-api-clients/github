@@ -25,8 +25,6 @@ final class ListCollaborators
 {
     public const OPERATION_ID    = 'repos/list-collaborators';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/collaborators';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/collaborators';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -52,7 +50,7 @@ final class ListCollaborators
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{permission}', '{affiliation}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->permission, $this->affiliation, $this->perPage, $this->page], self::PATH . '?permission={permission}&affiliation={affiliation}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{permission}', '{affiliation}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->permission, $this->affiliation, $this->perPage, $this->page], '/repos/{owner}/{repo}/collaborators' . '?permission={permission}&affiliation={affiliation}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\Collaborator> */
@@ -73,7 +71,7 @@ final class ListCollaborators
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Collaborator::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Collaborator::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Collaborator::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

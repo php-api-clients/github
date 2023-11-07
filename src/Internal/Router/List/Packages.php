@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\List;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,8 +21,8 @@ final class Packages
     {
     }
 
-    /** @return Observable<Schema\Package>|array{code:int} */
-    public function listPackagesForAuthenticatedUserListing(array $params): iterable
+    /** @return iterable<int,Schema\Package>|WithoutBody */
+    public function listPackagesForAuthenticatedUserListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
@@ -59,8 +60,8 @@ final class Packages
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Package>|array{code:int} */
-    public function listPackagesForOrganizationListing(array $params): iterable
+    /** @return iterable<int,Schema\Package>|WithoutBody */
+    public function listPackagesForOrganizationListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
@@ -104,8 +105,8 @@ final class Packages
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Package>|array{code:int} */
-    public function listPackagesForUserListing(array $params): iterable
+    /** @return iterable<int,Schema\Package>|WithoutBody */
+    public function listPackagesForUserListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
@@ -149,7 +150,7 @@ final class Packages
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\PackageVersion> */
+    /** @return iterable<int,Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByAuthenticatedUserListing(array $params): iterable
     {
         $arguments = [];
@@ -194,7 +195,7 @@ final class Packages
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\PackageVersion> */
+    /** @return iterable<int,Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByOrgListing(array $params): iterable
     {
         $arguments = [];

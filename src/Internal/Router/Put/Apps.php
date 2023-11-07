@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Put;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Apps
     {
     }
 
-    /** @return array{code:int} */
-    public function suspendInstallation(array $params): array
+    public function suspendInstallation(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('installation_id', $params) === false) {
@@ -33,8 +33,7 @@ final class Apps
         return $operator->call($arguments['installation_id']);
     }
 
-    /** @return array{code:int} */
-    public function addRepoToInstallationForAuthenticatedUser(array $params): array
+    public function addRepoToInstallationForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('installation_id', $params) === false) {

@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Orgs;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class PingWebhook
 {
     public const OPERATION_ID    = 'orgs/ping-webhook';
     public const OPERATION_MATCH = 'POST /orgs/{org}/hooks/{hook_id}/pings';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/hooks/{hook_id}/pings';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery. **/
@@ -37,11 +36,10 @@ final class PingWebhook
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{hook_id}'], [$this->org, $this->hookId], self::PATH));
+        return new Request('POST', str_replace(['{org}', '{hook_id}'], [$this->org, $this->hookId], '/orgs/{org}/hooks/{hook_id}/pings'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -66,7 +64,7 @@ final class PingWebhook
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

@@ -24,12 +24,11 @@ final readonly class GetGithubActionsPermissionsRepository
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo): ActionsRepositoryPermissions|array
+    public function call(string $owner, string $repo): ActionsRepositoryPermissions
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetGithubActionsPermissionsRepository($this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsRepositoryPermissions|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsRepositoryPermissions {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

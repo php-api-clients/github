@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operator\Orgs;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
@@ -24,12 +25,12 @@ final readonly class ListMembershipsForAuthenticatedUserListing
     {
     }
 
-    /** @return Observable<Schema\OrgMembership>|array{code:int} */
-    public function call(string $state, int $perPage = 30, int $page = 1): iterable
+    /** @return iterable<int,Schema\OrgMembership>|WithoutBody */
+    public function call(string $state, int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListMembershipsForAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $state, $perPage, $page);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|WithoutBody {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

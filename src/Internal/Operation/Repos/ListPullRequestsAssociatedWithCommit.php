@@ -24,8 +24,6 @@ final class ListPullRequestsAssociatedWithCommit
 {
     public const OPERATION_ID    = 'repos/list-pull-requests-associated-with-commit';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/commits/{commit_sha}/pulls';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/commits/{commit_sha}/pulls';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -48,7 +46,7 @@ final class ListPullRequestsAssociatedWithCommit
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{commit_sha}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->commitSha, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{commit_sha}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->commitSha, $this->perPage, $this->page], '/repos/{owner}/{repo}/commits/{commit_sha}/pulls' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\PullRequestSimple> */
@@ -69,7 +67,7 @@ final class ListPullRequestsAssociatedWithCommit
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PullRequestSimple::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\PullRequestSimple::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\PullRequestSimple::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

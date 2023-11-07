@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Orgs;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -25,8 +26,6 @@ final class ListMembershipsForAuthenticatedUserListing
 {
     public const OPERATION_ID    = 'orgs/list-memberships-for-authenticated-user';
     public const OPERATION_MATCH = 'LIST /user/memberships/orgs';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/memberships/orgs';
     /**Indicates the state of the memberships to return. If not specified, the API returns both active and pending memberships. **/
     private string $state;
     /**The number of results per page (max 100). **/
@@ -43,11 +42,11 @@ final class ListMembershipsForAuthenticatedUserListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{state}', '{per_page}', '{page}'], [$this->state, $this->perPage, $this->page], self::PATH . '?state={state}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{state}', '{per_page}', '{page}'], [$this->state, $this->perPage, $this->page], '/user/memberships/orgs' . '?state={state}&per_page={per_page}&page={page}'));
     }
 
-    /** @return Observable<Schema\OrgMembership>|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|array
+    /** @return Observable<Schema\OrgMembership>|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -64,7 +63,7 @@ final class ListMembershipsForAuthenticatedUserListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrgMembership::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\OrgMembership::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\OrgMembership::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -106,7 +105,7 @@ final class ListMembershipsForAuthenticatedUserListing
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

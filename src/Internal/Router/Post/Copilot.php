@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created;
 use ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotForBusinessSeatsForUsers\Response\ApplicationJson\Created\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -21,8 +21,7 @@ final class Copilot
     {
     }
 
-    /** @return Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created|array{code:int} */
-    public function addCopilotForBusinessSeatsForTeams(array $params): Created|array
+    public function addCopilotForBusinessSeatsForTeams(array $params): Created|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -36,8 +35,7 @@ final class Copilot
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return Schema\Operations\Copilot\AddCopilotForBusinessSeatsForUsers\Response\ApplicationJson\Created\Application\Json|array{code:int} */
-    public function addCopilotForBusinessSeatsForUsers(array $params): Json|array
+    public function addCopilotForBusinessSeatsForUsers(array $params): Json|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

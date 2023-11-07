@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\Repos\CreateInOrg\Request;
 
+use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
 final readonly class ApplicationJson
@@ -148,6 +149,11 @@ final readonly class ApplicationJson
             ],
             "type": "string",
             "description": "The default value for a merge commit message.\\n\\n- `PR_TITLE` - default to the pull request\'s title.\\n- `PR_BODY` - default to the pull request\'s body.\\n- `BLANK` - default to a blank commit message."
+        },
+        "custom_properties": {
+            "type": "object",
+            "description": "The custom properties for the new respository. The keys are the custom property names, and the values are the corresponding custom property values.",
+            "additionalProperties": true
         }
     }
 }';
@@ -177,7 +183,8 @@ final readonly class ApplicationJson
     "squash_merge_commit_title": "PR_TITLE",
     "squash_merge_commit_message": "PR_BODY",
     "merge_commit_title": "MERGE_MESSAGE",
-    "merge_commit_message": "BLANK"
+    "merge_commit_message": "BLANK",
+    "custom_properties": []
 }';
 
     /**
@@ -219,6 +226,7 @@ final readonly class ApplicationJson
     - `PR_TITLE` - default to the pull request's title.
     - `PR_BODY` - default to the pull request's body.
     - `BLANK` - default to a blank commit message.
+     * customProperties: The custom properties for the new respository. The keys are the custom property names, and the values are the corresponding custom property values.
      */
     public function __construct(public string $name, public string|null $description, public string|null $homepage, public bool|null $private, public string|null $visibility, #[MapFrom('has_issues')]
     public bool|null $hasIssues, #[MapFrom('has_projects')]
@@ -239,7 +247,8 @@ final readonly class ApplicationJson
     public string|null $squashMergeCommitTitle, #[MapFrom('squash_merge_commit_message')]
     public string|null $squashMergeCommitMessage, #[MapFrom('merge_commit_title')]
     public string|null $mergeCommitTitle, #[MapFrom('merge_commit_message')]
-    public string|null $mergeCommitMessage,)
+    public string|null $mergeCommitMessage, #[MapFrom('custom_properties')]
+    public Schema\Repos\CreateInOrg\Request\ApplicationJson\CustomProperties|null $customProperties,)
     {
     }
 }

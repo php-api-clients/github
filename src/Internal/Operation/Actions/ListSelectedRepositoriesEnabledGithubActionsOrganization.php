@@ -21,8 +21,6 @@ final class ListSelectedRepositoriesEnabledGithubActionsOrganization
 {
     public const OPERATION_ID    = 'actions/list-selected-repositories-enabled-github-actions-organization';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/permissions/repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/permissions/repositories';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The number of results per page (max 100). **/
@@ -39,7 +37,7 @@ final class ListSelectedRepositoriesEnabledGithubActionsOrganization
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{per_page}', '{page}'], [$this->org, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{per_page}', '{page}'], [$this->org, $this->perPage, $this->page], '/orgs/{org}/actions/permissions/repositories' . '?per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganization\Response\ApplicationJson\Ok

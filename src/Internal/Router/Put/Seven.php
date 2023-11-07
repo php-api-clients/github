@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Put;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\EmptyObject;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok;
@@ -12,6 +13,7 @@ use ApiClients\Client\GitHub\Schema\Operations\Pulls\UpdateBranch\Response\Appli
 use ApiClients\Client\GitHub\Schema\ProtectedBranch;
 use ApiClients\Client\GitHub\Schema\PullRequestMergeResult;
 use ApiClients\Client\GitHub\Schema\TeamMembership;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Seven
@@ -20,8 +22,8 @@ final class Seven
     {
     }
 
-    /** @return |array{code:int}|Schema\TeamMembership|Schema\EmptyObject|Observable<Schema\Label>|Schema\BasicError */
-    public function call(string $call, array $params, array $pathChunks): EmptyObject|Ok|TeamMembership|ProtectedBranch|iterable|BasicError|PullRequestMergeResult|Json
+    /** @return Schema\EmptyObject|WithoutBody|Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok|Schema\TeamMembership|Schema\ProtectedBranch|iterable<int,Schema\Label>|Schema\BasicError|Schema\PullRequestMergeResult|Schema\Operations\Pulls\UpdateBranch\Response\ApplicationJson\Accepted\Application\Json */
+    public function call(string $call, array $params, array $pathChunks): EmptyObject|WithoutBody|Ok|TeamMembership|ProtectedBranch|iterable|BasicError|PullRequestMergeResult|Json
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {

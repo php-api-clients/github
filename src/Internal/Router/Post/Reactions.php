@@ -19,8 +19,7 @@ final class Reactions
     {
     }
 
-    /** @return */
-    public function createForTeamDiscussionLegacy(array $params): Reaction|array
+    public function createForTeamDiscussionLegacy(array $params): Reaction
     {
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
@@ -40,8 +39,7 @@ final class Reactions
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $params);
     }
 
-    /** @return */
-    public function createForCommitComment(array $params): Reaction|array
+    public function createForCommitComment(array $params): Reaction
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -67,8 +65,7 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $params);
     }
 
-    /** @return */
-    public function createForIssue(array $params): Reaction|array
+    public function createForIssue(array $params): Reaction
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -94,8 +91,7 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
-    /** @return */
-    public function createForRelease(array $params): Reaction|array
+    public function createForRelease(array $params): Reaction
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -121,8 +117,7 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id'], $params);
     }
 
-    /** @return */
-    public function createForTeamDiscussionInOrg(array $params): Reaction|array
+    public function createForTeamDiscussionInOrg(array $params): Reaction
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -148,8 +143,7 @@ final class Reactions
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['discussion_number'], $params);
     }
 
-    /** @return */
-    public function createForIssueComment(array $params): Reaction|array
+    public function createForIssueComment(array $params): Reaction
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -175,8 +169,7 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $params);
     }
 
-    /** @return */
-    public function createForPullRequestReviewComment(array $params): Reaction|array
+    public function createForPullRequestReviewComment(array $params): Reaction
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -202,8 +195,7 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $params);
     }
 
-    /** @return */
-    public function createForTeamDiscussionCommentLegacy(array $params): Reaction|array
+    public function createForTeamDiscussionCommentLegacy(array $params): Reaction
     {
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
@@ -229,8 +221,7 @@ final class Reactions
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $arguments['comment_number'], $params);
     }
 
-    /** @return */
-    public function createForTeamDiscussionCommentInOrg(array $params): Reaction|array
+    public function createForTeamDiscussionCommentInOrg(array $params): Reaction
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

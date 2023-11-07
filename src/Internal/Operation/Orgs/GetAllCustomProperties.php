@@ -25,8 +25,6 @@ final class GetAllCustomProperties
 {
     public const OPERATION_ID    = 'orgs/get-all-custom-properties';
     public const OPERATION_MATCH = 'GET /orgs/{org}/properties/schema';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/properties/schema';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -37,7 +35,7 @@ final class GetAllCustomProperties
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
+        return new Request('GET', str_replace(['{org}'], [$this->org], '/orgs/{org}/properties/schema'));
     }
 
     /** @return Observable<Schema\OrgCustomProperty> */
@@ -58,7 +56,7 @@ final class GetAllCustomProperties
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrgCustomProperty::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\OrgCustomProperty::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\OrgCustomProperty::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

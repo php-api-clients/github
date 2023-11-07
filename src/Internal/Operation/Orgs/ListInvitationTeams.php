@@ -25,8 +25,6 @@ final class ListInvitationTeams
 {
     public const OPERATION_ID    = 'orgs/list-invitation-teams';
     public const OPERATION_MATCH = 'GET /orgs/{org}/invitations/{invitation_id}/teams';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/invitations/{invitation_id}/teams';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the invitation. **/
@@ -46,7 +44,7 @@ final class ListInvitationTeams
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{invitation_id}', '{per_page}', '{page}'], [$this->org, $this->invitationId, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{invitation_id}', '{per_page}', '{page}'], [$this->org, $this->invitationId, $this->perPage, $this->page], '/orgs/{org}/invitations/{invitation_id}/teams' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\Team> */
@@ -67,7 +65,7 @@ final class ListInvitationTeams
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Team::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Team::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Team::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

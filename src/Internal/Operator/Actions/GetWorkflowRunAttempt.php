@@ -24,12 +24,11 @@ final readonly class GetWorkflowRunAttempt
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $runId, int $attemptNumber, bool $excludePullRequests = false): WorkflowRun|array
+    public function call(string $owner, string $repo, int $runId, int $attemptNumber, bool $excludePullRequests = false): WorkflowRun
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetWorkflowRunAttempt($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId, $attemptNumber, $excludePullRequests);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): WorkflowRun|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): WorkflowRun {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

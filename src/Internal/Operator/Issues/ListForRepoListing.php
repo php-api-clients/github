@@ -25,12 +25,12 @@ final readonly class ListForRepoListing
     {
     }
 
-    /** @return Observable<Schema\Issue>|Schema\BasicError */
+    /** @return iterable<int,Schema\Issue>|Schema\BasicError */
     public function call(string $owner, string $repo, string $milestone, string $assignee, string $creator, string $mentioned, string $labels, string $since, string $state = 'open', string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1): iterable|BasicError
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\ListForRepoListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $milestone, $assignee, $creator, $mentioned, $labels, $since, $state, $sort, $direction, $perPage, $page);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|BasicError|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|BasicError {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

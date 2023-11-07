@@ -24,12 +24,11 @@ final readonly class GetAuthenticated
     {
     }
 
-    /** @return */
-    public function call(): Integration|array
+    public function call(): Integration
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetAuthenticated($this->responseSchemaValidator, $this->hydrator);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Integration|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Integration {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

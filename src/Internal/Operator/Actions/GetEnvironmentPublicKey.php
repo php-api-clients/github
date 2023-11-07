@@ -24,12 +24,11 @@ final readonly class GetEnvironmentPublicKey
     {
     }
 
-    /** @return */
-    public function call(int $repositoryId, string $environmentName): ActionsPublicKey|array
+    public function call(int $repositoryId, string $environmentName): ActionsPublicKey
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetEnvironmentPublicKey($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsPublicKey|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsPublicKey {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

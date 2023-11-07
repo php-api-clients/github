@@ -24,12 +24,11 @@ final readonly class GetOrgRuleSuite
     {
     }
 
-    /** @return */
-    public function call(string $org, int $ruleSuiteId): RuleSuite|array
+    public function call(string $org, int $ruleSuiteId): RuleSuite
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetOrgRuleSuite($this->responseSchemaValidator, $this->hydrator, $org, $ruleSuiteId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RuleSuite|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RuleSuite {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -21,8 +21,6 @@ final class ListDeploymentBranchPolicies
 {
     public const OPERATION_ID    = 'repos/list-deployment-branch-policies';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -45,7 +43,7 @@ final class ListDeploymentBranchPolicies
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{environment_name}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->environmentName, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{environment_name}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->environmentName, $this->perPage, $this->page], '/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies' . '?per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Repos\ListDeploymentBranchPolicies\Response\ApplicationJson\Ok

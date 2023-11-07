@@ -23,8 +23,6 @@ final class CreateCommitComment
 {
     public const OPERATION_ID    = 'repos/create-commit-comment';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/commits/{commit_sha}/comments';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/commits/{commit_sha}/comments';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -43,7 +41,7 @@ final class CreateCommitComment
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\CreateCommitComment\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{commit_sha}'], [$this->owner, $this->repo, $this->commitSha], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}', '{commit_sha}'], [$this->owner, $this->repo, $this->commitSha], '/repos/{owner}/{repo}/commits/{commit_sha}/comments'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\CommitComment

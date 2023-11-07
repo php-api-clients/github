@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Codespaces;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class ListInOrganization
 {
     public const OPERATION_ID    = 'codespaces/list-in-organization';
     public const OPERATION_MATCH = 'GET /orgs/{org}/codespaces';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/codespaces';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The number of results per page (max 100). **/
@@ -40,11 +39,10 @@ final class ListInOrganization
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{per_page}', '{page}'], [$this->org, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{per_page}', '{page}'], [$this->org, $this->perPage, $this->page], '/orgs/{org}/codespaces' . '?per_page={per_page}&page={page}'));
     }
 
-    /** @return Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\ListInOrganization\Response\ApplicationJson\Ok|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -101,7 +99,7 @@ final class ListInOrganization
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

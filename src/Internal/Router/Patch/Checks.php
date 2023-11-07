@@ -20,8 +20,7 @@ final class Checks
     {
     }
 
-    /** @return */
-    public function update(array $params): CheckRun|array
+    public function update(array $params): CheckRun
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -47,8 +46,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['check_run_id'], $params);
     }
 
-    /** @return */
-    public function setSuitesPreferences(array $params): CheckSuitePreference|array
+    public function setSuitesPreferences(array $params): CheckSuitePreference
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

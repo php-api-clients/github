@@ -25,8 +25,6 @@ final class ListMembersLegacy
 {
     public const OPERATION_ID    = 'teams/list-members-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/members';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/members';
     /**The unique identifier of the team. **/
     private int $teamId;
     /**Filters members returned by their role in the team. **/
@@ -46,7 +44,7 @@ final class ListMembersLegacy
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{team_id}', '{role}', '{per_page}', '{page}'], [$this->teamId, $this->role, $this->perPage, $this->page], self::PATH . '?role={role}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{team_id}', '{role}', '{per_page}', '{page}'], [$this->teamId, $this->role, $this->perPage, $this->page], '/teams/{team_id}/members' . '?role={role}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\SimpleUser> */
@@ -67,7 +65,7 @@ final class ListMembersLegacy
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\SimpleUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\SimpleUser::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\SimpleUser::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

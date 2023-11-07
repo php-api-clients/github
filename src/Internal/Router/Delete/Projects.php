@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Projects
     {
     }
 
-    /** @return array{code:int} */
-    public function deleteColumn(array $params): array
+    public function deleteColumn(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('column_id', $params) === false) {
@@ -33,8 +33,7 @@ final class Projects
         return $operator->call($arguments['column_id']);
     }
 
-    /** @return array{code:int} */
-    public function deleteCard(array $params): array
+    public function deleteCard(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('card_id', $params) === false) {
@@ -48,8 +47,7 @@ final class Projects
         return $operator->call($arguments['card_id']);
     }
 
-    /** @return array{code:int} */
-    public function removeCollaborator(array $params): array
+    public function removeCollaborator(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {
@@ -69,8 +67,7 @@ final class Projects
         return $operator->call($arguments['project_id'], $arguments['username']);
     }
 
-    /** @return array{code:int} */
-    public function delete(array $params): array
+    public function delete(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('project_id', $params) === false) {

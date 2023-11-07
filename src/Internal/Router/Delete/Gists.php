@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Gists
     {
     }
 
-    /** @return array{code:int} */
-    public function unstar(array $params): array
+    public function unstar(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
@@ -33,8 +33,7 @@ final class Gists
         return $operator->call($arguments['gist_id']);
     }
 
-    /** @return array{code:int} */
-    public function deleteComment(array $params): array
+    public function deleteComment(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {
@@ -54,8 +53,7 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['comment_id']);
     }
 
-    /** @return array{code:int} */
-    public function delete(array $params): array
+    public function delete(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('gist_id', $params) === false) {

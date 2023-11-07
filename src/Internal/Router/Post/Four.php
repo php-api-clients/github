@@ -19,6 +19,7 @@ use ApiClients\Client\GitHub\Schema\Repository;
 use ApiClients\Client\GitHub\Schema\RepositoryRuleset;
 use ApiClients\Client\GitHub\Schema\TeamDiscussion;
 use ApiClients\Client\GitHub\Schema\TeamFull;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Four
@@ -27,8 +28,7 @@ final class Four
     {
     }
 
-    /** @return |Schema\GistComment|array{code:int}|Schema\BaseGist|Schema\ProjectColumn */
-    public function call(string $call, array $params, array $pathChunks): Integration|Authorization|GistComment|BaseGist|OrgHook|OrganizationInvitation|Migration|Json|\ApiClients\Client\GitHub\Schema\Operations\Orgs\UpdatePatAccesses\Response\ApplicationJson\Accepted\Application\Json|Project|Repository|RepositoryRuleset|TeamFull|ProjectColumn|TeamDiscussion|array
+    public function call(string $call, array $params, array $pathChunks): Integration|Authorization|GistComment|WithoutBody|BaseGist|OrgHook|OrganizationInvitation|Migration|Json|\ApiClients\Client\GitHub\Schema\Operations\Orgs\UpdatePatAccesses\Response\ApplicationJson\Accepted\Application\Json|Project|Repository|RepositoryRuleset|TeamFull|ProjectColumn|TeamDiscussion
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app-manifests') {

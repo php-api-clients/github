@@ -8,6 +8,7 @@ use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,7 +21,7 @@ final class Issues
     {
     }
 
-    /** @return Observable<Schema\Label>|Schema\BasicError */
+    /** @return iterable<int,Schema\Label>|Schema\BasicError */
     public function setLabels(array $params): iterable|BasicError
     {
         $arguments = [];
@@ -47,8 +48,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
-    /** @return array{code:int} */
-    public function lock(array $params): array
+    public function lock(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

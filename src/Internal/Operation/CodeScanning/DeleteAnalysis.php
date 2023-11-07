@@ -22,8 +22,6 @@ final class DeleteAnalysis
 {
     public const OPERATION_ID    = 'code-scanning/delete-analysis';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -43,7 +41,7 @@ final class DeleteAnalysis
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{analysis_id}', '{confirm_delete}'], [$this->owner, $this->repo, $this->analysisId, $this->confirmDelete], self::PATH . '?confirm_delete={confirm_delete}'));
+        return new Request('DELETE', str_replace(['{owner}', '{repo}', '{analysis_id}', '{confirm_delete}'], [$this->owner, $this->repo, $this->analysisId, $this->confirmDelete], '/repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}' . '?confirm_delete={confirm_delete}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\CodeScanningAnalysisDeletion

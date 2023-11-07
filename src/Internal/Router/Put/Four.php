@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Put;
 
 use ApiClients\Client\GitHub\Internal\Routers;
 use ApiClients\Client\GitHub\Schema\InteractionLimitResponse;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Four
@@ -14,8 +15,7 @@ final class Four
     {
     }
 
-    /** @return array{code:int}| */
-    public function call(string $call, array $params, array $pathChunks): InteractionLimitResponse|array
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|InteractionLimitResponse
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'gists') {

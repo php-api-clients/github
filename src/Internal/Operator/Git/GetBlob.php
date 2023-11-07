@@ -24,12 +24,11 @@ final readonly class GetBlob
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $fileSha): Blob|array
+    public function call(string $owner, string $repo, string $fileSha): Blob
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Git\GetBlob($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $fileSha);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Blob|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Blob {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

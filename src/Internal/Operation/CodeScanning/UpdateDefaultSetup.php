@@ -23,8 +23,6 @@ final class UpdateDefaultSetup
 {
     public const OPERATION_ID    = 'code-scanning/update-default-setup';
     public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/code-scanning/default-setup';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/repos/{owner}/{repo}/code-scanning/default-setup';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,7 +38,7 @@ final class UpdateDefaultSetup
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\CodeScanningDefaultSetupUpdate::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/code-scanning/default-setup'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\EmptyObject|Schema\CodeScanningDefaultSetupUpdateResponse

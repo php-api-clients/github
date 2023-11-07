@@ -21,8 +21,6 @@ final class GetAllowedActionsOrganization
 {
     public const OPERATION_ID    = 'actions/get-allowed-actions-organization';
     public const OPERATION_MATCH = 'GET /orgs/{org}/actions/permissions/selected-actions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/actions/permissions/selected-actions';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -33,7 +31,7 @@ final class GetAllowedActionsOrganization
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
+        return new Request('GET', str_replace(['{org}'], [$this->org], '/orgs/{org}/actions/permissions/selected-actions'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\SelectedActions

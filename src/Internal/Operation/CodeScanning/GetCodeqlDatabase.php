@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\CodeScanning;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class GetCodeqlDatabase
 {
     public const OPERATION_ID    = 'code-scanning/get-codeql-database';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/code-scanning/codeql/databases/{language}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,11 +39,10 @@ final class GetCodeqlDatabase
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{language}'], [$this->owner, $this->repo, $this->language], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{language}'], [$this->owner, $this->repo, $this->language], '/repos/{owner}/{repo}/code-scanning/codeql/databases/{language}'));
     }
 
-    /** @return Schema\CodeScanningCodeqlDatabase|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\CodeScanningCodeqlDatabase|array
+    public function createResponse(ResponseInterface $response): Schema\CodeScanningCodeqlDatabase|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -93,7 +91,7 @@ final class GetCodeqlDatabase
              * Found
              **/
             case 302:
-                return ['code' => 302];
+                return new WithoutBody(302, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

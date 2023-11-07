@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\List;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,7 +21,7 @@ final class CodeScanning
     {
     }
 
-    /** @return Observable<Schema\CodeScanningOrganizationAlertItems> */
+    /** @return iterable<int,Schema\CodeScanningOrganizationAlertItems> */
     public function listAlertsForOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -101,8 +102,8 @@ final class CodeScanning
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\CodeScanningAlertItems>|array{code:int} */
-    public function listAlertsForRepoListing(array $params): iterable
+    /** @return iterable<int,Schema\CodeScanningAlertItems>|WithoutBody */
+    public function listAlertsForRepoListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -182,7 +183,7 @@ final class CodeScanning
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\CodeScanningAnalysis> */
+    /** @return iterable<int,Schema\CodeScanningAnalysis> */
     public function listRecentAnalysesListing(array $params): iterable
     {
         $arguments = [];
@@ -257,7 +258,7 @@ final class CodeScanning
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\CodeScanningAlertInstance> */
+    /** @return iterable<int,Schema\CodeScanningAlertInstance> */
     public function listAlertInstancesListing(array $params): iterable
     {
         $arguments = [];

@@ -21,8 +21,6 @@ final class GetOrgSecret
 {
     public const OPERATION_ID    = 'dependabot/get-org-secret';
     public const OPERATION_MATCH = 'GET /orgs/{org}/dependabot/secrets/{secret_name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/dependabot/secrets/{secret_name}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The name of the secret. **/
@@ -36,7 +34,7 @@ final class GetOrgSecret
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{secret_name}'], [$this->org, $this->secretName], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{secret_name}'], [$this->org, $this->secretName], '/orgs/{org}/dependabot/secrets/{secret_name}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\OrganizationDependabotSecret

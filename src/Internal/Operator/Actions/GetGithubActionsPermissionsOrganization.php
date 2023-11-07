@@ -24,12 +24,11 @@ final readonly class GetGithubActionsPermissionsOrganization
     {
     }
 
-    /** @return */
-    public function call(string $org): ActionsOrganizationPermissions|array
+    public function call(string $org): ActionsOrganizationPermissions
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetGithubActionsPermissionsOrganization($this->responseSchemaValidator, $this->hydrator, $org);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsOrganizationPermissions|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsOrganizationPermissions {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

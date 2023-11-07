@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operation;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\InteractionLimitResponse;
 use ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 
 final class Interactions
 {
@@ -15,56 +15,47 @@ final class Interactions
     {
     }
 
-    /** @return */
-    public function getRestrictionsForOrg(string $org): InteractionLimitResponse|One|array
+    public function getRestrictionsForOrg(string $org): InteractionLimitResponse|One
     {
         return $this->operators->interactions👷GetRestrictionsForOrg()->call($org);
     }
 
-    /** @return */
-    public function setRestrictionsForOrg(string $org, array $params): InteractionLimitResponse|array
+    public function setRestrictionsForOrg(string $org, array $params): InteractionLimitResponse
     {
         return $this->operators->interactions👷SetRestrictionsForOrg()->call($org, $params);
     }
 
-    /** @return array{code:int} */
-    public function removeRestrictionsForOrg(string $org): array
+    public function removeRestrictionsForOrg(string $org): WithoutBody
     {
         return $this->operators->interactions👷RemoveRestrictionsForOrg()->call($org);
     }
 
-    /** @return */
-    public function getRestrictionsForRepo(string $owner, string $repo): InteractionLimitResponse|\ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One|array
+    public function getRestrictionsForRepo(string $owner, string $repo): InteractionLimitResponse|\ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One
     {
         return $this->operators->interactions👷GetRestrictionsForRepo()->call($owner, $repo);
     }
 
-    /** @return Schema\InteractionLimitResponse|array{code:int} */
-    public function setRestrictionsForRepo(string $owner, string $repo, array $params): InteractionLimitResponse|array
+    public function setRestrictionsForRepo(string $owner, string $repo, array $params): InteractionLimitResponse|WithoutBody
     {
         return $this->operators->interactions👷SetRestrictionsForRepo()->call($owner, $repo, $params);
     }
 
-    /** @return array{code:int} */
-    public function removeRestrictionsForRepo(string $owner, string $repo): array
+    public function removeRestrictionsForRepo(string $owner, string $repo): WithoutBody
     {
         return $this->operators->interactions👷RemoveRestrictionsForRepo()->call($owner, $repo);
     }
 
-    /** @return Schema\InteractionLimitResponse|Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json\One|array{code:int} */
-    public function getRestrictionsForAuthenticatedUser(): InteractionLimitResponse|\ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json\One|array
+    public function getRestrictionsForAuthenticatedUser(): InteractionLimitResponse|\ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json\One|WithoutBody
     {
         return $this->operators->interactions👷GetRestrictionsForAuthenticatedUser()->call();
     }
 
-    /** @return */
-    public function setRestrictionsForAuthenticatedUser(array $params): InteractionLimitResponse|array
+    public function setRestrictionsForAuthenticatedUser(array $params): InteractionLimitResponse
     {
         return $this->operators->interactions👷SetRestrictionsForAuthenticatedUser()->call($params);
     }
 
-    /** @return array{code:int} */
-    public function removeRestrictionsForAuthenticatedUser(): array
+    public function removeRestrictionsForAuthenticatedUser(): WithoutBody
     {
         return $this->operators->interactions👷RemoveRestrictionsForAuthenticatedUser()->call();
     }

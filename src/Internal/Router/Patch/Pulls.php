@@ -20,8 +20,7 @@ final class Pulls
     {
     }
 
-    /** @return */
-    public function update(array $params): PullRequest|array
+    public function update(array $params): PullRequest
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -47,8 +46,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    /** @return */
-    public function updateReviewComment(array $params): PullRequestReviewComment|array
+    public function updateReviewComment(array $params): PullRequestReviewComment
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

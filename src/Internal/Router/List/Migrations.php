@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\List;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,8 +21,8 @@ final class Migrations
     {
     }
 
-    /** @return Observable<Schema\Migration>|array{code:int} */
-    public function listForAuthenticatedUserListing(array $params): iterable
+    /** @return iterable<int,Schema\Migration>|WithoutBody */
+    public function listForAuthenticatedUserListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
@@ -47,7 +48,7 @@ final class Migrations
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Migration> */
+    /** @return iterable<int,Schema\Migration> */
     public function listForOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -86,7 +87,7 @@ final class Migrations
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listReposForAuthenticatedUserListing(array $params): iterable
     {
         $arguments = [];
@@ -119,7 +120,7 @@ final class Migrations
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listReposForOrgListing(array $params): iterable
     {
         $arguments = [];

@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Repos;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -25,8 +26,6 @@ final class ListPublic
 {
     public const OPERATION_ID    = 'repos/list-public';
     public const OPERATION_MATCH = 'GET /repositories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repositories';
     /**A repository ID. Only return repositories with an ID greater than this ID. **/
     private int $since;
 
@@ -37,11 +36,11 @@ final class ListPublic
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{since}'], [$this->since], self::PATH . '?since={since}'));
+        return new Request('GET', str_replace(['{since}'], [$this->since], '/repositories' . '?since={since}'));
     }
 
-    /** @return Observable<Schema\MinimalRepository>|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|array
+    /** @return Observable<Schema\MinimalRepository>|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -58,7 +57,7 @@ final class ListPublic
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MinimalRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\MinimalRepository::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\MinimalRepository::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -84,7 +83,7 @@ final class ListPublic
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

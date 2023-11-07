@@ -1125,6 +1125,11 @@ final readonly class WebhookRepositoryAdvisoryPublished
                         "type": "string"
                     }
                 },
+                "custom_properties": {
+                    "type": "object",
+                    "description": "The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.",
+                    "additionalProperties": true
+                },
                 "has_issues": {
                     "type": "boolean",
                     "description": "Whether issues are enabled.",
@@ -1752,7 +1757,9 @@ final readonly class WebhookRepositoryAdvisoryPublished
                 },
                 "url": {
                     "type": "string",
-                    "description": "The API URL for the advisory."
+                    "description": "The API URL for the advisory.",
+                    "format": "uri",
+                    "readOnly": true
                 },
                 "html_url": {
                     "type": "string",
@@ -3871,6 +3878,7 @@ final readonly class WebhookRepositoryAdvisoryPublished
             "generated",
             "generated"
         ],
+        "custom_properties": [],
         "has_issues": true,
         "has_projects": true,
         "has_wiki": true,
@@ -4025,7 +4033,7 @@ final readonly class WebhookRepositoryAdvisoryPublished
     "repository_advisory": {
         "ghsa_id": "generated",
         "cve_id": "generated",
-        "url": "generated",
+        "url": "https:\\/\\/example.com\\/",
         "html_url": "https:\\/\\/example.com\\/",
         "summary": "generated",
         "description": "generated",

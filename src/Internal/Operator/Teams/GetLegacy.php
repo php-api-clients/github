@@ -24,12 +24,11 @@ final readonly class GetLegacy
     {
     }
 
-    /** @return */
-    public function call(int $teamId): TeamFull|array
+    public function call(int $teamId): TeamFull
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\GetLegacy($this->responseSchemaValidator, $this->hydrator, $teamId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): TeamFull|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): TeamFull {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

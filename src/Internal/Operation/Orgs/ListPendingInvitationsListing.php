@@ -25,8 +25,6 @@ final class ListPendingInvitationsListing
 {
     public const OPERATION_ID    = 'orgs/list-pending-invitations';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/invitations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/invitations';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The number of results per page (max 100). **/
@@ -49,7 +47,7 @@ final class ListPendingInvitationsListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{per_page}', '{page}', '{role}', '{invitation_source}'], [$this->org, $this->perPage, $this->page, $this->role, $this->invitationSource], self::PATH . '?per_page={per_page}&page={page}&role={role}&invitation_source={invitation_source}'));
+        return new Request('GET', str_replace(['{org}', '{per_page}', '{page}', '{role}', '{invitation_source}'], [$this->org, $this->perPage, $this->page, $this->role, $this->invitationSource], '/orgs/{org}/invitations' . '?per_page={per_page}&page={page}&role={role}&invitation_source={invitation_source}'));
     }
 
     /** @return Observable<Schema\OrganizationInvitation> */
@@ -70,7 +68,7 @@ final class ListPendingInvitationsListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrganizationInvitation::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\OrganizationInvitation::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\OrganizationInvitation::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

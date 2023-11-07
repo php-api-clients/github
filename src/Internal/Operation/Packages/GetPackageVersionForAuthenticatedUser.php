@@ -21,8 +21,6 @@ final class GetPackageVersionForAuthenticatedUser
 {
     public const OPERATION_ID    = 'packages/get-package-version-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/packages/{package_type}/{package_name}/versions/{package_version_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/packages/{package_type}/{package_name}/versions/{package_version_id}';
     /**The type of supported package. Packages in GitHub's Gradle registry have the type `maven`. Docker images pushed to GitHub's Container registry (`ghcr.io`) have the type `container`. You can use the type `docker` to find images that were pushed to GitHub's Docker registry (`docker.pkg.github.com`), even if these have now been migrated to the Container registry. **/
     private string $packageType;
     /**The name of the package. **/
@@ -39,7 +37,7 @@ final class GetPackageVersionForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{package_type}', '{package_name}', '{package_version_id}'], [$this->packageType, $this->packageName, $this->packageVersionId], self::PATH));
+        return new Request('GET', str_replace(['{package_type}', '{package_name}', '{package_version_id}'], [$this->packageType, $this->packageName, $this->packageVersionId], '/user/packages/{package_type}/{package_name}/versions/{package_version_id}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\PackageVersion

@@ -23,8 +23,6 @@ final class UpdateInOrg
 {
     public const OPERATION_ID    = 'teams/update-in-org';
     public const OPERATION_MATCH = 'PATCH /orgs/{org}/teams/{team_slug}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The slug of the team name. **/
@@ -40,7 +38,7 @@ final class UpdateInOrg
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Teams\UpdateInOrg\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}', '{team_slug}'], [$this->org, $this->teamSlug], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{org}', '{team_slug}'], [$this->org, $this->teamSlug], '/orgs/{org}/teams/{team_slug}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\TeamFull

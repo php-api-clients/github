@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operation\Actions;
 
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -19,8 +20,6 @@ final class SetSelectedReposForOrgSecret
 {
     public const OPERATION_ID    = 'actions/set-selected-repos-for-org-secret';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/actions/secrets/{secret_name}/repositories';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/actions/secrets/{secret_name}/repositories';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The name of the secret. **/
@@ -36,11 +35,10 @@ final class SetSelectedReposForOrgSecret
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\SetSelectedReposForOrgSecret\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}', '{secret_name}'], [$this->org, $this->secretName], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{org}', '{secret_name}'], [$this->org, $this->secretName], '/orgs/{org}/actions/secrets/{secret_name}/repositories'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code = $response->getStatusCode();
         switch ($code) {
@@ -48,7 +46,7 @@ final class SetSelectedReposForOrgSecret
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

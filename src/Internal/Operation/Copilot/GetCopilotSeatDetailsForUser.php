@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Copilot;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class GetCopilotSeatDetailsForUser
 {
     public const OPERATION_ID    = 'copilot/get-copilot-seat-details-for-user';
     public const OPERATION_MATCH = 'GET /orgs/{org}/members/{username}/copilot';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/members/{username}/copilot';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The handle for the GitHub user account. **/
@@ -37,11 +36,10 @@ final class GetCopilotSeatDetailsForUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{username}'], [$this->org, $this->username], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{username}'], [$this->org, $this->username], '/orgs/{org}/members/{username}/copilot'));
     }
 
-    /** @return Schema\CopilotSeatDetails|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\CopilotSeatDetails|array
+    public function createResponse(ResponseInterface $response): Schema\CopilotSeatDetails|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -98,7 +96,7 @@ final class GetCopilotSeatDetailsForUser
              * Copilot for Business is not enabled for this organization or the user has a pending organization invitation.
              **/
             case 422:
-                return ['code' => 422];
+                return new WithoutBody(422, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

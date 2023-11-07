@@ -7,15 +7,13 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Orgs;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
-use Rx\Observable;
-use Rx\Scheduler\ImmediateScheduler;
-use Throwable;
 
 use function explode;
 use function json_decode;
@@ -26,8 +24,6 @@ final class CreateOrUpdateCustomPropertiesValuesForRepos
 {
     public const OPERATION_ID    = 'orgs/create-or-update-custom-properties-values-for-repos';
     public const OPERATION_MATCH = 'PATCH /orgs/{org}/properties/values';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/orgs/{org}/properties/values';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -40,11 +36,10 @@ final class CreateOrUpdateCustomPropertiesValuesForRepos
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Orgs\CreateOrUpdateCustomPropertiesValuesForRepos\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{org}'], [$this->org], '/orgs/{org}/properties/values'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Observable<Schema\OrgRepoCustomPropertyValues> */
-    public function createResponse(ResponseInterface $response): Observable
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -53,26 +48,8 @@ final class CreateOrUpdateCustomPropertiesValuesForRepos
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
-                     * Response
-                     **/
-                    case 200:
-                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\OrgRepoCustomPropertyValues {
-                            $error = new RuntimeException();
-                            try {
-                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrgRepoCustomPropertyValues::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-
-                                return $this->hydrators->hydrateObject(Schema\OrgRepoCustomPropertyValues::class, $body);
-                            } catch (Throwable $error) {
-                                goto items_application_json_two_hundred_aaaaa;
-                            }
-
-                            items_application_json_two_hundred_aaaaa:
-                            throw $error;
-                        });
-                    /**
                      * Forbidden
                      **/
-
                     case 403:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
@@ -88,6 +65,14 @@ final class CreateOrUpdateCustomPropertiesValuesForRepos
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * No Content when custom property values are successfully created or updated
+             **/
+            case 204:
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

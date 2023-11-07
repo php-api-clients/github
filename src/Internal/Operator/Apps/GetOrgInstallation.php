@@ -24,12 +24,11 @@ final readonly class GetOrgInstallation
     {
     }
 
-    /** @return */
-    public function call(string $org): Installation|array
+    public function call(string $org): Installation
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetOrgInstallation($this->responseSchemaValidator, $this->hydrator, $org);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Installation|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Installation {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

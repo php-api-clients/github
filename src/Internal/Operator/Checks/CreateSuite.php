@@ -24,12 +24,11 @@ final readonly class CreateSuite
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, array $params): CheckSuite|array
+    public function call(string $owner, string $repo, array $params): CheckSuite
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\CreateSuite($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CheckSuite|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CheckSuite {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

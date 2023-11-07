@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Repos;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class UploadReleaseAsset
 {
     public const OPERATION_ID    = 'repos/upload-release-asset';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/releases/{release_id}/assets';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/releases/{release_id}/assets';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -42,11 +41,10 @@ final class UploadReleaseAsset
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\UploadReleaseAsset\Request\ApplicationOctetStream::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{release_id}', '{name}', '{label}'], [$this->owner, $this->repo, $this->releaseId, $this->name, $this->label], self::PATH . '?name={name}&label={label}'), ['Content-Type' => 'application/octet-stream'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}', '{release_id}', '{name}', '{label}'], [$this->owner, $this->repo, $this->releaseId, $this->name, $this->label], '/repos/{owner}/{repo}/releases/{release_id}/assets' . '?name={name}&label={label}'), ['Content-Type' => 'application/octet-stream'], json_encode($data));
     }
 
-    /** @return Schema\ReleaseAsset|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\ReleaseAsset|array
+    public function createResponse(ResponseInterface $response): Schema\ReleaseAsset|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -71,7 +69,7 @@ final class UploadReleaseAsset
              * Response if you upload an asset with the same filename as another uploaded asset
              **/
             case 422:
-                return ['code' => 422];
+                return new WithoutBody(422, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

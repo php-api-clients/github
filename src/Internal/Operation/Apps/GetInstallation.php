@@ -22,8 +22,6 @@ final class GetInstallation
 {
     public const OPERATION_ID    = 'apps/get-installation';
     public const OPERATION_MATCH = 'GET /app/installations/{installation_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/app/installations/{installation_id}';
     /**The unique identifier of the installation. **/
     private int $installationId;
 
@@ -34,7 +32,7 @@ final class GetInstallation
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{installation_id}'], [$this->installationId], self::PATH));
+        return new Request('GET', str_replace(['{installation_id}'], [$this->installationId], '/app/installations/{installation_id}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Installation

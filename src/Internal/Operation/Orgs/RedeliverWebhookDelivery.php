@@ -22,8 +22,6 @@ final class RedeliverWebhookDelivery
 {
     public const OPERATION_ID    = 'orgs/redeliver-webhook-delivery';
     public const OPERATION_MATCH = 'POST /orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery. **/
@@ -37,7 +35,7 @@ final class RedeliverWebhookDelivery
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{hook_id}', '{delivery_id}'], [$this->org, $this->hookId, $this->deliveryId], self::PATH));
+        return new Request('POST', str_replace(['{org}', '{hook_id}', '{delivery_id}'], [$this->org, $this->hookId, $this->deliveryId], '/orgs/{org}/hooks/{hook_id}/deliveries/{delivery_id}/attempts'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Orgs\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json

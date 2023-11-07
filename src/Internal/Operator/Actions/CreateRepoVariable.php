@@ -24,12 +24,11 @@ final readonly class CreateRepoVariable
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, array $params): EmptyObject|array
+    public function call(string $owner, string $repo, array $params): EmptyObject
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\CreateRepoVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): EmptyObject|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): EmptyObject {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

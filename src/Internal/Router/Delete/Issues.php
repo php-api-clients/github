@@ -9,6 +9,7 @@ use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\Issue;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -21,8 +22,7 @@ final class Issues
     {
     }
 
-    /** @return array{code:int} */
-    public function deleteComment(array $params): array
+    public function deleteComment(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -48,8 +48,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
-    /** @return */
-    public function removeAssignees(array $params): Issue|array
+    public function removeAssignees(array $params): Issue
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -75,8 +74,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
-    /** @return Schema\BasicError|array{code:int} */
-    public function removeAllLabels(array $params): BasicError|array
+    public function removeAllLabels(array $params): BasicError|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -102,8 +100,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number']);
     }
 
-    /** @return array{code:int} */
-    public function unlock(array $params): array
+    public function unlock(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -129,8 +126,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number']);
     }
 
-    /** @return array{code:int} */
-    public function deleteLabel(array $params): array
+    public function deleteLabel(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -156,8 +152,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name']);
     }
 
-    /** @return array{code:int} */
-    public function deleteMilestone(array $params): array
+    public function deleteMilestone(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -183,7 +178,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone_number']);
     }
 
-    /** @return Observable<Schema\Label>|Schema\BasicError */
+    /** @return iterable<int,Schema\Label>|Schema\BasicError */
     public function removeLabel(array $params): iterable|BasicError
     {
         $arguments = [];

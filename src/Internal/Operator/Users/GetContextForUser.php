@@ -24,12 +24,11 @@ final readonly class GetContextForUser
     {
     }
 
-    /** @return */
-    public function call(string $username, string $subjectType, string $subjectId): Hovercard|array
+    public function call(string $username, string $subjectType, string $subjectId): Hovercard
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\GetContextForUser($this->responseSchemaValidator, $this->hydrator, $username, $subjectType, $subjectId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Hovercard|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Hovercard {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

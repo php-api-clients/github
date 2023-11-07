@@ -20,7 +20,7 @@ final class Checks
     {
     }
 
-    /** @return Observable<Schema\CheckAnnotation> */
+    /** @return iterable<int,Schema\CheckAnnotation> */
     public function listAnnotationsListing(array $params): iterable
     {
         $arguments = [];

@@ -25,8 +25,6 @@ final class ListReposLegacyListing
 {
     public const OPERATION_ID    = 'teams/list-repos-legacy';
     public const OPERATION_MATCH = 'LIST /teams/{team_id}/repos';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/repos';
     /**The unique identifier of the team. **/
     private int $teamId;
     /**The number of results per page (max 100). **/
@@ -43,7 +41,7 @@ final class ListReposLegacyListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{team_id}', '{per_page}', '{page}'], [$this->teamId, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{team_id}', '{per_page}', '{page}'], [$this->teamId, $this->perPage, $this->page], '/teams/{team_id}/repos' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\MinimalRepository> */
@@ -64,7 +62,7 @@ final class ListReposLegacyListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MinimalRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\MinimalRepository::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\MinimalRepository::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

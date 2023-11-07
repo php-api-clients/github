@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Repos;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class CreateDeploymentBranchPolicy
 {
     public const OPERATION_ID    = 'repos/create-deployment-branch-policy';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -42,11 +41,10 @@ final class CreateDeploymentBranchPolicy
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\DeploymentBranchPolicyNamePatternWithType::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{environment_name}'], [$this->owner, $this->repo, $this->environmentName], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}', '{environment_name}'], [$this->owner, $this->repo, $this->environmentName], '/repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\DeploymentBranchPolicy|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\DeploymentBranchPolicy|array
+    public function createResponse(ResponseInterface $response): Schema\DeploymentBranchPolicy|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -71,13 +69,13 @@ final class CreateDeploymentBranchPolicy
              * Not Found or `deployment_branch_policy.custom_branch_policies` property for the environment is set to false
              **/
             case 404:
-                return ['code' => 404];
+                return new WithoutBody(404, []);
             /**
              * Response if the same branch name pattern already exists
              **/
 
             case 303:
-                return ['code' => 303];
+                return new WithoutBody(303, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Teams;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -21,8 +22,6 @@ final class GetMembershipForUserInOrg
 {
     public const OPERATION_ID    = 'teams/get-membership-for-user-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/memberships/{username}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/memberships/{username}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The slug of the team name. **/
@@ -39,11 +38,10 @@ final class GetMembershipForUserInOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{team_slug}', '{username}'], [$this->org, $this->teamSlug, $this->username], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{team_slug}', '{username}'], [$this->org, $this->teamSlug, $this->username], '/orgs/{org}/teams/{team_slug}/memberships/{username}'));
     }
 
-    /** @return Schema\TeamMembership|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\TeamMembership|array
+    public function createResponse(ResponseInterface $response): Schema\TeamMembership|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -68,7 +66,7 @@ final class GetMembershipForUserInOrg
              * if user has no team membership
              **/
             case 404:
-                return ['code' => 404];
+                return new WithoutBody(404, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Search;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -21,8 +22,6 @@ final class Commits
 {
     public const OPERATION_ID    = 'search/commits';
     public const OPERATION_MATCH = 'GET /search/commits';
-    private const METHOD         = 'GET';
-    private const PATH           = '/search/commits';
     /**The query contains one or more search keywords and qualifiers. Qualifiers allow you to limit your search to specific areas of GitHub. The REST API supports the same qualifiers as the web interface for GitHub. To learn more about the format of the query, see [Constructing a search query](https://docs.github.com/rest/search/search#constructing-a-search-query). See "[Searching commits](https://docs.github.com/search-github/searching-on-github/searching-commits)" for a detailed list of qualifiers. **/
     private string $q;
     /**Sorts the results of your query by `author-date` or `committer-date`. Default: [best match](https://docs.github.com/rest/search/search#ranking-search-results) **/
@@ -45,11 +44,10 @@ final class Commits
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{q}', '{sort}', '{order}', '{per_page}', '{page}'], [$this->q, $this->sort, $this->order, $this->perPage, $this->page], self::PATH . '?q={q}&sort={sort}&order={order}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{q}', '{sort}', '{order}', '{per_page}', '{page}'], [$this->q, $this->sort, $this->order, $this->perPage, $this->page], '/search/commits' . '?q={q}&sort={sort}&order={order}&per_page={per_page}&page={page}'));
     }
 
-    /** @return Schema\Operations\Search\Commits\Response\ApplicationJson\Ok|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Search\Commits\Response\ApplicationJson\Ok|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Search\Commits\Response\ApplicationJson\Ok|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -74,7 +72,7 @@ final class Commits
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

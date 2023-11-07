@@ -23,8 +23,6 @@ final class CreateLabel
 {
     public const OPERATION_ID    = 'issues/create-label';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/labels';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/labels';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,7 +38,7 @@ final class CreateLabel
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Issues\CreateLabel\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/labels'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Label

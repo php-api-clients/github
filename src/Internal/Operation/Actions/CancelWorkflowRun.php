@@ -22,8 +22,6 @@ final class CancelWorkflowRun
 {
     public const OPERATION_ID    = 'actions/cancel-workflow-run';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/runs/{run_id}/cancel';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/cancel';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,7 +38,7 @@ final class CancelWorkflowRun
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{run_id}'], [$this->owner, $this->repo, $this->runId], self::PATH));
+        return new Request('POST', str_replace(['{owner}', '{repo}', '{run_id}'], [$this->owner, $this->repo, $this->runId], '/repos/{owner}/{repo}/actions/runs/{run_id}/cancel'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\EmptyObject

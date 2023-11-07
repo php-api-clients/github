@@ -24,12 +24,11 @@ final readonly class GetBySlug
     {
     }
 
-    /** @return */
-    public function call(string $appSlug): Integration|array
+    public function call(string $appSlug): Integration
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetBySlug($this->responseSchemaValidator, $this->hydrator, $appSlug);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Integration|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Integration {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

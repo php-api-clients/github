@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operation;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\GitignoreTemplate;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 
 final class Gitignore
 {
@@ -14,14 +14,13 @@ final class Gitignore
     {
     }
 
-    /** @return Observable<string>|array{code:int} */
-    public function getAllTemplates(): iterable
+    /** @return iterable<int,string>|WithoutBody */
+    public function getAllTemplates(): iterable|WithoutBody
     {
         return $this->operators->gitignore👷GetAllTemplates()->call();
     }
 
-    /** @return Schema\GitignoreTemplate|array{code:int} */
-    public function getTemplate(string $name): GitignoreTemplate|array
+    public function getTemplate(string $name): GitignoreTemplate|WithoutBody
     {
         return $this->operators->gitignore👷GetTemplate()->call($name);
     }

@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Orgs;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -23,8 +24,6 @@ final class ConvertMemberToOutsideCollaborator
 {
     public const OPERATION_ID    = 'orgs/convert-member-to-outside-collaborator';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/outside_collaborators/{username}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/outside_collaborators/{username}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The handle for the GitHub user account. **/
@@ -40,11 +39,10 @@ final class ConvertMemberToOutsideCollaborator
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Orgs\ConvertMemberToOutsideCollaborator\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}', '{username}'], [$this->org, $this->username], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{org}', '{username}'], [$this->org, $this->username], '/orgs/{org}/outside_collaborators/{username}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -77,13 +75,13 @@ final class ConvertMemberToOutsideCollaborator
              * User was converted
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
             /**
              * Forbidden if user is the last owner of the organization, not a member of the organization, or if the enterprise enforces a policy for inviting outside collaborators. For more information, see "[Enforcing repository management policies in your enterprise](https://docs.github.com/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-for-inviting-outside-collaborators-to-repositories)."
              **/
 
             case 403:
-                return ['code' => 403];
+                return new WithoutBody(403, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

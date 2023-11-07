@@ -22,8 +22,6 @@ final class RemoveAssignees
 {
     public const OPERATION_ID    = 'issues/remove-assignees';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/issues/{issue_number}/assignees';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/repos/{owner}/{repo}/issues/{issue_number}/assignees';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -42,7 +40,7 @@ final class RemoveAssignees
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Issues\RemoveAssignees\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{issue_number}'], [$this->owner, $this->repo, $this->issueNumber], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('DELETE', str_replace(['{owner}', '{repo}', '{issue_number}'], [$this->owner, $this->repo, $this->issueNumber], '/repos/{owner}/{repo}/issues/{issue_number}/assignees'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Issue

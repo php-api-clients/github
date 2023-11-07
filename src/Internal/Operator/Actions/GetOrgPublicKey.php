@@ -24,12 +24,11 @@ final readonly class GetOrgPublicKey
     {
     }
 
-    /** @return */
-    public function call(string $org): ActionsPublicKey|array
+    public function call(string $org): ActionsPublicKey
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetOrgPublicKey($this->responseSchemaValidator, $this->hydrator, $org);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsPublicKey|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsPublicKey {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

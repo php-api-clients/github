@@ -24,12 +24,11 @@ final readonly class GetReleaseByTag
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $tag): Release|array
+    public function call(string $owner, string $repo, string $tag): Release
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetReleaseByTag($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $tag);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Release|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Release {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

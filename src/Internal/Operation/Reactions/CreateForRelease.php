@@ -23,8 +23,6 @@ final class CreateForRelease
 {
     public const OPERATION_ID    = 'reactions/create-for-release';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/releases/{release_id}/reactions';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/releases/{release_id}/reactions';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -43,7 +41,7 @@ final class CreateForRelease
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Reactions\CreateForRelease\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{release_id}'], [$this->owner, $this->repo, $this->releaseId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}', '{release_id}'], [$this->owner, $this->repo, $this->releaseId], '/repos/{owner}/{repo}/releases/{release_id}/reactions'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Reaction

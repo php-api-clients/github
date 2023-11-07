@@ -11,6 +11,7 @@ use ApiClients\Client\GitHub\Schema\FileCommit;
 use ApiClients\Client\GitHub\Schema\OrgCustomProperty;
 use ApiClients\Client\GitHub\Schema\RepositoryInvitation;
 use ApiClients\Client\GitHub\Schema\RepositoryRuleset;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Six
@@ -19,8 +20,7 @@ final class Six
     {
     }
 
-    /** @return array{code:int}|Schema\EmptyObject||Schema\RepositoryInvitation */
-    public function call(string $call, array $params, array $pathChunks): EmptyObject|OrgCustomProperty|RepositoryInvitation|FileCommit|Environment|RepositoryRuleset|array
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|EmptyObject|OrgCustomProperty|RepositoryInvitation|FileCommit|Environment|RepositoryRuleset
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {

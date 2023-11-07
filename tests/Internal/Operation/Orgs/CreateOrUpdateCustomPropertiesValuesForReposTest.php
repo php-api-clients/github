@@ -88,4 +88,38 @@ final class CreateOrUpdateCustomPropertiesValuesForReposTest extends AsyncTestCa
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->operations()->orgs()->createOrUpdateCustomPropertiesValuesForRepos('generated', json_decode(Schema\Orgs\CreateOrUpdateCustomPropertiesValuesForRepos\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
+
+    /** @test */
+    public function call_httpCode_204_requestContentType_application_json_empty(): void
+    {
+        $response = new Response(204, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('PATCH', '/orgs/generated/properties/values', Argument::type('array'), json_encode(json_decode(Schema\Orgs\CreateOrUpdateCustomPropertiesValuesForRepos\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Internal\Operation\Orgs\CreateOrUpdateCustomPropertiesValuesForRepos::OPERATION_MATCH, (static function (array $data): array {
+            $data['org'] = 'generated';
+
+            return $data;
+        })(json_decode(Schema\Orgs\CreateOrUpdateCustomPropertiesValuesForRepos\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /** @test */
+    public function operations_httpCode_204_requestContentType_application_json_empty(): void
+    {
+        $response = new Response(204, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('PATCH', '/orgs/generated/properties/values', Argument::type('array'), json_encode(json_decode(Schema\Orgs\CreateOrUpdateCustomPropertiesValuesForRepos\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->operations()->orgs()->createOrUpdateCustomPropertiesValuesForRepos('generated', json_decode(Schema\Orgs\CreateOrUpdateCustomPropertiesValuesForRepos\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
+        self::assertArrayHasKey('code', $result);
+        self::assertSame(204, $result['code']);
+    }
 }

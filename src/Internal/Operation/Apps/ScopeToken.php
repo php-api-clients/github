@@ -23,8 +23,6 @@ final class ScopeToken
 {
     public const OPERATION_ID    = 'apps/scope-token';
     public const OPERATION_MATCH = 'POST /applications/{client_id}/token/scoped';
-    private const METHOD         = 'POST';
-    private const PATH           = '/applications/{client_id}/token/scoped';
     /**The client ID of the GitHub app. **/
     private string $clientId;
 
@@ -37,7 +35,7 @@ final class ScopeToken
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Apps\ScopeToken\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{client_id}'], [$this->clientId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{client_id}'], [$this->clientId], '/applications/{client_id}/token/scoped'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Authorization

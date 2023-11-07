@@ -25,8 +25,6 @@ final class ListForOrg
 {
     public const OPERATION_ID    = 'projects/list-for-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/projects';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/projects';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**Indicates the state of the projects to return. **/
@@ -46,7 +44,7 @@ final class ListForOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{state}', '{per_page}', '{page}'], [$this->org, $this->state, $this->perPage, $this->page], self::PATH . '?state={state}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{state}', '{per_page}', '{page}'], [$this->org, $this->state, $this->perPage, $this->page], '/orgs/{org}/projects' . '?state={state}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\Project> */
@@ -67,7 +65,7 @@ final class ListForOrg
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Project::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Project::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Project::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

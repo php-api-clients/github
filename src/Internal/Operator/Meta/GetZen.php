@@ -23,12 +23,11 @@ final readonly class GetZen
     {
     }
 
-    /** @return */
-    public function call(): string|array
+    public function call(): string
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Meta\GetZen($this->responseSchemaValidator, $this->hydrator);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): string|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): string {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

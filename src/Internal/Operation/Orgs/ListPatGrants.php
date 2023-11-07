@@ -25,8 +25,6 @@ final class ListPatGrants
 {
     public const OPERATION_ID    = 'orgs/list-pat-grants';
     public const OPERATION_MATCH = 'GET /orgs/{org}/personal-access-tokens';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/personal-access-tokens';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**A list of owner usernames to use to filter the results. **/
@@ -64,7 +62,7 @@ final class ListPatGrants
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{owner}', '{repository}', '{permission}', '{last_used_before}', '{last_used_after}', '{per_page}', '{page}', '{sort}', '{direction}'], [$this->org, $this->owner, $this->repository, $this->permission, $this->lastUsedBefore, $this->lastUsedAfter, $this->perPage, $this->page, $this->sort, $this->direction], self::PATH . '?owner={owner}&repository={repository}&permission={permission}&last_used_before={last_used_before}&last_used_after={last_used_after}&per_page={per_page}&page={page}&sort={sort}&direction={direction}'));
+        return new Request('GET', str_replace(['{org}', '{owner}', '{repository}', '{permission}', '{last_used_before}', '{last_used_after}', '{per_page}', '{page}', '{sort}', '{direction}'], [$this->org, $this->owner, $this->repository, $this->permission, $this->lastUsedBefore, $this->lastUsedAfter, $this->perPage, $this->page, $this->sort, $this->direction], '/orgs/{org}/personal-access-tokens' . '?owner={owner}&repository={repository}&permission={permission}&last_used_before={last_used_before}&last_used_after={last_used_after}&per_page={per_page}&page={page}&sort={sort}&direction={direction}'));
     }
 
     /** @return Observable<Schema\OrganizationProgrammaticAccessGrant> */
@@ -117,7 +115,7 @@ final class ListPatGrants
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrganizationProgrammaticAccessGrant::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\OrganizationProgrammaticAccessGrant::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\OrganizationProgrammaticAccessGrant::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

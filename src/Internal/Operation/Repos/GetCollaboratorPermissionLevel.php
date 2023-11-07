@@ -22,8 +22,6 @@ final class GetCollaboratorPermissionLevel
 {
     public const OPERATION_ID    = 'repos/get-collaborator-permission-level';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/collaborators/{username}/permission';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/collaborators/{username}/permission';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,7 +38,7 @@ final class GetCollaboratorPermissionLevel
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{username}'], [$this->owner, $this->repo, $this->username], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{username}'], [$this->owner, $this->repo, $this->username], '/repos/{owner}/{repo}/collaborators/{username}/permission'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\RepositoryCollaboratorPermission

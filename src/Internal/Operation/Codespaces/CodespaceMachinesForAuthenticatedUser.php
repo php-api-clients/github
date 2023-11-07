@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Codespaces;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class CodespaceMachinesForAuthenticatedUser
 {
     public const OPERATION_ID    = 'codespaces/codespace-machines-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/codespaces/{codespace_name}/machines';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/codespaces/{codespace_name}/machines';
     /**The name of the codespace. **/
     private string $codespaceName;
 
@@ -34,11 +33,10 @@ final class CodespaceMachinesForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{codespace_name}'], [$this->codespaceName], self::PATH));
+        return new Request('GET', str_replace(['{codespace_name}'], [$this->codespaceName], '/user/codespaces/{codespace_name}/machines'));
     }
 
-    /** @return Schema\Operations\Codespaces\CodespaceMachinesForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\CodespaceMachinesForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|array
+    public function createResponse(ResponseInterface $response): Schema\Operations\Codespaces\CodespaceMachinesForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -95,7 +93,7 @@ final class CodespaceMachinesForAuthenticatedUser
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

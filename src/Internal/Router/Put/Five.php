@@ -16,6 +16,7 @@ use ApiClients\Client\GitHub\Schema\RepositorySubscription;
 use ApiClients\Client\GitHub\Schema\TeamMembership;
 use ApiClients\Client\GitHub\Schema\ThreadSubscription;
 use ApiClients\Client\GitHub\Schema\Topic;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Five
@@ -24,8 +25,7 @@ final class Five
     {
     }
 
-    /** @return array{code:int}|Schema\ThreadSubscription||Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json|Schema\InteractionLimitResponse|Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted|Schema\TeamMembership|Schema\EmptyObject */
-    public function call(string $call, array $params, array $pathChunks): ThreadSubscription|OrgMembership|Json|RepositoryRuleset|Import|InteractionLimitResponse|Accepted|RepositorySubscription|Topic|TeamMembership|EmptyObject|array
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|ThreadSubscription|OrgMembership|Json|RepositoryRuleset|Import|InteractionLimitResponse|Accepted|RepositorySubscription|Topic|TeamMembership|EmptyObject
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {

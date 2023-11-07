@@ -24,8 +24,6 @@ final class ListSshSigningKeysForUserListing
 {
     public const OPERATION_ID    = 'users/list-ssh-signing-keys-for-user';
     public const OPERATION_MATCH = 'LIST /users/{username}/ssh_signing_keys';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/ssh_signing_keys';
     /**The handle for the GitHub user account. **/
     private string $username;
     /**The number of results per page (max 100). **/
@@ -42,7 +40,7 @@ final class ListSshSigningKeysForUserListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{username}', '{per_page}', '{page}'], [$this->username, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{username}', '{per_page}', '{page}'], [$this->username, $this->perPage, $this->page], '/users/{username}/ssh_signing_keys' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\SshSigningKey> */
@@ -63,7 +61,7 @@ final class ListSshSigningKeysForUserListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\SshSigningKey::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\SshSigningKey::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\SshSigningKey::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

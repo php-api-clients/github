@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\AuthenticationToken;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\BranchWithProtection;
@@ -24,6 +25,7 @@ use ApiClients\Client\GitHub\Schema\PullRequestReviewComment;
 use ApiClients\Client\GitHub\Schema\PullRequestSimple;
 use ApiClients\Client\GitHub\Schema\Reaction;
 use ApiClients\Client\GitHub\Schema\ReleaseAsset;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Seven
@@ -32,8 +34,8 @@ final class Seven
     {
     }
 
-    /** @return |array{code:int}|Schema\DeploymentBranchPolicy|Observable<Schema\Label>|Schema\BasicError|Schema\PullRequestSimple|Schema\ReleaseAsset */
-    public function call(string $call, array $params, array $pathChunks): Ok|Created|AuthenticationToken|BranchWithProtection|EmptyObject|Reaction|CommitComment|DeploymentStatus|DeploymentBranchPolicy|DeploymentProtectionRule|Issue|IssueComment|iterable|BasicError|Codespace|PullRequestReviewComment|PullRequestSimple|PullRequestReview|ReleaseAsset|Json
+    /** @return Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok|WithoutBody|Schema\Operations\Actions\GenerateRunnerJitconfigForOrg\Response\ApplicationJson\Created|Schema\AuthenticationToken|Schema\BranchWithProtection|Schema\EmptyObject|Schema\Reaction|Schema\CommitComment|Schema\DeploymentStatus|Schema\DeploymentBranchPolicy|Schema\DeploymentProtectionRule|Schema\Issue|Schema\IssueComment|iterable<int,Schema\Label>|Schema\BasicError|Schema\Codespace|Schema\PullRequestReviewComment|Schema\PullRequestSimple|Schema\PullRequestReview|Schema\ReleaseAsset|Schema\Operations\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest\Response\ApplicationJson\Accepted\Application\Json */
+    public function call(string $call, array $params, array $pathChunks): Ok|WithoutBody|Created|AuthenticationToken|BranchWithProtection|EmptyObject|Reaction|CommitComment|DeploymentStatus|DeploymentBranchPolicy|DeploymentProtectionRule|Issue|IssueComment|iterable|BasicError|Codespace|PullRequestReviewComment|PullRequestSimple|PullRequestReview|ReleaseAsset|Json
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {

@@ -22,8 +22,6 @@ final class GetMembershipForUserLegacy
 {
     public const OPERATION_ID    = 'teams/get-membership-for-user-legacy';
     public const OPERATION_MATCH = 'GET /teams/{team_id}/memberships/{username}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/memberships/{username}';
     /**The unique identifier of the team. **/
     private int $teamId;
     /**The handle for the GitHub user account. **/
@@ -37,7 +35,7 @@ final class GetMembershipForUserLegacy
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{team_id}', '{username}'], [$this->teamId, $this->username], self::PATH));
+        return new Request('GET', str_replace(['{team_id}', '{username}'], [$this->teamId, $this->username], '/teams/{team_id}/memberships/{username}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\TeamMembership

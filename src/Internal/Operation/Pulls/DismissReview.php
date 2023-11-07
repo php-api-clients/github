@@ -23,8 +23,6 @@ final class DismissReview
 {
     public const OPERATION_ID    = 'pulls/dismiss-review';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -46,7 +44,7 @@ final class DismissReview
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Pulls\DismissReview\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{pull_number}', '{review_id}'], [$this->owner, $this->repo, $this->pullNumber, $this->reviewId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{owner}', '{repo}', '{pull_number}', '{review_id}'], [$this->owner, $this->repo, $this->pullNumber, $this->reviewId], '/repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\PullRequestReview

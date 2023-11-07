@@ -24,8 +24,6 @@ final class ListReposWatchedByUserListing
 {
     public const OPERATION_ID    = 'activity/list-repos-watched-by-user';
     public const OPERATION_MATCH = 'LIST /users/{username}/subscriptions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}/subscriptions';
     /**The handle for the GitHub user account. **/
     private string $username;
     /**The number of results per page (max 100). **/
@@ -42,7 +40,7 @@ final class ListReposWatchedByUserListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{username}', '{per_page}', '{page}'], [$this->username, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{username}', '{per_page}', '{page}'], [$this->username, $this->perPage, $this->page], '/users/{username}/subscriptions' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\MinimalRepository> */
@@ -63,7 +61,7 @@ final class ListReposWatchedByUserListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MinimalRepository::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\MinimalRepository::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\MinimalRepository::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

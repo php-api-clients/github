@@ -24,12 +24,11 @@ final readonly class UpdateComment
     {
     }
 
-    /** @return */
-    public function call(string $gistId, int $commentId, array $params): GistComment|array
+    public function call(string $gistId, int $commentId, array $params): GistComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\UpdateComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $gistId, $commentId);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GistComment|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GistComment {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

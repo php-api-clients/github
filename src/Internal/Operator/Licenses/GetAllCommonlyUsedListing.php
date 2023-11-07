@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operator\Licenses;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
 use React\Http\Browser;
@@ -24,12 +25,12 @@ final readonly class GetAllCommonlyUsedListing
     {
     }
 
-    /** @return Observable<Schema\LicenseSimple>|array{code:int} */
-    public function call(bool $featured, int $perPage = 30, int $page = 1): iterable
+    /** @return iterable<int,Schema\LicenseSimple>|WithoutBody */
+    public function call(bool $featured, int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Licenses\GetAllCommonlyUsedListing($this->responseSchemaValidator, $this->hydrator, $featured, $perPage, $page);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|WithoutBody {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

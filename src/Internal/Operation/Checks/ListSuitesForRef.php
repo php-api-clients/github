@@ -21,8 +21,6 @@ final class ListSuitesForRef
 {
     public const OPERATION_ID    = 'checks/list-suites-for-ref';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/commits/{ref}/check-suites';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/commits/{ref}/check-suites';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -51,7 +49,7 @@ final class ListSuitesForRef
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{ref}', '{app_id}', '{check_name}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->ref, $this->appId, $this->checkName, $this->perPage, $this->page], self::PATH . '?app_id={app_id}&check_name={check_name}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{ref}', '{app_id}', '{check_name}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->ref, $this->appId, $this->checkName, $this->perPage, $this->page], '/repos/{owner}/{repo}/commits/{ref}/check-suites' . '?app_id={app_id}&check_name={check_name}&per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Checks\ListSuitesForRef\Response\ApplicationJson\Ok

@@ -20,8 +20,7 @@ final class SecurityAdvisories
     {
     }
 
-    /** @return */
-    public function createPrivateVulnerabilityReport(array $params): RepositoryAdvisory|array
+    public function createPrivateVulnerabilityReport(array $params): RepositoryAdvisory
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -41,8 +40,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
-    public function createRepositoryAdvisory(array $params): RepositoryAdvisory|array
+    public function createRepositoryAdvisory(array $params): RepositoryAdvisory
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -62,8 +60,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
-    public function createRepositoryAdvisoryCveRequest(array $params): Json|array
+    public function createRepositoryAdvisoryCveRequest(array $params): Json
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

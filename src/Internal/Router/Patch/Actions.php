@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Actions
     {
     }
 
-    /** @return array{code:int} */
-    public function updateOrgVariable(array $params): array
+    public function updateOrgVariable(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -39,8 +39,7 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['name'], $params);
     }
 
-    /** @return array{code:int} */
-    public function updateRepoVariable(array $params): array
+    public function updateRepoVariable(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -66,8 +65,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name'], $params);
     }
 
-    /** @return array{code:int} */
-    public function updateEnvironmentVariable(array $params): array
+    public function updateEnvironmentVariable(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('repository_id', $params) === false) {

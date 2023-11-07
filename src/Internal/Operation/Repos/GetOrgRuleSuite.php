@@ -22,8 +22,6 @@ final class GetOrgRuleSuite
 {
     public const OPERATION_ID    = 'repos/get-org-rule-suite';
     public const OPERATION_MATCH = 'GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/rulesets/rule-suites/{rule_suite_id}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the rule suite result.
@@ -40,7 +38,7 @@ final class GetOrgRuleSuite
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{rule_suite_id}'], [$this->org, $this->ruleSuiteId], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{rule_suite_id}'], [$this->org, $this->ruleSuiteId], '/orgs/{org}/rulesets/rule-suites/{rule_suite_id}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\RuleSuite

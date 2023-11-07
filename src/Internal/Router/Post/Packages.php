@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Packages
     {
     }
 
-    /** @return array{code:int} */
-    public function restorePackageForAuthenticatedUser(array $params): array
+    public function restorePackageForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
@@ -45,8 +45,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['token']);
     }
 
-    /** @return array{code:int} */
-    public function restorePackageForOrg(array $params): array
+    public function restorePackageForOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
@@ -78,8 +77,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org'], $arguments['token']);
     }
 
-    /** @return array{code:int} */
-    public function restorePackageForUser(array $params): array
+    public function restorePackageForUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
@@ -111,8 +109,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['username'], $arguments['token']);
     }
 
-    /** @return array{code:int} */
-    public function restorePackageVersionForAuthenticatedUser(array $params): array
+    public function restorePackageVersionForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
@@ -138,8 +135,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['package_version_id']);
     }
 
-    /** @return array{code:int} */
-    public function restorePackageVersionForOrg(array $params): array
+    public function restorePackageVersionForOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
@@ -171,8 +167,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org'], $arguments['package_version_id']);
     }
 
-    /** @return array{code:int} */
-    public function restorePackageVersionForUser(array $params): array
+    public function restorePackageVersionForUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {

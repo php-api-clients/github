@@ -21,8 +21,6 @@ final class ListSelfHostedRunnersForRepo
 {
     public const OPERATION_ID    = 'actions/list-self-hosted-runners-for-repo';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/runners';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runners';
     /**The name of a self-hosted runner. **/
     private string $name;
     /**The account owner of the repository. The name is not case sensitive. **/
@@ -45,7 +43,7 @@ final class ListSelfHostedRunnersForRepo
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{name}', '{owner}', '{repo}', '{per_page}', '{page}'], [$this->name, $this->owner, $this->repo, $this->perPage, $this->page], self::PATH . '?name={name}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{name}', '{owner}', '{repo}', '{per_page}', '{page}'], [$this->name, $this->owner, $this->repo, $this->perPage, $this->page], '/repos/{owner}/{repo}/actions/runners' . '?name={name}&per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListSelfHostedRunnersForRepo\Response\ApplicationJson\Ok\Application\Json

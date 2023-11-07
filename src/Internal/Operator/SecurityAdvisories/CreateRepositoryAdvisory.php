@@ -24,12 +24,11 @@ final readonly class CreateRepositoryAdvisory
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, array $params): RepositoryAdvisory|array
+    public function call(string $owner, string $repo, array $params): RepositoryAdvisory
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecurityAdvisories\CreateRepositoryAdvisory($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RepositoryAdvisory|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): RepositoryAdvisory {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

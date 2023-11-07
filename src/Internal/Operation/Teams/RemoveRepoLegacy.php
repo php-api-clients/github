@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Internal\Operation\Teams;
 
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
@@ -15,8 +16,6 @@ final class RemoveRepoLegacy
 {
     public const OPERATION_ID    = 'teams/remove-repo-legacy';
     public const OPERATION_MATCH = 'DELETE /teams/{team_id}/repos/{owner}/{repo}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/teams/{team_id}/repos/{owner}/{repo}';
     /**The unique identifier of the team. **/
     private int $teamId;
     /**The account owner of the repository. The name is not case sensitive. **/
@@ -33,11 +32,10 @@ final class RemoveRepoLegacy
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{team_id}', '{owner}', '{repo}'], [$this->teamId, $this->owner, $this->repo], self::PATH));
+        return new Request('DELETE', str_replace(['{team_id}', '{owner}', '{repo}'], [$this->teamId, $this->owner, $this->repo], '/teams/{team_id}/repos/{owner}/{repo}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code = $response->getStatusCode();
         switch ($code) {
@@ -45,7 +43,7 @@ final class RemoveRepoLegacy
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

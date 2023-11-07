@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\CodesOfConduct;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -24,8 +25,6 @@ final class GetAllCodesOfConduct
 {
     public const OPERATION_ID    = 'codes-of-conduct/get-all-codes-of-conduct';
     public const OPERATION_MATCH = 'GET /codes_of_conduct';
-    private const METHOD         = 'GET';
-    private const PATH           = '/codes_of_conduct';
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\CodesOfConduct $hydrator)
     {
@@ -33,11 +32,11 @@ final class GetAllCodesOfConduct
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace([], [], self::PATH));
+        return new Request('GET', str_replace([], [], '/codes_of_conduct'));
     }
 
-    /** @return Observable<Schema\CodeOfConduct>|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|array
+    /** @return Observable<Schema\CodeOfConduct>|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -54,7 +53,7 @@ final class GetAllCodesOfConduct
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CodeOfConduct::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\CodeOfConduct::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\CodeOfConduct::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -72,7 +71,7 @@ final class GetAllCodesOfConduct
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

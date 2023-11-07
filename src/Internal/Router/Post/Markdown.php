@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
 
@@ -15,16 +16,14 @@ final class Markdown
     {
     }
 
-    /** @return string|array{code:int} */
-    public function render(array $params): string|array
+    public function render(array $params): WithoutBody|string
     {
         $operator = new Internal\Operator\Markdown\Render($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Markdown());
 
         return $operator->call($params);
     }
 
-    /** @return string|array{code:int} */
-    public function renderRaw(array $params): string|array
+    public function renderRaw(array $params): WithoutBody|string
     {
         $operator = new Internal\Operator\Markdown\RenderRaw($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Markdown🌀Raw());
 

@@ -23,8 +23,6 @@ final class AddCustomLabelsToSelfHostedRunnerForOrg
 {
     public const OPERATION_ID    = 'actions/add-custom-labels-to-self-hosted-runner-for-org';
     public const OPERATION_MATCH = 'POST /orgs/{org}/actions/runners/{runner_id}/labels';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/actions/runners/{runner_id}/labels';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**Unique identifier of the self-hosted runner. **/
@@ -40,7 +38,7 @@ final class AddCustomLabelsToSelfHostedRunnerForOrg
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\AddCustomLabelsToSelfHostedRunnerForOrg\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}', '{runner_id}'], [$this->org, $this->runnerId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{org}', '{runner_id}'], [$this->org, $this->runnerId], '/orgs/{org}/actions/runners/{runner_id}/labels'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok

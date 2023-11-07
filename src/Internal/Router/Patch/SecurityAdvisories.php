@@ -19,8 +19,7 @@ final class SecurityAdvisories
     {
     }
 
-    /** @return */
-    public function updateRepositoryAdvisory(array $params): RepositoryAdvisory|array
+    public function updateRepositoryAdvisory(array $params): RepositoryAdvisory
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

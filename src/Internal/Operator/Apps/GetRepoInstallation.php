@@ -25,12 +25,11 @@ final readonly class GetRepoInstallation
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo): Installation|BasicError|array
+    public function call(string $owner, string $repo): Installation|BasicError
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetRepoInstallation($this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Installation|BasicError|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Installation|BasicError {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

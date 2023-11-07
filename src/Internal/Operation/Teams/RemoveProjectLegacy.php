@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Teams;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class RemoveProjectLegacy
 {
     public const OPERATION_ID    = 'teams/remove-project-legacy';
     public const OPERATION_MATCH = 'DELETE /teams/{team_id}/projects/{project_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/teams/{team_id}/projects/{project_id}';
     /**The unique identifier of the team. **/
     private int $teamId;
     /**The unique identifier of the project. **/
@@ -37,11 +36,10 @@ final class RemoveProjectLegacy
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{team_id}', '{project_id}'], [$this->teamId, $this->projectId], self::PATH));
+        return new Request('DELETE', str_replace(['{team_id}', '{project_id}'], [$this->teamId, $this->projectId], '/teams/{team_id}/projects/{project_id}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -74,7 +72,7 @@ final class RemoveProjectLegacy
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

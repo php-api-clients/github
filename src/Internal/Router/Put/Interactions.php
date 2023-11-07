@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Put;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\InteractionLimitResponse;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,8 +20,7 @@ final class Interactions
     {
     }
 
-    /** @return Schema\InteractionLimitResponse|array{code:int} */
-    public function setRestrictionsForRepo(array $params): InteractionLimitResponse|array
+    public function setRestrictionsForRepo(array $params): InteractionLimitResponse|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -41,8 +40,7 @@ final class Interactions
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
-    public function setRestrictionsForOrg(array $params): InteractionLimitResponse|array
+    public function setRestrictionsForOrg(array $params): InteractionLimitResponse
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -56,8 +54,7 @@ final class Interactions
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return */
-    public function setRestrictionsForAuthenticatedUser(array $params): InteractionLimitResponse|array
+    public function setRestrictionsForAuthenticatedUser(array $params): InteractionLimitResponse
     {
         $operator = new Internal\Operator\Interactions\SetRestrictionsForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀InteractionLimits());
 

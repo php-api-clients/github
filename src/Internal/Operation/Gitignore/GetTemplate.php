@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Gitignore;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -21,8 +22,6 @@ final class GetTemplate
 {
     public const OPERATION_ID    = 'gitignore/get-template';
     public const OPERATION_MATCH = 'GET /gitignore/templates/{name}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/gitignore/templates/{name}';
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Gitignore\Templates\Name $hydrator, private string $name)
     {
@@ -30,11 +29,10 @@ final class GetTemplate
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{name}'], [$this->name], self::PATH));
+        return new Request('GET', str_replace(['{name}'], [$this->name], '/gitignore/templates/{name}'));
     }
 
-    /** @return Schema\GitignoreTemplate|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\GitignoreTemplate|array
+    public function createResponse(ResponseInterface $response): Schema\GitignoreTemplate|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -59,7 +57,7 @@ final class GetTemplate
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

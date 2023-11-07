@@ -57,10 +57,10 @@ final readonly class RepositoryRuleRequiredStatusChecks
             }
         }
     },
-    "description": "Choose which status checks must pass before branches can be merged into a branch that matches this rule. When enabled, commits must first be pushed to another branch, then merged or pushed directly to a ref that matches this rule after status checks have passed."
+    "description": "Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass."
 }';
     public const SCHEMA_TITLE        = 'required_status_checks';
-    public const SCHEMA_DESCRIPTION  = 'Choose which status checks must pass before branches can be merged into a branch that matches this rule. When enabled, commits must first be pushed to another branch, then merged or pushed directly to a ref that matches this rule after status checks have passed.';
+    public const SCHEMA_DESCRIPTION  = 'Choose which status checks must pass before the ref is updated. When enabled, commits must first be pushed to another ref where the checks pass.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "type": "required_status_checks",
     "parameters": {

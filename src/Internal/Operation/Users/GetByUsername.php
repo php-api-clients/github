@@ -23,8 +23,6 @@ final class GetByUsername
 {
     public const OPERATION_ID    = 'users/get-by-username';
     public const OPERATION_MATCH = 'GET /users/{username}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/users/{username}';
     /**The handle for the GitHub user account. **/
     private string $username;
 
@@ -35,7 +33,7 @@ final class GetByUsername
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{username}'], [$this->username], self::PATH));
+        return new Request('GET', str_replace(['{username}'], [$this->username], '/users/{username}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\PrivateUser|Schema\PublicUser
@@ -54,7 +52,7 @@ final class GetByUsername
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PrivateUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrators->hydrateObject(Schema\PrivateUser::class, $body);
+                            return $this->hydrator->hydrateObject(Schema\PrivateUser::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaaa;
                         }
@@ -63,7 +61,7 @@ final class GetByUsername
                         try {
                             $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PublicUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                            return $this->hydrators->hydrateObject(Schema\PublicUser::class, $body);
+                            return $this->hydrator->hydrateObject(Schema\PublicUser::class, $body);
                         } catch (Throwable) {
                             goto items_application_json_two_hundred_aaaab;
                         }

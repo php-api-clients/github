@@ -23,8 +23,6 @@ final class CreateOrUpdateEnvironment
 {
     public const OPERATION_ID    = 'repos/create-or-update-environment';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/environments/{environment_name}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -43,7 +41,7 @@ final class CreateOrUpdateEnvironment
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\CreateOrUpdateEnvironment\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{environment_name}'], [$this->owner, $this->repo, $this->environmentName], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{owner}', '{repo}', '{environment_name}'], [$this->owner, $this->repo, $this->environmentName], '/repos/{owner}/{repo}/environments/{environment_name}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Environment

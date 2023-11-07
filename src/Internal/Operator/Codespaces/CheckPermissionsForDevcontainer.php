@@ -24,12 +24,11 @@ final readonly class CheckPermissionsForDevcontainer
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $ref, string $devcontainerPath): CodespacesPermissionsCheckForDevcontainer|array
+    public function call(string $owner, string $repo, string $ref, string $devcontainerPath): CodespacesPermissionsCheckForDevcontainer
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\CheckPermissionsForDevcontainer($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $devcontainerPath);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodespacesPermissionsCheckForDevcontainer|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CodespacesPermissionsCheckForDevcontainer {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -9,6 +9,7 @@ use ApiClients\Client\GitHub\Schema\ActionsCacheList;
 use ApiClients\Client\GitHub\Schema\FileCommit;
 use ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForTeams\Response\ApplicationJson\Ok;
 use ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Six
@@ -17,8 +18,7 @@ final class Six
     {
     }
 
-    /** @return array{code:int}|Schema\Operations\Copilot\CancelCopilotSeatAssignmentForTeams\Response\ApplicationJson\Ok|Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json| */
-    public function call(string $call, array $params, array $pathChunks): Ok|Json|ActionsCacheList|FileCommit|array
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|Ok|Json|ActionsCacheList|FileCommit
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {

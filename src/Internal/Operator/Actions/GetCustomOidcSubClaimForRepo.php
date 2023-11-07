@@ -24,12 +24,11 @@ final readonly class GetCustomOidcSubClaimForRepo
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo): OidcCustomSubRepo|array
+    public function call(string $owner, string $repo): OidcCustomSubRepo
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetCustomOidcSubClaimForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OidcCustomSubRepo|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): OidcCustomSubRepo {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

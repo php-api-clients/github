@@ -25,8 +25,6 @@ final class ListDockerMigrationConflictingPackagesForOrganization
 {
     public const OPERATION_ID    = 'packages/list-docker-migration-conflicting-packages-for-organization';
     public const OPERATION_MATCH = 'GET /orgs/{org}/docker/conflicts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/docker/conflicts';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -37,7 +35,7 @@ final class ListDockerMigrationConflictingPackagesForOrganization
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH));
+        return new Request('GET', str_replace(['{org}'], [$this->org], '/orgs/{org}/docker/conflicts'));
     }
 
     /** @return Observable<Schema\Package> */
@@ -58,7 +56,7 @@ final class ListDockerMigrationConflictingPackagesForOrganization
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Package::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Package::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Package::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

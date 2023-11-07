@@ -25,8 +25,6 @@ final class GetRepoRuleSuitesListing
 {
     public const OPERATION_ID    = 'repos/get-repo-rule-suites';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/rulesets/rule-suites';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/rulesets/rule-suites';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -60,7 +58,7 @@ final class GetRepoRuleSuitesListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{ref}', '{actor_name}', '{time_period}', '{rule_suite_result}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->ref, $this->actorName, $this->timePeriod, $this->ruleSuiteResult, $this->perPage, $this->page], self::PATH . '?ref={ref}&actor_name={actor_name}&time_period={time_period}&rule_suite_result={rule_suite_result}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{ref}', '{actor_name}', '{time_period}', '{rule_suite_result}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->ref, $this->actorName, $this->timePeriod, $this->ruleSuiteResult, $this->perPage, $this->page], '/repos/{owner}/{repo}/rulesets/rule-suites' . '?ref={ref}&actor_name={actor_name}&time_period={time_period}&rule_suite_result={rule_suite_result}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\RuleSuites> */
@@ -81,7 +79,7 @@ final class GetRepoRuleSuitesListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RuleSuites::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\RuleSuites::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\RuleSuites::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

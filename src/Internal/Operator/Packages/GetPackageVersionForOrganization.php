@@ -24,12 +24,11 @@ final readonly class GetPackageVersionForOrganization
     {
     }
 
-    /** @return */
-    public function call(string $packageType, string $packageName, string $org, int $packageVersionId): PackageVersion|array
+    public function call(string $packageType, string $packageName, string $org, int $packageVersionId): PackageVersion
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\GetPackageVersionForOrganization($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $org, $packageVersionId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PackageVersion|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): PackageVersion {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

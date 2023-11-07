@@ -24,12 +24,12 @@ final readonly class GetAppsWithAccessToProtectedBranch
     {
     }
 
-    /** @return Observable<Schema\Integration> */
+    /** @return iterable<int,Schema\Integration> */
     public function call(string $owner, string $repo, string $branch): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetAppsWithAccessToProtectedBranch($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

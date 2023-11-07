@@ -24,12 +24,12 @@ final readonly class GetAllPackageVersionsForPackageOwnedByUser
     {
     }
 
-    /** @return Observable<Schema\PackageVersion> */
+    /** @return iterable<int,Schema\PackageVersion> */
     public function call(string $packageType, string $packageName, string $username): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\GetAllPackageVersionsForPackageOwnedByUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $username);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Activity;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -25,8 +26,6 @@ final class ListNotificationsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'activity/list-notifications-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /notifications';
-    private const METHOD         = 'GET';
-    private const PATH           = '/notifications';
     /**Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
     private string $since;
     /**Only show notifications updated before the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
@@ -52,11 +51,11 @@ final class ListNotificationsForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{since}', '{before}', '{all}', '{participating}', '{page}', '{per_page}'], [$this->since, $this->before, $this->all, $this->participating, $this->page, $this->perPage], self::PATH . '?since={since}&before={before}&all={all}&participating={participating}&page={page}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{since}', '{before}', '{all}', '{participating}', '{page}', '{per_page}'], [$this->since, $this->before, $this->all, $this->participating, $this->page, $this->perPage], '/notifications' . '?since={since}&before={before}&all={all}&participating={participating}&page={page}&per_page={per_page}'));
     }
 
-    /** @return Observable<Schema\Thread>|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|array
+    /** @return Observable<Schema\Thread>|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -73,7 +72,7 @@ final class ListNotificationsForAuthenticatedUser
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Thread::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Thread::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Thread::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -115,7 +114,7 @@ final class ListNotificationsForAuthenticatedUser
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

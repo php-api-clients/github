@@ -22,8 +22,6 @@ final class GetAnAssignment
 {
     public const OPERATION_ID    = 'classroom/get-an-assignment';
     public const OPERATION_MATCH = 'GET /assignments/{assignment_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/assignments/{assignment_id}';
     /**The unique identifier of the classroom assignment. **/
     private int $assignmentId;
 
@@ -34,7 +32,7 @@ final class GetAnAssignment
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{assignment_id}'], [$this->assignmentId], self::PATH));
+        return new Request('GET', str_replace(['{assignment_id}'], [$this->assignmentId], '/assignments/{assignment_id}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\ClassroomAssignment

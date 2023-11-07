@@ -25,8 +25,6 @@ final class ListDeploymentStatusesListing
 {
     public const OPERATION_ID    = 'repos/list-deployment-statuses';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/deployments/{deployment_id}/statuses';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -49,7 +47,7 @@ final class ListDeploymentStatusesListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{deployment_id}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->deploymentId, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{deployment_id}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->deploymentId, $this->perPage, $this->page], '/repos/{owner}/{repo}/deployments/{deployment_id}/statuses' . '?per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\DeploymentStatus> */
@@ -70,7 +68,7 @@ final class ListDeploymentStatusesListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\DeploymentStatus::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\DeploymentStatus::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\DeploymentStatus::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

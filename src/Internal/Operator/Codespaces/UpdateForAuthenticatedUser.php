@@ -24,12 +24,11 @@ final readonly class UpdateForAuthenticatedUser
     {
     }
 
-    /** @return */
-    public function call(string $codespaceName, array $params): Codespace|array
+    public function call(string $codespaceName, array $params): Codespace
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\UpdateForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $codespaceName);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Codespace|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Codespace {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

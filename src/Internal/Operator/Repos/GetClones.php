@@ -24,12 +24,11 @@ final readonly class GetClones
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $per = 'day'): CloneTraffic|array
+    public function call(string $owner, string $repo, string $per = 'day'): CloneTraffic
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetClones($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $per);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CloneTraffic|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CloneTraffic {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

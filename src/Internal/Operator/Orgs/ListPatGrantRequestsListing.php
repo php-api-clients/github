@@ -24,12 +24,12 @@ final readonly class ListPatGrantRequestsListing
     {
     }
 
-    /** @return Observable<Schema\OrganizationProgrammaticAccessGrantRequest> */
+    /** @return iterable<int,Schema\OrganizationProgrammaticAccessGrantRequest> */
     public function call(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage = 30, int $page = 1, string $sort = 'created_at', string $direction = 'desc'): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListPatGrantRequestsListing($this->responseSchemaValidator, $this->hydrator, $org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $perPage, $page, $sort, $direction);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

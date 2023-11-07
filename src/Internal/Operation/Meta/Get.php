@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Meta;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -21,8 +22,6 @@ final class Get
 {
     public const OPERATION_ID    = 'meta/get';
     public const OPERATION_MATCH = 'GET /meta';
-    private const METHOD         = 'GET';
-    private const PATH           = '/meta';
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Meta $hydrator)
     {
@@ -30,11 +29,10 @@ final class Get
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace([], [], self::PATH));
+        return new Request('GET', str_replace([], [], '/meta'));
     }
 
-    /** @return Schema\ApiOverview|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\ApiOverview|array
+    public function createResponse(ResponseInterface $response): Schema\ApiOverview|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -59,7 +57,7 @@ final class Get
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

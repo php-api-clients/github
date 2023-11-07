@@ -13,6 +13,7 @@ use ApiClients\Client\GitHub\Schema\IssueEvent;
 use ApiClients\Client\GitHub\Schema\Label;
 use ApiClients\Client\GitHub\Schema\Milestone;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -25,8 +26,8 @@ final class Issues
     {
     }
 
-    /** @return Observable<Schema\Issue>|array{code:int} */
-    public function list(array $params): iterable
+    /** @return iterable<int,Schema\Issue>|WithoutBody */
+    public function list(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('labels', $params) === false) {
@@ -106,8 +107,8 @@ final class Issues
         return $operator->call($arguments['labels'], $arguments['since'], $arguments['collab'], $arguments['orgs'], $arguments['owned'], $arguments['pulls'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Issue>|array{code:int} */
-    public function listForAuthenticatedUser(array $params): iterable
+    /** @return iterable<int,Schema\Issue>|WithoutBody */
+    public function listForAuthenticatedUser(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('labels', $params) === false) {
@@ -163,7 +164,7 @@ final class Issues
         return $operator->call($arguments['labels'], $arguments['since'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Issue> */
+    /** @return iterable<int,Schema\Issue> */
     public function listForOrg(array $params): iterable
     {
         $arguments = [];
@@ -226,7 +227,7 @@ final class Issues
         return $operator->call($arguments['org'], $arguments['labels'], $arguments['since'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function listAssignees(array $params): iterable
     {
         $arguments = [];
@@ -259,7 +260,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Issue>|Schema\BasicError */
+    /** @return iterable<int,Schema\Issue>|Schema\BasicError */
     public function listForRepo(array $params): iterable|BasicError
     {
         $arguments = [];
@@ -346,7 +347,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone'], $arguments['assignee'], $arguments['creator'], $arguments['mentioned'], $arguments['labels'], $arguments['since'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Label> */
+    /** @return iterable<int,Schema\Label> */
     public function listLabelsForRepo(array $params): iterable
     {
         $arguments = [];
@@ -379,7 +380,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Milestone> */
+    /** @return iterable<int,Schema\Milestone> */
     public function listMilestones(array $params): iterable
     {
         $arguments = [];
@@ -430,8 +431,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return array{code:int} */
-    public function checkUserCanBeAssigned(array $params): array
+    public function checkUserCanBeAssigned(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -457,7 +457,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['assignee']);
     }
 
-    /** @return Observable<Schema\IssueComment> */
+    /** @return iterable<int,Schema\IssueComment> */
     public function listCommentsForRepo(array $params): iterable
     {
         $arguments = [];
@@ -508,7 +508,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['direction'], $arguments['since'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\IssueEvent> */
+    /** @return iterable<int,Schema\IssueEvent> */
     public function listEventsForRepo(array $params): iterable
     {
         $arguments = [];
@@ -541,8 +541,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Schema\Issue|Schema\BasicError|array{code:int} */
-    public function get(array $params): Issue|BasicError|array
+    public function get(array $params): Issue|BasicError|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -568,8 +567,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number']);
     }
 
-    /** @return */
-    public function getLabel(array $params): Label|array
+    public function getLabel(array $params): Label
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -595,8 +593,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name']);
     }
 
-    /** @return */
-    public function getMilestone(array $params): Milestone|array
+    public function getMilestone(array $params): Milestone
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -622,8 +619,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone_number']);
     }
 
-    /** @return */
-    public function getComment(array $params): IssueComment|array
+    public function getComment(array $params): IssueComment
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -649,8 +645,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
-    /** @return */
-    public function getEvent(array $params): IssueEvent|array
+    public function getEvent(array $params): IssueEvent
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -676,7 +671,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['event_id']);
     }
 
-    /** @return Observable<Schema\IssueComment> */
+    /** @return iterable<int,Schema\IssueComment> */
     public function listComments(array $params): iterable
     {
         $arguments = [];
@@ -721,7 +716,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\AssignedIssueEvent|Schema\UnassignedIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent> */
+    /** @return iterable<int,Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\AssignedIssueEvent|Schema\UnassignedIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent> */
     public function listEvents(array $params): iterable
     {
         $arguments = [];
@@ -760,7 +755,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Label>|Schema\BasicError */
+    /** @return iterable<int,Schema\Label>|Schema\BasicError */
     public function listLabelsOnIssue(array $params): iterable|BasicError
     {
         $arguments = [];
@@ -799,7 +794,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent|Schema\TimelineCommentEvent|Schema\TimelineCrossReferencedEvent|Schema\TimelineCommittedEvent|Schema\TimelineReviewedEvent|Schema\TimelineLineCommentedEvent|Schema\TimelineCommitCommentedEvent|Schema\TimelineAssignedIssueEvent|Schema\TimelineUnassignedIssueEvent|Schema\StateChangeIssueEvent> */
+    /** @return iterable<int,Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent|Schema\TimelineCommentEvent|Schema\TimelineCrossReferencedEvent|Schema\TimelineCommittedEvent|Schema\TimelineReviewedEvent|Schema\TimelineLineCommentedEvent|Schema\TimelineCommitCommentedEvent|Schema\TimelineAssignedIssueEvent|Schema\TimelineUnassignedIssueEvent|Schema\StateChangeIssueEvent> */
     public function listEventsForTimeline(array $params): iterable
     {
         $arguments = [];
@@ -838,7 +833,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Label> */
+    /** @return iterable<int,Schema\Label> */
     public function listLabelsForMilestone(array $params): iterable
     {
         $arguments = [];
@@ -877,8 +872,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone_number'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return array{code:int} */
-    public function checkUserCanBeAssignedToIssue(array $params): array
+    public function checkUserCanBeAssignedToIssue(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

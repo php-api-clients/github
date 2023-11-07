@@ -25,8 +25,6 @@ final class ListAccountsForPlanStubbed
 {
     public const OPERATION_ID    = 'apps/list-accounts-for-plan-stubbed';
     public const OPERATION_MATCH = 'GET /marketplace_listing/stubbed/plans/{plan_id}/accounts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/marketplace_listing/stubbed/plans/{plan_id}/accounts';
     /**The unique identifier of the plan. **/
     private int $planId;
     /**To return the oldest accounts first, set to `asc`. Ignored without the `sort` parameter. **/
@@ -49,7 +47,7 @@ final class ListAccountsForPlanStubbed
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{plan_id}', '{direction}', '{sort}', '{per_page}', '{page}'], [$this->planId, $this->direction, $this->sort, $this->perPage, $this->page], self::PATH . '?direction={direction}&sort={sort}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{plan_id}', '{direction}', '{sort}', '{per_page}', '{page}'], [$this->planId, $this->direction, $this->sort, $this->perPage, $this->page], '/marketplace_listing/stubbed/plans/{plan_id}/accounts' . '?direction={direction}&sort={sort}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\MarketplacePurchase> */
@@ -70,7 +68,7 @@ final class ListAccountsForPlanStubbed
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\MarketplacePurchase::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\MarketplacePurchase::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\MarketplacePurchase::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

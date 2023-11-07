@@ -21,12 +21,11 @@ final readonly class GetOctocat
     {
     }
 
-    /** @return */
-    public function call(string $s): ResponseInterface|array
+    public function call(string $s): ResponseInterface
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Meta\GetOctocat($s);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ResponseInterface {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

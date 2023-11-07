@@ -24,12 +24,11 @@ final readonly class GetWebhookDelivery
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $hookId, int $deliveryId): HookDelivery|array
+    public function call(string $owner, string $repo, int $hookId, int $deliveryId): HookDelivery
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetWebhookDelivery($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $hookId, $deliveryId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): HookDelivery|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): HookDelivery {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

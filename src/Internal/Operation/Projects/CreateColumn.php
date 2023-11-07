@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Projects;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -23,8 +24,6 @@ final class CreateColumn
 {
     public const OPERATION_ID    = 'projects/create-column';
     public const OPERATION_MATCH = 'POST /projects/{project_id}/columns';
-    private const METHOD         = 'POST';
-    private const PATH           = '/projects/{project_id}/columns';
     /**The unique identifier of the project. **/
     private int $projectId;
 
@@ -37,11 +36,10 @@ final class CreateColumn
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Projects\CreateColumn\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{project_id}'], [$this->projectId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{project_id}'], [$this->projectId], '/projects/{project_id}/columns'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Schema\ProjectColumn|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\ProjectColumn|array
+    public function createResponse(ResponseInterface $response): Schema\ProjectColumn|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -90,7 +88,7 @@ final class CreateColumn
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

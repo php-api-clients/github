@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Teams;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -21,8 +22,6 @@ final class CheckPermissionsForProjectInOrg
 {
     public const OPERATION_ID    = 'teams/check-permissions-for-project-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/projects/{project_id}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/projects/{project_id}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The slug of the team name. **/
@@ -39,11 +38,10 @@ final class CheckPermissionsForProjectInOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{team_slug}', '{project_id}'], [$this->org, $this->teamSlug, $this->projectId], self::PATH));
+        return new Request('GET', str_replace(['{org}', '{team_slug}', '{project_id}'], [$this->org, $this->teamSlug, $this->projectId], '/orgs/{org}/teams/{team_slug}/projects/{project_id}'));
     }
 
-    /** @return Schema\TeamProject|array{code: int} */
-    public function createResponse(ResponseInterface $response): Schema\TeamProject|array
+    public function createResponse(ResponseInterface $response): Schema\TeamProject|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -68,7 +66,7 @@ final class CheckPermissionsForProjectInOrg
              * Not Found if project is not managed by this team
              **/
             case 404:
-                return ['code' => 404];
+                return new WithoutBody(404, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\List;
 
 use ApiClients\Client\GitHub\Internal\Routers;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Six
@@ -14,8 +15,8 @@ final class Six
     {
     }
 
-    /** @return Observable<Schema\MarketplacePurchase>|Observable<Schema\Team>|Observable<Schema\MinimalRepository>|Observable<Schema\TeamDiscussion>|Observable<Schema\OrganizationInvitation>|Observable<Schema\SimpleUser>|Observable<Schema\TeamProject>|Observable<Schema\CodeScanningAlertItems>|array{code:int}|Observable<Schema\CodeScanningAnalysis>|Observable<Schema\DependabotAlert>|Observable<Schema\IssueComment>|Observable<Schema\IssueEvent>|Observable<Schema\PageBuild>|Observable<Schema\PullRequestReviewComment>|Observable<Schema\RuleSuites>|Observable<Schema\SecretScanningAlert>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\PackageVersion>|Observable<Schema\Event> */
-    public function call(string $call, array $params, array $pathChunks): iterable
+    /** @return iterable<int,Schema\MarketplacePurchase>|iterable<int,Schema\Team>|iterable<int,Schema\MinimalRepository>|iterable<int,Schema\TeamDiscussion>|iterable<int,Schema\OrganizationInvitation>|iterable<int,Schema\SimpleUser>|iterable<int,Schema\TeamProject>|iterable<int,Schema\CodeScanningAlertItems>|WithoutBody|iterable<int,Schema\CodeScanningAnalysis>|iterable<int,Schema\DependabotAlert>|iterable<int,Schema\IssueComment>|iterable<int,Schema\IssueEvent>|iterable<int,Schema\PageBuild>|iterable<int,Schema\PullRequestReviewComment>|iterable<int,Schema\RuleSuites>|iterable<int,Schema\SecretScanningAlert>|iterable<int,Schema\TeamDiscussionComment>|iterable<int,Schema\Reaction>|iterable<int,Schema\PackageVersion>|iterable<int,Schema\Event> */
+    public function call(string $call, array $params, array $pathChunks): iterable|WithoutBody
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'marketplace_listing') {

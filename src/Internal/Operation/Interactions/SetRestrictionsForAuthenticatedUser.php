@@ -23,8 +23,6 @@ final class SetRestrictionsForAuthenticatedUser
 {
     public const OPERATION_ID    = 'interactions/set-restrictions-for-authenticated-user';
     public const OPERATION_MATCH = 'PUT /user/interaction-limits';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/user/interaction-limits';
 
     public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\User\InteractionLimits $hydrator)
     {
@@ -34,7 +32,7 @@ final class SetRestrictionsForAuthenticatedUser
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\InteractionLimit::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace([], [], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace([], [], '/user/interaction-limits'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\InteractionLimitResponse

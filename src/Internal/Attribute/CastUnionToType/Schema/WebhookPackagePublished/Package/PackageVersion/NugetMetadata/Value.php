@@ -25,7 +25,7 @@ final class Value implements PropertyCaster
             $signatureChunks = array_unique(array_keys($value));
             sort($signatureChunks);
             $signature = implode('|', $signatureChunks);
-            if ($signature === 'url|branch|commit|type') {
+            if ($signature === 'branch|commit|type|url') {
                 try {
                     return $hydrator->hydrateObject(Schema\WebhookPackagePublished\Package\PackageVersion\NugetMetadata\Value\Three::class, $value);
                 } catch (Throwable) {

@@ -23,8 +23,6 @@ final class ReviewPatGrantRequestsInBulk
 {
     public const OPERATION_ID    = 'orgs/review-pat-grant-requests-in-bulk';
     public const OPERATION_MATCH = 'POST /orgs/{org}/personal-access-token-requests';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/personal-access-token-requests';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -37,7 +35,7 @@ final class ReviewPatGrantRequestsInBulk
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Orgs\ReviewPatGrantRequestsInBulk\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{org}'], [$this->org], '/orgs/{org}/personal-access-token-requests'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Orgs\ReviewPatGrantRequestsInBulk\Response\ApplicationJson\Accepted\Application\Json

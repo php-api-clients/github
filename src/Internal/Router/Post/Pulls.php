@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\PullRequest;
 use ApiClients\Client\GitHub\Schema\PullRequestReview;
 use ApiClients\Client\GitHub\Schema\PullRequestReviewComment;
 use ApiClients\Client\GitHub\Schema\PullRequestSimple;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -23,8 +23,7 @@ final class Pulls
     {
     }
 
-    /** @return */
-    public function create(array $params): PullRequest|array
+    public function create(array $params): PullRequest
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -44,8 +43,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
-    public function createReviewComment(array $params): PullRequestReviewComment|array
+    public function createReviewComment(array $params): PullRequestReviewComment
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -71,8 +69,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    /** @return Schema\PullRequestSimple|array{code:int} */
-    public function requestReviewers(array $params): PullRequestSimple|array
+    public function requestReviewers(array $params): PullRequestSimple|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -98,8 +95,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    /** @return */
-    public function createReview(array $params): PullRequestReview|array
+    public function createReview(array $params): PullRequestReview
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -125,8 +121,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    /** @return */
-    public function createReplyForReviewComment(array $params): PullRequestReviewComment|array
+    public function createReplyForReviewComment(array $params): PullRequestReviewComment
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -158,8 +153,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['comment_id'], $params);
     }
 
-    /** @return */
-    public function submitReview(array $params): PullRequestReview|array
+    public function submitReview(array $params): PullRequestReview
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

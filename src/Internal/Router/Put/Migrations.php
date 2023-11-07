@@ -19,8 +19,7 @@ final class Migrations
     {
     }
 
-    /** @return */
-    public function startImport(array $params): Import|array
+    public function startImport(array $params): Import
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

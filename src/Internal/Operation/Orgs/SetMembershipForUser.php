@@ -23,8 +23,6 @@ final class SetMembershipForUser
 {
     public const OPERATION_ID    = 'orgs/set-membership-for-user';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/memberships/{username}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/memberships/{username}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The handle for the GitHub user account. **/
@@ -40,7 +38,7 @@ final class SetMembershipForUser
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Orgs\SetMembershipForUser\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}', '{username}'], [$this->org, $this->username], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{org}', '{username}'], [$this->org, $this->username], '/orgs/{org}/memberships/{username}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\OrgMembership

@@ -896,6 +896,11 @@ final readonly class RepositoryWebhooks
                 "type": "string"
             }
         },
+        "custom_properties": {
+            "type": "object",
+            "description": "The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.",
+            "additionalProperties": true
+        },
         "has_issues": {
             "type": "boolean",
             "description": "Whether issues are enabled.",
@@ -1607,6 +1612,7 @@ when the event occurs from activity in a repository.';
         "generated",
         "generated"
     ],
+    "custom_properties": [],
     "has_issues": true,
     "has_projects": true,
     "has_wiki": true,
@@ -1767,6 +1773,7 @@ when the event occurs from activity in a repository.';
      * size: The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
      * defaultBranch: The default branch of the repository.
      * isTemplate: Whether this repository acts as a template that can be used to generate new repositories.
+     * customProperties: The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
      * hasIssues: Whether issues are enabled.
      * hasProjects: Whether projects are enabled.
      * hasWiki: Whether the wiki is enabled.
@@ -1854,7 +1861,8 @@ when the event occurs from activity in a repository.';
     public int $watchersCount, public int $size, #[MapFrom('default_branch')]
     public string $defaultBranch, #[MapFrom('open_issues_count')]
     public int $openIssuesCount, #[MapFrom('is_template')]
-    public bool|null $isTemplate, public array|null $topics, #[MapFrom('has_issues')]
+    public bool|null $isTemplate, public array|null $topics, #[MapFrom('custom_properties')]
+    public Schema\RepositoryWebhooks\CustomProperties|null $customProperties, #[MapFrom('has_issues')]
     public bool $hasIssues, #[MapFrom('has_projects')]
     public bool $hasProjects, #[MapFrom('has_wiki')]
     public bool $hasWiki, #[MapFrom('has_pages')]

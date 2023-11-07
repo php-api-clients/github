@@ -21,8 +21,6 @@ final class GetAdminBranchProtection
 {
     public const OPERATION_ID    = 'repos/get-admin-branch-protection';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -39,7 +37,7 @@ final class GetAdminBranchProtection
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{branch}'], [$this->owner, $this->repo, $this->branch], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{branch}'], [$this->owner, $this->repo, $this->branch], '/repos/{owner}/{repo}/branches/{branch}/protection/enforce_admins'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\ProtectedBranchAdminEnforced

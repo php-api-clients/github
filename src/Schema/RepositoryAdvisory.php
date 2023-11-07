@@ -54,7 +54,9 @@ final readonly class RepositoryAdvisory
         },
         "url": {
             "type": "string",
-            "description": "The API URL for the advisory."
+            "description": "The API URL for the advisory.",
+            "format": "uri",
+            "readOnly": true
         },
         "html_url": {
             "type": "string",
@@ -1855,7 +1857,7 @@ final readonly class RepositoryAdvisory
     public const SCHEMA_EXAMPLE_DATA = '{
     "ghsa_id": "generated",
     "cve_id": "generated",
-    "url": "generated",
+    "url": "https:\\/\\/example.com\\/",
     "html_url": "https:\\/\\/example.com\\/",
     "summary": "generated",
     "description": "generated",

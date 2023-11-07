@@ -24,12 +24,11 @@ final readonly class GetAccessRestrictions
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $branch): BranchRestrictionPolicy|array
+    public function call(string $owner, string $repo, string $branch): BranchRestrictionPolicy
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetAccessRestrictions($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): BranchRestrictionPolicy|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): BranchRestrictionPolicy {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

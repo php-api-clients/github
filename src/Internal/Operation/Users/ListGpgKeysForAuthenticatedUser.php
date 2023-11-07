@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Users;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -25,8 +26,6 @@ final class ListGpgKeysForAuthenticatedUser
 {
     public const OPERATION_ID    = 'users/list-gpg-keys-for-authenticated-user';
     public const OPERATION_MATCH = 'GET /user/gpg_keys';
-    private const METHOD         = 'GET';
-    private const PATH           = '/user/gpg_keys';
     /**The number of results per page (max 100). **/
     private int $perPage;
     /**Page number of the results to fetch. **/
@@ -40,11 +39,11 @@ final class ListGpgKeysForAuthenticatedUser
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{per_page}', '{page}'], [$this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{per_page}', '{page}'], [$this->perPage, $this->page], '/user/gpg_keys' . '?per_page={per_page}&page={page}'));
     }
 
-    /** @return Observable<Schema\GpgKey>|array{code: int} */
-    public function createResponse(ResponseInterface $response): Observable|array
+    /** @return Observable<Schema\GpgKey>|WithoutBody */
+    public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -61,7 +60,7 @@ final class ListGpgKeysForAuthenticatedUser
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\GpgKey::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\GpgKey::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\GpgKey::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }
@@ -103,7 +102,7 @@ final class ListGpgKeysForAuthenticatedUser
              * Not modified
              **/
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

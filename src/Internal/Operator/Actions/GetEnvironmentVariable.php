@@ -24,12 +24,11 @@ final readonly class GetEnvironmentVariable
     {
     }
 
-    /** @return */
-    public function call(int $repositoryId, string $environmentName, string $name): ActionsVariable|array
+    public function call(int $repositoryId, string $environmentName, string $name): ActionsVariable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetEnvironmentVariable($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $name);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsVariable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsVariable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

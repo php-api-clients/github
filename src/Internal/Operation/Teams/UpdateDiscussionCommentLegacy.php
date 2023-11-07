@@ -22,8 +22,6 @@ final class UpdateDiscussionCommentLegacy
 {
     public const OPERATION_ID    = 'teams/update-discussion-comment-legacy';
     public const OPERATION_MATCH = 'PATCH /teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}';
-    private const METHOD         = 'PATCH';
-    private const PATH           = '/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}';
     /**The unique identifier of the team. **/
     private int $teamId;
     /**The number that identifies the discussion. **/
@@ -42,7 +40,7 @@ final class UpdateDiscussionCommentLegacy
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Teams\UpdateDiscussionCommentLegacy\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{team_id}', '{discussion_number}', '{comment_number}'], [$this->teamId, $this->discussionNumber, $this->commentNumber], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PATCH', str_replace(['{team_id}', '{discussion_number}', '{comment_number}'], [$this->teamId, $this->discussionNumber, $this->commentNumber], '/teams/{team_id}/discussions/{discussion_number}/comments/{comment_number}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\TeamDiscussionComment

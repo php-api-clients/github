@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -18,8 +19,7 @@ final class Packages
     {
     }
 
-    /** @return array{code:int} */
-    public function deletePackageForAuthenticatedUser(array $params): array
+    public function deletePackageForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
@@ -39,8 +39,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name']);
     }
 
-    /** @return array{code:int} */
-    public function deletePackageVersionForAuthenticatedUser(array $params): array
+    public function deletePackageVersionForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
@@ -66,8 +65,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['package_version_id']);
     }
 
-    /** @return array{code:int} */
-    public function deletePackageForOrg(array $params): array
+    public function deletePackageForOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
@@ -93,8 +91,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org']);
     }
 
-    /** @return array{code:int} */
-    public function deletePackageForUser(array $params): array
+    public function deletePackageForUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
@@ -120,8 +117,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['username']);
     }
 
-    /** @return array{code:int} */
-    public function deletePackageVersionForOrg(array $params): array
+    public function deletePackageVersionForOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {
@@ -153,8 +149,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org'], $arguments['package_version_id']);
     }
 
-    /** @return array{code:int} */
-    public function deletePackageVersionForUser(array $params): array
+    public function deletePackageVersionForUser(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('package_type', $params) === false) {

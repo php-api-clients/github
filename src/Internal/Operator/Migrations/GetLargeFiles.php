@@ -24,12 +24,12 @@ final readonly class GetLargeFiles
     {
     }
 
-    /** @return Observable<Schema\PorterLargeFile> */
+    /** @return iterable<int,Schema\PorterLargeFile> */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\GetLargeFiles($this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

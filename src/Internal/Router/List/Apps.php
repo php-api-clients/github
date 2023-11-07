@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\List;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,8 +21,8 @@ final class Apps
     {
     }
 
-    /** @return Observable<Schema\IntegrationInstallationRequest>|array{code:int} */
-    public function listInstallationRequestsForAuthenticatedAppListing(array $params): iterable
+    /** @return iterable<int,Schema\IntegrationInstallationRequest>|WithoutBody */
+    public function listInstallationRequestsForAuthenticatedAppListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
@@ -47,7 +48,7 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Installation> */
+    /** @return iterable<int,Schema\Installation> */
     public function listInstallationsListing(array $params): iterable
     {
         $arguments = [];
@@ -86,7 +87,7 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\MarketplaceListingPlan> */
+    /** @return iterable<int,Schema\MarketplaceListingPlan> */
     public function listPlansListing(array $params): iterable
     {
         $arguments = [];
@@ -113,8 +114,8 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\UserMarketplacePurchase>|array{code:int} */
-    public function listSubscriptionsForAuthenticatedUserListing(array $params): iterable
+    /** @return iterable<int,Schema\UserMarketplacePurchase>|WithoutBody */
+    public function listSubscriptionsForAuthenticatedUserListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
@@ -140,7 +141,7 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\MarketplaceListingPlan> */
+    /** @return iterable<int,Schema\MarketplaceListingPlan> */
     public function listPlansStubbedListing(array $params): iterable
     {
         $arguments = [];
@@ -167,8 +168,8 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\UserMarketplacePurchase>|array{code:int} */
-    public function listSubscriptionsForAuthenticatedUserStubbedListing(array $params): iterable
+    /** @return iterable<int,Schema\UserMarketplacePurchase>|WithoutBody */
+    public function listSubscriptionsForAuthenticatedUserStubbedListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('per_page', $params) === false) {
@@ -194,7 +195,7 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\MarketplacePurchase> */
+    /** @return iterable<int,Schema\MarketplacePurchase> */
     public function listAccountsForPlanListing(array $params): iterable
     {
         $arguments = [];
@@ -239,7 +240,7 @@ final class Apps
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\MarketplacePurchase> */
+    /** @return iterable<int,Schema\MarketplacePurchase> */
     public function listAccountsForPlanStubbedListing(array $params): iterable
     {
         $arguments = [];

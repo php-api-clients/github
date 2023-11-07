@@ -24,8 +24,6 @@ final class ListInstallationsListing
 {
     public const OPERATION_ID    = 'apps/list-installations';
     public const OPERATION_MATCH = 'LIST /app/installations';
-    private const METHOD         = 'GET';
-    private const PATH           = '/app/installations';
     /**Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
     private string $since;
     /**The number of results per page (max 100). **/
@@ -42,7 +40,7 @@ final class ListInstallationsListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{since}', '{outdated}', '{per_page}', '{page}'], [$this->since, $this->outdated, $this->perPage, $this->page], self::PATH . '?since={since}&outdated={outdated}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{since}', '{outdated}', '{per_page}', '{page}'], [$this->since, $this->outdated, $this->perPage, $this->page], '/app/installations' . '?since={since}&outdated={outdated}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\Installation> */
@@ -63,7 +61,7 @@ final class ListInstallationsListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Installation::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Installation::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Installation::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

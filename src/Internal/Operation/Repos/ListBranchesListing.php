@@ -25,8 +25,6 @@ final class ListBranchesListing
 {
     public const OPERATION_ID    = 'repos/list-branches';
     public const OPERATION_MATCH = 'LIST /repos/{owner}/{repo}/branches';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/branches';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -49,7 +47,7 @@ final class ListBranchesListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{protected}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->protected, $this->perPage, $this->page], self::PATH . '?protected={protected}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{protected}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->protected, $this->perPage, $this->page], '/repos/{owner}/{repo}/branches' . '?protected={protected}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\ShortBranch> */
@@ -70,7 +68,7 @@ final class ListBranchesListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ShortBranch::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\ShortBranch::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\ShortBranch::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

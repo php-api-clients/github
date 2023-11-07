@@ -24,12 +24,12 @@ final readonly class GetReviewsForRun
     {
     }
 
-    /** @return Observable<Schema\EnvironmentApprovals> */
+    /** @return iterable<int,Schema\EnvironmentApprovals> */
     public function call(string $owner, string $repo, int $runId): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetReviewsForRun($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

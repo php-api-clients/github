@@ -24,12 +24,11 @@ final readonly class GetMilestone
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $milestoneNumber): Milestone|array
+    public function call(string $owner, string $repo, int $milestoneNumber): Milestone
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\GetMilestone($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $milestoneNumber);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Milestone|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Milestone {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

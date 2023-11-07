@@ -24,12 +24,11 @@ final readonly class Update
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $checkRunId, array $params): CheckRun|array
+    public function call(string $owner, string $repo, int $checkRunId, array $params): CheckRun
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $checkRunId);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CheckRun|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): CheckRun {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

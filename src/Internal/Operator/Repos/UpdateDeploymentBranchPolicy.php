@@ -24,12 +24,11 @@ final readonly class UpdateDeploymentBranchPolicy
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $environmentName, int $branchPolicyId, array $params): DeploymentBranchPolicy|array
+    public function call(string $owner, string $repo, string $environmentName, int $branchPolicyId, array $params): DeploymentBranchPolicy
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdateDeploymentBranchPolicy($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName, $branchPolicyId);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): DeploymentBranchPolicy|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): DeploymentBranchPolicy {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

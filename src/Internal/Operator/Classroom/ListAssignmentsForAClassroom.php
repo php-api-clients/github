@@ -24,12 +24,12 @@ final readonly class ListAssignmentsForAClassroom
     {
     }
 
-    /** @return Observable<Schema\SimpleClassroomAssignment> */
+    /** @return iterable<int,Schema\SimpleClassroomAssignment> */
     public function call(int $classroomId, int $page = 1, int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Classroom\ListAssignmentsForAClassroom($this->responseSchemaValidator, $this->hydrator, $classroomId, $page, $perPage);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

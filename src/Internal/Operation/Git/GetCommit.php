@@ -22,8 +22,6 @@ final class GetCommit
 {
     public const OPERATION_ID    = 'git/get-commit';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/git/commits/{commit_sha}';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/git/commits/{commit_sha}';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,7 +38,7 @@ final class GetCommit
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{commit_sha}'], [$this->owner, $this->repo, $this->commitSha], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{commit_sha}'], [$this->owner, $this->repo, $this->commitSha], '/repos/{owner}/{repo}/git/commits/{commit_sha}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\GitCommit

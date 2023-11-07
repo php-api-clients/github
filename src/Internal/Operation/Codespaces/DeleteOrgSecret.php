@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Codespaces;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class DeleteOrgSecret
 {
     public const OPERATION_ID    = 'codespaces/delete-org-secret';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/codespaces/secrets/{secret_name}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/codespaces/secrets/{secret_name}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The name of the secret. **/
@@ -37,11 +36,10 @@ final class DeleteOrgSecret
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{secret_name}'], [$this->org, $this->secretName], self::PATH));
+        return new Request('DELETE', str_replace(['{org}', '{secret_name}'], [$this->org, $this->secretName], '/orgs/{org}/codespaces/secrets/{secret_name}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -66,7 +64,7 @@ final class DeleteOrgSecret
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

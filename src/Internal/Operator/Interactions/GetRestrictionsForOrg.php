@@ -25,12 +25,11 @@ final readonly class GetRestrictionsForOrg
     {
     }
 
-    /** @return */
-    public function call(string $org): InteractionLimitResponse|One|array
+    public function call(string $org): InteractionLimitResponse|One
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Interactions\GetRestrictionsForOrg($this->responseSchemaValidator, $this->hydrator, $org);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): InteractionLimitResponse|One|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): InteractionLimitResponse|One {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

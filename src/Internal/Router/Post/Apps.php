@@ -22,8 +22,7 @@ final class Apps
     {
     }
 
-    /** @return */
-    public function createFromManifest(array $params): Integration|array
+    public function createFromManifest(array $params): Integration
     {
         $arguments = [];
         if (array_key_exists('code', $params) === false) {
@@ -37,8 +36,7 @@ final class Apps
         return $operator->call($arguments['code']);
     }
 
-    /** @return */
-    public function checkToken(array $params): Authorization|array
+    public function checkToken(array $params): Authorization
     {
         $arguments = [];
         if (array_key_exists('client_id', $params) === false) {
@@ -52,8 +50,7 @@ final class Apps
         return $operator->call($arguments['client_id'], $params);
     }
 
-    /** @return */
-    public function redeliverWebhookDelivery(array $params): Json|array
+    public function redeliverWebhookDelivery(array $params): Json
     {
         $arguments = [];
         if (array_key_exists('delivery_id', $params) === false) {
@@ -67,8 +64,7 @@ final class Apps
         return $operator->call($arguments['delivery_id']);
     }
 
-    /** @return */
-    public function createInstallationAccessToken(array $params): InstallationToken|array
+    public function createInstallationAccessToken(array $params): InstallationToken
     {
         $arguments = [];
         if (array_key_exists('installation_id', $params) === false) {
@@ -82,8 +78,7 @@ final class Apps
         return $operator->call($arguments['installation_id'], $params);
     }
 
-    /** @return */
-    public function scopeToken(array $params): Authorization|array
+    public function scopeToken(array $params): Authorization
     {
         $arguments = [];
         if (array_key_exists('client_id', $params) === false) {

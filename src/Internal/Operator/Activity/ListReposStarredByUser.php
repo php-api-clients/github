@@ -25,12 +25,11 @@ final readonly class ListReposStarredByUser
     {
     }
 
-    /** @return */
-    public function call(string $username, string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1): StarredRepository|Repository|array
+    public function call(string $username, string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1): StarredRepository|Repository
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\ListReposStarredByUser($this->responseSchemaValidator, $this->hydrator, $username, $sort, $direction, $perPage, $page);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): StarredRepository|Repository|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): StarredRepository|Repository {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

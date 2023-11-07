@@ -25,8 +25,6 @@ final class ListWebhookDeliveries
 {
     public const OPERATION_ID    = 'orgs/list-webhook-deliveries';
     public const OPERATION_MATCH = 'GET /orgs/{org}/hooks/{hook_id}/deliveries';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/hooks/{hook_id}/deliveries';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The unique identifier of the hook. You can find this value in the `X-GitHub-Hook-ID` header of a webhook delivery. **/
@@ -46,7 +44,7 @@ final class ListWebhookDeliveries
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{hook_id}', '{cursor}', '{redelivery}', '{per_page}'], [$this->org, $this->hookId, $this->cursor, $this->redelivery, $this->perPage], self::PATH . '?cursor={cursor}&redelivery={redelivery}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{org}', '{hook_id}', '{cursor}', '{redelivery}', '{per_page}'], [$this->org, $this->hookId, $this->cursor, $this->redelivery, $this->perPage], '/orgs/{org}/hooks/{hook_id}/deliveries' . '?cursor={cursor}&redelivery={redelivery}&per_page={per_page}'));
     }
 
     /** @return Observable<Schema\HookDeliveryItem> */
@@ -67,7 +65,7 @@ final class ListWebhookDeliveries
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\HookDeliveryItem::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\HookDeliveryItem::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\HookDeliveryItem::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

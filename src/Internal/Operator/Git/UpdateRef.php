@@ -24,12 +24,11 @@ final readonly class UpdateRef
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $ref, array $params): GitRef|array
+    public function call(string $owner, string $repo, string $ref, array $params): GitRef
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Git\UpdateRef($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GitRef|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): GitRef {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

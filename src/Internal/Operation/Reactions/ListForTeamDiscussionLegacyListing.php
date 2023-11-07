@@ -24,8 +24,6 @@ final class ListForTeamDiscussionLegacyListing
 {
     public const OPERATION_ID    = 'reactions/list-for-team-discussion-legacy';
     public const OPERATION_MATCH = 'LIST /teams/{team_id}/discussions/{discussion_number}/reactions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/teams/{team_id}/discussions/{discussion_number}/reactions';
     /**The unique identifier of the team. **/
     private int $teamId;
     /**The number that identifies the discussion. **/
@@ -48,7 +46,7 @@ final class ListForTeamDiscussionLegacyListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{team_id}', '{discussion_number}', '{content}', '{per_page}', '{page}'], [$this->teamId, $this->discussionNumber, $this->content, $this->perPage, $this->page], self::PATH . '?content={content}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{team_id}', '{discussion_number}', '{content}', '{per_page}', '{page}'], [$this->teamId, $this->discussionNumber, $this->content, $this->perPage, $this->page], '/teams/{team_id}/discussions/{discussion_number}/reactions' . '?content={content}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\Reaction> */
@@ -69,7 +67,7 @@ final class ListForTeamDiscussionLegacyListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Reaction::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Reaction::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Reaction::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

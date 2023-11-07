@@ -21,6 +21,7 @@ use ApiClients\Client\GitHub\Schema\Release;
 use ApiClients\Client\GitHub\Schema\RepositoryAdvisory;
 use ApiClients\Client\GitHub\Schema\RepositoryInvitation;
 use ApiClients\Client\GitHub\Schema\WebhookConfig;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Six
@@ -29,8 +30,7 @@ final class Six
     {
     }
 
-    /** @return array{code:int}| */
-    public function call(string $call, array $params, array $pathChunks): WebhookConfig|CheckRun|CheckSuitePreference|EmptyObject|CodeScanningDefaultSetupUpdateResponse|CommitComment|Hook|Import|RepositoryInvitation|Issue|BasicError|Label|Milestone|PullRequest|Release|RepositoryAdvisory|array
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|WebhookConfig|CheckRun|CheckSuitePreference|EmptyObject|CodeScanningDefaultSetupUpdateResponse|CommitComment|Hook|Import|RepositoryInvitation|Issue|BasicError|Label|Milestone|PullRequest|Release|RepositoryAdvisory
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {

@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Put;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\TeamMembership;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,8 +20,7 @@ final class Teams
     {
     }
 
-    /** @return array{code:int} */
-    public function addMemberLegacy(array $params): array
+    public function addMemberLegacy(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
@@ -41,8 +40,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['username']);
     }
 
-    /** @return Schema\TeamMembership|array{code:int} */
-    public function addOrUpdateMembershipForUserLegacy(array $params): TeamMembership|array
+    public function addOrUpdateMembershipForUserLegacy(array $params): TeamMembership|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
@@ -62,8 +60,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['username'], $params);
     }
 
-    /** @return array{code:int} */
-    public function addOrUpdateProjectPermissionsLegacy(array $params): array
+    public function addOrUpdateProjectPermissionsLegacy(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
@@ -83,8 +80,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['project_id'], $params);
     }
 
-    /** @return Schema\TeamMembership|array{code:int} */
-    public function addOrUpdateMembershipForUserInOrg(array $params): TeamMembership|array
+    public function addOrUpdateMembershipForUserInOrg(array $params): TeamMembership|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -110,8 +106,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['username'], $params);
     }
 
-    /** @return array{code:int} */
-    public function addOrUpdateProjectPermissionsInOrg(array $params): array
+    public function addOrUpdateProjectPermissionsInOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -137,8 +132,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['project_id'], $params);
     }
 
-    /** @return array{code:int} */
-    public function addOrUpdateRepoPermissionsLegacy(array $params): array
+    public function addOrUpdateRepoPermissionsLegacy(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('team_id', $params) === false) {
@@ -164,8 +158,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return array{code:int} */
-    public function addOrUpdateRepoPermissionsInOrg(array $params): array
+    public function addOrUpdateRepoPermissionsInOrg(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

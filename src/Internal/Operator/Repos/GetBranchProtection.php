@@ -24,12 +24,11 @@ final readonly class GetBranchProtection
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $branch): BranchProtection|array
+    public function call(string $owner, string $repo, string $branch): BranchProtection
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetBranchProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): BranchProtection|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): BranchProtection {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

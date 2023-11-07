@@ -25,8 +25,6 @@ final class ReviewPendingDeploymentsForRun
 {
     public const OPERATION_ID    = 'actions/review-pending-deployments-for-run';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -45,7 +43,7 @@ final class ReviewPendingDeploymentsForRun
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\ReviewPendingDeploymentsForRun\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{run_id}'], [$this->owner, $this->repo, $this->runId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}', '{run_id}'], [$this->owner, $this->repo, $this->runId], '/repos/{owner}/{repo}/actions/runs/{run_id}/pending_deployments'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     /** @return Observable<Schema\Deployment> */
@@ -66,7 +64,7 @@ final class ReviewPendingDeploymentsForRun
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Deployment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Deployment::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Deployment::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

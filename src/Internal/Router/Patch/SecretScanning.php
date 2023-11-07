@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\SecretScanningAlert;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -20,8 +20,7 @@ final class SecretScanning
     {
     }
 
-    /** @return Schema\SecretScanningAlert|array{code:int} */
-    public function updateAlert(array $params): SecretScanningAlert|array
+    public function updateAlert(array $params): SecretScanningAlert|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

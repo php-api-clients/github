@@ -23,8 +23,6 @@ final class GenerateRunnerJitconfigForRepo
 {
     public const OPERATION_ID    = 'actions/generate-runner-jitconfig-for-repo';
     public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig';
-    private const METHOD         = 'POST';
-    private const PATH           = '/repos/{owner}/{repo}/actions/runners/generate-jitconfig';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -40,7 +38,7 @@ final class GenerateRunnerJitconfigForRepo
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Actions\GenerateRunnerJitconfigForRepo\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/actions/runners/generate-jitconfig'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\GenerateRunnerJitconfigForOrg\Response\ApplicationJson\Created

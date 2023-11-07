@@ -25,8 +25,6 @@ final class ListGlobalAdvisories
 {
     public const OPERATION_ID    = 'security-advisories/list-global-advisories';
     public const OPERATION_MATCH = 'GET /advisories';
-    private const METHOD         = 'GET';
-    private const PATH           = '/advisories';
     /**If specified, only advisories with this GHSA (GitHub Security Advisory) identifier will be returned. **/
     private string $ghsaId;
     /**If specified, only advisories with this CVE (Common Vulnerabilities and Exposures) identifier will be returned. **/
@@ -93,7 +91,7 @@ final class ListGlobalAdvisories
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{ghsa_id}', '{cve_id}', '{ecosystem}', '{severity}', '{cwes}', '{is_withdrawn}', '{affects}', '{published}', '{updated}', '{modified}', '{before}', '{after}', '{type}', '{direction}', '{per_page}', '{sort}'], [$this->ghsaId, $this->cveId, $this->ecosystem, $this->severity, $this->cwes, $this->isWithdrawn, $this->affects, $this->published, $this->updated, $this->modified, $this->before, $this->after, $this->type, $this->direction, $this->perPage, $this->sort], self::PATH . '?ghsa_id={ghsa_id}&cve_id={cve_id}&ecosystem={ecosystem}&severity={severity}&cwes={cwes}&is_withdrawn={is_withdrawn}&affects={affects}&published={published}&updated={updated}&modified={modified}&before={before}&after={after}&type={type}&direction={direction}&per_page={per_page}&sort={sort}'));
+        return new Request('GET', str_replace(['{ghsa_id}', '{cve_id}', '{ecosystem}', '{severity}', '{cwes}', '{is_withdrawn}', '{affects}', '{published}', '{updated}', '{modified}', '{before}', '{after}', '{type}', '{direction}', '{per_page}', '{sort}'], [$this->ghsaId, $this->cveId, $this->ecosystem, $this->severity, $this->cwes, $this->isWithdrawn, $this->affects, $this->published, $this->updated, $this->modified, $this->before, $this->after, $this->type, $this->direction, $this->perPage, $this->sort], '/advisories' . '?ghsa_id={ghsa_id}&cve_id={cve_id}&ecosystem={ecosystem}&severity={severity}&cwes={cwes}&is_withdrawn={is_withdrawn}&affects={affects}&published={published}&updated={updated}&modified={modified}&before={before}&after={after}&type={type}&direction={direction}&per_page={per_page}&sort={sort}'));
     }
 
     /** @return Observable<Schema\GlobalAdvisory> */
@@ -114,7 +112,7 @@ final class ListGlobalAdvisories
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\GlobalAdvisory::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\GlobalAdvisory::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\GlobalAdvisory::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

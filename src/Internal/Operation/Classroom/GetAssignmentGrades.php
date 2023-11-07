@@ -25,8 +25,6 @@ final class GetAssignmentGrades
 {
     public const OPERATION_ID    = 'classroom/get-assignment-grades';
     public const OPERATION_MATCH = 'GET /assignments/{assignment_id}/grades';
-    private const METHOD         = 'GET';
-    private const PATH           = '/assignments/{assignment_id}/grades';
     /**The unique identifier of the classroom assignment. **/
     private int $assignmentId;
 
@@ -37,7 +35,7 @@ final class GetAssignmentGrades
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{assignment_id}'], [$this->assignmentId], self::PATH));
+        return new Request('GET', str_replace(['{assignment_id}'], [$this->assignmentId], '/assignments/{assignment_id}/grades'));
     }
 
     /** @return Observable<Schema\ClassroomAssignmentGrade> */
@@ -58,7 +56,7 @@ final class GetAssignmentGrades
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ClassroomAssignmentGrade::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\ClassroomAssignmentGrade::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\ClassroomAssignmentGrade::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

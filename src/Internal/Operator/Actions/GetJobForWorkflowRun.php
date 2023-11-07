@@ -24,12 +24,11 @@ final readonly class GetJobForWorkflowRun
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $jobId): Job|array
+    public function call(string $owner, string $repo, int $jobId): Job
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetJobForWorkflowRun($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $jobId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Job|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Job {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

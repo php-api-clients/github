@@ -24,12 +24,11 @@ final readonly class CreateFromManifest
     {
     }
 
-    /** @return */
-    public function call(string $code): Integration|array
+    public function call(string $code): Integration
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\CreateFromManifest($this->responseSchemaValidator, $this->hydrator, $code);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Integration|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Integration {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

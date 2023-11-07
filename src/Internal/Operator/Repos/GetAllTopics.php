@@ -24,12 +24,11 @@ final readonly class GetAllTopics
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, int $page = 1, int $perPage = 30): Topic|array
+    public function call(string $owner, string $repo, int $page = 1, int $perPage = 30): Topic
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetAllTopics($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $page, $perPage);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Topic|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Topic {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

@@ -24,8 +24,6 @@ final class ListDiscussionCommentsInOrg
 {
     public const OPERATION_ID    = 'teams/list-discussion-comments-in-org';
     public const OPERATION_MATCH = 'GET /orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The slug of the team name. **/
@@ -51,7 +49,7 @@ final class ListDiscussionCommentsInOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{team_slug}', '{discussion_number}', '{direction}', '{per_page}', '{page}'], [$this->org, $this->teamSlug, $this->discussionNumber, $this->direction, $this->perPage, $this->page], self::PATH . '?direction={direction}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{team_slug}', '{discussion_number}', '{direction}', '{per_page}', '{page}'], [$this->org, $this->teamSlug, $this->discussionNumber, $this->direction, $this->perPage, $this->page], '/orgs/{org}/teams/{team_slug}/discussions/{discussion_number}/comments' . '?direction={direction}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\TeamDiscussionComment> */
@@ -72,7 +70,7 @@ final class ListDiscussionCommentsInOrg
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\TeamDiscussionComment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\TeamDiscussionComment::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\TeamDiscussionComment::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

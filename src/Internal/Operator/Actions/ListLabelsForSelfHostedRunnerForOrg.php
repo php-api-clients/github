@@ -24,12 +24,11 @@ final readonly class ListLabelsForSelfHostedRunnerForOrg
     {
     }
 
-    /** @return */
-    public function call(string $org, int $runnerId): Ok|array
+    public function call(string $org, int $runnerId): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListLabelsForSelfHostedRunnerForOrg($this->responseSchemaValidator, $this->hydrator, $org, $runnerId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

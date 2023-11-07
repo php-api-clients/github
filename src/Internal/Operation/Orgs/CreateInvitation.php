@@ -23,8 +23,6 @@ final class CreateInvitation
 {
     public const OPERATION_ID    = 'orgs/create-invitation';
     public const OPERATION_MATCH = 'POST /orgs/{org}/invitations';
-    private const METHOD         = 'POST';
-    private const PATH           = '/orgs/{org}/invitations';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
@@ -37,7 +35,7 @@ final class CreateInvitation
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Orgs\CreateInvitation\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}'], [$this->org], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{org}'], [$this->org], '/orgs/{org}/invitations'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\OrganizationInvitation

@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Repos;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -22,8 +23,6 @@ final class DeleteOrgRuleset
 {
     public const OPERATION_ID    = 'repos/delete-org-ruleset';
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/rulesets/{ruleset_id}';
-    private const METHOD         = 'DELETE';
-    private const PATH           = '/orgs/{org}/rulesets/{ruleset_id}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The ID of the ruleset. **/
@@ -37,11 +36,10 @@ final class DeleteOrgRuleset
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{ruleset_id}'], [$this->org, $this->rulesetId], self::PATH));
+        return new Request('DELETE', str_replace(['{org}', '{ruleset_id}'], [$this->org, $this->rulesetId], '/orgs/{org}/rulesets/{ruleset_id}'));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -74,7 +72,7 @@ final class DeleteOrgRuleset
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

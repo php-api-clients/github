@@ -25,8 +25,6 @@ final class ListAlertsForEnterprise
 {
     public const OPERATION_ID    = 'secret-scanning/list-alerts-for-enterprise';
     public const OPERATION_MATCH = 'GET /enterprises/{enterprise}/secret-scanning/alerts';
-    private const METHOD         = 'GET';
-    private const PATH           = '/enterprises/{enterprise}/secret-scanning/alerts';
     /**The slug version of the enterprise name. You can also substitute this value with the enterprise id. **/
     private string $enterprise;
     /**Set to `open` or `resolved` to only list secret scanning alerts in a specific state. **/
@@ -41,6 +39,8 @@ final class ListAlertsForEnterprise
     private string $before;
     /**A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. **/
     private string $after;
+    /**A comma-separated list of validities that, when present, will return alerts that match the validities in this list. Valid options are `active`, `inactive`, and `unknown`. **/
+    private string $validity;
     /**The property to sort the results by. `created` means when the alert was created. `updated` means when the alert was updated or resolved. **/
     private string $sort;
     /**The direction to sort the results by. **/
@@ -48,7 +48,7 @@ final class ListAlertsForEnterprise
     /**The number of results per page (max 100). **/
     private int $perPage;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Enterprises\Enterprise\SecretScanning\Alerts $hydrator, string $enterprise, string $state, string $secretType, string $resolution, string $before, string $after, string $sort = 'created', string $direction = 'desc', int $perPage = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Enterprises\Enterprise\SecretScanning\Alerts $hydrator, string $enterprise, string $state, string $secretType, string $resolution, string $before, string $after, string $validity, string $sort = 'created', string $direction = 'desc', int $perPage = 30)
     {
         $this->enterprise = $enterprise;
         $this->state      = $state;
@@ -56,6 +56,7 @@ final class ListAlertsForEnterprise
         $this->resolution = $resolution;
         $this->before     = $before;
         $this->after      = $after;
+        $this->validity   = $validity;
         $this->sort       = $sort;
         $this->direction  = $direction;
         $this->perPage    = $perPage;
@@ -63,7 +64,7 @@ final class ListAlertsForEnterprise
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{enterprise}', '{state}', '{secret_type}', '{resolution}', '{before}', '{after}', '{sort}', '{direction}', '{per_page}'], [$this->enterprise, $this->state, $this->secretType, $this->resolution, $this->before, $this->after, $this->sort, $this->direction, $this->perPage], self::PATH . '?state={state}&secret_type={secret_type}&resolution={resolution}&before={before}&after={after}&sort={sort}&direction={direction}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{enterprise}', '{state}', '{secret_type}', '{resolution}', '{before}', '{after}', '{validity}', '{sort}', '{direction}', '{per_page}'], [$this->enterprise, $this->state, $this->secretType, $this->resolution, $this->before, $this->after, $this->validity, $this->sort, $this->direction, $this->perPage], '/enterprises/{enterprise}/secret-scanning/alerts' . '?state={state}&secret_type={secret_type}&resolution={resolution}&before={before}&after={after}&validity={validity}&sort={sort}&direction={direction}&per_page={per_page}'));
     }
 
     /** @return Observable<Schema\OrganizationSecretScanningAlert> */
@@ -84,7 +85,7 @@ final class ListAlertsForEnterprise
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrganizationSecretScanningAlert::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\OrganizationSecretScanningAlert::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\OrganizationSecretScanningAlert::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

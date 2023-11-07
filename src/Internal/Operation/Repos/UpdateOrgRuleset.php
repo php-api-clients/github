@@ -23,8 +23,6 @@ final class UpdateOrgRuleset
 {
     public const OPERATION_ID    = 'repos/update-org-ruleset';
     public const OPERATION_MATCH = 'PUT /orgs/{org}/rulesets/{ruleset_id}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/orgs/{org}/rulesets/{ruleset_id}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**The ID of the ruleset. **/
@@ -40,7 +38,7 @@ final class UpdateOrgRuleset
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\UpdateOrgRuleset\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{org}', '{ruleset_id}'], [$this->org, $this->rulesetId], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{org}', '{ruleset_id}'], [$this->org, $this->rulesetId], '/orgs/{org}/rulesets/{ruleset_id}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     public function createResponse(ResponseInterface $response): Schema\RepositoryRuleset

@@ -24,12 +24,11 @@ final readonly class ListCustomDeploymentRuleIntegrations
     {
     }
 
-    /** @return */
-    public function call(string $environmentName, string $repo, string $owner, int $page = 1, int $perPage = 30): Ok|array
+    public function call(string $environmentName, string $repo, string $owner, int $page = 1, int $perPage = 30): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListCustomDeploymentRuleIntegrations($this->responseSchemaValidator, $this->hydrator, $environmentName, $repo, $owner, $page, $perPage);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

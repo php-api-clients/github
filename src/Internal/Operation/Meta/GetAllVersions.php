@@ -25,8 +25,6 @@ final class GetAllVersions
 {
     public const OPERATION_ID    = 'meta/get-all-versions';
     public const OPERATION_MATCH = 'GET /versions';
-    private const METHOD         = 'GET';
-    private const PATH           = '/versions';
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Versions $hydrator)
     {
@@ -34,7 +32,7 @@ final class GetAllVersions
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace([], [], self::PATH));
+        return new Request('GET', str_replace([], [], '/versions'));
     }
 
     /** @return Observable<string> */

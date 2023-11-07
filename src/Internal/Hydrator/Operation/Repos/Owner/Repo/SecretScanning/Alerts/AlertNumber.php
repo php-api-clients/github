@@ -258,6 +258,17 @@ class AlertNumber implements ObjectMapper
             $properties['pushProtectionBypassedAt'] = $value;
 
             after_pushProtectionBypassedAt:
+
+            $value = $payload['validity'] ?? null;
+
+            if ($value === null) {
+                $properties['validity'] = null;
+                goto after_validity;
+            }
+
+            $properties['validity'] = $value;
+
+            after_validity:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningAlert', $exception, stack: $this->hydrationStack);
         }
@@ -813,6 +824,14 @@ class AlertNumber implements ObjectMapper
         }
 
         after_pushProtectionBypassedAt:        $result['push_protection_bypassed_at'] = $pushProtectionBypassedAt;
+
+        $validity = $object->validity;
+
+        if ($validity === null) {
+            goto after_validity;
+        }
+
+        after_validity:        $result['validity'] = $validity;
 
         return $result;
     }

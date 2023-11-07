@@ -24,12 +24,11 @@ final readonly class StartImport
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, array $params): Import|array
+    public function call(string $owner, string $repo, array $params): Import
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\StartImport($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Import|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Import {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

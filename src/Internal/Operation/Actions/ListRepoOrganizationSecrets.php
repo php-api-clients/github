@@ -21,8 +21,6 @@ final class ListRepoOrganizationSecrets
 {
     public const OPERATION_ID    = 'actions/list-repo-organization-secrets';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/actions/organization-secrets';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/actions/organization-secrets';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -42,7 +40,7 @@ final class ListRepoOrganizationSecrets
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->perPage, $this->page], self::PATH . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->perPage, $this->page], '/repos/{owner}/{repo}/actions/organization-secrets' . '?per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListRepoOrganizationSecrets\Response\ApplicationJson\Ok

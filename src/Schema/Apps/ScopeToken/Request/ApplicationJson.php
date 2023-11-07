@@ -244,6 +244,15 @@ final readonly class ApplicationJson
                     "type": "string",
                     "description": "The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change."
                 },
+                "organization_custom_properties": {
+                    "enum": [
+                        "read",
+                        "write",
+                        "admin"
+                    ],
+                    "type": "string",
+                    "description": "The level of permission to grant the access token for custom property management."
+                },
                 "organization_announcement_banners": {
                     "enum": [
                         "read",
@@ -381,6 +390,7 @@ final readonly class ApplicationJson
         "members": "read",
         "organization_administration": "read",
         "organization_custom_roles": "read",
+        "organization_custom_properties": "admin",
         "organization_announcement_banners": "read",
         "organization_hooks": "write",
         "organization_personal_access_tokens": "read",

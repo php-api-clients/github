@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Projects;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -23,8 +24,6 @@ final class AddCollaborator
 {
     public const OPERATION_ID    = 'projects/add-collaborator';
     public const OPERATION_MATCH = 'PUT /projects/{project_id}/collaborators/{username}';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/projects/{project_id}/collaborators/{username}';
     /**The unique identifier of the project. **/
     private int $projectId;
     /**The handle for the GitHub user account. **/
@@ -40,11 +39,10 @@ final class AddCollaborator
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Projects\AddCollaborator\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{project_id}', '{username}'], [$this->projectId, $this->username], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{project_id}', '{username}'], [$this->projectId, $this->username], '/projects/{project_id}/collaborators/{username}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return array{code: int} */
-    public function createResponse(ResponseInterface $response): array
+    public function createResponse(ResponseInterface $response): WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -93,13 +91,13 @@ final class AddCollaborator
              * Response
              **/
             case 204:
-                return ['code' => 204];
+                return new WithoutBody(204, []);
             /**
              * Not modified
              **/
 
             case 304:
-                return ['code' => 304];
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

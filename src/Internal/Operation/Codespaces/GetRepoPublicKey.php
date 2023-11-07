@@ -21,8 +21,6 @@ final class GetRepoPublicKey
 {
     public const OPERATION_ID    = 'codespaces/get-repo-public-key';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/codespaces/secrets/public-key';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/codespaces/secrets/public-key';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -36,7 +34,7 @@ final class GetRepoPublicKey
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], self::PATH));
+        return new Request('GET', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/codespaces/secrets/public-key'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\CodespacesPublicKey

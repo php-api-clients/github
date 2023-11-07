@@ -21,8 +21,6 @@ final class GetAllDeploymentProtectionRules
 {
     public const OPERATION_ID    = 'repos/get-all-deployment-protection-rules';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules';
-    private const METHOD         = 'GET';
-    private const PATH           = '/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules';
     /**The name of the environment. **/
     private string $environmentName;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -39,7 +37,7 @@ final class GetAllDeploymentProtectionRules
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{environment_name}', '{repo}', '{owner}'], [$this->environmentName, $this->repo, $this->owner], self::PATH));
+        return new Request('GET', str_replace(['{environment_name}', '{repo}', '{owner}'], [$this->environmentName, $this->repo, $this->owner], '/repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Repos\GetAllDeploymentProtectionRules\Response\ApplicationJson\Ok

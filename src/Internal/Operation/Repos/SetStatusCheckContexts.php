@@ -26,8 +26,6 @@ final class SetStatusCheckContexts
 {
     public const OPERATION_ID    = 'repos/set-status-check-contexts';
     public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts';
-    private const METHOD         = 'PUT';
-    private const PATH           = '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts';
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
@@ -46,7 +44,7 @@ final class SetStatusCheckContexts
     {
         $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Repos\SetStatusCheckContexts\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request(self::METHOD, str_replace(['{owner}', '{repo}', '{branch}'], [$this->owner, $this->repo, $this->branch], self::PATH), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('PUT', str_replace(['{owner}', '{repo}', '{branch}'], [$this->owner, $this->repo, $this->branch], '/repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks/contexts'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
     /** @return Observable<string> */

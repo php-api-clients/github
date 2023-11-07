@@ -25,8 +25,6 @@ final class ListWebhookDeliveries
 {
     public const OPERATION_ID    = 'apps/list-webhook-deliveries';
     public const OPERATION_MATCH = 'GET /app/hook/deliveries';
-    private const METHOD         = 'GET';
-    private const PATH           = '/app/hook/deliveries';
     /**Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the `link` header for the next and previous page cursors. **/
     private string $cursor;
     /**The number of results per page (max 100). **/
@@ -40,7 +38,7 @@ final class ListWebhookDeliveries
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{cursor}', '{redelivery}', '{per_page}'], [$this->cursor, $this->redelivery, $this->perPage], self::PATH . '?cursor={cursor}&redelivery={redelivery}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{cursor}', '{redelivery}', '{per_page}'], [$this->cursor, $this->redelivery, $this->perPage], '/app/hook/deliveries' . '?cursor={cursor}&redelivery={redelivery}&per_page={per_page}'));
     }
 
     /** @return Observable<Schema\HookDeliveryItem> */
@@ -61,7 +59,7 @@ final class ListWebhookDeliveries
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\HookDeliveryItem::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\HookDeliveryItem::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\HookDeliveryItem::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

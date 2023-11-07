@@ -8,6 +8,7 @@ use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -21,8 +22,8 @@ final class Issues
     {
     }
 
-    /** @return Observable<Schema\Issue>|array{code:int} */
-    public function listForAuthenticatedUserListing(array $params): iterable
+    /** @return iterable<int,Schema\Issue>|WithoutBody */
+    public function listForAuthenticatedUserListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('labels', $params) === false) {
@@ -84,7 +85,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Issue> */
+    /** @return iterable<int,Schema\Issue> */
     public function listForOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -153,8 +154,8 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Issue>|array{code:int} */
-    public function listListing(array $params): iterable
+    /** @return iterable<int,Schema\Issue>|WithoutBody */
+    public function listListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('labels', $params) === false) {
@@ -240,7 +241,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function listAssigneesListing(array $params): iterable
     {
         $arguments = [];
@@ -279,7 +280,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Issue>|Schema\BasicError */
+    /** @return iterable<int,Schema\Issue>|Schema\BasicError */
     public function listForRepoListing(array $params): iterable|BasicError
     {
         $arguments = [];
@@ -372,7 +373,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Label> */
+    /** @return iterable<int,Schema\Label> */
     public function listLabelsForRepoListing(array $params): iterable
     {
         $arguments = [];
@@ -411,7 +412,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Milestone> */
+    /** @return iterable<int,Schema\Milestone> */
     public function listMilestonesListing(array $params): iterable
     {
         $arguments = [];
@@ -468,7 +469,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\IssueComment> */
+    /** @return iterable<int,Schema\IssueComment> */
     public function listCommentsForRepoListing(array $params): iterable
     {
         $arguments = [];
@@ -525,7 +526,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\IssueEvent> */
+    /** @return iterable<int,Schema\IssueEvent> */
     public function listEventsForRepoListing(array $params): iterable
     {
         $arguments = [];
@@ -564,7 +565,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\IssueComment> */
+    /** @return iterable<int,Schema\IssueComment> */
     public function listCommentsListing(array $params): iterable
     {
         $arguments = [];
@@ -615,7 +616,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\AssignedIssueEvent|Schema\UnassignedIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent> */
+    /** @return iterable<int,Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\AssignedIssueEvent|Schema\UnassignedIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent> */
     public function listEventsListing(array $params): iterable
     {
         $arguments = [];
@@ -660,7 +661,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Label>|Schema\BasicError */
+    /** @return iterable<int,Schema\Label>|Schema\BasicError */
     public function listLabelsOnIssueListing(array $params): iterable|BasicError
     {
         $arguments = [];
@@ -705,7 +706,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent|Schema\TimelineCommentEvent|Schema\TimelineCrossReferencedEvent|Schema\TimelineCommittedEvent|Schema\TimelineReviewedEvent|Schema\TimelineLineCommentedEvent|Schema\TimelineCommitCommentedEvent|Schema\TimelineAssignedIssueEvent|Schema\TimelineUnassignedIssueEvent|Schema\StateChangeIssueEvent> */
+    /** @return iterable<int,Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent|Schema\TimelineCommentEvent|Schema\TimelineCrossReferencedEvent|Schema\TimelineCommittedEvent|Schema\TimelineReviewedEvent|Schema\TimelineLineCommentedEvent|Schema\TimelineCommitCommentedEvent|Schema\TimelineAssignedIssueEvent|Schema\TimelineUnassignedIssueEvent|Schema\StateChangeIssueEvent> */
     public function listEventsForTimelineListing(array $params): iterable
     {
         $arguments = [];
@@ -750,7 +751,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Label> */
+    /** @return iterable<int,Schema\Label> */
     public function listLabelsForMilestoneListing(array $params): iterable
     {
         $arguments = [];

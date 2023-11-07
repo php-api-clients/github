@@ -24,12 +24,11 @@ final readonly class CreateRepositoryAdvisoryCveRequest
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, string $ghsaId): Json|array
+    public function call(string $owner, string $repo, string $ghsaId): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ghsaId);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json|array {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

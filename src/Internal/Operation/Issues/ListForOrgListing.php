@@ -25,8 +25,6 @@ final class ListForOrgListing
 {
     public const OPERATION_ID    = 'issues/list-for-org';
     public const OPERATION_MATCH = 'LIST /orgs/{org}/issues';
-    private const METHOD         = 'GET';
-    private const PATH           = '/orgs/{org}/issues';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
     /**A list of comma separated label names. Example: `bug,ui,@high` **/
@@ -61,7 +59,7 @@ final class ListForOrgListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request(self::METHOD, str_replace(['{org}', '{labels}', '{since}', '{filter}', '{state}', '{sort}', '{direction}', '{per_page}', '{page}'], [$this->org, $this->labels, $this->since, $this->filter, $this->state, $this->sort, $this->direction, $this->perPage, $this->page], self::PATH . '?labels={labels}&since={since}&filter={filter}&state={state}&sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{labels}', '{since}', '{filter}', '{state}', '{sort}', '{direction}', '{per_page}', '{page}'], [$this->org, $this->labels, $this->since, $this->filter, $this->state, $this->sort, $this->direction, $this->perPage, $this->page], '/orgs/{org}/issues' . '?labels={labels}&since={since}&filter={filter}&state={state}&sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\Issue> */
@@ -82,7 +80,7 @@ final class ListForOrgListing
                             try {
                                 $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Issue::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrators->hydrateObject(Schema\Issue::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\Issue::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

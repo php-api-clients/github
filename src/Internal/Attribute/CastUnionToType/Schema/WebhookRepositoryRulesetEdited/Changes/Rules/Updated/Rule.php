@@ -32,7 +32,7 @@ final class Rule implements PropertyCaster
                 }
             }
 
-            if ($signature === 'type|parameters' && $value['type'] === 'update') {
+            if ($signature === 'parameters|type' && $value['type'] === 'update') {
                 try {
                     return $hydrator->hydrateObject(Schema\RepositoryRuleUpdate::class, $value);
                 } catch (Throwable) {
@@ -53,7 +53,7 @@ final class Rule implements PropertyCaster
                 }
             }
 
-            if ($signature === 'type|parameters' && $value['type'] === 'required_deployments') {
+            if ($signature === 'parameters|type' && $value['type'] === 'required_deployments') {
                 try {
                     return $hydrator->hydrateObject(Schema\RepositoryRuleRequiredDeployments::class, $value);
                 } catch (Throwable) {
@@ -67,14 +67,14 @@ final class Rule implements PropertyCaster
                 }
             }
 
-            if ($signature === 'type|parameters' && $value['type'] === 'pull_request') {
+            if ($signature === 'parameters|type' && $value['type'] === 'pull_request') {
                 try {
                     return $hydrator->hydrateObject(Schema\RepositoryRulePullRequest::class, $value);
                 } catch (Throwable) {
                 }
             }
 
-            if ($signature === 'type|parameters' && $value['type'] === 'required_status_checks') {
+            if ($signature === 'parameters|type' && $value['type'] === 'required_status_checks') {
                 try {
                     return $hydrator->hydrateObject(Schema\RepositoryRuleRequiredStatusChecks::class, $value);
                 } catch (Throwable) {
@@ -88,42 +88,42 @@ final class Rule implements PropertyCaster
                 }
             }
 
-            if ($signature === 'type|parameters' && $value['type'] === 'commit_message_pattern') {
+            if ($signature === 'parameters|type' && $value['type'] === 'commit_message_pattern') {
                 try {
                     return $hydrator->hydrateObject(Schema\RepositoryRuleCommitMessagePattern::class, $value);
                 } catch (Throwable) {
                 }
             }
 
-            if ($signature === 'type|parameters' && $value['type'] === 'commit_author_email_pattern') {
+            if ($signature === 'parameters|type' && $value['type'] === 'commit_author_email_pattern') {
                 try {
                     return $hydrator->hydrateObject(Schema\RepositoryRuleCommitAuthorEmailPattern::class, $value);
                 } catch (Throwable) {
                 }
             }
 
-            if ($signature === 'type|parameters' && $value['type'] === 'committer_email_pattern') {
+            if ($signature === 'parameters|type' && $value['type'] === 'committer_email_pattern') {
                 try {
                     return $hydrator->hydrateObject(Schema\RepositoryRuleCommitterEmailPattern::class, $value);
                 } catch (Throwable) {
                 }
             }
 
-            if ($signature === 'type|parameters' && $value['type'] === 'branch_name_pattern') {
+            if ($signature === 'parameters|type' && $value['type'] === 'branch_name_pattern') {
                 try {
                     return $hydrator->hydrateObject(Schema\RepositoryRuleBranchNamePattern::class, $value);
                 } catch (Throwable) {
                 }
             }
 
-            if ($signature === 'type|parameters' && $value['type'] === 'tag_name_pattern') {
+            if ($signature === 'parameters|type' && $value['type'] === 'tag_name_pattern') {
                 try {
                     return $hydrator->hydrateObject(Schema\RepositoryRuleTagNamePattern::class, $value);
                 } catch (Throwable) {
                 }
             }
 
-            if ($signature === 'type|parameters' && $value['type'] === 'workflows') {
+            if ($signature === 'parameters|type' && $value['type'] === 'workflows') {
                 try {
                     return $hydrator->hydrateObject(Schema\RepositoryRuleWorkflows::class, $value);
                 } catch (Throwable) {

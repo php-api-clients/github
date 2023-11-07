@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Codespace;
 use ApiClients\Client\GitHub\Schema\CodespaceExportDetails;
 use ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
@@ -22,8 +22,7 @@ final class Codespaces
     {
     }
 
-    /** @return array{code:int} */
-    public function setCodespacesAccessUsers(array $params): array
+    public function setCodespacesAccessUsers(array $params): WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -37,8 +36,7 @@ final class Codespaces
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return */
-    public function createWithRepoForAuthenticatedUser(array $params): Codespace|array
+    public function createWithRepoForAuthenticatedUser(array $params): Codespace
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -58,8 +56,7 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
-    public function exportForAuthenticatedUser(array $params): CodespaceExportDetails|array
+    public function exportForAuthenticatedUser(array $params): CodespaceExportDetails
     {
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {
@@ -73,8 +70,7 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
-    /** @return */
-    public function publishForAuthenticatedUser(array $params): CodespaceWithFullRepository|array
+    public function publishForAuthenticatedUser(array $params): CodespaceWithFullRepository
     {
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {
@@ -88,8 +84,7 @@ final class Codespaces
         return $operator->call($arguments['codespace_name'], $params);
     }
 
-    /** @return Schema\Codespace|array{code:int} */
-    public function startForAuthenticatedUser(array $params): Codespace|array
+    public function startForAuthenticatedUser(array $params): Codespace|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {
@@ -103,8 +98,7 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
-    /** @return */
-    public function stopForAuthenticatedUser(array $params): Codespace|array
+    public function stopForAuthenticatedUser(array $params): Codespace
     {
         $arguments = [];
         if (array_key_exists('codespace_name', $params) === false) {
@@ -118,16 +112,14 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
-    /** @return */
-    public function createForAuthenticatedUser(array $params): Codespace|array
+    public function createForAuthenticatedUser(array $params): Codespace
     {
         $operator = new Internal\Operator\Codespaces\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces());
 
         return $operator->call($params);
     }
 
-    /** @return */
-    public function createWithPrForAuthenticatedUser(array $params): Codespace|array
+    public function createWithPrForAuthenticatedUser(array $params): Codespace
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {
@@ -153,8 +145,7 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
-    /** @return Schema\Codespace|array{code:int} */
-    public function stopInOrganization(array $params): Codespace|array
+    public function stopInOrganization(array $params): Codespace|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
