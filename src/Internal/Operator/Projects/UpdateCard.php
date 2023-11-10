@@ -25,6 +25,7 @@ final readonly class UpdateCard
     {
     }
 
+    /** @return */
     public function call(int $cardId, array $params): ProjectCard|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\UpdateCard($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $cardId);

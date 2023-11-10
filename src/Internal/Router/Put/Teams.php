@@ -20,6 +20,7 @@ final class Teams
     {
     }
 
+    /** @return */
     public function addMemberLegacy(array $params): WithoutBody
     {
         $arguments = [];
@@ -40,6 +41,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['username']);
     }
 
+    /** @return */
     public function addOrUpdateMembershipForUserLegacy(array $params): TeamMembership|WithoutBody
     {
         $arguments = [];
@@ -60,6 +62,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['username'], $params);
     }
 
+    /** @return */
     public function addOrUpdateProjectPermissionsLegacy(array $params): WithoutBody
     {
         $arguments = [];
@@ -80,6 +83,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['project_id'], $params);
     }
 
+    /** @return */
     public function addOrUpdateMembershipForUserInOrg(array $params): TeamMembership|WithoutBody
     {
         $arguments = [];
@@ -106,6 +110,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['username'], $params);
     }
 
+    /** @return */
     public function addOrUpdateProjectPermissionsInOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -132,6 +137,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['project_id'], $params);
     }
 
+    /** @return */
     public function addOrUpdateRepoPermissionsLegacy(array $params): WithoutBody
     {
         $arguments = [];
@@ -158,6 +164,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function addOrUpdateRepoPermissionsInOrg(array $params): WithoutBody
     {
         $arguments = [];

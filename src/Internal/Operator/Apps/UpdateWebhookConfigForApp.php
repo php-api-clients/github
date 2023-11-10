@@ -24,6 +24,7 @@ final readonly class UpdateWebhookConfigForApp
     {
     }
 
+    /** @return */
     public function call(array $params): WebhookConfig
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\UpdateWebhookConfigForApp($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

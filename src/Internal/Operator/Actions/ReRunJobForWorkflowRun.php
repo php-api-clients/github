@@ -24,6 +24,7 @@ final readonly class ReRunJobForWorkflowRun
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $jobId, array $params): EmptyObject
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ReRunJobForWorkflowRun($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $jobId);

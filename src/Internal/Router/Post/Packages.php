@@ -19,6 +19,7 @@ final class Packages
     {
     }
 
+    /** @return */
     public function restorePackageForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -45,6 +46,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['token']);
     }
 
+    /** @return */
     public function restorePackageForOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -77,6 +79,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org'], $arguments['token']);
     }
 
+    /** @return */
     public function restorePackageForUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -109,6 +112,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['username'], $arguments['token']);
     }
 
+    /** @return */
     public function restorePackageVersionForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -135,6 +139,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['package_version_id']);
     }
 
+    /** @return */
     public function restorePackageVersionForOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -167,6 +172,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org'], $arguments['package_version_id']);
     }
 
+    /** @return */
     public function restorePackageVersionForUser(array $params): WithoutBody
     {
         $arguments = [];

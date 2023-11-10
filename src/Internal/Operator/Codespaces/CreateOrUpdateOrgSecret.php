@@ -25,6 +25,7 @@ final readonly class CreateOrUpdateOrgSecret
     {
     }
 
+    /** @return */
     public function call(string $org, string $secretName, array $params): EmptyObject|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\CreateOrUpdateOrgSecret($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $secretName);

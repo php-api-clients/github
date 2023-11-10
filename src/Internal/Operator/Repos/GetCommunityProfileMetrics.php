@@ -24,6 +24,7 @@ final readonly class GetCommunityProfileMetrics
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): CommunityProfile
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetCommunityProfileMetrics($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

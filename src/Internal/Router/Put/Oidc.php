@@ -19,6 +19,7 @@ final class Oidc
     {
     }
 
+    /** @return */
     public function updateOidcCustomSubTemplateForOrg(array $params): EmptyObject
     {
         $arguments = [];

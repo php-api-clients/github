@@ -24,6 +24,7 @@ final readonly class ListOrgVariables
     {
     }
 
+    /** @return */
     public function call(string $org, int $perPage = 10, int $page = 1): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListOrgVariables($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

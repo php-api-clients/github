@@ -22,6 +22,7 @@ final readonly class DeleteOrgSecret
     {
     }
 
+    /** @return */
     public function call(string $org, string $secretName): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Dependabot\DeleteOrgSecret($org, $secretName);

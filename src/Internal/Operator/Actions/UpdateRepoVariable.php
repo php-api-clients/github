@@ -23,6 +23,7 @@ final readonly class UpdateRepoVariable
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $name, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\UpdateRepoVariable($this->requestSchemaValidator, $owner, $repo, $name);

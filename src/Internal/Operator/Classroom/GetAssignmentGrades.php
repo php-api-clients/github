@@ -24,7 +24,7 @@ final readonly class GetAssignmentGrades
     {
     }
 
-    /** @return iterable<int,Schema\ClassroomAssignmentGrade> */
+    /** @return Observable<Schema\ClassroomAssignmentGrade> */
     public function call(int $assignmentId): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Classroom\GetAssignmentGrades($this->responseSchemaValidator, $this->hydrator, $assignmentId);

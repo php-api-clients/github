@@ -24,6 +24,7 @@ final readonly class UnlockRepoForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(int $migrationId, string $repoName): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\UnlockRepoForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $migrationId, $repoName);

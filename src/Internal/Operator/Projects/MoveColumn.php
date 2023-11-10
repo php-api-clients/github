@@ -25,6 +25,7 @@ final readonly class MoveColumn
     {
     }
 
+    /** @return */
     public function call(int $columnId, array $params): Json|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\MoveColumn($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $columnId);

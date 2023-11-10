@@ -25,6 +25,7 @@ final readonly class CreateSshSigningKeyForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(array $params): SshSigningKey|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\CreateSshSigningKeyForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

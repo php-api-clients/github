@@ -22,6 +22,7 @@ final readonly class DisableAutomatedSecurityFixes
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DisableAutomatedSecurityFixes($owner, $repo);

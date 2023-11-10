@@ -24,6 +24,7 @@ final readonly class GetPagesBuild
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $buildId): PageBuild
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetPagesBuild($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $buildId);

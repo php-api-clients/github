@@ -22,6 +22,7 @@ final readonly class DownloadWorkflowRunLogs
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $runId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DownloadWorkflowRunLogs($owner, $repo, $runId);

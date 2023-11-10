@@ -24,6 +24,7 @@ final readonly class GetWebhookConfigForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, int $hookId): WebhookConfig
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\GetWebhookConfigForOrg($this->responseSchemaValidator, $this->hydrator, $org, $hookId);

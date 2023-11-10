@@ -25,6 +25,7 @@ final readonly class GetPublicSshKeyForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(int $keyId): Key|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\GetPublicSshKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $keyId);

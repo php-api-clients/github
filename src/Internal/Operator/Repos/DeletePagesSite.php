@@ -24,6 +24,7 @@ final readonly class DeletePagesSite
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DeletePagesSite($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -24,6 +24,7 @@ final readonly class DeleteThreadSubscription
     {
     }
 
+    /** @return */
     public function call(int $threadId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\DeleteThreadSubscription($this->responseSchemaValidator, $this->hydrator, $threadId);

@@ -24,6 +24,7 @@ final readonly class GetLatestPagesBuild
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): PageBuild
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetLatestPagesBuild($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -24,6 +24,7 @@ final readonly class DeleteColumn
     {
     }
 
+    /** @return */
     public function call(int $columnId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\DeleteColumn($this->responseSchemaValidator, $this->hydrator, $columnId);

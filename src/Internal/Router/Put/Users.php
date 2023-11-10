@@ -19,6 +19,7 @@ final class Users
     {
     }
 
+    /** @return */
     public function block(array $params): WithoutBody
     {
         $arguments = [];
@@ -33,6 +34,7 @@ final class Users
         return $operator->call($arguments['username']);
     }
 
+    /** @return */
     public function follow(array $params): WithoutBody
     {
         $arguments = [];

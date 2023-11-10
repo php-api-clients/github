@@ -24,6 +24,7 @@ final readonly class CreateRegistrationTokenForOrg
     {
     }
 
+    /** @return */
     public function call(string $org): AuthenticationToken
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\CreateRegistrationTokenForOrg($this->responseSchemaValidator, $this->hydrator, $org);

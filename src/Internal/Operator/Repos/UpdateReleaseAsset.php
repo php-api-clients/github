@@ -24,6 +24,7 @@ final readonly class UpdateReleaseAsset
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $assetId, array $params): ReleaseAsset
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdateReleaseAsset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $assetId);

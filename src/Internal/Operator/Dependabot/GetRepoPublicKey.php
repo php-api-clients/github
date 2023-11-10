@@ -24,6 +24,7 @@ final readonly class GetRepoPublicKey
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): DependabotPublicKey
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Dependabot\GetRepoPublicKey($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

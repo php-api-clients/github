@@ -24,6 +24,7 @@ final readonly class GetCollaboratorPermissionLevel
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $username): RepositoryCollaboratorPermission
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetCollaboratorPermissionLevel($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $username);

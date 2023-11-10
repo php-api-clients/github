@@ -25,6 +25,7 @@ final readonly class CreateOrUpdateSecretForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $secretName, array $params): EmptyObject|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\CreateOrUpdateSecretForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $secretName);

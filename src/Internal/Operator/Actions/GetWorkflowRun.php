@@ -24,6 +24,7 @@ final readonly class GetWorkflowRun
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $runId, bool $excludePullRequests = false): WorkflowRun
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetWorkflowRun($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId, $excludePullRequests);

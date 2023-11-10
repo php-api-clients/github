@@ -25,7 +25,7 @@ final readonly class ListListing
     {
     }
 
-    /** @return iterable<int,Schema\Issue>|WithoutBody */
+    /** @return Observable<Schema\Issue>|WithoutBody */
     public function call(string $labels, string $since, bool $collab, bool $orgs, bool $owned, bool $pulls, string $filter = 'assigned', string $state = 'open', string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\ListListing($this->responseSchemaValidator, $this->hydrator, $labels, $since, $collab, $orgs, $owned, $pulls, $filter, $state, $sort, $direction, $perPage, $page);

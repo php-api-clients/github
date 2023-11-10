@@ -24,6 +24,7 @@ final readonly class CreateOrUpdateFileContents
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $path, array $params): FileCommit
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateOrUpdateFileContents($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $path);

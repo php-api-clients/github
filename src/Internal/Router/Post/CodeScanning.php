@@ -20,6 +20,7 @@ final class CodeScanning
     {
     }
 
+    /** @return */
     public function uploadSarif(array $params): CodeScanningSarifsReceipt|WithoutBody
     {
         $arguments = [];

@@ -20,6 +20,7 @@ final class Checks
     {
     }
 
+    /** @return */
     public function update(array $params): CheckRun
     {
         $arguments = [];
@@ -46,6 +47,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['check_run_id'], $params);
     }
 
+    /** @return */
     public function setSuitesPreferences(array $params): CheckSuitePreference
     {
         $arguments = [];

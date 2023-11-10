@@ -25,6 +25,7 @@ final readonly class UpdateAlert
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $alertNumber, array $params): SecretScanningAlert|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecretScanning\UpdateAlert($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $alertNumber);

@@ -24,6 +24,7 @@ final readonly class GetRepoVariable
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $name): ActionsVariable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetRepoVariable($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $name);

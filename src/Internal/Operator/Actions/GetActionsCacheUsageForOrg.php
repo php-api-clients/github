@@ -24,6 +24,7 @@ final readonly class GetActionsCacheUsageForOrg
     {
     }
 
+    /** @return */
     public function call(string $org): ActionsCacheUsageOrgEnterprise
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetActionsCacheUsageForOrg($this->responseSchemaValidator, $this->hydrator, $org);

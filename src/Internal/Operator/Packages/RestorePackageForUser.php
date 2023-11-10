@@ -24,6 +24,7 @@ final readonly class RestorePackageForUser
     {
     }
 
+    /** @return */
     public function call(string $packageType, string $packageName, string $username, string $token): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\RestorePackageForUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $username, $token);

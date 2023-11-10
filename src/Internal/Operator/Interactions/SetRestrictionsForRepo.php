@@ -25,6 +25,7 @@ final readonly class SetRestrictionsForRepo
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): InteractionLimitResponse|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Interactions\SetRestrictionsForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

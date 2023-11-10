@@ -24,6 +24,7 @@ final readonly class GetOidcCustomSubTemplateForOrg
     {
     }
 
+    /** @return */
     public function call(string $org): OidcCustomSub
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Oidc\GetOidcCustomSubTemplateForOrg($this->responseSchemaValidator, $this->hydrator, $org);

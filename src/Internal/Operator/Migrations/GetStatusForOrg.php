@@ -24,6 +24,7 @@ final readonly class GetStatusForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, int $migrationId, array $exclude): Migration
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\GetStatusForOrg($this->responseSchemaValidator, $this->hydrator, $org, $migrationId, $exclude);

@@ -24,6 +24,7 @@ final readonly class DeclineInvitationForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(int $invitationId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DeclineInvitationForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $invitationId);

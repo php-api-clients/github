@@ -25,6 +25,7 @@ final readonly class GetRestrictionsForOrg
     {
     }
 
+    /** @return */
     public function call(string $org): InteractionLimitResponse|One
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Interactions\GetRestrictionsForOrg($this->responseSchemaValidator, $this->hydrator, $org);

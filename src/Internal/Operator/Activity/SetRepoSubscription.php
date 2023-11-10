@@ -24,6 +24,7 @@ final readonly class SetRepoSubscription
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): RepositorySubscription
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\SetRepoSubscription($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

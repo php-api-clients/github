@@ -22,6 +22,7 @@ final readonly class RemoveProjectInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, int $projectId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\RemoveProjectInOrg($org, $teamSlug, $projectId);

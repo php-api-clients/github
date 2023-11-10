@@ -22,6 +22,7 @@ final readonly class DeleteInvitation
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $invitationId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DeleteInvitation($owner, $repo, $invitationId);

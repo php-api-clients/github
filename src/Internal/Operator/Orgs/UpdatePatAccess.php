@@ -24,6 +24,7 @@ final readonly class UpdatePatAccess
     {
     }
 
+    /** @return */
     public function call(string $org, int $patId, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\UpdatePatAccess($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $patId);

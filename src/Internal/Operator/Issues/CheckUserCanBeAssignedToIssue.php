@@ -24,6 +24,7 @@ final readonly class CheckUserCanBeAssignedToIssue
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $issueNumber, string $assignee): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\CheckUserCanBeAssignedToIssue($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber, $assignee);

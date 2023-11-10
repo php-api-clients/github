@@ -24,6 +24,7 @@ final readonly class GetMembershipForUserLegacy
     {
     }
 
+    /** @return */
     public function call(int $teamId, string $username): TeamMembership
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\GetMembershipForUserLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $username);

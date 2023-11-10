@@ -20,6 +20,7 @@ final class Pulls
     {
     }
 
+    /** @return */
     public function update(array $params): PullRequest
     {
         $arguments = [];
@@ -46,6 +47,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
+    /** @return */
     public function updateReviewComment(array $params): PullRequestReviewComment
     {
         $arguments = [];

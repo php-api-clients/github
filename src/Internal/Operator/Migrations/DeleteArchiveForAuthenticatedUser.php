@@ -24,6 +24,7 @@ final readonly class DeleteArchiveForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(int $migrationId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\DeleteArchiveForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $migrationId);

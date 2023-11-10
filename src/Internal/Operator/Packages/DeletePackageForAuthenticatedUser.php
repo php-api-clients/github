@@ -24,6 +24,7 @@ final readonly class DeletePackageForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $packageType, string $packageName): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\DeletePackageForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName);

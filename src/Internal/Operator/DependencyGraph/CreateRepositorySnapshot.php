@@ -24,6 +24,7 @@ final readonly class CreateRepositorySnapshot
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): Created
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\DependencyGraph\CreateRepositorySnapshot($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

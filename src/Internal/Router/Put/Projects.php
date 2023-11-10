@@ -19,6 +19,7 @@ final class Projects
     {
     }
 
+    /** @return */
     public function addCollaborator(array $params): WithoutBody
     {
         $arguments = [];

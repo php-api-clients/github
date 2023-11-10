@@ -24,6 +24,7 @@ final readonly class UpdateMembershipForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): OrgMembership
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\UpdateMembershipForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

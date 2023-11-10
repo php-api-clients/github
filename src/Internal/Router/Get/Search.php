@@ -20,6 +20,7 @@ final class Search
     {
     }
 
+    /** @return */
     public function code(array $params): Ok|WithoutBody
     {
         $arguments = [];
@@ -58,6 +59,7 @@ final class Search
         return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function commits(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Commits\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
@@ -96,6 +98,7 @@ final class Search
         return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function issuesAndPullRequests(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
@@ -134,6 +137,7 @@ final class Search
         return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function labels(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Labels\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
@@ -178,6 +182,7 @@ final class Search
         return $operator->call($arguments['repository_id'], $arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function repos(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Repos\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
@@ -216,6 +221,7 @@ final class Search
         return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function topics(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Topics\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
@@ -242,6 +248,7 @@ final class Search
         return $operator->call($arguments['q'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function users(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\Users\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];

@@ -24,7 +24,7 @@ final readonly class ListPublicKeysForUserListing
     {
     }
 
-    /** @return iterable<int,Schema\KeySimple> */
+    /** @return Observable<Schema\KeySimple> */
     public function call(string $username, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\ListPublicKeysForUserListing($this->responseSchemaValidator, $this->hydrator, $username, $perPage, $page);

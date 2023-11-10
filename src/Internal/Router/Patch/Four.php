@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal\Routers;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\Authorization;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\Codespace;
@@ -21,7 +20,7 @@ final class Four
     {
     }
 
-    /** @return Schema\WebhookConfig|Schema\Authorization|WithoutBody|Schema\ProjectColumn|Schema\FullRepository|Schema\BasicError|Schema\Codespace|iterable<int,Schema\Email> */
+    /** @return |Observable<Schema\Email>|WithoutBody */
     public function call(string $call, array $params, array $pathChunks): WebhookConfig|Authorization|WithoutBody|ProjectColumn|FullRepository|BasicError|Codespace|iterable
     {
         if ($pathChunks[0] === '') {

@@ -24,6 +24,7 @@ final readonly class DeletePackageVersionForUser
     {
     }
 
+    /** @return */
     public function call(string $packageType, string $packageName, string $username, int $packageVersionId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\DeletePackageVersionForUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $username, $packageVersionId);

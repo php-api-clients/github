@@ -20,7 +20,7 @@ final class Classroom
     {
     }
 
-    /** @return iterable<int,Schema\SimpleClassroom> */
+    /** @return Observable<Schema\SimpleClassroom> */
     public function listClassrooms(array $params): iterable
     {
         $arguments = [];
@@ -41,6 +41,7 @@ final class Classroom
         return $operator->call($arguments['page'], $arguments['per_page']);
     }
 
+    /** @return */
     public function getAnAssignment(array $params): ClassroomAssignment
     {
         $arguments = [];
@@ -55,6 +56,7 @@ final class Classroom
         return $operator->call($arguments['assignment_id']);
     }
 
+    /** @return */
     public function getAClassroom(array $params): \ApiClients\Client\GitHub\Schema\Classroom
     {
         $arguments = [];
@@ -69,7 +71,7 @@ final class Classroom
         return $operator->call($arguments['classroom_id']);
     }
 
-    /** @return iterable<int,Schema\ClassroomAcceptedAssignment> */
+    /** @return Observable<Schema\ClassroomAcceptedAssignment> */
     public function listAcceptedAssigmentsForAnAssignment(array $params): iterable
     {
         $arguments = [];
@@ -96,7 +98,7 @@ final class Classroom
         return $operator->call($arguments['assignment_id'], $arguments['page'], $arguments['per_page']);
     }
 
-    /** @return iterable<int,Schema\ClassroomAssignmentGrade> */
+    /** @return Observable<Schema\ClassroomAssignmentGrade> */
     public function getAssignmentGrades(array $params): iterable
     {
         $arguments = [];
@@ -111,7 +113,7 @@ final class Classroom
         return $operator->call($arguments['assignment_id']);
     }
 
-    /** @return iterable<int,Schema\SimpleClassroomAssignment> */
+    /** @return Observable<Schema\SimpleClassroomAssignment> */
     public function listAssignmentsForAClassroom(array $params): iterable
     {
         $arguments = [];

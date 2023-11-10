@@ -24,6 +24,7 @@ final readonly class GetForRepo
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): LicenseContent
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Licenses\GetForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -24,6 +24,7 @@ final readonly class ListWorkflowRunArtifacts
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $runId, string $name, int $perPage = 30, int $page = 1): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListWorkflowRunArtifacts($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId, $name, $perPage, $page);

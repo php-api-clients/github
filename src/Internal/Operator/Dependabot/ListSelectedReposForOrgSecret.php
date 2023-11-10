@@ -24,6 +24,7 @@ final readonly class ListSelectedReposForOrgSecret
     {
     }
 
+    /** @return */
     public function call(string $org, string $secretName, int $page = 1, int $perPage = 30): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Dependabot\ListSelectedReposForOrgSecret($this->responseSchemaValidator, $this->hydrator, $org, $secretName, $page, $perPage);

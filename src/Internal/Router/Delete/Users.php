@@ -19,6 +19,7 @@ final class Users
     {
     }
 
+    /** @return */
     public function unblock(array $params): WithoutBody
     {
         $arguments = [];
@@ -33,6 +34,7 @@ final class Users
         return $operator->call($arguments['username']);
     }
 
+    /** @return */
     public function unfollow(array $params): WithoutBody
     {
         $arguments = [];
@@ -47,6 +49,7 @@ final class Users
         return $operator->call($arguments['username']);
     }
 
+    /** @return */
     public function deleteGpgKeyForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -61,6 +64,7 @@ final class Users
         return $operator->call($arguments['gpg_key_id']);
     }
 
+    /** @return */
     public function deletePublicSshKeyForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -75,6 +79,7 @@ final class Users
         return $operator->call($arguments['key_id']);
     }
 
+    /** @return */
     public function deleteSshSigningKeyForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -89,6 +94,7 @@ final class Users
         return $operator->call($arguments['ssh_signing_key_id']);
     }
 
+    /** @return */
     public function deleteEmailForAuthenticatedUser(array $params): WithoutBody
     {
         $operator = new Internal\Operator\Users\DeleteEmailForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Emails());
@@ -96,6 +102,7 @@ final class Users
         return $operator->call($params);
     }
 
+    /** @return */
     public function deleteSocialAccountForAuthenticatedUser(array $params): WithoutBody
     {
         $operator = new Internal\Operator\Users\DeleteSocialAccountForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀SocialAccounts());

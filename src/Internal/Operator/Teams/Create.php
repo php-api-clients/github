@@ -24,6 +24,7 @@ final readonly class Create
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): TeamFull
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\Create($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

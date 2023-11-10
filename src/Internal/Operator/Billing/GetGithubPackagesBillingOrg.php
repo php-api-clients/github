@@ -24,6 +24,7 @@ final readonly class GetGithubPackagesBillingOrg
     {
     }
 
+    /** @return */
     public function call(string $org): PackagesBillingUsage
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Billing\GetGithubPackagesBillingOrg($this->responseSchemaValidator, $this->hydrator, $org);

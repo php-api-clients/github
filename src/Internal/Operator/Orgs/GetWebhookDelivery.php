@@ -24,6 +24,7 @@ final readonly class GetWebhookDelivery
     {
     }
 
+    /** @return */
     public function call(string $org, int $hookId, int $deliveryId): HookDelivery
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\GetWebhookDelivery($this->responseSchemaValidator, $this->hydrator, $org, $hookId, $deliveryId);

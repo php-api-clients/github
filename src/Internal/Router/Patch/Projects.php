@@ -22,6 +22,7 @@ final class Projects
     {
     }
 
+    /** @return */
     public function updateColumn(array $params): ProjectColumn|WithoutBody
     {
         $arguments = [];
@@ -36,6 +37,7 @@ final class Projects
         return $operator->call($arguments['column_id'], $params);
     }
 
+    /** @return */
     public function update(array $params): Project|WithoutBody
     {
         $arguments = [];
@@ -50,6 +52,7 @@ final class Projects
         return $operator->call($arguments['project_id'], $params);
     }
 
+    /** @return */
     public function updateCard(array $params): ProjectCard|WithoutBody
     {
         $arguments = [];

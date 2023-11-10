@@ -25,6 +25,7 @@ final readonly class Get
     {
     }
 
+    /** @return */
     public function call(int $projectId): Project|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\Get($this->responseSchemaValidator, $this->hydrator, $projectId);

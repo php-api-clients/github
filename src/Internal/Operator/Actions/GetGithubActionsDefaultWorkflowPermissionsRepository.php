@@ -24,6 +24,7 @@ final readonly class GetGithubActionsDefaultWorkflowPermissionsRepository
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): ActionsGetDefaultWorkflowPermissions
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetGithubActionsDefaultWorkflowPermissionsRepository($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

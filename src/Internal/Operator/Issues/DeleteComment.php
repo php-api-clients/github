@@ -22,6 +22,7 @@ final readonly class DeleteComment
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $commentId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\DeleteComment($owner, $repo, $commentId);

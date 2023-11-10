@@ -24,6 +24,7 @@ final readonly class ListJobsForWorkflowRun
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $runId, string $filter = 'latest', int $perPage = 30, int $page = 1): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListJobsForWorkflowRun($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId, $filter, $perPage, $page);

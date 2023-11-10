@@ -24,6 +24,7 @@ final readonly class CreateAutolink
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): Autolink
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateAutolink($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

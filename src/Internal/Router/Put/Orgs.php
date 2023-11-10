@@ -22,6 +22,7 @@ final class Orgs
     {
     }
 
+    /** @return */
     public function blockUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -42,6 +43,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
+    /** @return */
     public function setMembershipForUser(array $params): OrgMembership
     {
         $arguments = [];
@@ -62,6 +64,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username'], $params);
     }
 
+    /** @return */
     public function convertMemberToOutsideCollaborator(array $params): Json|WithoutBody
     {
         $arguments = [];
@@ -82,6 +85,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username'], $params);
     }
 
+    /** @return */
     public function setPublicMembershipForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -102,6 +106,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
+    /** @return */
     public function createOrUpdateCustomProperty(array $params): OrgCustomProperty
     {
         $arguments = [];
@@ -122,6 +127,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['custom_property_name'], $params);
     }
 
+    /** @return */
     public function addSecurityManagerTeam(array $params): WithoutBody
     {
         $arguments = [];

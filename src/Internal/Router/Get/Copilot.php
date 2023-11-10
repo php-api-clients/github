@@ -22,6 +22,7 @@ final class Copilot
     {
     }
 
+    /** @return */
     public function getCopilotOrganizationDetails(array $params): CopilotOrganizationDetails
     {
         $arguments = [];
@@ -36,6 +37,7 @@ final class Copilot
         return $operator->call($arguments['org']);
     }
 
+    /** @return */
     public function listCopilotSeats(array $params): Ok
     {
         $arguments = [];
@@ -62,6 +64,7 @@ final class Copilot
         return $operator->call($arguments['org'], $arguments['page'], $arguments['per_page']);
     }
 
+    /** @return */
     public function getCopilotSeatDetailsForUser(array $params): CopilotSeatDetails|WithoutBody
     {
         $arguments = [];

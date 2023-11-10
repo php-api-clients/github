@@ -24,6 +24,7 @@ final readonly class AcceptInvitationForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(int $invitationId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\AcceptInvitationForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $invitationId);

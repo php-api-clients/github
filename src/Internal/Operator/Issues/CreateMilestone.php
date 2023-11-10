@@ -24,6 +24,7 @@ final readonly class CreateMilestone
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): Milestone
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\CreateMilestone($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

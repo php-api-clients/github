@@ -24,6 +24,7 @@ final readonly class PingWebhook
     {
     }
 
+    /** @return */
     public function call(string $org, int $hookId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\PingWebhook($this->responseSchemaValidator, $this->hydrator, $org, $hookId);

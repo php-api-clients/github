@@ -24,6 +24,7 @@ final readonly class CreateReview
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $pullNumber, array $params): PullRequestReview
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\CreateReview($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

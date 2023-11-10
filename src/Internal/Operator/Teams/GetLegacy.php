@@ -24,6 +24,7 @@ final readonly class GetLegacy
     {
     }
 
+    /** @return */
     public function call(int $teamId): TeamFull
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\GetLegacy($this->responseSchemaValidator, $this->hydrator, $teamId);

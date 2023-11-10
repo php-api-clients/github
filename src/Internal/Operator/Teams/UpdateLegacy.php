@@ -24,6 +24,7 @@ final readonly class UpdateLegacy
     {
     }
 
+    /** @return */
     public function call(int $teamId, array $params): TeamFull
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\UpdateLegacy($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $teamId);

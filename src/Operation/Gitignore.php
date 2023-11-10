@@ -14,12 +14,13 @@ final class Gitignore
     {
     }
 
-    /** @return iterable<int,string>|WithoutBody */
+    /** @return Observable<string>|WithoutBody */
     public function getAllTemplates(): iterable|WithoutBody
     {
         return $this->operators->gitignore👷GetAllTemplates()->call();
     }
 
+    /** @return */
     public function getTemplate(string $name): GitignoreTemplate|WithoutBody
     {
         return $this->operators->gitignore👷GetTemplate()->call($name);

@@ -25,6 +25,7 @@ final readonly class GetRepoInstallation
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): Installation|BasicError
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetRepoInstallation($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

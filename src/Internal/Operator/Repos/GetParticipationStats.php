@@ -24,6 +24,7 @@ final readonly class GetParticipationStats
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): ParticipationStats
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetParticipationStats($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

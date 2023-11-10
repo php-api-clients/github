@@ -24,6 +24,7 @@ final readonly class SetRestrictionsForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(array $params): InteractionLimitResponse
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Interactions\SetRestrictionsForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

@@ -14,6 +14,7 @@ final class Emojis
     {
     }
 
+    /** @return */
     public function get(): Json|WithoutBody
     {
         return $this->operators->emojis👷Get()->call();

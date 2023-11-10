@@ -23,6 +23,7 @@ final readonly class UpdateOrgVariable
     {
     }
 
+    /** @return */
     public function call(string $org, string $name, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\UpdateOrgVariable($this->requestSchemaValidator, $org, $name);

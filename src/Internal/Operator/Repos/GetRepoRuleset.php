@@ -24,6 +24,7 @@ final readonly class GetRepoRuleset
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $rulesetId, bool $includesParents = true): RepositoryRuleset
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetRepoRuleset($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $rulesetId, $includesParents);

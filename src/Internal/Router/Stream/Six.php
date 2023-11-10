@@ -13,7 +13,7 @@ final class Six
     {
     }
 
-    /** @return iterable<int,string> */
+    /** @return Observable<string> */
     public function call(string $call, array $params, array $pathChunks): iterable
     {
         if ($pathChunks[0] === '') {

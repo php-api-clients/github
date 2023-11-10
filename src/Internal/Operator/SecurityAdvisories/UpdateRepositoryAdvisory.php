@@ -24,6 +24,7 @@ final readonly class UpdateRepositoryAdvisory
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $ghsaId, array $params): RepositoryAdvisory
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecurityAdvisories\UpdateRepositoryAdvisory($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ghsaId);

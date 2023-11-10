@@ -24,6 +24,7 @@ final readonly class CreateWebhook
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): Hook
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateWebhook($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

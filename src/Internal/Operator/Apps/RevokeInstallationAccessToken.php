@@ -22,6 +22,7 @@ final readonly class RevokeInstallationAccessToken
     {
     }
 
+    /** @return */
     public function call(): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\RevokeInstallationAccessToken();

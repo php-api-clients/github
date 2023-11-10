@@ -24,6 +24,7 @@ final readonly class GetSecretForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $secretName): CodespacesSecret
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\GetSecretForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $secretName);

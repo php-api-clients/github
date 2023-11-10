@@ -24,7 +24,7 @@ final readonly class ListCommentsForCommitListing
     {
     }
 
-    /** @return iterable<int,Schema\CommitComment> */
+    /** @return Observable<Schema\CommitComment> */
     public function call(string $owner, string $repo, string $commitSha, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListCommentsForCommitListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commitSha, $perPage, $page);

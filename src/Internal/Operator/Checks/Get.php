@@ -24,6 +24,7 @@ final readonly class Get
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $checkRunId): CheckRun
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\Get($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $checkRunId);

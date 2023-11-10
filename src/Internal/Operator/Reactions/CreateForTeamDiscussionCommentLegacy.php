@@ -24,6 +24,7 @@ final readonly class CreateForTeamDiscussionCommentLegacy
     {
     }
 
+    /** @return */
     public function call(int $teamId, int $discussionNumber, int $commentNumber, array $params): Reaction
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Reactions\CreateForTeamDiscussionCommentLegacy($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $teamId, $discussionNumber, $commentNumber);

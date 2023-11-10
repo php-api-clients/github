@@ -24,6 +24,7 @@ final readonly class PublishForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $codespaceName, array $params): CodespaceWithFullRepository
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\PublishForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $codespaceName);

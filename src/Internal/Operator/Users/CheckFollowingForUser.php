@@ -22,6 +22,7 @@ final readonly class CheckFollowingForUser
     {
     }
 
+    /** @return */
     public function call(string $username, string $targetUser): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\CheckFollowingForUser($username, $targetUser);

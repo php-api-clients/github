@@ -24,6 +24,7 @@ final readonly class Get
     {
     }
 
+    /** @return */
     public function call(string $org): OrganizationFull
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\Get($this->responseSchemaValidator, $this->hydrator, $org);

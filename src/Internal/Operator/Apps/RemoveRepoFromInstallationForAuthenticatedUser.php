@@ -24,6 +24,7 @@ final readonly class RemoveRepoFromInstallationForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(int $installationId, int $repositoryId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\RemoveRepoFromInstallationForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $installationId, $repositoryId);

@@ -24,6 +24,7 @@ final readonly class GetPackageVersionForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $packageType, string $packageName, int $packageVersionId): PackageVersion
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\GetPackageVersionForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $packageVersionId);

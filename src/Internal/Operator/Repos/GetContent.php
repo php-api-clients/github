@@ -28,6 +28,7 @@ final readonly class GetContent
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $path, string $ref): ContentDirectory|ContentFile|ContentSymlink|ContentSubmodule|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetContent($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $path, $ref);

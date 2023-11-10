@@ -25,6 +25,7 @@ final readonly class GetThread
     {
     }
 
+    /** @return */
     public function call(int $threadId): Thread|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\GetThread($this->responseSchemaValidator, $this->hydrator, $threadId);

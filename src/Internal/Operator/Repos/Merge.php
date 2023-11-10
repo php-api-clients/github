@@ -25,6 +25,7 @@ final readonly class Merge
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): Commit|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\Merge($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

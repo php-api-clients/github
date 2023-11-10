@@ -24,6 +24,7 @@ final readonly class CreateOrgRuleset
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): RepositoryRuleset
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateOrgRuleset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

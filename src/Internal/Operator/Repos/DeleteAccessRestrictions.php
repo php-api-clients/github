@@ -22,6 +22,7 @@ final readonly class DeleteAccessRestrictions
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $branch): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DeleteAccessRestrictions($owner, $repo, $branch);

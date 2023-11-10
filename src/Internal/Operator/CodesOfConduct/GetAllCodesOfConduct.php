@@ -25,7 +25,7 @@ final readonly class GetAllCodesOfConduct
     {
     }
 
-    /** @return iterable<int,Schema\CodeOfConduct>|WithoutBody */
+    /** @return Observable<Schema\CodeOfConduct>|WithoutBody */
     public function call(): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodesOfConduct\GetAllCodesOfConduct($this->responseSchemaValidator, $this->hydrator);

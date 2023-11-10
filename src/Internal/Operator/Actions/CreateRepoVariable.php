@@ -24,6 +24,7 @@ final readonly class CreateRepoVariable
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): EmptyObject
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\CreateRepoVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

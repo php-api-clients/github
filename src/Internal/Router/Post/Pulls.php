@@ -23,6 +23,7 @@ final class Pulls
     {
     }
 
+    /** @return */
     public function create(array $params): PullRequest
     {
         $arguments = [];
@@ -43,6 +44,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function createReviewComment(array $params): PullRequestReviewComment
     {
         $arguments = [];
@@ -69,6 +71,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
+    /** @return */
     public function requestReviewers(array $params): PullRequestSimple|WithoutBody
     {
         $arguments = [];
@@ -95,6 +98,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
+    /** @return */
     public function createReview(array $params): PullRequestReview
     {
         $arguments = [];
@@ -121,6 +125,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
+    /** @return */
     public function createReplyForReviewComment(array $params): PullRequestReviewComment
     {
         $arguments = [];
@@ -153,6 +158,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['comment_id'], $params);
     }
 
+    /** @return */
     public function submitReview(array $params): PullRequestReview
     {
         $arguments = [];

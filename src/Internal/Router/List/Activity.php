@@ -22,7 +22,7 @@ final class Activity
     {
     }
 
-    /** @return iterable<int,Schema\Repository>|WithoutBody */
+    /** @return Observable<Schema\Repository>|WithoutBody */
     public function listReposStarredByAuthenticatedUserListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -61,7 +61,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\MinimalRepository>|WithoutBody */
+    /** @return Observable<Schema\MinimalRepository>|WithoutBody */
     public function listWatchedReposForAuthenticatedUserListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -88,7 +88,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listPublicOrgEventsListing(array $params): iterable
     {
         $arguments = [];
@@ -121,7 +121,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listEventsForAuthenticatedUserListing(array $params): iterable
     {
         $arguments = [];
@@ -154,7 +154,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listReceivedEventsForUserListing(array $params): iterable
     {
         $arguments = [];
@@ -187,7 +187,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\MinimalRepository> */
+    /** @return Observable<Schema\MinimalRepository> */
     public function listReposWatchedByUserListing(array $params): iterable
     {
         $arguments = [];
@@ -220,7 +220,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Event>|WithoutBody */
+    /** @return Observable<Schema\Event>|WithoutBody */
     public function listPublicEventsListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -247,7 +247,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Thread>|WithoutBody */
+    /** @return Observable<Schema\Thread>|WithoutBody */
     public function listNotificationsForAuthenticatedUserListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -298,7 +298,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Event>|Schema\BasicError|WithoutBody */
+    /** @return Observable<Schema\Event>|Schema\BasicError|WithoutBody */
     public function listPublicEventsForRepoNetworkListing(array $params): iterable|BasicError|WithoutBody
     {
         $arguments = [];
@@ -337,7 +337,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listRepoEventsListing(array $params): iterable
     {
         $arguments = [];
@@ -376,7 +376,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Thread> */
+    /** @return Observable<Schema\Thread> */
     public function listRepoNotificationsForAuthenticatedUserListing(array $params): iterable
     {
         $arguments = [];
@@ -439,7 +439,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\SimpleUser> */
+    /** @return Observable<Schema\SimpleUser> */
     public function listWatchersForRepoListing(array $params): iterable
     {
         $arguments = [];
@@ -478,7 +478,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listPublicEventsForUserListing(array $params): iterable
     {
         $arguments = [];
@@ -511,7 +511,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listReceivedPublicEventsForUserListing(array $params): iterable
     {
         $arguments = [];
@@ -544,7 +544,7 @@ final class Activity
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Event> */
+    /** @return Observable<Schema\Event> */
     public function listOrgEventsForAuthenticatedUserListing(array $params): iterable
     {
         $arguments = [];

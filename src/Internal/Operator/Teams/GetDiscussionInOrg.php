@@ -24,6 +24,7 @@ final readonly class GetDiscussionInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, int $discussionNumber): TeamDiscussion
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\GetDiscussionInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $discussionNumber);

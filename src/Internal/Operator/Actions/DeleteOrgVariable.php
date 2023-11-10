@@ -22,6 +22,7 @@ final readonly class DeleteOrgVariable
     {
     }
 
+    /** @return */
     public function call(string $org, string $name): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DeleteOrgVariable($org, $name);

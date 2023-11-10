@@ -26,6 +26,7 @@ final readonly class Get
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $issueNumber): Issue|BasicError|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\Get($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);

@@ -24,6 +24,7 @@ final readonly class GetViews
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $per = 'day'): ViewTraffic
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetViews($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $per);

@@ -19,6 +19,7 @@ final class SecurityAdvisories
     {
     }
 
+    /** @return */
     public function updateRepositoryAdvisory(array $params): RepositoryAdvisory
     {
         $arguments = [];

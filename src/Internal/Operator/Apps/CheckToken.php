@@ -24,6 +24,7 @@ final readonly class CheckToken
     {
     }
 
+    /** @return */
     public function call(string $clientId, array $params): Authorization
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\CheckToken($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $clientId);

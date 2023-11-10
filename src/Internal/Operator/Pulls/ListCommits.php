@@ -24,7 +24,7 @@ final readonly class ListCommits
     {
     }
 
-    /** @return iterable<int,Schema\Commit> */
+    /** @return Observable<Schema\Commit> */
     public function call(string $owner, string $repo, int $pullNumber, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\ListCommits($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber, $perPage, $page);

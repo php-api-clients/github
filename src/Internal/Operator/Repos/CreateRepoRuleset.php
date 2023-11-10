@@ -24,6 +24,7 @@ final readonly class CreateRepoRuleset
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): RepositoryRuleset
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateRepoRuleset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

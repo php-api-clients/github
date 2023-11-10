@@ -25,6 +25,7 @@ final readonly class GetThreadSubscriptionForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(int $threadId): ThreadSubscription|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\GetThreadSubscriptionForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $threadId);

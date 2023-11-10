@@ -22,6 +22,7 @@ final class Meta
     {
     }
 
+    /** @return */
     public function root(array $params): Root
     {
         $operator = new Internal\Operator\Meta\Root($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Root());
@@ -29,6 +30,7 @@ final class Meta
         return $operator->call();
     }
 
+    /** @return */
     public function get(array $params): ApiOverview|WithoutBody
     {
         $operator = new Internal\Operator\Meta\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Meta());
@@ -36,6 +38,7 @@ final class Meta
         return $operator->call();
     }
 
+    /** @return */
     public function getOctocat(array $params): ResponseInterface
     {
         $arguments = [];
@@ -50,7 +53,7 @@ final class Meta
         return $operator->call($arguments['s']);
     }
 
-    /** @return iterable<int,string> */
+    /** @return Observable<string> */
     public function getAllVersions(array $params): iterable
     {
         $operator = new Internal\Operator\Meta\GetAllVersions($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Versions());
@@ -58,6 +61,7 @@ final class Meta
         return $operator->call();
     }
 
+    /** @return */
     public function getZen(array $params): string
     {
         $operator = new Internal\Operator\Meta\GetZen($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Zen());

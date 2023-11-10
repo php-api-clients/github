@@ -24,6 +24,7 @@ final readonly class DeleteAutolink
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $autolinkId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DeleteAutolink($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $autolinkId);

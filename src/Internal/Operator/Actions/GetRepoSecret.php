@@ -24,6 +24,7 @@ final readonly class GetRepoSecret
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $secretName): ActionsSecret
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetRepoSecret($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $secretName);

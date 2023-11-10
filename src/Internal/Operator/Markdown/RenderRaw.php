@@ -24,6 +24,7 @@ final readonly class RenderRaw
     {
     }
 
+    /** @return */
     public function call(array $params): WithoutBody|string
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Markdown\RenderRaw($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

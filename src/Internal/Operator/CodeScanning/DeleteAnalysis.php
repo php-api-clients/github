@@ -24,6 +24,7 @@ final readonly class DeleteAnalysis
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $analysisId, string|null $confirmDelete): CodeScanningAnalysisDeletion
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\DeleteAnalysis($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $analysisId, $confirmDelete);

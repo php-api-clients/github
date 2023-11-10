@@ -24,6 +24,7 @@ final readonly class Update
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $checkRunId, array $params): CheckRun
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $checkRunId);

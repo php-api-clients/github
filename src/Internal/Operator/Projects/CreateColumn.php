@@ -25,6 +25,7 @@ final readonly class CreateColumn
     {
     }
 
+    /** @return */
     public function call(int $projectId, array $params): ProjectColumn|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\CreateColumn($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $projectId);

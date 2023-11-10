@@ -24,6 +24,7 @@ final readonly class CreateForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): Project
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\CreateForOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

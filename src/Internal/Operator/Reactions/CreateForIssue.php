@@ -24,6 +24,7 @@ final readonly class CreateForIssue
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $issueNumber, array $params): Reaction
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Reactions\CreateForIssue($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);

@@ -24,6 +24,7 @@ final readonly class GetCopilotOrganizationDetails
     {
     }
 
+    /** @return */
     public function call(string $org): CopilotOrganizationDetails
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Copilot\GetCopilotOrganizationDetails($this->responseSchemaValidator, $this->hydrator, $org);

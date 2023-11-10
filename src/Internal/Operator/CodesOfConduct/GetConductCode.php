@@ -25,6 +25,7 @@ final readonly class GetConductCode
     {
     }
 
+    /** @return */
     public function call(string $key): CodeOfConduct|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodesOfConduct\GetConductCode($this->responseSchemaValidator, $this->hydrator, $key);

@@ -25,6 +25,7 @@ final readonly class Update
     {
     }
 
+    /** @return */
     public function call(int $projectId, array $params): Project|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $projectId);

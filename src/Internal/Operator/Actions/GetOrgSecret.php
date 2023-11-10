@@ -24,6 +24,7 @@ final readonly class GetOrgSecret
     {
     }
 
+    /** @return */
     public function call(string $org, string $secretName): OrganizationActionsSecret
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetOrgSecret($this->responseSchemaValidator, $this->hydrator, $org, $secretName);

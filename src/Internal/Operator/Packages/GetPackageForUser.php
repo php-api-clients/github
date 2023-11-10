@@ -24,6 +24,7 @@ final readonly class GetPackageForUser
     {
     }
 
+    /** @return */
     public function call(string $packageType, string $packageName, string $username): Package
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\GetPackageForUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $username);

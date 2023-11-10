@@ -24,6 +24,7 @@ final readonly class DeleteTagProtection
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $tagProtectionId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DeleteTagProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $tagProtectionId);

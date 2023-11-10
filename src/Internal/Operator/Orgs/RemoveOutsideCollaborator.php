@@ -24,6 +24,7 @@ final readonly class RemoveOutsideCollaborator
     {
     }
 
+    /** @return */
     public function call(string $org, string $username): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\RemoveOutsideCollaborator($this->responseSchemaValidator, $this->hydrator, $org, $username);

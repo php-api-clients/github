@@ -25,6 +25,7 @@ final readonly class StartForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(array $params): Migration|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\StartForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

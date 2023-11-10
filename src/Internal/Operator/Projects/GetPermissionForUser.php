@@ -25,6 +25,7 @@ final readonly class GetPermissionForUser
     {
     }
 
+    /** @return */
     public function call(int $projectId, string $username): ProjectCollaboratorPermission|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\GetPermissionForUser($this->responseSchemaValidator, $this->hydrator, $projectId, $username);

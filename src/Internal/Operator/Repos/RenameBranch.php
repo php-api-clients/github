@@ -24,6 +24,7 @@ final readonly class RenameBranch
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $branch, array $params): BranchWithProtection
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\RenameBranch($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

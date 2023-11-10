@@ -22,6 +22,7 @@ final readonly class DeleteForIssue
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $issueNumber, int $reactionId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Reactions\DeleteForIssue($owner, $repo, $issueNumber, $reactionId);

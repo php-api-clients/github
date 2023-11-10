@@ -24,6 +24,7 @@ final readonly class DeleteCommitSignatureProtection
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $branch): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DeleteCommitSignatureProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

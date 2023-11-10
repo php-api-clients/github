@@ -25,6 +25,7 @@ final readonly class MergeUpstream
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): MergedUpstream|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\MergeUpstream($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

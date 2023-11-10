@@ -25,7 +25,7 @@ final readonly class ListInstallationRequestsForAuthenticatedApp
     {
     }
 
-    /** @return iterable<int,Schema\IntegrationInstallationRequest>|WithoutBody */
+    /** @return Observable<Schema\IntegrationInstallationRequest>|WithoutBody */
     public function call(int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\ListInstallationRequestsForAuthenticatedApp($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

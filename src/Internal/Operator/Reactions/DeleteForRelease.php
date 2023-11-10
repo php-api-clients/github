@@ -22,6 +22,7 @@ final readonly class DeleteForRelease
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $releaseId, int $reactionId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Reactions\DeleteForRelease($owner, $repo, $releaseId, $reactionId);

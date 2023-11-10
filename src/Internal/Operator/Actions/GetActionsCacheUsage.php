@@ -24,6 +24,7 @@ final readonly class GetActionsCacheUsage
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): ActionsCacheUsageByRepository
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetActionsCacheUsage($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

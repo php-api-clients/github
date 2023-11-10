@@ -24,6 +24,7 @@ final readonly class Update
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $pullNumber, array $params): PullRequest
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

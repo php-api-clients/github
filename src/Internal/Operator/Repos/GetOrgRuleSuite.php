@@ -24,6 +24,7 @@ final readonly class GetOrgRuleSuite
     {
     }
 
+    /** @return */
     public function call(string $org, int $ruleSuiteId): RuleSuite
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetOrgRuleSuite($this->responseSchemaValidator, $this->hydrator, $org, $ruleSuiteId);

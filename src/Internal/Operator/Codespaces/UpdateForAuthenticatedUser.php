@@ -24,6 +24,7 @@ final readonly class UpdateForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $codespaceName, array $params): Codespace
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\UpdateForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $codespaceName);

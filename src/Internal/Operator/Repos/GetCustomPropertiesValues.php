@@ -24,7 +24,7 @@ final readonly class GetCustomPropertiesValues
     {
     }
 
-    /** @return iterable<int,Schema\CustomPropertyValue> */
+    /** @return Observable<Schema\CustomPropertyValue> */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetCustomPropertiesValues($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

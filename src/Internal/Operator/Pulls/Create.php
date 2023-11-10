@@ -24,6 +24,7 @@ final readonly class Create
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): PullRequest
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\Create($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

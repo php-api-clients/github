@@ -24,6 +24,7 @@ final readonly class ReviewPatGrantRequest
     {
     }
 
+    /** @return */
     public function call(string $org, int $patRequestId, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ReviewPatGrantRequest($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $patRequestId);

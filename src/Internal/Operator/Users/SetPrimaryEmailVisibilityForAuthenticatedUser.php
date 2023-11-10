@@ -25,7 +25,7 @@ final readonly class SetPrimaryEmailVisibilityForAuthenticatedUser
     {
     }
 
-    /** @return iterable<int,Schema\Email>|WithoutBody */
+    /** @return Observable<Schema\Email>|WithoutBody */
     public function call(array $params): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\SetPrimaryEmailVisibilityForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

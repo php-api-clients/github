@@ -25,6 +25,7 @@ final readonly class UploadReleaseAsset
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $releaseId, string $name, string $label, array $params): ReleaseAsset|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UploadReleaseAsset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $releaseId, $name, $label);

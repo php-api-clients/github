@@ -24,6 +24,7 @@ final readonly class CreateComment
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $issueNumber, array $params): IssueComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\CreateComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);

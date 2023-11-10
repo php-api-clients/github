@@ -24,6 +24,7 @@ final readonly class CreateInvitation
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): OrganizationInvitation
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\CreateInvitation($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

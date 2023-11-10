@@ -24,6 +24,7 @@ final readonly class DeleteSshSigningKeyForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(int $sshSigningKeyId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\DeleteSshSigningKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $sshSigningKeyId);

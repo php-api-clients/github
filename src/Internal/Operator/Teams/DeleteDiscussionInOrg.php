@@ -22,6 +22,7 @@ final readonly class DeleteDiscussionInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, int $discussionNumber): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\DeleteDiscussionInOrg($org, $teamSlug, $discussionNumber);

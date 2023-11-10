@@ -24,6 +24,7 @@ final readonly class GetCustomOidcSubClaimForRepo
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): OidcCustomSubRepo
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetCustomOidcSubClaimForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

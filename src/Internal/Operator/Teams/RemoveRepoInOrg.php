@@ -22,6 +22,7 @@ final readonly class RemoveRepoInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, string $owner, string $repo): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\RemoveRepoInOrg($org, $teamSlug, $owner, $repo);

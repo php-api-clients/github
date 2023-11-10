@@ -16,6 +16,7 @@ final class Markdown
     {
     }
 
+    /** @return */
     public function render(array $params): WithoutBody|string
     {
         $operator = new Internal\Operator\Markdown\Render($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Markdown());
@@ -23,6 +24,7 @@ final class Markdown
         return $operator->call($params);
     }
 
+    /** @return */
     public function renderRaw(array $params): WithoutBody|string
     {
         $operator = new Internal\Operator\Markdown\RenderRaw($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Markdown🌀Raw());

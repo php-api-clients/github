@@ -25,6 +25,7 @@ final readonly class CreateDeploymentBranchPolicy
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $environmentName, array $params): DeploymentBranchPolicy|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateDeploymentBranchPolicy($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName);

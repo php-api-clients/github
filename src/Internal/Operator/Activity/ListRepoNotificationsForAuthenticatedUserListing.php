@@ -24,7 +24,7 @@ final readonly class ListRepoNotificationsForAuthenticatedUserListing
     {
     }
 
-    /** @return iterable<int,Schema\Thread> */
+    /** @return Observable<Schema\Thread> */
     public function call(string $owner, string $repo, string $since, string $before, bool $all = false, bool $participating = false, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\ListRepoNotificationsForAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $since, $before, $all, $participating, $perPage, $page);

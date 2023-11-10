@@ -24,6 +24,7 @@ final readonly class CreateBlob
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): ShortBlob
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Git\CreateBlob($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

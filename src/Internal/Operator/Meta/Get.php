@@ -25,6 +25,7 @@ final readonly class Get
     {
     }
 
+    /** @return */
     public function call(): ApiOverview|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Meta\Get($this->responseSchemaValidator, $this->hydrator);

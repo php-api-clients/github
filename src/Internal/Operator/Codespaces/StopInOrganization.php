@@ -25,6 +25,7 @@ final readonly class StopInOrganization
     {
     }
 
+    /** @return */
     public function call(string $org, string $username, string $codespaceName): Codespace|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\StopInOrganization($this->responseSchemaValidator, $this->hydrator, $org, $username, $codespaceName);

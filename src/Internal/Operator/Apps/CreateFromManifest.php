@@ -24,6 +24,7 @@ final readonly class CreateFromManifest
     {
     }
 
+    /** @return */
     public function call(string $code): Integration
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\CreateFromManifest($this->responseSchemaValidator, $this->hydrator, $code);

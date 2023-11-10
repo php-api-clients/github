@@ -24,6 +24,7 @@ final readonly class ReplaceAllTopics
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): Topic
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ReplaceAllTopics($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -25,6 +25,7 @@ final readonly class CreateComment
     {
     }
 
+    /** @return */
     public function call(string $gistId, array $params): GistComment|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\CreateComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $gistId);

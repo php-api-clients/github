@@ -24,6 +24,7 @@ final readonly class CreateReplyForReviewComment
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $pullNumber, int $commentId, array $params): PullRequestReviewComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\CreateReplyForReviewComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber, $commentId);

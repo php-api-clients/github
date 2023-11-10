@@ -17,6 +17,7 @@ final class RateLimit
     {
     }
 
+    /** @return */
     public function get(array $params): RateLimitOverview|WithoutBody
     {
         $operator = new Internal\Operator\RateLimit\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀RateLimit());

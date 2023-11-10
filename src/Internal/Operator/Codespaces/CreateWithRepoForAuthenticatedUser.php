@@ -24,6 +24,7 @@ final readonly class CreateWithRepoForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): Codespace
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\CreateWithRepoForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

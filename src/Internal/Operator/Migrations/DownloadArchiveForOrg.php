@@ -24,6 +24,7 @@ final readonly class DownloadArchiveForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, int $migrationId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\DownloadArchiveForOrg($this->responseSchemaValidator, $this->hydrator, $org, $migrationId);

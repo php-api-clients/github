@@ -25,6 +25,7 @@ final readonly class GetCard
     {
     }
 
+    /** @return */
     public function call(int $cardId): ProjectCard|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\GetCard($this->responseSchemaValidator, $this->hydrator, $cardId);

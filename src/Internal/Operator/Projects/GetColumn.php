@@ -25,6 +25,7 @@ final readonly class GetColumn
     {
     }
 
+    /** @return */
     public function call(int $columnId): ProjectColumn|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\GetColumn($this->responseSchemaValidator, $this->hydrator, $columnId);

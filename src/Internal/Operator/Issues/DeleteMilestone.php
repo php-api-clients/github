@@ -24,6 +24,7 @@ final readonly class DeleteMilestone
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $milestoneNumber): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\DeleteMilestone($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $milestoneNumber);

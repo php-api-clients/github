@@ -24,6 +24,7 @@ final readonly class GetContextForUser
     {
     }
 
+    /** @return */
     public function call(string $username, string $subjectType, string $subjectId): Hovercard
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\GetContextForUser($this->responseSchemaValidator, $this->hydrator, $username, $subjectType, $subjectId);

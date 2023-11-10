@@ -24,6 +24,7 @@ final readonly class GetBySlug
     {
     }
 
+    /** @return */
     public function call(string $appSlug): Integration
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetBySlug($this->responseSchemaValidator, $this->hydrator, $appSlug);

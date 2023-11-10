@@ -18,36 +18,43 @@ final class Copilot
     {
     }
 
+    /** @return */
     public function getCopilotOrganizationDetails(string $org): CopilotOrganizationDetails
     {
         return $this->operators->copilot👷GetCopilotOrganizationDetails()->call($org);
     }
 
+    /** @return */
     public function listCopilotSeats(string $org, int $page, int $perPage): Ok
     {
         return $this->operators->copilot👷ListCopilotSeats()->call($org, $page, $perPage);
     }
 
+    /** @return */
     public function addCopilotForBusinessSeatsForTeams(string $org, array $params): Created|WithoutBody
     {
         return $this->operators->copilot👷AddCopilotForBusinessSeatsForTeams()->call($org, $params);
     }
 
+    /** @return */
     public function cancelCopilotSeatAssignmentForTeams(string $org, array $params): \ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForTeams\Response\ApplicationJson\Ok|WithoutBody
     {
         return $this->operators->copilot👷CancelCopilotSeatAssignmentForTeams()->call($org, $params);
     }
 
+    /** @return */
     public function addCopilotForBusinessSeatsForUsers(string $org, array $params): Json|WithoutBody
     {
         return $this->operators->copilot👷AddCopilotForBusinessSeatsForUsers()->call($org, $params);
     }
 
+    /** @return */
     public function cancelCopilotSeatAssignmentForUsers(string $org, array $params): \ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json|WithoutBody
     {
         return $this->operators->copilot👷CancelCopilotSeatAssignmentForUsers()->call($org, $params);
     }
 
+    /** @return */
     public function getCopilotSeatDetailsForUser(string $org, string $username): CopilotSeatDetails|WithoutBody
     {
         return $this->operators->copilot👷GetCopilotSeatDetailsForUser()->call($org, $username);

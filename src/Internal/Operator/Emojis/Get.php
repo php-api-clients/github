@@ -25,6 +25,7 @@ final readonly class Get
     {
     }
 
+    /** @return */
     public function call(): Json|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Emojis\Get($this->responseSchemaValidator, $this->hydrator);

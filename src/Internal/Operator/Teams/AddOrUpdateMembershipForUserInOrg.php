@@ -25,6 +25,7 @@ final readonly class AddOrUpdateMembershipForUserInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, string $username, array $params): TeamMembership|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\AddOrUpdateMembershipForUserInOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $username);

@@ -21,6 +21,7 @@ final class Teams
     {
     }
 
+    /** @return */
     public function create(array $params): TeamFull
     {
         $arguments = [];
@@ -35,6 +36,7 @@ final class Teams
         return $operator->call($arguments['org'], $params);
     }
 
+    /** @return */
     public function createDiscussionLegacy(array $params): TeamDiscussion
     {
         $arguments = [];
@@ -49,6 +51,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $params);
     }
 
+    /** @return */
     public function createDiscussionInOrg(array $params): TeamDiscussion
     {
         $arguments = [];
@@ -69,6 +72,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $params);
     }
 
+    /** @return */
     public function createDiscussionCommentLegacy(array $params): TeamDiscussionComment
     {
         $arguments = [];
@@ -89,6 +93,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $params);
     }
 
+    /** @return */
     public function createDiscussionCommentInOrg(array $params): TeamDiscussionComment
     {
         $arguments = [];

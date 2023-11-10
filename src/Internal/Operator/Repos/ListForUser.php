@@ -24,7 +24,7 @@ final readonly class ListForUser
     {
     }
 
-    /** @return iterable<int,Schema\MinimalRepository> */
+    /** @return Observable<Schema\MinimalRepository> */
     public function call(string $username, string $direction, string $type = 'owner', string $sort = 'full_name', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListForUser($this->responseSchemaValidator, $this->hydrator, $username, $direction, $type, $sort, $perPage, $page);

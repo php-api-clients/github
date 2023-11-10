@@ -24,6 +24,7 @@ final readonly class DeleteOrgSecret
     {
     }
 
+    /** @return */
     public function call(string $org, string $secretName): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\DeleteOrgSecret($this->responseSchemaValidator, $this->hydrator, $org, $secretName);

@@ -24,6 +24,7 @@ final readonly class GetAdminBranchProtection
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $branch): ProtectedBranchAdminEnforced
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetAdminBranchProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

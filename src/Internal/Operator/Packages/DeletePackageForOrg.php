@@ -24,6 +24,7 @@ final readonly class DeletePackageForOrg
     {
     }
 
+    /** @return */
     public function call(string $packageType, string $packageName, string $org): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\DeletePackageForOrg($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $org);

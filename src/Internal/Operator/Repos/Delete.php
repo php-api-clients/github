@@ -25,6 +25,7 @@ final readonly class Delete
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): BasicError|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\Delete($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

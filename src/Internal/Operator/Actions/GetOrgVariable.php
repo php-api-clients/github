@@ -24,6 +24,7 @@ final readonly class GetOrgVariable
     {
     }
 
+    /** @return */
     public function call(string $org, string $name): OrganizationActionsVariable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetOrgVariable($this->responseSchemaValidator, $this->hydrator, $org, $name);

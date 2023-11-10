@@ -24,6 +24,7 @@ final readonly class GetCommitComment
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $commentId): CommitComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetCommitComment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commentId);

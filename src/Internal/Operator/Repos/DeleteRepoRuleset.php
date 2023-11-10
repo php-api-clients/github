@@ -24,6 +24,7 @@ final readonly class DeleteRepoRuleset
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $rulesetId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DeleteRepoRuleset($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $rulesetId);

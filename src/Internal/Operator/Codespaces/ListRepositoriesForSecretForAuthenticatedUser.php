@@ -24,6 +24,7 @@ final readonly class ListRepositoriesForSecretForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $secretName): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\ListRepositoriesForSecretForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $secretName);

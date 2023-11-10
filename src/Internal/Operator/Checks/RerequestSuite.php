@@ -24,6 +24,7 @@ final readonly class RerequestSuite
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $checkSuiteId): EmptyObject
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\RerequestSuite($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $checkSuiteId);

@@ -24,6 +24,7 @@ final readonly class GenerateReleaseNotes
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): ReleaseNotesContent
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GenerateReleaseNotes($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

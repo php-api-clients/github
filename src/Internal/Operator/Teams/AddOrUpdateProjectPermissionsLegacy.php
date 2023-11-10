@@ -24,6 +24,7 @@ final readonly class AddOrUpdateProjectPermissionsLegacy
     {
     }
 
+    /** @return */
     public function call(int $teamId, int $projectId, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\AddOrUpdateProjectPermissionsLegacy($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $teamId, $projectId);

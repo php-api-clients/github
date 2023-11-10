@@ -22,6 +22,7 @@ final readonly class RemoveSelectedRepoFromOrgVariable
     {
     }
 
+    /** @return */
     public function call(string $org, string $name, int $repositoryId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\RemoveSelectedRepoFromOrgVariable($org, $name, $repositoryId);

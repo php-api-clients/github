@@ -25,6 +25,7 @@ final readonly class ListStargazersForRepo
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): SimpleUser|Stargazer
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\ListStargazersForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

@@ -24,6 +24,7 @@ final readonly class UpdateWebhook
     {
     }
 
+    /** @return */
     public function call(string $org, int $hookId, array $params): OrgHook
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\UpdateWebhook($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $hookId);

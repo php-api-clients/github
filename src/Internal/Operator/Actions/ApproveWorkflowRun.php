@@ -24,6 +24,7 @@ final readonly class ApproveWorkflowRun
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $runId): EmptyObject
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ApproveWorkflowRun($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId);

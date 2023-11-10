@@ -25,6 +25,7 @@ final readonly class MarkNotificationsAsRead
     {
     }
 
+    /** @return */
     public function call(array $params): Accepted|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\MarkNotificationsAsRead($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

@@ -24,6 +24,7 @@ final readonly class GetGithubActionsPermissionsRepository
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): ActionsRepositoryPermissions
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetGithubActionsPermissionsRepository($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

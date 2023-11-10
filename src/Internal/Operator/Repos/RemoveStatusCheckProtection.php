@@ -22,6 +22,7 @@ final readonly class RemoveStatusCheckProtection
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $branch): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\RemoveStatusCheckProtection($owner, $repo, $branch);

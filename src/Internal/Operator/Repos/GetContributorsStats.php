@@ -26,7 +26,7 @@ final readonly class GetContributorsStats
     {
     }
 
-    /** @return iterable<int,Schema\ContributorActivity>|Schema\Operations\Repos\GetContributorsStats\Response\ApplicationJson\Accepted\Application\Json|WithoutBody */
+    /** @return Observable<Schema\ContributorActivity>|Schema\Operations\Repos\GetContributorsStats\Response\ApplicationJson\Accepted\Application\Json|WithoutBody */
     public function call(string $owner, string $repo): iterable|Json|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetContributorsStats($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

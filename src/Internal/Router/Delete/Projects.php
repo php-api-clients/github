@@ -19,6 +19,7 @@ final class Projects
     {
     }
 
+    /** @return */
     public function deleteColumn(array $params): WithoutBody
     {
         $arguments = [];
@@ -33,6 +34,7 @@ final class Projects
         return $operator->call($arguments['column_id']);
     }
 
+    /** @return */
     public function deleteCard(array $params): WithoutBody
     {
         $arguments = [];
@@ -47,6 +49,7 @@ final class Projects
         return $operator->call($arguments['card_id']);
     }
 
+    /** @return */
     public function removeCollaborator(array $params): WithoutBody
     {
         $arguments = [];
@@ -67,6 +70,7 @@ final class Projects
         return $operator->call($arguments['project_id'], $arguments['username']);
     }
 
+    /** @return */
     public function delete(array $params): WithoutBody
     {
         $arguments = [];

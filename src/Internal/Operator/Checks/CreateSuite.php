@@ -24,6 +24,7 @@ final readonly class CreateSuite
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): CheckSuite
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\CreateSuite($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

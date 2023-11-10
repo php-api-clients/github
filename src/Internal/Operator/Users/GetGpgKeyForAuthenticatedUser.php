@@ -25,6 +25,7 @@ final readonly class GetGpgKeyForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(int $gpgKeyId): GpgKey|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\GetGpgKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $gpgKeyId);

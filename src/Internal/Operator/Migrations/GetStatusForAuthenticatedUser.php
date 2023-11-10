@@ -25,6 +25,7 @@ final readonly class GetStatusForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(int $migrationId, array $exclude): Migration|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\GetStatusForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $migrationId, $exclude);

@@ -24,7 +24,7 @@ final readonly class ListTagProtection
     {
     }
 
-    /** @return iterable<int,Schema\TagProtection> */
+    /** @return Observable<Schema\TagProtection> */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListTagProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

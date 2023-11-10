@@ -24,6 +24,7 @@ final readonly class Update
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): OrganizationFull
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

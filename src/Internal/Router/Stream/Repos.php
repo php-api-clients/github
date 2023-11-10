@@ -18,7 +18,7 @@ final class Repos
     {
     }
 
-    /** @return iterable<int,string> */
+    /** @return Observable<string> */
     public function downloadTarballArchiveStreaming(array $params): iterable
     {
         $arguments = [];
@@ -45,7 +45,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref']);
     }
 
-    /** @return iterable<int,string> */
+    /** @return Observable<string> */
     public function downloadZipballArchiveStreaming(array $params): iterable
     {
         $arguments = [];

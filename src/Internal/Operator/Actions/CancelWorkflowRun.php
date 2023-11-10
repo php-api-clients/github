@@ -24,6 +24,7 @@ final readonly class CancelWorkflowRun
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $runId): EmptyObject
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\CancelWorkflowRun($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId);

@@ -24,6 +24,7 @@ final readonly class RestorePackageVersionForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $packageType, string $packageName, int $packageVersionId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\RestorePackageVersionForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $packageVersionId);

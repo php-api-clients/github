@@ -24,6 +24,7 @@ final readonly class DeletePendingReview
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $pullNumber, int $reviewId): PullRequestReview
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\DeletePendingReview($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber, $reviewId);

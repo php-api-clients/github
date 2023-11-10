@@ -22,6 +22,7 @@ final class Codespaces
     {
     }
 
+    /** @return */
     public function setCodespacesAccessUsers(array $params): WithoutBody
     {
         $arguments = [];
@@ -36,6 +37,7 @@ final class Codespaces
         return $operator->call($arguments['org'], $params);
     }
 
+    /** @return */
     public function createWithRepoForAuthenticatedUser(array $params): Codespace
     {
         $arguments = [];
@@ -56,6 +58,7 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function exportForAuthenticatedUser(array $params): CodespaceExportDetails
     {
         $arguments = [];
@@ -70,6 +73,7 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
+    /** @return */
     public function publishForAuthenticatedUser(array $params): CodespaceWithFullRepository
     {
         $arguments = [];
@@ -84,6 +88,7 @@ final class Codespaces
         return $operator->call($arguments['codespace_name'], $params);
     }
 
+    /** @return */
     public function startForAuthenticatedUser(array $params): Codespace|WithoutBody
     {
         $arguments = [];
@@ -98,6 +103,7 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
+    /** @return */
     public function stopForAuthenticatedUser(array $params): Codespace
     {
         $arguments = [];
@@ -112,6 +118,7 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
+    /** @return */
     public function createForAuthenticatedUser(array $params): Codespace
     {
         $operator = new Internal\Operator\Codespaces\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces());
@@ -119,6 +126,7 @@ final class Codespaces
         return $operator->call($params);
     }
 
+    /** @return */
     public function createWithPrForAuthenticatedUser(array $params): Codespace
     {
         $arguments = [];
@@ -145,6 +153,7 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
+    /** @return */
     public function stopInOrganization(array $params): Codespace|WithoutBody
     {
         $arguments = [];

@@ -25,6 +25,7 @@ final readonly class GetSubscriptionPlanForAccountStubbed
     {
     }
 
+    /** @return */
     public function call(int $accountId): MarketplacePurchase|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetSubscriptionPlanForAccountStubbed($this->responseSchemaValidator, $this->hydrator, $accountId);

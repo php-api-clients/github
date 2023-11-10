@@ -22,6 +22,7 @@ final readonly class RemoveSelectedRepoFromOrgSecret
     {
     }
 
+    /** @return */
     public function call(string $org, string $secretName, int $repositoryId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\RemoveSelectedRepoFromOrgSecret($org, $secretName, $repositoryId);

@@ -24,6 +24,7 @@ final readonly class UpdatePullRequestReviewProtection
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $branch, array $params): ProtectedBranchPullRequestReview
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdatePullRequestReviewProtection($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

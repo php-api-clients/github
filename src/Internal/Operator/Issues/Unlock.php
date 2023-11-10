@@ -24,6 +24,7 @@ final readonly class Unlock
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $issueNumber): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\Unlock($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);

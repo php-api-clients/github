@@ -19,6 +19,7 @@ final class DependencyGraph
     {
     }
 
+    /** @return */
     public function createRepositorySnapshot(array $params): Created
     {
         $arguments = [];

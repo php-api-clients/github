@@ -24,6 +24,7 @@ final readonly class Star
     {
     }
 
+    /** @return */
     public function call(string $gistId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\Star($this->responseSchemaValidator, $this->hydrator, $gistId);

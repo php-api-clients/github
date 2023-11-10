@@ -26,6 +26,7 @@ final readonly class GetRestrictionsForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(): InteractionLimitResponse|One|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Interactions\GetRestrictionsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator);

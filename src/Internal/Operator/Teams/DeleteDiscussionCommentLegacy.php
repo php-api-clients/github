@@ -22,6 +22,7 @@ final readonly class DeleteDiscussionCommentLegacy
     {
     }
 
+    /** @return */
     public function call(int $teamId, int $discussionNumber, int $commentNumber): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\DeleteDiscussionCommentLegacy($teamId, $discussionNumber, $commentNumber);

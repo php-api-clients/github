@@ -24,6 +24,7 @@ final readonly class GetRepoPublicKey
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): CodespacesPublicKey
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\GetRepoPublicKey($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

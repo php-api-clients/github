@@ -24,6 +24,7 @@ final readonly class ListLanguages
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): Language
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListLanguages($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -24,6 +24,7 @@ final readonly class AddAssignees
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $issueNumber, array $params): Issue
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\AddAssignees($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);

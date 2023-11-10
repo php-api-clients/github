@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Get;
 
 use ApiClients\Client\GitHub\Internal\Routers;
-use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\TeamDiscussionComment;
 use ApiClients\Client\GitHub\Schema\WorkflowRun;
 use InvalidArgumentException;
@@ -16,7 +15,7 @@ final class Nine
     {
     }
 
-    /** @return Schema\TeamDiscussionComment|Schema\WorkflowRun|iterable<int,string>|iterable<int,Schema\Integration>|iterable<int,Schema\Team>|iterable<int,Schema\SimpleUser>|iterable<int,Schema\ReviewComment> */
+    /** @return |Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser>|Observable<Schema\ReviewComment> */
     public function call(string $call, array $params, array $pathChunks): TeamDiscussionComment|WorkflowRun|iterable
     {
         if ($pathChunks[0] === '') {

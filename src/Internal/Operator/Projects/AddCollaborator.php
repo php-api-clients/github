@@ -24,6 +24,7 @@ final readonly class AddCollaborator
     {
     }
 
+    /** @return */
     public function call(int $projectId, string $username, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\AddCollaborator($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $projectId, $username);

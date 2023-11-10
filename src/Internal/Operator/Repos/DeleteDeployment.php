@@ -24,6 +24,7 @@ final readonly class DeleteDeployment
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $deploymentId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DeleteDeployment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $deploymentId);

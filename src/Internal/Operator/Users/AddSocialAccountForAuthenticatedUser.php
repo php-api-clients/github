@@ -25,7 +25,7 @@ final readonly class AddSocialAccountForAuthenticatedUser
     {
     }
 
-    /** @return iterable<int,Schema\SocialAccount>|WithoutBody */
+    /** @return Observable<Schema\SocialAccount>|WithoutBody */
     public function call(array $params): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\AddSocialAccountForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

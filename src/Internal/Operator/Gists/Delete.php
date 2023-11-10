@@ -24,6 +24,7 @@ final readonly class Delete
     {
     }
 
+    /** @return */
     public function call(string $gistId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\Delete($this->responseSchemaValidator, $this->hydrator, $gistId);

@@ -24,6 +24,7 @@ final readonly class CreateDiscussionCommentInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, int $discussionNumber, array $params): TeamDiscussionComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\CreateDiscussionCommentInOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $discussionNumber);

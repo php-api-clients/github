@@ -24,6 +24,7 @@ final readonly class AddOrUpdateProjectPermissionsInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, int $projectId, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\AddOrUpdateProjectPermissionsInOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $projectId);

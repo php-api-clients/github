@@ -24,6 +24,7 @@ final readonly class CreateTagProtection
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): TagProtection
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateTagProtection($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

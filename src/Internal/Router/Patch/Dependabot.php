@@ -19,6 +19,7 @@ final class Dependabot
     {
     }
 
+    /** @return */
     public function updateAlert(array $params): DependabotAlert
     {
         $arguments = [];

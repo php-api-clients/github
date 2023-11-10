@@ -24,6 +24,7 @@ final readonly class GetAClassroom
     {
     }
 
+    /** @return */
     public function call(int $classroomId): Classroom
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Classroom\GetAClassroom($this->responseSchemaValidator, $this->hydrator, $classroomId);

@@ -22,6 +22,7 @@ final readonly class DownloadZipballArchive
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $ref): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DownloadZipballArchive($owner, $repo, $ref);

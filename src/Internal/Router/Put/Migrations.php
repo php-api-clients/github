@@ -19,6 +19,7 @@ final class Migrations
     {
     }
 
+    /** @return */
     public function startImport(array $params): Import
     {
         $arguments = [];

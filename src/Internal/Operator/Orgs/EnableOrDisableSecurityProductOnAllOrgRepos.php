@@ -23,6 +23,7 @@ final readonly class EnableOrDisableSecurityProductOnAllOrgRepos
     {
     }
 
+    /** @return */
     public function call(string $org, string $securityProduct, string $enablement, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\EnableOrDisableSecurityProductOnAllOrgRepos($this->requestSchemaValidator, $org, $securityProduct, $enablement);

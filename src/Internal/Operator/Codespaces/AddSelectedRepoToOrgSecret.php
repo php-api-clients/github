@@ -24,6 +24,7 @@ final readonly class AddSelectedRepoToOrgSecret
     {
     }
 
+    /** @return */
     public function call(string $org, string $secretName, int $repositoryId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\AddSelectedRepoToOrgSecret($this->responseSchemaValidator, $this->hydrator, $org, $secretName, $repositoryId);

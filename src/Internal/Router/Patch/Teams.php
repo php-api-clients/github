@@ -21,6 +21,7 @@ final class Teams
     {
     }
 
+    /** @return */
     public function updateLegacy(array $params): TeamFull
     {
         $arguments = [];
@@ -35,6 +36,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $params);
     }
 
+    /** @return */
     public function updateInOrg(array $params): TeamFull
     {
         $arguments = [];
@@ -55,6 +57,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $params);
     }
 
+    /** @return */
     public function updateDiscussionLegacy(array $params): TeamDiscussion
     {
         $arguments = [];
@@ -75,6 +78,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $params);
     }
 
+    /** @return */
     public function updateDiscussionInOrg(array $params): TeamDiscussion
     {
         $arguments = [];
@@ -101,6 +105,7 @@ final class Teams
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['discussion_number'], $params);
     }
 
+    /** @return */
     public function updateDiscussionCommentLegacy(array $params): TeamDiscussionComment
     {
         $arguments = [];
@@ -127,6 +132,7 @@ final class Teams
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $arguments['comment_number'], $params);
     }
 
+    /** @return */
     public function updateDiscussionCommentInOrg(array $params): TeamDiscussionComment
     {
         $arguments = [];

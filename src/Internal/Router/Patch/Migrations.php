@@ -20,6 +20,7 @@ final class Migrations
     {
     }
 
+    /** @return */
     public function updateImport(array $params): Import
     {
         $arguments = [];
@@ -40,6 +41,7 @@ final class Migrations
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function setLfsPreference(array $params): Import
     {
         $arguments = [];
@@ -60,6 +62,7 @@ final class Migrations
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function mapCommitAuthor(array $params): PorterAuthor
     {
         $arguments = [];

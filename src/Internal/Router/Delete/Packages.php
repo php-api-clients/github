@@ -19,6 +19,7 @@ final class Packages
     {
     }
 
+    /** @return */
     public function deletePackageForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -39,6 +40,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name']);
     }
 
+    /** @return */
     public function deletePackageVersionForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -65,6 +67,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['package_version_id']);
     }
 
+    /** @return */
     public function deletePackageForOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -91,6 +94,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org']);
     }
 
+    /** @return */
     public function deletePackageForUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -117,6 +121,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['username']);
     }
 
+    /** @return */
     public function deletePackageVersionForOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -149,6 +154,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org'], $arguments['package_version_id']);
     }
 
+    /** @return */
     public function deletePackageVersionForUser(array $params): WithoutBody
     {
         $arguments = [];

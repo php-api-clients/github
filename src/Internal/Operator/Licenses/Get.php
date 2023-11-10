@@ -25,6 +25,7 @@ final readonly class Get
     {
     }
 
+    /** @return */
     public function call(string $license): License|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Licenses\Get($this->responseSchemaValidator, $this->hydrator, $license);

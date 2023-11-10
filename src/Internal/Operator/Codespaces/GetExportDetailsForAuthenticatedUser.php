@@ -24,6 +24,7 @@ final readonly class GetExportDetailsForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $codespaceName, string $exportId): CodespaceExportDetails
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\GetExportDetailsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $codespaceName, $exportId);

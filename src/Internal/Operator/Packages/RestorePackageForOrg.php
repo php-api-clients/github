@@ -24,6 +24,7 @@ final readonly class RestorePackageForOrg
     {
     }
 
+    /** @return */
     public function call(string $packageType, string $packageName, string $org, string $token): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\RestorePackageForOrg($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $org, $token);

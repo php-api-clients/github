@@ -24,6 +24,7 @@ final readonly class StopForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $codespaceName): Codespace
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\StopForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $codespaceName);

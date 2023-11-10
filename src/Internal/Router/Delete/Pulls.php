@@ -21,6 +21,7 @@ final class Pulls
     {
     }
 
+    /** @return */
     public function deleteReviewComment(array $params): WithoutBody
     {
         $arguments = [];
@@ -47,6 +48,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
+    /** @return */
     public function removeRequestedReviewers(array $params): PullRequestSimple
     {
         $arguments = [];
@@ -73,6 +75,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
+    /** @return */
     public function deletePendingReview(array $params): PullRequestReview
     {
         $arguments = [];

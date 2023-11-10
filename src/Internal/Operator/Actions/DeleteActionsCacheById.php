@@ -22,6 +22,7 @@ final readonly class DeleteActionsCacheById
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $cacheId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DeleteActionsCacheById($owner, $repo, $cacheId);

@@ -16,27 +16,31 @@ final class Meta
     {
     }
 
+    /** @return */
     public function root(): Root
     {
         return $this->operators->meta👷Root()->call();
     }
 
+    /** @return */
     public function get(): ApiOverview|WithoutBody
     {
         return $this->operators->meta👷Get()->call();
     }
 
+    /** @return */
     public function getOctocat(string $s): ResponseInterface
     {
         return $this->operators->meta👷GetOctocat()->call($s);
     }
 
-    /** @return iterable<int,string> */
+    /** @return Observable<string> */
     public function getAllVersions(): iterable
     {
         return $this->operators->meta👷GetAllVersions()->call();
     }
 
+    /** @return */
     public function getZen(): string
     {
         return $this->operators->meta👷GetZen()->call();

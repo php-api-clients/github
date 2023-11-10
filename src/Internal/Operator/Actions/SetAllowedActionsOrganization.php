@@ -23,6 +23,7 @@ final readonly class SetAllowedActionsOrganization
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\SetAllowedActionsOrganization($this->requestSchemaValidator, $org);

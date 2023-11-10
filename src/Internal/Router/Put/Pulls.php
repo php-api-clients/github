@@ -21,6 +21,7 @@ final class Pulls
     {
     }
 
+    /** @return */
     public function merge(array $params): PullRequestMergeResult
     {
         $arguments = [];
@@ -47,6 +48,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
+    /** @return */
     public function updateBranch(array $params): Json
     {
         $arguments = [];
@@ -73,6 +75,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
     }
 
+    /** @return */
     public function updateReview(array $params): PullRequestReview
     {
         $arguments = [];
@@ -105,6 +108,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['review_id'], $params);
     }
 
+    /** @return */
     public function dismissReview(array $params): PullRequestReview
     {
         $arguments = [];

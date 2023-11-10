@@ -25,6 +25,7 @@ final readonly class GetForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $codespaceName): Codespace|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\GetForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $codespaceName);

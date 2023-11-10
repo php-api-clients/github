@@ -24,6 +24,7 @@ final readonly class GetLabel
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $name): Label
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\GetLabel($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $name);

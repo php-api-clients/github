@@ -23,6 +23,7 @@ final class Projects
     {
     }
 
+    /** @return */
     public function createForOrg(array $params): Project
     {
         $arguments = [];
@@ -37,6 +38,7 @@ final class Projects
         return $operator->call($arguments['org'], $params);
     }
 
+    /** @return */
     public function createColumn(array $params): ProjectColumn|WithoutBody
     {
         $arguments = [];
@@ -51,6 +53,7 @@ final class Projects
         return $operator->call($arguments['project_id'], $params);
     }
 
+    /** @return */
     public function moveCard(array $params): Json|WithoutBody
     {
         $arguments = [];
@@ -65,6 +68,7 @@ final class Projects
         return $operator->call($arguments['card_id'], $params);
     }
 
+    /** @return */
     public function createCard(array $params): ProjectCard|WithoutBody
     {
         $arguments = [];
@@ -79,6 +83,7 @@ final class Projects
         return $operator->call($arguments['column_id'], $params);
     }
 
+    /** @return */
     public function moveColumn(array $params): \ApiClients\Client\GitHub\Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json|WithoutBody
     {
         $arguments = [];
@@ -93,6 +98,7 @@ final class Projects
         return $operator->call($arguments['column_id'], $params);
     }
 
+    /** @return */
     public function createForRepo(array $params): Project
     {
         $arguments = [];
@@ -113,6 +119,7 @@ final class Projects
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function createForAuthenticatedUser(array $params): Project|WithoutBody
     {
         $operator = new Internal\Operator\Projects\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Projects());

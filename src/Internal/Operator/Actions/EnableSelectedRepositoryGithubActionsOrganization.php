@@ -22,6 +22,7 @@ final readonly class EnableSelectedRepositoryGithubActionsOrganization
     {
     }
 
+    /** @return */
     public function call(string $org, int $repositoryId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\EnableSelectedRepositoryGithubActionsOrganization($org, $repositoryId);

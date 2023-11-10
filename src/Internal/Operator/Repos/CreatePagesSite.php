@@ -24,6 +24,7 @@ final readonly class CreatePagesSite
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): Page
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreatePagesSite($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

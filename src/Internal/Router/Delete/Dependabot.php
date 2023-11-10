@@ -19,6 +19,7 @@ final class Dependabot
     {
     }
 
+    /** @return */
     public function deleteRepoSecret(array $params): WithoutBody
     {
         $arguments = [];
@@ -45,6 +46,7 @@ final class Dependabot
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name']);
     }
 
+    /** @return */
     public function deleteOrgSecret(array $params): WithoutBody
     {
         $arguments = [];
@@ -65,6 +67,7 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
+    /** @return */
     public function removeSelectedRepoFromOrgSecret(array $params): WithoutBody
     {
         $arguments = [];

@@ -24,6 +24,7 @@ final readonly class UnsuspendInstallation
     {
     }
 
+    /** @return */
     public function call(int $installationId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\UnsuspendInstallation($this->responseSchemaValidator, $this->hydrator, $installationId);

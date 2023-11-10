@@ -21,6 +21,7 @@ final class Checks
     {
     }
 
+    /** @return */
     public function create(array $params): CheckRun
     {
         $arguments = [];
@@ -41,6 +42,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function createSuite(array $params): CheckSuite
     {
         $arguments = [];
@@ -61,6 +63,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function rerequestRun(array $params): EmptyObject
     {
         $arguments = [];
@@ -87,6 +90,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['check_run_id']);
     }
 
+    /** @return */
     public function rerequestSuite(array $params): EmptyObject
     {
         $arguments = [];

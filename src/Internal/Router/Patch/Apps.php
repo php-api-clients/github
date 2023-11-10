@@ -20,6 +20,7 @@ final class Apps
     {
     }
 
+    /** @return */
     public function updateWebhookConfigForApp(array $params): WebhookConfig
     {
         $operator = new Internal\Operator\Apps\UpdateWebhookConfigForApp($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀App🌀Hook🌀Config());
@@ -27,6 +28,7 @@ final class Apps
         return $operator->call($params);
     }
 
+    /** @return */
     public function resetToken(array $params): Authorization
     {
         $arguments = [];

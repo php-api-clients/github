@@ -24,6 +24,7 @@ final readonly class UpdateInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, array $params): TeamFull
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\UpdateInOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $teamSlug);

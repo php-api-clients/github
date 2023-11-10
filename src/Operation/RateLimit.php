@@ -14,6 +14,7 @@ final class RateLimit
     {
     }
 
+    /** @return */
     public function get(): RateLimitOverview|WithoutBody
     {
         return $this->operators->rateLimit👷Get()->call();

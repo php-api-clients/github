@@ -21,6 +21,7 @@ final class Copilot
     {
     }
 
+    /** @return */
     public function cancelCopilotSeatAssignmentForTeams(array $params): Ok|WithoutBody
     {
         $arguments = [];
@@ -35,6 +36,7 @@ final class Copilot
         return $operator->call($arguments['org'], $params);
     }
 
+    /** @return */
     public function cancelCopilotSeatAssignmentForUsers(array $params): Json|WithoutBody
     {
         $arguments = [];

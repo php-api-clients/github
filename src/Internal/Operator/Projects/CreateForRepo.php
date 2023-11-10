@@ -24,6 +24,7 @@ final readonly class CreateForRepo
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): Project
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\CreateForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

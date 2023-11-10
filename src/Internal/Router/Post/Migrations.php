@@ -20,6 +20,7 @@ final class Migrations
     {
     }
 
+    /** @return */
     public function startForOrg(array $params): Migration
     {
         $arguments = [];
@@ -34,6 +35,7 @@ final class Migrations
         return $operator->call($arguments['org'], $params);
     }
 
+    /** @return */
     public function startForAuthenticatedUser(array $params): Migration|WithoutBody
     {
         $operator = new Internal\Operator\Migrations\StartForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations());

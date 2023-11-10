@@ -24,6 +24,7 @@ final readonly class UpdateComment
     {
     }
 
+    /** @return */
     public function call(string $gistId, int $commentId, array $params): GistComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\UpdateComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $gistId, $commentId);

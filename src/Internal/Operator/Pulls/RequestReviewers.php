@@ -25,6 +25,7 @@ final readonly class RequestReviewers
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $pullNumber, array $params): PullRequestSimple|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\RequestReviewers($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

@@ -24,6 +24,7 @@ final readonly class CreateWithPrForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $pullNumber, array $params): Codespace
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\CreateWithPrForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

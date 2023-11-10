@@ -24,6 +24,7 @@ final readonly class StartForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): Migration
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\StartForOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

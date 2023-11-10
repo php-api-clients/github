@@ -25,6 +25,7 @@ final readonly class UpdateColumn
     {
     }
 
+    /** @return */
     public function call(int $columnId, array $params): ProjectColumn|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\UpdateColumn($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $columnId);

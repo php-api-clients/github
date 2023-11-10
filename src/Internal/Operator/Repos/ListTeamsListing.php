@@ -24,7 +24,7 @@ final readonly class ListTeamsListing
     {
     }
 
-    /** @return iterable<int,Schema\Team> */
+    /** @return Observable<Schema\Team> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListTeamsListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

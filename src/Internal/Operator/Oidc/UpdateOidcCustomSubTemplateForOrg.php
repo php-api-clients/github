@@ -24,6 +24,7 @@ final readonly class UpdateOidcCustomSubTemplateForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): EmptyObject
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Oidc\UpdateOidcCustomSubTemplateForOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

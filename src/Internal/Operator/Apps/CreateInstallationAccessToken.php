@@ -24,6 +24,7 @@ final readonly class CreateInstallationAccessToken
     {
     }
 
+    /** @return */
     public function call(int $installationId, array $params): InstallationToken
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\CreateInstallationAccessToken($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $installationId);

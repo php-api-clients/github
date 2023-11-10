@@ -23,6 +23,7 @@ final readonly class AddOrUpdateRepoPermissionsInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, string $owner, string $repo, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\AddOrUpdateRepoPermissionsInOrg($this->requestSchemaValidator, $org, $teamSlug, $owner, $repo);

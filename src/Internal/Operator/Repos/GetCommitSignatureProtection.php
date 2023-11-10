@@ -24,6 +24,7 @@ final readonly class GetCommitSignatureProtection
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $branch): ProtectedBranchAdminEnforced
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetCommitSignatureProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

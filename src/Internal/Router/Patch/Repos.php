@@ -29,6 +29,7 @@ final class Repos
     {
     }
 
+    /** @return */
     public function update(array $params): FullRepository|BasicError
     {
         $arguments = [];
@@ -49,6 +50,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function acceptInvitationForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -63,6 +65,7 @@ final class Repos
         return $operator->call($arguments['invitation_id']);
     }
 
+    /** @return */
     public function updateCommitComment(array $params): CommitComment
     {
         $arguments = [];
@@ -89,6 +92,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $params);
     }
 
+    /** @return */
     public function updateWebhook(array $params): Hook
     {
         $arguments = [];
@@ -115,6 +119,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id'], $params);
     }
 
+    /** @return */
     public function updateInvitation(array $params): RepositoryInvitation
     {
         $arguments = [];
@@ -141,6 +146,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['invitation_id'], $params);
     }
 
+    /** @return */
     public function updateRelease(array $params): Release
     {
         $arguments = [];
@@ -167,6 +173,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id'], $params);
     }
 
+    /** @return */
     public function updateWebhookConfigForRepo(array $params): WebhookConfig
     {
         $arguments = [];
@@ -193,6 +200,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id'], $params);
     }
 
+    /** @return */
     public function updateReleaseAsset(array $params): ReleaseAsset
     {
         $arguments = [];
@@ -219,6 +227,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['asset_id'], $params);
     }
 
+    /** @return */
     public function updatePullRequestReviewProtection(array $params): ProtectedBranchPullRequestReview
     {
         $arguments = [];
@@ -245,6 +254,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch'], $params);
     }
 
+    /** @return */
     public function updateStatusCheckProtection(array $params): StatusCheckPolicy
     {
         $arguments = [];

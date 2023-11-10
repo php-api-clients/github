@@ -24,6 +24,7 @@ final readonly class RemoveCollaborator
     {
     }
 
+    /** @return */
     public function call(int $projectId, string $username): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\RemoveCollaborator($this->responseSchemaValidator, $this->hydrator, $projectId, $username);

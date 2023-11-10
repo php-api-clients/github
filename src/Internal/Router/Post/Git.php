@@ -23,6 +23,7 @@ final class Git
     {
     }
 
+    /** @return */
     public function createBlob(array $params): ShortBlob
     {
         $arguments = [];
@@ -43,6 +44,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function createCommit(array $params): GitCommit
     {
         $arguments = [];
@@ -63,6 +65,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function createRef(array $params): GitRef
     {
         $arguments = [];
@@ -83,6 +86,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function createTag(array $params): GitTag
     {
         $arguments = [];
@@ -103,6 +107,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function createTree(array $params): GitTree
     {
         $arguments = [];

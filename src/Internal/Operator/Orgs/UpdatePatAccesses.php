@@ -24,6 +24,7 @@ final readonly class UpdatePatAccesses
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\UpdatePatAccesses($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

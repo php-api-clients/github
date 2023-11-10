@@ -24,6 +24,7 @@ final readonly class CreateRemoveTokenForOrg
     {
     }
 
+    /** @return */
     public function call(string $org): AuthenticationToken
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\CreateRemoveTokenForOrg($this->responseSchemaValidator, $this->hydrator, $org);

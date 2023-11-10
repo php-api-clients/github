@@ -24,7 +24,7 @@ final readonly class ListDiscussionCommentsInOrg
     {
     }
 
-    /** @return iterable<int,Schema\TeamDiscussionComment> */
+    /** @return Observable<Schema\TeamDiscussionComment> */
     public function call(string $org, string $teamSlug, int $discussionNumber, string $direction = 'desc', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\ListDiscussionCommentsInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $discussionNumber, $direction, $perPage, $page);

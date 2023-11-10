@@ -24,6 +24,7 @@ final readonly class GetUserInstallation
     {
     }
 
+    /** @return */
     public function call(string $username): Installation
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetUserInstallation($this->responseSchemaValidator, $this->hydrator, $username);

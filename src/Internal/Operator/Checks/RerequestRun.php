@@ -24,6 +24,7 @@ final readonly class RerequestRun
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $checkRunId): EmptyObject
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\RerequestRun($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $checkRunId);

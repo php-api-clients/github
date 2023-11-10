@@ -24,6 +24,7 @@ final readonly class GetEvent
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $eventId): IssueEvent
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\GetEvent($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $eventId);

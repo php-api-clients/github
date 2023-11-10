@@ -25,7 +25,7 @@ final readonly class List_
     {
     }
 
-    /** @return iterable<int,Schema\SimpleUser>|WithoutBody */
+    /** @return Observable<Schema\SimpleUser>|WithoutBody */
     public function call(int $since, int $perPage = 30): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\List_($this->responseSchemaValidator, $this->hydrator, $since, $perPage);

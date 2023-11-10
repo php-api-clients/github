@@ -24,6 +24,7 @@ final readonly class GetReleaseByTag
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $tag): Release
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetReleaseByTag($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $tag);

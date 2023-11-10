@@ -20,6 +20,7 @@ final class SecurityAdvisories
     {
     }
 
+    /** @return */
     public function createPrivateVulnerabilityReport(array $params): RepositoryAdvisory
     {
         $arguments = [];
@@ -40,6 +41,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function createRepositoryAdvisory(array $params): RepositoryAdvisory
     {
         $arguments = [];
@@ -60,6 +62,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function createRepositoryAdvisoryCveRequest(array $params): Json
     {
         $arguments = [];

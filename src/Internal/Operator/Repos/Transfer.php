@@ -24,6 +24,7 @@ final readonly class Transfer
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): MinimalRepository
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\Transfer($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

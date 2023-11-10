@@ -24,6 +24,7 @@ final readonly class AddRepositoryForSecretForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $secretName, int $repositoryId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\AddRepositoryForSecretForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $secretName, $repositoryId);

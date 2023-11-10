@@ -24,6 +24,7 @@ final readonly class UpdateBranch
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $pullNumber, array $params): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\UpdateBranch($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

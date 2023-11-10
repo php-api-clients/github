@@ -23,6 +23,7 @@ final readonly class ReviewCustomGatesForRun
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $runId, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ReviewCustomGatesForRun($this->requestSchemaValidator, $owner, $repo, $runId);

@@ -25,6 +25,7 @@ final readonly class UpdateDefaultSetup
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): EmptyObject|CodeScanningDefaultSetupUpdateResponse
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\UpdateDefaultSetup($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

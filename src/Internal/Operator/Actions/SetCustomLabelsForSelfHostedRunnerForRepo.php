@@ -24,6 +24,7 @@ final readonly class SetCustomLabelsForSelfHostedRunnerForRepo
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $runnerId, array $params): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\SetCustomLabelsForSelfHostedRunnerForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runnerId);

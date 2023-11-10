@@ -24,6 +24,7 @@ final readonly class CreateCommitStatus
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $sha, array $params): Status
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateCommitStatus($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $sha);

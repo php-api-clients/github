@@ -22,6 +22,7 @@ final readonly class DeleteForTeamDiscussion
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, int $discussionNumber, int $reactionId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Reactions\DeleteForTeamDiscussion($org, $teamSlug, $discussionNumber, $reactionId);

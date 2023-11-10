@@ -24,6 +24,7 @@ final readonly class Unfollow
     {
     }
 
+    /** @return */
     public function call(string $username): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\Unfollow($this->responseSchemaValidator, $this->hydrator, $username);

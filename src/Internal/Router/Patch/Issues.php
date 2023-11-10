@@ -23,6 +23,7 @@ final class Issues
     {
     }
 
+    /** @return */
     public function update(array $params): Issue|BasicError
     {
         $arguments = [];
@@ -49,6 +50,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
+    /** @return */
     public function updateLabel(array $params): Label
     {
         $arguments = [];
@@ -75,6 +77,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name'], $params);
     }
 
+    /** @return */
     public function updateMilestone(array $params): Milestone
     {
         $arguments = [];
@@ -101,6 +104,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone_number'], $params);
     }
 
+    /** @return */
     public function updateComment(array $params): IssueComment
     {
         $arguments = [];

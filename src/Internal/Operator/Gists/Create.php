@@ -25,6 +25,7 @@ final readonly class Create
     {
     }
 
+    /** @return */
     public function call(array $params): GistSimple|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\Create($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

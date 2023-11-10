@@ -25,6 +25,7 @@ final readonly class RepoMachinesForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $location, string $clientIp, string $ref): Ok|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\RepoMachinesForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $location, $clientIp, $ref);

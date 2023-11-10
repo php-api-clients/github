@@ -24,6 +24,7 @@ final readonly class GetPackageForOrganization
     {
     }
 
+    /** @return */
     public function call(string $packageType, string $packageName, string $org): Package
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\GetPackageForOrganization($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $org);

@@ -19,6 +19,7 @@ final class Oidc
     {
     }
 
+    /** @return */
     public function getOidcCustomSubTemplateForOrg(array $params): OidcCustomSub
     {
         $arguments = [];

@@ -24,6 +24,7 @@ final readonly class CheckPersonIsFollowedByAuthenticated
     {
     }
 
+    /** @return */
     public function call(string $username): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\CheckPersonIsFollowedByAuthenticated($this->responseSchemaValidator, $this->hydrator, $username);

@@ -24,6 +24,7 @@ final readonly class SetSelectedReposForOrgSecret
     {
     }
 
+    /** @return */
     public function call(string $org, string $secretName, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\SetSelectedReposForOrgSecret($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $secretName);

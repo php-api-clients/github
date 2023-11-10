@@ -25,6 +25,7 @@ final readonly class GetMembershipForUserInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, string $username): TeamMembership|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\GetMembershipForUserInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $username);

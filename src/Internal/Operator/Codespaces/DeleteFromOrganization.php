@@ -25,6 +25,7 @@ final readonly class DeleteFromOrganization
     {
     }
 
+    /** @return */
     public function call(string $org, string $username, string $codespaceName): Json|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\DeleteFromOrganization($this->responseSchemaValidator, $this->hydrator, $org, $username, $codespaceName);

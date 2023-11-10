@@ -22,6 +22,7 @@ final readonly class RemoveRestrictionsForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Interactions\RemoveRestrictionsForAuthenticatedUser();

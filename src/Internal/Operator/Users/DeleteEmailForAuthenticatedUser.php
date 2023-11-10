@@ -24,6 +24,7 @@ final readonly class DeleteEmailForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\DeleteEmailForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

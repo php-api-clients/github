@@ -24,6 +24,7 @@ final readonly class GetBranchProtection
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $branch): BranchProtection
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetBranchProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

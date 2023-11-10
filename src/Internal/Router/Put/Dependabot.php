@@ -20,6 +20,7 @@ final class Dependabot
     {
     }
 
+    /** @return */
     public function setSelectedReposForOrgSecret(array $params): WithoutBody
     {
         $arguments = [];
@@ -40,6 +41,7 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['secret_name'], $params);
     }
 
+    /** @return */
     public function createOrUpdateRepoSecret(array $params): EmptyObject|WithoutBody
     {
         $arguments = [];
@@ -66,6 +68,7 @@ final class Dependabot
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name'], $params);
     }
 
+    /** @return */
     public function createOrUpdateOrgSecret(array $params): EmptyObject|WithoutBody
     {
         $arguments = [];
@@ -86,6 +89,7 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['secret_name'], $params);
     }
 
+    /** @return */
     public function addSelectedRepoToOrgSecret(array $params): WithoutBody
     {
         $arguments = [];

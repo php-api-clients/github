@@ -24,6 +24,7 @@ final readonly class AddMemberLegacy
     {
     }
 
+    /** @return */
     public function call(int $teamId, string $username): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\AddMemberLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $username);

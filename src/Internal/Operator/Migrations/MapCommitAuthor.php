@@ -24,6 +24,7 @@ final readonly class MapCommitAuthor
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $authorId, array $params): PorterAuthor
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\MapCommitAuthor($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $authorId);

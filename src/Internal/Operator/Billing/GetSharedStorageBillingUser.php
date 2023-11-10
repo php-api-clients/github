@@ -24,6 +24,7 @@ final readonly class GetSharedStorageBillingUser
     {
     }
 
+    /** @return */
     public function call(string $username): CombinedBillingUsage
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Billing\GetSharedStorageBillingUser($this->responseSchemaValidator, $this->hydrator, $username);

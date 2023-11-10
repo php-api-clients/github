@@ -22,7 +22,7 @@ final class Packages
     {
     }
 
-    /** @return iterable<int,Schema\Package>|WithoutBody */
+    /** @return Observable<Schema\Package>|WithoutBody */
     public function listPackagesForAuthenticatedUser(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -55,7 +55,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['visibility'], $arguments['page'], $arguments['per_page']);
     }
 
-    /** @return iterable<int,Schema\Package>|WithoutBody */
+    /** @return Observable<Schema\Package>|WithoutBody */
     public function listPackagesForOrganization(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -94,7 +94,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['org'], $arguments['visibility'], $arguments['page'], $arguments['per_page']);
     }
 
-    /** @return iterable<int,Schema\Package> */
+    /** @return Observable<Schema\Package> */
     public function listDockerMigrationConflictingPackagesForAuthenticatedUser(array $params): iterable
     {
         $operator = new Internal\Operator\Packages\ListDockerMigrationConflictingPackagesForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Docker🌀Conflicts());
@@ -102,7 +102,7 @@ final class Packages
         return $operator->call();
     }
 
-    /** @return iterable<int,Schema\Package>|WithoutBody */
+    /** @return Observable<Schema\Package>|WithoutBody */
     public function listPackagesForUser(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -141,7 +141,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['visibility'], $arguments['username'], $arguments['page'], $arguments['per_page']);
     }
 
-    /** @return iterable<int,Schema\Package> */
+    /** @return Observable<Schema\Package> */
     public function listDockerMigrationConflictingPackagesForOrganization(array $params): iterable
     {
         $arguments = [];
@@ -156,6 +156,7 @@ final class Packages
         return $operator->call($arguments['org']);
     }
 
+    /** @return */
     public function getPackageForAuthenticatedUser(array $params): Package
     {
         $arguments = [];
@@ -176,7 +177,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name']);
     }
 
-    /** @return iterable<int,Schema\Package> */
+    /** @return Observable<Schema\Package> */
     public function listDockerMigrationConflictingPackagesForUser(array $params): iterable
     {
         $arguments = [];
@@ -191,6 +192,7 @@ final class Packages
         return $operator->call($arguments['username']);
     }
 
+    /** @return */
     public function getPackageForOrganization(array $params): Package
     {
         $arguments = [];
@@ -217,7 +219,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org']);
     }
 
-    /** @return iterable<int,Schema\PackageVersion> */
+    /** @return Observable<Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByAuthenticatedUser(array $params): iterable
     {
         $arguments = [];
@@ -256,6 +258,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['page'], $arguments['per_page'], $arguments['state']);
     }
 
+    /** @return */
     public function getPackageForUser(array $params): Package
     {
         $arguments = [];
@@ -282,7 +285,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['username']);
     }
 
-    /** @return iterable<int,Schema\PackageVersion> */
+    /** @return Observable<Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByOrg(array $params): iterable
     {
         $arguments = [];
@@ -327,6 +330,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org'], $arguments['page'], $arguments['per_page'], $arguments['state']);
     }
 
+    /** @return */
     public function getPackageVersionForAuthenticatedUser(array $params): PackageVersion
     {
         $arguments = [];
@@ -353,7 +357,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['package_version_id']);
     }
 
-    /** @return iterable<int,Schema\PackageVersion> */
+    /** @return Observable<Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByUser(array $params): iterable
     {
         $arguments = [];
@@ -380,6 +384,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['username']);
     }
 
+    /** @return */
     public function getPackageVersionForOrganization(array $params): PackageVersion
     {
         $arguments = [];
@@ -412,6 +417,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org'], $arguments['package_version_id']);
     }
 
+    /** @return */
     public function getPackageVersionForUser(array $params): PackageVersion
     {
         $arguments = [];

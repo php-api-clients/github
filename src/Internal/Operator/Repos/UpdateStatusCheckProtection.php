@@ -24,6 +24,7 @@ final readonly class UpdateStatusCheckProtection
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $branch, array $params): StatusCheckPolicy
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdateStatusCheckProtection($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

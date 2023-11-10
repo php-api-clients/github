@@ -24,6 +24,7 @@ final readonly class Merge
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $pullNumber, array $params): PullRequestMergeResult
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\Merge($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

@@ -24,6 +24,7 @@ final readonly class UpdateInformationAboutPagesSite
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdateInformationAboutPagesSite($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

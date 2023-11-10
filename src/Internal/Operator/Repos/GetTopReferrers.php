@@ -24,7 +24,7 @@ final readonly class GetTopReferrers
     {
     }
 
-    /** @return iterable<int,Schema\ReferrerTraffic> */
+    /** @return Observable<Schema\ReferrerTraffic> */
     public function call(string $owner, string $repo): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetTopReferrers($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

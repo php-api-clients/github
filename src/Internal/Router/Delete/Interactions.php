@@ -19,6 +19,7 @@ final class Interactions
     {
     }
 
+    /** @return */
     public function removeRestrictionsForOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -33,6 +34,7 @@ final class Interactions
         return $operator->call($arguments['org']);
     }
 
+    /** @return */
     public function removeRestrictionsForRepo(array $params): WithoutBody
     {
         $arguments = [];
@@ -53,6 +55,7 @@ final class Interactions
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
+    /** @return */
     public function removeRestrictionsForAuthenticatedUser(array $params): WithoutBody
     {
         $operator = new Internal\Operator\Interactions\RemoveRestrictionsForAuthenticatedUser($this->browser, $this->authentication);

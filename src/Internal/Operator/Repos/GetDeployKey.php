@@ -24,6 +24,7 @@ final readonly class GetDeployKey
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $keyId): DeployKey
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetDeployKey($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $keyId);

@@ -14,11 +14,13 @@ final class Oidc
     {
     }
 
+    /** @return */
     public function getOidcCustomSubTemplateForOrg(string $org): OidcCustomSub
     {
         return $this->operators->oidc👷GetOidcCustomSubTemplateForOrg()->call($org);
     }
 
+    /** @return */
     public function updateOidcCustomSubTemplateForOrg(string $org, array $params): EmptyObject
     {
         return $this->operators->oidc👷UpdateOidcCustomSubTemplateForOrg()->call($org, $params);

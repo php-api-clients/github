@@ -24,6 +24,7 @@ final readonly class GetAnalysis
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $analysisId): CodeScanningAnalysis
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\GetAnalysis($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $analysisId);

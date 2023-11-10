@@ -21,6 +21,7 @@ final class Copilot
     {
     }
 
+    /** @return */
     public function addCopilotForBusinessSeatsForTeams(array $params): Created|WithoutBody
     {
         $arguments = [];
@@ -35,6 +36,7 @@ final class Copilot
         return $operator->call($arguments['org'], $params);
     }
 
+    /** @return */
     public function addCopilotForBusinessSeatsForUsers(array $params): Json|WithoutBody
     {
         $arguments = [];

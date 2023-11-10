@@ -18,7 +18,7 @@ final class Migrations
     {
     }
 
-    /** @return iterable<int,string> */
+    /** @return Observable<string> */
     public function downloadArchiveForOrgStreaming(array $params): iterable
     {
         $arguments = [];

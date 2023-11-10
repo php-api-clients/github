@@ -22,6 +22,7 @@ final class Gists
     {
     }
 
+    /** @return */
     public function createComment(array $params): GistComment|WithoutBody
     {
         $arguments = [];
@@ -36,6 +37,7 @@ final class Gists
         return $operator->call($arguments['gist_id'], $params);
     }
 
+    /** @return */
     public function fork(array $params): BaseGist|WithoutBody
     {
         $arguments = [];
@@ -50,6 +52,7 @@ final class Gists
         return $operator->call($arguments['gist_id']);
     }
 
+    /** @return */
     public function create(array $params): GistSimple|WithoutBody
     {
         $operator = new Internal\Operator\Gists\Create($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gists());

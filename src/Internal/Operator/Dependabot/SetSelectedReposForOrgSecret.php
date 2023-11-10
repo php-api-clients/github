@@ -23,6 +23,7 @@ final readonly class SetSelectedReposForOrgSecret
     {
     }
 
+    /** @return */
     public function call(string $org, string $secretName, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Dependabot\SetSelectedReposForOrgSecret($this->requestSchemaValidator, $org, $secretName);

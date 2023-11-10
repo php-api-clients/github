@@ -21,7 +21,7 @@ final readonly class DownloadJobLogsForWorkflowRunStreaming
     {
     }
 
-    /** @return iterable<int,string> */
+    /** @return Observable<string> */
     public function call(string $owner, string $repo, int $jobId): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DownloadJobLogsForWorkflowRunStreaming($this->browser, $owner, $repo, $jobId);

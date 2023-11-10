@@ -24,6 +24,7 @@ final readonly class Unstar
     {
     }
 
+    /** @return */
     public function call(string $gistId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\Unstar($this->responseSchemaValidator, $this->hydrator, $gistId);

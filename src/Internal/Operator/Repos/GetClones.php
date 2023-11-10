@@ -24,6 +24,7 @@ final readonly class GetClones
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $per = 'day'): CloneTraffic
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetClones($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $per);

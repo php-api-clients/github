@@ -24,6 +24,7 @@ final readonly class DeleteCodespacesAccessUsers
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\DeleteCodespacesAccessUsers($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

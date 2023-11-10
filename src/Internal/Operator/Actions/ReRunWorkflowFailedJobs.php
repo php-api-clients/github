@@ -24,6 +24,7 @@ final readonly class ReRunWorkflowFailedJobs
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $runId, array $params): EmptyObject
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ReRunWorkflowFailedJobs($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $runId);

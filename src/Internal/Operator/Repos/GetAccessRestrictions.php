@@ -24,6 +24,7 @@ final readonly class GetAccessRestrictions
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $branch): BranchRestrictionPolicy
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetAccessRestrictions($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

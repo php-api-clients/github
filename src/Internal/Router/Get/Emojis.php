@@ -17,6 +17,7 @@ final class Emojis
     {
     }
 
+    /** @return */
     public function get(array $params): Json|WithoutBody
     {
         $operator = new Internal\Operator\Emojis\Get($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Emojis());

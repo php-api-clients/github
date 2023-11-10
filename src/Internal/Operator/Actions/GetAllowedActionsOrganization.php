@@ -24,6 +24,7 @@ final readonly class GetAllowedActionsOrganization
     {
     }
 
+    /** @return */
     public function call(string $org): SelectedActions
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetAllowedActionsOrganization($this->responseSchemaValidator, $this->hydrator, $org);

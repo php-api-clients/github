@@ -19,6 +19,7 @@ final class Gists
     {
     }
 
+    /** @return */
     public function unstar(array $params): WithoutBody
     {
         $arguments = [];
@@ -33,6 +34,7 @@ final class Gists
         return $operator->call($arguments['gist_id']);
     }
 
+    /** @return */
     public function deleteComment(array $params): WithoutBody
     {
         $arguments = [];
@@ -53,6 +55,7 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['comment_id']);
     }
 
+    /** @return */
     public function delete(array $params): WithoutBody
     {
         $arguments = [];

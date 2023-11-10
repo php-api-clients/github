@@ -16,23 +16,25 @@ final class Licenses
     {
     }
 
-    /** @return iterable<int,Schema\LicenseSimple>|WithoutBody */
+    /** @return Observable<Schema\LicenseSimple>|WithoutBody */
     public function getAllCommonlyUsed(bool $featured, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->licenses👷GetAllCommonlyUsed()->call($featured, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\LicenseSimple>|WithoutBody */
+    /** @return Observable<Schema\LicenseSimple>|WithoutBody */
     public function getAllCommonlyUsedListing(bool $featured, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->licenses👷GetAllCommonlyUsedListing()->call($featured, $perPage, $page);
     }
 
+    /** @return */
     public function get(string $license): License|WithoutBody
     {
         return $this->operators->licenses👷Get()->call($license);
     }
 
+    /** @return */
     public function getForRepo(string $owner, string $repo): LicenseContent
     {
         return $this->operators->licenses👷GetForRepo()->call($owner, $repo);

@@ -24,6 +24,7 @@ final readonly class GetMembershipForUser
     {
     }
 
+    /** @return */
     public function call(string $org, string $username): OrgMembership
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\GetMembershipForUser($this->responseSchemaValidator, $this->hydrator, $org, $username);

@@ -24,7 +24,7 @@ final readonly class ListTagsListing
     {
     }
 
-    /** @return iterable<int,Schema\Tag> */
+    /** @return Observable<Schema\Tag> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListTagsListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

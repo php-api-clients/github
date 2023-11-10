@@ -24,6 +24,7 @@ final readonly class ListOrgSecrets
     {
     }
 
+    /** @return */
     public function call(string $org, int $perPage = 30, int $page = 1): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListOrgSecrets($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

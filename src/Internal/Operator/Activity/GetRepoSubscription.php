@@ -25,6 +25,7 @@ final readonly class GetRepoSubscription
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): RepositorySubscription|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\GetRepoSubscription($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -24,6 +24,7 @@ final readonly class Block
     {
     }
 
+    /** @return */
     public function call(string $username): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\Block($this->responseSchemaValidator, $this->hydrator, $username);

@@ -24,6 +24,7 @@ final readonly class CreateOrgVariable
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): EmptyObject
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\CreateOrgVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

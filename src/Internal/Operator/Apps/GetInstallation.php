@@ -24,6 +24,7 @@ final readonly class GetInstallation
     {
     }
 
+    /** @return */
     public function call(int $installationId): Installation
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetInstallation($this->responseSchemaValidator, $this->hydrator, $installationId);

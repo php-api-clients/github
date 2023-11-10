@@ -24,6 +24,7 @@ final readonly class GetReadmeInDirectory
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $dir, string $ref): ContentFile
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetReadmeInDirectory($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $dir, $ref);

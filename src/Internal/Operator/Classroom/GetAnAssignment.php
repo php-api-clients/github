@@ -24,6 +24,7 @@ final readonly class GetAnAssignment
     {
     }
 
+    /** @return */
     public function call(int $assignmentId): ClassroomAssignment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Classroom\GetAnAssignment($this->responseSchemaValidator, $this->hydrator, $assignmentId);

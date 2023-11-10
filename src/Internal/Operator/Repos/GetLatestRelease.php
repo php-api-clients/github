@@ -24,6 +24,7 @@ final readonly class GetLatestRelease
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): Release
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetLatestRelease($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

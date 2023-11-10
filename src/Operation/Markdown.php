@@ -13,11 +13,13 @@ final class Markdown
     {
     }
 
+    /** @return */
     public function render(array $params): WithoutBody|string
     {
         return $this->operators->markdown👷Render()->call($params);
     }
 
+    /** @return */
     public function renderRaw(array $params): WithoutBody|string
     {
         return $this->operators->markdown👷RenderRaw()->call($params);

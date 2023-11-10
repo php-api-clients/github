@@ -24,6 +24,7 @@ final readonly class CheckRepoIsStarredByAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\CheckRepoIsStarredByAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

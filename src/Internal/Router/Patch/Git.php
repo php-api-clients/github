@@ -19,6 +19,7 @@ final class Git
     {
     }
 
+    /** @return */
     public function updateRef(array $params): GitRef
     {
         $arguments = [];

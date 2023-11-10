@@ -24,6 +24,7 @@ final readonly class ListRequestedReviewers
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $pullNumber): PullRequestReviewRequest
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\ListRequestedReviewers($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

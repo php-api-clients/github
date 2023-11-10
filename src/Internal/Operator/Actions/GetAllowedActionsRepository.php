@@ -24,6 +24,7 @@ final readonly class GetAllowedActionsRepository
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): SelectedActions
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetAllowedActionsRepository($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

@@ -24,6 +24,7 @@ final readonly class GetDeploymentStatus
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $deploymentId, int $statusId): DeploymentStatus
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetDeploymentStatus($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $deploymentId, $statusId);

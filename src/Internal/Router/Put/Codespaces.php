@@ -20,6 +20,7 @@ final class Codespaces
     {
     }
 
+    /** @return */
     public function setCodespacesAccess(array $params): WithoutBody
     {
         $arguments = [];
@@ -34,6 +35,7 @@ final class Codespaces
         return $operator->call($arguments['org'], $params);
     }
 
+    /** @return */
     public function createOrUpdateSecretForAuthenticatedUser(array $params): EmptyObject|WithoutBody
     {
         $arguments = [];
@@ -48,6 +50,7 @@ final class Codespaces
         return $operator->call($arguments['secret_name'], $params);
     }
 
+    /** @return */
     public function setSelectedReposForOrgSecret(array $params): WithoutBody
     {
         $arguments = [];
@@ -68,6 +71,7 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['secret_name'], $params);
     }
 
+    /** @return */
     public function createOrUpdateRepoSecret(array $params): EmptyObject|WithoutBody
     {
         $arguments = [];
@@ -94,6 +98,7 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name'], $params);
     }
 
+    /** @return */
     public function addRepositoryForSecretForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -114,6 +119,7 @@ final class Codespaces
         return $operator->call($arguments['secret_name'], $arguments['repository_id']);
     }
 
+    /** @return */
     public function createOrUpdateOrgSecret(array $params): EmptyObject|WithoutBody
     {
         $arguments = [];
@@ -134,6 +140,7 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['secret_name'], $params);
     }
 
+    /** @return */
     public function setRepositoriesForSecretForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -148,6 +155,7 @@ final class Codespaces
         return $operator->call($arguments['secret_name'], $params);
     }
 
+    /** @return */
     public function addSelectedRepoToOrgSecret(array $params): WithoutBody
     {
         $arguments = [];

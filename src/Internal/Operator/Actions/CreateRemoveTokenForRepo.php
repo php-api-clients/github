@@ -24,6 +24,7 @@ final readonly class CreateRemoveTokenForRepo
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): AuthenticationToken
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\CreateRemoveTokenForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

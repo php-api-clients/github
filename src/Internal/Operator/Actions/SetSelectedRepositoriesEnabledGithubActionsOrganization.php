@@ -23,6 +23,7 @@ final readonly class SetSelectedRepositoriesEnabledGithubActionsOrganization
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\SetSelectedRepositoriesEnabledGithubActionsOrganization($this->requestSchemaValidator, $org);

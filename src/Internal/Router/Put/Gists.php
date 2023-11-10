@@ -19,6 +19,7 @@ final class Gists
     {
     }
 
+    /** @return */
     public function star(array $params): WithoutBody
     {
         $arguments = [];

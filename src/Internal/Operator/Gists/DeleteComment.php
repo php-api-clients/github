@@ -24,6 +24,7 @@ final readonly class DeleteComment
     {
     }
 
+    /** @return */
     public function call(string $gistId, int $commentId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\DeleteComment($this->responseSchemaValidator, $this->hydrator, $gistId, $commentId);

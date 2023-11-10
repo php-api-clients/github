@@ -15,12 +15,13 @@ final class CodesOfConduct
     {
     }
 
-    /** @return iterable<int,Schema\CodeOfConduct>|WithoutBody */
+    /** @return Observable<Schema\CodeOfConduct>|WithoutBody */
     public function getAllCodesOfConduct(): iterable|WithoutBody
     {
         return $this->operators->codesOfConduct👷GetAllCodesOfConduct()->call();
     }
 
+    /** @return */
     public function getConductCode(string $key): CodeOfConduct|WithoutBody
     {
         return $this->operators->codesOfConduct👷GetConductCode()->call($key);

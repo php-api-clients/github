@@ -20,7 +20,7 @@ final class Gitignore
     {
     }
 
-    /** @return iterable<int,string>|WithoutBody */
+    /** @return Observable<string>|WithoutBody */
     public function getAllTemplates(array $params): iterable|WithoutBody
     {
         $operator = new Internal\Operator\Gitignore\GetAllTemplates($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Gitignore🌀Templates());
@@ -28,6 +28,7 @@ final class Gitignore
         return $operator->call();
     }
 
+    /** @return */
     public function getTemplate(array $params): GitignoreTemplate|WithoutBody
     {
         $arguments = [];

@@ -25,6 +25,7 @@ final readonly class GetCodeqlDatabase
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $language): CodeScanningCodeqlDatabase|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\GetCodeqlDatabase($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $language);

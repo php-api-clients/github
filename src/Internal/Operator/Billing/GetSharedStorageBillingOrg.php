@@ -24,6 +24,7 @@ final readonly class GetSharedStorageBillingOrg
     {
     }
 
+    /** @return */
     public function call(string $org): CombinedBillingUsage
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Billing\GetSharedStorageBillingOrg($this->responseSchemaValidator, $this->hydrator, $org);

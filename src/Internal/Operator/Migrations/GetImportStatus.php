@@ -24,6 +24,7 @@ final readonly class GetImportStatus
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): Import
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\GetImportStatus($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

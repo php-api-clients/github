@@ -19,6 +19,7 @@ final class Apps
     {
     }
 
+    /** @return */
     public function deleteInstallation(array $params): WithoutBody
     {
         $arguments = [];
@@ -33,6 +34,7 @@ final class Apps
         return $operator->call($arguments['installation_id']);
     }
 
+    /** @return */
     public function deleteAuthorization(array $params): WithoutBody
     {
         $arguments = [];
@@ -47,6 +49,7 @@ final class Apps
         return $operator->call($arguments['client_id'], $params);
     }
 
+    /** @return */
     public function deleteToken(array $params): WithoutBody
     {
         $arguments = [];
@@ -61,6 +64,7 @@ final class Apps
         return $operator->call($arguments['client_id'], $params);
     }
 
+    /** @return */
     public function unsuspendInstallation(array $params): WithoutBody
     {
         $arguments = [];
@@ -75,6 +79,7 @@ final class Apps
         return $operator->call($arguments['installation_id']);
     }
 
+    /** @return */
     public function revokeInstallationAccessToken(array $params): WithoutBody
     {
         $operator = new Internal\Operator\Apps\RevokeInstallationAccessToken($this->browser, $this->authentication);
@@ -82,6 +87,7 @@ final class Apps
         return $operator->call();
     }
 
+    /** @return */
     public function removeRepoFromInstallationForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];

@@ -24,6 +24,7 @@ final readonly class GetArtifact
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $artifactId): Artifact
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetArtifact($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $artifactId);

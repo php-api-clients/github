@@ -22,6 +22,7 @@ final readonly class DownloadTarballArchive
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $ref): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DownloadTarballArchive($owner, $repo, $ref);

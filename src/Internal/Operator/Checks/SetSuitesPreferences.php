@@ -24,6 +24,7 @@ final readonly class SetSuitesPreferences
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): CheckSuitePreference
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\SetSuitesPreferences($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

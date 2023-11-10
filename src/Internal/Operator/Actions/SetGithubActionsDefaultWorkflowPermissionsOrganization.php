@@ -23,6 +23,7 @@ final readonly class SetGithubActionsDefaultWorkflowPermissionsOrganization
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\SetGithubActionsDefaultWorkflowPermissionsOrganization($this->requestSchemaValidator, $org);

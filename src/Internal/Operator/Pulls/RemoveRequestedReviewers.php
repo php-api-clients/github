@@ -24,6 +24,7 @@ final readonly class RemoveRequestedReviewers
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $pullNumber, array $params): PullRequestSimple
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\RemoveRequestedReviewers($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber);

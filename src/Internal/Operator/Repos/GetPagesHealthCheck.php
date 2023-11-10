@@ -26,6 +26,7 @@ final readonly class GetPagesHealthCheck
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): PagesHealthCheck|EmptyObject|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetPagesHealthCheck($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

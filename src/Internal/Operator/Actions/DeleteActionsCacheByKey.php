@@ -24,6 +24,7 @@ final readonly class DeleteActionsCacheByKey
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $key, string $ref): ActionsCacheList
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DeleteActionsCacheByKey($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $key, $ref);

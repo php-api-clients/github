@@ -24,6 +24,7 @@ final readonly class CreateForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(array $params): Codespace
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\CreateForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

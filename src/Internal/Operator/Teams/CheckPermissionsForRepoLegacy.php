@@ -25,6 +25,7 @@ final readonly class CheckPermissionsForRepoLegacy
     {
     }
 
+    /** @return */
     public function call(int $teamId, string $owner, string $repo): TeamRepository|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\CheckPermissionsForRepoLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $owner, $repo);

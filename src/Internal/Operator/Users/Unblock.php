@@ -24,6 +24,7 @@ final readonly class Unblock
     {
     }
 
+    /** @return */
     public function call(string $username): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\Unblock($this->responseSchemaValidator, $this->hydrator, $username);

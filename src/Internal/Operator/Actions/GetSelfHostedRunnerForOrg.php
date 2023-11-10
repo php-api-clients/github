@@ -24,6 +24,7 @@ final readonly class GetSelfHostedRunnerForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, int $runnerId): Runner
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetSelfHostedRunnerForOrg($this->responseSchemaValidator, $this->hydrator, $org, $runnerId);

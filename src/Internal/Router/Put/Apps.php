@@ -19,6 +19,7 @@ final class Apps
     {
     }
 
+    /** @return */
     public function suspendInstallation(array $params): WithoutBody
     {
         $arguments = [];
@@ -33,6 +34,7 @@ final class Apps
         return $operator->call($arguments['installation_id']);
     }
 
+    /** @return */
     public function addRepoToInstallationForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];

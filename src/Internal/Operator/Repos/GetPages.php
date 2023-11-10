@@ -24,6 +24,7 @@ final readonly class GetPages
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): Page
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetPages($this->responseSchemaValidator, $this->hydrator, $owner, $repo);

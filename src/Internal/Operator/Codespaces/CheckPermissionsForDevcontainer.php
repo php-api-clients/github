@@ -24,6 +24,7 @@ final readonly class CheckPermissionsForDevcontainer
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $ref, string $devcontainerPath): CodespacesPermissionsCheckForDevcontainer
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\CheckPermissionsForDevcontainer($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $devcontainerPath);

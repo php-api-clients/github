@@ -24,6 +24,7 @@ final readonly class UpdateDiscussionCommentLegacy
     {
     }
 
+    /** @return */
     public function call(int $teamId, int $discussionNumber, int $commentNumber, array $params): TeamDiscussionComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\UpdateDiscussionCommentLegacy($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $teamId, $discussionNumber, $commentNumber);

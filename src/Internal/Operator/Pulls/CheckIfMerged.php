@@ -22,6 +22,7 @@ final readonly class CheckIfMerged
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $pullNumber): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\CheckIfMerged($owner, $repo, $pullNumber);

@@ -22,6 +22,7 @@ final readonly class DeleteSelfHostedRunnerFromRepo
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $runnerId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DeleteSelfHostedRunnerFromRepo($owner, $repo, $runnerId);

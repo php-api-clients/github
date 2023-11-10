@@ -24,6 +24,7 @@ final readonly class GetOrgInstallation
     {
     }
 
+    /** @return */
     public function call(string $org): Installation
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetOrgInstallation($this->responseSchemaValidator, $this->hydrator, $org);

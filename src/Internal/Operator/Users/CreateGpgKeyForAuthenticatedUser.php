@@ -25,6 +25,7 @@ final readonly class CreateGpgKeyForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(array $params): GpgKey|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\CreateGpgKeyForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

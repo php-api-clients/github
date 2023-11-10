@@ -22,7 +22,7 @@ final class Licenses
     {
     }
 
-    /** @return iterable<int,Schema\LicenseSimple>|WithoutBody */
+    /** @return Observable<Schema\LicenseSimple>|WithoutBody */
     public function getAllCommonlyUsed(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -49,6 +49,7 @@ final class Licenses
         return $operator->call($arguments['featured'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function get(array $params): License|WithoutBody
     {
         $arguments = [];
@@ -63,6 +64,7 @@ final class Licenses
         return $operator->call($arguments['license']);
     }
 
+    /** @return */
     public function getForRepo(array $params): LicenseContent
     {
         $arguments = [];

@@ -24,6 +24,7 @@ final readonly class UpdateRepoRuleset
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $rulesetId, array $params): RepositoryRuleset
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdateRepoRuleset($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $rulesetId);

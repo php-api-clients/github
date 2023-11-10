@@ -24,6 +24,7 @@ final readonly class GetReviewComment
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $commentId): PullRequestReviewComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\GetReviewComment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commentId);

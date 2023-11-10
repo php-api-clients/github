@@ -25,6 +25,7 @@ final readonly class DeleteForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $codespaceName): Json|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\DeleteForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $codespaceName);

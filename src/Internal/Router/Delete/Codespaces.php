@@ -20,6 +20,7 @@ final class Codespaces
     {
     }
 
+    /** @return */
     public function deleteForAuthenticatedUser(array $params): Json|WithoutBody
     {
         $arguments = [];
@@ -34,6 +35,7 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
+    /** @return */
     public function deleteSecretForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -48,6 +50,7 @@ final class Codespaces
         return $operator->call($arguments['secret_name']);
     }
 
+    /** @return */
     public function deleteFromOrganization(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|WithoutBody
     {
         $arguments = [];
@@ -74,6 +77,7 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['username'], $arguments['codespace_name']);
     }
 
+    /** @return */
     public function deleteRepoSecret(array $params): WithoutBody
     {
         $arguments = [];
@@ -100,6 +104,7 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name']);
     }
 
+    /** @return */
     public function removeRepositoryForSecretForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -120,6 +125,7 @@ final class Codespaces
         return $operator->call($arguments['secret_name'], $arguments['repository_id']);
     }
 
+    /** @return */
     public function deleteCodespacesAccessUsers(array $params): WithoutBody
     {
         $arguments = [];
@@ -134,6 +140,7 @@ final class Codespaces
         return $operator->call($arguments['org'], $params);
     }
 
+    /** @return */
     public function deleteOrgSecret(array $params): WithoutBody
     {
         $arguments = [];
@@ -154,6 +161,7 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
+    /** @return */
     public function removeSelectedRepoFromOrgSecret(array $params): WithoutBody
     {
         $arguments = [];

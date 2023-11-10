@@ -24,6 +24,7 @@ final readonly class GetRevision
     {
     }
 
+    /** @return */
     public function call(string $gistId, string $sha): GistSimple
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\GetRevision($this->responseSchemaValidator, $this->hydrator, $gistId, $sha);

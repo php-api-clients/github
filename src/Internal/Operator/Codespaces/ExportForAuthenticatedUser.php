@@ -24,6 +24,7 @@ final readonly class ExportForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $codespaceName): CodespaceExportDetails
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\ExportForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $codespaceName);

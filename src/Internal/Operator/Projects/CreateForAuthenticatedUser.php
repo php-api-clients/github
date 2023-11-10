@@ -25,6 +25,7 @@ final readonly class CreateForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(array $params): Project|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\CreateForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

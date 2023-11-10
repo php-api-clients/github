@@ -24,6 +24,7 @@ final readonly class UpdateCommitComment
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $commentId, array $params): CommitComment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdateCommitComment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commentId);

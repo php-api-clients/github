@@ -24,6 +24,7 @@ final readonly class StartImport
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): Import
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\StartImport($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

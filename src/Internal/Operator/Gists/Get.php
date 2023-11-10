@@ -25,6 +25,7 @@ final readonly class Get
     {
     }
 
+    /** @return */
     public function call(string $gistId): GistSimple|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\Get($this->responseSchemaValidator, $this->hydrator, $gistId);

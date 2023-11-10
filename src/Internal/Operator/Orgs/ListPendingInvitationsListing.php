@@ -24,7 +24,7 @@ final readonly class ListPendingInvitationsListing
     {
     }
 
-    /** @return iterable<int,Schema\OrganizationInvitation> */
+    /** @return Observable<Schema\OrganizationInvitation> */
     public function call(string $org, int $perPage = 30, int $page = 1, string $role = 'all', string $invitationSource = 'all'): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListPendingInvitationsListing($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page, $role, $invitationSource);

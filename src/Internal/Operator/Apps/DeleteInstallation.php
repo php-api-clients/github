@@ -24,6 +24,7 @@ final readonly class DeleteInstallation
     {
     }
 
+    /** @return */
     public function call(int $installationId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\DeleteInstallation($this->responseSchemaValidator, $this->hydrator, $installationId);

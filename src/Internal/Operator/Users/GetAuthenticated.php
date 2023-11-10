@@ -26,6 +26,7 @@ final readonly class GetAuthenticated
     {
     }
 
+    /** @return */
     public function call(): PrivateUser|PublicUser|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\GetAuthenticated($this->responseSchemaValidator, $this->hydrator);

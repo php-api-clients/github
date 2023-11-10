@@ -24,6 +24,7 @@ final readonly class DeleteGpgKeyForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(int $gpgKeyId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\DeleteGpgKeyForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $gpgKeyId);

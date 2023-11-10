@@ -25,6 +25,7 @@ final readonly class CheckPermissionsForProjectInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, int $projectId): TeamProject|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\CheckPermissionsForProjectInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $projectId);

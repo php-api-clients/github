@@ -22,6 +22,7 @@ final readonly class DeleteArtifact
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $artifactId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DeleteArtifact($owner, $repo, $artifactId);

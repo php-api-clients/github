@@ -25,6 +25,7 @@ final readonly class Update
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): FullRepository|BasicError
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\Update($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

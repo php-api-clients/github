@@ -21,6 +21,7 @@ final class Interactions
     {
     }
 
+    /** @return */
     public function getRestrictionsForAuthenticatedUser(array $params): InteractionLimitResponse|One|WithoutBody
     {
         $operator = new Internal\Operator\Interactions\GetRestrictionsForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀InteractionLimits());
@@ -28,6 +29,7 @@ final class Interactions
         return $operator->call();
     }
 
+    /** @return */
     public function getRestrictionsForOrg(array $params): InteractionLimitResponse|\ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForOrg\Response\ApplicationJson\Ok\Application\Json\One
     {
         $arguments = [];
@@ -42,6 +44,7 @@ final class Interactions
         return $operator->call($arguments['org']);
     }
 
+    /** @return */
     public function getRestrictionsForRepo(array $params): InteractionLimitResponse|\ApiClients\Client\GitHub\Schema\Operations\Interactions\GetRestrictionsForRepo\Response\ApplicationJson\Ok\Application\Json\One
     {
         $arguments = [];

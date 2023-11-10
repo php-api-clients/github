@@ -24,6 +24,7 @@ final readonly class CreateRepositoryAdvisoryCveRequest
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $ghsaId): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ghsaId);

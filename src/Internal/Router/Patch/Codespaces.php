@@ -19,6 +19,7 @@ final class Codespaces
     {
     }
 
+    /** @return */
     public function updateForAuthenticatedUser(array $params): Codespace
     {
         $arguments = [];

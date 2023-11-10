@@ -19,6 +19,7 @@ final class CodeScanning
     {
     }
 
+    /** @return */
     public function deleteAnalysis(array $params): CodeScanningAnalysisDeletion
     {
         $arguments = [];

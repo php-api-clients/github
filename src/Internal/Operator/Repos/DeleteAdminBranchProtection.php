@@ -24,6 +24,7 @@ final readonly class DeleteAdminBranchProtection
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $branch): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DeleteAdminBranchProtection($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $branch);

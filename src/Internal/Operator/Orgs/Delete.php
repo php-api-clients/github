@@ -24,6 +24,7 @@ final readonly class Delete
     {
     }
 
+    /** @return */
     public function call(string $org): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\Delete($this->responseSchemaValidator, $this->hydrator, $org);

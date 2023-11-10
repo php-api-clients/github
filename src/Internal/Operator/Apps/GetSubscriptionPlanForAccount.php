@@ -24,6 +24,7 @@ final readonly class GetSubscriptionPlanForAccount
     {
     }
 
+    /** @return */
     public function call(int $accountId): MarketplacePurchase
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\GetSubscriptionPlanForAccount($this->responseSchemaValidator, $this->hydrator, $accountId);

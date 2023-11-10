@@ -24,6 +24,7 @@ final readonly class DeleteOrgRuleset
     {
     }
 
+    /** @return */
     public function call(string $org, int $rulesetId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DeleteOrgRuleset($this->responseSchemaValidator, $this->hydrator, $org, $rulesetId);

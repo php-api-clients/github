@@ -22,6 +22,7 @@ final readonly class DeleteRepoVariable
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $name): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DeleteRepoVariable($owner, $repo, $name);

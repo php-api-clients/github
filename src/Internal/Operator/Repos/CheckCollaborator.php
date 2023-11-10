@@ -22,6 +22,7 @@ final readonly class CheckCollaborator
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $username): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CheckCollaborator($owner, $repo, $username);

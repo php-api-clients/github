@@ -24,6 +24,7 @@ final readonly class ListEnvironmentSecrets
     {
     }
 
+    /** @return */
     public function call(int $repositoryId, string $environmentName, int $perPage = 30, int $page = 1): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListEnvironmentSecrets($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $perPage, $page);

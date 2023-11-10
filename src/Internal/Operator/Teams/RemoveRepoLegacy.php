@@ -22,6 +22,7 @@ final readonly class RemoveRepoLegacy
     {
     }
 
+    /** @return */
     public function call(int $teamId, string $owner, string $repo): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\RemoveRepoLegacy($teamId, $owner, $repo);

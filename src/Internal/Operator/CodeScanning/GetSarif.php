@@ -25,6 +25,7 @@ final readonly class GetSarif
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $sarifId): CodeScanningSarifsStatus|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\GetSarif($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $sarifId);

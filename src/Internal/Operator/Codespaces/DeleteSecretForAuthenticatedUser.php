@@ -22,6 +22,7 @@ final readonly class DeleteSecretForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(string $secretName): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\DeleteSecretForAuthenticatedUser($secretName);

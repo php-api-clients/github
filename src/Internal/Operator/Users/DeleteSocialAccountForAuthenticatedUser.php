@@ -24,6 +24,7 @@ final readonly class DeleteSocialAccountForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\DeleteSocialAccountForAuthenticatedUser($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator);

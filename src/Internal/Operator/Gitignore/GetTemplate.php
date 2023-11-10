@@ -25,6 +25,7 @@ final readonly class GetTemplate
     {
     }
 
+    /** @return */
     public function call(string $name): GitignoreTemplate|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gitignore\GetTemplate($this->responseSchemaValidator, $this->hydrator, $name);

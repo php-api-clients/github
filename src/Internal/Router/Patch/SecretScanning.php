@@ -20,6 +20,7 @@ final class SecretScanning
     {
     }
 
+    /** @return */
     public function updateAlert(array $params): SecretScanningAlert|WithoutBody
     {
         $arguments = [];

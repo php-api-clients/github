@@ -24,6 +24,7 @@ final readonly class UpdateInvitation
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $invitationId, array $params): RepositoryInvitation
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdateInvitation($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $invitationId);

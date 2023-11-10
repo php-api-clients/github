@@ -24,6 +24,7 @@ final readonly class GetGithubActionsBillingUser
     {
     }
 
+    /** @return */
     public function call(string $username): ActionsBillingUsage
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Billing\GetGithubActionsBillingUser($this->responseSchemaValidator, $this->hydrator, $username);

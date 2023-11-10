@@ -19,6 +19,7 @@ final class Reactions
     {
     }
 
+    /** @return */
     public function deleteForCommitComment(array $params): WithoutBody
     {
         $arguments = [];
@@ -51,6 +52,7 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $arguments['reaction_id']);
     }
 
+    /** @return */
     public function deleteForIssue(array $params): WithoutBody
     {
         $arguments = [];
@@ -83,6 +85,7 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $arguments['reaction_id']);
     }
 
+    /** @return */
     public function deleteForRelease(array $params): WithoutBody
     {
         $arguments = [];
@@ -115,6 +118,7 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id'], $arguments['reaction_id']);
     }
 
+    /** @return */
     public function deleteForTeamDiscussion(array $params): WithoutBody
     {
         $arguments = [];
@@ -147,6 +151,7 @@ final class Reactions
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['discussion_number'], $arguments['reaction_id']);
     }
 
+    /** @return */
     public function deleteForIssueComment(array $params): WithoutBody
     {
         $arguments = [];
@@ -179,6 +184,7 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $arguments['reaction_id']);
     }
 
+    /** @return */
     public function deleteForPullRequestComment(array $params): WithoutBody
     {
         $arguments = [];
@@ -211,6 +217,7 @@ final class Reactions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $arguments['reaction_id']);
     }
 
+    /** @return */
     public function deleteForTeamDiscussionComment(array $params): WithoutBody
     {
         $arguments = [];

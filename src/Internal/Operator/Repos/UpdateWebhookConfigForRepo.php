@@ -24,6 +24,7 @@ final readonly class UpdateWebhookConfigForRepo
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $hookId, array $params): WebhookConfig
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdateWebhookConfigForRepo($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $hookId);

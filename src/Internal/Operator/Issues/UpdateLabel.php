@@ -24,6 +24,7 @@ final readonly class UpdateLabel
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $name, array $params): Label
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\UpdateLabel($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $name);

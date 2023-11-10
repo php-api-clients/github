@@ -21,7 +21,7 @@ final class Issues
     {
     }
 
-    /** @return iterable<int,Schema\Label>|Schema\BasicError */
+    /** @return Observable<Schema\Label>|Schema\BasicError */
     public function setLabels(array $params): iterable|BasicError
     {
         $arguments = [];
@@ -48,6 +48,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
+    /** @return */
     public function lock(array $params): WithoutBody
     {
         $arguments = [];

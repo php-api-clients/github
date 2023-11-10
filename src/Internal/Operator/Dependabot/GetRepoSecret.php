@@ -24,6 +24,7 @@ final readonly class GetRepoSecret
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $secretName): DependabotSecret
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Dependabot\GetRepoSecret($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $secretName);
