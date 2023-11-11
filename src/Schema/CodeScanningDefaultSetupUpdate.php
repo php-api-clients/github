@@ -9,9 +9,6 @@ use EventSauce\ObjectHydrator\MapFrom;
 final readonly class CodeScanningDefaultSetupUpdate
 {
     public const SCHEMA_JSON         = '{
-    "required": [
-        "state"
-    ],
     "type": "object",
     "properties": {
         "state": {
@@ -20,7 +17,7 @@ final readonly class CodeScanningDefaultSetupUpdate
                 "not-configured"
             ],
             "type": "string",
-            "description": "Whether code scanning default setup has been configured or not."
+            "description": "The desired state of code scanning default setup."
         },
         "query_suite": {
             "enum": [
@@ -48,7 +45,8 @@ final readonly class CodeScanningDefaultSetupUpdate
             "description": "CodeQL languages to be analyzed."
         }
     },
-    "description": "Configuration for code scanning default setup."
+    "description": "Configuration for code scanning default setup.",
+    "additionalProperties": false
 }';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = 'Configuration for code scanning default setup.';
@@ -62,11 +60,11 @@ final readonly class CodeScanningDefaultSetupUpdate
 }';
 
     /**
-     * state: Whether code scanning default setup has been configured or not.
+     * state: The desired state of code scanning default setup.
      * querySuite: CodeQL query suite to be used.
      * languages: CodeQL languages to be analyzed.
      */
-    public function __construct(public string $state, #[MapFrom('query_suite')]
+    public function __construct(public string|null $state, #[MapFrom('query_suite')]
     public string|null $querySuite, public array|null $languages,)
     {
     }

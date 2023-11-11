@@ -152,7 +152,7 @@ final readonly class ApplicationJson
         },
         "custom_properties": {
             "type": "object",
-            "description": "The custom properties for the new respository. The keys are the custom property names, and the values are the corresponding custom property values.",
+            "description": "The custom properties for the new repository. The keys are the custom property names, and the values are the corresponding custom property values.",
             "additionalProperties": true
         }
     }
@@ -226,7 +226,7 @@ final readonly class ApplicationJson
     - `PR_TITLE` - default to the pull request's title.
     - `PR_BODY` - default to the pull request's body.
     - `BLANK` - default to a blank commit message.
-     * customProperties: The custom properties for the new respository. The keys are the custom property names, and the values are the corresponding custom property values.
+     * customProperties: The custom properties for the new repository. The keys are the custom property names, and the values are the corresponding custom property values.
      */
     public function __construct(public string $name, public string|null $description, public string|null $homepage, public bool|null $private, public string|null $visibility, #[MapFrom('has_issues')]
     public bool|null $hasIssues, #[MapFrom('has_projects')]
