@@ -30,7 +30,7 @@ final readonly class CodeScanningAnalysis
     "properties": {
         "ref": {
             "type": "string",
-            "description": "The full Git reference, formatted as `refs\\/heads\\/<branch name>`,\\n`refs\\/pull\\/<number>\\/merge`, or `refs\\/pull\\/<number>\\/head`."
+            "description": "The Git reference, formatted as `refs\\/pull\\/<number>\\/merge`, `refs\\/pull\\/<number>\\/head`,\\n`refs\\/heads\\/<branch name>` or simply `<branch name>`."
         },
         "commit_sha": {
             "maxLength": 40,
@@ -148,8 +148,8 @@ final readonly class CodeScanningAnalysis
 }';
 
     /**
-     * ref: The full Git reference, formatted as `refs/heads/<branch name>`,
-    `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
+     * ref: The Git reference, formatted as `refs/pull/<number>/merge`, `refs/pull/<number>/head`,
+    `refs/heads/<branch name>` or simply `<branch name>`.
      * commitSha: The SHA of the commit to which the analysis you are uploading relates.
      * analysisKey: Identifies the configuration under which the analysis was executed. For example, in GitHub Actions this includes the workflow filename and job name.
      * environment: Identifies the variable values associated with the environment in which this analysis was performed.

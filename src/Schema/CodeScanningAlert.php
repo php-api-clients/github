@@ -381,7 +381,7 @@ final readonly class CodeScanningAlert
             "properties": {
                 "ref": {
                     "type": "string",
-                    "description": "The full Git reference, formatted as `refs\\/heads\\/<branch name>`,\\n`refs\\/pull\\/<number>\\/merge`, or `refs\\/pull\\/<number>\\/head`."
+                    "description": "The Git reference, formatted as `refs\\/pull\\/<number>\\/merge`, `refs\\/pull\\/<number>\\/head`,\\n`refs\\/heads\\/<branch name>` or simply `<branch name>`."
                 },
                 "analysis_key": {
                     "type": "string",

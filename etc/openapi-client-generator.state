@@ -1,5 +1,5 @@
 {
-    "specHash": "f8cf9b6b12b5036930560db0c2532fe8",
+    "specHash": "1a5c27df40e2c66ac3dac2b39c0e601b",
     "generatedFiles": {
         "files": [
             {
@@ -412,7 +412,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningRef.php",
-                "hash": "5e56e25acc3078010d90c508f52d05a8"
+                "hash": "ff8041e05ed6f93a386558359504c2e8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningAnalysisAnalysisKey.php",
@@ -436,11 +436,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningAlertInstance.php",
-                "hash": "a97ab4861bb63363944faeeef93c7dd0"
+                "hash": "a8767dd89d63faf7e49e50003bde0173"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningOrganizationAlertItems.php",
-                "hash": "c2ebcd6348fca94f29fa40da828d5571"
+                "hash": "8e64f5ed054d797eac8554250e363651"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodespaceMachine.php",
@@ -848,11 +848,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningAlertItems.php",
-                "hash": "c5e1a24b649b91366cae6574fd7591c1"
+                "hash": "487434ff789defd205b4a955bfc53c1f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningAlert.php",
-                "hash": "22b5e3394567d54ca2ce99e830b147e0"
+                "hash": "2df354f99ca100ef24492635cafa4808"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningAlertSetState.php",
@@ -880,7 +880,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningAnalysis.php",
-                "hash": "b9c46c161561fc6666b9d98d4b4b61ee"
+                "hash": "3682a30209660816708ead0123464550"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningAnalysisDeletion.php",
@@ -5128,7 +5128,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanning\/UploadSarif\/Request\/ApplicationJson.php",
-                "hash": "6152e2ed8bd2a9eedbce6487b319b173"
+                "hash": "15e65d6825875af0c99e0bba91003f25"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Codespaces\/CreateWithRepoForAuthenticatedUser\/Request\/ApplicationJson.php",
@@ -30377,6 +30377,10 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/WorkflowRun.php",
                 "hash": "a7b1ebcd0511d3d4fd293506e277dbbb"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningRefFull.php",
+                "hash": "b5751f1d79f3b5e3c6cfc873ff1fbc74"
             }
         ]
     },

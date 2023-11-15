@@ -24,8 +24,12 @@ final readonly class ApplicationJson
             "description": "The SHA of the commit to which the analysis you are uploading relates."
         },
         "ref": {
+            "pattern": "^refs\\/(heads|pull)\\/.*$",
             "type": "string",
-            "description": "The full Git reference, formatted as `refs\\/heads\\/<branch name>`,\\n`refs\\/pull\\/<number>\\/merge`, or `refs\\/pull\\/<number>\\/head`."
+            "description": "The full Git reference, formatted as `refs\\/heads\\/<branch name>`,\\n`refs\\/pull\\/<number>\\/merge`, or `refs\\/pull\\/<number>\\/head`.",
+            "examples": [
+                "refs\\/heads\\/main"
+            ]
         },
         "sarif": {
             "type": "string",
@@ -52,13 +56,14 @@ final readonly class ApplicationJson
             "type": "boolean",
             "description": "Whether the SARIF file will be validated according to the code scanning specifications.\\nThis parameter is intended to help integrators ensure that the uploaded SARIF files are correctly rendered by code scanning."
         }
-    }
+    },
+    "additionalProperties": false
 }';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{
     "commit_sha": "DDDDDDDDDDDDDD",
-    "ref": "generated",
+    "ref": "refs\\/heads\\/main",
     "sarif": "generated",
     "checkout_uri": "file:\\/\\/\\/github\\/workspace\\/",
     "started_at": "1970-01-01T00:00:00+00:00",
