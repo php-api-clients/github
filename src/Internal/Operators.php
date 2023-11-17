@@ -246,6 +246,22 @@ final class Operators
     private Internal\Operator\Migrations\UnlockRepoForOrg|null $migrations👷UnlockRepoForOrg                                                                                         = null;
     private Internal\Operator\Migrations\ListReposForOrg|null $migrations👷ListReposForOrg                                                                                           = null;
     private Internal\Operator\Migrations\ListReposForOrgListing|null $migrations👷ListReposForOrgListing                                                                             = null;
+    private Internal\Operator\Orgs\ListOrganizationFineGrainedPermissions|null $orgs👷ListOrganizationFineGrainedPermissions                                                         = null;
+    private Internal\Operator\Orgs\ListOrgRoles|null $orgs👷ListOrgRoles                                                                                                             = null;
+    private Internal\Operator\Orgs\CreateCustomOrganizationRole|null $orgs👷CreateCustomOrganizationRole                                                                             = null;
+    private Internal\Operator\Orgs\RevokeAllOrgRolesTeam|null $orgs👷RevokeAllOrgRolesTeam                                                                                           = null;
+    private Internal\Operator\Orgs\AssignTeamToOrgRole|null $orgs👷AssignTeamToOrgRole                                                                                               = null;
+    private Internal\Operator\Orgs\RevokeOrgRoleTeam|null $orgs👷RevokeOrgRoleTeam                                                                                                   = null;
+    private Internal\Operator\Orgs\RevokeAllOrgRolesUser|null $orgs👷RevokeAllOrgRolesUser                                                                                           = null;
+    private Internal\Operator\Orgs\AssignUserToOrgRole|null $orgs👷AssignUserToOrgRole                                                                                               = null;
+    private Internal\Operator\Orgs\RevokeOrgRoleUser|null $orgs👷RevokeOrgRoleUser                                                                                                   = null;
+    private Internal\Operator\Orgs\GetOrgRole|null $orgs👷GetOrgRole                                                                                                                 = null;
+    private Internal\Operator\Orgs\DeleteCustomOrganizationRole|null $orgs👷DeleteCustomOrganizationRole                                                                             = null;
+    private Internal\Operator\Orgs\PatchCustomOrganizationRole|null $orgs👷PatchCustomOrganizationRole                                                                               = null;
+    private Internal\Operator\Orgs\ListOrgRoleTeams|null $orgs👷ListOrgRoleTeams                                                                                                     = null;
+    private Internal\Operator\Orgs\ListOrgRoleTeamsListing|null $orgs👷ListOrgRoleTeamsListing                                                                                       = null;
+    private Internal\Operator\Orgs\ListOrgRoleUsers|null $orgs👷ListOrgRoleUsers                                                                                                     = null;
+    private Internal\Operator\Orgs\ListOrgRoleUsersListing|null $orgs👷ListOrgRoleUsersListing                                                                                       = null;
     private Internal\Operator\Orgs\ListOutsideCollaborators|null $orgs👷ListOutsideCollaborators                                                                                     = null;
     private Internal\Operator\Orgs\ListOutsideCollaboratorsListing|null $orgs👷ListOutsideCollaboratorsListing                                                                       = null;
     private Internal\Operator\Orgs\ConvertMemberToOutsideCollaborator|null $orgs👷ConvertMemberToOutsideCollaborator                                                                 = null;
@@ -3210,6 +3226,150 @@ final class Operators
         }
 
         return $this->migrations👷ListReposForOrgListing;
+    }
+
+    public function orgs👷ListOrganizationFineGrainedPermissions(): Internal\Operator\Orgs\ListOrganizationFineGrainedPermissions
+    {
+        if ($this->orgs👷ListOrganizationFineGrainedPermissions instanceof Internal\Operator\Orgs\ListOrganizationFineGrainedPermissions === false) {
+            $this->orgs👷ListOrganizationFineGrainedPermissions = new Internal\Operator\Orgs\ListOrganizationFineGrainedPermissions($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationFineGrainedPermissions());
+        }
+
+        return $this->orgs👷ListOrganizationFineGrainedPermissions;
+    }
+
+    public function orgs👷ListOrgRoles(): Internal\Operator\Orgs\ListOrgRoles
+    {
+        if ($this->orgs👷ListOrgRoles instanceof Internal\Operator\Orgs\ListOrgRoles === false) {
+            $this->orgs👷ListOrgRoles = new Internal\Operator\Orgs\ListOrgRoles($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles());
+        }
+
+        return $this->orgs👷ListOrgRoles;
+    }
+
+    public function orgs👷CreateCustomOrganizationRole(): Internal\Operator\Orgs\CreateCustomOrganizationRole
+    {
+        if ($this->orgs👷CreateCustomOrganizationRole instanceof Internal\Operator\Orgs\CreateCustomOrganizationRole === false) {
+            $this->orgs👷CreateCustomOrganizationRole = new Internal\Operator\Orgs\CreateCustomOrganizationRole($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles());
+        }
+
+        return $this->orgs👷CreateCustomOrganizationRole;
+    }
+
+    public function orgs👷RevokeAllOrgRolesTeam(): Internal\Operator\Orgs\RevokeAllOrgRolesTeam
+    {
+        if ($this->orgs👷RevokeAllOrgRolesTeam instanceof Internal\Operator\Orgs\RevokeAllOrgRolesTeam === false) {
+            $this->orgs👷RevokeAllOrgRolesTeam = new Internal\Operator\Orgs\RevokeAllOrgRolesTeam($this->browser, $this->authentication);
+        }
+
+        return $this->orgs👷RevokeAllOrgRolesTeam;
+    }
+
+    public function orgs👷AssignTeamToOrgRole(): Internal\Operator\Orgs\AssignTeamToOrgRole
+    {
+        if ($this->orgs👷AssignTeamToOrgRole instanceof Internal\Operator\Orgs\AssignTeamToOrgRole === false) {
+            $this->orgs👷AssignTeamToOrgRole = new Internal\Operator\Orgs\AssignTeamToOrgRole($this->browser, $this->authentication);
+        }
+
+        return $this->orgs👷AssignTeamToOrgRole;
+    }
+
+    public function orgs👷RevokeOrgRoleTeam(): Internal\Operator\Orgs\RevokeOrgRoleTeam
+    {
+        if ($this->orgs👷RevokeOrgRoleTeam instanceof Internal\Operator\Orgs\RevokeOrgRoleTeam === false) {
+            $this->orgs👷RevokeOrgRoleTeam = new Internal\Operator\Orgs\RevokeOrgRoleTeam($this->browser, $this->authentication);
+        }
+
+        return $this->orgs👷RevokeOrgRoleTeam;
+    }
+
+    public function orgs👷RevokeAllOrgRolesUser(): Internal\Operator\Orgs\RevokeAllOrgRolesUser
+    {
+        if ($this->orgs👷RevokeAllOrgRolesUser instanceof Internal\Operator\Orgs\RevokeAllOrgRolesUser === false) {
+            $this->orgs👷RevokeAllOrgRolesUser = new Internal\Operator\Orgs\RevokeAllOrgRolesUser($this->browser, $this->authentication);
+        }
+
+        return $this->orgs👷RevokeAllOrgRolesUser;
+    }
+
+    public function orgs👷AssignUserToOrgRole(): Internal\Operator\Orgs\AssignUserToOrgRole
+    {
+        if ($this->orgs👷AssignUserToOrgRole instanceof Internal\Operator\Orgs\AssignUserToOrgRole === false) {
+            $this->orgs👷AssignUserToOrgRole = new Internal\Operator\Orgs\AssignUserToOrgRole($this->browser, $this->authentication);
+        }
+
+        return $this->orgs👷AssignUserToOrgRole;
+    }
+
+    public function orgs👷RevokeOrgRoleUser(): Internal\Operator\Orgs\RevokeOrgRoleUser
+    {
+        if ($this->orgs👷RevokeOrgRoleUser instanceof Internal\Operator\Orgs\RevokeOrgRoleUser === false) {
+            $this->orgs👷RevokeOrgRoleUser = new Internal\Operator\Orgs\RevokeOrgRoleUser($this->browser, $this->authentication);
+        }
+
+        return $this->orgs👷RevokeOrgRoleUser;
+    }
+
+    public function orgs👷GetOrgRole(): Internal\Operator\Orgs\GetOrgRole
+    {
+        if ($this->orgs👷GetOrgRole instanceof Internal\Operator\Orgs\GetOrgRole === false) {
+            $this->orgs👷GetOrgRole = new Internal\Operator\Orgs\GetOrgRole($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId());
+        }
+
+        return $this->orgs👷GetOrgRole;
+    }
+
+    public function orgs👷DeleteCustomOrganizationRole(): Internal\Operator\Orgs\DeleteCustomOrganizationRole
+    {
+        if ($this->orgs👷DeleteCustomOrganizationRole instanceof Internal\Operator\Orgs\DeleteCustomOrganizationRole === false) {
+            $this->orgs👷DeleteCustomOrganizationRole = new Internal\Operator\Orgs\DeleteCustomOrganizationRole($this->browser, $this->authentication);
+        }
+
+        return $this->orgs👷DeleteCustomOrganizationRole;
+    }
+
+    public function orgs👷PatchCustomOrganizationRole(): Internal\Operator\Orgs\PatchCustomOrganizationRole
+    {
+        if ($this->orgs👷PatchCustomOrganizationRole instanceof Internal\Operator\Orgs\PatchCustomOrganizationRole === false) {
+            $this->orgs👷PatchCustomOrganizationRole = new Internal\Operator\Orgs\PatchCustomOrganizationRole($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId());
+        }
+
+        return $this->orgs👷PatchCustomOrganizationRole;
+    }
+
+    public function orgs👷ListOrgRoleTeams(): Internal\Operator\Orgs\ListOrgRoleTeams
+    {
+        if ($this->orgs👷ListOrgRoleTeams instanceof Internal\Operator\Orgs\ListOrgRoleTeams === false) {
+            $this->orgs👷ListOrgRoleTeams = new Internal\Operator\Orgs\ListOrgRoleTeams($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Teams());
+        }
+
+        return $this->orgs👷ListOrgRoleTeams;
+    }
+
+    public function orgs👷ListOrgRoleTeamsListing(): Internal\Operator\Orgs\ListOrgRoleTeamsListing
+    {
+        if ($this->orgs👷ListOrgRoleTeamsListing instanceof Internal\Operator\Orgs\ListOrgRoleTeamsListing === false) {
+            $this->orgs👷ListOrgRoleTeamsListing = new Internal\Operator\Orgs\ListOrgRoleTeamsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Teams());
+        }
+
+        return $this->orgs👷ListOrgRoleTeamsListing;
+    }
+
+    public function orgs👷ListOrgRoleUsers(): Internal\Operator\Orgs\ListOrgRoleUsers
+    {
+        if ($this->orgs👷ListOrgRoleUsers instanceof Internal\Operator\Orgs\ListOrgRoleUsers === false) {
+            $this->orgs👷ListOrgRoleUsers = new Internal\Operator\Orgs\ListOrgRoleUsers($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Users());
+        }
+
+        return $this->orgs👷ListOrgRoleUsers;
+    }
+
+    public function orgs👷ListOrgRoleUsersListing(): Internal\Operator\Orgs\ListOrgRoleUsersListing
+    {
+        if ($this->orgs👷ListOrgRoleUsersListing instanceof Internal\Operator\Orgs\ListOrgRoleUsersListing === false) {
+            $this->orgs👷ListOrgRoleUsersListing = new Internal\Operator\Orgs\ListOrgRoleUsersListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Users());
+        }
+
+        return $this->orgs👷ListOrgRoleUsersListing;
     }
 
     public function orgs👷ListOutsideCollaborators(): Internal\Operator\Orgs\ListOutsideCollaborators

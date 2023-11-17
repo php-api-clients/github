@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Post;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\ReviewPatGrantRequestsInBulk\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\OrganizationInvitation;
+use ApiClients\Client\GitHub\Schema\OrganizationRole;
 use ApiClients\Client\GitHub\Schema\OrgHook;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
@@ -48,6 +49,20 @@ final class Orgs
         $arguments['org'] = $params['org'];
         unset($params['org']);
         $operator = new Internal\Operator\Orgs\CreateInvitation($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Invitations());
+
+        return $operator->call($arguments['org'], $params);
+    }
+
+    public function createCustomOrganizationRole(array $params): OrganizationRole
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        $operator = new Internal\Operator\Orgs\CreateCustomOrganizationRole($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles());
 
         return $operator->call($arguments['org'], $params);
     }

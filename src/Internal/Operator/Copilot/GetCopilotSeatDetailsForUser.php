@@ -25,7 +25,6 @@ final readonly class GetCopilotSeatDetailsForUser
     {
     }
 
-    /** @return */
     public function call(string $org, string $username): CopilotSeatDetails|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Copilot\GetCopilotSeatDetailsForUser($this->responseSchemaValidator, $this->hydrator, $org, $username);

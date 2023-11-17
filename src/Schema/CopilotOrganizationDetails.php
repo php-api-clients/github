@@ -10,7 +10,7 @@ use EventSauce\ObjectHydrator\MapFrom;
 final readonly class CopilotOrganizationDetails
 {
     public const SCHEMA_JSON         = '{
-    "title": "Copilot for Business Organization Details",
+    "title": "Copilot Business Organization Details",
     "required": [
         "seat_breakdown",
         "public_code_suggestions",
@@ -19,7 +19,7 @@ final readonly class CopilotOrganizationDetails
     "type": "object",
     "properties": {
         "seat_breakdown": {
-            "title": "Copilot for Business Seat Breakdown",
+            "title": "Copilot Business Seat Breakdown",
             "type": "object",
             "properties": {
                 "total": {
@@ -47,7 +47,7 @@ final readonly class CopilotOrganizationDetails
                     "description": "The number of seats that have not used Copilot during the current billing cycle."
                 }
             },
-            "description": "The breakdown of Copilot for Business seats for the organization."
+            "description": "The breakdown of Copilot Business seats for the organization."
         },
         "public_code_suggestions": {
             "enum": [
@@ -79,11 +79,11 @@ final readonly class CopilotOrganizationDetails
             "description": "The mode of assigning new seats."
         }
     },
-    "description": "Information about the seat breakdown and policies set for an organization with a Copilot for Business subscription.",
+    "description": "Information about the seat breakdown and policies set for an organization with a Copilot Business subscription.",
     "additionalProperties": true
 }';
-    public const SCHEMA_TITLE        = 'Copilot for Business Organization Details';
-    public const SCHEMA_DESCRIPTION  = 'Information about the seat breakdown and policies set for an organization with a Copilot for Business subscription.';
+    public const SCHEMA_TITLE        = 'Copilot Business Organization Details';
+    public const SCHEMA_DESCRIPTION  = 'Information about the seat breakdown and policies set for an organization with a Copilot Business subscription.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "seat_breakdown": {
         "total": 5,
@@ -99,7 +99,7 @@ final readonly class CopilotOrganizationDetails
 }';
 
     /**
-     * seatBreakdown: The breakdown of Copilot for Business seats for the organization.
+     * seatBreakdown: The breakdown of Copilot Business seats for the organization.
      * publicCodeSuggestions: The organization policy for allowing or disallowing Copilot to make suggestions that match public code.
      * copilotChat: The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor.
      * seatManagementSetting: The mode of assigning new seats.

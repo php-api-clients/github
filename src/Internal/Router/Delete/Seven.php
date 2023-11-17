@@ -19,6 +19,7 @@ final class Seven
     {
     }
 
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|Json|\ApiClients\Client\GitHub\Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|CodeScanningAnalysisDeletion|Issue|BasicError|PullRequestSimple
     {
         if ($pathChunks[0] === '') {
@@ -48,6 +49,24 @@ final class Seven
                                 if ($pathChunks[6] === '{codespace_name}') {
                                     if ($call === 'DELETE /orgs/{org}/members/{username}/codespaces/{codespace_name}') {
                                         return $this->routers->internal🔀Router🔀Delete🔀Codespaces()->deleteFromOrganization($params);
+                                    }
+                                }
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'organization-roles') {
+                        if ($pathChunks[4] === 'teams') {
+                            if ($pathChunks[5] === '{team_slug}') {
+                                if ($pathChunks[6] === '{role_id}') {
+                                    if ($call === 'DELETE /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}') {
+                                        return $this->routers->internal🔀Router🔀Delete🔀Orgs()->revokeOrgRoleTeam($params);
+                                    }
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'users') {
+                            if ($pathChunks[5] === '{username}') {
+                                if ($pathChunks[6] === '{role_id}') {
+                                    if ($call === 'DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}') {
+                                        return $this->routers->internal🔀Router🔀Delete🔀Orgs()->revokeOrgRoleUser($params);
                                     }
                                 }
                             }

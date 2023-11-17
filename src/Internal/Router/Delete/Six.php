@@ -18,6 +18,7 @@ final class Six
     {
     }
 
+    /** @return |Schema\Operations\Copilot\CancelCopilotSeatAssignmentForTeams\Response\ApplicationJson\Ok|\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody|Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|Ok|Json|ActionsCacheList|FileCommit
     {
         if ($pathChunks[0] === '') {
@@ -82,6 +83,20 @@ final class Six
                             if ($pathChunks[5] === 'archive') {
                                 if ($call === 'DELETE /orgs/{org}/migrations/{migration_id}/archive') {
                                     return $this->routers->internal🔀Router🔀Delete🔀Migrations()->deleteArchiveForOrg($params);
+                                }
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'organization-roles') {
+                        if ($pathChunks[4] === 'teams') {
+                            if ($pathChunks[5] === '{team_slug}') {
+                                if ($call === 'DELETE /orgs/{org}/organization-roles/teams/{team_slug}') {
+                                    return $this->routers->internal🔀Router🔀Delete🔀Orgs()->revokeAllOrgRolesTeam($params);
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'users') {
+                            if ($pathChunks[5] === '{username}') {
+                                if ($call === 'DELETE /orgs/{org}/organization-roles/users/{username}') {
+                                    return $this->routers->internal🔀Router🔀Delete🔀Orgs()->revokeAllOrgRolesUser($params);
                                 }
                             }
                         }

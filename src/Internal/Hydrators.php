@@ -150,6 +150,15 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Archive|null $operation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Archive                                                                                                                   = null;
     private Internal\Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Repos\RepoName\Lock|null $operation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Repos🌀RepoName🌀Lock                                                                                           = null;
     private Internal\Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Repositories|null $operation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Repositories                                                                                                         = null;
+    private Internal\Hydrator\Operation\Orgs\Org\OrganizationFineGrainedPermissions|null $operation🌀Orgs🌀Org🌀OrganizationFineGrainedPermissions                                                                                                           = null;
+    private Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles|null $operation🌀Orgs🌀Org🌀OrganizationRoles                                                                                                                                             = null;
+    private Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Teams\TeamSlug|null $operation🌀Orgs🌀Org🌀OrganizationRoles🌀Teams🌀TeamSlug                                                                                                               = null;
+    private Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Teams\TeamSlug\RoleId|null $operation🌀Orgs🌀Org🌀OrganizationRoles🌀Teams🌀TeamSlug🌀RoleId                                                                                                 = null;
+    private Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Users\Username|null $operation🌀Orgs🌀Org🌀OrganizationRoles🌀Users🌀Username                                                                                                               = null;
+    private Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Users\Username\RoleId|null $operation🌀Orgs🌀Org🌀OrganizationRoles🌀Users🌀Username🌀RoleId                                                                                                 = null;
+    private Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\RoleId|null $operation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId                                                                                                                               = null;
+    private Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\RoleId\Teams|null $operation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Teams                                                                                                                   = null;
+    private Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\RoleId\Users|null $operation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Users                                                                                                                   = null;
     private Internal\Hydrator\Operation\Orgs\Org\OutsideCollaborators|null $operation🌀Orgs🌀Org🌀OutsideCollaborators                                                                                                                                       = null;
     private Internal\Hydrator\Operation\Orgs\Org\OutsideCollaborators\Username|null $operation🌀Orgs🌀Org🌀OutsideCollaborators🌀Username                                                                                                                     = null;
     private Internal\Hydrator\Operation\Orgs\Org\Packages|null $operation🌀Orgs🌀Org🌀Packages                                                                                                                                                               = null;
@@ -757,6 +766,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\CopilotSeatDetails' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Copilot()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\OrgMembership', '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationSimple', '\\ApiClients\\Client\\GitHub\\Schema\\OrgMembership\\Permissions' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Memberships🌀Username()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Migration' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\ListOrgRoles\\Response\\ApplicationJson\\Ok', '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationRole' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\ConvertMemberToOutsideCollaborator\\Response\\ApplicationJson\\Accepted\\Application\\Json', '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\RemoveOutsideCollaborator\\Response\\ApplicationJson\\UnprocessableEntity' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀OutsideCollaborators🌀Username()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Package' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata\\Container', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata\\Docker' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId()->hydrateObject($className, $payload),
@@ -1094,6 +1104,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\CopilotSeatDetails' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Copilot()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\OrgMembership', '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationSimple', '\\ApiClients\\Client\\GitHub\\Schema\\OrgMembership\\Permissions' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Memberships🌀Username()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Migration' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\ListOrgRoles\\Response\\ApplicationJson\\Ok', '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationRole' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\ConvertMemberToOutsideCollaborator\\Response\\ApplicationJson\\Accepted\\Application\\Json', '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\RemoveOutsideCollaborator\\Response\\ApplicationJson\\UnprocessableEntity' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀OutsideCollaborators🌀Username()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Package' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata\\Container', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata\\Docker' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId()->serializeObject($object),
@@ -2600,6 +2611,87 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Repositories;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationFineGrainedPermissions(): Internal\Hydrator\Operation\Orgs\Org\OrganizationFineGrainedPermissions
+    {
+        if ($this->operation🌀Orgs🌀Org🌀OrganizationFineGrainedPermissions instanceof Internal\Hydrator\Operation\Orgs\Org\OrganizationFineGrainedPermissions === false) {
+            $this->operation🌀Orgs🌀Org🌀OrganizationFineGrainedPermissions = new Internal\Hydrator\Operation\Orgs\Org\OrganizationFineGrainedPermissions();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀OrganizationFineGrainedPermissions;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles(): Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles
+    {
+        if ($this->operation🌀Orgs🌀Org🌀OrganizationRoles instanceof Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles === false) {
+            $this->operation🌀Orgs🌀Org🌀OrganizationRoles = new Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀OrganizationRoles;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀Teams🌀TeamSlug(): Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Teams\TeamSlug
+    {
+        if ($this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀Teams🌀TeamSlug instanceof Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Teams\TeamSlug === false) {
+            $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀Teams🌀TeamSlug = new Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Teams\TeamSlug();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀Teams🌀TeamSlug;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀Teams🌀TeamSlug🌀RoleId(): Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Teams\TeamSlug\RoleId
+    {
+        if ($this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀Teams🌀TeamSlug🌀RoleId instanceof Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Teams\TeamSlug\RoleId === false) {
+            $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀Teams🌀TeamSlug🌀RoleId = new Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Teams\TeamSlug\RoleId();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀Teams🌀TeamSlug🌀RoleId;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀Users🌀Username(): Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Users\Username
+    {
+        if ($this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀Users🌀Username instanceof Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Users\Username === false) {
+            $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀Users🌀Username = new Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Users\Username();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀Users🌀Username;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀Users🌀Username🌀RoleId(): Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Users\Username\RoleId
+    {
+        if ($this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀Users🌀Username🌀RoleId instanceof Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Users\Username\RoleId === false) {
+            $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀Users🌀Username🌀RoleId = new Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Users\Username\RoleId();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀Users🌀Username🌀RoleId;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId(): Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\RoleId
+    {
+        if ($this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId instanceof Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\RoleId === false) {
+            $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId = new Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\RoleId();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Teams(): Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\RoleId\Teams
+    {
+        if ($this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Teams instanceof Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\RoleId\Teams === false) {
+            $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Teams = new Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\RoleId\Teams();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Teams;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Users(): Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\RoleId\Users
+    {
+        if ($this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Users instanceof Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\RoleId\Users === false) {
+            $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Users = new Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\RoleId\Users();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Users;
     }
 
     public function getObjectMapperOperation🌀Orgs🌀Org🌀OutsideCollaborators(): Internal\Hydrator\Operation\Orgs\Org\OutsideCollaborators

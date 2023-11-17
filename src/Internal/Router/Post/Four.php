@@ -12,6 +12,7 @@ use ApiClients\Client\GitHub\Schema\Integration;
 use ApiClients\Client\GitHub\Schema\Migration;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\ReviewPatGrantRequestsInBulk\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\OrganizationInvitation;
+use ApiClients\Client\GitHub\Schema\OrganizationRole;
 use ApiClients\Client\GitHub\Schema\OrgHook;
 use ApiClients\Client\GitHub\Schema\Project;
 use ApiClients\Client\GitHub\Schema\ProjectColumn;
@@ -28,7 +29,8 @@ final class Four
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): Integration|Authorization|GistComment|WithoutBody|BaseGist|OrgHook|OrganizationInvitation|Migration|Json|\ApiClients\Client\GitHub\Schema\Operations\Orgs\UpdatePatAccesses\Response\ApplicationJson\Accepted\Application\Json|Project|Repository|RepositoryRuleset|TeamFull|ProjectColumn|TeamDiscussion
+    /** @return |Schema\OrganizationRole */
+    public function call(string $call, array $params, array $pathChunks): Integration|Authorization|GistComment|WithoutBody|BaseGist|OrgHook|OrganizationInvitation|Migration|OrganizationRole|Json|\ApiClients\Client\GitHub\Schema\Operations\Orgs\UpdatePatAccesses\Response\ApplicationJson\Accepted\Application\Json|Project|Repository|RepositoryRuleset|TeamFull|ProjectColumn|TeamDiscussion
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app-manifests') {
@@ -72,6 +74,10 @@ final class Four
                     } elseif ($pathChunks[3] === 'migrations') {
                         if ($call === 'POST /orgs/{org}/migrations') {
                             return $this->routers->internal🔀Router🔀Post🔀Migrations()->startForOrg($params);
+                        }
+                    } elseif ($pathChunks[3] === 'organization-roles') {
+                        if ($call === 'POST /orgs/{org}/organization-roles') {
+                            return $this->routers->internal🔀Router🔀Post🔀Orgs()->createCustomOrganizationRole($params);
                         }
                     } elseif ($pathChunks[3] === 'personal-access-token-requests') {
                         if ($call === 'POST /orgs/{org}/personal-access-token-requests') {

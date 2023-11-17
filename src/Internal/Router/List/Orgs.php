@@ -603,6 +603,84 @@ final class Orgs
         } while (count($items) > 0);
     }
 
+    /** @return iterable<int,Schema\Team>|WithoutBody */
+    public function listOrgRoleTeamsListing(array $params): iterable|WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('role_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: role_id');
+        }
+
+        $arguments['role_id'] = $params['role_id'];
+        unset($params['role_id']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $arguments['page'] = 1;
+        do {
+            $operator = new Internal\Operator\Orgs\ListOrgRoleTeamsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Teams());
+            $items    = [...$operator->call($arguments['org'], $arguments['role_id'], $arguments['per_page'], $arguments['page'])];
+
+            yield from $items;
+
+            $arguments['page']++;
+        } while (count($items) > 0);
+    }
+
+    /** @return iterable<int,Schema\SimpleUser>|WithoutBody */
+    public function listOrgRoleUsersListing(array $params): iterable|WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('role_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: role_id');
+        }
+
+        $arguments['role_id'] = $params['role_id'];
+        unset($params['role_id']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $arguments['page'] = 1;
+        do {
+            $operator = new Internal\Operator\Orgs\ListOrgRoleUsersListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId🌀Users());
+            $items    = [...$operator->call($arguments['org'], $arguments['role_id'], $arguments['per_page'], $arguments['page'])];
+
+            yield from $items;
+
+            $arguments['page']++;
+        } while (count($items) > 0);
+    }
+
     /** @return Observable<Schema\MinimalRepository> */
     public function listPatGrantRequestRepositoriesListing(array $params): iterable
     {

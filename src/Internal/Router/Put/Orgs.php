@@ -106,6 +106,58 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
+    public function assignTeamToOrgRole(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('team_slug', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: team_slug');
+        }
+
+        $arguments['team_slug'] = $params['team_slug'];
+        unset($params['team_slug']);
+        if (array_key_exists('role_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: role_id');
+        }
+
+        $arguments['role_id'] = $params['role_id'];
+        unset($params['role_id']);
+        $operator = new Internal\Operator\Orgs\AssignTeamToOrgRole($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['role_id']);
+    }
+
+    public function assignUserToOrgRole(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('username', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: username');
+        }
+
+        $arguments['username'] = $params['username'];
+        unset($params['username']);
+        if (array_key_exists('role_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: role_id');
+        }
+
+        $arguments['role_id'] = $params['role_id'];
+        unset($params['role_id']);
+        $operator = new Internal\Operator\Orgs\AssignUserToOrgRole($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['username'], $arguments['role_id']);
+    }
+
     /** @return */
     public function createOrUpdateCustomProperty(array $params): OrgCustomProperty
     {

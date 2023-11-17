@@ -64,7 +64,6 @@ final class Copilot
         return $operator->call($arguments['org'], $arguments['page'], $arguments['per_page']);
     }
 
-    /** @return */
     public function getCopilotSeatDetailsForUser(array $params): CopilotSeatDetails|WithoutBody
     {
         $arguments = [];

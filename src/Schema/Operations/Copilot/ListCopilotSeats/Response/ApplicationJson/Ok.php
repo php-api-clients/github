@@ -18,7 +18,7 @@ final readonly class Ok
         "seats": {
             "type": "array",
             "items": {
-                "title": "Copilot for Business Seat Detail",
+                "title": "Copilot Business Seat Detail",
                 "required": [
                     "assignee",
                     "created_at"
@@ -832,7 +832,7 @@ final readonly class Ok
                         "format": "date-time"
                     }
                 },
-                "description": "Information about a Copilot for Business seat assignment for a user, team, or organization.",
+                "description": "Information about a Copilot Business seat assignment for a user, team, or organization.",
                 "additionalProperties": false
             }
         }

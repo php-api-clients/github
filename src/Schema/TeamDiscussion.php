@@ -276,7 +276,7 @@ final readonly class TeamDiscussion
         },
         "private": {
             "type": "boolean",
-            "description": "Whether or not this discussion should be restricted to team members and organization administrators.",
+            "description": "Whether or not this discussion should be restricted to team members and organization owners.",
             "examples": [
                 true
             ]
@@ -422,7 +422,7 @@ final readonly class TeamDiscussion
      * bodyVersion: The current version of the body content. If provided, this update operation will be rejected if the given version does not match the latest version on the server.
      * number: The unique sequence number of a team discussion.
      * pinned: Whether or not this discussion should be pinned for easy retrieval.
-     * private: Whether or not this discussion should be restricted to team members and organization administrators.
+     * private: Whether or not this discussion should be restricted to team members and organization owners.
      * title: The title of the discussion.
      */
     public function __construct(public Schema\SimpleUser|null $author, public string $body, #[MapFrom('body_html')]

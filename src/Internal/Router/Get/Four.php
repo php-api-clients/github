@@ -34,8 +34,8 @@ final class Four
     {
     }
 
-    /** @return |Observable<Schema\HookDeliveryItem>|Observable<Schema\ClassroomAcceptedAssignment>|Observable<Schema\ClassroomAssignmentGrade>|Observable<Schema\SimpleClassroomAssignment>|Observable<Schema\GistComment>|WithoutBody|Observable<Schema\GistCommit>|Observable<Schema\GistSimple>|Observable<Schema\MarketplaceListingPlan>|Observable<Schema\SimpleUser>|Observable<Schema\Event>|Observable<Schema\OrganizationInvitation>|Observable<Schema\OrgHook>|Observable<Schema\Issue>|Observable<Schema\Migration>|Observable<Schema\Package>|Observable<Schema\OrganizationProgrammaticAccessGrantRequest>|Observable<Schema\OrganizationProgrammaticAccessGrant>|Observable<Schema\Project>|Observable<Schema\MinimalRepository>|Observable<Schema\RepositoryRuleset>|Observable<Schema\RepositoryAdvisory>|Observable<Schema\TeamSimple>|Observable<Schema\Team>|Observable<Schema\ProjectColumn>|Observable<Schema\TeamDiscussion>|Observable<Schema\TeamProject>|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\OrgMembership>|Observable<Schema\BaseGist>|Observable<Schema\GpgKey>|Observable<Schema\KeySimple>|Observable<Schema\OrganizationSimple>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey> */
-    public function call(string $call, array $params, array $pathChunks): WebhookConfig|iterable|Installation|WithoutBody|GistSimple|GitignoreTemplate|MarketplacePurchase|Thread|Ok|\ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok|InteractionLimitResponse|One|ProjectColumn|FullRepository|BasicError|\ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok|Codespace|GpgKey|Key|Migration|SshSigningKey|Hovercard|StarredRepository|Repository
+    /** @return |Observable<Schema\HookDeliveryItem>|Observable<Schema\ClassroomAcceptedAssignment>|Observable<Schema\ClassroomAssignmentGrade>|Observable<Schema\SimpleClassroomAssignment>|Observable<Schema\GistComment>|WithoutBody|Observable<Schema\GistCommit>|Observable<Schema\GistSimple>|Observable<Schema\MarketplaceListingPlan>|Observable<Schema\SimpleUser>|Observable<Schema\Event>|Observable<Schema\OrganizationInvitation>|Observable<Schema\OrgHook>|Observable<Schema\Issue>|Observable<Schema\Migration>|iterable<int,Schema\OrganizationFineGrainedPermission>|Schema\Operations\Orgs\ListOrgRoles\Response\ApplicationJson\Ok|Observable<Schema\Package>|Observable<Schema\OrganizationProgrammaticAccessGrantRequest>|Observable<Schema\OrganizationProgrammaticAccessGrant>|Observable<Schema\Project>|Observable<Schema\MinimalRepository>|Observable<Schema\RepositoryRuleset>|Observable<Schema\RepositoryAdvisory>|Observable<Schema\TeamSimple>|Observable<Schema\Team>|Observable<Schema\ProjectColumn>|Observable<Schema\TeamDiscussion>|Observable<Schema\TeamProject>|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\OrgMembership>|Observable<Schema\BaseGist>|Observable<Schema\GpgKey>|Observable<Schema\KeySimple>|Observable<Schema\OrganizationSimple>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey> */
+    public function call(string $call, array $params, array $pathChunks): WebhookConfig|iterable|Installation|WithoutBody|GistSimple|GitignoreTemplate|MarketplacePurchase|Thread|Ok|\ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok|InteractionLimitResponse|One|\ApiClients\Client\GitHub\Schema\Operations\Orgs\ListOrgRoles\Response\ApplicationJson\Ok|ProjectColumn|FullRepository|BasicError|\ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok|Codespace|GpgKey|Key|Migration|SshSigningKey|Hovercard|StarredRepository|Repository
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {
@@ -179,6 +179,14 @@ final class Four
                     } elseif ($pathChunks[3] === 'migrations') {
                         if ($call === 'GET /orgs/{org}/migrations') {
                             return $this->routers->internal🔀Router🔀Get🔀Migrations()->listForOrg($params);
+                        }
+                    } elseif ($pathChunks[3] === 'organization-fine-grained-permissions') {
+                        if ($call === 'GET /orgs/{org}/organization-fine-grained-permissions') {
+                            return $this->routers->internal🔀Router🔀Get🔀Orgs()->listOrganizationFineGrainedPermissions($params);
+                        }
+                    } elseif ($pathChunks[3] === 'organization-roles') {
+                        if ($call === 'GET /orgs/{org}/organization-roles') {
+                            return $this->routers->internal🔀Router🔀Get🔀Orgs()->listOrgRoles($params);
                         }
                     } elseif ($pathChunks[3] === 'outside_collaborators') {
                         if ($call === 'GET /orgs/{org}/outside_collaborators') {

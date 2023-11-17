@@ -12,7 +12,7 @@ use EventSauce\ObjectHydrator\MapFrom;
 final readonly class CopilotSeatDetails
 {
     public const SCHEMA_JSON         = '{
-    "title": "Copilot for Business Seat Detail",
+    "title": "Copilot Business Seat Detail",
     "required": [
         "assignee",
         "created_at"
@@ -826,11 +826,11 @@ final readonly class CopilotSeatDetails
             "format": "date-time"
         }
     },
-    "description": "Information about a Copilot for Business seat assignment for a user, team, or organization.",
+    "description": "Information about a Copilot Business seat assignment for a user, team, or organization.",
     "additionalProperties": false
 }';
-    public const SCHEMA_TITLE        = 'Copilot for Business Seat Detail';
-    public const SCHEMA_DESCRIPTION  = 'Information about a Copilot for Business seat assignment for a user, team, or organization.';
+    public const SCHEMA_TITLE        = 'Copilot Business Seat Detail';
+    public const SCHEMA_DESCRIPTION  = 'Information about a Copilot Business seat assignment for a user, team, or organization.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "assignee": null,
     "assigning_team": null,

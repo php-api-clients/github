@@ -3826,7 +3826,7 @@ You can find more about this operation over at the [API method documentation](ht
 
 ### copilot/get-copilot-organization-details
 
-Get Copilot for Business seat information and settings for an organization
+Get Copilot Business seat information and settings for an organization
 
 Using the `call` method:
 ```php
@@ -3841,12 +3841,12 @@ $client->operations()->copilot()->getCopilotOrganizationDetails(        org: 'ge
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#get-copilot-for-business-seat-information-and-settings-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-business#get-copilot-business-seat-information-and-settings-for-an-organization).
 
 
 ### copilot/list-copilot-seats
 
-List all Copilot for Business seat assignments for an organization
+List all Copilot Business seat assignments for an organization
 
 Using the `call` method:
 ```php
@@ -3865,12 +3865,12 @@ $client->operations()->copilot()->listCopilotSeats(        org: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#list-all-copilot-for-business-seat-assignments-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-business#list-all-copilot-business-seat-assignments-for-an-organization).
 
 
 ### copilot/add-copilot-for-business-seats-for-teams
 
-Add teams to the Copilot for Business subscription for an organization
+Add teams to the Copilot Business subscription for an organization
 
 Using the `call` method:
 ```php
@@ -3885,12 +3885,12 @@ $client->operations()->copilot()->addCopilotForBusinessSeatsForTeams(        org
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#add-teams-to-the-copilot-for-business-subscription-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-business#add-teams-to-the-copilot-business-subscription-for-an-organization).
 
 
 ### copilot/cancel-copilot-seat-assignment-for-teams
 
-Remove teams from the Copilot for Business subscription for an organization
+Remove teams from the Copilot Business subscription for an organization
 
 Using the `call` method:
 ```php
@@ -3905,12 +3905,12 @@ $client->operations()->copilot()->cancelCopilotSeatAssignmentForTeams(        or
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#remove-teams-from-the-copilot-for-business-subscription-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-business#remove-teams-from-the-copilot-business-subscription-for-an-organization).
 
 
 ### copilot/add-copilot-for-business-seats-for-users
 
-Add users to the Copilot for Business subscription for an organization
+Add users to the Copilot Business subscription for an organization
 
 Using the `call` method:
 ```php
@@ -3925,12 +3925,12 @@ $client->operations()->copilot()->addCopilotForBusinessSeatsForUsers(        org
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#add-users-to-the-copilot-for-business-subscription-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-business#add-users-to-the-copilot-business-subscription-for-an-organization).
 
 
 ### copilot/cancel-copilot-seat-assignment-for-users
 
-Remove users from the Copilot for Business subscription for an organization
+Remove users from the Copilot Business subscription for an organization
 
 Using the `call` method:
 ```php
@@ -3945,7 +3945,7 @@ $client->operations()->copilot()->cancelCopilotSeatAssignmentForUsers(        or
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#remove-users-from-the-copilot-for-business-subscription-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-business#remove-users-from-the-copilot-business-subscription-for-an-organization).
 
 
 ### dependabot/list-alerts-for-org
@@ -5092,7 +5092,7 @@ You can find more about this operation over at the [API method documentation](ht
 
 ### copilot/get-copilot-seat-details-for-user
 
-Get Copilot for Business seat assignment details for a user
+Get Copilot Business seat assignment details for a user
 
 Using the `call` method:
 ```php
@@ -5109,7 +5109,7 @@ $client->operations()->copilot()->getCopilotSeatDetailsForUser(        org: 'gen
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-for-business#get-copilot-for-business-seat-assignment-details-for-a-user).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-business#get-copilot-business-seat-assignment-details-for-a-user).
 
 
 ### orgs/get-membership-for-user
@@ -5414,6 +5414,376 @@ $client->operations()->migrations()->listReposForOrgListing(        org: 'genera
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/migrations/orgs#list-repositories-in-an-organization-migration).
+
+
+### orgs/list-organization-fine-grained-permissions
+
+List organization fine-grained permissions for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/organization-fine-grained-permissions', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->listOrganizationFineGrainedPermissions(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#list-organization-fine-grained-permissions-for-an-organization).
+
+
+### orgs/list-org-roles
+
+Get all organization roles for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/organization-roles', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->listOrgRoles(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#get-all-organization-roles-for-an-organization).
+
+
+### orgs/create-custom-organization-role
+
+Create a custom organization role
+
+Using the `call` method:
+```php
+$client->call('POST /orgs/{org}/organization-roles', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->createCustomOrganizationRole(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#create-a-custom-organization-role).
+
+
+### orgs/revoke-all-org-roles-team
+
+Remove all organization roles for a team
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/organization-roles/teams/{team_slug}', [
+        'org' => 'generated',
+        'team_slug' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->revokeAllOrgRolesTeam(        org: 'generated',
+        team_slug: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#remove-all-organization-roles-for-a-team).
+
+
+### orgs/assign-team-to-org-role
+
+Assign an organization role to a team
+
+Using the `call` method:
+```php
+$client->call('PUT /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}', [
+        'org' => 'generated',
+        'team_slug' => 'generated',
+        'role_id' => 7,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->assignTeamToOrgRole(        org: 'generated',
+        team_slug: 'generated',
+        role_id: 7,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#assign-an-organization-role-to-a-team).
+
+
+### orgs/revoke-org-role-team
+
+Remove an organization role from a team
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}', [
+        'org' => 'generated',
+        'team_slug' => 'generated',
+        'role_id' => 7,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->revokeOrgRoleTeam(        org: 'generated',
+        team_slug: 'generated',
+        role_id: 7,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#remove-an-organization-role-from-a-team).
+
+
+### orgs/revoke-all-org-roles-user
+
+Remove all organization roles for a user
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/organization-roles/users/{username}', [
+        'org' => 'generated',
+        'username' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->revokeAllOrgRolesUser(        org: 'generated',
+        username: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#remove-all-organization-roles-for-a-user).
+
+
+### orgs/assign-user-to-org-role
+
+Assign an organization role to a user
+
+Using the `call` method:
+```php
+$client->call('PUT /orgs/{org}/organization-roles/users/{username}/{role_id}', [
+        'org' => 'generated',
+        'username' => 'generated',
+        'role_id' => 7,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->assignUserToOrgRole(        org: 'generated',
+        username: 'generated',
+        role_id: 7,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#assign-an-organization-role-to-a-user).
+
+
+### orgs/revoke-org-role-user
+
+Remove an organization role from a user
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}', [
+        'org' => 'generated',
+        'username' => 'generated',
+        'role_id' => 7,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->revokeOrgRoleUser(        org: 'generated',
+        username: 'generated',
+        role_id: 7,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#remove-an-organization-role-from-a-user).
+
+
+### orgs/get-org-role
+
+Get an organization role
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/organization-roles/{role_id}', [
+        'org' => 'generated',
+        'role_id' => 7,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->getOrgRole(        org: 'generated',
+        role_id: 7,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#get-an-organization-role).
+
+
+### orgs/delete-custom-organization-role
+
+Delete a custom organization role.
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/organization-roles/{role_id}', [
+        'org' => 'generated',
+        'role_id' => 7,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->deleteCustomOrganizationRole(        org: 'generated',
+        role_id: 7,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#delete-a-custom-organization-role).
+
+
+### orgs/patch-custom-organization-role
+
+Update a custom organization role
+
+Using the `call` method:
+```php
+$client->call('PATCH /orgs/{org}/organization-roles/{role_id}', [
+        'org' => 'generated',
+        'role_id' => 7,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->patchCustomOrganizationRole(        org: 'generated',
+        role_id: 7,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#update-a-custom-organization-role).
+
+
+### orgs/list-org-role-teams
+
+List teams that are assigned to an organization role
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/organization-roles/{role_id}/teams', [
+        'org' => 'generated',
+        'role_id' => 7,
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->listOrgRoleTeams(        org: 'generated',
+        role_id: 7,
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#list-teams-that-are-assigned-to-an-organization-role).
+
+
+### orgs/list-org-role-teams
+
+List teams that are assigned to an organization role
+
+Using the `call` method:
+```php
+$client->call('LIST /orgs/{org}/organization-roles/{role_id}/teams', [
+        'org' => 'generated',
+        'role_id' => 7,
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->listOrgRoleTeamsListing(        org: 'generated',
+        role_id: 7,
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#list-teams-that-are-assigned-to-an-organization-role).
+
+
+### orgs/list-org-role-users
+
+List users that are assigned to an organization role
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/organization-roles/{role_id}/users', [
+        'org' => 'generated',
+        'role_id' => 7,
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->listOrgRoleUsers(        org: 'generated',
+        role_id: 7,
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#list-users-that-are-assigned-to-an-organization-role).
+
+
+### orgs/list-org-role-users
+
+List users that are assigned to an organization role
+
+Using the `call` method:
+```php
+$client->call('LIST /orgs/{org}/organization-roles/{role_id}/users', [
+        'org' => 'generated',
+        'role_id' => 7,
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->listOrgRoleUsersListing(        org: 'generated',
+        role_id: 7,
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#list-users-that-are-assigned-to-an-organization-role).
 
 
 ### orgs/list-outside-collaborators

@@ -21,7 +21,7 @@ final class Seven
     {
     }
 
-    /** @return |Observable<Schema\Label>|Schema\BasicError */
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody|Observable<Schema\Label>|Schema\BasicError */
     public function call(string $call, array $params, array $pathChunks): EmptyObject|WithoutBody|Ok|TeamMembership|ProtectedBranch|iterable|BasicError|PullRequestMergeResult|Json
     {
         if ($pathChunks[0] === '') {
@@ -85,6 +85,24 @@ final class Seven
                                 if ($pathChunks[6] === 'repositories') {
                                     if ($call === 'PUT /orgs/{org}/dependabot/secrets/{secret_name}/repositories') {
                                         return $this->routers->internal🔀Router🔀Put🔀Dependabot()->setSelectedReposForOrgSecret($params);
+                                    }
+                                }
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'organization-roles') {
+                        if ($pathChunks[4] === 'teams') {
+                            if ($pathChunks[5] === '{team_slug}') {
+                                if ($pathChunks[6] === '{role_id}') {
+                                    if ($call === 'PUT /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}') {
+                                        return $this->routers->internal🔀Router🔀Put🔀Orgs()->assignTeamToOrgRole($params);
+                                    }
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'users') {
+                            if ($pathChunks[5] === '{username}') {
+                                if ($pathChunks[6] === '{role_id}') {
+                                    if ($call === 'PUT /orgs/{org}/organization-roles/users/{username}/{role_id}') {
+                                        return $this->routers->internal🔀Router🔀Put🔀Orgs()->assignUserToOrgRole($params);
                                     }
                                 }
                             }

@@ -125,6 +125,26 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
+    public function deleteCustomOrganizationRole(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('role_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: role_id');
+        }
+
+        $arguments['role_id'] = $params['role_id'];
+        unset($params['role_id']);
+        $operator = new Internal\Operator\Orgs\DeleteCustomOrganizationRole($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['role_id']);
+    }
+
     /** @return */
     public function removeOutsideCollaborator(array $params): WithoutBody
     {
@@ -180,6 +200,98 @@ final class Orgs
         $operator = new Internal\Operator\Orgs\Delete($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org());
 
         return $operator->call($arguments['org']);
+    }
+
+    public function revokeOrgRoleTeam(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('team_slug', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: team_slug');
+        }
+
+        $arguments['team_slug'] = $params['team_slug'];
+        unset($params['team_slug']);
+        if (array_key_exists('role_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: role_id');
+        }
+
+        $arguments['role_id'] = $params['role_id'];
+        unset($params['role_id']);
+        $operator = new Internal\Operator\Orgs\RevokeOrgRoleTeam($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['role_id']);
+    }
+
+    public function revokeOrgRoleUser(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('username', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: username');
+        }
+
+        $arguments['username'] = $params['username'];
+        unset($params['username']);
+        if (array_key_exists('role_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: role_id');
+        }
+
+        $arguments['role_id'] = $params['role_id'];
+        unset($params['role_id']);
+        $operator = new Internal\Operator\Orgs\RevokeOrgRoleUser($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['username'], $arguments['role_id']);
+    }
+
+    public function revokeAllOrgRolesTeam(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('team_slug', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: team_slug');
+        }
+
+        $arguments['team_slug'] = $params['team_slug'];
+        unset($params['team_slug']);
+        $operator = new Internal\Operator\Orgs\RevokeAllOrgRolesTeam($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['team_slug']);
+    }
+
+    public function revokeAllOrgRolesUser(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('username', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: username');
+        }
+
+        $arguments['username'] = $params['username'];
+        unset($params['username']);
+        $operator = new Internal\Operator\Orgs\RevokeAllOrgRolesUser($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['username']);
     }
 
     /** @return */

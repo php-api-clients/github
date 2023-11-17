@@ -15,7 +15,7 @@ final class Six
     {
     }
 
-    /** @return Observable<Schema\MarketplacePurchase>|Observable<Schema\Team>|Observable<Schema\MinimalRepository>|Observable<Schema\TeamDiscussion>|Observable<Schema\OrganizationInvitation>|Observable<Schema\SimpleUser>|Observable<Schema\TeamProject>|Observable<Schema\CodeScanningAlertItems>|WithoutBody|Observable<Schema\CodeScanningAnalysis>|Observable<Schema\DependabotAlert>|Observable<Schema\IssueComment>|Observable<Schema\IssueEvent>|Observable<Schema\PageBuild>|Observable<Schema\PullRequestReviewComment>|Observable<Schema\RuleSuites>|Observable<Schema\SecretScanningAlert>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\PackageVersion>|Observable<Schema\Event> */
+    /** @return Observable<Schema\MarketplacePurchase>|Observable<Schema\Team>|Observable<Schema\MinimalRepository>|iterable<int,Schema\Team>|WithoutBody|iterable<int,Schema\SimpleUser>|Observable<Schema\TeamDiscussion>|Observable<Schema\OrganizationInvitation>|Observable<Schema\SimpleUser>|Observable<Schema\TeamProject>|Observable<Schema\CodeScanningAlertItems>|WithoutBody|Observable<Schema\CodeScanningAnalysis>|Observable<Schema\DependabotAlert>|Observable<Schema\IssueComment>|Observable<Schema\IssueEvent>|Observable<Schema\PageBuild>|Observable<Schema\PullRequestReviewComment>|Observable<Schema\RuleSuites>|Observable<Schema\SecretScanningAlert>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\PackageVersion>|Observable<Schema\Event> */
     public function call(string $call, array $params, array $pathChunks): iterable|WithoutBody
     {
         if ($pathChunks[0] === '') {
@@ -46,6 +46,18 @@ final class Six
                             if ($pathChunks[5] === 'repositories') {
                                 if ($call === 'LIST /orgs/{org}/migrations/{migration_id}/repositories') {
                                     return $this->routers->internal🔀Router🔀List🔀Migrations()->listReposForOrgListing($params);
+                                }
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'organization-roles') {
+                        if ($pathChunks[4] === '{role_id}') {
+                            if ($pathChunks[5] === 'teams') {
+                                if ($call === 'LIST /orgs/{org}/organization-roles/{role_id}/teams') {
+                                    return $this->routers->internal🔀Router🔀List🔀Orgs()->listOrgRoleTeamsListing($params);
+                                }
+                            } elseif ($pathChunks[5] === 'users') {
+                                if ($call === 'LIST /orgs/{org}/organization-roles/{role_id}/users') {
+                                    return $this->routers->internal🔀Router🔀List🔀Orgs()->listOrgRoleUsersListing($params);
                                 }
                             }
                         }
