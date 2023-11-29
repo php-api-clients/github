@@ -100,6 +100,14 @@ final readonly class AppPermissions
             "type": "string",
             "description": "The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges."
         },
+        "repository_custom_properties": {
+            "enum": [
+                "read",
+                "write"
+            ],
+            "type": "string",
+            "description": "The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property."
+        },
         "repository_hooks": {
             "enum": [
                 "read",
@@ -194,7 +202,15 @@ final readonly class AppPermissions
                 "write"
             ],
             "type": "string",
-            "description": "The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change."
+            "description": "The level of permission to grant the access token for custom repository roles management."
+        },
+        "organization_custom_org_roles": {
+            "enum": [
+                "read",
+                "write"
+            ],
+            "type": "string",
+            "description": "The level of permission to grant the access token for custom organization roles management."
         },
         "organization_custom_properties": {
             "enum": [
@@ -204,6 +220,13 @@ final readonly class AppPermissions
             ],
             "type": "string",
             "description": "The level of permission to grant the access token for custom property management."
+        },
+        "organization_copilot_seat_management": {
+            "enum": [
+                "write"
+            ],
+            "type": "string",
+            "description": "The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change."
         },
         "organization_announcement_banners": {
             "enum": [
@@ -316,6 +339,7 @@ final readonly class AppPermissions
     "packages": "write",
     "pages": "read",
     "pull_requests": "read",
+    "repository_custom_properties": "write",
     "repository_hooks": "write",
     "repository_projects": "read",
     "secret_scanning_alerts": "write",
@@ -328,7 +352,9 @@ final readonly class AppPermissions
     "members": "read",
     "organization_administration": "read",
     "organization_custom_roles": "read",
+    "organization_custom_org_roles": "read",
     "organization_custom_properties": "admin",
+    "organization_copilot_seat_management": "write",
     "organization_announcement_banners": "read",
     "organization_hooks": "write",
     "organization_personal_access_tokens": "read",
@@ -354,6 +380,7 @@ final readonly class AppPermissions
      * packages: The level of permission to grant the access token for packages published to GitHub Packages.
      * pages: The level of permission to grant the access token to retrieve Pages statuses, configuration, and builds, as well as create new builds.
      * pullRequests: The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges.
+     * repositoryCustomProperties: The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property.
      * repositoryHooks: The level of permission to grant the access token to manage the post-receive hooks for a repository.
      * repositoryProjects: The level of permission to grant the access token to manage repository projects, columns, and cards.
      * secretScanningAlerts: The level of permission to grant the access token to view and manage secret scanning alerts.
@@ -365,8 +392,10 @@ final readonly class AppPermissions
      * workflows: The level of permission to grant the access token to update GitHub Actions workflow files.
      * members: The level of permission to grant the access token for organization teams and members.
      * organizationAdministration: The level of permission to grant the access token to manage access to an organization.
-     * organizationCustomRoles: The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change.
+     * organizationCustomRoles: The level of permission to grant the access token for custom repository roles management.
+     * organizationCustomOrgRoles: The level of permission to grant the access token for custom organization roles management.
      * organizationCustomProperties: The level of permission to grant the access token for custom property management.
+     * organizationCopilotSeatManagement: The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
      * organizationAnnouncementBanners: The level of permission to grant the access token to view and manage announcement banners for an organization.
      * organizationHooks: The level of permission to grant the access token to manage the post-receive hooks for an organization.
      * organizationPersonalAccessTokens: The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
@@ -380,7 +409,8 @@ final readonly class AppPermissions
      * teamDiscussions: The level of permission to grant the access token to manage team discussions and related comments.
      */
     public function __construct(public string|null $actions, public string|null $administration, public string|null $checks, public string|null $contents, public string|null $deployments, public string|null $environments, public string|null $issues, public string|null $metadata, public string|null $packages, public string|null $pages, #[MapFrom('pull_requests')]
-    public string|null $pullRequests, #[MapFrom('repository_hooks')]
+    public string|null $pullRequests, #[MapFrom('repository_custom_properties')]
+    public string|null $repositoryCustomProperties, #[MapFrom('repository_hooks')]
     public string|null $repositoryHooks, #[MapFrom('repository_projects')]
     public string|null $repositoryProjects, #[MapFrom('secret_scanning_alerts')]
     public string|null $secretScanningAlerts, public string|null $secrets, #[MapFrom('security_events')]
@@ -388,8 +418,10 @@ final readonly class AppPermissions
     public string|null $singleFile, public string|null $statuses, #[MapFrom('vulnerability_alerts')]
     public string|null $vulnerabilityAlerts, public string|null $workflows, public string|null $members, #[MapFrom('organization_administration')]
     public string|null $organizationAdministration, #[MapFrom('organization_custom_roles')]
-    public string|null $organizationCustomRoles, #[MapFrom('organization_custom_properties')]
-    public string|null $organizationCustomProperties, #[MapFrom('organization_announcement_banners')]
+    public string|null $organizationCustomRoles, #[MapFrom('organization_custom_org_roles')]
+    public string|null $organizationCustomOrgRoles, #[MapFrom('organization_custom_properties')]
+    public string|null $organizationCustomProperties, #[MapFrom('organization_copilot_seat_management')]
+    public string|null $organizationCopilotSeatManagement, #[MapFrom('organization_announcement_banners')]
     public string|null $organizationAnnouncementBanners, #[MapFrom('organization_hooks')]
     public string|null $organizationHooks, #[MapFrom('organization_personal_access_tokens')]
     public string|null $organizationPersonalAccessTokens, #[MapFrom('organization_personal_access_token_requests')]

@@ -22,7 +22,6 @@ final readonly class DisableDeploymentProtectionRule
     {
     }
 
-    /** @return */
     public function call(string $environmentName, string $repo, string $owner, int $protectionRuleId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DisableDeploymentProtectionRule($environmentName, $repo, $owner, $protectionRuleId);

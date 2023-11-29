@@ -24,6 +24,7 @@ final readonly class PatchCustomOrganizationRole
     {
     }
 
+    /** @return */
     public function call(string $org, int $roleId, array $params): OrganizationRole
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\PatchCustomOrganizationRole($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $roleId);

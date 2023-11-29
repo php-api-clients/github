@@ -24,6 +24,7 @@ final readonly class GetOrgRole
     {
     }
 
+    /** @return */
     public function call(string $org, int $roleId): OrganizationRole
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\GetOrgRole($this->responseSchemaValidator, $this->hydrator, $org, $roleId);

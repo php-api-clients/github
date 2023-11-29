@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Operation;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\FullRepository;
 use ApiClients\Client\GitHub\Schema\GlobalAdvisory;
 use ApiClients\Client\GitHub\Schema\Operations\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\RepositoryAdvisory;
@@ -68,5 +69,10 @@ final class SecurityAdvisories
     public function createRepositoryAdvisoryCveRequest(string $owner, string $repo, string $ghsaId): Json
     {
         return $this->operators->securityAdvisories👷CreateRepositoryAdvisoryCveRequest()->call($owner, $repo, $ghsaId);
+    }
+
+    public function createFork(string $owner, string $repo, string $ghsaId): FullRepository
+    {
+        return $this->operators->securityAdvisories👷CreateFork()->call($owner, $repo, $ghsaId);
     }
 }

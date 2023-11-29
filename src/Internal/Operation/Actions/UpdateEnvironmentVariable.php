@@ -24,7 +24,7 @@ final class UpdateEnvironmentVariable
     private int $repositoryId;
     /**The name of the variable. **/
     private string $name;
-    /**The name of the environment. **/
+    /**The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`. **/
     private string $environmentName;
 
     public function __construct(private readonly SchemaValidator $requestSchemaValidator, int $repositoryId, string $name, string $environmentName)

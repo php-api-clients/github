@@ -125,6 +125,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
+    /** @return */
     public function deleteCustomOrganizationRole(array $params): WithoutBody
     {
         $arguments = [];
@@ -202,6 +203,7 @@ final class Orgs
         return $operator->call($arguments['org']);
     }
 
+    /** @return */
     public function revokeOrgRoleTeam(array $params): WithoutBody
     {
         $arguments = [];
@@ -228,6 +230,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['role_id']);
     }
 
+    /** @return */
     public function revokeOrgRoleUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -254,6 +257,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username'], $arguments['role_id']);
     }
 
+    /** @return */
     public function revokeAllOrgRolesTeam(array $params): WithoutBody
     {
         $arguments = [];
@@ -274,6 +278,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['team_slug']);
     }
 
+    /** @return */
     public function revokeAllOrgRolesUser(array $params): WithoutBody
     {
         $arguments = [];

@@ -53,6 +53,7 @@ final class Orgs
         return $operator->call($arguments['org'], $params);
     }
 
+    /** @return */
     public function createCustomOrganizationRole(array $params): OrganizationRole
     {
         $arguments = [];

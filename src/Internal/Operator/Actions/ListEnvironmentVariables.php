@@ -24,7 +24,6 @@ final readonly class ListEnvironmentVariables
     {
     }
 
-    /** @return */
     public function call(int $repositoryId, string $environmentName, int $perPage = 10, int $page = 1): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListEnvironmentVariables($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $perPage, $page);

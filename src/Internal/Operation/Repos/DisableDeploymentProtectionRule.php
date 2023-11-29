@@ -16,7 +16,7 @@ final class DisableDeploymentProtectionRule
 {
     public const OPERATION_ID    = 'repos/disable-deployment-protection-rule';
     public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}';
-    /**The name of the environment. **/
+    /**The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`. **/
     private string $environmentName;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;

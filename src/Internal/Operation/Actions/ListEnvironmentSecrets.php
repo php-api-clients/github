@@ -23,7 +23,7 @@ final class ListEnvironmentSecrets
     public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/secrets';
     /**The unique identifier of the repository. **/
     private int $repositoryId;
-    /**The name of the environment. **/
+    /**The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`. **/
     private string $environmentName;
     /**The number of results per page (max 100). **/
     private int $perPage;

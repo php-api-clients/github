@@ -172,6 +172,11 @@ final readonly class RepositoryAdvisoryCreate
                 "null"
             ],
             "description": "The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`."
+        },
+        "start_private_fork": {
+            "type": "boolean",
+            "description": "Whether to create a temporary private fork of the repository to collaborate on a fix.",
+            "default": false
         }
     },
     "additionalProperties": false
@@ -205,7 +210,8 @@ final readonly class RepositoryAdvisoryCreate
     "cwe_ids": null,
     "credits": null,
     "severity": "low",
-    "cvss_vector_string": "generated"
+    "cvss_vector_string": "generated",
+    "start_private_fork": false
 }';
 
     /**
@@ -217,11 +223,13 @@ final readonly class RepositoryAdvisoryCreate
      * credits: A list of users receiving credit for their participation in the security advisory.
      * severity: The severity of the advisory. You must choose between setting this field or `cvss_vector_string`.
      * cvssVectorString: The CVSS vector that calculates the severity of the advisory. You must choose between setting this field or `severity`.
+     * startPrivateFork: Whether to create a temporary private fork of the repository to collaborate on a fix.
      */
     public function __construct(public string $summary, public string $description, #[MapFrom('cve_id')]
     public string|null $cveId, public array $vulnerabilities, #[MapFrom('cwe_ids')]
     public array|null $cweIds, public array|null $credits, public string|null $severity, #[MapFrom('cvss_vector_string')]
-    public string|null $cvssVectorString,)
+    public string|null $cvssVectorString, #[MapFrom('start_private_fork')]
+    public bool|null $startPrivateFork,)
     {
     }
 }

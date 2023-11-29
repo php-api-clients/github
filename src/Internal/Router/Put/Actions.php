@@ -210,7 +210,6 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name'], $params);
     }
 
-    /** @return */
     public function createOrUpdateEnvironmentSecret(array $params): EmptyObject|WithoutBody
     {
         $arguments = [];

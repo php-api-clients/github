@@ -844,6 +844,7 @@ final class Operators
     private Internal\Operator\SecurityAdvisories\GetRepositoryAdvisory|null $securityAdvisories👷GetRepositoryAdvisory                                                               = null;
     private Internal\Operator\SecurityAdvisories\UpdateRepositoryAdvisory|null $securityAdvisories👷UpdateRepositoryAdvisory                                                         = null;
     private Internal\Operator\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest|null $securityAdvisories👷CreateRepositoryAdvisoryCveRequest                                     = null;
+    private Internal\Operator\SecurityAdvisories\CreateFork|null $securityAdvisories👷CreateFork                                                                                     = null;
     private Internal\Operator\Activity\ListStargazersForRepo|null $activity👷ListStargazersForRepo                                                                                   = null;
     private Internal\Operator\Repos\GetCodeFrequencyStats|null $repos👷GetCodeFrequencyStats                                                                                         = null;
     private Internal\Operator\Repos\GetCommitActivityStats|null $repos👷GetCommitActivityStats                                                                                       = null;
@@ -8608,6 +8609,15 @@ final class Operators
         }
 
         return $this->securityAdvisories👷CreateRepositoryAdvisoryCveRequest;
+    }
+
+    public function securityAdvisories👷CreateFork(): Internal\Operator\SecurityAdvisories\CreateFork
+    {
+        if ($this->securityAdvisories👷CreateFork instanceof Internal\Operator\SecurityAdvisories\CreateFork === false) {
+            $this->securityAdvisories👷CreateFork = new Internal\Operator\SecurityAdvisories\CreateFork($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecurityAdvisories🌀GhsaId🌀Forks());
+        }
+
+        return $this->securityAdvisories👷CreateFork;
     }
 
     public function activity👷ListStargazersForRepo(): Internal\Operator\Activity\ListStargazersForRepo

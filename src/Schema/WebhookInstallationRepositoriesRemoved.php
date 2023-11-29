@@ -544,6 +544,14 @@ final readonly class WebhookInstallationRepositoriesRemoved
                             "type": "string",
                             "description": "The level of permission to grant the access token for pull requests and related comments, assignees, labels, milestones, and merges."
                         },
+                        "repository_custom_properties": {
+                            "enum": [
+                                "read",
+                                "write"
+                            ],
+                            "type": "string",
+                            "description": "The level of permission to grant the access token to view and edit custom properties for a repository, when allowed by the property."
+                        },
                         "repository_hooks": {
                             "enum": [
                                 "read",
@@ -638,7 +646,15 @@ final readonly class WebhookInstallationRepositoriesRemoved
                                 "write"
                             ],
                             "type": "string",
-                            "description": "The level of permission to grant the access token for custom repository roles management. This property is in beta and is subject to change."
+                            "description": "The level of permission to grant the access token for custom repository roles management."
+                        },
+                        "organization_custom_org_roles": {
+                            "enum": [
+                                "read",
+                                "write"
+                            ],
+                            "type": "string",
+                            "description": "The level of permission to grant the access token for custom organization roles management."
                         },
                         "organization_custom_properties": {
                             "enum": [
@@ -648,6 +664,13 @@ final readonly class WebhookInstallationRepositoriesRemoved
                             ],
                             "type": "string",
                             "description": "The level of permission to grant the access token for custom property management."
+                        },
+                        "organization_copilot_seat_management": {
+                            "enum": [
+                                "write"
+                            ],
+                            "type": "string",
+                            "description": "The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change."
                         },
                         "organization_announcement_banners": {
                             "enum": [
@@ -2924,6 +2947,7 @@ final readonly class WebhookInstallationRepositoriesRemoved
             "packages": "write",
             "pages": "read",
             "pull_requests": "read",
+            "repository_custom_properties": "write",
             "repository_hooks": "write",
             "repository_projects": "read",
             "secret_scanning_alerts": "write",
@@ -2936,7 +2960,9 @@ final readonly class WebhookInstallationRepositoriesRemoved
             "members": "read",
             "organization_administration": "read",
             "organization_custom_roles": "read",
+            "organization_custom_org_roles": "read",
             "organization_custom_properties": "admin",
+            "organization_copilot_seat_management": "write",
             "organization_announcement_banners": "read",
             "organization_hooks": "write",
             "organization_personal_access_tokens": "read",

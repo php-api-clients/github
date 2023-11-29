@@ -67,7 +67,6 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name'], $params);
     }
 
-    /** @return */
     public function updateEnvironmentVariable(array $params): WithoutBody
     {
         $arguments = [];

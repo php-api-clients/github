@@ -24,7 +24,6 @@ final readonly class GetCustomDeploymentProtectionRule
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, string $environmentName, int $protectionRuleId): DeploymentProtectionRule
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetCustomDeploymentProtectionRule($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName, $protectionRuleId);

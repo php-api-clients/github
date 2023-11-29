@@ -24,7 +24,6 @@ final readonly class GetAllDeploymentProtectionRules
     {
     }
 
-    /** @return */
     public function call(string $environmentName, string $repo, string $owner): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetAllDeploymentProtectionRules($this->responseSchemaValidator, $this->hydrator, $environmentName, $repo, $owner);

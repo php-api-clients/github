@@ -22,6 +22,7 @@ final readonly class AssignTeamToOrgRole
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, int $roleId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\AssignTeamToOrgRole($org, $teamSlug, $roleId);

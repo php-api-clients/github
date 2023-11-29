@@ -22,7 +22,6 @@ final readonly class DeleteAnEnvironment
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, string $environmentName): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\DeleteAnEnvironment($owner, $repo, $environmentName);

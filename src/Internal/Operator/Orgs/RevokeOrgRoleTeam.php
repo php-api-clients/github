@@ -22,6 +22,7 @@ final readonly class RevokeOrgRoleTeam
     {
     }
 
+    /** @return */
     public function call(string $org, string $teamSlug, int $roleId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\RevokeOrgRoleTeam($org, $teamSlug, $roleId);

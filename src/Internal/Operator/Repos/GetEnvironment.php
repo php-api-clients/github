@@ -24,7 +24,6 @@ final readonly class GetEnvironment
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, string $environmentName): Environment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetEnvironment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName);

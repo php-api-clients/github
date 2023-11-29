@@ -810,6 +810,17 @@ class Scoped implements ObjectMapper
 
             after_pullRequests:
 
+            $value = $payload['repository_custom_properties'] ?? null;
+
+            if ($value === null) {
+                $properties['repositoryCustomProperties'] = null;
+                goto after_repositoryCustomProperties;
+            }
+
+            $properties['repositoryCustomProperties'] = $value;
+
+            after_repositoryCustomProperties:
+
             $value = $payload['repository_hooks'] ?? null;
 
             if ($value === null) {
@@ -942,6 +953,17 @@ class Scoped implements ObjectMapper
 
             after_organizationCustomRoles:
 
+            $value = $payload['organization_custom_org_roles'] ?? null;
+
+            if ($value === null) {
+                $properties['organizationCustomOrgRoles'] = null;
+                goto after_organizationCustomOrgRoles;
+            }
+
+            $properties['organizationCustomOrgRoles'] = $value;
+
+            after_organizationCustomOrgRoles:
+
             $value = $payload['organization_custom_properties'] ?? null;
 
             if ($value === null) {
@@ -952,6 +974,17 @@ class Scoped implements ObjectMapper
             $properties['organizationCustomProperties'] = $value;
 
             after_organizationCustomProperties:
+
+            $value = $payload['organization_copilot_seat_management'] ?? null;
+
+            if ($value === null) {
+                $properties['organizationCopilotSeatManagement'] = null;
+                goto after_organizationCopilotSeatManagement;
+            }
+
+            $properties['organizationCopilotSeatManagement'] = $value;
+
+            after_organizationCopilotSeatManagement:
 
             $value = $payload['organization_announcement_banners'] ?? null;
 
@@ -1665,6 +1698,14 @@ class Scoped implements ObjectMapper
 
         after_pullRequests:        $result['pull_requests'] = $pullRequests;
 
+        $repositoryCustomProperties = $object->repositoryCustomProperties;
+
+        if ($repositoryCustomProperties === null) {
+            goto after_repositoryCustomProperties;
+        }
+
+        after_repositoryCustomProperties:        $result['repository_custom_properties'] = $repositoryCustomProperties;
+
         $repositoryHooks = $object->repositoryHooks;
 
         if ($repositoryHooks === null) {
@@ -1761,6 +1802,14 @@ class Scoped implements ObjectMapper
 
         after_organizationCustomRoles:        $result['organization_custom_roles'] = $organizationCustomRoles;
 
+        $organizationCustomOrgRoles = $object->organizationCustomOrgRoles;
+
+        if ($organizationCustomOrgRoles === null) {
+            goto after_organizationCustomOrgRoles;
+        }
+
+        after_organizationCustomOrgRoles:        $result['organization_custom_org_roles'] = $organizationCustomOrgRoles;
+
         $organizationCustomProperties = $object->organizationCustomProperties;
 
         if ($organizationCustomProperties === null) {
@@ -1768,6 +1817,14 @@ class Scoped implements ObjectMapper
         }
 
         after_organizationCustomProperties:        $result['organization_custom_properties'] = $organizationCustomProperties;
+
+        $organizationCopilotSeatManagement = $object->organizationCopilotSeatManagement;
+
+        if ($organizationCopilotSeatManagement === null) {
+            goto after_organizationCopilotSeatManagement;
+        }
+
+        after_organizationCopilotSeatManagement:        $result['organization_copilot_seat_management'] = $organizationCopilotSeatManagement;
 
         $organizationAnnouncementBanners = $object->organizationAnnouncementBanners;
 

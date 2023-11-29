@@ -90,7 +90,6 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
     public function createEnvironmentVariable(array $params): EmptyObject
     {
         $arguments = [];

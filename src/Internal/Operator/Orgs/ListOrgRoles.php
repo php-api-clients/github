@@ -24,6 +24,7 @@ final readonly class ListOrgRoles
     {
     }
 
+    /** @return */
     public function call(string $org): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListOrgRoles($this->responseSchemaValidator, $this->hydrator, $org);

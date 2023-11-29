@@ -6,11 +6,11 @@ namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal\Routers;
 use ApiClients\Client\GitHub\Schema\Codespace;
+use ApiClients\Client\GitHub\Schema\FullRepository;
 use ApiClients\Client\GitHub\Schema\GpgKey;
 use ApiClients\Client\GitHub\Schema\Key;
 use ApiClients\Client\GitHub\Schema\Migration;
 use ApiClients\Client\GitHub\Schema\Project;
-use ApiClients\Client\GitHub\Schema\Repository;
 use ApiClients\Client\GitHub\Schema\SshSigningKey;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
@@ -21,8 +21,8 @@ final class Three
     {
     }
 
-    /** @return |Observable<Schema\Email>|WithoutBody|Observable<Schema\SocialAccount> */
-    public function call(string $call, array $params, array $pathChunks): WithoutBody|string|Codespace|iterable|GpgKey|Key|Migration|Project|Repository|SshSigningKey
+    /** @return |Observable<Schema\Email>|WithoutBody|Schema\FullRepository|\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody|Observable<Schema\SocialAccount> */
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|string|Codespace|iterable|GpgKey|Key|Migration|Project|FullRepository|SshSigningKey
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'markdown') {

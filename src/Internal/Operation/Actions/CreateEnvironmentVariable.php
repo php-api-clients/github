@@ -24,7 +24,7 @@ final class CreateEnvironmentVariable
     public const OPERATION_MATCH = 'POST /repositories/{repository_id}/environments/{environment_name}/variables';
     /**The unique identifier of the repository. **/
     private int $repositoryId;
-    /**The name of the environment. **/
+    /**The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`. **/
     private string $environmentName;
 
     public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables $hydrator, int $repositoryId, string $environmentName)

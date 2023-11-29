@@ -24,7 +24,6 @@ final readonly class GetDeploymentBranchPolicy
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, string $environmentName, int $branchPolicyId): DeploymentBranchPolicy
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetDeploymentBranchPolicy($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName, $branchPolicyId);

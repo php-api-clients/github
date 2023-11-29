@@ -24,7 +24,6 @@ final readonly class GetEnvironmentVariable
     {
     }
 
-    /** @return */
     public function call(int $repositoryId, string $environmentName, string $name): ActionsVariable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetEnvironmentVariable($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $name);

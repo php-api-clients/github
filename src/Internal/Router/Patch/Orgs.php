@@ -61,6 +61,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['hook_id'], $params);
     }
 
+    /** @return */
     public function patchCustomOrganizationRole(array $params): OrganizationRole
     {
         $arguments = [];

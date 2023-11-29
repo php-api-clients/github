@@ -21,7 +21,7 @@ final class GetAllDeploymentProtectionRules
 {
     public const OPERATION_ID    = 'repos/get-all-deployment-protection-rules';
     public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules';
-    /**The name of the environment. **/
+    /**The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`. **/
     private string $environmentName;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;

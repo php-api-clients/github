@@ -38,7 +38,7 @@ final class CreateInOrg
         return new Request('POST', str_replace(['{org}'], [$this->org], '/orgs/{org}/repos'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Repository
+    public function createResponse(ResponseInterface $response): Schema\FullRepository
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -50,9 +50,9 @@ final class CreateInOrg
                      * Response
                      **/
                     case 201:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Repository::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\FullRepository::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Repository::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\FullRepository::class, $body);
                     /**
                      * Forbidden
                      **/

@@ -724,19 +724,19 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'POST /orgs/{org}/copilot/billing/selected_teams') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Copilot\\AddCopilotForBusinessSeatsForTeams\\Response\\ApplicationJson\\Created|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/copilot/billing/selected_teams') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Copilot\\CancelCopilotSeatAssignmentForTeams\\Response\\ApplicationJson\\Ok|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'POST /orgs/{org}/copilot/billing/selected_users') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Copilot\\AddCopilotForBusinessSeatsForUsers\\Response\\ApplicationJson\\Created\\Application\\Json|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/copilot/billing/selected_users') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Copilot\\CancelCopilotSeatAssignmentForUsers\\Response\\ApplicationJson\\Ok\\Application\\Json|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/dependabot/alerts') {
@@ -928,7 +928,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/members/{username}/copilot') {
-            return $this->typeResolver->resolve('Schema\\CopilotSeatDetails|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/memberships/{username}') {
@@ -984,67 +984,67 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/organization-fine-grained-permissions') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\OrganizationFineGrainedPermission>');
+            return $this->typeResolver->resolve('Observable<Schema\\OrganizationFineGrainedPermission>');
         }
 
         if ($call === 'GET /orgs/{org}/organization-roles') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Orgs\\ListOrgRoles\\Response\\ApplicationJson\\Ok');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'POST /orgs/{org}/organization-roles') {
-            return $this->typeResolver->resolve('Schema\\OrganizationRole');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/organization-roles/teams/{team_slug}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PUT /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/organization-roles/users/{username}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PUT /orgs/{org}/organization-roles/users/{username}/{role_id}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/organization-roles/{role_id}') {
-            return $this->typeResolver->resolve('Schema\\OrganizationRole');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/organization-roles/{role_id}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PATCH /orgs/{org}/organization-roles/{role_id}') {
-            return $this->typeResolver->resolve('Schema\\OrganizationRole');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/organization-roles/{role_id}/teams') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\Team>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('Observable<Schema\\Team>|WithoutBody');
         }
 
         if ($call === 'LIST /orgs/{org}/organization-roles/{role_id}/teams') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\Team>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('Observable<Schema\\Team>|WithoutBody');
         }
 
         if ($call === 'GET /orgs/{org}/organization-roles/{role_id}/users') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\SimpleUser>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('Observable<Schema\\SimpleUser>|WithoutBody');
         }
 
         if ($call === 'LIST /orgs/{org}/organization-roles/{role_id}/users') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\SimpleUser>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('Observable<Schema\\SimpleUser>|WithoutBody');
         }
 
         if ($call === 'GET /orgs/{org}/outside_collaborators') {
@@ -1224,7 +1224,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'POST /orgs/{org}/repos') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\FullRepository');
         }
 
         if ($call === 'GET /orgs/{org}/rulesets') {
@@ -2476,55 +2476,55 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Environment');
         }
 
         if ($call === 'PUT /repos/{owner}/{repo}/environments/{environment_name}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Environment');
         }
 
         if ($call === 'DELETE /repos/{owner}/{repo}/environments/{environment_name}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\Repos\\ListDeploymentBranchPolicies\\Response\\ApplicationJson\\Ok');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\DeploymentBranchPolicy|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\DeploymentBranchPolicy');
         }
 
         if ($call === 'PUT /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\DeploymentBranchPolicy');
         }
 
         if ($call === 'DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\Repos\\GetAllDeploymentProtectionRules\\Response\\ApplicationJson\\Ok');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\DeploymentProtectionRule');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/apps') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\Repos\\ListCustomDeploymentRuleIntegrations\\Response\\ApplicationJson\\Ok');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\DeploymentProtectionRule');
         }
 
         if ($call === 'DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/events') {
@@ -3375,6 +3375,10 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('');
         }
 
+        if ($call === 'POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks') {
+            return $this->typeResolver->resolve('Schema\\FullRepository');
+        }
+
         if ($call === 'GET /repos/{owner}/{repo}/stargazers') {
             return $this->typeResolver->resolve('');
         }
@@ -3508,7 +3512,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'POST /repos/{template_owner}/{template_repo}/generate') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\FullRepository');
         }
 
         if ($call === 'GET /repositories') {
@@ -3516,43 +3520,43 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repositories/{repository_id}/environments/{environment_name}/secrets') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\ListEnvironmentSecrets\\Response\\ApplicationJson\\Ok\\Application\\Json');
         }
 
         if ($call === 'GET /repositories/{repository_id}/environments/{environment_name}/secrets/public-key') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\ActionsPublicKey');
         }
 
         if ($call === 'GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\ActionsSecret');
         }
 
         if ($call === 'PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\EmptyObject|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'DELETE /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repositories/{repository_id}/environments/{environment_name}/variables') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\ListEnvironmentVariables\\Response\\ApplicationJson\\Ok\\Application\\Json');
         }
 
         if ($call === 'POST /repositories/{repository_id}/environments/{environment_name}/variables') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\EmptyObject');
         }
 
         if ($call === 'GET /repositories/{repository_id}/environments/{environment_name}/variables/{name}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\ActionsVariable');
         }
 
         if ($call === 'DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'PATCH /repositories/{repository_id}/environments/{environment_name}/variables/{name}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /search/code') {
@@ -4128,7 +4132,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'POST /user/repos') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\FullRepository|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /user/repository_invitations') {

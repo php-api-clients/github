@@ -26,7 +26,7 @@ final class UpdateDeploymentBranchPolicy
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    /**The name of the environment. **/
+    /**The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`. **/
     private string $environmentName;
     /**The unique identifier of the branch policy. **/
     private int $branchPolicyId;

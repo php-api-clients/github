@@ -20639,6 +20639,30 @@ $client->operations()->securityAdvisories()->createRepositoryAdvisoryCveRequest(
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/security-advisories/repository-advisories#request-a-cve-for-a-repository-security-advisory).
 
 
+### security-advisories/create-fork
+
+Create a temporary private fork
+
+Using the `call` method:
+```php
+$client->call('POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'ghsa_id' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->securityAdvisories()->createFork(        owner: 'generated',
+        repo: 'generated',
+        ghsa_id: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/security-advisories/repository-advisories#create-a-temporary-private-fork).
+
+
 ### activity/list-stargazers-for-repo
 
 List stargazers
