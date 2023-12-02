@@ -4174,7 +4174,7 @@ final readonly class WebhookIssuesTransferred
                 },
                 "size": {
                     "type": "integer",
-                    "description": "The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.",
+                    "description": "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.",
                     "examples": [
                         108
                     ]

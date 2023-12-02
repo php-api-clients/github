@@ -41,7 +41,6 @@ final class Five
     {
     }
 
-    /** @return |Schema\FullRepository */
     public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|EmptyObject|WithoutBody|ProjectCard|Json|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|CodespaceExportDetails|CodespaceWithFullRepository
     {
         if ($pathChunks[0] === '') {

@@ -44,6 +44,15 @@ final readonly class Domains
                     "example.com"
                 ]
             }
+        },
+        "actions": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "examples": [
+                    "example.com"
+                ]
+            }
         }
     }
 }';
@@ -65,10 +74,14 @@ final readonly class Domains
     "packages": [
         "generated",
         "generated"
+    ],
+    "actions": [
+        "generated",
+        "generated"
     ]
 }';
 
-    public function __construct(public array|null $website, public array|null $codespaces, public array|null $copilot, public array|null $packages)
+    public function __construct(public array|null $website, public array|null $codespaces, public array|null $copilot, public array|null $packages, public array|null $actions)
     {
     }
 }

@@ -21,7 +21,7 @@ final class Three
     {
     }
 
-    /** @return |Observable<Schema\Email>|WithoutBody|Schema\FullRepository|\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody|Observable<Schema\SocialAccount> */
+    /** @return |Observable<Schema\Email>|WithoutBody|Observable<Schema\SocialAccount> */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|string|Codespace|iterable|GpgKey|Key|Migration|Project|FullRepository|SshSigningKey
     {
         if ($pathChunks[0] === '') {

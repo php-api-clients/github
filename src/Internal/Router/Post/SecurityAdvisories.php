@@ -90,6 +90,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ghsa_id']);
     }
 
+    /** @return */
     public function createFork(array $params): FullRepository
     {
         $arguments = [];

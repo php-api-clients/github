@@ -24,6 +24,7 @@ final readonly class CreateUsingTemplate
     {
     }
 
+    /** @return */
     public function call(string $templateOwner, string $templateRepo, array $params): FullRepository
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateUsingTemplate($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $templateOwner, $templateRepo);

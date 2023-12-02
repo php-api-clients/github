@@ -23,6 +23,7 @@ final readonly class UpdateEnvironmentVariable
     {
     }
 
+    /** @return */
     public function call(int $repositoryId, string $name, string $environmentName, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\UpdateEnvironmentVariable($this->requestSchemaValidator, $repositoryId, $name, $environmentName);

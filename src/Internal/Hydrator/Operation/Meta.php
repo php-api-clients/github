@@ -351,6 +351,17 @@ class Meta implements ObjectMapper
             $properties['packages'] = $value;
 
             after_packages:
+
+            $value = $payload['actions'] ?? null;
+
+            if ($value === null) {
+                $properties['actions'] = null;
+                goto after_actions;
+            }
+
+            $properties['actions'] = $value;
+
+            after_actions:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview\Domains', $exception, stack: $this->hydrationStack);
         }
@@ -760,6 +771,21 @@ class Meta implements ObjectMapper
 
         $packages                                  = $packagesSerializer0->serialize($packages, $this);
         after_packages:        $result['packages'] = $packages;
+
+        $actions = $object->actions;
+
+        if ($actions === null) {
+            goto after_actions;
+        }
+
+        static $actionsSerializer0;
+
+        if ($actionsSerializer0 === null) {
+            $actionsSerializer0 = new SerializeArrayItems(...[]);
+        }
+
+        $actions                                 = $actionsSerializer0->serialize($actions, $this);
+        after_actions:        $result['actions'] = $actions;
 
         return $result;
     }

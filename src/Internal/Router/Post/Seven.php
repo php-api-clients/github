@@ -34,7 +34,7 @@ final class Seven
     {
     }
 
-    /** @return |Schema\DeploymentBranchPolicy|\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody|Schema\DeploymentProtectionRule|Observable<Schema\Label>|Schema\BasicError|Schema\FullRepository */
+    /** @return |Observable<Schema\Label>|Schema\BasicError */
     public function call(string $call, array $params, array $pathChunks): Ok|WithoutBody|Created|AuthenticationToken|BranchWithProtection|EmptyObject|Reaction|CommitComment|DeploymentStatus|DeploymentBranchPolicy|DeploymentProtectionRule|Issue|IssueComment|iterable|BasicError|Codespace|PullRequestReviewComment|PullRequestSimple|PullRequestReview|ReleaseAsset|Json|FullRepository
     {
         if ($pathChunks[0] === '') {

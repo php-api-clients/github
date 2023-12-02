@@ -24,6 +24,7 @@ final readonly class UpdateDeploymentBranchPolicy
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $environmentName, int $branchPolicyId, array $params): DeploymentBranchPolicy
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\UpdateDeploymentBranchPolicy($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName, $branchPolicyId);

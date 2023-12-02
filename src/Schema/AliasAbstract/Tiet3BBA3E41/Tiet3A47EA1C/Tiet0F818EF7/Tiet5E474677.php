@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet67543B66\Tiet37ED5CA5\Tiet88A95EC1;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet3BBA3E41\Tiet3A47EA1C\Tiet0F818EF7;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class Tiet3A335ED6
+abstract readonly class Tiet5E474677
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -556,7 +556,7 @@ abstract readonly class Tiet3A335ED6
                     },
                     "size": {
                         "type": "integer",
-                        "description": "The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0."
+                        "description": "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0."
                     },
                     "default_branch": {
                         "type": "string"

@@ -864,7 +864,7 @@ final readonly class RepositoryWebhooks
         },
         "size": {
             "type": "integer",
-            "description": "The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.",
+            "description": "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.",
             "examples": [
                 108
             ]
@@ -1770,7 +1770,7 @@ when the event occurs from activity in a repository.';
      * name: The name of the repository.
      * owner: A GitHub user.
      * private: Whether the repository is private or public.
-     * size: The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+     * size: The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
      * defaultBranch: The default branch of the repository.
      * isTemplate: Whether this repository acts as a template that can be used to generate new repositories.
      * customProperties: The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.

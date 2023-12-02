@@ -52,6 +52,62 @@ final class Details implements PropertyCaster
                 } catch (Throwable) {
                 }
             }
+
+            if ($signature === 'discussion_title_url') {
+                try {
+                    return $hydrator->hydrateObject(Schema\SecretScanningLocationDiscussionTitle::class, $value);
+                } catch (Throwable) {
+                }
+            }
+
+            if ($signature === 'discussion_body_url') {
+                try {
+                    return $hydrator->hydrateObject(Schema\SecretScanningLocationDiscussionBody::class, $value);
+                } catch (Throwable) {
+                }
+            }
+
+            if ($signature === 'discussion_comment_url') {
+                try {
+                    return $hydrator->hydrateObject(Schema\SecretScanningLocationDiscussionComment::class, $value);
+                } catch (Throwable) {
+                }
+            }
+
+            if ($signature === 'pull_request_title_url') {
+                try {
+                    return $hydrator->hydrateObject(Schema\SecretScanningLocationPullRequestTitle::class, $value);
+                } catch (Throwable) {
+                }
+            }
+
+            if ($signature === 'pull_request_body_url') {
+                try {
+                    return $hydrator->hydrateObject(Schema\SecretScanningLocationPullRequestBody::class, $value);
+                } catch (Throwable) {
+                }
+            }
+
+            if ($signature === 'pull_request_comment_url') {
+                try {
+                    return $hydrator->hydrateObject(Schema\SecretScanningLocationPullRequestComment::class, $value);
+                } catch (Throwable) {
+                }
+            }
+
+            if ($signature === 'pull_request_review_url') {
+                try {
+                    return $hydrator->hydrateObject(Schema\SecretScanningLocationPullRequestReview::class, $value);
+                } catch (Throwable) {
+                }
+            }
+
+            if ($signature === 'pull_request_review_comment_url') {
+                try {
+                    return $hydrator->hydrateObject(Schema\SecretScanningLocationPullRequestReviewComment::class, $value);
+                } catch (Throwable) {
+                }
+            }
         }
 
         return $value;

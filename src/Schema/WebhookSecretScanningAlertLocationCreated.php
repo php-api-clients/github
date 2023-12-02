@@ -493,10 +493,18 @@ final readonly class WebhookSecretScanningAlertLocationCreated
                         "commit",
                         "issue_title",
                         "issue_body",
-                        "issue_comment"
+                        "issue_comment",
+                        "discussion_title",
+                        "discussion_body",
+                        "discussion_comment",
+                        "pull_request_title",
+                        "pull_request_body",
+                        "pull_request_comment",
+                        "pull_request_review",
+                        "pull_request_review_comment"
                     ],
                     "type": "string",
-                    "description": "The location type. Because secrets may be found in different types of resources (ie. code, comments, issues), this field identifies the type of resource where the secret was found.",
+                    "description": "The location type. Because secrets may be found in different types of resources (ie. code, comments, issues, pull requests, discussions), this field identifies the type of resource where the secret was found.",
                     "examples": [
                         "commit"
                     ]
@@ -615,6 +623,142 @@ final readonly class WebhookSecretScanningAlertLocationCreated
                                 }
                             },
                             "description": "Represents an \'issue_comment\' secret scanning location type. This location type shows that a secret was detected in a comment on an issue."
+                        },
+                        {
+                            "required": [
+                                "discussion_title_url"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "discussion_title_url": {
+                                    "type": "string",
+                                    "description": "The URL to the discussion where the secret was detected.",
+                                    "format": "uri",
+                                    "examples": [
+                                        "https:\\/\\/github.com\\/community\\/community\\/discussions\\/39082"
+                                    ]
+                                }
+                            },
+                            "description": "Represents a \'discussion_title\' secret scanning location type. This location type shows that a secret was detected in the title of a discussion."
+                        },
+                        {
+                            "required": [
+                                "discussion_body_url"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "discussion_body_url": {
+                                    "type": "string",
+                                    "description": "The URL to the discussion where the secret was detected.",
+                                    "format": "uri",
+                                    "examples": [
+                                        "https:\\/\\/github.com\\/community\\/community\\/discussions\\/39082#discussion-4566270"
+                                    ]
+                                }
+                            },
+                            "description": "Represents a \'discussion_body\' secret scanning location type. This location type shows that a secret was detected in the body of a discussion."
+                        },
+                        {
+                            "required": [
+                                "discussion_comment_url"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "discussion_comment_url": {
+                                    "type": "string",
+                                    "description": "The API URL to get the discussion comment where the secret was detected.",
+                                    "format": "uri",
+                                    "examples": [
+                                        "https:\\/\\/github.com\\/community\\/community\\/discussions\\/39082#discussioncomment-4158232"
+                                    ]
+                                }
+                            },
+                            "description": "Represents a \'discussion_comment\' secret scanning location type. This location type shows that a secret was detected in a comment on a discussion."
+                        },
+                        {
+                            "required": [
+                                "pull_request_title_url"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "pull_request_title_url": {
+                                    "type": "string",
+                                    "description": "The API URL to get the pull request where the secret was detected.",
+                                    "format": "uri",
+                                    "examples": [
+                                        "https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/pull\\/2846"
+                                    ]
+                                }
+                            },
+                            "description": "Represents a \'pull_request_title\' secret scanning location type. This location type shows that a secret was detected in the title of a pull request."
+                        },
+                        {
+                            "required": [
+                                "pull_request_body_url"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "pull_request_body_url": {
+                                    "type": "string",
+                                    "description": "The API URL to get the pull request where the secret was detected.",
+                                    "format": "uri",
+                                    "examples": [
+                                        "https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/pull\\/2846"
+                                    ]
+                                }
+                            },
+                            "description": "Represents a \'pull_request_body\' secret scanning location type. This location type shows that a secret was detected in the body of a pull request."
+                        },
+                        {
+                            "required": [
+                                "pull_request_comment_url"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "pull_request_comment_url": {
+                                    "type": "string",
+                                    "description": "The API URL to get the pull request comment where the secret was detected.",
+                                    "format": "uri",
+                                    "examples": [
+                                        "https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/issues\\/comments\\/1081119451"
+                                    ]
+                                }
+                            },
+                            "description": "Represents a \'pull_request_comment\' secret scanning location type. This location type shows that a secret was detected in a comment on a pull request."
+                        },
+                        {
+                            "required": [
+                                "pull_request_review_url"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "pull_request_review_url": {
+                                    "type": "string",
+                                    "description": "The API URL to get the pull request review where the secret was detected.",
+                                    "format": "uri",
+                                    "examples": [
+                                        "https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/pulls\\/2846\\/reviews\\/80"
+                                    ]
+                                }
+                            },
+                            "description": "Represents a \'pull_request_review\' secret scanning location type. This location type shows that a secret was detected in a review on a pull request."
+                        },
+                        {
+                            "required": [
+                                "pull_request_review_comment_url"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "pull_request_review_comment_url": {
+                                    "type": "string",
+                                    "description": "The API URL to get the pull request review comment where the secret was detected.",
+                                    "format": "uri",
+                                    "examples": [
+                                        "https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/pulls\\/comments\\/12"
+                                    ]
+                                }
+                            },
+                            "description": "Represents a \'pull_request_review_comment\' secret scanning location type. This location type shows that a secret was detected in a review comment on a pull request."
                         }
                     ]
                 }
@@ -1574,7 +1718,7 @@ final readonly class WebhookSecretScanningAlertLocationCreated
                 },
                 "size": {
                     "type": "integer",
-                    "description": "The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.",
+                    "description": "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.",
                     "examples": [
                         108
                     ]

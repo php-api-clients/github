@@ -748,51 +748,61 @@ final class Actions
         return $this->operators->actions👷GetWorkflowUsage()->call($owner, $repo, $workflowId);
     }
 
+    /** @return */
     public function listEnvironmentSecrets(int $repositoryId, string $environmentName, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentSecrets\Response\ApplicationJson\Ok\Application\Json
     {
         return $this->operators->actions👷ListEnvironmentSecrets()->call($repositoryId, $environmentName, $perPage, $page);
     }
 
+    /** @return */
     public function getEnvironmentPublicKey(int $repositoryId, string $environmentName): ActionsPublicKey
     {
         return $this->operators->actions👷GetEnvironmentPublicKey()->call($repositoryId, $environmentName);
     }
 
+    /** @return */
     public function getEnvironmentSecret(int $repositoryId, string $environmentName, string $secretName): ActionsSecret
     {
         return $this->operators->actions👷GetEnvironmentSecret()->call($repositoryId, $environmentName, $secretName);
     }
 
+    /** @return */
     public function createOrUpdateEnvironmentSecret(int $repositoryId, string $environmentName, string $secretName, array $params): EmptyObject|WithoutBody
     {
         return $this->operators->actions👷CreateOrUpdateEnvironmentSecret()->call($repositoryId, $environmentName, $secretName, $params);
     }
 
+    /** @return */
     public function deleteEnvironmentSecret(int $repositoryId, string $environmentName, string $secretName): WithoutBody
     {
         return $this->operators->actions👷DeleteEnvironmentSecret()->call($repositoryId, $environmentName, $secretName);
     }
 
+    /** @return */
     public function listEnvironmentVariables(int $repositoryId, string $environmentName, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentVariables\Response\ApplicationJson\Ok\Application\Json
     {
         return $this->operators->actions👷ListEnvironmentVariables()->call($repositoryId, $environmentName, $perPage, $page);
     }
 
+    /** @return */
     public function createEnvironmentVariable(int $repositoryId, string $environmentName, array $params): EmptyObject
     {
         return $this->operators->actions👷CreateEnvironmentVariable()->call($repositoryId, $environmentName, $params);
     }
 
+    /** @return */
     public function getEnvironmentVariable(int $repositoryId, string $environmentName, string $name): ActionsVariable
     {
         return $this->operators->actions👷GetEnvironmentVariable()->call($repositoryId, $environmentName, $name);
     }
 
+    /** @return */
     public function deleteEnvironmentVariable(int $repositoryId, string $name, string $environmentName): WithoutBody
     {
         return $this->operators->actions👷DeleteEnvironmentVariable()->call($repositoryId, $name, $environmentName);
     }
 
+    /** @return */
     public function updateEnvironmentVariable(int $repositoryId, string $name, string $environmentName, array $params): WithoutBody
     {
         return $this->operators->actions👷UpdateEnvironmentVariable()->call($repositoryId, $name, $environmentName, $params);

@@ -71,6 +71,7 @@ final class SecurityAdvisories
         return $this->operators->securityAdvisories👷CreateRepositoryAdvisoryCveRequest()->call($owner, $repo, $ghsaId);
     }
 
+    /** @return */
     public function createFork(string $owner, string $repo, string $ghsaId): FullRepository
     {
         return $this->operators->securityAdvisories👷CreateFork()->call($owner, $repo, $ghsaId);

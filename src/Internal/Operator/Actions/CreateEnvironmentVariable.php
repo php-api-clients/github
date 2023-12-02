@@ -24,6 +24,7 @@ final readonly class CreateEnvironmentVariable
     {
     }
 
+    /** @return */
     public function call(int $repositoryId, string $environmentName, array $params): EmptyObject
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\CreateEnvironmentVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName);

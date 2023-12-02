@@ -545,7 +545,7 @@ final readonly class MinimalRepository
         },
         "size": {
             "type": "integer",
-            "description": "The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0."
+            "description": "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0."
         },
         "default_branch": {
             "type": "string"
@@ -963,7 +963,7 @@ final readonly class MinimalRepository
 
     /**
      * owner: A GitHub user.
-     * size: The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+     * size: The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
      * codeOfConduct: Code Of Conduct
      */
     public function __construct(public int $id, #[MapFrom('node_id')]

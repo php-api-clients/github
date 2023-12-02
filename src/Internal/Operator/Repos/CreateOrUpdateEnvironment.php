@@ -24,6 +24,7 @@ final readonly class CreateOrUpdateEnvironment
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $environmentName, array $params): Environment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateOrUpdateEnvironment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName);

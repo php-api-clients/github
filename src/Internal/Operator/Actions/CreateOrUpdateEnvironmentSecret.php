@@ -25,6 +25,7 @@ final readonly class CreateOrUpdateEnvironmentSecret
     {
     }
 
+    /** @return */
     public function call(int $repositoryId, string $environmentName, string $secretName, array $params): EmptyObject|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\CreateOrUpdateEnvironmentSecret($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $secretName);

@@ -24,6 +24,7 @@ final readonly class CreateInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): FullRepository
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateInOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietC9757A32\Tiet3933027B\Tiet0A1E6811;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet5C235650\TietFB7EE12D\TietF212A93B;
 
 use ApiClients\Client\GitHub\Schema;
 
-abstract readonly class Tiet2A35C09C
+abstract readonly class Tiet260FC80E
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -879,7 +879,7 @@ abstract readonly class Tiet2A35C09C
                 },
                 "size": {
                     "type": "integer",
-                    "description": "The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.",
+                    "description": "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.",
                     "examples": [
                         108
                     ]

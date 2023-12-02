@@ -864,7 +864,7 @@ final readonly class Repository
         },
         "size": {
             "type": "integer",
-            "description": "The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.",
+            "description": "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.",
             "examples": [
                 108
             ]
@@ -1764,7 +1764,7 @@ final readonly class Repository
      * name: The name of the repository.
      * owner: A GitHub user.
      * private: Whether the repository is private or public.
-     * size: The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+     * size: The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
      * defaultBranch: The default branch of the repository.
      * isTemplate: Whether this repository acts as a template that can be used to generate new repositories.
      * hasIssues: Whether issues are enabled.

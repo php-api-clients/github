@@ -23,10 +23,11 @@ final readonly class ApplicationJson
             "enum": [
                 "admin",
                 "direct_member",
-                "billing_manager"
+                "billing_manager",
+                "reinstate"
             ],
             "type": "string",
-            "description": "The role for the new member. \\n * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.  \\n * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.  \\n * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization.",
+            "description": "The role for the new member. \\n * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.  \\n * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.  \\n * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization. \\n * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.",
             "default": "direct_member"
         },
         "team_ids": {
@@ -43,7 +44,7 @@ final readonly class ApplicationJson
     public const SCHEMA_EXAMPLE_DATA = '{
     "invitee_id": 10,
     "email": "generated",
-    "role": "billing_manager",
+    "role": "reinstate",
     "team_ids": [
         9,
         10
@@ -57,6 +58,7 @@ final readonly class ApplicationJson
      * `admin` - Organization owners with full administrative rights to the organization and complete access to all repositories and teams.
      * `direct_member` - Non-owner organization members with ability to see other members and join teams by invitation.
      * `billing_manager` - Non-owner organization members with ability to manage the billing settings of your organization.
+     * `reinstate` - The previous role assigned to the invitee before they were removed from your organization. Can be one of the roles listed above. Only works if the invitee was previously part of your organization.
      * teamIds: Specify IDs for the teams you want to invite new members to.
      */
     public function __construct(#[MapFrom('invitee_id')]

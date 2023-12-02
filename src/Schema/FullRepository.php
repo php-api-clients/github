@@ -604,7 +604,7 @@ final readonly class FullRepository
         },
         "size": {
             "type": "integer",
-            "description": "The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.",
+            "description": "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.",
             "examples": [
                 108
             ]
@@ -1598,7 +1598,7 @@ final readonly class FullRepository
                         },
                         "size": {
                             "type": "integer",
-                            "description": "The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.",
+                            "description": "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.",
                             "examples": [
                                 108
                             ]
@@ -3412,7 +3412,7 @@ final readonly class FullRepository
                 },
                 "size": {
                     "type": "integer",
-                    "description": "The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.",
+                    "description": "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.",
                     "examples": [
                         108
                     ]
@@ -4882,7 +4882,7 @@ final readonly class FullRepository
                 },
                 "size": {
                     "type": "integer",
-                    "description": "The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.",
+                    "description": "The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.",
                     "examples": [
                         108
                     ]
@@ -6632,7 +6632,7 @@ final readonly class FullRepository
 
     /**
      * owner: A GitHub user.
-     * size: The size of the repository. Size is calculated hourly. When a repository is initially created, the size is 0.
+     * size: The size of the repository, in kilobytes. Size is calculated hourly. When a repository is initially created, the size is 0.
      * disabled: Returns whether or not this repository disabled.
      * visibility: The repository visibility: public, private, or internal.
      * squashMergeCommitTitle: The default value for a squash merge commit title:

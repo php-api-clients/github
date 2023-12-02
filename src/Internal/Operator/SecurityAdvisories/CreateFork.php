@@ -24,6 +24,7 @@ final readonly class CreateFork
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $ghsaId): FullRepository
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecurityAdvisories\CreateFork($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ghsaId);
