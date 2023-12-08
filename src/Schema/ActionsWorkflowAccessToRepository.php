@@ -21,7 +21,7 @@ final readonly class ActionsWorkflowAccessToRepository
                 "organization"
             ],
             "type": "string",
-            "description": "Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the\\nrepository.\\n\\n`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repos only. `organization` level access allows sharing across the organization."
+            "description": "Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the\\nrepository.\\n\\n`none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization."
         }
     }
 }';
@@ -35,7 +35,7 @@ final readonly class ActionsWorkflowAccessToRepository
      * accessLevel: Defines the level of access that workflows outside of the repository have to actions and reusable workflows within the
     repository.
 
-    `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repos only. `organization` level access allows sharing across the organization.
+    `none` means the access is only possible from workflows in this repository. `user` level access allows sharing across user owned private repositories only. `organization` level access allows sharing across the organization.
      */
     public function __construct(#[MapFrom('access_level')]
     public string $accessLevel,)

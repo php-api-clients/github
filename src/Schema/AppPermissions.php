@@ -36,6 +36,14 @@ final readonly class AppPermissions
             "type": "string",
             "description": "The level of permission to grant the access token for checks on code."
         },
+        "codespaces": {
+            "enum": [
+                "read",
+                "write"
+            ],
+            "type": "string",
+            "description": "The level of permission to grant the access token to create, edit, delete, and list Codespaces."
+        },
         "contents": {
             "enum": [
                 "read",
@@ -43,6 +51,14 @@ final readonly class AppPermissions
             ],
             "type": "string",
             "description": "The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges."
+        },
+        "dependabot_secrets": {
+            "enum": [
+                "read",
+                "write"
+            ],
+            "type": "string",
+            "description": "The leve of permission to grant the access token to manage Dependabot secrets."
         },
         "deployments": {
             "enum": [
@@ -236,6 +252,13 @@ final readonly class AppPermissions
             "type": "string",
             "description": "The level of permission to grant the access token to view and manage announcement banners for an organization."
         },
+        "organization_events": {
+            "enum": [
+                "read"
+            ],
+            "type": "string",
+            "description": "The level of permission to grant the access token to view events triggered by an activity in an organization."
+        },
         "organization_hooks": {
             "enum": [
                 "read",
@@ -315,6 +338,61 @@ final readonly class AppPermissions
             ],
             "type": "string",
             "description": "The level of permission to grant the access token to manage team discussions and related comments."
+        },
+        "email_addresses": {
+            "enum": [
+                "read",
+                "write"
+            ],
+            "type": "string",
+            "description": "The level of permission to grant the access token to manage the email addresses belonging to a user."
+        },
+        "followers": {
+            "enum": [
+                "read",
+                "write"
+            ],
+            "type": "string",
+            "description": "The level of permission to grant the access token to manage the followers belonging to a user."
+        },
+        "git_ssh_keys": {
+            "enum": [
+                "read",
+                "write"
+            ],
+            "type": "string",
+            "description": "The level of permission to grant the access token to manage git SSH keys."
+        },
+        "gpg_keys": {
+            "enum": [
+                "read",
+                "write"
+            ],
+            "type": "string",
+            "description": "The level of permission to grant the access token to view and manage GPG keys belonging to a user."
+        },
+        "interaction_limits": {
+            "enum": [
+                "read",
+                "write"
+            ],
+            "type": "string",
+            "description": "The level of permission to grant the access token to view and manage interaction limits on a repository."
+        },
+        "profile": {
+            "enum": [
+                "write"
+            ],
+            "type": "string",
+            "description": "The level of permission to grant the access token to manage the profile settings belonging to a user."
+        },
+        "starring": {
+            "enum": [
+                "read",
+                "write"
+            ],
+            "type": "string",
+            "description": "The level of permission to grant the access token to list and manage repositories a user is starring."
         }
     },
     "description": "The permissions granted to the user access token.",
@@ -331,7 +409,9 @@ final readonly class AppPermissions
     "actions": "read",
     "administration": "write",
     "checks": "write",
+    "codespaces": "write",
     "contents": "write",
+    "dependabot_secrets": "write",
     "deployments": "read",
     "environments": "write",
     "issues": "write",
@@ -356,6 +436,7 @@ final readonly class AppPermissions
     "organization_custom_properties": "admin",
     "organization_copilot_seat_management": "write",
     "organization_announcement_banners": "read",
+    "organization_events": "read",
     "organization_hooks": "write",
     "organization_personal_access_tokens": "read",
     "organization_personal_access_token_requests": "read",
@@ -365,14 +446,23 @@ final readonly class AppPermissions
     "organization_secrets": "write",
     "organization_self_hosted_runners": "write",
     "organization_user_blocking": "write",
-    "team_discussions": "write"
+    "team_discussions": "write",
+    "email_addresses": "read",
+    "followers": "read",
+    "git_ssh_keys": "write",
+    "gpg_keys": "write",
+    "interaction_limits": "write",
+    "profile": "write",
+    "starring": "write"
 }';
 
     /**
      * actions: The level of permission to grant the access token for GitHub Actions workflows, workflow runs, and artifacts.
      * administration: The level of permission to grant the access token for repository creation, deletion, settings, teams, and collaborators creation.
      * checks: The level of permission to grant the access token for checks on code.
+     * codespaces: The level of permission to grant the access token to create, edit, delete, and list Codespaces.
      * contents: The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
+     * dependabotSecrets: The leve of permission to grant the access token to manage Dependabot secrets.
      * deployments: The level of permission to grant the access token for deployments and deployment statuses.
      * environments: The level of permission to grant the access token for managing repository environments.
      * issues: The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.
@@ -397,6 +487,7 @@ final readonly class AppPermissions
      * organizationCustomProperties: The level of permission to grant the access token for custom property management.
      * organizationCopilotSeatManagement: The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
      * organizationAnnouncementBanners: The level of permission to grant the access token to view and manage announcement banners for an organization.
+     * organizationEvents: The level of permission to grant the access token to view events triggered by an activity in an organization.
      * organizationHooks: The level of permission to grant the access token to manage the post-receive hooks for an organization.
      * organizationPersonalAccessTokens: The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
      * organizationPersonalAccessTokenRequests: The level of permission to grant the access token for viewing and managing fine-grained personal access tokens that have been approved by an organization.
@@ -407,8 +498,16 @@ final readonly class AppPermissions
      * organizationSelfHostedRunners: The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization.
      * organizationUserBlocking: The level of permission to grant the access token to view and manage users blocked by the organization.
      * teamDiscussions: The level of permission to grant the access token to manage team discussions and related comments.
+     * emailAddresses: The level of permission to grant the access token to manage the email addresses belonging to a user.
+     * followers: The level of permission to grant the access token to manage the followers belonging to a user.
+     * gitSshKeys: The level of permission to grant the access token to manage git SSH keys.
+     * gpgKeys: The level of permission to grant the access token to view and manage GPG keys belonging to a user.
+     * interactionLimits: The level of permission to grant the access token to view and manage interaction limits on a repository.
+     * profile: The level of permission to grant the access token to manage the profile settings belonging to a user.
+     * starring: The level of permission to grant the access token to list and manage repositories a user is starring.
      */
-    public function __construct(public string|null $actions, public string|null $administration, public string|null $checks, public string|null $contents, public string|null $deployments, public string|null $environments, public string|null $issues, public string|null $metadata, public string|null $packages, public string|null $pages, #[MapFrom('pull_requests')]
+    public function __construct(public string|null $actions, public string|null $administration, public string|null $checks, public string|null $codespaces, public string|null $contents, #[MapFrom('dependabot_secrets')]
+    public string|null $dependabotSecrets, public string|null $deployments, public string|null $environments, public string|null $issues, public string|null $metadata, public string|null $packages, public string|null $pages, #[MapFrom('pull_requests')]
     public string|null $pullRequests, #[MapFrom('repository_custom_properties')]
     public string|null $repositoryCustomProperties, #[MapFrom('repository_hooks')]
     public string|null $repositoryHooks, #[MapFrom('repository_projects')]
@@ -422,7 +521,8 @@ final readonly class AppPermissions
     public string|null $organizationCustomOrgRoles, #[MapFrom('organization_custom_properties')]
     public string|null $organizationCustomProperties, #[MapFrom('organization_copilot_seat_management')]
     public string|null $organizationCopilotSeatManagement, #[MapFrom('organization_announcement_banners')]
-    public string|null $organizationAnnouncementBanners, #[MapFrom('organization_hooks')]
+    public string|null $organizationAnnouncementBanners, #[MapFrom('organization_events')]
+    public string|null $organizationEvents, #[MapFrom('organization_hooks')]
     public string|null $organizationHooks, #[MapFrom('organization_personal_access_tokens')]
     public string|null $organizationPersonalAccessTokens, #[MapFrom('organization_personal_access_token_requests')]
     public string|null $organizationPersonalAccessTokenRequests, #[MapFrom('organization_plan')]
@@ -432,7 +532,11 @@ final readonly class AppPermissions
     public string|null $organizationSecrets, #[MapFrom('organization_self_hosted_runners')]
     public string|null $organizationSelfHostedRunners, #[MapFrom('organization_user_blocking')]
     public string|null $organizationUserBlocking, #[MapFrom('team_discussions')]
-    public string|null $teamDiscussions,)
+    public string|null $teamDiscussions, #[MapFrom('email_addresses')]
+    public string|null $emailAddresses, public string|null $followers, #[MapFrom('git_ssh_keys')]
+    public string|null $gitSshKeys, #[MapFrom('gpg_keys')]
+    public string|null $gpgKeys, #[MapFrom('interaction_limits')]
+    public string|null $interactionLimits, public string|null $profile, public string|null $starring,)
     {
     }
 }

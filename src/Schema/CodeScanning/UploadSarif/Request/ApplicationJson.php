@@ -24,9 +24,9 @@ final readonly class ApplicationJson
             "description": "The SHA of the commit to which the analysis you are uploading relates."
         },
         "ref": {
-            "pattern": "^refs\\/(heads|pull)\\/.*$",
+            "pattern": "^refs\\/(heads|tags|pull)\\/.*$",
             "type": "string",
-            "description": "The full Git reference, formatted as `refs\\/heads\\/<branch name>`,\\n`refs\\/pull\\/<number>\\/merge`, or `refs\\/pull\\/<number>\\/head`.",
+            "description": "The full Git reference, formatted as `refs\\/heads\\/<branch name>`,\\n`refs\\/tags\\/<tag>`, `refs\\/pull\\/<number>\\/merge`, or `refs\\/pull\\/<number>\\/head`.",
             "examples": [
                 "refs\\/heads\\/main"
             ]
@@ -74,7 +74,7 @@ final readonly class ApplicationJson
     /**
      * commitSha: The SHA of the commit to which the analysis you are uploading relates.
      * ref: The full Git reference, formatted as `refs/heads/<branch name>`,
-    `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
+    `refs/tags/<tag>`, `refs/pull/<number>/merge`, or `refs/pull/<number>/head`.
      * sarif: A Base64 string representing the SARIF file to upload. You must first compress your SARIF file using [`gzip`](http://www.gnu.org/software/gzip/manual/gzip.html) and then translate the contents of the file into a Base64 encoding string. For more information, see "[SARIF support for code scanning](https://docs.github.com/code-security/secure-coding/sarif-support-for-code-scanning)."
      * checkoutUri: The base directory used in the analysis, as it appears in the SARIF file.
     This property is used to convert file paths from absolute to relative, so that alerts can be mapped to their correct location in the repository.

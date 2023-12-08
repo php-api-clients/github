@@ -480,6 +480,14 @@ final readonly class WebhookInstallationRepositoriesRemoved
                             "type": "string",
                             "description": "The level of permission to grant the access token for checks on code."
                         },
+                        "codespaces": {
+                            "enum": [
+                                "read",
+                                "write"
+                            ],
+                            "type": "string",
+                            "description": "The level of permission to grant the access token to create, edit, delete, and list Codespaces."
+                        },
                         "contents": {
                             "enum": [
                                 "read",
@@ -487,6 +495,14 @@ final readonly class WebhookInstallationRepositoriesRemoved
                             ],
                             "type": "string",
                             "description": "The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges."
+                        },
+                        "dependabot_secrets": {
+                            "enum": [
+                                "read",
+                                "write"
+                            ],
+                            "type": "string",
+                            "description": "The leve of permission to grant the access token to manage Dependabot secrets."
                         },
                         "deployments": {
                             "enum": [
@@ -680,6 +696,13 @@ final readonly class WebhookInstallationRepositoriesRemoved
                             "type": "string",
                             "description": "The level of permission to grant the access token to view and manage announcement banners for an organization."
                         },
+                        "organization_events": {
+                            "enum": [
+                                "read"
+                            ],
+                            "type": "string",
+                            "description": "The level of permission to grant the access token to view events triggered by an activity in an organization."
+                        },
                         "organization_hooks": {
                             "enum": [
                                 "read",
@@ -759,6 +782,61 @@ final readonly class WebhookInstallationRepositoriesRemoved
                             ],
                             "type": "string",
                             "description": "The level of permission to grant the access token to manage team discussions and related comments."
+                        },
+                        "email_addresses": {
+                            "enum": [
+                                "read",
+                                "write"
+                            ],
+                            "type": "string",
+                            "description": "The level of permission to grant the access token to manage the email addresses belonging to a user."
+                        },
+                        "followers": {
+                            "enum": [
+                                "read",
+                                "write"
+                            ],
+                            "type": "string",
+                            "description": "The level of permission to grant the access token to manage the followers belonging to a user."
+                        },
+                        "git_ssh_keys": {
+                            "enum": [
+                                "read",
+                                "write"
+                            ],
+                            "type": "string",
+                            "description": "The level of permission to grant the access token to manage git SSH keys."
+                        },
+                        "gpg_keys": {
+                            "enum": [
+                                "read",
+                                "write"
+                            ],
+                            "type": "string",
+                            "description": "The level of permission to grant the access token to view and manage GPG keys belonging to a user."
+                        },
+                        "interaction_limits": {
+                            "enum": [
+                                "read",
+                                "write"
+                            ],
+                            "type": "string",
+                            "description": "The level of permission to grant the access token to view and manage interaction limits on a repository."
+                        },
+                        "profile": {
+                            "enum": [
+                                "write"
+                            ],
+                            "type": "string",
+                            "description": "The level of permission to grant the access token to manage the profile settings belonging to a user."
+                        },
+                        "starring": {
+                            "enum": [
+                                "read",
+                                "write"
+                            ],
+                            "type": "string",
+                            "description": "The level of permission to grant the access token to list and manage repositories a user is starring."
                         }
                     },
                     "description": "The permissions granted to the user access token.",
@@ -2939,7 +3017,9 @@ final readonly class WebhookInstallationRepositoriesRemoved
             "actions": "read",
             "administration": "write",
             "checks": "write",
+            "codespaces": "write",
             "contents": "read",
+            "dependabot_secrets": "write",
             "deployments": "write",
             "environments": "write",
             "issues": "read",
@@ -2964,6 +3044,7 @@ final readonly class WebhookInstallationRepositoriesRemoved
             "organization_custom_properties": "admin",
             "organization_copilot_seat_management": "write",
             "organization_announcement_banners": "read",
+            "organization_events": "read",
             "organization_hooks": "write",
             "organization_personal_access_tokens": "read",
             "organization_personal_access_token_requests": "read",
@@ -2973,7 +3054,14 @@ final readonly class WebhookInstallationRepositoriesRemoved
             "organization_secrets": "write",
             "organization_self_hosted_runners": "write",
             "organization_user_blocking": "write",
-            "team_discussions": "write"
+            "team_discussions": "write",
+            "email_addresses": "read",
+            "followers": "read",
+            "git_ssh_keys": "write",
+            "gpg_keys": "write",
+            "interaction_limits": "write",
+            "profile": "write",
+            "starring": "write"
         },
         "events": [
             "generated",

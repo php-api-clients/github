@@ -198,7 +198,7 @@ final readonly class ApplicationJson
                     "description": "Conditions to target repositories by id and refs by name"
                 }
             ],
-            "description": "Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties."
+            "description": "Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.\\n"
         },
         "rules": {
             "type": "array",
