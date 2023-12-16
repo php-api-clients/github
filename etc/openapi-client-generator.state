@@ -1,5 +1,5 @@
 {
-    "specHash": "afc6e722cc5a6bed827aa47c96932184",
+    "specHash": "d934eed2382f2e3ae89ee32d3f556f88",
     "generatedFiles": {
         "files": [
             {
@@ -440,7 +440,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningOrganizationAlertItems.php",
-                "hash": "8e64f5ed054d797eac8554250e363651"
+                "hash": "70b73bf70e0bba0b97a347a5264ccb71"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodespaceMachine.php",
@@ -844,11 +844,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningAlertRuleSummary.php",
-                "hash": "ec0f8db24778f74db315f752f92f9a1c"
+                "hash": "d31d1a0df17cad29106204b4749d0550"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningAlertItems.php",
-                "hash": "487434ff789defd205b4a955bfc53c1f"
+                "hash": "76169284487efccb5ba9c5202fc7c746"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningAlert.php",
@@ -4872,7 +4872,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Teams\/AddOrUpdateProjectPermissionsInOrg\/Request\/ApplicationJson.php",
-                "hash": "1044ce58cb93be11ebc73a597d3da63c"
+                "hash": "709e143d6c6ff5f6c31d5b0ed6d2f2f5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Teams\/AddOrUpdateRepoPermissionsInOrg\/Request\/ApplicationJson.php",
@@ -5624,7 +5624,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Teams\/AddOrUpdateProjectPermissionsLegacy\/Request\/ApplicationJson.php",
-                "hash": "6799e10ef6643c6e2af545b7eea61fc5"
+                "hash": "a1bef9050a72668261fb80a5e5dc8ca5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Teams\/AddOrUpdateRepoPermissionsLegacy\/Request\/ApplicationJson.php",

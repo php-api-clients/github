@@ -315,6 +315,20 @@ final readonly class CodeScanningAlertItems
                     ],
                     "description": "The severity of the alert."
                 },
+                "security_severity_level": {
+                    "enum": [
+                        "low",
+                        "medium",
+                        "high",
+                        "critical",
+                        null
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The security severity of the alert."
+                },
                 "description": {
                     "type": "string",
                     "description": "A short description of the rule used to detect the alert."
@@ -471,6 +485,7 @@ final readonly class CodeScanningAlertItems
         "name": "generated",
         "tags": null,
         "severity": "error",
+        "security_severity_level": "low",
         "description": "generated"
     },
     "tool": {
