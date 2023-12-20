@@ -106,6 +106,7 @@ final class Operators
     private Internal\Operator\Activity\ListNotificationsForAuthenticatedUserListing|null $activity👷ListNotificationsForAuthenticatedUserListing                                     = null;
     private Internal\Operator\Activity\MarkNotificationsAsRead|null $activity👷MarkNotificationsAsRead                                                                               = null;
     private Internal\Operator\Activity\GetThread|null $activity👷GetThread                                                                                                           = null;
+    private Internal\Operator\Activity\MarkThreadAsDone|null $activity👷MarkThreadAsDone                                                                                             = null;
     private Internal\Operator\Activity\MarkThreadAsRead|null $activity👷MarkThreadAsRead                                                                                             = null;
     private Internal\Operator\Activity\GetThreadSubscriptionForAuthenticatedUser|null $activity👷GetThreadSubscriptionForAuthenticatedUser                                           = null;
     private Internal\Operator\Activity\SetThreadSubscription|null $activity👷SetThreadSubscription                                                                                   = null;
@@ -1967,6 +1968,15 @@ final class Operators
         }
 
         return $this->activity👷GetThread;
+    }
+
+    public function activity👷MarkThreadAsDone(): Internal\Operator\Activity\MarkThreadAsDone
+    {
+        if ($this->activity👷MarkThreadAsDone instanceof Internal\Operator\Activity\MarkThreadAsDone === false) {
+            $this->activity👷MarkThreadAsDone = new Internal\Operator\Activity\MarkThreadAsDone($this->browser, $this->authentication);
+        }
+
+        return $this->activity👷MarkThreadAsDone;
     }
 
     public function activity👷MarkThreadAsRead(): Internal\Operator\Activity\MarkThreadAsRead

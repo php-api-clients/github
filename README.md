@@ -2192,6 +2192,26 @@ $client->operations()->activity()->getThread(        thread_id: 9,
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/activity/notifications#get-a-thread).
 
 
+### activity/mark-thread-as-done
+
+Mark a thread as done
+
+Using the `call` method:
+```php
+$client->call('DELETE /notifications/threads/{thread_id}', [
+        'thread_id' => 9,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->activity()->markThreadAsDone(        thread_id: 9,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/activity/notifications#mark-a-thread-as-done).
+
+
 ### activity/mark-thread-as-read
 
 Mark a thread as read

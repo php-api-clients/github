@@ -16,6 +16,7 @@ final class Four
     {
     }
 
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|BasicError|Json
     {
         if ($pathChunks[0] === '') {
@@ -44,6 +45,14 @@ final class Four
                     if ($pathChunks[3] === 'star') {
                         if ($call === 'DELETE /gists/{gist_id}/star') {
                             return $this->routers->internal🔀Router🔀Delete🔀Gists()->unstar($params);
+                        }
+                    }
+                }
+            } elseif ($pathChunks[1] === 'notifications') {
+                if ($pathChunks[2] === 'threads') {
+                    if ($pathChunks[3] === '{thread_id}') {
+                        if ($call === 'DELETE /notifications/threads/{thread_id}') {
+                            return $this->routers->internal🔀Router🔀Delete🔀Activity()->markThreadAsDone($params);
                         }
                     }
                 }

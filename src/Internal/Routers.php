@@ -106,12 +106,12 @@ final class Routers
     private Internal\Router\List\Checks|null $internal🔀Router🔀List🔀Checks                           = null;
     private Internal\Router\Delete\Apps|null $internal🔀Router🔀Delete🔀Apps                           = null;
     private Internal\Router\Delete\Gists|null $internal🔀Router🔀Delete🔀Gists                         = null;
+    private Internal\Router\Delete\Activity|null $internal🔀Router🔀Delete🔀Activity                   = null;
     private Internal\Router\Delete\Interactions|null $internal🔀Router🔀Delete🔀Interactions           = null;
     private Internal\Router\Delete\Projects|null $internal🔀Router🔀Delete🔀Projects                   = null;
     private Internal\Router\Delete\Repos|null $internal🔀Router🔀Delete🔀Repos                         = null;
     private Internal\Router\Delete\Users|null $internal🔀Router🔀Delete🔀Users                         = null;
     private Internal\Router\Delete\Codespaces|null $internal🔀Router🔀Delete🔀Codespaces               = null;
-    private Internal\Router\Delete\Activity|null $internal🔀Router🔀Delete🔀Activity                   = null;
     private Internal\Router\Delete\Orgs|null $internal🔀Router🔀Delete🔀Orgs                           = null;
     private Internal\Router\Delete\Teams|null $internal🔀Router🔀Delete🔀Teams                         = null;
     private Internal\Router\Delete\Migrations|null $internal🔀Router🔀Delete🔀Migrations               = null;
@@ -1003,6 +1003,15 @@ final class Routers
         return $this->internal🔀Router🔀Delete🔀Gists;
     }
 
+    public function internal🔀Router🔀Delete🔀Activity(): Internal\Router\Delete\Activity
+    {
+        if ($this->internal🔀Router🔀Delete🔀Activity instanceof Internal\Router\Delete\Activity === false) {
+            $this->internal🔀Router🔀Delete🔀Activity = new Internal\Router\Delete\Activity(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀Delete🔀Activity;
+    }
+
     public function internal🔀Router🔀Delete🔀Interactions(): Internal\Router\Delete\Interactions
     {
         if ($this->internal🔀Router🔀Delete🔀Interactions instanceof Internal\Router\Delete\Interactions === false) {
@@ -1046,15 +1055,6 @@ final class Routers
         }
 
         return $this->internal🔀Router🔀Delete🔀Codespaces;
-    }
-
-    public function internal🔀Router🔀Delete🔀Activity(): Internal\Router\Delete\Activity
-    {
-        if ($this->internal🔀Router🔀Delete🔀Activity instanceof Internal\Router\Delete\Activity === false) {
-            $this->internal🔀Router🔀Delete🔀Activity = new Internal\Router\Delete\Activity(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
-        }
-
-        return $this->internal🔀Router🔀Delete🔀Activity;
     }
 
     public function internal🔀Router🔀Delete🔀Orgs(): Internal\Router\Delete\Orgs

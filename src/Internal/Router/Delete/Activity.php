@@ -19,6 +19,20 @@ final class Activity
     {
     }
 
+    public function markThreadAsDone(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('thread_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: thread_id');
+        }
+
+        $arguments['thread_id'] = $params['thread_id'];
+        unset($params['thread_id']);
+        $operator = new Internal\Operator\Activity\MarkThreadAsDone($this->browser, $this->authentication);
+
+        return $operator->call($arguments['thread_id']);
+    }
+
     /** @return */
     public function deleteThreadSubscription(array $params): WithoutBody
     {
