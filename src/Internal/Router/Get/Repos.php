@@ -1730,6 +1730,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
+    /** @return */
     public function getRelease(array $params): Release|WithoutBody
     {
         $arguments = [];

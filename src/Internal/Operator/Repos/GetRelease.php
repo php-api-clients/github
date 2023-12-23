@@ -25,6 +25,7 @@ final readonly class GetRelease
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $releaseId): Release|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetRelease($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $releaseId);

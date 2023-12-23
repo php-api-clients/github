@@ -78,6 +78,7 @@ final class Activity
         return $this->operators->activity👷GetThread()->call($threadId);
     }
 
+    /** @return */
     public function markThreadAsDone(int $threadId): WithoutBody
     {
         return $this->operators->activity👷MarkThreadAsDone()->call($threadId);

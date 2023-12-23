@@ -19,6 +19,7 @@ final class Activity
     {
     }
 
+    /** @return */
     public function markThreadAsDone(array $params): WithoutBody
     {
         $arguments = [];

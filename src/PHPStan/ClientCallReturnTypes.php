@@ -424,7 +424,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'DELETE /notifications/threads/{thread_id}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PATCH /notifications/threads/{thread_id}') {
@@ -3248,7 +3248,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/releases/{release_id}') {
-            return $this->typeResolver->resolve('Schema\\Release|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /repos/{owner}/{repo}/releases/{release_id}') {
