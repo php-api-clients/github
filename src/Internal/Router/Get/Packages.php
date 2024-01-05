@@ -22,7 +22,7 @@ final class Packages
     {
     }
 
-    /** @return Observable<Schema\Package>|WithoutBody */
+    /** @return iterable<int,Schema\Package>|WithoutBody */
     public function listPackagesForAuthenticatedUser(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -55,7 +55,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['visibility'], $arguments['page'], $arguments['per_page']);
     }
 
-    /** @return Observable<Schema\Package>|WithoutBody */
+    /** @return iterable<int,Schema\Package>|WithoutBody */
     public function listPackagesForOrganization(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -102,7 +102,7 @@ final class Packages
         return $operator->call();
     }
 
-    /** @return Observable<Schema\Package>|WithoutBody */
+    /** @return iterable<int,Schema\Package>|WithoutBody */
     public function listPackagesForUser(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -219,7 +219,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['org']);
     }
 
-    /** @return Observable<Schema\PackageVersion> */
+    /** @return iterable<int,Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByAuthenticatedUser(array $params): iterable
     {
         $arguments = [];
@@ -285,7 +285,7 @@ final class Packages
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['username']);
     }
 
-    /** @return Observable<Schema\PackageVersion> */
+    /** @return iterable<int,Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByOrg(array $params): iterable
     {
         $arguments = [];

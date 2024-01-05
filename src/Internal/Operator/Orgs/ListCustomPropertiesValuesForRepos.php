@@ -24,7 +24,7 @@ final readonly class ListCustomPropertiesValuesForRepos
     {
     }
 
-    /** @return Observable<Schema\OrgRepoCustomPropertyValues> */
+    /** @return iterable<int,Schema\OrgRepoCustomPropertyValues> */
     public function call(string $org, string $repositoryQuery, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListCustomPropertiesValuesForRepos($this->responseSchemaValidator, $this->hydrator, $org, $repositoryQuery, $perPage, $page);

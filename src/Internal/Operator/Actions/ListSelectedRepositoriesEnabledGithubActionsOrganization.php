@@ -24,7 +24,6 @@ final readonly class ListSelectedRepositoriesEnabledGithubActionsOrganization
     {
     }
 
-    /** @return */
     public function call(string $org, int $perPage = 30, int $page = 1): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListSelectedRepositoriesEnabledGithubActionsOrganization($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

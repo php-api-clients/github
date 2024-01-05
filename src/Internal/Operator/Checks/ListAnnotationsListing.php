@@ -24,7 +24,7 @@ final readonly class ListAnnotationsListing
     {
     }
 
-    /** @return Observable<Schema\CheckAnnotation> */
+    /** @return iterable<int,Schema\CheckAnnotation> */
     public function call(string $owner, string $repo, int $checkRunId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\ListAnnotationsListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $checkRunId, $perPage, $page);

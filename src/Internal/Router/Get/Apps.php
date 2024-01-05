@@ -36,7 +36,7 @@ final class Apps
         return $operator->call();
     }
 
-    /** @return Observable<Schema\IntegrationInstallationRequest>|WithoutBody */
+    /** @return iterable<int,Schema\IntegrationInstallationRequest>|WithoutBody */
     public function listInstallationRequestsForAuthenticatedApp(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -57,7 +57,7 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Installation> */
+    /** @return iterable<int,Schema\Installation> */
     public function listInstallations(array $params): iterable
     {
         $arguments = [];
@@ -105,7 +105,6 @@ final class Apps
         return $operator->call($arguments['app_slug']);
     }
 
-    /** @return */
     public function listReposAccessibleToInstallation(array $params): Ok|WithoutBody
     {
         $arguments = [];
@@ -126,7 +125,7 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\MarketplaceListingPlan> */
+    /** @return iterable<int,Schema\MarketplaceListingPlan> */
     public function listPlans(array $params): iterable
     {
         $arguments = [];
@@ -147,7 +146,6 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
     public function listInstallationsForAuthenticatedUser(array $params): Json|WithoutBody
     {
         $arguments = [];
@@ -168,7 +166,7 @@ final class Apps
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\UserMarketplacePurchase>|WithoutBody */
+    /** @return iterable<int,Schema\UserMarketplacePurchase>|WithoutBody */
     public function listSubscriptionsForAuthenticatedUser(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -197,7 +195,7 @@ final class Apps
         return $operator->call();
     }
 
-    /** @return Observable<Schema\HookDeliveryItem> */
+    /** @return iterable<int,Schema\HookDeliveryItem> */
     public function listWebhookDeliveries(array $params): iterable
     {
         $arguments = [];
@@ -254,7 +252,7 @@ final class Apps
         return $operator->call($arguments['account_id']);
     }
 
-    /** @return Observable<Schema\MarketplaceListingPlan> */
+    /** @return iterable<int,Schema\MarketplaceListingPlan> */
     public function listPlansStubbed(array $params): iterable
     {
         $arguments = [];
@@ -290,7 +288,7 @@ final class Apps
         return $operator->call($arguments['org']);
     }
 
-    /** @return Observable<Schema\UserMarketplacePurchase>|WithoutBody */
+    /** @return iterable<int,Schema\UserMarketplacePurchase>|WithoutBody */
     public function listSubscriptionsForAuthenticatedUserStubbed(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -341,7 +339,7 @@ final class Apps
         return $operator->call($arguments['delivery_id']);
     }
 
-    /** @return Observable<Schema\MarketplacePurchase> */
+    /** @return iterable<int,Schema\MarketplacePurchase> */
     public function listAccountsForPlan(array $params): iterable
     {
         $arguments = [];
@@ -416,7 +414,6 @@ final class Apps
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return */
     public function listInstallationReposForAuthenticatedUser(array $params): \ApiClients\Client\GitHub\Schema\Operations\Apps\ListInstallationReposForAuthenticatedUser\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
@@ -443,7 +440,7 @@ final class Apps
         return $operator->call($arguments['installation_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\MarketplacePurchase> */
+    /** @return iterable<int,Schema\MarketplacePurchase> */
     public function listAccountsForPlanStubbed(array $params): iterable
     {
         $arguments = [];

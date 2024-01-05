@@ -24,7 +24,7 @@ final readonly class ListReviewsListing
     {
     }
 
-    /** @return Observable<Schema\PullRequestReview> */
+    /** @return iterable<int,Schema\PullRequestReview> */
     public function call(string $owner, string $repo, int $pullNumber, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\ListReviewsListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pullNumber, $perPage, $page);

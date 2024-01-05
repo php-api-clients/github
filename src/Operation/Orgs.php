@@ -24,7 +24,7 @@ final class Orgs
     {
     }
 
-    /** @return Observable<Schema\OrganizationSimple>|WithoutBody */
+    /** @return iterable<int,Schema\OrganizationSimple>|WithoutBody */
     public function list(int $since, int $perPage): iterable|WithoutBody
     {
         return $this->operators->orgs👷List_()->call($since, $perPage);
@@ -48,13 +48,13 @@ final class Orgs
         return $this->operators->orgs👷Update()->call($org, $params);
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function listBlockedUsers(string $org, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListBlockedUsers()->call($org, $perPage, $page);
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function listBlockedUsersListing(string $org, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListBlockedUsersListing()->call($org, $perPage, $page);
@@ -78,25 +78,25 @@ final class Orgs
         return $this->operators->orgs👷UnblockUser()->call($org, $username);
     }
 
-    /** @return Observable<Schema\OrganizationInvitation> */
+    /** @return iterable<int,Schema\OrganizationInvitation> */
     public function listFailedInvitations(string $org, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListFailedInvitations()->call($org, $perPage, $page);
     }
 
-    /** @return Observable<Schema\OrganizationInvitation> */
+    /** @return iterable<int,Schema\OrganizationInvitation> */
     public function listFailedInvitationsListing(string $org, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListFailedInvitationsListing()->call($org, $perPage, $page);
     }
 
-    /** @return Observable<Schema\OrgHook> */
+    /** @return iterable<int,Schema\OrgHook> */
     public function listWebhooks(string $org, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListWebhooks()->call($org, $perPage, $page);
     }
 
-    /** @return Observable<Schema\OrgHook> */
+    /** @return iterable<int,Schema\OrgHook> */
     public function listWebhooksListing(string $org, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListWebhooksListing()->call($org, $perPage, $page);
@@ -138,7 +138,7 @@ final class Orgs
         return $this->operators->orgs👷UpdateWebhookConfigForOrg()->call($org, $hookId, $params);
     }
 
-    /** @return Observable<Schema\HookDeliveryItem> */
+    /** @return iterable<int,Schema\HookDeliveryItem> */
     public function listWebhookDeliveries(string $org, int $hookId, string $cursor, bool $redelivery, int $perPage): iterable
     {
         return $this->operators->orgs👷ListWebhookDeliveries()->call($org, $hookId, $cursor, $redelivery, $perPage);
@@ -162,19 +162,18 @@ final class Orgs
         return $this->operators->orgs👷PingWebhook()->call($org, $hookId);
     }
 
-    /** @return */
     public function listAppInstallations(string $org, int $perPage, int $page): Ok
     {
         return $this->operators->orgs👷ListAppInstallations()->call($org, $perPage, $page);
     }
 
-    /** @return Observable<Schema\OrganizationInvitation> */
+    /** @return iterable<int,Schema\OrganizationInvitation> */
     public function listPendingInvitations(string $org, int $perPage, int $page, string $role, string $invitationSource): iterable
     {
         return $this->operators->orgs👷ListPendingInvitations()->call($org, $perPage, $page, $role, $invitationSource);
     }
 
-    /** @return Observable<Schema\OrganizationInvitation> */
+    /** @return iterable<int,Schema\OrganizationInvitation> */
     public function listPendingInvitationsListing(string $org, int $perPage, int $page, string $role, string $invitationSource): iterable
     {
         return $this->operators->orgs👷ListPendingInvitationsListing()->call($org, $perPage, $page, $role, $invitationSource);
@@ -192,25 +191,25 @@ final class Orgs
         return $this->operators->orgs👷CancelInvitation()->call($org, $invitationId);
     }
 
-    /** @return Observable<Schema\Team> */
+    /** @return iterable<int,Schema\Team> */
     public function listInvitationTeams(string $org, int $invitationId, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListInvitationTeams()->call($org, $invitationId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\Team> */
+    /** @return iterable<int,Schema\Team> */
     public function listInvitationTeamsListing(string $org, int $invitationId, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListInvitationTeamsListing()->call($org, $invitationId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function listMembers(string $org, string $filter, string $role, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListMembers()->call($org, $filter, $role, $perPage, $page);
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function listMembersListing(string $org, string $filter, string $role, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListMembersListing()->call($org, $filter, $role, $perPage, $page);
@@ -318,37 +317,37 @@ final class Orgs
         return $this->operators->orgs👷PatchCustomOrganizationRole()->call($org, $roleId, $params);
     }
 
-    /** @return Observable<Schema\Team>|WithoutBody */
+    /** @return iterable<int,Schema\Team>|WithoutBody */
     public function listOrgRoleTeams(string $org, int $roleId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->orgs👷ListOrgRoleTeams()->call($org, $roleId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\Team>|WithoutBody */
+    /** @return iterable<int,Schema\Team>|WithoutBody */
     public function listOrgRoleTeamsListing(string $org, int $roleId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->orgs👷ListOrgRoleTeamsListing()->call($org, $roleId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\SimpleUser>|WithoutBody */
+    /** @return iterable<int,Schema\SimpleUser>|WithoutBody */
     public function listOrgRoleUsers(string $org, int $roleId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->orgs👷ListOrgRoleUsers()->call($org, $roleId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\SimpleUser>|WithoutBody */
+    /** @return iterable<int,Schema\SimpleUser>|WithoutBody */
     public function listOrgRoleUsersListing(string $org, int $roleId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->orgs👷ListOrgRoleUsersListing()->call($org, $roleId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function listOutsideCollaborators(string $org, string $filter, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListOutsideCollaborators()->call($org, $filter, $perPage, $page);
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function listOutsideCollaboratorsListing(string $org, string $filter, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListOutsideCollaboratorsListing()->call($org, $filter, $perPage, $page);
@@ -366,13 +365,13 @@ final class Orgs
         return $this->operators->orgs👷RemoveOutsideCollaborator()->call($org, $username);
     }
 
-    /** @return Observable<Schema\OrganizationProgrammaticAccessGrantRequest> */
+    /** @return iterable<int,Schema\OrganizationProgrammaticAccessGrantRequest> */
     public function listPatGrantRequests(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage, int $page, string $sort, string $direction): iterable
     {
         return $this->operators->orgs👷ListPatGrantRequests()->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $perPage, $page, $sort, $direction);
     }
 
-    /** @return Observable<Schema\OrganizationProgrammaticAccessGrantRequest> */
+    /** @return iterable<int,Schema\OrganizationProgrammaticAccessGrantRequest> */
     public function listPatGrantRequestsListing(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage, int $page, string $sort, string $direction): iterable
     {
         return $this->operators->orgs👷ListPatGrantRequestsListing()->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $perPage, $page, $sort, $direction);
@@ -390,25 +389,25 @@ final class Orgs
         return $this->operators->orgs👷ReviewPatGrantRequest()->call($org, $patRequestId, $params);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listPatGrantRequestRepositories(string $org, int $patRequestId, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListPatGrantRequestRepositories()->call($org, $patRequestId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listPatGrantRequestRepositoriesListing(string $org, int $patRequestId, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListPatGrantRequestRepositoriesListing()->call($org, $patRequestId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\OrganizationProgrammaticAccessGrant> */
+    /** @return iterable<int,Schema\OrganizationProgrammaticAccessGrant> */
     public function listPatGrants(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage, int $page, string $sort, string $direction): iterable
     {
         return $this->operators->orgs👷ListPatGrants()->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $perPage, $page, $sort, $direction);
     }
 
-    /** @return Observable<Schema\OrganizationProgrammaticAccessGrant> */
+    /** @return iterable<int,Schema\OrganizationProgrammaticAccessGrant> */
     public function listPatGrantsListing(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage, int $page, string $sort, string $direction): iterable
     {
         return $this->operators->orgs👷ListPatGrantsListing()->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $perPage, $page, $sort, $direction);
@@ -426,13 +425,13 @@ final class Orgs
         return $this->operators->orgs👷UpdatePatAccess()->call($org, $patId, $params);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listPatGrantRepositories(string $org, int $patId, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListPatGrantRepositories()->call($org, $patId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listPatGrantRepositoriesListing(string $org, int $patId, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListPatGrantRepositoriesListing()->call($org, $patId, $perPage, $page);
@@ -468,13 +467,13 @@ final class Orgs
         return $this->operators->orgs👷RemoveCustomProperty()->call($org, $customPropertyName);
     }
 
-    /** @return Observable<Schema\OrgRepoCustomPropertyValues> */
+    /** @return iterable<int,Schema\OrgRepoCustomPropertyValues> */
     public function listCustomPropertiesValuesForRepos(string $org, string $repositoryQuery, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListCustomPropertiesValuesForRepos()->call($org, $repositoryQuery, $perPage, $page);
     }
 
-    /** @return Observable<Schema\OrgRepoCustomPropertyValues> */
+    /** @return iterable<int,Schema\OrgRepoCustomPropertyValues> */
     public function listCustomPropertiesValuesForReposListing(string $org, string $repositoryQuery, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListCustomPropertiesValuesForReposListing()->call($org, $repositoryQuery, $perPage, $page);
@@ -486,13 +485,13 @@ final class Orgs
         return $this->operators->orgs👷CreateOrUpdateCustomPropertiesValuesForRepos()->call($org, $params);
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function listPublicMembers(string $org, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListPublicMembers()->call($org, $perPage, $page);
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function listPublicMembersListing(string $org, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListPublicMembersListing()->call($org, $perPage, $page);
@@ -540,13 +539,13 @@ final class Orgs
         return $this->operators->orgs👷EnableOrDisableSecurityProductOnAllOrgRepos()->call($org, $securityProduct, $enablement, $params);
     }
 
-    /** @return Observable<Schema\OrgMembership>|WithoutBody */
+    /** @return iterable<int,Schema\OrgMembership>|WithoutBody */
     public function listMembershipsForAuthenticatedUser(string $state, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->orgs👷ListMembershipsForAuthenticatedUser()->call($state, $perPage, $page);
     }
 
-    /** @return Observable<Schema\OrgMembership>|WithoutBody */
+    /** @return iterable<int,Schema\OrgMembership>|WithoutBody */
     public function listMembershipsForAuthenticatedUserListing(string $state, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->orgs👷ListMembershipsForAuthenticatedUserListing()->call($state, $perPage, $page);
@@ -564,25 +563,25 @@ final class Orgs
         return $this->operators->orgs👷UpdateMembershipForAuthenticatedUser()->call($org, $params);
     }
 
-    /** @return Observable<Schema\OrganizationSimple>|WithoutBody */
+    /** @return iterable<int,Schema\OrganizationSimple>|WithoutBody */
     public function listForAuthenticatedUser(int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->orgs👷ListForAuthenticatedUser()->call($perPage, $page);
     }
 
-    /** @return Observable<Schema\OrganizationSimple>|WithoutBody */
+    /** @return iterable<int,Schema\OrganizationSimple>|WithoutBody */
     public function listForAuthenticatedUserListing(int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->orgs👷ListForAuthenticatedUserListing()->call($perPage, $page);
     }
 
-    /** @return Observable<Schema\OrganizationSimple> */
+    /** @return iterable<int,Schema\OrganizationSimple> */
     public function listForUser(string $username, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListForUser()->call($username, $perPage, $page);
     }
 
-    /** @return Observable<Schema\OrganizationSimple> */
+    /** @return iterable<int,Schema\OrganizationSimple> */
     public function listForUserListing(string $username, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListForUserListing()->call($username, $perPage, $page);

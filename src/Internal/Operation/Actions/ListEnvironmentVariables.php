@@ -25,9 +25,9 @@ final class ListEnvironmentVariables
     private int $repositoryId;
     /**The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`. **/
     private string $environmentName;
-    /**The number of results per page (max 30). **/
+    /**The number of results per page (max 30). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
-    /**Page number of the results to fetch. **/
+    /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables $hydrator, int $repositoryId, string $environmentName, int $perPage = 10, int $page = 1)

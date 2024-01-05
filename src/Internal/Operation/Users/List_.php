@@ -27,7 +27,7 @@ final class List_
     public const OPERATION_MATCH = 'GET /users';
     /**A user ID. Only return users with an ID greater than this ID. **/
     private int $since;
-    /**The number of results per page (max 100). **/
+    /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Users $hydrator, int $since, int $perPage = 30)

@@ -24,7 +24,7 @@ final readonly class ListPatGrantRepositories
     {
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function call(string $org, int $patId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListPatGrantRepositories($this->responseSchemaValidator, $this->hydrator, $org, $patId, $perPage, $page);

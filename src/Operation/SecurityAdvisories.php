@@ -17,7 +17,7 @@ final class SecurityAdvisories
     {
     }
 
-    /** @return Observable<Schema\GlobalAdvisory> */
+    /** @return iterable<int,Schema\GlobalAdvisory> */
     public function listGlobalAdvisories(string $ghsaId, string $cveId, string $ecosystem, string $severity, mixed $cwes, bool $isWithdrawn, mixed $affects, string $published, string $updated, string $modified, string $before, string $after, string $type, string $direction, int $perPage, string $sort): iterable
     {
         return $this->operators->securityAdvisories👷ListGlobalAdvisories()->call($ghsaId, $cveId, $ecosystem, $severity, $cwes, $isWithdrawn, $affects, $published, $updated, $modified, $before, $after, $type, $direction, $perPage, $sort);
@@ -29,13 +29,13 @@ final class SecurityAdvisories
         return $this->operators->securityAdvisories👷GetGlobalAdvisory()->call($ghsaId);
     }
 
-    /** @return Observable<Schema\RepositoryAdvisory> */
+    /** @return iterable<int,Schema\RepositoryAdvisory> */
     public function listOrgRepositoryAdvisories(string $org, string $before, string $after, string $state, string $direction, string $sort, int $perPage): iterable
     {
         return $this->operators->securityAdvisories👷ListOrgRepositoryAdvisories()->call($org, $before, $after, $state, $direction, $sort, $perPage);
     }
 
-    /** @return Observable<Schema\RepositoryAdvisory> */
+    /** @return iterable<int,Schema\RepositoryAdvisory> */
     public function listRepositoryAdvisories(string $owner, string $repo, string $before, string $after, string $state, string $direction, string $sort, int $perPage): iterable
     {
         return $this->operators->securityAdvisories👷ListRepositoryAdvisories()->call($owner, $repo, $before, $after, $state, $direction, $sort, $perPage);

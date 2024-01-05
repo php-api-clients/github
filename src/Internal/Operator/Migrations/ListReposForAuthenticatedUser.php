@@ -24,7 +24,7 @@ final readonly class ListReposForAuthenticatedUser
     {
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function call(int $migrationId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\ListReposForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $migrationId, $perPage, $page);

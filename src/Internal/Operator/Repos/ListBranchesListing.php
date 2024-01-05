@@ -24,7 +24,7 @@ final readonly class ListBranchesListing
     {
     }
 
-    /** @return Observable<Schema\ShortBranch> */
+    /** @return iterable<int,Schema\ShortBranch> */
     public function call(string $owner, string $repo, bool $protected, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListBranchesListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $protected, $perPage, $page);

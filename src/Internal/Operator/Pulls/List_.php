@@ -25,7 +25,7 @@ final readonly class List_
     {
     }
 
-    /** @return Observable<Schema\PullRequestSimple>|WithoutBody */
+    /** @return iterable<int,Schema\PullRequestSimple>|WithoutBody */
     public function call(string $owner, string $repo, string $head, string $base, string $direction, string $state = 'open', string $sort = 'created', int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Pulls\List_($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $head, $base, $direction, $state, $sort, $perPage, $page);

@@ -80,7 +80,7 @@ final class Repos
         return $operator->call($arguments['since']);
     }
 
-    /** @return Observable<Schema\Repository>|WithoutBody */
+    /** @return iterable<int,Schema\Repository>|WithoutBody */
     public function listForAuthenticatedUser(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -143,7 +143,7 @@ final class Repos
         return $operator->call($arguments['direction'], $arguments['since'], $arguments['before'], $arguments['visibility'], $arguments['affiliation'], $arguments['type'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\RepositoryInvitation>|WithoutBody */
+    /** @return iterable<int,Schema\RepositoryInvitation>|WithoutBody */
     public function listInvitationsForAuthenticatedUser(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -164,7 +164,7 @@ final class Repos
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listForOrg(array $params): iterable
     {
         $arguments = [];
@@ -209,7 +209,7 @@ final class Repos
         return $operator->call($arguments['org'], $arguments['direction'], $arguments['type'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\RepositoryRuleset> */
+    /** @return iterable<int,Schema\RepositoryRuleset> */
     public function getOrgRulesets(array $params): iterable
     {
         $arguments = [];
@@ -257,7 +257,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listForUser(array $params): iterable
     {
         $arguments = [];
@@ -302,7 +302,7 @@ final class Repos
         return $operator->call($arguments['username'], $arguments['direction'], $arguments['type'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\RuleSuites> */
+    /** @return iterable<int,Schema\RuleSuites> */
     public function getOrgRuleSuites(array $params): iterable
     {
         $arguments = [];
@@ -374,7 +374,7 @@ final class Repos
         return $operator->call($arguments['org'], $arguments['ruleset_id']);
     }
 
-    /** @return Observable<Schema\Activity> */
+    /** @return iterable<int,Schema\Activity> */
     public function listActivities(array $params): iterable
     {
         $arguments = [];
@@ -443,7 +443,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['before'], $arguments['after'], $arguments['ref'], $arguments['actor'], $arguments['time_period'], $arguments['activity_type'], $arguments['direction'], $arguments['per_page']);
     }
 
-    /** @return Observable<Schema\Autolink> */
+    /** @return iterable<int,Schema\Autolink> */
     public function listAutolinks(array $params): iterable
     {
         $arguments = [];
@@ -491,7 +491,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return Observable<Schema\ShortBranch> */
+    /** @return iterable<int,Schema\ShortBranch> */
     public function listBranches(array $params): iterable
     {
         $arguments = [];
@@ -530,7 +530,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['protected'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Collaborator> */
+    /** @return iterable<int,Schema\Collaborator> */
     public function listCollaborators(array $params): iterable
     {
         $arguments = [];
@@ -575,7 +575,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['permission'], $arguments['affiliation'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\CommitComment> */
+    /** @return iterable<int,Schema\CommitComment> */
     public function listCommitCommentsForRepo(array $params): iterable
     {
         $arguments = [];
@@ -608,7 +608,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Commit> */
+    /** @return iterable<int,Schema\Commit> */
     public function listCommits(array $params): iterable
     {
         $arguments = [];
@@ -677,7 +677,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['sha'], $arguments['path'], $arguments['author'], $arguments['committer'], $arguments['since'], $arguments['until'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Contributor>|WithoutBody */
+    /** @return iterable<int,Schema\Contributor>|WithoutBody */
     public function listContributors(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -716,7 +716,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['anon'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Deployment> */
+    /** @return iterable<int,Schema\Deployment> */
     public function listDeployments(array $params): iterable
     {
         $arguments = [];
@@ -773,7 +773,6 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['sha'], $arguments['ref'], $arguments['task'], $arguments['environment'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
     public function getAllEnvironments(array $params): Ok
     {
         $arguments = [];
@@ -806,7 +805,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listForks(array $params): iterable
     {
         $arguments = [];
@@ -845,7 +844,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Hook> */
+    /** @return iterable<int,Schema\Hook> */
     public function listWebhooks(array $params): iterable
     {
         $arguments = [];
@@ -878,7 +877,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\RepositoryInvitation> */
+    /** @return iterable<int,Schema\RepositoryInvitation> */
     public function listInvitations(array $params): iterable
     {
         $arguments = [];
@@ -911,7 +910,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\DeployKey> */
+    /** @return iterable<int,Schema\DeployKey> */
     public function listDeployKeys(array $params): iterable
     {
         $arguments = [];
@@ -1013,7 +1012,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref']);
     }
 
-    /** @return Observable<Schema\Release> */
+    /** @return iterable<int,Schema\Release> */
     public function listReleases(array $params): iterable
     {
         $arguments = [];
@@ -1046,7 +1045,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\RepositoryRuleset> */
+    /** @return iterable<int,Schema\RepositoryRuleset> */
     public function getRepoRulesets(array $params): iterable
     {
         $arguments = [];
@@ -1085,7 +1084,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page'], $arguments['includes_parents']);
     }
 
-    /** @return Observable<Schema\Tag> */
+    /** @return iterable<int,Schema\Tag> */
     public function listTags(array $params): iterable
     {
         $arguments = [];
@@ -1118,7 +1117,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Team> */
+    /** @return iterable<int,Schema\Team> */
     public function listTeams(array $params): iterable
     {
         $arguments = [];
@@ -1151,7 +1150,6 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
     public function getAllTopics(array $params): Topic
     {
         $arguments = [];
@@ -1361,7 +1359,6 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
-    /** @return */
     public function getCommit(array $params): Commit
     {
         $arguments = [];
@@ -1421,7 +1418,6 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return */
     public function compareCommits(array $params): CommitComparison
     {
         $arguments = [];
@@ -1601,7 +1597,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['key_id']);
     }
 
-    /** @return Observable<Schema\PageBuild> */
+    /** @return iterable<int,Schema\PageBuild> */
     public function listPagesBuilds(array $params): iterable
     {
         $arguments = [];
@@ -1757,7 +1753,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id']);
     }
 
-    /** @return Observable<Schema\RuleSuites> */
+    /** @return iterable<int,Schema\RuleSuites> */
     public function getRepoRuleSuites(array $params): iterable
     {
         $arguments = [];
@@ -2162,7 +2158,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['commit_sha']);
     }
 
-    /** @return Observable<Schema\CommitComment> */
+    /** @return iterable<int,Schema\CommitComment> */
     public function listCommentsForCommit(array $params): iterable
     {
         $arguments = [];
@@ -2201,7 +2197,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['commit_sha'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\PullRequestSimple> */
+    /** @return iterable<int,Schema\PullRequestSimple> */
     public function listPullRequestsAssociatedWithCommit(array $params): iterable
     {
         $arguments = [];
@@ -2240,7 +2236,6 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['commit_sha'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
     public function getCombinedStatusForRef(array $params): CombinedCommitStatus
     {
         $arguments = [];
@@ -2279,7 +2274,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Status>|Schema\BasicError */
+    /** @return iterable<int,Schema\Status>|Schema\BasicError */
     public function listCommitStatusesForRef(array $params): iterable|BasicError
     {
         $arguments = [];
@@ -2318,7 +2313,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\DeploymentStatus> */
+    /** @return iterable<int,Schema\DeploymentStatus> */
     public function listDeploymentStatuses(array $params): iterable
     {
         $arguments = [];
@@ -2357,7 +2352,6 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['deployment_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
     public function listDeploymentBranchPolicies(array $params): \ApiClients\Client\GitHub\Schema\Operations\Repos\ListDeploymentBranchPolicies\Response\ApplicationJson\Ok
     {
         $arguments = [];
@@ -2450,7 +2444,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id']);
     }
 
-    /** @return Observable<Schema\HookDeliveryItem> */
+    /** @return iterable<int,Schema\HookDeliveryItem> */
     public function listWebhookDeliveries(array $params): iterable
     {
         $arguments = [];
@@ -2597,7 +2591,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['tag']);
     }
 
-    /** @return Observable<Schema\ReleaseAsset> */
+    /** @return iterable<int,Schema\ReleaseAsset> */
     public function listReleaseAssets(array $params): iterable
     {
         $arguments = [];
@@ -2636,7 +2630,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern|Schema\RepositoryRuleWorkflows> */
+    /** @return iterable<int,Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern|Schema\RepositoryRuleWorkflows> */
     public function getBranchRules(array $params): iterable
     {
         $arguments = [];
@@ -2945,7 +2939,6 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['environment_name'], $arguments['branch_policy_id']);
     }
 
-    /** @return */
     public function listCustomDeploymentRuleIntegrations(array $params): \ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok
     {
         $arguments = [];

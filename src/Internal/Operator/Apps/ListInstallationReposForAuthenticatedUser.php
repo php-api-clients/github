@@ -25,7 +25,6 @@ final readonly class ListInstallationReposForAuthenticatedUser
     {
     }
 
-    /** @return */
     public function call(int $installationId, int $perPage = 30, int $page = 1): Ok|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\ListInstallationReposForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $installationId, $perPage, $page);

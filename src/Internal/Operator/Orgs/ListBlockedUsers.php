@@ -24,7 +24,7 @@ final readonly class ListBlockedUsers
     {
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function call(string $org, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListBlockedUsers($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

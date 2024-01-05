@@ -24,7 +24,7 @@ final readonly class ListWatchersForRepoListing
     {
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\ListWatchersForRepoListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

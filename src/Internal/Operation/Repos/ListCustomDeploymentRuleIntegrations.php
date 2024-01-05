@@ -27,9 +27,9 @@ final class ListCustomDeploymentRuleIntegrations
     private string $repo;
     /**The account owner of the repository. The name is not case sensitive. **/
     private string $owner;
-    /**Page number of the results to fetch. **/
+    /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
-    /**The number of results per page (max 100). **/
+    /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\DeploymentProtectionRules\Apps $hydrator, string $environmentName, string $repo, string $owner, int $page = 1, int $perPage = 30)

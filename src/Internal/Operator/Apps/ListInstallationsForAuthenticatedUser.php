@@ -25,7 +25,6 @@ final readonly class ListInstallationsForAuthenticatedUser
     {
     }
 
-    /** @return */
     public function call(int $perPage = 30, int $page = 1): Json|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\ListInstallationsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

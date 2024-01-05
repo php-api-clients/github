@@ -24,7 +24,7 @@ final readonly class ListChildLegacyListing
     {
     }
 
-    /** @return Observable<Schema\Team> */
+    /** @return iterable<int,Schema\Team> */
     public function call(int $teamId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\ListChildLegacyListing($this->responseSchemaValidator, $this->hydrator, $teamId, $perPage, $page);

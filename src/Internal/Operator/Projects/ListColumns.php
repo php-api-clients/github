@@ -25,7 +25,7 @@ final readonly class ListColumns
     {
     }
 
-    /** @return Observable<Schema\ProjectColumn>|WithoutBody */
+    /** @return iterable<int,Schema\ProjectColumn>|WithoutBody */
     public function call(int $projectId, int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\ListColumns($this->responseSchemaValidator, $this->hydrator, $projectId, $perPage, $page);

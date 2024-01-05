@@ -24,7 +24,6 @@ final readonly class GetCombinedStatusForRef
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, string $ref, int $perPage = 30, int $page = 1): CombinedCommitStatus
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetCombinedStatusForRef($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $perPage, $page);

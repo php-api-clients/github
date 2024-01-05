@@ -14,7 +14,7 @@ final class Ten
     {
     }
 
-    /** @return Observable<Schema\Reaction> */
+    /** @return iterable<int,Schema\Reaction> */
     public function call(string $call, array $params, array $pathChunks): iterable
     {
         if ($pathChunks[0] === '') {

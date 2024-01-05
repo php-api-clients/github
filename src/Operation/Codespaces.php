@@ -25,7 +25,6 @@ final class Codespaces
     {
     }
 
-    /** @return */
     public function listInOrganization(string $org, int $perPage, int $page): Ok|WithoutBody
     {
         return $this->operators->codespaces👷ListInOrganization()->call($org, $perPage, $page);
@@ -49,7 +48,6 @@ final class Codespaces
         return $this->operators->codespaces👷DeleteCodespacesAccessUsers()->call($org, $params);
     }
 
-    /** @return */
     public function listOrgSecrets(string $org, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListOrgSecrets\Response\ApplicationJson\Ok
     {
         return $this->operators->codespaces👷ListOrgSecrets()->call($org, $perPage, $page);
@@ -79,7 +77,6 @@ final class Codespaces
         return $this->operators->codespaces👷DeleteOrgSecret()->call($org, $secretName);
     }
 
-    /** @return */
     public function listSelectedReposForOrgSecret(string $org, string $secretName, int $page, int $perPage): Json
     {
         return $this->operators->codespaces👷ListSelectedReposForOrgSecret()->call($org, $secretName, $page, $perPage);
@@ -103,7 +100,6 @@ final class Codespaces
         return $this->operators->codespaces👷RemoveSelectedRepoFromOrgSecret()->call($org, $secretName, $repositoryId);
     }
 
-    /** @return */
     public function getCodespacesForUserInOrg(string $org, string $username, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\GetCodespacesForUserInOrg\Response\ApplicationJson\Ok\Application\Json|WithoutBody
     {
         return $this->operators->codespaces👷GetCodespacesForUserInOrg()->call($org, $username, $perPage, $page);
@@ -121,7 +117,6 @@ final class Codespaces
         return $this->operators->codespaces👷StopInOrganization()->call($org, $username, $codespaceName);
     }
 
-    /** @return */
     public function listInRepositoryForAuthenticatedUser(string $owner, string $repo, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json
     {
         return $this->operators->codespaces👷ListInRepositoryForAuthenticatedUser()->call($owner, $repo, $perPage, $page);
@@ -133,7 +128,6 @@ final class Codespaces
         return $this->operators->codespaces👷CreateWithRepoForAuthenticatedUser()->call($owner, $repo, $params);
     }
 
-    /** @return */
     public function listDevcontainersInRepositoryForAuthenticatedUser(string $owner, string $repo, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok
     {
         return $this->operators->codespaces👷ListDevcontainersInRepositoryForAuthenticatedUser()->call($owner, $repo, $perPage, $page);
@@ -157,7 +151,6 @@ final class Codespaces
         return $this->operators->codespaces👷CheckPermissionsForDevcontainer()->call($owner, $repo, $ref, $devcontainerPath);
     }
 
-    /** @return */
     public function listRepoSecrets(string $owner, string $repo, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListRepoSecrets\Response\ApplicationJson\Ok
     {
         return $this->operators->codespaces👷ListRepoSecrets()->call($owner, $repo, $perPage, $page);
@@ -193,7 +186,6 @@ final class Codespaces
         return $this->operators->codespaces👷CreateWithPrForAuthenticatedUser()->call($owner, $repo, $pullNumber, $params);
     }
 
-    /** @return */
     public function listForAuthenticatedUser(int $repositoryId, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|WithoutBody
     {
         return $this->operators->codespaces👷ListForAuthenticatedUser()->call($repositoryId, $perPage, $page);
@@ -205,7 +197,6 @@ final class Codespaces
         return $this->operators->codespaces👷CreateForAuthenticatedUser()->call($params);
     }
 
-    /** @return */
     public function listSecretsForAuthenticatedUser(int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok
     {
         return $this->operators->codespaces👷ListSecretsForAuthenticatedUser()->call($perPage, $page);

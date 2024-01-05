@@ -21,7 +21,7 @@ final class Migrations
     {
     }
 
-    /** @return Observable<Schema\Migration>|WithoutBody */
+    /** @return iterable<int,Schema\Migration>|WithoutBody */
     public function listForAuthenticatedUserListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -48,7 +48,7 @@ final class Migrations
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Migration> */
+    /** @return iterable<int,Schema\Migration> */
     public function listForOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -87,7 +87,7 @@ final class Migrations
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listReposForAuthenticatedUserListing(array $params): iterable
     {
         $arguments = [];
@@ -120,7 +120,7 @@ final class Migrations
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function listReposForOrgListing(array $params): iterable
     {
         $arguments = [];

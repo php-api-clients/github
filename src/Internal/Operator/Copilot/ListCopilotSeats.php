@@ -24,7 +24,6 @@ final readonly class ListCopilotSeats
     {
     }
 
-    /** @return */
     public function call(string $org, int $page = 1, int $perPage = 50): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Copilot\ListCopilotSeats($this->responseSchemaValidator, $this->hydrator, $org, $page, $perPage);

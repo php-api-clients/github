@@ -24,7 +24,7 @@ final readonly class ListPagesBuildsListing
     {
     }
 
-    /** @return Observable<Schema\PageBuild> */
+    /** @return iterable<int,Schema\PageBuild> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListPagesBuildsListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

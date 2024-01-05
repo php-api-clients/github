@@ -24,7 +24,6 @@ final readonly class ListDeploymentBranchPolicies
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, string $environmentName, int $perPage = 30, int $page = 1): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListDeploymentBranchPolicies($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName, $perPage, $page);

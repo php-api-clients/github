@@ -27,7 +27,7 @@ final class ListWebhookDeliveries
     public const OPERATION_MATCH = 'GET /app/hook/deliveries';
     /**Used for pagination: the starting delivery from which the page of deliveries is fetched. Refer to the `link` header for the next and previous page cursors. **/
     private string $cursor;
-    /**The number of results per page (max 100). **/
+    /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\App\Hook\Deliveries $hydrator, string $cursor, private bool $redelivery, int $perPage = 30)

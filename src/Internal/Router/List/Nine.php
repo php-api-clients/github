@@ -14,7 +14,7 @@ final class Nine
     {
     }
 
-    /** @return Observable<Schema\ReviewComment> */
+    /** @return iterable<int,Schema\ReviewComment> */
     public function call(string $call, array $params, array $pathChunks): iterable
     {
         if ($pathChunks[0] === '') {

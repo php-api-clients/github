@@ -25,7 +25,6 @@ final readonly class ListReposAccessibleToInstallation
     {
     }
 
-    /** @return */
     public function call(int $perPage = 30, int $page = 1): Ok|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\ListReposAccessibleToInstallation($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

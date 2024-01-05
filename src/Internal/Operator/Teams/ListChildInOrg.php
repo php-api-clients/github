@@ -24,7 +24,7 @@ final readonly class ListChildInOrg
     {
     }
 
-    /** @return Observable<Schema\Team> */
+    /** @return iterable<int,Schema\Team> */
     public function call(string $org, string $teamSlug, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\ListChildInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $perPage, $page);

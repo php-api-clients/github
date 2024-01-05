@@ -30,9 +30,9 @@ final class ListJobsForWorkflowRunAttempt
     private int $runId;
     /**The attempt number of the workflow run. **/
     private int $attemptNumber;
-    /**The number of results per page (max 100). **/
+    /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
-    /**Page number of the results to fetch. **/
+    /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Actions\Runs\RunId\Attempts\AttemptNumber\Jobs $hydrator, string $owner, string $repo, int $runId, int $attemptNumber, int $perPage = 30, int $page = 1)

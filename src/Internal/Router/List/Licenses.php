@@ -21,7 +21,7 @@ final class Licenses
     {
     }
 
-    /** @return Observable<Schema\LicenseSimple>|WithoutBody */
+    /** @return iterable<int,Schema\LicenseSimple>|WithoutBody */
     public function getAllCommonlyUsedListing(array $params): iterable|WithoutBody
     {
         $arguments = [];

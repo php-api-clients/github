@@ -24,7 +24,7 @@ final readonly class ListActivities
     {
     }
 
-    /** @return Observable<Schema\Activity> */
+    /** @return iterable<int,Schema\Activity> */
     public function call(string $owner, string $repo, string $before, string $after, string $ref, string $actor, string $timePeriod, string $activityType, string $direction = 'desc', int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListActivities($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $before, $after, $ref, $actor, $timePeriod, $activityType, $direction, $perPage);

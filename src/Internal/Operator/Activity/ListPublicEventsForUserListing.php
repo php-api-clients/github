@@ -24,7 +24,7 @@ final readonly class ListPublicEventsForUserListing
     {
     }
 
-    /** @return Observable<Schema\Event> */
+    /** @return iterable<int,Schema\Event> */
     public function call(string $username, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\ListPublicEventsForUserListing($this->responseSchemaValidator, $this->hydrator, $username, $perPage, $page);

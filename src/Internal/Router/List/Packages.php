@@ -21,7 +21,7 @@ final class Packages
     {
     }
 
-    /** @return Observable<Schema\Package>|WithoutBody */
+    /** @return iterable<int,Schema\Package>|WithoutBody */
     public function listPackagesForAuthenticatedUserListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -60,7 +60,7 @@ final class Packages
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Package>|WithoutBody */
+    /** @return iterable<int,Schema\Package>|WithoutBody */
     public function listPackagesForOrganizationListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -105,7 +105,7 @@ final class Packages
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Package>|WithoutBody */
+    /** @return iterable<int,Schema\Package>|WithoutBody */
     public function listPackagesForUserListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -150,7 +150,7 @@ final class Packages
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\PackageVersion> */
+    /** @return iterable<int,Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByAuthenticatedUserListing(array $params): iterable
     {
         $arguments = [];
@@ -195,7 +195,7 @@ final class Packages
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\PackageVersion> */
+    /** @return iterable<int,Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByOrgListing(array $params): iterable
     {
         $arguments = [];

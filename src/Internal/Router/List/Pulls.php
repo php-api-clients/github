@@ -21,7 +21,7 @@ final class Pulls
     {
     }
 
-    /** @return Observable<Schema\PullRequestSimple>|WithoutBody */
+    /** @return iterable<int,Schema\PullRequestSimple>|WithoutBody */
     public function listListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -90,7 +90,7 @@ final class Pulls
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\PullRequestReviewComment> */
+    /** @return iterable<int,Schema\PullRequestReviewComment> */
     public function listReviewCommentsForRepoListing(array $params): iterable
     {
         $arguments = [];
@@ -147,7 +147,7 @@ final class Pulls
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\PullRequestReviewComment> */
+    /** @return iterable<int,Schema\PullRequestReviewComment> */
     public function listReviewCommentsListing(array $params): iterable
     {
         $arguments = [];
@@ -210,7 +210,7 @@ final class Pulls
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\Commit> */
+    /** @return iterable<int,Schema\Commit> */
     public function listCommitsListing(array $params): iterable
     {
         $arguments = [];
@@ -255,7 +255,7 @@ final class Pulls
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\DiffEntry> */
+    /** @return iterable<int,Schema\DiffEntry> */
     public function listFilesListing(array $params): iterable
     {
         $arguments = [];
@@ -300,7 +300,7 @@ final class Pulls
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\PullRequestReview> */
+    /** @return iterable<int,Schema\PullRequestReview> */
     public function listReviewsListing(array $params): iterable
     {
         $arguments = [];
@@ -345,7 +345,7 @@ final class Pulls
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\ReviewComment> */
+    /** @return iterable<int,Schema\ReviewComment> */
     public function listCommentsForReviewListing(array $params): iterable
     {
         $arguments = [];

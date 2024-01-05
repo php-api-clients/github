@@ -22,13 +22,13 @@ final class Packages
         return $this->operators->packages👷ListDockerMigrationConflictingPackagesForOrganization()->call($org);
     }
 
-    /** @return Observable<Schema\Package>|WithoutBody */
+    /** @return iterable<int,Schema\Package>|WithoutBody */
     public function listPackagesForOrganization(string $packageType, string $org, string $visibility, int $page, int $perPage): iterable|WithoutBody
     {
         return $this->operators->packages👷ListPackagesForOrganization()->call($packageType, $org, $visibility, $page, $perPage);
     }
 
-    /** @return Observable<Schema\Package>|WithoutBody */
+    /** @return iterable<int,Schema\Package>|WithoutBody */
     public function listPackagesForOrganizationListing(string $packageType, string $org, string $visibility, int $page, int $perPage): iterable|WithoutBody
     {
         return $this->operators->packages👷ListPackagesForOrganizationListing()->call($packageType, $org, $visibility, $page, $perPage);
@@ -52,13 +52,13 @@ final class Packages
         return $this->operators->packages👷RestorePackageForOrg()->call($packageType, $packageName, $org, $token);
     }
 
-    /** @return Observable<Schema\PackageVersion> */
+    /** @return iterable<int,Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByOrg(string $packageType, string $packageName, string $org, int $page, int $perPage, string $state): iterable
     {
         return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByOrg()->call($packageType, $packageName, $org, $page, $perPage, $state);
     }
 
-    /** @return Observable<Schema\PackageVersion> */
+    /** @return iterable<int,Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByOrgListing(string $packageType, string $packageName, string $org, int $page, int $perPage, string $state): iterable
     {
         return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByOrgListing()->call($packageType, $packageName, $org, $page, $perPage, $state);
@@ -88,13 +88,13 @@ final class Packages
         return $this->operators->packages👷ListDockerMigrationConflictingPackagesForAuthenticatedUser()->call();
     }
 
-    /** @return Observable<Schema\Package>|WithoutBody */
+    /** @return iterable<int,Schema\Package>|WithoutBody */
     public function listPackagesForAuthenticatedUser(string $packageType, string $visibility, int $page, int $perPage): iterable|WithoutBody
     {
         return $this->operators->packages👷ListPackagesForAuthenticatedUser()->call($packageType, $visibility, $page, $perPage);
     }
 
-    /** @return Observable<Schema\Package>|WithoutBody */
+    /** @return iterable<int,Schema\Package>|WithoutBody */
     public function listPackagesForAuthenticatedUserListing(string $packageType, string $visibility, int $page, int $perPage): iterable|WithoutBody
     {
         return $this->operators->packages👷ListPackagesForAuthenticatedUserListing()->call($packageType, $visibility, $page, $perPage);
@@ -118,13 +118,13 @@ final class Packages
         return $this->operators->packages👷RestorePackageForAuthenticatedUser()->call($packageType, $packageName, $token);
     }
 
-    /** @return Observable<Schema\PackageVersion> */
+    /** @return iterable<int,Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByAuthenticatedUser(string $packageType, string $packageName, int $page, int $perPage, string $state): iterable
     {
         return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByAuthenticatedUser()->call($packageType, $packageName, $page, $perPage, $state);
     }
 
-    /** @return Observable<Schema\PackageVersion> */
+    /** @return iterable<int,Schema\PackageVersion> */
     public function getAllPackageVersionsForPackageOwnedByAuthenticatedUserListing(string $packageType, string $packageName, int $page, int $perPage, string $state): iterable
     {
         return $this->operators->packages👷GetAllPackageVersionsForPackageOwnedByAuthenticatedUserListing()->call($packageType, $packageName, $page, $perPage, $state);
@@ -154,13 +154,13 @@ final class Packages
         return $this->operators->packages👷ListDockerMigrationConflictingPackagesForUser()->call($username);
     }
 
-    /** @return Observable<Schema\Package>|WithoutBody */
+    /** @return iterable<int,Schema\Package>|WithoutBody */
     public function listPackagesForUser(string $packageType, string $visibility, string $username, int $page, int $perPage): iterable|WithoutBody
     {
         return $this->operators->packages👷ListPackagesForUser()->call($packageType, $visibility, $username, $page, $perPage);
     }
 
-    /** @return Observable<Schema\Package>|WithoutBody */
+    /** @return iterable<int,Schema\Package>|WithoutBody */
     public function listPackagesForUserListing(string $packageType, string $visibility, string $username, int $page, int $perPage): iterable|WithoutBody
     {
         return $this->operators->packages👷ListPackagesForUserListing()->call($packageType, $visibility, $username, $page, $perPage);

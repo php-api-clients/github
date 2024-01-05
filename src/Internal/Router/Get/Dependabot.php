@@ -26,7 +26,7 @@ final class Dependabot
     {
     }
 
-    /** @return Observable<Schema\DependabotAlertWithRepository>|WithoutBody */
+    /** @return iterable<int,Schema\DependabotAlertWithRepository>|WithoutBody */
     public function listAlertsForEnterprise(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -113,7 +113,7 @@ final class Dependabot
         return $operator->call($arguments['enterprise'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['first'], $arguments['per_page']);
     }
 
-    /** @return Observable<Schema\DependabotAlertWithRepository>|WithoutBody */
+    /** @return iterable<int,Schema\DependabotAlertWithRepository>|WithoutBody */
     public function listAlertsForOrg(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -200,7 +200,6 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['first'], $arguments['per_page']);
     }
 
-    /** @return */
     public function listOrgSecrets(array $params): Ok
     {
         $arguments = [];
@@ -263,7 +262,7 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
-    /** @return Observable<Schema\DependabotAlert>|WithoutBody */
+    /** @return iterable<int,Schema\DependabotAlert>|WithoutBody */
     public function listAlertsForRepo(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -368,7 +367,6 @@ final class Dependabot
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['manifest'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page'], $arguments['first']);
     }
 
-    /** @return */
     public function listRepoSecrets(array $params): \ApiClients\Client\GitHub\Schema\Operations\Dependabot\ListRepoSecrets\Response\ApplicationJson\Ok
     {
         $arguments = [];
@@ -401,7 +399,6 @@ final class Dependabot
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
     public function listSelectedReposForOrgSecret(array $params): Json
     {
         $arguments = [];

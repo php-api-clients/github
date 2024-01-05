@@ -20,7 +20,7 @@ final class Classroom
     {
     }
 
-    /** @return Observable<Schema\SimpleClassroom> */
+    /** @return iterable<int,Schema\SimpleClassroom> */
     public function listClassrooms(array $params): iterable
     {
         $arguments = [];
@@ -71,7 +71,7 @@ final class Classroom
         return $operator->call($arguments['classroom_id']);
     }
 
-    /** @return Observable<Schema\ClassroomAcceptedAssignment> */
+    /** @return iterable<int,Schema\ClassroomAcceptedAssignment> */
     public function listAcceptedAssigmentsForAnAssignment(array $params): iterable
     {
         $arguments = [];
@@ -113,7 +113,7 @@ final class Classroom
         return $operator->call($arguments['assignment_id']);
     }
 
-    /** @return Observable<Schema\SimpleClassroomAssignment> */
+    /** @return iterable<int,Schema\SimpleClassroomAssignment> */
     public function listAssignmentsForAClassroom(array $params): iterable
     {
         $arguments = [];

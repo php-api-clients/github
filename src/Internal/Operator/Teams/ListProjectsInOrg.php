@@ -24,7 +24,7 @@ final readonly class ListProjectsInOrg
     {
     }
 
-    /** @return Observable<Schema\TeamProject> */
+    /** @return iterable<int,Schema\TeamProject> */
     public function call(string $org, string $teamSlug, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\ListProjectsInOrg($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $perPage, $page);

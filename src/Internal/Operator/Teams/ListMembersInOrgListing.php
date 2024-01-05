@@ -24,7 +24,7 @@ final readonly class ListMembersInOrgListing
     {
     }
 
-    /** @return Observable<Schema\SimpleUser> */
+    /** @return iterable<int,Schema\SimpleUser> */
     public function call(string $org, string $teamSlug, string $role = 'all', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\ListMembersInOrgListing($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $role, $perPage, $page);

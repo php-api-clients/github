@@ -25,7 +25,6 @@ final readonly class ListSelectedReposForOrgVariable
     {
     }
 
-    /** @return */
     public function call(string $org, string $name, int $page = 1, int $perPage = 30): Json|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListSelectedReposForOrgVariable($this->responseSchemaValidator, $this->hydrator, $org, $name, $page, $perPage);

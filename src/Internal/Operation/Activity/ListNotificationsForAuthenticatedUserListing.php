@@ -34,9 +34,9 @@ final class ListNotificationsForAuthenticatedUserListing
     private bool $all;
     /**If `true`, only shows notifications in which the user is directly participating or mentioned. **/
     private bool $participating;
-    /**Page number of the results to fetch. **/
+    /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
-    /**The number of results per page (max 50). **/
+    /**The number of results per page (max 50). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Notifications $hydrator, string $since, string $before, bool $all = false, bool $participating = false, int $page = 1, int $perPage = 50)

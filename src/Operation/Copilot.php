@@ -24,7 +24,6 @@ final class Copilot
         return $this->operators->copilot👷GetCopilotOrganizationDetails()->call($org);
     }
 
-    /** @return */
     public function listCopilotSeats(string $org, int $page, int $perPage): Ok
     {
         return $this->operators->copilot👷ListCopilotSeats()->call($org, $page, $perPage);

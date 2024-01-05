@@ -41,9 +41,9 @@ final class ListWorkflowRuns
     private int $checkSuiteId;
     /**Only returns workflow runs that are associated with the specified `head_sha`. **/
     private string $headSha;
-    /**The number of results per page (max 100). **/
+    /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
-    /**Page number of the results to fetch. **/
+    /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
     /**If `true` pull requests are omitted from the response (empty array). **/
     private bool $excludePullRequests;

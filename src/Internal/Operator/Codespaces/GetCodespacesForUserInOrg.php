@@ -25,7 +25,6 @@ final readonly class GetCodespacesForUserInOrg
     {
     }
 
-    /** @return */
     public function call(string $org, string $username, int $perPage = 30, int $page = 1): Json|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\GetCodespacesForUserInOrg($this->responseSchemaValidator, $this->hydrator, $org, $username, $perPage, $page);

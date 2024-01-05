@@ -15,7 +15,7 @@ final class Three
     {
     }
 
-    /** @return Observable<Schema\IntegrationInstallationRequest>|WithoutBody|Observable<Schema\Installation>|Observable<Schema\BaseGist>|Observable<Schema\MarketplaceListingPlan>|Observable<Schema\SimpleUser>|Observable<Schema\Email>|Observable<Schema\GpgKey>|Observable<Schema\Issue>|Observable<Schema\Key>|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\Migration>|Observable<Schema\OrganizationSimple>|Observable<Schema\Package>|Observable<Schema\Repository>|Observable<Schema\RepositoryInvitation>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey>|Observable<Schema\MinimalRepository>|Observable<Schema\TeamFull> */
+    /** @return iterable<int,Schema\IntegrationInstallationRequest>|WithoutBody|iterable<int,Schema\Installation>|iterable<int,Schema\BaseGist>|iterable<int,Schema\MarketplaceListingPlan>|iterable<int,Schema\SimpleUser>|iterable<int,Schema\Email>|iterable<int,Schema\GpgKey>|iterable<int,Schema\Issue>|iterable<int,Schema\Key>|iterable<int,Schema\UserMarketplacePurchase>|iterable<int,Schema\Migration>|iterable<int,Schema\OrganizationSimple>|iterable<int,Schema\Package>|iterable<int,Schema\Repository>|iterable<int,Schema\RepositoryInvitation>|iterable<int,Schema\SocialAccount>|iterable<int,Schema\SshSigningKey>|iterable<int,Schema\MinimalRepository>|iterable<int,Schema\TeamFull> */
     public function call(string $call, array $params, array $pathChunks): iterable|WithoutBody
     {
         if ($pathChunks[0] === '') {

@@ -25,7 +25,7 @@ final readonly class ListInvitationsForAuthenticatedUserListing
     {
     }
 
-    /** @return Observable<Schema\RepositoryInvitation>|WithoutBody */
+    /** @return iterable<int,Schema\RepositoryInvitation>|WithoutBody */
     public function call(int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListInvitationsForAuthenticatedUserListing($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

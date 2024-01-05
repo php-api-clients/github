@@ -24,7 +24,6 @@ final readonly class ListRepoSecrets
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\ListRepoSecrets($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

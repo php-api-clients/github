@@ -29,7 +29,6 @@ final class Codespaces
     {
     }
 
-    /** @return */
     public function listForAuthenticatedUser(array $params): Json|WithoutBody
     {
         $arguments = [];
@@ -56,7 +55,6 @@ final class Codespaces
         return $operator->call($arguments['repository_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
     public function listInOrganization(array $params): Ok|WithoutBody
     {
         $arguments = [];
@@ -83,7 +81,6 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
     public function listSecretsForAuthenticatedUser(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSecretsForAuthenticatedUser\Response\ApplicationJson\Ok
     {
         $arguments = [];
@@ -119,7 +116,6 @@ final class Codespaces
         return $operator->call($arguments['codespace_name']);
     }
 
-    /** @return */
     public function listOrgSecrets(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListOrgSecrets\Response\ApplicationJson\Ok
     {
         $arguments = [];
@@ -146,7 +142,6 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
     public function listInRepositoryForAuthenticatedUser(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json
     {
         $arguments = [];
@@ -253,7 +248,6 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
-    /** @return */
     public function getCodespacesForUserInOrg(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\GetCodespacesForUserInOrg\Response\ApplicationJson\Ok\Application\Json|WithoutBody
     {
         $arguments = [];
@@ -286,7 +280,6 @@ final class Codespaces
         return $operator->call($arguments['org'], $arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
     public function listDevcontainersInRepositoryForAuthenticatedUser(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListDevcontainersInRepositoryForAuthenticatedUser\Response\ApplicationJson\Ok
     {
         $arguments = [];
@@ -424,7 +417,6 @@ final class Codespaces
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref'], $arguments['devcontainer_path']);
     }
 
-    /** @return */
     public function listRepoSecrets(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListRepoSecrets\Response\ApplicationJson\Ok
     {
         $arguments = [];
@@ -493,7 +485,6 @@ final class Codespaces
         return $operator->call($arguments['codespace_name'], $arguments['export_id']);
     }
 
-    /** @return */
     public function listSelectedReposForOrgSecret(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListSelectedReposForOrgSecret\Response\ApplicationJson\Ok\Application\Json
     {
         $arguments = [];

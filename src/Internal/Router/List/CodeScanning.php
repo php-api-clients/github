@@ -21,7 +21,7 @@ final class CodeScanning
     {
     }
 
-    /** @return Observable<Schema\CodeScanningOrganizationAlertItems> */
+    /** @return iterable<int,Schema\CodeScanningOrganizationAlertItems> */
     public function listAlertsForOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -102,7 +102,7 @@ final class CodeScanning
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\CodeScanningAlertItems>|WithoutBody */
+    /** @return iterable<int,Schema\CodeScanningAlertItems>|WithoutBody */
     public function listAlertsForRepoListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -183,7 +183,7 @@ final class CodeScanning
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\CodeScanningAnalysis> */
+    /** @return iterable<int,Schema\CodeScanningAnalysis> */
     public function listRecentAnalysesListing(array $params): iterable
     {
         $arguments = [];
@@ -258,7 +258,7 @@ final class CodeScanning
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\CodeScanningAlertInstance> */
+    /** @return iterable<int,Schema\CodeScanningAlertInstance> */
     public function listAlertInstancesListing(array $params): iterable
     {
         $arguments = [];

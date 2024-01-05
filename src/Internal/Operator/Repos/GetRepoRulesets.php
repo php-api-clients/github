@@ -24,7 +24,7 @@ final readonly class GetRepoRulesets
     {
     }
 
-    /** @return Observable<Schema\RepositoryRuleset> */
+    /** @return iterable<int,Schema\RepositoryRuleset> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1, bool $includesParents = true): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetRepoRulesets($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page, $includesParents);

@@ -25,7 +25,7 @@ final readonly class ListForks
     {
     }
 
-    /** @return Observable<Schema\GistSimple>|WithoutBody */
+    /** @return iterable<int,Schema\GistSimple>|WithoutBody */
     public function call(string $gistId, int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\ListForks($this->responseSchemaValidator, $this->hydrator, $gistId, $perPage, $page);

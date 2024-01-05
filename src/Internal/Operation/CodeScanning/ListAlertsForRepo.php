@@ -40,9 +40,9 @@ final class ListAlertsForRepo
     private string $state;
     /**If specified, only code scanning alerts with this severity will be returned. **/
     private string $severity;
-    /**Page number of the results to fetch. **/
+    /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
-    /**The number of results per page (max 100). **/
+    /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
     /**The direction to sort the results by. **/
     private string $direction;

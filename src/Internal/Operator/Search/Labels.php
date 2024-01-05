@@ -25,7 +25,6 @@ final readonly class Labels
     {
     }
 
-    /** @return */
     public function call(int $repositoryId, string $q, string $sort, string $order = 'desc', int $perPage = 30, int $page = 1): Ok|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Search\Labels($this->responseSchemaValidator, $this->hydrator, $repositoryId, $q, $sort, $order, $perPage, $page);

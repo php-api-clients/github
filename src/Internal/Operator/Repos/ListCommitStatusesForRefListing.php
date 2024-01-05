@@ -25,7 +25,7 @@ final readonly class ListCommitStatusesForRefListing
     {
     }
 
-    /** @return Observable<Schema\Status>|Schema\BasicError */
+    /** @return iterable<int,Schema\Status>|Schema\BasicError */
     public function call(string $owner, string $repo, string $ref, int $perPage = 30, int $page = 1): iterable|BasicError
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListCommitStatusesForRefListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $perPage, $page);

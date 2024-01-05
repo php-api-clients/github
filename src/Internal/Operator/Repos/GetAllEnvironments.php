@@ -24,7 +24,6 @@ final readonly class GetAllEnvironments
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetAllEnvironments($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

@@ -24,7 +24,6 @@ final readonly class GetAllTopics
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, int $page = 1, int $perPage = 30): Topic
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetAllTopics($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $page, $perPage);

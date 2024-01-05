@@ -29,9 +29,9 @@ final class GetAllPackageVersionsForPackageOwnedByAuthenticatedUserListing
     private string $packageType;
     /**The name of the package. **/
     private string $packageName;
-    /**Page number of the results to fetch. **/
+    /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
-    /**The number of results per page (max 100). **/
+    /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
     /**The state of the package, either active or deleted. **/
     private string $state;

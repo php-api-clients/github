@@ -24,7 +24,6 @@ final readonly class ListRepoVariables
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, int $perPage = 10, int $page = 1): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListRepoVariables($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

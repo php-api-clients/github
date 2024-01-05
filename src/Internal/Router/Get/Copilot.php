@@ -37,7 +37,6 @@ final class Copilot
         return $operator->call($arguments['org']);
     }
 
-    /** @return */
     public function listCopilotSeats(array $params): Ok
     {
         $arguments = [];

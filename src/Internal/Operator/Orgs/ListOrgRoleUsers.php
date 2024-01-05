@@ -25,7 +25,7 @@ final readonly class ListOrgRoleUsers
     {
     }
 
-    /** @return Observable<Schema\SimpleUser>|WithoutBody */
+    /** @return iterable<int,Schema\SimpleUser>|WithoutBody */
     public function call(string $org, int $roleId, int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListOrgRoleUsers($this->responseSchemaValidator, $this->hydrator, $org, $roleId, $perPage, $page);

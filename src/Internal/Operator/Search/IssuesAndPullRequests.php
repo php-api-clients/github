@@ -25,7 +25,6 @@ final readonly class IssuesAndPullRequests
     {
     }
 
-    /** @return */
     public function call(string $q, string $sort, string $order = 'desc', int $perPage = 30, int $page = 1): Ok|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Search\IssuesAndPullRequests($this->responseSchemaValidator, $this->hydrator, $q, $sort, $order, $perPage, $page);

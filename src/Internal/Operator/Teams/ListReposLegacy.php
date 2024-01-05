@@ -24,7 +24,7 @@ final readonly class ListReposLegacy
     {
     }
 
-    /** @return Observable<Schema\MinimalRepository> */
+    /** @return iterable<int,Schema\MinimalRepository> */
     public function call(int $teamId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\ListReposLegacy($this->responseSchemaValidator, $this->hydrator, $teamId, $perPage, $page);

@@ -24,7 +24,7 @@ final readonly class ListDiscussionsInOrgListing
     {
     }
 
-    /** @return Observable<Schema\TeamDiscussion> */
+    /** @return iterable<int,Schema\TeamDiscussion> */
     public function call(string $org, string $teamSlug, string $pinned, string $direction = 'desc', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Teams\ListDiscussionsInOrgListing($this->responseSchemaValidator, $this->hydrator, $org, $teamSlug, $pinned, $direction, $perPage, $page);

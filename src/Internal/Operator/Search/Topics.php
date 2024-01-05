@@ -25,7 +25,6 @@ final readonly class Topics
     {
     }
 
-    /** @return */
     public function call(string $q, int $perPage = 30, int $page = 1): Ok|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Search\Topics($this->responseSchemaValidator, $this->hydrator, $q, $perPage, $page);

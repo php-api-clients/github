@@ -24,7 +24,7 @@ final readonly class ListMilestones
     {
     }
 
-    /** @return Observable<Schema\Milestone> */
+    /** @return iterable<int,Schema\Milestone> */
     public function call(string $owner, string $repo, string $state = 'open', string $sort = 'due_on', string $direction = 'asc', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\ListMilestones($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $state, $sort, $direction, $perPage, $page);

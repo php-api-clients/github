@@ -25,7 +25,6 @@ final readonly class ListReposStarredByUser
     {
     }
 
-    /** @return */
     public function call(string $username, string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1): StarredRepository|Repository
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Activity\ListReposStarredByUser($this->responseSchemaValidator, $this->hydrator, $username, $sort, $direction, $perPage, $page);

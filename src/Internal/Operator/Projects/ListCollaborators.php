@@ -25,7 +25,7 @@ final readonly class ListCollaborators
     {
     }
 
-    /** @return Observable<Schema\SimpleUser>|WithoutBody */
+    /** @return iterable<int,Schema\SimpleUser>|WithoutBody */
     public function call(int $projectId, string $affiliation = 'all', int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\ListCollaborators($this->responseSchemaValidator, $this->hydrator, $projectId, $affiliation, $perPage, $page);

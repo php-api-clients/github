@@ -24,7 +24,7 @@ final readonly class ListForRepoListing
     {
     }
 
-    /** @return Observable<Schema\Project> */
+    /** @return iterable<int,Schema\Project> */
     public function call(string $owner, string $repo, string $state = 'open', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Projects\ListForRepoListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $state, $perPage, $page);
