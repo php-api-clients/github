@@ -24,7 +24,7 @@ final readonly class GetAllPackageVersionsForPackageOwnedByOrg
     {
     }
 
-    /** @return iterable<int,Schema\PackageVersion> */
+    /** @return Observable<Schema\PackageVersion> */
     public function call(string $packageType, string $packageName, string $org, int $page = 1, int $perPage = 30, string $state = 'active'): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\GetAllPackageVersionsForPackageOwnedByOrg($this->responseSchemaValidator, $this->hydrator, $packageType, $packageName, $org, $page, $perPage, $state);

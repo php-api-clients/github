@@ -25,7 +25,7 @@ final readonly class ListCommitsListing
     {
     }
 
-    /** @return iterable<int,Schema\GistCommit>|WithoutBody */
+    /** @return Observable<Schema\GistCommit>|WithoutBody */
     public function call(string $gistId, int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\ListCommitsListing($this->responseSchemaValidator, $this->hydrator, $gistId, $perPage, $page);

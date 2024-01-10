@@ -25,6 +25,7 @@ final readonly class ListForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(int $repositoryId, int $perPage = 30, int $page = 1): Json|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\ListForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $repositoryId, $perPage, $page);

@@ -25,7 +25,7 @@ final readonly class ListPackagesForOrganizationListing
     {
     }
 
-    /** @return iterable<int,Schema\Package>|WithoutBody */
+    /** @return Observable<Schema\Package>|WithoutBody */
     public function call(string $packageType, string $org, string $visibility, int $page = 1, int $perPage = 30): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Packages\ListPackagesForOrganizationListing($this->responseSchemaValidator, $this->hydrator, $packageType, $org, $visibility, $page, $perPage);

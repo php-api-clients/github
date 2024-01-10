@@ -24,7 +24,7 @@ final readonly class ListLabelsForMilestone
     {
     }
 
-    /** @return iterable<int,Schema\Label> */
+    /** @return Observable<Schema\Label> */
     public function call(string $owner, string $repo, int $milestoneNumber, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\ListLabelsForMilestone($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $milestoneNumber, $perPage, $page);

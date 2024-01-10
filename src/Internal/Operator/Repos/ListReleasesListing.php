@@ -24,7 +24,7 @@ final readonly class ListReleasesListing
     {
     }
 
-    /** @return iterable<int,Schema\Release> */
+    /** @return Observable<Schema\Release> */
     public function call(string $owner, string $repo, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListReleasesListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $perPage, $page);

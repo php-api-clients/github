@@ -24,6 +24,7 @@ final readonly class ListForSuite
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $checkSuiteId, string $checkName, string $status, string $filter = 'latest', int $perPage = 30, int $page = 1): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\ListForSuite($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $checkSuiteId, $checkName, $status, $filter, $perPage, $page);

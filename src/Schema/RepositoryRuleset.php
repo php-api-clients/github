@@ -131,6 +131,10 @@ final readonly class RepositoryRuleset
             }
         },
         "conditions": {
+            "type": [
+                "null",
+                "object"
+            ],
             "anyOf": [
                 {
                     "title": "Repository ruleset conditions for ref names",

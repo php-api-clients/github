@@ -24,6 +24,7 @@ final readonly class ListSelfHostedRunnersForRepo
     {
     }
 
+    /** @return */
     public function call(string $name, string $owner, string $repo, int $perPage = 30, int $page = 1): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListSelfHostedRunnersForRepo($this->responseSchemaValidator, $this->hydrator, $name, $owner, $repo, $perPage, $page);

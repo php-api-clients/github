@@ -24,6 +24,7 @@ final readonly class ListSecretsForAuthenticatedUser
     {
     }
 
+    /** @return */
     public function call(int $perPage = 30, int $page = 1): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Codespaces\ListSecretsForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

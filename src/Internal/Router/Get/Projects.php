@@ -39,7 +39,7 @@ final class Projects
         return $operator->call($arguments['project_id']);
     }
 
-    /** @return iterable<int,Schema\Project> */
+    /** @return Observable<Schema\Project> */
     public function listForOrg(array $params): iterable
     {
         $arguments = [];
@@ -87,7 +87,7 @@ final class Projects
         return $operator->call($arguments['column_id']);
     }
 
-    /** @return iterable<int,Schema\SimpleUser>|WithoutBody */
+    /** @return Observable<Schema\SimpleUser>|WithoutBody */
     public function listCollaborators(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -120,7 +120,7 @@ final class Projects
         return $operator->call($arguments['project_id'], $arguments['affiliation'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\ProjectColumn>|WithoutBody */
+    /** @return Observable<Schema\ProjectColumn>|WithoutBody */
     public function listColumns(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -147,7 +147,7 @@ final class Projects
         return $operator->call($arguments['project_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\Project> */
+    /** @return Observable<Schema\Project> */
     public function listForUser(array $params): iterable
     {
         $arguments = [];
@@ -195,7 +195,7 @@ final class Projects
         return $operator->call($arguments['card_id']);
     }
 
-    /** @return iterable<int,Schema\ProjectCard>|WithoutBody */
+    /** @return Observable<Schema\ProjectCard>|WithoutBody */
     public function listCards(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -228,7 +228,7 @@ final class Projects
         return $operator->call($arguments['column_id'], $arguments['archived_state'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\Project> */
+    /** @return Observable<Schema\Project> */
     public function listForRepo(array $params): iterable
     {
         $arguments = [];

@@ -24,7 +24,7 @@ final readonly class ListPlansListing
     {
     }
 
-    /** @return iterable<int,Schema\MarketplaceListingPlan> */
+    /** @return Observable<Schema\MarketplaceListingPlan> */
     public function call(int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\ListPlansListing($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

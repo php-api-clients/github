@@ -24,6 +24,7 @@ final readonly class ListArtifactsForRepo
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $name, int $perPage = 30, int $page = 1): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListArtifactsForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $name, $perPage, $page);

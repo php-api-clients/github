@@ -22,7 +22,7 @@ final class Gists
     {
     }
 
-    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    /** @return Observable<Schema\BaseGist>|WithoutBody */
     public function list(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -49,7 +49,7 @@ final class Gists
         return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    /** @return Observable<Schema\BaseGist>|WithoutBody */
     public function listPublic(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -76,7 +76,7 @@ final class Gists
         return $operator->call($arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    /** @return Observable<Schema\BaseGist>|WithoutBody */
     public function listStarred(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -118,7 +118,7 @@ final class Gists
         return $operator->call($arguments['gist_id']);
     }
 
-    /** @return iterable<int,Schema\GistComment>|WithoutBody */
+    /** @return Observable<Schema\GistComment>|WithoutBody */
     public function listComments(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -145,7 +145,7 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\GistCommit>|WithoutBody */
+    /** @return Observable<Schema\GistCommit>|WithoutBody */
     public function listCommits(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -172,7 +172,7 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\GistSimple>|WithoutBody */
+    /** @return Observable<Schema\GistSimple>|WithoutBody */
     public function listForks(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -235,7 +235,7 @@ final class Gists
         return $operator->call($arguments['gist_id'], $arguments['sha']);
     }
 
-    /** @return iterable<int,Schema\BaseGist> */
+    /** @return Observable<Schema\BaseGist> */
     public function listForUser(array $params): iterable
     {
         $arguments = [];

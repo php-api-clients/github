@@ -21,7 +21,7 @@ final class Gists
     {
     }
 
-    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    /** @return Observable<Schema\BaseGist>|WithoutBody */
     public function listPublicListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -54,7 +54,7 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    /** @return Observable<Schema\BaseGist>|WithoutBody */
     public function listStarredListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -87,7 +87,7 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\GistComment>|WithoutBody */
+    /** @return Observable<Schema\GistComment>|WithoutBody */
     public function listCommentsListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -120,7 +120,7 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\GistCommit>|WithoutBody */
+    /** @return Observable<Schema\GistCommit>|WithoutBody */
     public function listCommitsListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -153,7 +153,7 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\GistSimple>|WithoutBody */
+    /** @return Observable<Schema\GistSimple>|WithoutBody */
     public function listForksListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -186,7 +186,7 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\BaseGist> */
+    /** @return Observable<Schema\BaseGist> */
     public function listForUserListing(array $params): iterable
     {
         $arguments = [];
@@ -225,7 +225,7 @@ final class Gists
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    /** @return Observable<Schema\BaseGist>|WithoutBody */
     public function listListing(array $params): iterable|WithoutBody
     {
         $arguments = [];

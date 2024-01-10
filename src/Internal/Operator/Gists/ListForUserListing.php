@@ -24,7 +24,7 @@ final readonly class ListForUserListing
     {
     }
 
-    /** @return iterable<int,Schema\BaseGist> */
+    /** @return Observable<Schema\BaseGist> */
     public function call(string $username, string $since, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Gists\ListForUserListing($this->responseSchemaValidator, $this->hydrator, $username, $since, $perPage, $page);

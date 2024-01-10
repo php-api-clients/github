@@ -24,7 +24,7 @@ final class Pulls
     {
     }
 
-    /** @return iterable<int,Schema\PullRequestSimple>|WithoutBody */
+    /** @return Observable<Schema\PullRequestSimple>|WithoutBody */
     public function list(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -87,7 +87,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['head'], $arguments['base'], $arguments['direction'], $arguments['state'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\PullRequestReviewComment> */
+    /** @return Observable<Schema\PullRequestReviewComment> */
     public function listReviewCommentsForRepo(array $params): iterable
     {
         $arguments = [];
@@ -192,7 +192,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
-    /** @return iterable<int,Schema\PullRequestReviewComment> */
+    /** @return Observable<Schema\PullRequestReviewComment> */
     public function listReviewComments(array $params): iterable
     {
         $arguments = [];
@@ -249,7 +249,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['direction'], $arguments['since'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\Commit> */
+    /** @return Observable<Schema\Commit> */
     public function listCommits(array $params): iterable
     {
         $arguments = [];
@@ -288,7 +288,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\DiffEntry> */
+    /** @return Observable<Schema\DiffEntry> */
     public function listFiles(array $params): iterable
     {
         $arguments = [];
@@ -381,7 +381,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number']);
     }
 
-    /** @return iterable<int,Schema\PullRequestReview> */
+    /** @return Observable<Schema\PullRequestReview> */
     public function listReviews(array $params): iterable
     {
         $arguments = [];
@@ -453,7 +453,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['review_id']);
     }
 
-    /** @return iterable<int,Schema\ReviewComment> */
+    /** @return Observable<Schema\ReviewComment> */
     public function listCommentsForReview(array $params): iterable
     {
         $arguments = [];

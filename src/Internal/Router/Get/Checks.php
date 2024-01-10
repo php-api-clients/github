@@ -77,7 +77,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['check_suite_id']);
     }
 
-    /** @return iterable<int,Schema\CheckAnnotation> */
+    /** @return Observable<Schema\CheckAnnotation> */
     public function listAnnotations(array $params): iterable
     {
         $arguments = [];
@@ -116,6 +116,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['check_run_id'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function listForSuite(array $params): Ok
     {
         $arguments = [];
@@ -172,6 +173,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['check_suite_id'], $arguments['check_name'], $arguments['status'], $arguments['filter'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function listForRef(array $params): Json
     {
         $arguments = [];
@@ -234,6 +236,7 @@ final class Checks
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref'], $arguments['check_name'], $arguments['status'], $arguments['app_id'], $arguments['filter'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function listSuitesForRef(array $params): \ApiClients\Client\GitHub\Schema\Operations\Checks\ListSuitesForRef\Response\ApplicationJson\Ok
     {
         $arguments = [];

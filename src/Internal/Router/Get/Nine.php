@@ -15,7 +15,7 @@ final class Nine
     {
     }
 
-    /** @return |Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser>|iterable<int,Schema\ReviewComment> */
+    /** @return |Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser>|Observable<Schema\ReviewComment> */
     public function call(string $call, array $params, array $pathChunks): TeamDiscussionComment|WorkflowRun|iterable
     {
         if ($pathChunks[0] === '') {

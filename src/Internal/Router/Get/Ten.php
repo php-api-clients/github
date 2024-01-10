@@ -15,7 +15,7 @@ final class Ten
     {
     }
 
-    /** @return iterable<int,Schema\Reaction>|Schema\Operations\Actions\ListJobsForWorkflowRunAttempt\Response\ApplicationJson\Ok| */
+    /** @return Observable<Schema\Reaction>| */
     public function call(string $call, array $params, array $pathChunks): iterable|Ok|WithoutBody
     {
         if ($pathChunks[0] === '') {

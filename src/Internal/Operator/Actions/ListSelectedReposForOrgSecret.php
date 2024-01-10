@@ -24,6 +24,7 @@ final readonly class ListSelectedReposForOrgSecret
     {
     }
 
+    /** @return */
     public function call(string $org, string $secretName, int $page = 1, int $perPage = 30): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListSelectedReposForOrgSecret($this->responseSchemaValidator, $this->hydrator, $org, $secretName, $page, $perPage);

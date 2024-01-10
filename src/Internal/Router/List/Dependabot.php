@@ -21,7 +21,7 @@ final class Dependabot
     {
     }
 
-    /** @return iterable<int,Schema\DependabotAlert>|WithoutBody */
+    /** @return Observable<Schema\DependabotAlert>|WithoutBody */
     public function listAlertsForRepoListing(array $params): iterable|WithoutBody
     {
         $arguments = [];

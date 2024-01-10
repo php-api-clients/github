@@ -81,6 +81,12 @@ final class GetCodeFrequencyStats
              **/
             case 204:
                 return new WithoutBody(204, []);
+            /**
+             * Repository contains more than 10,000 commits
+             **/
+
+            case 422:
+                return new WithoutBody(422, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

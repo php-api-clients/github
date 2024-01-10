@@ -17,13 +17,13 @@ final class Gists
     {
     }
 
-    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    /** @return Observable<Schema\BaseGist>|WithoutBody */
     public function list(string $since, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->gists👷List_()->call($since, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    /** @return Observable<Schema\BaseGist>|WithoutBody */
     public function listListing(string $since, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->gists👷ListListing()->call($since, $perPage, $page);
@@ -35,25 +35,25 @@ final class Gists
         return $this->operators->gists👷Create()->call($params);
     }
 
-    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    /** @return Observable<Schema\BaseGist>|WithoutBody */
     public function listPublic(string $since, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->gists👷ListPublic()->call($since, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    /** @return Observable<Schema\BaseGist>|WithoutBody */
     public function listPublicListing(string $since, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->gists👷ListPublicListing()->call($since, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    /** @return Observable<Schema\BaseGist>|WithoutBody */
     public function listStarred(string $since, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->gists👷ListStarred()->call($since, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\BaseGist>|WithoutBody */
+    /** @return Observable<Schema\BaseGist>|WithoutBody */
     public function listStarredListing(string $since, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->gists👷ListStarredListing()->call($since, $perPage, $page);
@@ -77,13 +77,13 @@ final class Gists
         return $this->operators->gists👷Update()->call($gistId, $params);
     }
 
-    /** @return iterable<int,Schema\GistComment>|WithoutBody */
+    /** @return Observable<Schema\GistComment>|WithoutBody */
     public function listComments(string $gistId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->gists👷ListComments()->call($gistId, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\GistComment>|WithoutBody */
+    /** @return Observable<Schema\GistComment>|WithoutBody */
     public function listCommentsListing(string $gistId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->gists👷ListCommentsListing()->call($gistId, $perPage, $page);
@@ -113,25 +113,25 @@ final class Gists
         return $this->operators->gists👷UpdateComment()->call($gistId, $commentId, $params);
     }
 
-    /** @return iterable<int,Schema\GistCommit>|WithoutBody */
+    /** @return Observable<Schema\GistCommit>|WithoutBody */
     public function listCommits(string $gistId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->gists👷ListCommits()->call($gistId, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\GistCommit>|WithoutBody */
+    /** @return Observable<Schema\GistCommit>|WithoutBody */
     public function listCommitsListing(string $gistId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->gists👷ListCommitsListing()->call($gistId, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\GistSimple>|WithoutBody */
+    /** @return Observable<Schema\GistSimple>|WithoutBody */
     public function listForks(string $gistId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->gists👷ListForks()->call($gistId, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\GistSimple>|WithoutBody */
+    /** @return Observable<Schema\GistSimple>|WithoutBody */
     public function listForksListing(string $gistId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->gists👷ListForksListing()->call($gistId, $perPage, $page);
@@ -167,13 +167,13 @@ final class Gists
         return $this->operators->gists👷GetRevision()->call($gistId, $sha);
     }
 
-    /** @return iterable<int,Schema\BaseGist> */
+    /** @return Observable<Schema\BaseGist> */
     public function listForUser(string $username, string $since, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListForUser()->call($username, $since, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\BaseGist> */
+    /** @return Observable<Schema\BaseGist> */
     public function listForUserListing(string $username, string $since, int $perPage, int $page): iterable
     {
         return $this->operators->gists👷ListForUserListing()->call($username, $since, $perPage, $page);

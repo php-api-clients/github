@@ -1833,6 +1833,10 @@ final readonly class WebhookRepositoryRulesetCreated
                     }
                 },
                 "conditions": {
+                    "type": [
+                        "null",
+                        "object"
+                    ],
                     "anyOf": [
                         {
                             "title": "Repository ruleset conditions for ref names",

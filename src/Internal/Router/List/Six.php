@@ -15,7 +15,7 @@ final class Six
     {
     }
 
-    /** @return iterable<int,Schema\MarketplacePurchase>|iterable<int,Schema\Team>|iterable<int,Schema\MinimalRepository>|WithoutBody|iterable<int,Schema\SimpleUser>|iterable<int,Schema\TeamDiscussion>|iterable<int,Schema\OrganizationInvitation>|iterable<int,Schema\TeamProject>|iterable<int,Schema\CodeScanningAlertItems>|iterable<int,Schema\CodeScanningAnalysis>|iterable<int,Schema\DependabotAlert>|iterable<int,Schema\IssueComment>|iterable<int,Schema\IssueEvent>|iterable<int,Schema\PageBuild>|iterable<int,Schema\PullRequestReviewComment>|iterable<int,Schema\RuleSuites>|iterable<int,Schema\SecretScanningAlert>|iterable<int,Schema\TeamDiscussionComment>|iterable<int,Schema\Reaction>|iterable<int,Schema\PackageVersion>|iterable<int,Schema\Event> */
+    /** @return Observable<Schema\MarketplacePurchase>|Observable<Schema\Team>|Observable<Schema\MinimalRepository>|WithoutBody|Observable<Schema\SimpleUser>|Observable<Schema\TeamDiscussion>|Observable<Schema\OrganizationInvitation>|Observable<Schema\TeamProject>|Observable<Schema\CodeScanningAlertItems>|Observable<Schema\CodeScanningAnalysis>|Observable<Schema\DependabotAlert>|Observable<Schema\IssueComment>|Observable<Schema\IssueEvent>|Observable<Schema\PageBuild>|Observable<Schema\PullRequestReviewComment>|Observable<Schema\RuleSuites>|Observable<Schema\SecretScanningAlert>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\PackageVersion>|Observable<Schema\Event> */
     public function call(string $call, array $params, array $pathChunks): iterable|WithoutBody
     {
         if ($pathChunks[0] === '') {

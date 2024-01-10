@@ -87,4 +87,39 @@ final class GetCodeFrequencyStatsTest extends AsyncTestCase
         self::assertArrayHasKey('code', $result);
         self::assertSame(204, $result['code']);
     }
+
+    /** @test */
+    public function call_httpCode_422_empty(): void
+    {
+        $response = new Response(422, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/repos/generated/generated/stats/code_frequency', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Internal\Operation\Repos\GetCodeFrequencyStats::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner'] = 'generated';
+            $data['repo']  = 'generated';
+
+            return $data;
+        })([]));
+    }
+
+    /** @test */
+    public function operations_httpCode_422_empty(): void
+    {
+        $response = new Response(422, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/repos/generated/generated/stats/code_frequency', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->operations()->repos()->getCodeFrequencyStats('generated', 'generated');
+        self::assertArrayHasKey('code', $result);
+        self::assertSame(422, $result['code']);
+    }
 }

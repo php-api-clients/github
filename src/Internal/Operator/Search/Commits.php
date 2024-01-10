@@ -25,6 +25,7 @@ final readonly class Commits
     {
     }
 
+    /** @return */
     public function call(string $q, string $sort, string $order = 'desc', int $perPage = 30, int $page = 1): Ok|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Search\Commits($this->responseSchemaValidator, $this->hydrator, $q, $sort, $order, $perPage, $page);

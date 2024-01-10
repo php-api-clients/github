@@ -24,6 +24,7 @@ final readonly class CompareCommits
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $basehead, int $page = 1, int $perPage = 30): CommitComparison
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CompareCommits($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $basehead, $page, $perPage);

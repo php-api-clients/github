@@ -25,7 +25,7 @@ final readonly class ListBlockedByAuthenticatedUser
     {
     }
 
-    /** @return iterable<int,Schema\SimpleUser>|WithoutBody */
+    /** @return Observable<Schema\SimpleUser>|WithoutBody */
     public function call(int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\ListBlockedByAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

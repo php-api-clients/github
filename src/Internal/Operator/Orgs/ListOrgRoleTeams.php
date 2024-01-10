@@ -25,7 +25,7 @@ final readonly class ListOrgRoleTeams
     {
     }
 
-    /** @return iterable<int,Schema\Team>|WithoutBody */
+    /** @return Observable<Schema\Team>|WithoutBody */
     public function call(string $org, int $roleId, int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListOrgRoleTeams($this->responseSchemaValidator, $this->hydrator, $org, $roleId, $perPage, $page);

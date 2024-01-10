@@ -24,6 +24,7 @@ final readonly class GetActionsCacheList
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $ref, string $key, int $perPage = 30, int $page = 1, string $sort = 'last_accessed_at', string $direction = 'desc'): ActionsCacheList
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetActionsCacheList($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $key, $perPage, $page, $sort, $direction);

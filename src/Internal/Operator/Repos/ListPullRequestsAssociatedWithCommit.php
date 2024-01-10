@@ -24,7 +24,7 @@ final readonly class ListPullRequestsAssociatedWithCommit
     {
     }
 
-    /** @return iterable<int,Schema\PullRequestSimple> */
+    /** @return Observable<Schema\PullRequestSimple> */
     public function call(string $owner, string $repo, string $commitSha, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListPullRequestsAssociatedWithCommit($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $commitSha, $perPage, $page);

@@ -25,7 +25,7 @@ final readonly class ListForAuthenticatedUser
     {
     }
 
-    /** @return iterable<int,Schema\OrganizationSimple>|WithoutBody */
+    /** @return Observable<Schema\OrganizationSimple>|WithoutBody */
     public function call(int $perPage = 30, int $page = 1): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListForAuthenticatedUser($this->responseSchemaValidator, $this->hydrator, $perPage, $page);

@@ -24,7 +24,7 @@ final readonly class ListWebhooksListing
     {
     }
 
-    /** @return iterable<int,Schema\OrgHook> */
+    /** @return Observable<Schema\OrgHook> */
     public function call(string $org, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListWebhooksListing($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

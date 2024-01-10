@@ -24,7 +24,7 @@ final readonly class ListForOrg
     {
     }
 
-    /** @return iterable<int,Schema\Migration> */
+    /** @return Observable<Schema\Migration> */
     public function call(string $org, array $exclude, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Migrations\ListForOrg($this->responseSchemaValidator, $this->hydrator, $org, $exclude, $perPage, $page);

@@ -21,7 +21,7 @@ final class SecurityAdvisories
     {
     }
 
-    /** @return iterable<int,Schema\GlobalAdvisory> */
+    /** @return Observable<Schema\GlobalAdvisory> */
     public function listGlobalAdvisories(array $params): iterable
     {
         $arguments = [];
@@ -141,7 +141,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['ghsa_id']);
     }
 
-    /** @return iterable<int,Schema\RepositoryAdvisory> */
+    /** @return Observable<Schema\RepositoryAdvisory> */
     public function listOrgRepositoryAdvisories(array $params): iterable
     {
         $arguments = [];
@@ -192,7 +192,7 @@ final class SecurityAdvisories
         return $operator->call($arguments['org'], $arguments['before'], $arguments['after'], $arguments['state'], $arguments['direction'], $arguments['sort'], $arguments['per_page']);
     }
 
-    /** @return iterable<int,Schema\RepositoryAdvisory> */
+    /** @return Observable<Schema\RepositoryAdvisory> */
     public function listRepositoryAdvisories(array $params): iterable
     {
         $arguments = [];

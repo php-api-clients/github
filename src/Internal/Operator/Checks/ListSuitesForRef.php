@@ -24,6 +24,7 @@ final readonly class ListSuitesForRef
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $ref, int $appId, string $checkName, int $perPage = 30, int $page = 1): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Checks\ListSuitesForRef($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $appId, $checkName, $perPage, $page);
