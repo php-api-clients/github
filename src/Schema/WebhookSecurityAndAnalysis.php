@@ -5902,6 +5902,11 @@ final readonly class WebhookSecurityAndAnalysis
                             }
                         }
                     }
+                },
+                "custom_properties": {
+                    "type": "object",
+                    "description": "The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.",
+                    "additionalProperties": true
                 }
             },
             "description": "Full Repository"
@@ -7128,7 +7133,8 @@ final readonly class WebhookSecurityAndAnalysis
             "secret_scanning_push_protection": {
                 "status": "disabled"
             }
-        }
+        },
+        "custom_properties": []
     },
     "sender": {
         "name": "generated",

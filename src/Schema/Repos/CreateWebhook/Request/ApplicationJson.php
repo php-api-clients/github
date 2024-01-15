@@ -56,18 +56,6 @@ final readonly class ApplicationJson
                             "type": "number"
                         }
                     ]
-                },
-                "token": {
-                    "type": "string",
-                    "examples": [
-                        "\\"abc\\""
-                    ]
-                },
-                "digest": {
-                    "type": "string",
-                    "examples": [
-                        "\\"sha256\\""
-                    ]
                 }
             },
             "description": "Key\\/value pairs to provide settings for this webhook."
@@ -98,9 +86,7 @@ final readonly class ApplicationJson
         "url": "https:\\/\\/example.com\\/webhook",
         "content_type": "\\"json\\"",
         "secret": "\\"********\\"",
-        "insecure_ssl": null,
-        "token": "\\"abc\\"",
-        "digest": "\\"sha256\\""
+        "insecure_ssl": null
     },
     "events": [
         "generated",

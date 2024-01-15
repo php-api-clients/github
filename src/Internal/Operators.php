@@ -762,6 +762,7 @@ final class Operators
     private Internal\Operator\Projects\ListForRepoListing|null $projects👷ListForRepoListing                                                                                         = null;
     private Internal\Operator\Projects\CreateForRepo|null $projects👷CreateForRepo                                                                                                   = null;
     private Internal\Operator\Repos\GetCustomPropertiesValues|null $repos👷GetCustomPropertiesValues                                                                                 = null;
+    private Internal\Operator\Repos\CreateOrUpdateCustomPropertiesValues|null $repos👷CreateOrUpdateCustomPropertiesValues                                                           = null;
     private Internal\Operator\Pulls\List_|null $pulls👷List_                                                                                                                         = null;
     private Internal\Operator\Pulls\ListListing|null $pulls👷ListListing                                                                                                             = null;
     private Internal\Operator\Pulls\Create|null $pulls👷Create                                                                                                                       = null;
@@ -7872,6 +7873,15 @@ final class Operators
         }
 
         return $this->repos👷GetCustomPropertiesValues;
+    }
+
+    public function repos👷CreateOrUpdateCustomPropertiesValues(): Internal\Operator\Repos\CreateOrUpdateCustomPropertiesValues
+    {
+        if ($this->repos👷CreateOrUpdateCustomPropertiesValues instanceof Internal\Operator\Repos\CreateOrUpdateCustomPropertiesValues === false) {
+            $this->repos👷CreateOrUpdateCustomPropertiesValues = new Internal\Operator\Repos\CreateOrUpdateCustomPropertiesValues($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Properties🌀Values());
+        }
+
+        return $this->repos👷CreateOrUpdateCustomPropertiesValues;
     }
 
     public function pulls👷List_(): Internal\Operator\Pulls\List_

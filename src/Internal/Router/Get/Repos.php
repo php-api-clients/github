@@ -1847,7 +1847,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ruleset_id'], $arguments['includes_parents']);
     }
 
-    /** @return iterable<int,int>|Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json|WithoutBody */
+    /** @return Observable<int>|Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json|WithoutBody */
     public function getCodeFrequencyStats(array $params): iterable|Json|WithoutBody
     {
         $arguments = [];

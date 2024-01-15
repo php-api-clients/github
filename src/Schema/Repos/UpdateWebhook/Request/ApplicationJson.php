@@ -13,9 +13,7 @@ final readonly class ApplicationJson
     "type": "object",
     "properties": {
         "config": {
-            "required": [
-                "url"
-            ],
+            "title": "Webhook Configuration",
             "type": "object",
             "properties": {
                 "url": {
@@ -53,21 +51,9 @@ final readonly class ApplicationJson
                             "type": "number"
                         }
                     ]
-                },
-                "address": {
-                    "type": "string",
-                    "examples": [
-                        "\\"bar@example.com\\""
-                    ]
-                },
-                "room": {
-                    "type": "string",
-                    "examples": [
-                        "\\"The Serious Room\\""
-                    ]
                 }
             },
-            "description": "Key\\/value pairs to provide settings for this webhook."
+            "description": "Configuration object of the webhook"
         },
         "events": {
             "type": "array",
@@ -107,9 +93,7 @@ final readonly class ApplicationJson
         "url": "https:\\/\\/example.com\\/webhook",
         "content_type": "\\"json\\"",
         "secret": "\\"********\\"",
-        "insecure_ssl": null,
-        "address": "\\"bar@example.com\\"",
-        "room": "\\"The Serious Room\\""
+        "insecure_ssl": null
     },
     "events": [
         "generated",
@@ -127,13 +111,13 @@ final readonly class ApplicationJson
 }';
 
     /**
-     * config: Key/value pairs to provide settings for this webhook.
+     * config: Configuration object of the webhook
      * events: Determines what [events](https://docs.github.com/webhooks/event-payloads) the hook is triggered for. This replaces the entire array of events.
      * addEvents: Determines a list of events to be added to the list of events that the Hook triggers for.
      * removeEvents: Determines a list of events to be removed from the list of events that the Hook triggers for.
      * active: Determines if notifications are sent when the webhook is triggered. Set to `true` to send notifications.
      */
-    public function __construct(public Schema\Repos\UpdateWebhook\Request\ApplicationJson\Config|null $config, public array|null $events, #[MapFrom('add_events')]
+    public function __construct(public Schema\WebhookConfig|null $config, public array|null $events, #[MapFrom('add_events')]
     public array|null $addEvents, #[MapFrom('remove_events')]
     public array|null $removeEvents, public bool|null $active,)
     {

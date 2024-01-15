@@ -3047,6 +3047,10 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('Observable<Schema\\CustomPropertyValue>');
         }
 
+        if ($call === 'PATCH /repos/{owner}/{repo}/properties/values') {
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
         if ($call === 'GET /repos/{owner}/{repo}/pulls') {
             return $this->typeResolver->resolve('Observable<Schema\\PullRequestSimple>|WithoutBody');
         }
@@ -3388,7 +3392,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/stats/code_frequency') {
-            return $this->typeResolver->resolve('iterable<int,int>|Schema\\Operations\\Repos\\GetCodeFrequencyStats\\Response\\ApplicationJson\\Accepted\\Application\\Json|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('Observable<int>|Schema\\Operations\\Repos\\GetCodeFrequencyStats\\Response\\ApplicationJson\\Accepted\\Application\\Json|WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/stats/commit_activity') {

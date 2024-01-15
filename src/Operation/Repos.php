@@ -1011,6 +1011,11 @@ final class Repos
         return $this->operators->repos👷GetCustomPropertiesValues()->call($owner, $repo);
     }
 
+    public function createOrUpdateCustomPropertiesValues(string $owner, string $repo, array $params): WithoutBody
+    {
+        return $this->operators->repos👷CreateOrUpdateCustomPropertiesValues()->call($owner, $repo, $params);
+    }
+
     /** @return */
     public function getReadme(string $owner, string $repo, string $ref): ContentFile
     {
@@ -1179,7 +1184,7 @@ final class Repos
         return $this->operators->repos👷DeleteRepoRuleset()->call($owner, $repo, $rulesetId);
     }
 
-    /** @return iterable<int,int>|Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json|WithoutBody */
+    /** @return Observable<int>|Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json|WithoutBody */
     public function getCodeFrequencyStats(string $owner, string $repo): iterable|\ApiClients\Client\GitHub\Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json|WithoutBody
     {
         return $this->operators->repos👷GetCodeFrequencyStats()->call($owner, $repo);

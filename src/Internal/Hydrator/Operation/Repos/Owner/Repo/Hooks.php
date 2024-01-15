@@ -6,9 +6,9 @@ namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Repos\Owner\Repo;
 
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\Hook;
-use ApiClients\Client\GitHub\Schema\Hook\Config;
 use ApiClients\Client\GitHub\Schema\HookResponse;
 use ApiClients\Client\GitHub\Schema\ValidationError;
+use ApiClients\Client\GitHub\Schema\WebhookConfig;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems;
@@ -46,7 +46,7 @@ class Hooks implements ObjectMapper
         return match ($className) {
             'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
                 'ApiClients\Client\GitHub\Schema\Hook' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Hook($payload),
-                'ApiClients\Client\GitHub\Schema\Hook\Config' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Hook⚡️Config($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookConfig' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig($payload),
                 'ApiClients\Client\GitHub\Schema\HookResponse' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️HookResponse($payload),
                 'ApiClients\Client\GitHub\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
@@ -186,7 +186,7 @@ class Hooks implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'config';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Hook⚡️Config($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -296,55 +296,11 @@ class Hooks implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Hook⚡️Config(array $payload): Config
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig(array $payload): WebhookConfig
     {
         $properties    = [];
         $missingFields = [];
         try {
-            $value = $payload['email'] ?? null;
-
-            if ($value === null) {
-                $properties['email'] = null;
-                goto after_email;
-            }
-
-            $properties['email'] = $value;
-
-            after_email:
-
-            $value = $payload['password'] ?? null;
-
-            if ($value === null) {
-                $properties['password'] = null;
-                goto after_password;
-            }
-
-            $properties['password'] = $value;
-
-            after_password:
-
-            $value = $payload['room'] ?? null;
-
-            if ($value === null) {
-                $properties['room'] = null;
-                goto after_room;
-            }
-
-            $properties['room'] = $value;
-
-            after_room:
-
-            $value = $payload['subdomain'] ?? null;
-
-            if ($value === null) {
-                $properties['subdomain'] = null;
-                goto after_subdomain;
-            }
-
-            $properties['subdomain'] = $value;
-
-            after_subdomain:
-
             $value = $payload['url'] ?? null;
 
             if ($value === null) {
@@ -355,17 +311,6 @@ class Hooks implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
-
-            $value = $payload['insecure_ssl'] ?? null;
-
-            if ($value === null) {
-                $properties['insecureSsl'] = null;
-                goto after_insecureSsl;
-            }
-
-            $properties['insecureSsl'] = $value;
-
-            after_insecureSsl:
 
             $value = $payload['content_type'] ?? null;
 
@@ -378,17 +323,6 @@ class Hooks implements ObjectMapper
 
             after_contentType:
 
-            $value = $payload['digest'] ?? null;
-
-            if ($value === null) {
-                $properties['digest'] = null;
-                goto after_digest;
-            }
-
-            $properties['digest'] = $value;
-
-            after_digest:
-
             $value = $payload['secret'] ?? null;
 
             if ($value === null) {
@@ -400,28 +334,28 @@ class Hooks implements ObjectMapper
 
             after_secret:
 
-            $value = $payload['token'] ?? null;
+            $value = $payload['insecure_ssl'] ?? null;
 
             if ($value === null) {
-                $properties['token'] = null;
-                goto after_token;
+                $properties['insecureSsl'] = null;
+                goto after_insecureSsl;
             }
 
-            $properties['token'] = $value;
+            $properties['insecureSsl'] = $value;
 
-            after_token:
+            after_insecureSsl:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Hook\Config', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookConfig', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(Config::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(WebhookConfig::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new Config(...$properties);
+            return new WebhookConfig(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Hook\Config', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookConfig', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -562,7 +496,7 @@ class Hooks implements ObjectMapper
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 'ApiClients\Client\GitHub\Schema\Hook' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Hook($object),
-                'ApiClients\Client\GitHub\Schema\Hook\Config' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Hook⚡️Config($object),
+                'ApiClients\Client\GitHub\Schema\WebhookConfig' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig($object),
                 'ApiClients\Client\GitHub\Schema\HookResponse' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️HookResponse($object),
                 'ApiClients\Client\GitHub\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($object),
                 default => throw new LogicException('No serialization defined for $className'),
@@ -695,7 +629,7 @@ class Hooks implements ObjectMapper
         after_events:        $result['events'] = $events;
 
         $config                                = $object->config;
-        $config                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Hook⚡️Config($config);
+        $config                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig($config);
         after_config:        $result['config'] = $config;
 
         $updatedAt                                    = $object->updatedAt;
@@ -728,42 +662,10 @@ class Hooks implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Hook⚡️Config(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookConfig(mixed $object): mixed
     {
-        assert($object instanceof Config);
+        assert($object instanceof WebhookConfig);
         $result = [];
-
-        $email = $object->email;
-
-        if ($email === null) {
-            goto after_email;
-        }
-
-        after_email:        $result['email'] = $email;
-
-        $password = $object->password;
-
-        if ($password === null) {
-            goto after_password;
-        }
-
-        after_password:        $result['password'] = $password;
-
-        $room = $object->room;
-
-        if ($room === null) {
-            goto after_room;
-        }
-
-        after_room:        $result['room'] = $room;
-
-        $subdomain = $object->subdomain;
-
-        if ($subdomain === null) {
-            goto after_subdomain;
-        }
-
-        after_subdomain:        $result['subdomain'] = $subdomain;
 
         $url = $object->url;
 
@@ -773,14 +675,6 @@ class Hooks implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
-        $insecureSsl = $object->insecureSsl;
-
-        if ($insecureSsl === null) {
-            goto after_insecureSsl;
-        }
-
-        after_insecureSsl:        $result['insecure_ssl'] = $insecureSsl;
-
         $contentType = $object->contentType;
 
         if ($contentType === null) {
@@ -788,14 +682,6 @@ class Hooks implements ObjectMapper
         }
 
         after_contentType:        $result['content_type'] = $contentType;
-
-        $digest = $object->digest;
-
-        if ($digest === null) {
-            goto after_digest;
-        }
-
-        after_digest:        $result['digest'] = $digest;
 
         $secret = $object->secret;
 
@@ -805,13 +691,13 @@ class Hooks implements ObjectMapper
 
         after_secret:        $result['secret'] = $secret;
 
-        $token = $object->token;
+        $insecureSsl = $object->insecureSsl;
 
-        if ($token === null) {
-            goto after_token;
+        if ($insecureSsl === null) {
+            goto after_insecureSsl;
         }
 
-        after_token:        $result['token'] = $token;
+        after_insecureSsl:        $result['insecure_ssl'] = $insecureSsl;
 
         return $result;
     }

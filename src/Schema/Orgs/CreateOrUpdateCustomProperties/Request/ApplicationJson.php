@@ -66,6 +66,21 @@ final readonly class ApplicationJson
                             "type": "string"
                         },
                         "description": "Ordered list of allowed values of the property"
+                    },
+                    "values_editable_by": {
+                        "enum": [
+                            "org_actors",
+                            "org_and_repo_actors",
+                            null
+                        ],
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Who can edit the values of the property",
+                        "examples": [
+                            "org_actors"
+                        ]
                     }
                 },
                 "description": "Custom property defined on an organization"
@@ -84,7 +99,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -92,7 +108,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -100,7 +117,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -108,7 +126,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -116,7 +135,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -124,7 +144,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -132,7 +153,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -140,7 +162,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -148,7 +171,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -156,7 +180,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -164,7 +189,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -172,7 +198,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -180,7 +207,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -188,7 +216,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -196,7 +225,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -204,7 +234,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -212,7 +243,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -220,7 +252,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -228,7 +261,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -236,7 +270,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -244,7 +279,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -252,7 +288,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -260,7 +297,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -268,7 +306,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -276,7 +315,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -284,7 +324,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -292,7 +333,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -300,7 +342,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -308,7 +351,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -316,7 +360,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -324,7 +369,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -332,7 +378,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -340,7 +387,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -348,7 +396,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -356,7 +405,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -364,7 +414,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -372,7 +423,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -380,7 +432,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -388,7 +441,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -396,7 +450,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -404,7 +459,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -412,7 +468,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -420,7 +477,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -428,7 +486,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -436,7 +495,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -444,7 +504,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -452,7 +513,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -460,7 +522,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -468,7 +531,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -476,7 +540,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -484,7 +549,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -492,7 +558,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -500,7 +567,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -508,7 +576,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -516,7 +585,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -524,7 +594,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -532,7 +603,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -540,7 +612,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -548,7 +621,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -556,7 +630,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -564,7 +639,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -572,7 +648,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -580,7 +657,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -588,7 +666,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -596,7 +675,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -604,7 +684,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -612,7 +693,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -620,7 +702,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -628,7 +711,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -636,7 +720,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -644,7 +729,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -652,7 +738,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -660,7 +747,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -668,7 +756,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -676,7 +765,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -684,7 +774,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -692,7 +783,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -700,7 +792,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -708,7 +801,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -716,7 +810,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -724,7 +819,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -732,7 +828,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -740,7 +837,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -748,7 +846,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -756,7 +855,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -764,7 +864,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -772,7 +873,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -780,7 +882,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -788,7 +891,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -796,7 +900,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -804,7 +909,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -812,7 +918,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -820,7 +927,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -828,7 +936,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -836,7 +945,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -844,7 +954,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -852,7 +963,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -860,7 +972,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -868,7 +981,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         },
         {
             "property_name": "generated",
@@ -876,7 +990,8 @@ final readonly class ApplicationJson
             "required": false,
             "default_value": "generated",
             "description": "generated",
-            "allowed_values": null
+            "allowed_values": null,
+            "values_editable_by": "org_actors"
         }
     ]
 }';

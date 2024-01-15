@@ -46,18 +46,6 @@ final readonly class Config
                     "type": "number"
                 }
             ]
-        },
-        "token": {
-            "type": "string",
-            "examples": [
-                "\\"abc\\""
-            ]
-        },
-        "digest": {
-            "type": "string",
-            "examples": [
-                "\\"sha256\\""
-            ]
         }
     },
     "description": "Key\\/value pairs to provide settings for this webhook."
@@ -68,9 +56,7 @@ final readonly class Config
     "url": "https:\\/\\/example.com\\/webhook",
     "content_type": "\\"json\\"",
     "secret": "\\"********\\"",
-    "insecure_ssl": null,
-    "token": "\\"abc\\"",
-    "digest": "\\"sha256\\""
+    "insecure_ssl": null
 }';
 
     /**
@@ -80,7 +66,7 @@ final readonly class Config
      */
     public function __construct(public string|null $url, #[MapFrom('content_type')]
     public string|null $contentType, public string|null $secret, #[MapFrom('insecure_ssl')]
-    public string|int|float|null $insecureSsl, public string|null $token, public string|null $digest,)
+    public string|int|float|null $insecureSsl,)
     {
     }
 }

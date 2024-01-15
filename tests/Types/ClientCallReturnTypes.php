@@ -768,6 +768,7 @@ assertType('Observable<Schema\\Project>', $client->call('GET /repos/{owner}/{rep
 assertType('Observable<Schema\\Project>', $client->call('LIST /repos/{owner}/{repo}/projects'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/projects'));
 assertType('Observable<Schema\\CustomPropertyValue>', $client->call('GET /repos/{owner}/{repo}/properties/values'));
+assertType('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('PATCH /repos/{owner}/{repo}/properties/values'));
 assertType('Observable<Schema\\PullRequestSimple>|WithoutBody', $client->call('GET /repos/{owner}/{repo}/pulls'));
 assertType('Observable<Schema\\PullRequestSimple>|WithoutBody', $client->call('LIST /repos/{owner}/{repo}/pulls'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/pulls'));
@@ -853,7 +854,7 @@ assertType('', $client->call('PATCH /repos/{owner}/{repo}/security-advisories/{g
 assertType('', $client->call('POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/cve'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/security-advisories/{ghsa_id}/forks'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/stargazers'));
-assertType('iterable<int,int>|Schema\\Operations\\Repos\\GetCodeFrequencyStats\\Response\\ApplicationJson\\Accepted\\Application\\Json|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /repos/{owner}/{repo}/stats/code_frequency'));
+assertType('Observable<int>|Schema\\Operations\\Repos\\GetCodeFrequencyStats\\Response\\ApplicationJson\\Accepted\\Application\\Json|WithoutBody', $client->call('GET /repos/{owner}/{repo}/stats/code_frequency'));
 assertType('Observable<Schema\\CommitActivity>|Schema\\Operations\\Repos\\GetCommitActivityStats\\Response\\ApplicationJson\\Accepted\\Application\\Json|WithoutBody', $client->call('GET /repos/{owner}/{repo}/stats/commit_activity'));
 assertType('Observable<Schema\\ContributorActivity>|Schema\\Operations\\Repos\\GetContributorsStats\\Response\\ApplicationJson\\Accepted\\Application\\Json|WithoutBody', $client->call('GET /repos/{owner}/{repo}/stats/contributors'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/stats/participation'));

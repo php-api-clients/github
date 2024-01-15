@@ -18435,6 +18435,28 @@ $client->operations()->repos()->getCustomPropertiesValues(        owner: 'genera
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/custom-properties#get-all-custom-property-values-for-a-repository).
 
 
+### repos/create-or-update-custom-properties-values
+
+Create or update custom property values for a repository
+
+Using the `call` method:
+```php
+$client->call('PATCH /repos/{owner}/{repo}/properties/values', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->createOrUpdateCustomPropertiesValues(        owner: 'generated',
+        repo: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/custom-properties#create-or-update-custom-property-values-for-a-repository).
+
+
 ### pulls/list
 
 List pull requests

@@ -58,6 +58,21 @@ final readonly class OrgCustomProperty
                 "type": "string"
             },
             "description": "Ordered list of allowed values of the property"
+        },
+        "values_editable_by": {
+            "enum": [
+                "org_actors",
+                "org_and_repo_actors",
+                null
+            ],
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Who can edit the values of the property",
+            "examples": [
+                "org_actors"
+            ]
         }
     },
     "description": "Custom property defined on an organization"
@@ -70,7 +85,8 @@ final readonly class OrgCustomProperty
     "required": false,
     "default_value": "generated",
     "description": "generated",
-    "allowed_values": null
+    "allowed_values": null,
+    "values_editable_by": "org_actors"
 }';
 
     /**
@@ -80,12 +96,14 @@ final readonly class OrgCustomProperty
      * defaultValue: Default value of the property
      * description: Short description of the property
      * allowedValues: Ordered list of allowed values of the property
+     * valuesEditableBy: Who can edit the values of the property
      */
     public function __construct(#[MapFrom('property_name')]
     public string $propertyName, #[MapFrom('value_type')]
     public string $valueType, public bool|null $required, #[MapFrom('default_value')]
     public string|null $defaultValue, public string|null $description, #[MapFrom('allowed_values')]
-    public array|null $allowedValues,)
+    public array|null $allowedValues, #[MapFrom('values_editable_by')]
+    public string|null $valuesEditableBy,)
     {
     }
 }

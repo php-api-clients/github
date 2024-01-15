@@ -63,38 +63,29 @@ final readonly class Hook
             ]
         },
         "config": {
+            "title": "Webhook Configuration",
             "type": "object",
             "properties": {
-                "email": {
-                    "type": "string",
-                    "examples": [
-                        "\\"foo@bar.com\\""
-                    ]
-                },
-                "password": {
-                    "type": "string",
-                    "examples": [
-                        "\\"foo\\""
-                    ]
-                },
-                "room": {
-                    "type": "string",
-                    "examples": [
-                        "\\"roomer\\""
-                    ]
-                },
-                "subdomain": {
-                    "type": "string",
-                    "examples": [
-                        "\\"foo\\""
-                    ]
-                },
                 "url": {
                     "type": "string",
                     "description": "The URL to which the payloads will be delivered.",
                     "format": "uri",
                     "examples": [
                         "https:\\/\\/example.com\\/webhook"
+                    ]
+                },
+                "content_type": {
+                    "type": "string",
+                    "description": "The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.",
+                    "examples": [
+                        "\\"json\\""
+                    ]
+                },
+                "secret": {
+                    "type": "string",
+                    "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https:\\/\\/docs.github.com\\/webhooks\\/event-payloads\\/#delivery-headers).",
+                    "examples": [
+                        "\\"********\\""
                     ]
                 },
                 "insecure_ssl": {
@@ -110,34 +101,9 @@ final readonly class Hook
                             "type": "number"
                         }
                     ]
-                },
-                "content_type": {
-                    "type": "string",
-                    "description": "The media type used to serialize the payloads. Supported values include `json` and `form`. The default is `form`.",
-                    "examples": [
-                        "\\"json\\""
-                    ]
-                },
-                "digest": {
-                    "type": "string",
-                    "examples": [
-                        "\\"sha256\\""
-                    ]
-                },
-                "secret": {
-                    "type": "string",
-                    "description": "If provided, the `secret` will be used as the `key` to generate the HMAC hex digest value for [delivery signature headers](https:\\/\\/docs.github.com\\/webhooks\\/event-payloads\\/#delivery-headers).",
-                    "examples": [
-                        "\\"********\\""
-                    ]
-                },
-                "token": {
-                    "type": "string",
-                    "examples": [
-                        "\\"abc\\""
-                    ]
                 }
-            }
+            },
+            "description": "Configuration object of the webhook"
         },
         "updated_at": {
             "type": "string",
@@ -225,16 +191,10 @@ final readonly class Hook
         "pull_request"
     ],
     "config": {
-        "email": "\\"foo@bar.com\\"",
-        "password": "\\"foo\\"",
-        "room": "\\"roomer\\"",
-        "subdomain": "\\"foo\\"",
         "url": "https:\\/\\/example.com\\/webhook",
-        "insecure_ssl": null,
         "content_type": "\\"json\\"",
-        "digest": "\\"sha256\\"",
         "secret": "\\"********\\"",
-        "token": "\\"abc\\""
+        "insecure_ssl": null
     },
     "updated_at": "2011-09-06T20:39:23Z",
     "created_at": "2011-09-06T17:26:27Z",
@@ -254,8 +214,9 @@ final readonly class Hook
      * name: The name of a valid service, use 'web' for a webhook.
      * active: Determines whether the hook is actually triggered on pushes.
      * events: Determines what events the hook is triggered for. Default: ['push'].
+     * config: Configuration object of the webhook
      */
-    public function __construct(public string $type, public int $id, public string $name, public bool $active, public array $events, public Schema\Hook\Config $config, #[MapFrom('updated_at')]
+    public function __construct(public string $type, public int $id, public string $name, public bool $active, public array $events, public Schema\WebhookConfig $config, #[MapFrom('updated_at')]
     public string $updatedAt, #[MapFrom('created_at')]
     public string $createdAt, public string $url, #[MapFrom('test_url')]
     public string $testUrl, #[MapFrom('ping_url')]

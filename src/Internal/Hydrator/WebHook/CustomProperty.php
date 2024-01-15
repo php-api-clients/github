@@ -261,6 +261,17 @@ class CustomProperty implements ObjectMapper
             $properties['allowedValues'] = $value;
 
             after_allowedValues:
+
+            $value = $payload['values_editable_by'] ?? null;
+
+            if ($value === null) {
+                $properties['valuesEditableBy'] = null;
+                goto after_valuesEditableBy;
+            }
+
+            $properties['valuesEditableBy'] = $value;
+
+            after_valuesEditableBy:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrgCustomProperty', $exception, stack: $this->hydrationStack);
         }
@@ -1334,6 +1345,14 @@ class CustomProperty implements ObjectMapper
 
         $allowedValues                                        = $allowedValuesSerializer0->serialize($allowedValues, $this);
         after_allowedValues:        $result['allowed_values'] = $allowedValues;
+
+        $valuesEditableBy = $object->valuesEditableBy;
+
+        if ($valuesEditableBy === null) {
+            goto after_valuesEditableBy;
+        }
+
+        after_valuesEditableBy:        $result['values_editable_by'] = $valuesEditableBy;
 
         return $result;
     }

@@ -30,6 +30,7 @@ final class Six
     {
     }
 
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|WebhookConfig|CheckRun|CheckSuitePreference|EmptyObject|CodeScanningDefaultSetupUpdateResponse|CommitComment|Hook|Import|RepositoryInvitation|Issue|BasicError|Label|Milestone|PullRequest|Release|RepositoryAdvisory
     {
         if ($pathChunks[0] === '') {
@@ -114,6 +115,12 @@ final class Six
                             if ($pathChunks[5] === '{milestone_number}') {
                                 if ($call === 'PATCH /repos/{owner}/{repo}/milestones/{milestone_number}') {
                                     return $this->routers->internal🔀Router🔀Patch🔀Issues()->updateMilestone($params);
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'properties') {
+                            if ($pathChunks[5] === 'values') {
+                                if ($call === 'PATCH /repos/{owner}/{repo}/properties/values') {
+                                    return $this->routers->internal🔀Router🔀Patch🔀Repos()->createOrUpdateCustomPropertiesValues($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'pulls') {

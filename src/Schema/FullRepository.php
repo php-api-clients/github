@@ -5613,6 +5613,11 @@ final readonly class FullRepository
                     }
                 }
             }
+        },
+        "custom_properties": {
+            "type": "object",
+            "description": "The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.",
+            "additionalProperties": true
         }
     },
     "description": "Full Repository"
@@ -6627,7 +6632,8 @@ final readonly class FullRepository
         "secret_scanning_push_protection": {
             "status": "disabled"
         }
-    }
+    },
+    "custom_properties": []
 }';
 
     /**
@@ -6657,6 +6663,7 @@ final readonly class FullRepository
      * source: A repository on GitHub.
      * anonymousAccessEnabled: Whether anonymous git access is allowed.
      * codeOfConduct: Code of Conduct Simple
+     * customProperties: The custom properties that were defined for the repository. The keys are the custom property names, and the values are the corresponding custom property values.
      */
     public function __construct(public int $id, #[MapFrom('node_id')]
     public string $nodeId, public string $name, #[MapFrom('full_name')]
@@ -6739,7 +6746,8 @@ final readonly class FullRepository
     public int $openIssues, public int $watchers, #[MapFrom('anonymous_access_enabled')]
     public bool|null $anonymousAccessEnabled, #[MapFrom('code_of_conduct')]
     public Schema\CodeOfConductSimple|null $codeOfConduct, #[MapFrom('security_and_analysis')]
-    public Schema\SecurityAndAnalysis|null $securityAndAnalysis,)
+    public Schema\SecurityAndAnalysis|null $securityAndAnalysis, #[MapFrom('custom_properties')]
+    public Schema\FullRepository\CustomProperties|null $customProperties,)
     {
     }
 }
