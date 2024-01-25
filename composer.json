@@ -14,7 +14,7 @@
     "api-clients/openapi-client-utils": "dev-main",
     "devizzent/cebe-php-openapi": "^1.0.1",
     "eventsauce/object-hydrator": "^1.4.0",
-    "league/openapi-psr7-validator": "^0.21",
+    "league/openapi-psr7-validator": "^0.21 || ^0.22",
     "react/event-loop": "^1.4.0",
     "react/http": "^1.9.0",
     "react/async": "^4.1.0",
