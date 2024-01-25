@@ -15,20 +15,19 @@ use Rx\Observable;
 use function React\Async\await;
 use function WyriHaximus\React\awaitObservable;
 
-final readonly class CreateOrUpdateCustomPropertiesValues
+final readonly class CancelPagesDeployment
 {
-    public const OPERATION_ID    = 'repos/create-or-update-custom-properties-values';
-    public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/properties/values';
+    public const OPERATION_ID    = 'repos/cancel-pages-deployment';
+    public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel';
 
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repos\Owner\Repo\Properties\Values $hydrator)
+    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repos\Owner\Repo\Pages\Deployments\PagesDeploymentId\Cancel $hydrator)
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo, array $params): WithoutBody
+    public function call(string $owner, string $repo, $pagesDeploymentId): WithoutBody
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateOrUpdateCustomPropertiesValues($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);
-        $request   = $operation->createRequest($params);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CancelPagesDeployment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pagesDeploymentId);
+        $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): WithoutBody {
             return $operation->createResponse($response);
         }));

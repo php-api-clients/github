@@ -38,6 +38,7 @@ use ApiClients\Client\GitHub\Schema\Operations\Repos\GetAllEnvironments\Response
 use ApiClients\Client\GitHub\Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\Page;
 use ApiClients\Client\GitHub\Schema\PageBuild;
+use ApiClients\Client\GitHub\Schema\PagesDeploymentStatus;
 use ApiClients\Client\GitHub\Schema\PagesHealthCheck;
 use ApiClients\Client\GitHub\Schema\ParticipationStats;
 use ApiClients\Client\GitHub\Schema\ProtectedBranchAdminEnforced;
@@ -2541,6 +2542,32 @@ final class Repos
         $operator = new Internal\Operator\Repos\GetPagesBuild($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Builds🌀BuildId());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['build_id']);
+    }
+
+    public function getPagesDeployment(array $params): PagesDeploymentStatus
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('pages_deployment_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: pages_deployment_id');
+        }
+
+        $arguments['pages_deployment_id'] = $params['pages_deployment_id'];
+        unset($params['pages_deployment_id']);
+        $operator = new Internal\Operator\Repos\GetPagesDeployment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Deployments🌀PagesDeploymentId());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pages_deployment_id']);
     }
 
     /** @return */

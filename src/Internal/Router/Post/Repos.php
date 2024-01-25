@@ -95,7 +95,6 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return */
     public function createPagesDeployment(array $params): PageDeployment
     {
         $arguments = [];
@@ -111,7 +110,7 @@ final class Repos
 
         $arguments['repo'] = $params['repo'];
         unset($params['repo']);
-        $operator = new Internal\Operator\Repos\CreatePagesDeployment($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Deployment());
+        $operator = new Internal\Operator\Repos\CreatePagesDeployment($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Deployments());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
@@ -746,6 +745,32 @@ final class Repos
         $operator = new Internal\Operator\Repos\CreateCommitSignatureProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection🌀RequiredSignatures());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch']);
+    }
+
+    public function cancelPagesDeployment(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('pages_deployment_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: pages_deployment_id');
+        }
+
+        $arguments['pages_deployment_id'] = $params['pages_deployment_id'];
+        unset($params['pages_deployment_id']);
+        $operator = new Internal\Operator\Repos\CancelPagesDeployment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Deployments🌀PagesDeploymentId🌀Cancel());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pages_deployment_id']);
     }
 
     /** @return Observable<string> */

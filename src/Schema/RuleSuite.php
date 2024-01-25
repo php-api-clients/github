@@ -17,11 +17,17 @@ final readonly class RuleSuite
             "description": "The unique identifier of the rule insight."
         },
         "actor_id": {
-            "type": "integer",
+            "type": [
+                "integer",
+                "null"
+            ],
             "description": "The number that identifies the user."
         },
         "actor_name": {
-            "type": "string",
+            "type": [
+                "string",
+                "null"
+            ],
             "description": "The handle for the GitHub user account."
         },
         "before_sha": {

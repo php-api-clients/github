@@ -256,6 +256,15 @@ final readonly class SecretScanningAlertWebhook
             "type": "string",
             "description": "The type of secret that secret scanning detected."
         },
+        "validity": {
+            "enum": [
+                "active",
+                "inactive",
+                "unknown"
+            ],
+            "type": "string",
+            "description": "The token status as of the latest validity check."
+        },
         "push_protection_bypassed": {
             "type": [
                 "boolean",
@@ -477,6 +486,7 @@ final readonly class SecretScanningAlertWebhook
     },
     "resolution_comment": "generated",
     "secret_type": "generated",
+    "validity": "unknown",
     "push_protection_bypassed": false,
     "push_protection_bypassed_by": {
         "name": "generated",
@@ -514,6 +524,7 @@ final readonly class SecretScanningAlertWebhook
      * resolvedAt: The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      * resolutionComment: An optional comment to resolve an alert.
      * secretType: The type of secret that secret scanning detected.
+     * validity: The token status as of the latest validity check.
      * pushProtectionBypassed: Whether push protection was bypassed for the detected secret.
      * pushProtectionBypassedAt: The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      */
@@ -525,7 +536,7 @@ final readonly class SecretScanningAlertWebhook
     public string|null $resolvedAt, #[MapFrom('resolved_by')]
     public Schema\SimpleUser|null $resolvedBy, #[MapFrom('resolution_comment')]
     public string|null $resolutionComment, #[MapFrom('secret_type')]
-    public string|null $secretType, #[MapFrom('push_protection_bypassed')]
+    public string|null $secretType, public string|null $validity, #[MapFrom('push_protection_bypassed')]
     public bool|null $pushProtectionBypassed, #[MapFrom('push_protection_bypassed_by')]
     public Schema\SimpleUser|null $pushProtectionBypassedBy, #[MapFrom('push_protection_bypassed_at')]
     public string|null $pushProtectionBypassedAt,)

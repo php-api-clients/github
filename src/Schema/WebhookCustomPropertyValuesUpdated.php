@@ -1891,8 +1891,20 @@ final readonly class WebhookCustomPropertyValuesUpdated
                     },
                     "value": {
                         "type": [
+                            "null",
                             "string",
-                            "null"
+                            "array"
+                        ],
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
                         ],
                         "description": "The value assigned to the property"
                     }
@@ -1917,8 +1929,20 @@ final readonly class WebhookCustomPropertyValuesUpdated
                     },
                     "value": {
                         "type": [
+                            "null",
                             "string",
-                            "null"
+                            "array"
+                        ],
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
                         ],
                         "description": "The value assigned to the property"
                     }
@@ -2267,21 +2291,21 @@ final readonly class WebhookCustomPropertyValuesUpdated
     "new_property_values": [
         {
             "property_name": "generated",
-            "value": "generated"
+            "value": null
         },
         {
             "property_name": "generated",
-            "value": "generated"
+            "value": null
         }
     ],
     "old_property_values": [
         {
             "property_name": "generated",
-            "value": "generated"
+            "value": null
         },
         {
             "property_name": "generated",
-            "value": "generated"
+            "value": null
         }
     ]
 }';

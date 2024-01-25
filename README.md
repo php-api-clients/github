@@ -18253,7 +18253,7 @@ Create a GitHub Pages deployment
 
 Using the `call` method:
 ```php
-$client->call('POST /repos/{owner}/{repo}/pages/deployment', [
+$client->call('POST /repos/{owner}/{repo}/pages/deployments', [
         'owner' => 'generated',
         'repo' => 'generated',
 ]);
@@ -18267,6 +18267,54 @@ $client->operations()->repos()->createPagesDeployment(        owner: 'generated'
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#create-a-github-pages-deployment).
+
+
+### repos/get-pages-deployment
+
+Get the status of a GitHub Pages deployment
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'pages_deployment_id' => ,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->getPagesDeployment(        owner: 'generated',
+        repo: 'generated',
+        pages_deployment_id: ,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#get-the-status-of-a-github-pages-deployment).
+
+
+### repos/cancel-pages-deployment
+
+Cancel a GitHub Pages deployment
+
+Using the `call` method:
+```php
+$client->call('POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'pages_deployment_id' => ,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->cancelPagesDeployment(        owner: 'generated',
+        repo: 'generated',
+        pages_deployment_id: ,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#cancel-a-github-pages-deployment).
 
 
 ### repos/get-pages-health-check

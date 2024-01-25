@@ -21,7 +21,7 @@ final class Eight
     {
     }
 
-    /** @return |Observable<Schema\Deployment> */
+    /** @return |Observable<Schema\Deployment>|\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
     public function call(string $call, array $params, array $pathChunks): Json|Codespace|WithoutBody|TeamDiscussionComment|Reaction|EmptyObject|Ok|iterable|ProtectedBranchAdminEnforced
     {
         if ($pathChunks[0] === '') {
@@ -150,6 +150,16 @@ final class Eight
                                     if ($pathChunks[7] === 'reactions') {
                                         if ($call === 'POST /repos/{owner}/{repo}/issues/comments/{comment_id}/reactions') {
                                             return $this->routers->internal🔀Router🔀Post🔀Reactions()->createForIssueComment($params);
+                                        }
+                                    }
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'pages') {
+                            if ($pathChunks[5] === 'deployments') {
+                                if ($pathChunks[6] === '{pages_deployment_id}') {
+                                    if ($pathChunks[7] === 'cancel') {
+                                        if ($call === 'POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel') {
+                                            return $this->routers->internal🔀Router🔀Post🔀Repos()->cancelPagesDeployment($params);
                                         }
                                     }
                                 }

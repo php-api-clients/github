@@ -755,6 +755,8 @@ final class Operators
     private Internal\Operator\Repos\GetLatestPagesBuild|null $repos👷GetLatestPagesBuild                                                                                             = null;
     private Internal\Operator\Repos\GetPagesBuild|null $repos👷GetPagesBuild                                                                                                         = null;
     private Internal\Operator\Repos\CreatePagesDeployment|null $repos👷CreatePagesDeployment                                                                                         = null;
+    private Internal\Operator\Repos\GetPagesDeployment|null $repos👷GetPagesDeployment                                                                                               = null;
+    private Internal\Operator\Repos\CancelPagesDeployment|null $repos👷CancelPagesDeployment                                                                                         = null;
     private Internal\Operator\Repos\GetPagesHealthCheck|null $repos👷GetPagesHealthCheck                                                                                             = null;
     private Internal\Operator\Repos\EnablePrivateVulnerabilityReporting|null $repos👷EnablePrivateVulnerabilityReporting                                                             = null;
     private Internal\Operator\Repos\DisablePrivateVulnerabilityReporting|null $repos👷DisablePrivateVulnerabilityReporting                                                           = null;
@@ -7806,10 +7808,28 @@ final class Operators
     public function repos👷CreatePagesDeployment(): Internal\Operator\Repos\CreatePagesDeployment
     {
         if ($this->repos👷CreatePagesDeployment instanceof Internal\Operator\Repos\CreatePagesDeployment === false) {
-            $this->repos👷CreatePagesDeployment = new Internal\Operator\Repos\CreatePagesDeployment($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Deployment());
+            $this->repos👷CreatePagesDeployment = new Internal\Operator\Repos\CreatePagesDeployment($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Deployments());
         }
 
         return $this->repos👷CreatePagesDeployment;
+    }
+
+    public function repos👷GetPagesDeployment(): Internal\Operator\Repos\GetPagesDeployment
+    {
+        if ($this->repos👷GetPagesDeployment instanceof Internal\Operator\Repos\GetPagesDeployment === false) {
+            $this->repos👷GetPagesDeployment = new Internal\Operator\Repos\GetPagesDeployment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Deployments🌀PagesDeploymentId());
+        }
+
+        return $this->repos👷GetPagesDeployment;
+    }
+
+    public function repos👷CancelPagesDeployment(): Internal\Operator\Repos\CancelPagesDeployment
+    {
+        if ($this->repos👷CancelPagesDeployment instanceof Internal\Operator\Repos\CancelPagesDeployment === false) {
+            $this->repos👷CancelPagesDeployment = new Internal\Operator\Repos\CancelPagesDeployment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pages🌀Deployments🌀PagesDeploymentId🌀Cancel());
+        }
+
+        return $this->repos👷CancelPagesDeployment;
     }
 
     public function repos👷GetPagesHealthCheck(): Internal\Operator\Repos\GetPagesHealthCheck

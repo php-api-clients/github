@@ -22,8 +22,20 @@ final readonly class CustomPropertyValue
         },
         "value": {
             "type": [
+                "null",
                 "string",
-                "null"
+                "array"
+            ],
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
             ],
             "description": "The value assigned to the property"
         }
@@ -34,7 +46,7 @@ final readonly class CustomPropertyValue
     public const SCHEMA_DESCRIPTION  = 'Custom property name and associated value';
     public const SCHEMA_EXAMPLE_DATA = '{
     "property_name": "generated",
-    "value": "generated"
+    "value": null
 }';
 
     /**
@@ -42,7 +54,7 @@ final readonly class CustomPropertyValue
      * value: The value assigned to the property
      */
     public function __construct(#[MapFrom('property_name')]
-    public string $propertyName, public string|null $value,)
+    public string $propertyName, public string|array $value,)
     {
     }
 }

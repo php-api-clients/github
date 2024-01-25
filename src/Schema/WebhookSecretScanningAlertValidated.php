@@ -6,10 +6,10 @@ namespace ApiClients\Client\GitHub\Schema;
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class WebhookSecretScanningAlertRevoked
+final readonly class WebhookSecretScanningAlertValidated
 {
     public const SCHEMA_JSON         = '{
-    "title": "secret_scanning_alert revoked event",
+    "title": "secret_scanning_alert validated event",
     "required": [
         "action",
         "alert",
@@ -19,7 +19,7 @@ final readonly class WebhookSecretScanningAlertRevoked
     "properties": {
         "action": {
             "enum": [
-                "revoked"
+                "validated"
             ],
             "type": "string"
         },
@@ -2315,10 +2315,10 @@ final readonly class WebhookSecretScanningAlertRevoked
         }
     }
 }';
-    public const SCHEMA_TITLE        = 'secret_scanning_alert revoked event';
+    public const SCHEMA_TITLE        = 'secret_scanning_alert validated event';
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{
-    "action": "revoked",
+    "action": "validated",
     "alert": {
         "number": 6,
         "created_at": "1970-01-01T00:00:00+00:00",

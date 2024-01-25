@@ -23,7 +23,7 @@ use function assert;
 use function count;
 use function is_a;
 
-class Deployment implements ObjectMapper
+class Deployments implements ObjectMapper
 {
     private array $hydrationStack = [];
 

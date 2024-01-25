@@ -28,8 +28,20 @@ final readonly class ApplicationJson
                     },
                     "value": {
                         "type": [
+                            "null",
                             "string",
-                            "null"
+                            "array"
+                        ],
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
                         ],
                         "description": "The value assigned to the property"
                     }
@@ -46,11 +58,11 @@ final readonly class ApplicationJson
     "properties": [
         {
             "property_name": "generated",
-            "value": "generated"
+            "value": null
         },
         {
             "property_name": "generated",
-            "value": "generated"
+            "value": null
         }
     ]
 }';

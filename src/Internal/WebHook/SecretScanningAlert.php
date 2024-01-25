@@ -19,7 +19,7 @@ final class SecretScanningAlert implements WebHookInterface
     {
     }
 
-    public function resolve(array $headers, array $data): Schema\WebhookSecretScanningAlertCreated|Schema\WebhookSecretScanningAlertReopened|Schema\WebhookSecretScanningAlertResolved|Schema\WebhookSecretScanningAlertRevoked
+    public function resolve(array $headers, array $data): Schema\WebhookSecretScanningAlertCreated|Schema\WebhookSecretScanningAlertReopened|Schema\WebhookSecretScanningAlertResolved|Schema\WebhookSecretScanningAlertRevoked|Schema\WebhookSecretScanningAlertValidated
     {
         $error = new RuntimeException('No action matching given headers and data');
         if ($headers['content-type'] === 'application/json') {
@@ -94,6 +94,24 @@ final class SecretScanningAlert implements WebHookInterface
         }
 
         actions_aaaad:
+        if ($headers['content-type'] === 'application/json') {
+            try {
+                $this->requestSchemaValidator->validate($headers['user-agent'], Reader::readFromJson(Schema\WebHookHeader\UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-hook-id'], Reader::readFromJson(Schema\WebHookHeader\XGithubHookId::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-event'], Reader::readFromJson(Schema\WebHookHeader\XGithubEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-hook-installation-target-id'], Reader::readFromJson(Schema\WebHookHeader\XGithubHookInstallationTargetId::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-hook-installation-target-type'], Reader::readFromJson(Schema\WebHookHeader\XGithubHookInstallationTargetType::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-delivery'], Reader::readFromJson(Schema\WebHookHeader\XGitHubDelivery::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-hub-signature-256'], Reader::readFromJson(Schema\WebHookHeader\XHubSignature::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\WebhookSecretScanningAlertValidated::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                return $this->hydrator->hydrateObject(Schema\WebhookSecretScanningAlertValidated::class, $data);
+            } catch (Throwable) {
+                goto actions_aaaae;
+            }
+        }
+
+        actions_aaaae:
         throw $error;
     }
 }

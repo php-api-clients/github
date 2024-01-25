@@ -760,7 +760,9 @@ assertType('Observable<Schema\\PageBuild>', $client->call('LIST /repos/{owner}/{
 assertType('', $client->call('POST /repos/{owner}/{repo}/pages/builds'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/pages/builds/latest'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/pages/builds/{build_id}'));
-assertType('', $client->call('POST /repos/{owner}/{repo}/pages/deployment'));
+assertType('Schema\\PageDeployment', $client->call('POST /repos/{owner}/{repo}/pages/deployments'));
+assertType('Schema\\PagesDeploymentStatus', $client->call('GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}'));
+assertType('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/pages/health'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/private-vulnerability-reporting'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/private-vulnerability-reporting'));
@@ -768,7 +770,7 @@ assertType('Observable<Schema\\Project>', $client->call('GET /repos/{owner}/{rep
 assertType('Observable<Schema\\Project>', $client->call('LIST /repos/{owner}/{repo}/projects'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/projects'));
 assertType('Observable<Schema\\CustomPropertyValue>', $client->call('GET /repos/{owner}/{repo}/properties/values'));
-assertType('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('PATCH /repos/{owner}/{repo}/properties/values'));
+assertType('', $client->call('PATCH /repos/{owner}/{repo}/properties/values'));
 assertType('Observable<Schema\\PullRequestSimple>|WithoutBody', $client->call('GET /repos/{owner}/{repo}/pulls'));
 assertType('Observable<Schema\\PullRequestSimple>|WithoutBody', $client->call('LIST /repos/{owner}/{repo}/pulls'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/pulls'));

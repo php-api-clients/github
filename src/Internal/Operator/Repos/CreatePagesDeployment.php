@@ -18,13 +18,12 @@ use function WyriHaximus\React\awaitObservable;
 final readonly class CreatePagesDeployment
 {
     public const OPERATION_ID    = 'repos/create-pages-deployment';
-    public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/pages/deployment';
+    public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/pages/deployments';
 
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repos\Owner\Repo\Pages\Deployment $hydrator)
+    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repos\Owner\Repo\Pages\Deployments $hydrator)
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, array $params): PageDeployment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreatePagesDeployment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

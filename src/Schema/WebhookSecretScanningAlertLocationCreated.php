@@ -271,6 +271,15 @@ final readonly class WebhookSecretScanningAlertLocationCreated
                     "type": "string",
                     "description": "The type of secret that secret scanning detected."
                 },
+                "validity": {
+                    "enum": [
+                        "active",
+                        "inactive",
+                        "unknown"
+                    ],
+                    "type": "string",
+                    "description": "The token status as of the latest validity check."
+                },
                 "push_protection_bypassed": {
                     "type": [
                         "boolean",
@@ -2538,6 +2547,7 @@ final readonly class WebhookSecretScanningAlertLocationCreated
         },
         "resolution_comment": "generated",
         "secret_type": "generated",
+        "validity": "unknown",
         "push_protection_bypassed": false,
         "push_protection_bypassed_by": {
             "name": "generated",

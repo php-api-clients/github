@@ -30,7 +30,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/pages/deployment', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/pages/deployments', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Repos\CreatePagesDeployment::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated';
@@ -49,7 +49,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/pages/deployment', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/pages/deployments', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->operations()->repos()->createPagesDeployment('generated', 'generated', json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
@@ -64,7 +64,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/pages/deployment', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/pages/deployments', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Repos\CreatePagesDeployment::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated';
@@ -84,7 +84,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/pages/deployment', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/pages/deployments', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->operations()->repos()->createPagesDeployment('generated', 'generated', json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
@@ -99,7 +99,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/pages/deployment', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/pages/deployments', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Repos\CreatePagesDeployment::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated';
@@ -119,7 +119,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/pages/deployment', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/pages/deployments', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->operations()->repos()->createPagesDeployment('generated', 'generated', json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
@@ -134,7 +134,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/pages/deployment', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/pages/deployments', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Repos\CreatePagesDeployment::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated';
@@ -154,7 +154,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/pages/deployment', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/pages/deployments', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->operations()->repos()->createPagesDeployment('generated', 'generated', json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
@@ -169,7 +169,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/pages/deployment', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/pages/deployments', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Repos\CreatePagesDeployment::OPERATION_MATCH, (static function (array $data): array {
             $data['owner'] = 'generated';
@@ -189,7 +189,7 @@ final class CreatePagesDeploymentTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/repos/generated/generated/pages/deployment', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/repos/generated/generated/pages/deployments', Argument::type('array'), json_encode(json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->operations()->repos()->createPagesDeployment('generated', 'generated', json_decode(Schema\Repos\CreatePagesDeployment\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }

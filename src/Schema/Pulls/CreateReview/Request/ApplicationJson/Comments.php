@@ -21,7 +21,7 @@ final readonly class Comments
         },
         "position": {
             "type": "integer",
-            "description": "The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below."
+            "description": "The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The `position` value equals the number of lines down from the first \\"@@\\" hunk header in the file you want to add a comment. The line just below the \\"@@\\" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file."
         },
         "body": {
             "type": "string",
@@ -67,7 +67,7 @@ final readonly class Comments
 
     /**
      * path: The relative path to the file that necessitates a review comment.
-     * position: The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. For help finding the position value, read the note below.
+     * position: The position in the diff where you want to add a review comment. Note this value is not the same as the line number in the file. The `position` value equals the number of lines down from the first "@@" hunk header in the file you want to add a comment. The line just below the "@@" line is position 1, the next line is position 2, and so on. The position in the diff continues to increase through lines of whitespace and additional hunks until the beginning of a new file.
      * body: Text of the review comment.
      */
     public function __construct(public string $path, public int|null $position, public string $body, public int|null $line, public string|null $side, #[MapFrom('start_line')]

@@ -21,7 +21,7 @@ final readonly class PageDeployment
             "description": "The URI to monitor GitHub Pages deployment status.",
             "format": "uri",
             "examples": [
-                "https:\\/\\/api.github.com\\/repos\\/github\\/hello-world\\/pages\\/deployments\\/4fd754f7e594640989b406850d0bc8f06a121251\\/status"
+                "https:\\/\\/api.github.com\\/repos\\/github\\/hello-world\\/pages\\/deployments\\/4fd754f7e594640989b406850d0bc8f06a121251"
             ]
         },
         "page_url": {
@@ -46,7 +46,7 @@ final readonly class PageDeployment
     public const SCHEMA_TITLE        = 'GitHub Pages';
     public const SCHEMA_DESCRIPTION  = 'The GitHub Pages deployment status.';
     public const SCHEMA_EXAMPLE_DATA = '{
-    "status_url": "https:\\/\\/api.github.com\\/repos\\/github\\/hello-world\\/pages\\/deployments\\/4fd754f7e594640989b406850d0bc8f06a121251\\/status",
+    "status_url": "https:\\/\\/api.github.com\\/repos\\/github\\/hello-world\\/pages\\/deployments\\/4fd754f7e594640989b406850d0bc8f06a121251",
     "page_url": "hello-world.github.io",
     "preview_url": "monalisa-1231a2312sa32-23sda74.drafts.github.io"
 }';
