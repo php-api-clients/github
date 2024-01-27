@@ -2544,6 +2544,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['build_id']);
     }
 
+    /** @return */
     public function getPagesDeployment(array $params): PagesDeploymentStatus
     {
         $arguments = [];

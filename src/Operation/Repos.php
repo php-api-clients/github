@@ -982,16 +982,19 @@ final class Repos
         return $this->operators->repos👷GetPagesBuild()->call($owner, $repo, $buildId);
     }
 
+    /** @return */
     public function createPagesDeployment(string $owner, string $repo, array $params): PageDeployment
     {
         return $this->operators->repos👷CreatePagesDeployment()->call($owner, $repo, $params);
     }
 
+    /** @return */
     public function getPagesDeployment(string $owner, string $repo, mixed $pagesDeploymentId): PagesDeploymentStatus
     {
         return $this->operators->repos👷GetPagesDeployment()->call($owner, $repo, $pagesDeploymentId);
     }
 
+    /** @return */
     public function cancelPagesDeployment(string $owner, string $repo, mixed $pagesDeploymentId): WithoutBody
     {
         return $this->operators->repos👷CancelPagesDeployment()->call($owner, $repo, $pagesDeploymentId);

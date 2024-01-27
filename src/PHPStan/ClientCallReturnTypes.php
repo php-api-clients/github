@@ -3016,15 +3016,15 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/pages/deployments') {
-            return $this->typeResolver->resolve('Schema\\PageDeployment');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}') {
-            return $this->typeResolver->resolve('Schema\\PagesDeploymentStatus');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/pages/health') {

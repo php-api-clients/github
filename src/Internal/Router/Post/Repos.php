@@ -95,6 +95,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
+    /** @return */
     public function createPagesDeployment(array $params): PageDeployment
     {
         $arguments = [];
@@ -747,6 +748,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch']);
     }
 
+    /** @return */
     public function cancelPagesDeployment(array $params): WithoutBody
     {
         $arguments = [];
