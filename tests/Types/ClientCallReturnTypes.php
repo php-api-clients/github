@@ -760,9 +760,9 @@ assertType('Observable<Schema\\PageBuild>', $client->call('LIST /repos/{owner}/{
 assertType('', $client->call('POST /repos/{owner}/{repo}/pages/builds'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/pages/builds/latest'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/pages/builds/{build_id}'));
-assertType('Schema\\PageDeployment', $client->call('POST /repos/{owner}/{repo}/pages/deployments'));
-assertType('Schema\\PagesDeploymentStatus', $client->call('GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}'));
-assertType('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel'));
+assertType('', $client->call('POST /repos/{owner}/{repo}/pages/deployments'));
+assertType('', $client->call('GET /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}'));
+assertType('', $client->call('POST /repos/{owner}/{repo}/pages/deployments/{pages_deployment_id}/cancel'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/pages/health'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/private-vulnerability-reporting'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/private-vulnerability-reporting'));

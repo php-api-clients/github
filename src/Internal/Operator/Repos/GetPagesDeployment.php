@@ -24,6 +24,7 @@ final readonly class GetPagesDeployment
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, $pagesDeploymentId): PagesDeploymentStatus
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetPagesDeployment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pagesDeploymentId);

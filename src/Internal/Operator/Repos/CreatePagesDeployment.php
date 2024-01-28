@@ -24,6 +24,7 @@ final readonly class CreatePagesDeployment
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): PageDeployment
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreatePagesDeployment($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

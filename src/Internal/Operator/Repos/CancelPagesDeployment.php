@@ -24,6 +24,7 @@ final readonly class CancelPagesDeployment
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, $pagesDeploymentId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CancelPagesDeployment($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $pagesDeploymentId);
