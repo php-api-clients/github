@@ -5812,7 +5812,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "31409e7e5ba078398a41d5d318731fc4"
+                "hash": "59997a1aea2b0ab16e4171a532f5e58e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -30692,7 +30692,7 @@
         "files": [
             {
                 "name": "composer.json",
-                "hash": "3171cbd4a97080ad44716449f77b1612"
+                "hash": "1d959ee819a6de082516cfd5c375c68e"
             },
             {
                 "name": "composer.lock",
