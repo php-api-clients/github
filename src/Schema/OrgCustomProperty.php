@@ -50,14 +50,16 @@ final readonly class OrgCustomProperty
             "description": "Short description of the property"
         },
         "allowed_values": {
+            "maxItems": 200,
             "type": [
                 "array",
                 "null"
             ],
             "items": {
+                "maxLength": 75,
                 "type": "string"
             },
-            "description": "Ordered list of allowed values of the property"
+            "description": "An ordered list of the allowed values of the property.\\nThe property can have up to 200 allowed values."
         },
         "values_editable_by": {
             "enum": [
@@ -95,7 +97,8 @@ final readonly class OrgCustomProperty
      * required: Whether the property is required.
      * defaultValue: Default value of the property
      * description: Short description of the property
-     * allowedValues: Ordered list of allowed values of the property
+     * allowedValues: An ordered list of the allowed values of the property.
+    The property can have up to 200 allowed values.
      * valuesEditableBy: Who can edit the values of the property
      */
     public function __construct(#[MapFrom('property_name')]

@@ -44,14 +44,16 @@ final readonly class ApplicationJson
             "description": "Short description of the property"
         },
         "allowed_values": {
+            "maxItems": 200,
             "type": [
                 "array",
                 "null"
             ],
             "items": {
+                "maxLength": 75,
                 "type": "string"
             },
-            "description": "Ordered list of allowed values of the property"
+            "description": "An ordered list of the allowed values of the property.\\nThe property can have up to 200 allowed values."
         }
     }
 }';
@@ -70,7 +72,8 @@ final readonly class ApplicationJson
      * required: Whether the property is required.
      * defaultValue: Default value of the property
      * description: Short description of the property
-     * allowedValues: Ordered list of allowed values of the property
+     * allowedValues: An ordered list of the allowed values of the property.
+    The property can have up to 200 allowed values.
      */
     public function __construct(#[MapFrom('value_type')]
     public string $valueType, public bool|null $required, #[MapFrom('default_value')]

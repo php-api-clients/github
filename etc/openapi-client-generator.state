@@ -1,5 +1,5 @@
 {
-    "specHash": "f5f9e60e15bc4ad8d390c412dd58fac6",
+    "specHash": "43512e093bc0645d14a6d505678dad79",
     "generatedFiles": {
         "files": [
             {
@@ -29620,7 +29620,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrgCustomProperty.php",
-                "hash": "64e26908a020236bb78cc3587a5623d7"
+                "hash": "0aae19a7acee7983d4963de1ebde8c18"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CustomPropertyValue.php",
@@ -29632,11 +29632,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Orgs\/CreateOrUpdateCustomProperties\/Request\/ApplicationJson.php",
-                "hash": "d2040baa9a07844aba255f3869cae375"
+                "hash": "21d553f3464fcbb0d062e2f76ddb099f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Orgs\/CreateOrUpdateCustomProperty\/Request\/ApplicationJson.php",
-                "hash": "3198a925864d6686fcbf79793c79d4fc"
+                "hash": "002a3303609d5080ee260fb22161cf8a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Orgs\/CreateOrUpdateCustomPropertiesValuesForRepos\/Request\/ApplicationJson.php",
@@ -29660,7 +29660,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCustomPropertyCreated.php",
-                "hash": "a18638892ee95bd8677275c5d348bbee"
+                "hash": "3c60e4f88ed847b74a7d08f9ea582909"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCustomPropertyDeleted.php",
@@ -29668,7 +29668,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCustomPropertyUpdated.php",
-                "hash": "9e5d3476c6d9746807ac4ef11bbaa533"
+                "hash": "a1d988d40d57cdfc8f77b297882db162"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCustomPropertyValuesUpdated.php",

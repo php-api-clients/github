@@ -65,14 +65,16 @@ final readonly class WebhookCustomPropertyCreated
                     "description": "Short description of the property"
                 },
                 "allowed_values": {
+                    "maxItems": 200,
                     "type": [
                         "array",
                         "null"
                     ],
                     "items": {
+                        "maxLength": 75,
                         "type": "string"
                     },
-                    "description": "Ordered list of allowed values of the property"
+                    "description": "An ordered list of the allowed values of the property.\\nThe property can have up to 200 allowed values."
                 },
                 "values_editable_by": {
                     "enum": [
