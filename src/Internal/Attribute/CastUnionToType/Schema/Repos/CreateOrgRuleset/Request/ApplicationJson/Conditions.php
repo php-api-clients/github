@@ -38,6 +38,13 @@ final class Conditions implements PropertyCaster
                 } catch (Throwable) {
                 }
             }
+
+            if ($signature === 'ref_name') {
+                try {
+                    return $hydrator->hydrateObject(Schema\RepositoryRulesetConditions::class, $value);
+                } catch (Throwable) {
+                }
+            }
         }
 
         return $value;
