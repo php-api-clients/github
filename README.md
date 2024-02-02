@@ -11167,14 +11167,13 @@ You can find more about this operation over at the [API method documentation](ht
 
 ### repos/list-autolinks
 
-List all autolinks of a repository
+Get all autolinks of a repository
 
 Using the `call` method:
 ```php
 $client->call('GET /repos/{owner}/{repo}/autolinks', [
         'owner' => 'generated',
         'repo' => 'generated',
-        'page' => 1,
 ]);
 ```
 
@@ -11182,11 +11181,10 @@ Operations method:
 ```php
 $client->operations()->repos()->listAutolinks(        owner: 'generated',
         repo: 'generated',
-        page: 1,
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/autolinks#list-all-autolinks-of-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/autolinks#get-all-autolinks-of-a-repository).
 
 
 ### repos/create-autolink

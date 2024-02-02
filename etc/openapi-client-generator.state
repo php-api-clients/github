@@ -1,5 +1,5 @@
 {
-    "specHash": "4f074e36604109b0a5cfe5fde6c79805",
+    "specHash": "b29f0a104a78b31f92c3c5617714fccf",
     "generatedFiles": {
         "files": [
             {
@@ -5812,7 +5812,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "59997a1aea2b0ab16e4171a532f5e58e"
+                "hash": "6852287b47526ea8ecbc4c5e5b219d3b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -18932,11 +18932,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Repos\/ListAutolinks.php",
-                "hash": "ad0ec24111fbf29c962bf659b7e89b1f"
+                "hash": "f5e69c2704a4ed6c46da4b2af5573b53"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/ListAutolinks.php",
-                "hash": "782ddd51e8342a3f44f747a1852614e7"
+                "hash": "80c3e3bf144ab43c0dad515987bd20c3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/ListAutolinksTest.php",
@@ -26416,7 +26416,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Repos.php",
-                "hash": "1704a9a6ef71f0ef46c30a6326c23309"
+                "hash": "d56e801a2c75c78221d16cd6ed076f26"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Users.php",
@@ -26908,7 +26908,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Five.php",
-                "hash": "a74e39ca54dba0682475b255dcea9c6d"
+                "hash": "acb483431f4ff98ac6b435b07c62e31c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
@@ -29768,11 +29768,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "deef79abe0f45342aaf83a90f84ecb93"
+                "hash": "c64c4d82011664f00d21b579d72f2f81"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "991da0fe5ffea896a5600ac51aae08c8"
+                "hash": "0c422e44c7d8a1ecf68373194ce448aa"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -30697,6 +30697,10 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRulesetConditionsRepositoryPropertyTarget\/RepositoryProperty.php",
                 "hash": "28b2de7a2ae4daf7f7ec945e8cdd82f9"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRuleParamsRestrictedCommits.php",
+                "hash": "1c51dce3825ad6f437a9be344e0ef0cd"
             }
         ]
     },

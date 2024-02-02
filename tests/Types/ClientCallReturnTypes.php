@@ -484,7 +484,7 @@ assertType('Observable<Schema\\Activity>', $client->call('GET /repos/{owner}/{re
 assertType('Observable<Schema\\SimpleUser>', $client->call('GET /repos/{owner}/{repo}/assignees'));
 assertType('Observable<Schema\\SimpleUser>', $client->call('LIST /repos/{owner}/{repo}/assignees'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/assignees/{assignee}'));
-assertType('Observable<Schema\\Autolink>', $client->call('GET /repos/{owner}/{repo}/autolinks'));
+assertType('iterable<int,Schema\\Autolink>', $client->call('GET /repos/{owner}/{repo}/autolinks'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/autolinks'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/autolinks/{autolink_id}'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/autolinks/{autolink_id}'));

@@ -28,19 +28,16 @@ final class ListAutolinks
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
-    private int $page;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Autolinks $hydrator, string $owner, string $repo, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Autolinks $hydrator, string $owner, string $repo)
     {
         $this->owner = $owner;
         $this->repo  = $repo;
-        $this->page  = $page;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{owner}', '{repo}', '{page}'], [$this->owner, $this->repo, $this->page], '/repos/{owner}/{repo}/autolinks' . '?page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}'], [$this->owner, $this->repo], '/repos/{owner}/{repo}/autolinks'));
     }
 
     /** @return Observable<Schema\Autolink> */

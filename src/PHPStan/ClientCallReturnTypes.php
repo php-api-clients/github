@@ -1912,7 +1912,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/autolinks') {
-            return $this->typeResolver->resolve('Observable<Schema\\Autolink>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\Autolink>');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/autolinks') {
