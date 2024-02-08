@@ -28,7 +28,7 @@ final readonly class Commits
             "items": {
                 "type": "string"
             },
-            "description": "An array of files added in the commit."
+            "description": "An array of files added in the commit. A maximum of 3000 changed files will be reported per commit."
         },
         "author": {
             "title": "Committer",
@@ -104,14 +104,14 @@ final readonly class Commits
             "items": {
                 "type": "string"
             },
-            "description": "An array of files modified by the commit."
+            "description": "An array of files modified by the commit. A maximum of 3000 changed files will be reported per commit."
         },
         "removed": {
             "type": "array",
             "items": {
                 "type": "string"
             },
-            "description": "An array of files removed in the commit."
+            "description": "An array of files removed in the commit. A maximum of 3000 changed files will be reported per commit."
         },
         "timestamp": {
             "type": "string",
@@ -164,13 +164,13 @@ final readonly class Commits
 }';
 
     /**
-     * added: An array of files added in the commit.
+     * added: An array of files added in the commit. A maximum of 3000 changed files will be reported per commit.
      * author: Metaproperties for Git author/committer information.
      * committer: Metaproperties for Git author/committer information.
      * distinct: Whether this commit is distinct from any that have been pushed before.
      * message: The commit message.
-     * modified: An array of files modified by the commit.
-     * removed: An array of files removed in the commit.
+     * modified: An array of files modified by the commit. A maximum of 3000 changed files will be reported per commit.
+     * removed: An array of files removed in the commit. A maximum of 3000 changed files will be reported per commit.
      * timestamp: The ISO 8601 timestamp of the commit.
      * url: URL that points to the commit API resource.
      */

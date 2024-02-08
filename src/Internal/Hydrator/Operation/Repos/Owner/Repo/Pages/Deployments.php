@@ -54,6 +54,17 @@ class Deployments implements ObjectMapper
         $properties    = [];
         $missingFields = [];
         try {
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
+
+            $properties['id'] = $value;
+
+            after_id:
+
             $value = $payload['status_url'] ?? null;
 
             if ($value === null) {
@@ -402,6 +413,9 @@ class Deployments implements ObjectMapper
     {
         assert($object instanceof PageDeployment);
         $result = [];
+
+        $id                            = $object->id;
+        after_id:        $result['id'] = $id;
 
         $statusUrl                                    = $object->statusUrl;
         after_statusUrl:        $result['status_url'] = $statusUrl;

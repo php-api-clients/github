@@ -1,5 +1,5 @@
 {
-    "specHash": "b29f0a104a78b31f92c3c5617714fccf",
+    "specHash": "9c8289fb32417a7c2d7cf660ecfee1f2",
     "generatedFiles": {
         "files": [
             {
@@ -1288,7 +1288,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/PageDeployment.php",
-                "hash": "d54e6902a382405259caf769ef4e8d1f"
+                "hash": "97fd10f20dc9f8db8d59d6a342af39a7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/PagesHealthCheck.php",
@@ -2272,7 +2272,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPush.php",
-                "hash": "3866a882dcf1cd1c80613dd44c609351"
+                "hash": "49e13e0ae88b80418a874004500c587f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRegistryPackagePublished.php",
@@ -4252,7 +4252,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPush\/Commits.php",
-                "hash": "366a56f54e55b1765e29c354d88f8104"
+                "hash": "9f123b35b2797db2c7b734131d0561b3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPush\/HeadCommit.php",
@@ -5812,7 +5812,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "6852287b47526ea8ecbc4c5e5b219d3b"
+                "hash": "d841f5f76ebdaf9fbab073095422a5c2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -18936,7 +18936,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/ListAutolinks.php",
-                "hash": "80c3e3bf144ab43c0dad515987bd20c3"
+                "hash": "1777498a534c84d25b8dc8007a389174"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/ListAutolinksTest.php",
@@ -26416,7 +26416,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Repos.php",
-                "hash": "d56e801a2c75c78221d16cd6ed076f26"
+                "hash": "f9791132970373461e6a1e891b09faf4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Users.php",
@@ -26908,7 +26908,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Five.php",
-                "hash": "acb483431f4ff98ac6b435b07c62e31c"
+                "hash": "a74e39ca54dba0682475b255dcea9c6d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
@@ -29768,11 +29768,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "c64c4d82011664f00d21b579d72f2f81"
+                "hash": "deef79abe0f45342aaf83a90f84ecb93"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "0c422e44c7d8a1ecf68373194ce448aa"
+                "hash": "991da0fe5ffea896a5600ac51aae08c8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -30676,7 +30676,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/Pages\/Deployments.php",
-                "hash": "11f06a15a149dfd1e8e841ba4f5269a9"
+                "hash": "91d5f37e9fbdb00795f23fbfbf97dd5e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/Pages\/Deployments\/PagesDeploymentId.php",

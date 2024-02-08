@@ -62,7 +62,7 @@ final readonly class WebhookPush
                         "items": {
                             "type": "string"
                         },
-                        "description": "An array of files added in the commit."
+                        "description": "An array of files added in the commit. A maximum of 3000 changed files will be reported per commit."
                     },
                     "author": {
                         "title": "Committer",
@@ -138,14 +138,14 @@ final readonly class WebhookPush
                         "items": {
                             "type": "string"
                         },
-                        "description": "An array of files modified by the commit."
+                        "description": "An array of files modified by the commit. A maximum of 3000 changed files will be reported per commit."
                     },
                     "removed": {
                         "type": "array",
                         "items": {
                             "type": "string"
                         },
-                        "description": "An array of files removed in the commit."
+                        "description": "An array of files removed in the commit. A maximum of 3000 changed files will be reported per commit."
                     },
                     "timestamp": {
                         "type": "string",
