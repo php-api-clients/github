@@ -1024,7 +1024,6 @@ final class Repos
         return $this->operators->repos👷GetCustomPropertiesValues()->call($owner, $repo);
     }
 
-    /** @return */
     public function createOrUpdateCustomPropertiesValues(string $owner, string $repo, array $params): WithoutBody
     {
         return $this->operators->repos👷CreateOrUpdateCustomPropertiesValues()->call($owner, $repo, $params);

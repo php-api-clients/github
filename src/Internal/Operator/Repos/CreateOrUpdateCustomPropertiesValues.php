@@ -24,7 +24,6 @@ final readonly class CreateOrUpdateCustomPropertiesValues
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateOrUpdateCustomPropertiesValues($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

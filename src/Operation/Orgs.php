@@ -480,7 +480,6 @@ final class Orgs
         return $this->operators->orgs👷ListCustomPropertiesValuesForReposListing()->call($org, $repositoryQuery, $perPage, $page);
     }
 
-    /** @return */
     public function createOrUpdateCustomPropertiesValuesForRepos(string $org, array $params): WithoutBody
     {
         return $this->operators->orgs👷CreateOrUpdateCustomPropertiesValuesForRepos()->call($org, $params);

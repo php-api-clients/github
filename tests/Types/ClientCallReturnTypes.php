@@ -305,7 +305,7 @@ assertType('', $client->call('PUT /orgs/{org}/properties/schema/{custom_property
 assertType('', $client->call('DELETE /orgs/{org}/properties/schema/{custom_property_name}'));
 assertType('Observable<Schema\\OrgRepoCustomPropertyValues>', $client->call('GET /orgs/{org}/properties/values'));
 assertType('Observable<Schema\\OrgRepoCustomPropertyValues>', $client->call('LIST /orgs/{org}/properties/values'));
-assertType('', $client->call('PATCH /orgs/{org}/properties/values'));
+assertType('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('PATCH /orgs/{org}/properties/values'));
 assertType('Observable<Schema\\SimpleUser>', $client->call('GET /orgs/{org}/public_members'));
 assertType('Observable<Schema\\SimpleUser>', $client->call('LIST /orgs/{org}/public_members'));
 assertType('', $client->call('GET /orgs/{org}/public_members/{username}'));
@@ -770,7 +770,7 @@ assertType('Observable<Schema\\Project>', $client->call('GET /repos/{owner}/{rep
 assertType('Observable<Schema\\Project>', $client->call('LIST /repos/{owner}/{repo}/projects'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/projects'));
 assertType('Observable<Schema\\CustomPropertyValue>', $client->call('GET /repos/{owner}/{repo}/properties/values'));
-assertType('', $client->call('PATCH /repos/{owner}/{repo}/properties/values'));
+assertType('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('PATCH /repos/{owner}/{repo}/properties/values'));
 assertType('Observable<Schema\\PullRequestSimple>|WithoutBody', $client->call('GET /repos/{owner}/{repo}/pulls'));
 assertType('Observable<Schema\\PullRequestSimple>|WithoutBody', $client->call('LIST /repos/{owner}/{repo}/pulls'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/pulls'));

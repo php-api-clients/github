@@ -97,7 +97,6 @@ final class Orgs
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return */
     public function createOrUpdateCustomPropertiesValuesForRepos(array $params): WithoutBody
     {
         $arguments = [];
