@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\Copilot\AddCopilotForBusinessSeatsForUsers\Request;
+namespace ApiClients\Client\GitHub\Schema\Copilot\AddCopilotSeatsForUsers\Request;
 
 use EventSauce\ObjectHydrator\MapFrom;
 

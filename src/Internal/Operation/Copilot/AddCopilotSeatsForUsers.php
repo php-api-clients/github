@@ -20,26 +20,26 @@ use function json_decode;
 use function json_encode;
 use function str_replace;
 
-final class AddCopilotForBusinessSeatsForTeams
+final class AddCopilotSeatsForUsers
 {
-    public const OPERATION_ID    = 'copilot/add-copilot-for-business-seats-for-teams';
-    public const OPERATION_MATCH = 'POST /orgs/{org}/copilot/billing/selected_teams';
+    public const OPERATION_ID    = 'copilot/add-copilot-seats-for-users';
+    public const OPERATION_MATCH = 'POST /orgs/{org}/copilot/billing/selected_users';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
 
-    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Copilot\Billing\SelectedTeams $hydrator, string $org)
+    public function __construct(private readonly SchemaValidator $requestSchemaValidator, private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Copilot\Billing\SelectedUsers $hydrator, string $org)
     {
         $this->org = $org;
     }
 
     public function createRequest(array $data): RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-        return new Request('POST', str_replace(['{org}'], [$this->org], '/orgs/{org}/copilot/billing/selected_teams'), ['Content-Type' => 'application/json'], json_encode($data));
+        return new Request('POST', str_replace(['{org}'], [$this->org], '/orgs/{org}/copilot/billing/selected_users'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created|WithoutBody
+    public function createResponse(ResponseInterface $response): Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -51,9 +51,9 @@ final class AddCopilotForBusinessSeatsForTeams
                      * OK
                      **/
                     case 201:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json::class, $body);
                     /**
                      * Internal Error
                      **/
@@ -93,7 +93,7 @@ final class AddCopilotForBusinessSeatsForTeams
 
         switch ($code) {
             /**
-             * Copilot Business is not enabled for this organization, billing has not been set up for this organization, a public code suggestions policy has not been set for this organization, or the organization's Copilot access setting is set to enable Copilot for all users or is unconfigured.
+             * Copilot Business or Enterprise is not enabled for this organization, billing has not been set up for this organization, a public code suggestions policy has not been set for this organization, or the organization's Copilot access setting is set to enable Copilot for all users or is unconfigured.
              **/
             case 422:
                 return new WithoutBody(422, []);

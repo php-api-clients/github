@@ -182,9 +182,9 @@ final class Operators
     private Internal\Operator\Codespaces\RemoveSelectedRepoFromOrgSecret|null $codespaces👷RemoveSelectedRepoFromOrgSecret                                                           = null;
     private Internal\Operator\Copilot\GetCopilotOrganizationDetails|null $copilot👷GetCopilotOrganizationDetails                                                                     = null;
     private Internal\Operator\Copilot\ListCopilotSeats|null $copilot👷ListCopilotSeats                                                                                               = null;
-    private Internal\Operator\Copilot\AddCopilotForBusinessSeatsForTeams|null $copilot👷AddCopilotForBusinessSeatsForTeams                                                           = null;
+    private Internal\Operator\Copilot\AddCopilotSeatsForTeams|null $copilot👷AddCopilotSeatsForTeams                                                                                 = null;
     private Internal\Operator\Copilot\CancelCopilotSeatAssignmentForTeams|null $copilot👷CancelCopilotSeatAssignmentForTeams                                                         = null;
-    private Internal\Operator\Copilot\AddCopilotForBusinessSeatsForUsers|null $copilot👷AddCopilotForBusinessSeatsForUsers                                                           = null;
+    private Internal\Operator\Copilot\AddCopilotSeatsForUsers|null $copilot👷AddCopilotSeatsForUsers                                                                                 = null;
     private Internal\Operator\Copilot\CancelCopilotSeatAssignmentForUsers|null $copilot👷CancelCopilotSeatAssignmentForUsers                                                         = null;
     private Internal\Operator\Dependabot\ListAlertsForOrg|null $dependabot👷ListAlertsForOrg                                                                                         = null;
     private Internal\Operator\Dependabot\ListOrgSecrets|null $dependabot👷ListOrgSecrets                                                                                             = null;
@@ -2657,13 +2657,13 @@ final class Operators
         return $this->copilot👷ListCopilotSeats;
     }
 
-    public function copilot👷AddCopilotForBusinessSeatsForTeams(): Internal\Operator\Copilot\AddCopilotForBusinessSeatsForTeams
+    public function copilot👷AddCopilotSeatsForTeams(): Internal\Operator\Copilot\AddCopilotSeatsForTeams
     {
-        if ($this->copilot👷AddCopilotForBusinessSeatsForTeams instanceof Internal\Operator\Copilot\AddCopilotForBusinessSeatsForTeams === false) {
-            $this->copilot👷AddCopilotForBusinessSeatsForTeams = new Internal\Operator\Copilot\AddCopilotForBusinessSeatsForTeams($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing🌀SelectedTeams());
+        if ($this->copilot👷AddCopilotSeatsForTeams instanceof Internal\Operator\Copilot\AddCopilotSeatsForTeams === false) {
+            $this->copilot👷AddCopilotSeatsForTeams = new Internal\Operator\Copilot\AddCopilotSeatsForTeams($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing🌀SelectedTeams());
         }
 
-        return $this->copilot👷AddCopilotForBusinessSeatsForTeams;
+        return $this->copilot👷AddCopilotSeatsForTeams;
     }
 
     public function copilot👷CancelCopilotSeatAssignmentForTeams(): Internal\Operator\Copilot\CancelCopilotSeatAssignmentForTeams
@@ -2675,13 +2675,13 @@ final class Operators
         return $this->copilot👷CancelCopilotSeatAssignmentForTeams;
     }
 
-    public function copilot👷AddCopilotForBusinessSeatsForUsers(): Internal\Operator\Copilot\AddCopilotForBusinessSeatsForUsers
+    public function copilot👷AddCopilotSeatsForUsers(): Internal\Operator\Copilot\AddCopilotSeatsForUsers
     {
-        if ($this->copilot👷AddCopilotForBusinessSeatsForUsers instanceof Internal\Operator\Copilot\AddCopilotForBusinessSeatsForUsers === false) {
-            $this->copilot👷AddCopilotForBusinessSeatsForUsers = new Internal\Operator\Copilot\AddCopilotForBusinessSeatsForUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing🌀SelectedUsers());
+        if ($this->copilot👷AddCopilotSeatsForUsers instanceof Internal\Operator\Copilot\AddCopilotSeatsForUsers === false) {
+            $this->copilot👷AddCopilotSeatsForUsers = new Internal\Operator\Copilot\AddCopilotSeatsForUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing🌀SelectedUsers());
         }
 
-        return $this->copilot👷AddCopilotForBusinessSeatsForUsers;
+        return $this->copilot👷AddCopilotSeatsForUsers;
     }
 
     public function copilot👷CancelCopilotSeatAssignmentForUsers(): Internal\Operator\Copilot\CancelCopilotSeatAssignmentForUsers

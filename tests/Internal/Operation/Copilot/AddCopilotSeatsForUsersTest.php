@@ -18,39 +18,39 @@ use function json_decode;
 use function json_encode;
 use function React\Promise\resolve;
 
-/** @covers \ApiClients\Client\GitHub\Internal\Operation\Copilot\AddCopilotForBusinessSeatsForTeams */
-final class AddCopilotForBusinessSeatsForTeamsTest extends AsyncTestCase
+/** @covers \ApiClients\Client\GitHub\Internal\Operation\Copilot\AddCopilotSeatsForUsers */
+final class AddCopilotSeatsForUsersTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
-        $response = new Response(201, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created::SCHEMA_EXAMPLE_DATA, true)));
+        $response = new Response(201, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/orgs/generated/copilot/billing/selected_teams', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/orgs/generated/copilot/billing/selected_users', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\AddCopilotForBusinessSeatsForTeams::OPERATION_MATCH, (static function (array $data): array {
+        $result = $client->call(Internal\Operation\Copilot\AddCopilotSeatsForUsers::OPERATION_MATCH, (static function (array $data): array {
             $data['org'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /** @test */
     public function operations_httpCode_201_requestContentType_application_json_responseContentType_application_json_zero(): void
     {
-        $response = new Response(201, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created::SCHEMA_EXAMPLE_DATA, true)));
+        $response = new Response(201, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/orgs/generated/copilot/billing/selected_teams', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/orgs/generated/copilot/billing/selected_users', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->addCopilotForBusinessSeatsForTeams('generated', json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
+        $result = $client->operations()->copilot()->addCopilotSeatsForUsers('generated', json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
@@ -63,13 +63,13 @@ final class AddCopilotForBusinessSeatsForTeamsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/orgs/generated/copilot/billing/selected_teams', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/orgs/generated/copilot/billing/selected_users', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\AddCopilotForBusinessSeatsForTeams::OPERATION_MATCH, (static function (array $data): array {
+        $result = $client->call(Internal\Operation\Copilot\AddCopilotSeatsForUsers::OPERATION_MATCH, (static function (array $data): array {
             $data['org'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /** @test */
@@ -82,9 +82,9 @@ final class AddCopilotForBusinessSeatsForTeamsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/orgs/generated/copilot/billing/selected_teams', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/orgs/generated/copilot/billing/selected_users', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->addCopilotForBusinessSeatsForTeams('generated', json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
+        $result = $client->operations()->copilot()->addCopilotSeatsForUsers('generated', json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
@@ -97,13 +97,13 @@ final class AddCopilotForBusinessSeatsForTeamsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/orgs/generated/copilot/billing/selected_teams', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/orgs/generated/copilot/billing/selected_users', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\AddCopilotForBusinessSeatsForTeams::OPERATION_MATCH, (static function (array $data): array {
+        $result = $client->call(Internal\Operation\Copilot\AddCopilotSeatsForUsers::OPERATION_MATCH, (static function (array $data): array {
             $data['org'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /** @test */
@@ -116,9 +116,9 @@ final class AddCopilotForBusinessSeatsForTeamsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/orgs/generated/copilot/billing/selected_teams', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/orgs/generated/copilot/billing/selected_users', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->addCopilotForBusinessSeatsForTeams('generated', json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
+        $result = $client->operations()->copilot()->addCopilotSeatsForUsers('generated', json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
@@ -131,13 +131,13 @@ final class AddCopilotForBusinessSeatsForTeamsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/orgs/generated/copilot/billing/selected_teams', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/orgs/generated/copilot/billing/selected_users', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\AddCopilotForBusinessSeatsForTeams::OPERATION_MATCH, (static function (array $data): array {
+        $result = $client->call(Internal\Operation\Copilot\AddCopilotSeatsForUsers::OPERATION_MATCH, (static function (array $data): array {
             $data['org'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /** @test */
@@ -150,9 +150,9 @@ final class AddCopilotForBusinessSeatsForTeamsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/orgs/generated/copilot/billing/selected_teams', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/orgs/generated/copilot/billing/selected_users', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->addCopilotForBusinessSeatsForTeams('generated', json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
+        $result = $client->operations()->copilot()->addCopilotSeatsForUsers('generated', json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
@@ -165,13 +165,13 @@ final class AddCopilotForBusinessSeatsForTeamsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/orgs/generated/copilot/billing/selected_teams', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/orgs/generated/copilot/billing/selected_users', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\AddCopilotForBusinessSeatsForTeams::OPERATION_MATCH, (static function (array $data): array {
+        $result = $client->call(Internal\Operation\Copilot\AddCopilotSeatsForUsers::OPERATION_MATCH, (static function (array $data): array {
             $data['org'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /** @test */
@@ -184,9 +184,9 @@ final class AddCopilotForBusinessSeatsForTeamsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/orgs/generated/copilot/billing/selected_teams', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/orgs/generated/copilot/billing/selected_users', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->addCopilotForBusinessSeatsForTeams('generated', json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
+        $result = $client->operations()->copilot()->addCopilotSeatsForUsers('generated', json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
 
     /** @test */
@@ -198,13 +198,13 @@ final class AddCopilotForBusinessSeatsForTeamsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/orgs/generated/copilot/billing/selected_teams', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/orgs/generated/copilot/billing/selected_users', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\AddCopilotForBusinessSeatsForTeams::OPERATION_MATCH, (static function (array $data): array {
+        $result = $client->call(Internal\Operation\Copilot\AddCopilotSeatsForUsers::OPERATION_MATCH, (static function (array $data): array {
             $data['org'] = 'generated';
 
             return $data;
-        })(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+        })(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
     }
 
     /** @test */
@@ -216,9 +216,9 @@ final class AddCopilotForBusinessSeatsForTeamsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('POST', '/orgs/generated/copilot/billing/selected_teams', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('POST', '/orgs/generated/copilot/billing/selected_users', Argument::type('array'), json_encode(json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->addCopilotForBusinessSeatsForTeams('generated', json_decode(Schema\Copilot\AddCopilotForBusinessSeatsForTeams\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
+        $result = $client->operations()->copilot()->addCopilotSeatsForUsers('generated', json_decode(Schema\Copilot\AddCopilotSeatsForUsers\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
         self::assertArrayHasKey('code', $result);
         self::assertSame(422, $result['code']);
     }

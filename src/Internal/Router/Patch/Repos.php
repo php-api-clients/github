@@ -146,6 +146,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['invitation_id'], $params);
     }
 
+    /** @return */
     public function createOrUpdateCustomPropertiesValues(array $params): WithoutBody
     {
         $arguments = [];

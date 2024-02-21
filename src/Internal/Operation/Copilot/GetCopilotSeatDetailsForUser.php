@@ -93,7 +93,7 @@ final class GetCopilotSeatDetailsForUser
 
         switch ($code) {
             /**
-             * Copilot Business is not enabled for this organization or the user has a pending organization invitation.
+             * Copilot Business or Enterprise is not enabled for this organization or the user has a pending organization invitation.
              **/
             case 422:
                 return new WithoutBody(422, []);

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Orgs\Org\Copilot\Billing;
 
 use ApiClients\Client\GitHub\Schema\BasicError;
-use ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created;
+use ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForTeams\Response\ApplicationJson\Created;
 use ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForTeams\Response\ApplicationJson\Ok;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -40,14 +40,14 @@ class SelectedTeams implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match ($className) {
-            'ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️AddCopilotForBusinessSeatsForTeams⚡️Response⚡️ApplicationJson⚡️Created($payload),
+            'ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForTeams\Response\ApplicationJson\Created' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️AddCopilotSeatsForTeams⚡️Response⚡️ApplicationJson⚡️Created($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
                 'ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForTeams\Response\ApplicationJson\Ok' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️CancelCopilotSeatAssignmentForTeams⚡️Response⚡️ApplicationJson⚡️Ok($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️AddCopilotForBusinessSeatsForTeams⚡️Response⚡️ApplicationJson⚡️Created(array $payload): Created
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️AddCopilotSeatsForTeams⚡️Response⚡️ApplicationJson⚡️Created(array $payload): Created
     {
         $properties    = [];
         $missingFields = [];
@@ -63,7 +63,7 @@ class SelectedTeams implements ObjectMapper
 
             after_seatsCreated:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForTeams\Response\ApplicationJson\Created', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
@@ -73,7 +73,7 @@ class SelectedTeams implements ObjectMapper
         try {
             return new Created(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForTeams\Response\ApplicationJson\Created', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -201,7 +201,7 @@ class SelectedTeams implements ObjectMapper
                 'DateTime' => $this->serializeValueDateTime($object),
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️AddCopilotForBusinessSeatsForTeams⚡️Response⚡️ApplicationJson⚡️Created($object),
+                'ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForTeams\Response\ApplicationJson\Created' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️AddCopilotSeatsForTeams⚡️Response⚡️ApplicationJson⚡️Created($object),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 'ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForTeams\Response\ApplicationJson\Ok' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️CancelCopilotSeatAssignmentForTeams⚡️Response⚡️ApplicationJson⚡️Ok($object),
                 default => throw new LogicException('No serialization defined for $className'),
@@ -266,7 +266,7 @@ class SelectedTeams implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️AddCopilotForBusinessSeatsForTeams⚡️Response⚡️ApplicationJson⚡️Created(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Copilot⚡️AddCopilotSeatsForTeams⚡️Response⚡️ApplicationJson⚡️Created(mixed $object): mixed
     {
         assert($object instanceof Created);
         $result = [];

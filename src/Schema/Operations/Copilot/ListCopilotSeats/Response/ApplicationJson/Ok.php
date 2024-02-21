@@ -13,7 +13,7 @@ final readonly class Ok
     "properties": {
         "total_seats": {
             "type": "integer",
-            "description": "Total number of Copilot For Business seats for the organization currently being billed."
+            "description": "Total number of Copilot seats for the organization currently being billed."
         },
         "seats": {
             "type": "array",
@@ -865,7 +865,7 @@ final readonly class Ok
 }';
 
     /**
-     * totalSeats: Total number of Copilot For Business seats for the organization currently being billed.
+     * totalSeats: Total number of Copilot seats for the organization currently being billed.
      */
     public function __construct(#[MapFrom('total_seats')]
     public int|null $totalSeats, public array|null $seats,)

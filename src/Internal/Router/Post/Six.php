@@ -33,7 +33,8 @@ final class Six
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): Json|Created|AuthenticationToken|WithoutBody|\ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotForBusinessSeatsForTeams\Response\ApplicationJson\Created|\ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotForBusinessSeatsForUsers\Response\ApplicationJson\Created\Application\Json|TeamDiscussion|\ApiClients\Client\GitHub\Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json|EmptyObject|CodeScanningSarifsReceipt|\ApiClients\Client\GitHub\Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created|ShortBlob|GitCommit|GitRef|GitTag|GitTree|PageBuildStatus|PageDeployment|ReleaseNotesContent|RepositoryAdvisory|Status|TagProtection|TeamDiscussionComment|Reaction
+    /** @return |Schema\Operations\Copilot\AddCopilotSeatsForTeams\Response\ApplicationJson\Created|\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody|Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json */
+    public function call(string $call, array $params, array $pathChunks): Json|Created|AuthenticationToken|WithoutBody|\ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForTeams\Response\ApplicationJson\Created|\ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json|TeamDiscussion|\ApiClients\Client\GitHub\Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json|EmptyObject|CodeScanningSarifsReceipt|\ApiClients\Client\GitHub\Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created|ShortBlob|GitCommit|GitRef|GitTag|GitTree|PageBuildStatus|PageDeployment|ReleaseNotesContent|RepositoryAdvisory|Status|TagProtection|TeamDiscussionComment|Reaction
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {
@@ -78,11 +79,11 @@ final class Six
                         if ($pathChunks[4] === 'billing') {
                             if ($pathChunks[5] === 'selected_teams') {
                                 if ($call === 'POST /orgs/{org}/copilot/billing/selected_teams') {
-                                    return $this->routers->internal🔀Router🔀Post🔀Copilot()->addCopilotForBusinessSeatsForTeams($params);
+                                    return $this->routers->internal🔀Router🔀Post🔀Copilot()->addCopilotSeatsForTeams($params);
                                 }
                             } elseif ($pathChunks[5] === 'selected_users') {
                                 if ($call === 'POST /orgs/{org}/copilot/billing/selected_users') {
-                                    return $this->routers->internal🔀Router🔀Post🔀Copilot()->addCopilotForBusinessSeatsForUsers($params);
+                                    return $this->routers->internal🔀Router🔀Post🔀Copilot()->addCopilotSeatsForUsers($params);
                                 }
                             }
                         }

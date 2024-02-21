@@ -93,7 +93,7 @@ final class CancelCopilotSeatAssignmentForUsers
 
         switch ($code) {
             /**
-             * Copilot Business is not enabled for this organization, billing has not been set up for this organization, a public code suggestions policy has not been set for this organization, the seat management setting is set to enable Copilot for all users or is unconfigured, or a user's seat cannot be cancelled because it was assigned to them via a team.
+             * Copilot Business or Enterprise is not enabled for this organization, billing has not been set up for this organization, a public code suggestions policy has not been set for this organization, the seat management setting is set to enable Copilot for all users or is unconfigured, or a user's seat cannot be cancelled because it was assigned to them via a team.
              **/
             case 422:
                 return new WithoutBody(422, []);
