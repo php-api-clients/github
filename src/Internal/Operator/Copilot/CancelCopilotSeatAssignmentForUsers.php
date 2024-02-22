@@ -25,6 +25,7 @@ final readonly class CancelCopilotSeatAssignmentForUsers
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): Json|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Copilot\CancelCopilotSeatAssignmentForUsers($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

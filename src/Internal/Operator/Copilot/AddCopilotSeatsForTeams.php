@@ -25,6 +25,7 @@ final readonly class AddCopilotSeatsForTeams
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): Created|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Copilot\AddCopilotSeatsForTeams($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

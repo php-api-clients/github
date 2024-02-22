@@ -85,16 +85,38 @@ class Billing implements ObjectMapper
 
             after_publicCodeSuggestions:
 
-            $value = $payload['copilot_chat'] ?? null;
+            $value = $payload['ide_chat'] ?? null;
 
             if ($value === null) {
-                $properties['copilotChat'] = null;
-                goto after_copilotChat;
+                $properties['ideChat'] = null;
+                goto after_ideChat;
             }
 
-            $properties['copilotChat'] = $value;
+            $properties['ideChat'] = $value;
 
-            after_copilotChat:
+            after_ideChat:
+
+            $value = $payload['platform_chat'] ?? null;
+
+            if ($value === null) {
+                $properties['platformChat'] = null;
+                goto after_platformChat;
+            }
+
+            $properties['platformChat'] = $value;
+
+            after_platformChat:
+
+            $value = $payload['cli'] ?? null;
+
+            if ($value === null) {
+                $properties['cli'] = null;
+                goto after_cli;
+            }
+
+            $properties['cli'] = $value;
+
+            after_cli:
 
             $value = $payload['seat_management_setting'] ?? null;
 
@@ -377,13 +399,29 @@ class Billing implements ObjectMapper
         $publicCodeSuggestions                                                 = $object->publicCodeSuggestions;
         after_publicCodeSuggestions:        $result['public_code_suggestions'] = $publicCodeSuggestions;
 
-        $copilotChat = $object->copilotChat;
+        $ideChat = $object->ideChat;
 
-        if ($copilotChat === null) {
-            goto after_copilotChat;
+        if ($ideChat === null) {
+            goto after_ideChat;
         }
 
-        after_copilotChat:        $result['copilot_chat'] = $copilotChat;
+        after_ideChat:        $result['ide_chat'] = $ideChat;
+
+        $platformChat = $object->platformChat;
+
+        if ($platformChat === null) {
+            goto after_platformChat;
+        }
+
+        after_platformChat:        $result['platform_chat'] = $platformChat;
+
+        $cli = $object->cli;
+
+        if ($cli === null) {
+            goto after_cli;
+        }
+
+        after_cli:        $result['cli'] = $cli;
 
         $seatManagementSetting                                                 = $object->seatManagementSetting;
         after_seatManagementSetting:        $result['seat_management_setting'] = $seatManagementSetting;
