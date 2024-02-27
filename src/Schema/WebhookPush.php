@@ -162,7 +162,7 @@ final readonly class WebhookPush
                     }
                 }
             },
-            "description": "An array of commit objects describing the pushed commits. (Pushed commits are all commits that are included in the `compare` between the `before` commit and the `after` commit.) The array includes a maximum of 20 commits. If necessary, you can use the [Commits API](https:\\/\\/docs.github.com\\/rest\\/commits) to fetch additional commits. This limit is applied to timeline events only and isn\'t applied to webhook deliveries."
+            "description": "An array of commit objects describing the pushed commits. (Pushed commits are all commits that are included in the `compare` between the `before` commit and the `after` commit.) The array includes a maximum of 2048 commits. If necessary, you can use the [Commits API](https:\\/\\/docs.github.com\\/rest\\/commits) to fetch additional commits."
         },
         "compare": {
             "type": "string",
@@ -1640,7 +1640,7 @@ final readonly class WebhookPush
     /**
      * after: The SHA of the most recent commit on `ref` after the push.
      * before: The SHA of the most recent commit on `ref` before the push.
-     * commits: An array of commit objects describing the pushed commits. (Pushed commits are all commits that are included in the `compare` between the `before` commit and the `after` commit.) The array includes a maximum of 20 commits. If necessary, you can use the [Commits API](https://docs.github.com/rest/commits) to fetch additional commits. This limit is applied to timeline events only and isn't applied to webhook deliveries.
+     * commits: An array of commit objects describing the pushed commits. (Pushed commits are all commits that are included in the `compare` between the `before` commit and the `after` commit.) The array includes a maximum of 2048 commits. If necessary, you can use the [Commits API](https://docs.github.com/rest/commits) to fetch additional commits.
      * compare: URL that shows the changes in this `ref` update, from the `before` commit to the `after` commit. For a newly created `ref` that is directly based on the default branch, this is the comparison between the head of the default branch and the `after` commit. Otherwise, this shows all commits until the `after` commit.
      * created: Whether this push created the `ref`.
      * deleted: Whether this push deleted the `ref`.

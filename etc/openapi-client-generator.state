@@ -1,5 +1,5 @@
 {
-    "specHash": "b854ef7598e090ed26841c01372b8bfc",
+    "specHash": "2bcf4a7ffd1c08c4653f4fa12fbb7e3f",
     "generatedFiles": {
         "files": [
             {
@@ -2272,7 +2272,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPush.php",
-                "hash": "49e13e0ae88b80418a874004500c587f"
+                "hash": "a92e954d794bf3c6b382a2657adb7037"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRegistryPackagePublished.php",
@@ -13532,7 +13532,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Copilot.php",
-                "hash": "e0cc356b1c65d6fecc88aa7e99443b5f"
+                "hash": "290f99dbad083ed35659736cb1c3bf8b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CheckAutomatedSecurityFixes.php",
