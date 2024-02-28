@@ -34,9 +34,8 @@ final class Licenses
         return $this->operators->licenses👷Get()->call($license);
     }
 
-    /** @return */
-    public function getForRepo(string $owner, string $repo): LicenseContent
+    public function getForRepo(string $owner, string $repo, string $ref): LicenseContent
     {
-        return $this->operators->licenses👷GetForRepo()->call($owner, $repo);
+        return $this->operators->licenses👷GetForRepo()->call($owner, $repo, $ref);
     }
 }

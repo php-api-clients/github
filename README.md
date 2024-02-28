@@ -17676,6 +17676,7 @@ Using the `call` method:
 $client->call('GET /repos/{owner}/{repo}/license', [
         'owner' => 'generated',
         'repo' => 'generated',
+        'ref' => 'generated',
 ]);
 ```
 
@@ -17683,6 +17684,7 @@ Operations method:
 ```php
 $client->operations()->licenses()->getForRepo(        owner: 'generated',
         repo: 'generated',
+        ref: 'generated',
 );
 ```
 

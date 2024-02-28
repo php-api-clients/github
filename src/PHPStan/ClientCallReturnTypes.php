@@ -2924,7 +2924,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/license') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\LicenseContent');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/merge-upstream') {

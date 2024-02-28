@@ -1,5 +1,5 @@
 {
-    "specHash": "2bcf4a7ffd1c08c4653f4fa12fbb7e3f",
+    "specHash": "b56f269fa7811532d191d959eab59a6b",
     "generatedFiles": {
         "files": [
             {
@@ -5756,7 +5756,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Licenses.php",
-                "hash": "7c5326d1d574b9efdd3619ac4e0c3670"
+                "hash": "cd7dd0390e80643ada325b5e346a44b0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Markdown.php",
@@ -21828,15 +21828,15 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Licenses\/GetForRepo.php",
-                "hash": "d39d1d47862837d138b2e749e295a068"
+                "hash": "77c035595b91d5878035f51019cfd6b0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Licenses\/GetForRepo.php",
-                "hash": "49069ec06b26280f205df1c6bc1b2b14"
+                "hash": "b766a41e249ffdf739d434f8edff0c29"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Licenses\/GetForRepoTest.php",
-                "hash": "00b555c093f752b22eaa6d8e0c4e6082"
+                "hash": "07daedeba23c59ee46b7300d3b337c12"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Repos\/MergeUpstream.php",
@@ -26348,7 +26348,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Licenses.php",
-                "hash": "e40d398894a18c495c8bf4436613e8d9"
+                "hash": "d016a7acdd3c9e968869ebc52993241e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Orgs.php",
@@ -26852,7 +26852,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Five.php",
-                "hash": "a74e39ca54dba0682475b255dcea9c6d"
+                "hash": "b910424e796b3b1a789a1a8d2fd1c0a7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
@@ -29708,11 +29708,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "deef79abe0f45342aaf83a90f84ecb93"
+                "hash": "9fe2d0166d211fbd94b58c43385b0465"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "991da0fe5ffea896a5600ac51aae08c8"
+                "hash": "f4ab17a66cac87bfd47ccd52ba95d301"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",

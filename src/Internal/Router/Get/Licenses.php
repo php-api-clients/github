@@ -64,7 +64,6 @@ final class Licenses
         return $operator->call($arguments['license']);
     }
 
-    /** @return */
     public function getForRepo(array $params): LicenseContent
     {
         $arguments = [];
@@ -80,8 +79,14 @@ final class Licenses
 
         $arguments['repo'] = $params['repo'];
         unset($params['repo']);
+        if (array_key_exists('ref', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ref');
+        }
+
+        $arguments['ref'] = $params['ref'];
+        unset($params['ref']);
         $operator = new Internal\Operator\Licenses\GetForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀License());
 
-        return $operator->call($arguments['owner'], $arguments['repo']);
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref']);
     }
 }

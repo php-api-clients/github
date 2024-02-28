@@ -24,10 +24,9 @@ final readonly class GetForRepo
     {
     }
 
-    /** @return */
-    public function call(string $owner, string $repo): LicenseContent
+    public function call(string $owner, string $repo, string $ref): LicenseContent
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Licenses\GetForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Licenses\GetForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): LicenseContent {
             return $operation->createResponse($response);

@@ -737,7 +737,7 @@ assertType('', $client->call('GET /repos/{owner}/{repo}/labels/{name}'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/labels/{name}'));
 assertType('', $client->call('PATCH /repos/{owner}/{repo}/labels/{name}'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/languages'));
-assertType('', $client->call('GET /repos/{owner}/{repo}/license'));
+assertType('Schema\\LicenseContent', $client->call('GET /repos/{owner}/{repo}/license'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/merge-upstream'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/merges'));
 assertType('Observable<Schema\\Milestone>', $client->call('GET /repos/{owner}/{repo}/milestones'));
