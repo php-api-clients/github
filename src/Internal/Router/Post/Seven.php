@@ -34,7 +34,7 @@ final class Seven
     {
     }
 
-    /** @return |Observable<Schema\Label>|Schema\BasicError */
+    /** @return |Schema\EmptyObject|Observable<Schema\Label>|Schema\BasicError */
     public function call(string $call, array $params, array $pathChunks): Ok|WithoutBody|Created|AuthenticationToken|BranchWithProtection|EmptyObject|Reaction|CommitComment|DeploymentStatus|DeploymentBranchPolicy|DeploymentProtectionRule|Issue|IssueComment|iterable|BasicError|Codespace|PullRequestReviewComment|PullRequestSimple|PullRequestReview|ReleaseAsset|Json|FullRepository
     {
         if ($pathChunks[0] === '') {
@@ -138,6 +138,10 @@ final class Seven
                                 } elseif ($pathChunks[6] === 'deployment_protection_rules') {
                                     if ($call === 'POST /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules') {
                                         return $this->routers->internal🔀Router🔀Post🔀Repos()->createDeploymentProtectionRule($params);
+                                    }
+                                } elseif ($pathChunks[6] === 'variables') {
+                                    if ($call === 'POST /repos/{owner}/{repo}/environments/{environment_name}/variables') {
+                                        return $this->routers->internal🔀Router🔀Post🔀Actions()->createEnvironmentVariable($params);
                                     }
                                 }
                             }

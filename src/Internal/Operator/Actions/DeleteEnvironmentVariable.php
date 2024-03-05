@@ -16,16 +16,15 @@ use function WyriHaximus\React\awaitObservable;
 final readonly class DeleteEnvironmentVariable
 {
     public const OPERATION_ID    = 'actions/delete-environment-variable';
-    public const OPERATION_MATCH = 'DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}';
+    public const OPERATION_MATCH = 'DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication)
     {
     }
 
-    /** @return */
-    public function call(int $repositoryId, string $name, string $environmentName): WithoutBody
+    public function call(string $owner, string $repo, string $name, string $environmentName): WithoutBody
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DeleteEnvironmentVariable($repositoryId, $name, $environmentName);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DeleteEnvironmentVariable($owner, $repo, $name, $environmentName);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): WithoutBody {
             return $operation->createResponse($response);

@@ -18,16 +18,15 @@ use function WyriHaximus\React\awaitObservable;
 final readonly class GetEnvironmentSecret
 {
     public const OPERATION_ID    = 'actions/get-environment-secret';
-    public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
+    public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}';
 
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\SecretName $hydrator)
+    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\Secrets\SecretName $hydrator)
     {
     }
 
-    /** @return */
-    public function call(int $repositoryId, string $environmentName, string $secretName): ActionsSecret
+    public function call(string $owner, string $repo, string $environmentName, string $secretName): ActionsSecret
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetEnvironmentSecret($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $secretName);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetEnvironmentSecret($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName, $secretName);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsSecret {
             return $operation->createResponse($response);

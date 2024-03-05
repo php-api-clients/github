@@ -18,7 +18,7 @@ final class Eight
     {
     }
 
-    /** @return |Observable<Schema\Label>|Schema\BasicError */
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody|Observable<Schema\Label>|Schema\BasicError */
     public function call(string $call, array $params, array $pathChunks): Ok|WithoutBody|Json|iterable|BasicError|PullRequestReview
     {
         if ($pathChunks[0] === '') {
@@ -187,6 +187,18 @@ final class Eight
                                     if ($pathChunks[7] === '{protection_rule_id}') {
                                         if ($call === 'DELETE /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}') {
                                             return $this->routers->internal🔀Router🔀Delete🔀Repos()->disableDeploymentProtectionRule($params);
+                                        }
+                                    }
+                                } elseif ($pathChunks[6] === 'secrets') {
+                                    if ($pathChunks[7] === '{secret_name}') {
+                                        if ($call === 'DELETE /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}') {
+                                            return $this->routers->internal🔀Router🔀Delete🔀Actions()->deleteEnvironmentSecret($params);
+                                        }
+                                    }
+                                } elseif ($pathChunks[6] === 'variables') {
+                                    if ($pathChunks[7] === '{name}') {
+                                        if ($call === 'DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}') {
+                                            return $this->routers->internal🔀Router🔀Delete🔀Actions()->deleteEnvironmentVariable($params);
                                         }
                                     }
                                 }

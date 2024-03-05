@@ -18,16 +18,15 @@ use function WyriHaximus\React\awaitObservable;
 final readonly class ListEnvironmentSecrets
 {
     public const OPERATION_ID    = 'actions/list-environment-secrets';
-    public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/secrets';
+    public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/environments/{environment_name}/secrets';
 
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets $hydrator)
+    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\Secrets $hydrator)
     {
     }
 
-    /** @return */
-    public function call(int $repositoryId, string $environmentName, int $perPage = 30, int $page = 1): Json
+    public function call(string $owner, string $repo, string $environmentName, int $perPage = 30, int $page = 1): Json
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListEnvironmentSecrets($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $perPage, $page);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListEnvironmentSecrets($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName, $perPage, $page);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json {
             return $operation->createResponse($response);

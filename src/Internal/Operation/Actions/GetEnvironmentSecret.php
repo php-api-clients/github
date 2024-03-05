@@ -20,24 +20,27 @@ use function str_replace;
 final class GetEnvironmentSecret
 {
     public const OPERATION_ID    = 'actions/get-environment-secret';
-    public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
-    /**The unique identifier of the repository. **/
-    private int $repositoryId;
+    public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}';
+    /**The account owner of the repository. The name is not case sensitive. **/
+    private string $owner;
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
+    private string $repo;
     /**The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`. **/
     private string $environmentName;
     /**The name of the secret. **/
     private string $secretName;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\SecretName $hydrator, int $repositoryId, string $environmentName, string $secretName)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\Secrets\SecretName $hydrator, string $owner, string $repo, string $environmentName, string $secretName)
     {
-        $this->repositoryId    = $repositoryId;
+        $this->owner           = $owner;
+        $this->repo            = $repo;
         $this->environmentName = $environmentName;
         $this->secretName      = $secretName;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{repository_id}', '{environment_name}', '{secret_name}'], [$this->repositoryId, $this->environmentName, $this->secretName], '/repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{environment_name}', '{secret_name}'], [$this->owner, $this->repo, $this->environmentName, $this->secretName], '/repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\ActionsSecret

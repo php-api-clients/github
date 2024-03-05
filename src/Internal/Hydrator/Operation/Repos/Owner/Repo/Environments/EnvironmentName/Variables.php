@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets;
+namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName;
 
-use ApiClients\Client\GitHub\Schema\ActionsPublicKey;
+use ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentVariables\Response\ApplicationJson\Ok\Application\Json;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems;
@@ -20,7 +20,7 @@ use function assert;
 use function count;
 use function is_a;
 
-class PublicKey implements ObjectMapper
+class Variables implements ObjectMapper
 {
     private array $hydrationStack = [];
 
@@ -38,93 +38,49 @@ class PublicKey implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match ($className) {
-            'ApiClients\Client\GitHub\Schema\ActionsPublicKey' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsPublicKey($payload),
+            'ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentVariables\Response\ApplicationJson\Ok\Application\Json' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Actions⚡️ListEnvironmentVariables⚡️Response⚡️ApplicationJson⚡️Ok⚡️Application⚡️Json($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsPublicKey(array $payload): ActionsPublicKey
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Actions⚡️ListEnvironmentVariables⚡️Response⚡️ApplicationJson⚡️Ok⚡️Application⚡️Json(array $payload): Json
     {
         $properties    = [];
         $missingFields = [];
         try {
-            $value = $payload['key_id'] ?? null;
+            $value = $payload['total_count'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'key_id';
-                goto after_keyId;
+                $missingFields[] = 'total_count';
+                goto after_totalCount;
             }
 
-            $properties['keyId'] = $value;
+            $properties['totalCount'] = $value;
 
-            after_keyId:
+            after_totalCount:
 
-            $value = $payload['key'] ?? null;
+            $value = $payload['variables'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'key';
-                goto after_key;
+                $missingFields[] = 'variables';
+                goto after_variables;
             }
 
-            $properties['key'] = $value;
+            $properties['variables'] = $value;
 
-            after_key:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $properties['id'] = null;
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $properties['url'] = null;
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-
-            $value = $payload['title'] ?? null;
-
-            if ($value === null) {
-                $properties['title'] = null;
-                goto after_title;
-            }
-
-            $properties['title'] = $value;
-
-            after_title:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $properties['createdAt'] = null;
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
+            after_variables:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsPublicKey', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentVariables\Response\ApplicationJson\Ok\Application\Json', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(ActionsPublicKey::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(Json::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new ActionsPublicKey(...$properties);
+            return new Json(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsPublicKey', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentVariables\Response\ApplicationJson\Ok\Application\Json', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -159,7 +115,7 @@ class PublicKey implements ObjectMapper
                 'DateTime' => $this->serializeValueDateTime($object),
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\ActionsPublicKey' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsPublicKey($object),
+                'ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentVariables\Response\ApplicationJson\Ok\Application\Json' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Actions⚡️ListEnvironmentVariables⚡️Response⚡️ApplicationJson⚡️Ok⚡️Application⚡️Json($object),
                 default => throw new LogicException('No serialization defined for $className'),
             };
         } catch (Throwable $exception) {
@@ -222,48 +178,23 @@ class PublicKey implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ActionsPublicKey(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Actions⚡️ListEnvironmentVariables⚡️Response⚡️ApplicationJson⚡️Ok⚡️Application⚡️Json(mixed $object): mixed
     {
-        assert($object instanceof ActionsPublicKey);
+        assert($object instanceof Json);
         $result = [];
 
-        $keyId                                = $object->keyId;
-        after_keyId:        $result['key_id'] = $keyId;
+        $totalCount                                     = $object->totalCount;
+        after_totalCount:        $result['total_count'] = $totalCount;
 
-        $key                             = $object->key;
-        after_key:        $result['key'] = $key;
+        $variables = $object->variables;
+        static $variablesSerializer0;
 
-        $id = $object->id;
-
-        if ($id === null) {
-            goto after_id;
+        if ($variablesSerializer0 === null) {
+            $variablesSerializer0 = new SerializeArrayItems(...[]);
         }
 
-        after_id:        $result['id'] = $id;
-
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-
-        after_url:        $result['url'] = $url;
-
-        $title = $object->title;
-
-        if ($title === null) {
-            goto after_title;
-        }
-
-        after_title:        $result['title'] = $title;
-
-        $createdAt = $object->createdAt;
-
-        if ($createdAt === null) {
-            goto after_createdAt;
-        }
-
-        after_createdAt:        $result['created_at'] = $createdAt;
+        $variables                                   = $variablesSerializer0->serialize($variables, $this);
+        after_variables:        $result['variables'] = $variables;
 
         return $result;
     }

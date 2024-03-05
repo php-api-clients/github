@@ -211,33 +211,6 @@ final class Actions
     }
 
     /** @return */
-    public function createOrUpdateEnvironmentSecret(array $params): EmptyObject|WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('repository_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository_id');
-        }
-
-        $arguments['repository_id'] = $params['repository_id'];
-        unset($params['repository_id']);
-        if (array_key_exists('environment_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: environment_name');
-        }
-
-        $arguments['environment_name'] = $params['environment_name'];
-        unset($params['environment_name']);
-        if (array_key_exists('secret_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: secret_name');
-        }
-
-        $arguments['secret_name'] = $params['secret_name'];
-        unset($params['secret_name']);
-        $operator = new Internal\Operator\Actions\CreateOrUpdateEnvironmentSecret($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repositories🌀RepositoryId🌀Environments🌀EnvironmentName🌀Secrets🌀SecretName());
-
-        return $operator->call($arguments['repository_id'], $arguments['environment_name'], $arguments['secret_name'], $params);
-    }
-
-    /** @return */
     public function setSelectedRepositoriesEnabledGithubActionsOrganization(array $params): WithoutBody
     {
         $arguments = [];
@@ -478,5 +451,37 @@ final class Actions
         $operator = new Internal\Operator\Actions\EnableWorkflow($this->browser, $this->authentication);
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['workflow_id']);
+    }
+
+    public function createOrUpdateEnvironmentSecret(array $params): EmptyObject|WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('environment_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: environment_name');
+        }
+
+        $arguments['environment_name'] = $params['environment_name'];
+        unset($params['environment_name']);
+        if (array_key_exists('secret_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: secret_name');
+        }
+
+        $arguments['secret_name'] = $params['secret_name'];
+        unset($params['secret_name']);
+        $operator = new Internal\Operator\Actions\CreateOrUpdateEnvironmentSecret($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀Secrets🌀SecretName());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['environment_name'], $arguments['secret_name'], $params);
     }
 }

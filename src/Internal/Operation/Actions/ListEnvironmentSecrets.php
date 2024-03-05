@@ -20,9 +20,11 @@ use function str_replace;
 final class ListEnvironmentSecrets
 {
     public const OPERATION_ID    = 'actions/list-environment-secrets';
-    public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/secrets';
-    /**The unique identifier of the repository. **/
-    private int $repositoryId;
+    public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/environments/{environment_name}/secrets';
+    /**The account owner of the repository. The name is not case sensitive. **/
+    private string $owner;
+    /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
+    private string $repo;
     /**The name of the environment. The name must be URL encoded. For example, any slashes in the name must be replaced with `%2F`. **/
     private string $environmentName;
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
@@ -30,9 +32,10 @@ final class ListEnvironmentSecrets
     /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets $hydrator, int $repositoryId, string $environmentName, int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\Secrets $hydrator, string $owner, string $repo, string $environmentName, int $perPage = 30, int $page = 1)
     {
-        $this->repositoryId    = $repositoryId;
+        $this->owner           = $owner;
+        $this->repo            = $repo;
         $this->environmentName = $environmentName;
         $this->perPage         = $perPage;
         $this->page            = $page;
@@ -40,7 +43,7 @@ final class ListEnvironmentSecrets
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{repository_id}', '{environment_name}', '{per_page}', '{page}'], [$this->repositoryId, $this->environmentName, $this->perPage, $this->page], '/repositories/{repository_id}/environments/{environment_name}/secrets' . '?per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{environment_name}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->environmentName, $this->perPage, $this->page], '/repos/{owner}/{repo}/environments/{environment_name}/secrets' . '?per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Actions\ListEnvironmentSecrets\Response\ApplicationJson\Ok\Application\Json

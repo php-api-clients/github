@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 use ApiClients\Client\GitHub\Internal\Routers;
 use ApiClients\Client\GitHub\Schema\ProtectedBranchPullRequestReview;
 use ApiClients\Client\GitHub\Schema\StatusCheckPolicy;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
 final class Eight
@@ -15,7 +16,8 @@ final class Eight
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): ProtectedBranchPullRequestReview|StatusCheckPolicy
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
+    public function call(string $call, array $params, array $pathChunks): ProtectedBranchPullRequestReview|StatusCheckPolicy|WithoutBody
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'repos') {
@@ -31,6 +33,16 @@ final class Eight
                                     } elseif ($pathChunks[7] === 'required_status_checks') {
                                         if ($call === 'PATCH /repos/{owner}/{repo}/branches/{branch}/protection/required_status_checks') {
                                             return $this->routers->internal🔀Router🔀Patch🔀Repos()->updateStatusCheckProtection($params);
+                                        }
+                                    }
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'environments') {
+                            if ($pathChunks[5] === '{environment_name}') {
+                                if ($pathChunks[6] === 'variables') {
+                                    if ($pathChunks[7] === '{name}') {
+                                        if ($call === 'PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}') {
+                                            return $this->routers->internal🔀Router🔀Patch🔀Actions()->updateEnvironmentVariable($params);
                                         }
                                     }
                                 }

@@ -740,72 +740,6 @@ final class Actions
     }
 
     /** @return */
-    public function listEnvironmentSecrets(array $params): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentSecrets\Response\ApplicationJson\Ok\Application\Json
-    {
-        $arguments = [];
-        if (array_key_exists('repository_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository_id');
-        }
-
-        $arguments['repository_id'] = $params['repository_id'];
-        unset($params['repository_id']);
-        if (array_key_exists('environment_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: environment_name');
-        }
-
-        $arguments['environment_name'] = $params['environment_name'];
-        unset($params['environment_name']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        $operator = new Internal\Operator\Actions\ListEnvironmentSecrets($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repositories🌀RepositoryId🌀Environments🌀EnvironmentName🌀Secrets());
-
-        return $operator->call($arguments['repository_id'], $arguments['environment_name'], $arguments['per_page'], $arguments['page']);
-    }
-
-    /** @return */
-    public function listEnvironmentVariables(array $params): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentVariables\Response\ApplicationJson\Ok\Application\Json
-    {
-        $arguments = [];
-        if (array_key_exists('repository_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository_id');
-        }
-
-        $arguments['repository_id'] = $params['repository_id'];
-        unset($params['repository_id']);
-        if (array_key_exists('environment_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: environment_name');
-        }
-
-        $arguments['environment_name'] = $params['environment_name'];
-        unset($params['environment_name']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        $operator = new Internal\Operator\Actions\ListEnvironmentVariables($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repositories🌀RepositoryId🌀Environments🌀EnvironmentName🌀Variables());
-
-        return $operator->call($arguments['repository_id'], $arguments['environment_name'], $arguments['per_page'], $arguments['page']);
-    }
-
-    /** @return */
     public function listLabelsForSelfHostedRunnerForOrg(array $params): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok
     {
         $arguments = [];
@@ -1213,79 +1147,80 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['workflow_id']);
     }
 
-    /** @return */
-    public function getEnvironmentPublicKey(array $params): ActionsPublicKey
+    public function listEnvironmentSecrets(array $params): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentSecrets\Response\ApplicationJson\Ok\Application\Json
     {
         $arguments = [];
-        if (array_key_exists('repository_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository_id');
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
         }
 
-        $arguments['repository_id'] = $params['repository_id'];
-        unset($params['repository_id']);
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
         if (array_key_exists('environment_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: environment_name');
         }
 
         $arguments['environment_name'] = $params['environment_name'];
         unset($params['environment_name']);
-        $operator = new Internal\Operator\Actions\GetEnvironmentPublicKey($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repositories🌀RepositoryId🌀Environments🌀EnvironmentName🌀Secrets🌀PublicKey());
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
 
-        return $operator->call($arguments['repository_id'], $arguments['environment_name']);
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $operator = new Internal\Operator\Actions\ListEnvironmentSecrets($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀Secrets());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['environment_name'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
-    public function getEnvironmentSecret(array $params): ActionsSecret
+    public function listEnvironmentVariables(array $params): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentVariables\Response\ApplicationJson\Ok\Application\Json
     {
         $arguments = [];
-        if (array_key_exists('repository_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository_id');
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
         }
 
-        $arguments['repository_id'] = $params['repository_id'];
-        unset($params['repository_id']);
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
         if (array_key_exists('environment_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: environment_name');
         }
 
         $arguments['environment_name'] = $params['environment_name'];
         unset($params['environment_name']);
-        if (array_key_exists('secret_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: secret_name');
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
         }
 
-        $arguments['secret_name'] = $params['secret_name'];
-        unset($params['secret_name']);
-        $operator = new Internal\Operator\Actions\GetEnvironmentSecret($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repositories🌀RepositoryId🌀Environments🌀EnvironmentName🌀Secrets🌀SecretName());
-
-        return $operator->call($arguments['repository_id'], $arguments['environment_name'], $arguments['secret_name']);
-    }
-
-    /** @return */
-    public function getEnvironmentVariable(array $params): ActionsVariable
-    {
-        $arguments = [];
-        if (array_key_exists('repository_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository_id');
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
         }
 
-        $arguments['repository_id'] = $params['repository_id'];
-        unset($params['repository_id']);
-        if (array_key_exists('environment_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: environment_name');
-        }
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $operator = new Internal\Operator\Actions\ListEnvironmentVariables($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀Variables());
 
-        $arguments['environment_name'] = $params['environment_name'];
-        unset($params['environment_name']);
-        if (array_key_exists('name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: name');
-        }
-
-        $arguments['name'] = $params['name'];
-        unset($params['name']);
-        $operator = new Internal\Operator\Actions\GetEnvironmentVariable($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repositories🌀RepositoryId🌀Environments🌀EnvironmentName🌀Variables🌀Name());
-
-        return $operator->call($arguments['repository_id'], $arguments['environment_name'], $arguments['name']);
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['environment_name'], $arguments['per_page'], $arguments['page']);
     }
 
     /** @return */
@@ -1706,6 +1641,96 @@ final class Actions
         $operator = new Internal\Operator\Actions\GetWorkflowUsage($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Actions🌀Workflows🌀WorkflowId🌀Timing());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['workflow_id']);
+    }
+
+    public function getEnvironmentPublicKey(array $params): ActionsPublicKey
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('environment_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: environment_name');
+        }
+
+        $arguments['environment_name'] = $params['environment_name'];
+        unset($params['environment_name']);
+        $operator = new Internal\Operator\Actions\GetEnvironmentPublicKey($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀Secrets🌀PublicKey());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['environment_name']);
+    }
+
+    public function getEnvironmentSecret(array $params): ActionsSecret
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('environment_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: environment_name');
+        }
+
+        $arguments['environment_name'] = $params['environment_name'];
+        unset($params['environment_name']);
+        if (array_key_exists('secret_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: secret_name');
+        }
+
+        $arguments['secret_name'] = $params['secret_name'];
+        unset($params['secret_name']);
+        $operator = new Internal\Operator\Actions\GetEnvironmentSecret($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀Secrets🌀SecretName());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['environment_name'], $arguments['secret_name']);
+    }
+
+    public function getEnvironmentVariable(array $params): ActionsVariable
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('environment_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: environment_name');
+        }
+
+        $arguments['environment_name'] = $params['environment_name'];
+        unset($params['environment_name']);
+        if (array_key_exists('name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: name');
+        }
+
+        $arguments['name'] = $params['name'];
+        unset($params['name']);
+        $operator = new Internal\Operator\Actions\GetEnvironmentVariable($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀Variables🌀Name());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['environment_name'], $arguments['name']);
     }
 
     /** @return */

@@ -230,26 +230,6 @@ final class Seven
                         }
                     }
                 }
-            } elseif ($pathChunks[1] === 'repositories') {
-                if ($pathChunks[2] === '{repository_id}') {
-                    if ($pathChunks[3] === 'environments') {
-                        if ($pathChunks[4] === '{environment_name}') {
-                            if ($pathChunks[5] === 'secrets') {
-                                if ($pathChunks[6] === '{secret_name}') {
-                                    if ($call === 'DELETE /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}') {
-                                        return $this->routers->internal🔀Router🔀Delete🔀Actions()->deleteEnvironmentSecret($params);
-                                    }
-                                }
-                            } elseif ($pathChunks[5] === 'variables') {
-                                if ($pathChunks[6] === '{name}') {
-                                    if ($call === 'DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}') {
-                                        return $this->routers->internal🔀Router🔀Delete🔀Actions()->deleteEnvironmentVariable($params);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
             } elseif ($pathChunks[1] === 'teams') {
                 if ($pathChunks[2] === '{team_id}') {
                     if ($pathChunks[3] === 'discussions') {

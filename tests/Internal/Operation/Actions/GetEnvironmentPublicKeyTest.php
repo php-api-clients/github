@@ -29,10 +29,11 @@ final class GetEnvironmentPublicKeyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repositories/13/environments/generated/secrets/public-key', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/environments/generated/secrets/public-key', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Actions\GetEnvironmentPublicKey::OPERATION_MATCH, (static function (array $data): array {
-            $data['repository_id']    = 13;
+            $data['owner']            = 'generated';
+            $data['repo']             = 'generated';
             $data['environment_name'] = 'generated';
 
             return $data;
@@ -48,8 +49,8 @@ final class GetEnvironmentPublicKeyTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repositories/13/environments/generated/secrets/public-key', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/environments/generated/secrets/public-key', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->actions()->getEnvironmentPublicKey(13, 'generated');
+        $result = $client->operations()->actions()->getEnvironmentPublicKey('generated', 'generated', 'generated');
     }
 }

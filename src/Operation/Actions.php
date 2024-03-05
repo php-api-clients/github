@@ -748,63 +748,53 @@ final class Actions
         return $this->operators->actions👷GetWorkflowUsage()->call($owner, $repo, $workflowId);
     }
 
-    /** @return */
-    public function listEnvironmentSecrets(int $repositoryId, string $environmentName, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentSecrets\Response\ApplicationJson\Ok\Application\Json
+    public function listEnvironmentSecrets(string $owner, string $repo, string $environmentName, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentSecrets\Response\ApplicationJson\Ok\Application\Json
     {
-        return $this->operators->actions👷ListEnvironmentSecrets()->call($repositoryId, $environmentName, $perPage, $page);
+        return $this->operators->actions👷ListEnvironmentSecrets()->call($owner, $repo, $environmentName, $perPage, $page);
     }
 
-    /** @return */
-    public function getEnvironmentPublicKey(int $repositoryId, string $environmentName): ActionsPublicKey
+    public function getEnvironmentPublicKey(string $owner, string $repo, string $environmentName): ActionsPublicKey
     {
-        return $this->operators->actions👷GetEnvironmentPublicKey()->call($repositoryId, $environmentName);
+        return $this->operators->actions👷GetEnvironmentPublicKey()->call($owner, $repo, $environmentName);
     }
 
-    /** @return */
-    public function getEnvironmentSecret(int $repositoryId, string $environmentName, string $secretName): ActionsSecret
+    public function getEnvironmentSecret(string $owner, string $repo, string $environmentName, string $secretName): ActionsSecret
     {
-        return $this->operators->actions👷GetEnvironmentSecret()->call($repositoryId, $environmentName, $secretName);
+        return $this->operators->actions👷GetEnvironmentSecret()->call($owner, $repo, $environmentName, $secretName);
     }
 
-    /** @return */
-    public function createOrUpdateEnvironmentSecret(int $repositoryId, string $environmentName, string $secretName, array $params): EmptyObject|WithoutBody
+    public function createOrUpdateEnvironmentSecret(string $owner, string $repo, string $environmentName, string $secretName, array $params): EmptyObject|WithoutBody
     {
-        return $this->operators->actions👷CreateOrUpdateEnvironmentSecret()->call($repositoryId, $environmentName, $secretName, $params);
+        return $this->operators->actions👷CreateOrUpdateEnvironmentSecret()->call($owner, $repo, $environmentName, $secretName, $params);
     }
 
-    /** @return */
-    public function deleteEnvironmentSecret(int $repositoryId, string $environmentName, string $secretName): WithoutBody
+    public function deleteEnvironmentSecret(string $owner, string $repo, string $environmentName, string $secretName): WithoutBody
     {
-        return $this->operators->actions👷DeleteEnvironmentSecret()->call($repositoryId, $environmentName, $secretName);
+        return $this->operators->actions👷DeleteEnvironmentSecret()->call($owner, $repo, $environmentName, $secretName);
     }
 
-    /** @return */
-    public function listEnvironmentVariables(int $repositoryId, string $environmentName, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentVariables\Response\ApplicationJson\Ok\Application\Json
+    public function listEnvironmentVariables(string $owner, string $repo, string $environmentName, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListEnvironmentVariables\Response\ApplicationJson\Ok\Application\Json
     {
-        return $this->operators->actions👷ListEnvironmentVariables()->call($repositoryId, $environmentName, $perPage, $page);
+        return $this->operators->actions👷ListEnvironmentVariables()->call($owner, $repo, $environmentName, $perPage, $page);
     }
 
-    /** @return */
-    public function createEnvironmentVariable(int $repositoryId, string $environmentName, array $params): EmptyObject
+    public function createEnvironmentVariable(string $owner, string $repo, string $environmentName, array $params): EmptyObject
     {
-        return $this->operators->actions👷CreateEnvironmentVariable()->call($repositoryId, $environmentName, $params);
+        return $this->operators->actions👷CreateEnvironmentVariable()->call($owner, $repo, $environmentName, $params);
     }
 
-    /** @return */
-    public function getEnvironmentVariable(int $repositoryId, string $environmentName, string $name): ActionsVariable
+    public function getEnvironmentVariable(string $owner, string $repo, string $environmentName, string $name): ActionsVariable
     {
-        return $this->operators->actions👷GetEnvironmentVariable()->call($repositoryId, $environmentName, $name);
+        return $this->operators->actions👷GetEnvironmentVariable()->call($owner, $repo, $environmentName, $name);
     }
 
-    /** @return */
-    public function deleteEnvironmentVariable(int $repositoryId, string $name, string $environmentName): WithoutBody
+    public function deleteEnvironmentVariable(string $owner, string $repo, string $name, string $environmentName): WithoutBody
     {
-        return $this->operators->actions👷DeleteEnvironmentVariable()->call($repositoryId, $name, $environmentName);
+        return $this->operators->actions👷DeleteEnvironmentVariable()->call($owner, $repo, $name, $environmentName);
     }
 
-    /** @return */
-    public function updateEnvironmentVariable(int $repositoryId, string $name, string $environmentName, array $params): WithoutBody
+    public function updateEnvironmentVariable(string $owner, string $repo, string $name, string $environmentName, array $params): WithoutBody
     {
-        return $this->operators->actions👷UpdateEnvironmentVariable()->call($repositoryId, $name, $environmentName, $params);
+        return $this->operators->actions👷UpdateEnvironmentVariable()->call($owner, $repo, $name, $environmentName, $params);
     }
 }

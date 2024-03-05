@@ -18,16 +18,15 @@ use function WyriHaximus\React\awaitObservable;
 final readonly class CreateEnvironmentVariable
 {
     public const OPERATION_ID    = 'actions/create-environment-variable';
-    public const OPERATION_MATCH = 'POST /repositories/{repository_id}/environments/{environment_name}/variables';
+    public const OPERATION_MATCH = 'POST /repos/{owner}/{repo}/environments/{environment_name}/variables';
 
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables $hydrator)
+    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\Variables $hydrator)
     {
     }
 
-    /** @return */
-    public function call(int $repositoryId, string $environmentName, array $params): EmptyObject
+    public function call(string $owner, string $repo, string $environmentName, array $params): EmptyObject
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\CreateEnvironmentVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\CreateEnvironmentVariable($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName);
         $request   = $operation->createRequest($params);
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): EmptyObject {
             return $operation->createResponse($response);

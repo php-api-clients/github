@@ -18,16 +18,15 @@ use function WyriHaximus\React\awaitObservable;
 final readonly class GetEnvironmentVariable
 {
     public const OPERATION_ID    = 'actions/get-environment-variable';
-    public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/variables/{name}';
+    public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}';
 
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Variables\Name $hydrator)
+    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\Variables\Name $hydrator)
     {
     }
 
-    /** @return */
-    public function call(int $repositoryId, string $environmentName, string $name): ActionsVariable
+    public function call(string $owner, string $repo, string $environmentName, string $name): ActionsVariable
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetEnvironmentVariable($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $name);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetEnvironmentVariable($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName, $name);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsVariable {
             return $operation->createResponse($response);

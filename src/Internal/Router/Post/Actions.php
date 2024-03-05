@@ -91,27 +91,6 @@ final class Actions
     }
 
     /** @return */
-    public function createEnvironmentVariable(array $params): EmptyObject
-    {
-        $arguments = [];
-        if (array_key_exists('repository_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository_id');
-        }
-
-        $arguments['repository_id'] = $params['repository_id'];
-        unset($params['repository_id']);
-        if (array_key_exists('environment_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: environment_name');
-        }
-
-        $arguments['environment_name'] = $params['environment_name'];
-        unset($params['environment_name']);
-        $operator = new Internal\Operator\Actions\CreateEnvironmentVariable($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repositories🌀RepositoryId🌀Environments🌀EnvironmentName🌀Variables());
-
-        return $operator->call($arguments['repository_id'], $arguments['environment_name'], $params);
-    }
-
-    /** @return */
     public function createOrgVariable(array $params): EmptyObject
     {
         $arguments = [];
@@ -208,6 +187,32 @@ final class Actions
         $operator = new Internal\Operator\Actions\CreateRemoveTokenForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Actions🌀Runners🌀RemoveToken());
 
         return $operator->call($arguments['owner'], $arguments['repo']);
+    }
+
+    public function createEnvironmentVariable(array $params): EmptyObject
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('environment_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: environment_name');
+        }
+
+        $arguments['environment_name'] = $params['environment_name'];
+        unset($params['environment_name']);
+        $operator = new Internal\Operator\Actions\CreateEnvironmentVariable($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Environments🌀EnvironmentName🌀Variables());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['environment_name'], $params);
     }
 
     /** @return */

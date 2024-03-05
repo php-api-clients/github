@@ -18,6 +18,7 @@ final class Eight
     {
     }
 
+    /** @return |Schema\EmptyObject|\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|EmptyObject|Ok|DeploymentBranchPolicy|PullRequestReview
     {
         if ($pathChunks[0] === '') {
@@ -122,6 +123,12 @@ final class Eight
                                     if ($pathChunks[7] === '{branch_policy_id}') {
                                         if ($call === 'PUT /repos/{owner}/{repo}/environments/{environment_name}/deployment-branch-policies/{branch_policy_id}') {
                                             return $this->routers->internal🔀Router🔀Put🔀Repos()->updateDeploymentBranchPolicy($params);
+                                        }
+                                    }
+                                } elseif ($pathChunks[6] === 'secrets') {
+                                    if ($pathChunks[7] === '{secret_name}') {
+                                        if ($call === 'PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}') {
+                                            return $this->routers->internal🔀Router🔀Put🔀Actions()->createOrUpdateEnvironmentSecret($params);
                                         }
                                     }
                                 }

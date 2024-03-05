@@ -201,20 +201,6 @@ final class Seven
                         }
                     }
                 }
-            } elseif ($pathChunks[1] === 'repositories') {
-                if ($pathChunks[2] === '{repository_id}') {
-                    if ($pathChunks[3] === 'environments') {
-                        if ($pathChunks[4] === '{environment_name}') {
-                            if ($pathChunks[5] === 'secrets') {
-                                if ($pathChunks[6] === '{secret_name}') {
-                                    if ($call === 'PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}') {
-                                        return $this->routers->internal🔀Router🔀Put🔀Actions()->createOrUpdateEnvironmentSecret($params);
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
             } elseif ($pathChunks[1] === 'user') {
                 if ($pathChunks[2] === 'codespaces') {
                     if ($pathChunks[3] === 'secrets') {

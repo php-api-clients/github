@@ -29,10 +29,11 @@ final class GetEnvironmentVariableTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repositories/13/environments/generated/variables/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/environments/generated/variables/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Actions\GetEnvironmentVariable::OPERATION_MATCH, (static function (array $data): array {
-            $data['repository_id']    = 13;
+            $data['owner']            = 'generated';
+            $data['repo']             = 'generated';
             $data['environment_name'] = 'generated';
             $data['name']             = 'generated';
 
@@ -49,8 +50,8 @@ final class GetEnvironmentVariableTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repositories/13/environments/generated/variables/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/environments/generated/variables/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->actions()->getEnvironmentVariable(13, 'generated', 'generated');
+        $result = $client->operations()->actions()->getEnvironmentVariable('generated', 'generated', 'generated', 'generated');
     }
 }

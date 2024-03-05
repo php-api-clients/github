@@ -17,16 +17,15 @@ use function WyriHaximus\React\awaitObservable;
 final readonly class UpdateEnvironmentVariable
 {
     public const OPERATION_ID    = 'actions/update-environment-variable';
-    public const OPERATION_MATCH = 'PATCH /repositories/{repository_id}/environments/{environment_name}/variables/{name}';
+    public const OPERATION_MATCH = 'PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator)
     {
     }
 
-    /** @return */
-    public function call(int $repositoryId, string $name, string $environmentName, array $params): WithoutBody
+    public function call(string $owner, string $repo, string $name, string $environmentName, array $params): WithoutBody
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\UpdateEnvironmentVariable($this->requestSchemaValidator, $repositoryId, $name, $environmentName);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\UpdateEnvironmentVariable($this->requestSchemaValidator, $owner, $repo, $name, $environmentName);
         $request   = $operation->createRequest($params);
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): WithoutBody {
             return $operation->createResponse($response);

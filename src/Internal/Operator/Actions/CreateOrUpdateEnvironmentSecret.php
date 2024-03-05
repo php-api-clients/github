@@ -19,16 +19,15 @@ use function WyriHaximus\React\awaitObservable;
 final readonly class CreateOrUpdateEnvironmentSecret
 {
     public const OPERATION_ID    = 'actions/create-or-update-environment-secret';
-    public const OPERATION_MATCH = 'PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}';
+    public const OPERATION_MATCH = 'PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}';
 
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\SecretName $hydrator)
+    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\Secrets\SecretName $hydrator)
     {
     }
 
-    /** @return */
-    public function call(int $repositoryId, string $environmentName, string $secretName, array $params): EmptyObject|WithoutBody
+    public function call(string $owner, string $repo, string $environmentName, string $secretName, array $params): EmptyObject|WithoutBody
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\CreateOrUpdateEnvironmentSecret($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName, $secretName);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\CreateOrUpdateEnvironmentSecret($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName, $secretName);
         $request   = $operation->createRequest($params);
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): EmptyObject|WithoutBody {
             return $operation->createResponse($response);

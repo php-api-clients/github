@@ -15189,6 +15189,266 @@ $client->operations()->repos()->disableDeploymentProtectionRule(        environm
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/deployments/protection-rules#disable-a-custom-protection-rule-for-an-environment).
 
 
+### actions/list-environment-secrets
+
+List environment secrets
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/environments/{environment_name}/secrets', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'environment_name' => 'generated',
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->listEnvironmentSecrets(        owner: 'generated',
+        repo: 'generated',
+        environment_name: 'generated',
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/secrets#list-environment-secrets).
+
+
+### actions/get-environment-public-key
+
+Get an environment public key
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'environment_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->getEnvironmentPublicKey(        owner: 'generated',
+        repo: 'generated',
+        environment_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/secrets#get-an-environment-public-key).
+
+
+### actions/get-environment-secret
+
+Get an environment secret
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'environment_name' => 'generated',
+        'secret_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->getEnvironmentSecret(        owner: 'generated',
+        repo: 'generated',
+        environment_name: 'generated',
+        secret_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/secrets#get-an-environment-secret).
+
+
+### actions/create-or-update-environment-secret
+
+Create or update an environment secret
+
+Using the `call` method:
+```php
+$client->call('PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'environment_name' => 'generated',
+        'secret_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->createOrUpdateEnvironmentSecret(        owner: 'generated',
+        repo: 'generated',
+        environment_name: 'generated',
+        secret_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/secrets#create-or-update-an-environment-secret).
+
+
+### actions/delete-environment-secret
+
+Delete an environment secret
+
+Using the `call` method:
+```php
+$client->call('DELETE /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'environment_name' => 'generated',
+        'secret_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->deleteEnvironmentSecret(        owner: 'generated',
+        repo: 'generated',
+        environment_name: 'generated',
+        secret_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/secrets#delete-an-environment-secret).
+
+
+### actions/list-environment-variables
+
+List environment variables
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/environments/{environment_name}/variables', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'environment_name' => 'generated',
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->listEnvironmentVariables(        owner: 'generated',
+        repo: 'generated',
+        environment_name: 'generated',
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/variables#list-environment-variables).
+
+
+### actions/create-environment-variable
+
+Create an environment variable
+
+Using the `call` method:
+```php
+$client->call('POST /repos/{owner}/{repo}/environments/{environment_name}/variables', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'environment_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->createEnvironmentVariable(        owner: 'generated',
+        repo: 'generated',
+        environment_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/variables#create-an-environment-variable).
+
+
+### actions/get-environment-variable
+
+Get an environment variable
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'environment_name' => 'generated',
+        'name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->getEnvironmentVariable(        owner: 'generated',
+        repo: 'generated',
+        environment_name: 'generated',
+        name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/variables#get-an-environment-variable).
+
+
+### actions/delete-environment-variable
+
+Delete an environment variable
+
+Using the `call` method:
+```php
+$client->call('DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'name' => 'generated',
+        'environment_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->deleteEnvironmentVariable(        owner: 'generated',
+        repo: 'generated',
+        name: 'generated',
+        environment_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/variables#delete-an-environment-variable).
+
+
+### actions/update-environment-variable
+
+Update an environment variable
+
+Using the `call` method:
+```php
+$client->call('PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'name' => 'generated',
+        'environment_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->updateEnvironmentVariable(        owner: 'generated',
+        repo: 'generated',
+        name: 'generated',
+        environment_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/variables#update-an-environment-variable).
+
+
 ### activity/list-repo-events
 
 List repository events
@@ -21567,246 +21827,6 @@ $client->operations()->repos()->listPublic(        since: 5,
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#list-public-repositories).
-
-
-### actions/list-environment-secrets
-
-List environment secrets
-
-Using the `call` method:
-```php
-$client->call('GET /repositories/{repository_id}/environments/{environment_name}/secrets', [
-        'repository_id' => 13,
-        'environment_name' => 'generated',
-        'per_page' => 8,
-        'page' => 1,
-]);
-```
-
-Operations method:
-```php
-$client->operations()->actions()->listEnvironmentSecrets(        repository_id: 13,
-        environment_name: 'generated',
-        per_page: 8,
-        page: 1,
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/secrets#list-environment-secrets).
-
-
-### actions/get-environment-public-key
-
-Get an environment public key
-
-Using the `call` method:
-```php
-$client->call('GET /repositories/{repository_id}/environments/{environment_name}/secrets/public-key', [
-        'repository_id' => 13,
-        'environment_name' => 'generated',
-]);
-```
-
-Operations method:
-```php
-$client->operations()->actions()->getEnvironmentPublicKey(        repository_id: 13,
-        environment_name: 'generated',
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/secrets#get-an-environment-public-key).
-
-
-### actions/get-environment-secret
-
-Get an environment secret
-
-Using the `call` method:
-```php
-$client->call('GET /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}', [
-        'repository_id' => 13,
-        'environment_name' => 'generated',
-        'secret_name' => 'generated',
-]);
-```
-
-Operations method:
-```php
-$client->operations()->actions()->getEnvironmentSecret(        repository_id: 13,
-        environment_name: 'generated',
-        secret_name: 'generated',
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/secrets#get-an-environment-secret).
-
-
-### actions/create-or-update-environment-secret
-
-Create or update an environment secret
-
-Using the `call` method:
-```php
-$client->call('PUT /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}', [
-        'repository_id' => 13,
-        'environment_name' => 'generated',
-        'secret_name' => 'generated',
-]);
-```
-
-Operations method:
-```php
-$client->operations()->actions()->createOrUpdateEnvironmentSecret(        repository_id: 13,
-        environment_name: 'generated',
-        secret_name: 'generated',
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/secrets#create-or-update-an-environment-secret).
-
-
-### actions/delete-environment-secret
-
-Delete an environment secret
-
-Using the `call` method:
-```php
-$client->call('DELETE /repositories/{repository_id}/environments/{environment_name}/secrets/{secret_name}', [
-        'repository_id' => 13,
-        'environment_name' => 'generated',
-        'secret_name' => 'generated',
-]);
-```
-
-Operations method:
-```php
-$client->operations()->actions()->deleteEnvironmentSecret(        repository_id: 13,
-        environment_name: 'generated',
-        secret_name: 'generated',
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/secrets#delete-an-environment-secret).
-
-
-### actions/list-environment-variables
-
-List environment variables
-
-Using the `call` method:
-```php
-$client->call('GET /repositories/{repository_id}/environments/{environment_name}/variables', [
-        'repository_id' => 13,
-        'environment_name' => 'generated',
-        'per_page' => 8,
-        'page' => 1,
-]);
-```
-
-Operations method:
-```php
-$client->operations()->actions()->listEnvironmentVariables(        repository_id: 13,
-        environment_name: 'generated',
-        per_page: 8,
-        page: 1,
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/variables#list-environment-variables).
-
-
-### actions/create-environment-variable
-
-Create an environment variable
-
-Using the `call` method:
-```php
-$client->call('POST /repositories/{repository_id}/environments/{environment_name}/variables', [
-        'repository_id' => 13,
-        'environment_name' => 'generated',
-]);
-```
-
-Operations method:
-```php
-$client->operations()->actions()->createEnvironmentVariable(        repository_id: 13,
-        environment_name: 'generated',
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/variables#create-an-environment-variable).
-
-
-### actions/get-environment-variable
-
-Get an environment variable
-
-Using the `call` method:
-```php
-$client->call('GET /repositories/{repository_id}/environments/{environment_name}/variables/{name}', [
-        'repository_id' => 13,
-        'environment_name' => 'generated',
-        'name' => 'generated',
-]);
-```
-
-Operations method:
-```php
-$client->operations()->actions()->getEnvironmentVariable(        repository_id: 13,
-        environment_name: 'generated',
-        name: 'generated',
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/variables#get-an-environment-variable).
-
-
-### actions/delete-environment-variable
-
-Delete an environment variable
-
-Using the `call` method:
-```php
-$client->call('DELETE /repositories/{repository_id}/environments/{environment_name}/variables/{name}', [
-        'repository_id' => 13,
-        'name' => 'generated',
-        'environment_name' => 'generated',
-]);
-```
-
-Operations method:
-```php
-$client->operations()->actions()->deleteEnvironmentVariable(        repository_id: 13,
-        name: 'generated',
-        environment_name: 'generated',
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/variables#delete-an-environment-variable).
-
-
-### actions/update-environment-variable
-
-Update an environment variable
-
-Using the `call` method:
-```php
-$client->call('PATCH /repositories/{repository_id}/environments/{environment_name}/variables/{name}', [
-        'repository_id' => 13,
-        'name' => 'generated',
-        'environment_name' => 'generated',
-]);
-```
-
-Operations method:
-```php
-$client->operations()->actions()->updateEnvironmentVariable(        repository_id: 13,
-        name: 'generated',
-        environment_name: 'generated',
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/variables#update-an-environment-variable).
 
 
 ### search/code

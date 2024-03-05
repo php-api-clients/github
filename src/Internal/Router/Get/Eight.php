@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Get;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema\ActionsPublicKey;
+use ApiClients\Client\GitHub\Schema\ActionsSecret;
+use ApiClients\Client\GitHub\Schema\ActionsVariable;
 use ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy;
 use ApiClients\Client\GitHub\Schema\CodeScanningCodeqlDatabase;
 use ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy;
@@ -31,8 +34,8 @@ final class Eight
     {
     }
 
-    /** @return |Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\EnvironmentApprovals>|Observable<Schema\PendingDeployment>|Observable<Schema\CodeScanningAlertInstance>|Observable<Schema\SecretScanningLocation>|WithoutBody */
-    public function call(string $call, array $params, array $pathChunks): PackageVersion|iterable|TeamRepository|WithoutBody|OidcCustomSubRepo|Ok|Json|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|WorkflowRunUsage|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|WorkflowUsage|ProtectedBranchAdminEnforced|ProtectedBranchPullRequestReview|StatusCheckPolicy|BranchRestrictionPolicy|CodeScanningCodeqlDatabase|DeploymentStatus|DeploymentBranchPolicy|\ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|DeploymentProtectionRule|HookDelivery|PullRequestReview
+    /** @return |Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\EnvironmentApprovals>|Observable<Schema\PendingDeployment>|Observable<Schema\CodeScanningAlertInstance>|Schema\ActionsPublicKey|Schema\ActionsSecret|Schema\ActionsVariable|Observable<Schema\SecretScanningLocation>|WithoutBody */
+    public function call(string $call, array $params, array $pathChunks): PackageVersion|iterable|TeamRepository|WithoutBody|OidcCustomSubRepo|Ok|Json|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|WorkflowRunUsage|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|WorkflowUsage|ProtectedBranchAdminEnforced|ProtectedBranchPullRequestReview|StatusCheckPolicy|BranchRestrictionPolicy|CodeScanningCodeqlDatabase|DeploymentStatus|DeploymentBranchPolicy|\ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|DeploymentProtectionRule|ActionsPublicKey|ActionsSecret|ActionsVariable|HookDelivery|PullRequestReview
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
@@ -222,6 +225,22 @@ final class Eight
                                     } elseif ($pathChunks[7] === '{protection_rule_id}') {
                                         if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/deployment_protection_rules/{protection_rule_id}') {
                                             return $this->routers->internal🔀Router🔀Get🔀Repos()->getCustomDeploymentProtectionRule($params);
+                                        }
+                                    }
+                                } elseif ($pathChunks[6] === 'secrets') {
+                                    if ($pathChunks[7] === 'public-key') {
+                                        if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key') {
+                                            return $this->routers->internal🔀Router🔀Get🔀Actions()->getEnvironmentPublicKey($params);
+                                        }
+                                    } elseif ($pathChunks[7] === '{secret_name}') {
+                                        if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}') {
+                                            return $this->routers->internal🔀Router🔀Get🔀Actions()->getEnvironmentSecret($params);
+                                        }
+                                    }
+                                } elseif ($pathChunks[6] === 'variables') {
+                                    if ($pathChunks[7] === '{name}') {
+                                        if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}') {
+                                            return $this->routers->internal🔀Router🔀Get🔀Actions()->getEnvironmentVariable($params);
                                         }
                                     }
                                 }

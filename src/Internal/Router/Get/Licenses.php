@@ -64,6 +64,7 @@ final class Licenses
         return $operator->call($arguments['license']);
     }
 
+    /** @return */
     public function getForRepo(array $params): LicenseContent
     {
         $arguments = [];

@@ -67,16 +67,21 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name'], $params);
     }
 
-    /** @return */
     public function updateEnvironmentVariable(array $params): WithoutBody
     {
         $arguments = [];
-        if (array_key_exists('repository_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository_id');
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
         }
 
-        $arguments['repository_id'] = $params['repository_id'];
-        unset($params['repository_id']);
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
         if (array_key_exists('name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: name');
         }
@@ -91,6 +96,6 @@ final class Actions
         unset($params['environment_name']);
         $operator = new Internal\Operator\Actions\UpdateEnvironmentVariable($this->browser, $this->authentication, $this->requestSchemaValidator);
 
-        return $operator->call($arguments['repository_id'], $arguments['name'], $arguments['environment_name'], $params);
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name'], $arguments['environment_name'], $params);
     }
 }

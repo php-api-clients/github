@@ -29,10 +29,11 @@ final class ListEnvironmentVariablesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repositories/13/environments/generated/variables?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/environments/generated/variables?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Actions\ListEnvironmentVariables::OPERATION_MATCH, (static function (array $data): array {
-            $data['repository_id']    = 13;
+            $data['owner']            = 'generated';
+            $data['repo']             = 'generated';
             $data['environment_name'] = 'generated';
             $data['per_page']         = 8;
             $data['page']             = 1;
@@ -50,8 +51,8 @@ final class ListEnvironmentVariablesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repositories/13/environments/generated/variables?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/environments/generated/variables?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->actions()->listEnvironmentVariables(13, 'generated', 8, 1);
+        $result = $client->operations()->actions()->listEnvironmentVariables('generated', 'generated', 'generated', 8, 1);
     }
 }

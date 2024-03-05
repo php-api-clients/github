@@ -227,60 +227,6 @@ final class Actions
     }
 
     /** @return */
-    public function deleteEnvironmentSecret(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('repository_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository_id');
-        }
-
-        $arguments['repository_id'] = $params['repository_id'];
-        unset($params['repository_id']);
-        if (array_key_exists('environment_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: environment_name');
-        }
-
-        $arguments['environment_name'] = $params['environment_name'];
-        unset($params['environment_name']);
-        if (array_key_exists('secret_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: secret_name');
-        }
-
-        $arguments['secret_name'] = $params['secret_name'];
-        unset($params['secret_name']);
-        $operator = new Internal\Operator\Actions\DeleteEnvironmentSecret($this->browser, $this->authentication);
-
-        return $operator->call($arguments['repository_id'], $arguments['environment_name'], $arguments['secret_name']);
-    }
-
-    /** @return */
-    public function deleteEnvironmentVariable(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('repository_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repository_id');
-        }
-
-        $arguments['repository_id'] = $params['repository_id'];
-        unset($params['repository_id']);
-        if (array_key_exists('name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: name');
-        }
-
-        $arguments['name'] = $params['name'];
-        unset($params['name']);
-        if (array_key_exists('environment_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: environment_name');
-        }
-
-        $arguments['environment_name'] = $params['environment_name'];
-        unset($params['environment_name']);
-        $operator = new Internal\Operator\Actions\DeleteEnvironmentVariable($this->browser, $this->authentication);
-
-        return $operator->call($arguments['repository_id'], $arguments['name'], $arguments['environment_name']);
-    }
-
-    /** @return */
     public function deleteSelfHostedRunnerFromOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -509,6 +455,70 @@ final class Actions
         $operator = new Internal\Operator\Actions\DeleteWorkflowRunLogs($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Actions🌀Runs🌀RunId🌀Logs());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['run_id']);
+    }
+
+    public function deleteEnvironmentSecret(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('environment_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: environment_name');
+        }
+
+        $arguments['environment_name'] = $params['environment_name'];
+        unset($params['environment_name']);
+        if (array_key_exists('secret_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: secret_name');
+        }
+
+        $arguments['secret_name'] = $params['secret_name'];
+        unset($params['secret_name']);
+        $operator = new Internal\Operator\Actions\DeleteEnvironmentSecret($this->browser, $this->authentication);
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['environment_name'], $arguments['secret_name']);
+    }
+
+    public function deleteEnvironmentVariable(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: name');
+        }
+
+        $arguments['name'] = $params['name'];
+        unset($params['name']);
+        if (array_key_exists('environment_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: environment_name');
+        }
+
+        $arguments['environment_name'] = $params['environment_name'];
+        unset($params['environment_name']);
+        $operator = new Internal\Operator\Actions\DeleteEnvironmentVariable($this->browser, $this->authentication);
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name'], $arguments['environment_name']);
     }
 
     /** @return */

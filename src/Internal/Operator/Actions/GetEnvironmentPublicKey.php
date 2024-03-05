@@ -18,16 +18,15 @@ use function WyriHaximus\React\awaitObservable;
 final readonly class GetEnvironmentPublicKey
 {
     public const OPERATION_ID    = 'actions/get-environment-public-key';
-    public const OPERATION_MATCH = 'GET /repositories/{repository_id}/environments/{environment_name}/secrets/public-key';
+    public const OPERATION_MATCH = 'GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key';
 
-    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repositories\RepositoryId\Environments\EnvironmentName\Secrets\PublicKey $hydrator)
+    public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Repos\Owner\Repo\Environments\EnvironmentName\Secrets\PublicKey $hydrator)
     {
     }
 
-    /** @return */
-    public function call(int $repositoryId, string $environmentName): ActionsPublicKey
+    public function call(string $owner, string $repo, string $environmentName): ActionsPublicKey
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetEnvironmentPublicKey($this->responseSchemaValidator, $this->hydrator, $repositoryId, $environmentName);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetEnvironmentPublicKey($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): ActionsPublicKey {
             return $operation->createResponse($response);
