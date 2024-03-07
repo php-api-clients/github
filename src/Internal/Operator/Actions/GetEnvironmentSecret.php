@@ -24,6 +24,7 @@ final readonly class GetEnvironmentSecret
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $environmentName, string $secretName): ActionsSecret
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetEnvironmentSecret($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName, $secretName);

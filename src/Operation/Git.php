@@ -44,13 +44,12 @@ final class Git
         return $this->operators->git👷GetCommit()->call($owner, $repo, $commitSha);
     }
 
-    /** @return Observable<Schema\GitRef> */
+    /** @return iterable<int,Schema\GitRef> */
     public function listMatchingRefs(string $owner, string $repo, string $ref): iterable
     {
         return $this->operators->git👷ListMatchingRefs()->call($owner, $repo, $ref);
     }
 
-    /** @return */
     public function getRef(string $owner, string $repo, string $ref): GitRef
     {
         return $this->operators->git👷GetRef()->call($owner, $repo, $ref);
@@ -62,13 +61,11 @@ final class Git
         return $this->operators->git👷CreateRef()->call($owner, $repo, $params);
     }
 
-    /** @return */
     public function deleteRef(string $owner, string $repo, string $ref): WithoutBody
     {
         return $this->operators->git👷DeleteRef()->call($owner, $repo, $ref);
     }
 
-    /** @return */
     public function updateRef(string $owner, string $repo, string $ref, array $params): GitRef
     {
         return $this->operators->git👷UpdateRef()->call($owner, $repo, $ref, $params);

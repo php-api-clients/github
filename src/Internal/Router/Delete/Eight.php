@@ -18,7 +18,7 @@ final class Eight
     {
     }
 
-    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody|Observable<Schema\Label>|Schema\BasicError */
+    /** @return |Observable<Schema\Label>|Schema\BasicError */
     public function call(string $call, array $params, array $pathChunks): Ok|WithoutBody|Json|iterable|BasicError|PullRequestReview
     {
         if ($pathChunks[0] === '') {

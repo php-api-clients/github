@@ -453,6 +453,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['workflow_id']);
     }
 
+    /** @return */
     public function createOrUpdateEnvironmentSecret(array $params): EmptyObject|WithoutBody
     {
         $arguments = [];

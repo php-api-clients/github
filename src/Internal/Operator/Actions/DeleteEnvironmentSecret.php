@@ -22,6 +22,7 @@ final readonly class DeleteEnvironmentSecret
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $environmentName, string $secretName): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DeleteEnvironmentSecret($owner, $repo, $environmentName, $secretName);

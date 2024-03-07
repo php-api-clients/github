@@ -78,7 +78,7 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['commit_sha']);
     }
 
-    /** @return Observable<Schema\GitRef> */
+    /** @return iterable<int,Schema\GitRef> */
     public function listMatchingRefs(array $params): iterable
     {
         $arguments = [];
@@ -105,7 +105,6 @@ final class Git
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ref']);
     }
 
-    /** @return */
     public function getRef(array $params): GitRef
     {
         $arguments = [];

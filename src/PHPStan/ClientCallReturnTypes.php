@@ -2532,43 +2532,43 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/secrets') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\ListEnvironmentSecrets\\Response\\ApplicationJson\\Ok\\Application\\Json');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/public-key') {
-            return $this->typeResolver->resolve('Schema\\ActionsPublicKey');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}') {
-            return $this->typeResolver->resolve('Schema\\ActionsSecret');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PUT /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}') {
-            return $this->typeResolver->resolve('Schema\\EmptyObject|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /repos/{owner}/{repo}/environments/{environment_name}/secrets/{secret_name}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/variables') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\ListEnvironmentVariables\\Response\\ApplicationJson\\Ok\\Application\\Json');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/environments/{environment_name}/variables') {
-            return $this->typeResolver->resolve('Schema\\EmptyObject');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}') {
-            return $this->typeResolver->resolve('Schema\\ActionsVariable');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/events') {
@@ -2608,11 +2608,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/git/matching-refs/{ref}') {
-            return $this->typeResolver->resolve('Observable<Schema\\GitRef>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\GitRef>');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/git/ref/{ref}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\GitRef');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/git/refs') {
@@ -2620,11 +2620,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'DELETE /repos/{owner}/{repo}/git/refs/{ref}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'PATCH /repos/{owner}/{repo}/git/refs/{ref}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\GitRef');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/git/tags') {

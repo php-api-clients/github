@@ -22,6 +22,7 @@ final readonly class DeleteEnvironmentVariable
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $name, string $environmentName): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DeleteEnvironmentVariable($owner, $repo, $name, $environmentName);

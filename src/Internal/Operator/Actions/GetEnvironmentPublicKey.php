@@ -24,6 +24,7 @@ final readonly class GetEnvironmentPublicKey
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $environmentName): ActionsPublicKey
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetEnvironmentPublicKey($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $environmentName);
