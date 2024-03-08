@@ -1006,6 +1006,11 @@ final class Repos
         return $this->operators->repos👷GetPagesHealthCheck()->call($owner, $repo);
     }
 
+    public function checkPrivateVulnerabilityReporting(string $owner, string $repo): \ApiClients\Client\GitHub\Schema\Operations\Repos\CheckPrivateVulnerabilityReporting\Response\ApplicationJson\Ok
+    {
+        return $this->operators->repos👷CheckPrivateVulnerabilityReporting()->call($owner, $repo);
+    }
+
     /** @return */
     public function enablePrivateVulnerabilityReporting(string $owner, string $repo): WithoutBody
     {

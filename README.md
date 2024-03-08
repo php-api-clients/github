@@ -18599,6 +18599,28 @@ $client->operations()->repos()->getPagesHealthCheck(        owner: 'generated',
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/pages/pages#get-a-dns-health-check-for-github-pages).
 
 
+### repos/check-private-vulnerability-reporting
+
+Check if private vulnerability reporting is enabled for a repository
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/private-vulnerability-reporting', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->checkPrivateVulnerabilityReporting(        owner: 'generated',
+        repo: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#check-if-private-vulnerability-reporting-is-enabled-for-a-repository).
+
+
 ### repos/enable-private-vulnerability-reporting
 
 Enable private vulnerability reporting for a repository

@@ -768,6 +768,7 @@ final class Operators
     private Internal\Operator\Repos\GetPagesDeployment|null $repos👷GetPagesDeployment                                                                                               = null;
     private Internal\Operator\Repos\CancelPagesDeployment|null $repos👷CancelPagesDeployment                                                                                         = null;
     private Internal\Operator\Repos\GetPagesHealthCheck|null $repos👷GetPagesHealthCheck                                                                                             = null;
+    private Internal\Operator\Repos\CheckPrivateVulnerabilityReporting|null $repos👷CheckPrivateVulnerabilityReporting                                                               = null;
     private Internal\Operator\Repos\EnablePrivateVulnerabilityReporting|null $repos👷EnablePrivateVulnerabilityReporting                                                             = null;
     private Internal\Operator\Repos\DisablePrivateVulnerabilityReporting|null $repos👷DisablePrivateVulnerabilityReporting                                                           = null;
     private Internal\Operator\Projects\ListForRepo|null $projects👷ListForRepo                                                                                                       = null;
@@ -7929,6 +7930,15 @@ final class Operators
         }
 
         return $this->repos👷GetPagesHealthCheck;
+    }
+
+    public function repos👷CheckPrivateVulnerabilityReporting(): Internal\Operator\Repos\CheckPrivateVulnerabilityReporting
+    {
+        if ($this->repos👷CheckPrivateVulnerabilityReporting instanceof Internal\Operator\Repos\CheckPrivateVulnerabilityReporting === false) {
+            $this->repos👷CheckPrivateVulnerabilityReporting = new Internal\Operator\Repos\CheckPrivateVulnerabilityReporting($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀PrivateVulnerabilityReporting());
+        }
+
+        return $this->repos👷CheckPrivateVulnerabilityReporting;
     }
 
     public function repos👷EnablePrivateVulnerabilityReporting(): Internal\Operator\Repos\EnablePrivateVulnerabilityReporting

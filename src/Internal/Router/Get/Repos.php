@@ -981,6 +981,26 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
+    public function checkPrivateVulnerabilityReporting(array $params): \ApiClients\Client\GitHub\Schema\Operations\Repos\CheckPrivateVulnerabilityReporting\Response\ApplicationJson\Ok
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        $operator = new Internal\Operator\Repos\CheckPrivateVulnerabilityReporting($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀PrivateVulnerabilityReporting());
+
+        return $operator->call($arguments['owner'], $arguments['repo']);
+    }
+
     /** @return */
     public function getReadme(array $params): ContentFile
     {

@@ -19,6 +19,7 @@ final class Git
     {
     }
 
+    /** @return */
     public function deleteRef(array $params): WithoutBody
     {
         $arguments = [];

@@ -2608,11 +2608,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/git/matching-refs/{ref}') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\GitRef>');
+            return $this->typeResolver->resolve('Observable<Schema\\GitRef>');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/git/ref/{ref}') {
-            return $this->typeResolver->resolve('Schema\\GitRef');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/git/refs') {
@@ -2620,11 +2620,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'DELETE /repos/{owner}/{repo}/git/refs/{ref}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PATCH /repos/{owner}/{repo}/git/refs/{ref}') {
-            return $this->typeResolver->resolve('Schema\\GitRef');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/git/tags') {
@@ -3069,6 +3069,10 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
 
         if ($call === 'GET /repos/{owner}/{repo}/pages/health') {
             return $this->typeResolver->resolve('');
+        }
+
+        if ($call === 'GET /repos/{owner}/{repo}/private-vulnerability-reporting') {
+            return $this->typeResolver->resolve('Schema\\Operations\\Repos\\CheckPrivateVulnerabilityReporting\\Response\\ApplicationJson\\Ok');
         }
 
         if ($call === 'PUT /repos/{owner}/{repo}/private-vulnerability-reporting') {
