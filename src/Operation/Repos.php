@@ -514,7 +514,7 @@ final class Repos
         return $this->operators->repos👷ListCommitsListing()->call($owner, $repo, $sha, $path, $author, $committer, $since, $until, $perPage, $page);
     }
 
-    /** @return Observable<Schema\BranchShort> */
+    /** @return iterable<int,Schema\BranchShort> */
     public function listBranchesForHeadCommit(string $owner, string $repo, string $commitSha): iterable
     {
         return $this->operators->repos👷ListBranchesForHeadCommit()->call($owner, $repo, $commitSha);
@@ -538,19 +538,18 @@ final class Repos
         return $this->operators->repos👷CreateCommitComment()->call($owner, $repo, $commitSha, $params);
     }
 
-    /** @return Observable<Schema\PullRequestSimple> */
+    /** @return iterable<int,Schema\PullRequestSimple> */
     public function listPullRequestsAssociatedWithCommit(string $owner, string $repo, string $commitSha, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷ListPullRequestsAssociatedWithCommit()->call($owner, $repo, $commitSha, $perPage, $page);
     }
 
-    /** @return Observable<Schema\PullRequestSimple> */
+    /** @return iterable<int,Schema\PullRequestSimple> */
     public function listPullRequestsAssociatedWithCommitListing(string $owner, string $repo, string $commitSha, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷ListPullRequestsAssociatedWithCommitListing()->call($owner, $repo, $commitSha, $perPage, $page);
     }
 
-    /** @return */
     public function getCommit(string $owner, string $repo, string $ref, int $page, int $perPage): Commit
     {
         return $this->operators->repos👷GetCommit()->call($owner, $repo, $ref, $page, $perPage);
@@ -1006,6 +1005,7 @@ final class Repos
         return $this->operators->repos👷GetPagesHealthCheck()->call($owner, $repo);
     }
 
+    /** @return */
     public function checkPrivateVulnerabilityReporting(string $owner, string $repo): \ApiClients\Client\GitHub\Schema\Operations\Repos\CheckPrivateVulnerabilityReporting\Response\ApplicationJson\Ok
     {
         return $this->operators->repos👷CheckPrivateVulnerabilityReporting()->call($owner, $repo);

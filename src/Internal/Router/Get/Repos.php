@@ -981,6 +981,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
+    /** @return */
     public function checkPrivateVulnerabilityReporting(array $params): \ApiClients\Client\GitHub\Schema\Operations\Repos\CheckPrivateVulnerabilityReporting\Response\ApplicationJson\Ok
     {
         $arguments = [];
@@ -1376,7 +1377,6 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
-    /** @return */
     public function getCommit(array $params): Commit
     {
         $arguments = [];
@@ -2150,7 +2150,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['username']);
     }
 
-    /** @return Observable<Schema\BranchShort> */
+    /** @return iterable<int,Schema\BranchShort> */
     public function listBranchesForHeadCommit(array $params): iterable
     {
         $arguments = [];
@@ -2216,7 +2216,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['commit_sha'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\PullRequestSimple> */
+    /** @return iterable<int,Schema\PullRequestSimple> */
     public function listPullRequestsAssociatedWithCommit(array $params): iterable
     {
         $arguments = [];

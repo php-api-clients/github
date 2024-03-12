@@ -22,8 +22,7 @@ final class Copilot
     {
     }
 
-    /** @return */
-    public function getCopilotOrganizationDetails(array $params): CopilotOrganizationDetails
+    public function getCopilotOrganizationDetails(array $params): CopilotOrganizationDetails|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Repos\Owner\Repo\Commits\CommitSha;
+namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Repos\Owner\Repo\Git\MatchingRefs;
 
 use ApiClients\Client\GitHub\Schema\BasicError;
-use ApiClients\Client\GitHub\Schema\ValidationError;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems;
@@ -21,7 +20,7 @@ use function assert;
 use function count;
 use function is_a;
 
-class BranchesWhereHead implements ObjectMapper
+class Ref implements ObjectMapper
 {
     private array $hydrationStack = [];
 
@@ -39,62 +38,9 @@ class BranchesWhereHead implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match ($className) {
-            'ApiClients\Client\GitHub\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($payload),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
+            'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError(array $payload): ValidationError
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['message'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'message';
-                goto after_message;
-            }
-
-            $properties['message'] = $value;
-
-            after_message:
-
-            $value = $payload['documentation_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'documentation_url';
-                goto after_documentationUrl;
-            }
-
-            $properties['documentationUrl'] = $value;
-
-            after_documentationUrl:
-
-            $value = $payload['errors'] ?? null;
-
-            if ($value === null) {
-                $properties['errors'] = null;
-                goto after_errors;
-            }
-
-            $properties['errors'] = $value;
-
-            after_errors:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(ValidationError::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new ValidationError(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ValidationError', $exception, stack: $this->hydrationStack);
-        }
     }
 
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): BasicError
@@ -191,7 +137,6 @@ class BranchesWhereHead implements ObjectMapper
                 'DateTime' => $this->serializeValueDateTime($object),
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($object),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new LogicException('No serialization defined for $className'),
             };
@@ -253,35 +198,6 @@ class BranchesWhereHead implements ObjectMapper
         }
 
         return $serializer->serialize($value, $this);
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError(mixed $object): mixed
-    {
-        assert($object instanceof ValidationError);
-        $result = [];
-
-        $message                                 = $object->message;
-        after_message:        $result['message'] = $message;
-
-        $documentationUrl                                           = $object->documentationUrl;
-        after_documentationUrl:        $result['documentation_url'] = $documentationUrl;
-
-        $errors = $object->errors;
-
-        if ($errors === null) {
-            goto after_errors;
-        }
-
-        static $errorsSerializer0;
-
-        if ($errorsSerializer0 === null) {
-            $errorsSerializer0 = new SerializeArrayItems(...[]);
-        }
-
-        $errors                                = $errorsSerializer0->serialize($errors, $this);
-        after_errors:        $result['errors'] = $errors;
-
-        return $result;
     }
 
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(mixed $object): mixed

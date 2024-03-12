@@ -24,7 +24,6 @@ final readonly class CreateRef
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, array $params): GitRef
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Git\CreateRef($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

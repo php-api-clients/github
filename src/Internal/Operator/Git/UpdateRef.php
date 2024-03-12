@@ -24,7 +24,6 @@ final readonly class UpdateRef
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, string $ref, array $params): GitRef
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Git\UpdateRef($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref);

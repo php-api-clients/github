@@ -24,7 +24,6 @@ final readonly class CreateTag
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, array $params): GitTag
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Git\CreateTag($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

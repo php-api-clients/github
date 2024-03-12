@@ -24,7 +24,6 @@ final readonly class GetRef
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, string $ref): GitRef
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Git\GetRef($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref);

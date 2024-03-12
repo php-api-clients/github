@@ -1099,7 +1099,7 @@ final class Repos
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\PullRequestSimple> */
+    /** @return iterable<int,Schema\PullRequestSimple> */
     public function listPullRequestsAssociatedWithCommitListing(array $params): iterable
     {
         $arguments = [];

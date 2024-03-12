@@ -129,4 +129,41 @@ final class GetTreeTest extends AsyncTestCase
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->operations()->git()->getTree('generated', 'generated', 'generated', 'generated');
     }
+
+    /** @test */
+    public function call_httpCode_409_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(409, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/repos/generated/generated/git/trees/generated?recursive=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Internal\Operation\Git\GetTree::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner']     = 'generated';
+            $data['repo']      = 'generated';
+            $data['tree_sha']  = 'generated';
+            $data['recursive'] = 'generated';
+
+            return $data;
+        })([]));
+    }
+
+    /** @test */
+    public function operations_httpCode_409_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(409, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/repos/generated/generated/git/trees/generated?recursive=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->operations()->git()->getTree('generated', 'generated', 'generated', 'generated');
+    }
 }

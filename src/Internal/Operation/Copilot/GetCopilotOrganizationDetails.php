@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Operation\Copilot;
 use ApiClients\Client\GitHub\Error as ErrorSchemas;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use cebe\openapi\Reader;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\RequestInterface;
@@ -35,7 +36,7 @@ final class GetCopilotOrganizationDetails
         return new Request('GET', str_replace(['{org}'], [$this->org], '/orgs/{org}/copilot/billing'));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\CopilotOrganizationDetails
+    public function createResponse(ResponseInterface $response): Schema\CopilotOrganizationDetails|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -85,6 +86,14 @@ final class GetCopilotOrganizationDetails
                 }
 
                 break;
+        }
+
+        switch ($code) {
+            /**
+             * There is a problem with your account's associated payment method.
+             **/
+            case 422:
+                return new WithoutBody(422, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

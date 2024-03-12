@@ -188,4 +188,38 @@ final class GetCopilotOrganizationDetailsTest extends AsyncTestCase
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->operations()->copilot()->getCopilotOrganizationDetails('generated');
     }
+
+    /** @test */
+    public function call_httpCode_422_empty(): void
+    {
+        $response = new Response(422, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/orgs/generated/copilot/billing', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Internal\Operation\Copilot\GetCopilotOrganizationDetails::OPERATION_MATCH, (static function (array $data): array {
+            $data['org'] = 'generated';
+
+            return $data;
+        })([]));
+    }
+
+    /** @test */
+    public function operations_httpCode_422_empty(): void
+    {
+        $response = new Response(422, []);
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('GET', '/orgs/generated/copilot/billing', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->operations()->copilot()->getCopilotOrganizationDetails('generated');
+        self::assertArrayHasKey('code', $result);
+        self::assertSame(422, $result['code']);
+    }
 }

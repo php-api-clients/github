@@ -90,4 +90,40 @@ final class UpdateRefTest extends AsyncTestCase
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->operations()->git()->updateRef('generated', 'generated', 'generated', json_decode(Schema\Git\UpdateRef\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
     }
+
+    /** @test */
+    public function call_httpCode_409_requestContentType_application_json_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(409, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('PATCH', '/repos/generated/generated/git/refs/generated', Argument::type('array'), json_encode(json_decode(Schema\Git\UpdateRef\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Internal\Operation\Git\UpdateRef::OPERATION_MATCH, (static function (array $data): array {
+            $data['owner'] = 'generated';
+            $data['repo']  = 'generated';
+            $data['ref']   = 'generated';
+
+            return $data;
+        })(json_decode(Schema\Git\UpdateRef\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)));
+    }
+
+    /** @test */
+    public function operations_httpCode_409_requestContentType_application_json_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\BasicError::class);
+        $response = new Response(409, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\BasicError::SCHEMA_EXAMPLE_DATA, true)));
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('PATCH', '/repos/generated/generated/git/refs/generated', Argument::type('array'), json_encode(json_decode(Schema\Git\UpdateRef\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true)))->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->operations()->git()->updateRef('generated', 'generated', 'generated', json_decode(Schema\Git\UpdateRef\Request\ApplicationJson::SCHEMA_EXAMPLE_DATA, true));
+    }
 }
