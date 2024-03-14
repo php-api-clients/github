@@ -1377,6 +1377,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id']);
     }
 
+    /** @return */
     public function getCommit(array $params): Commit
     {
         $arguments = [];
@@ -2150,7 +2151,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['username']);
     }
 
-    /** @return iterable<int,Schema\BranchShort> */
+    /** @return Observable<Schema\BranchShort> */
     public function listBranchesForHeadCommit(array $params): iterable
     {
         $arguments = [];
@@ -2216,7 +2217,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['commit_sha'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\PullRequestSimple> */
+    /** @return Observable<Schema\PullRequestSimple> */
     public function listPullRequestsAssociatedWithCommit(array $params): iterable
     {
         $arguments = [];

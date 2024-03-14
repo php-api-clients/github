@@ -514,7 +514,7 @@ final class Repos
         return $this->operators->repos👷ListCommitsListing()->call($owner, $repo, $sha, $path, $author, $committer, $since, $until, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\BranchShort> */
+    /** @return Observable<Schema\BranchShort> */
     public function listBranchesForHeadCommit(string $owner, string $repo, string $commitSha): iterable
     {
         return $this->operators->repos👷ListBranchesForHeadCommit()->call($owner, $repo, $commitSha);
@@ -538,18 +538,19 @@ final class Repos
         return $this->operators->repos👷CreateCommitComment()->call($owner, $repo, $commitSha, $params);
     }
 
-    /** @return iterable<int,Schema\PullRequestSimple> */
+    /** @return Observable<Schema\PullRequestSimple> */
     public function listPullRequestsAssociatedWithCommit(string $owner, string $repo, string $commitSha, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷ListPullRequestsAssociatedWithCommit()->call($owner, $repo, $commitSha, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\PullRequestSimple> */
+    /** @return Observable<Schema\PullRequestSimple> */
     public function listPullRequestsAssociatedWithCommitListing(string $owner, string $repo, string $commitSha, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷ListPullRequestsAssociatedWithCommitListing()->call($owner, $repo, $commitSha, $perPage, $page);
     }
 
+    /** @return */
     public function getCommit(string $owner, string $repo, string $ref, int $page, int $perPage): Commit
     {
         return $this->operators->repos👷GetCommit()->call($owner, $repo, $ref, $page, $perPage);

@@ -18,6 +18,7 @@ final class Copilot
     {
     }
 
+    /** @return */
     public function getCopilotOrganizationDetails(string $org): CopilotOrganizationDetails|WithoutBody
     {
         return $this->operators->copilot👷GetCopilotOrganizationDetails()->call($org);

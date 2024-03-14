@@ -22,6 +22,7 @@ final class Copilot
     {
     }
 
+    /** @return */
     public function getCopilotOrganizationDetails(array $params): CopilotOrganizationDetails|WithoutBody
     {
         $arguments = [];

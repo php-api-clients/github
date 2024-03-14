@@ -24,6 +24,7 @@ final readonly class GetTree
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $treeSha, string $recursive): GitTree
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Git\GetTree($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $treeSha, $recursive);
