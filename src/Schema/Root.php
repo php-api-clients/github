@@ -22,7 +22,6 @@ final readonly class Root
         "followers_url",
         "following_url",
         "gists_url",
-        "hub_url",
         "issue_search_url",
         "issues_url",
         "keys_url",
@@ -95,7 +94,8 @@ final readonly class Root
         },
         "hub_url": {
             "type": "string",
-            "format": "uri-template"
+            "format": "uri-template",
+            "deprecated": true
         },
         "issue_search_url": {
             "type": "string",
@@ -230,7 +230,7 @@ final readonly class Root
     public string $followersUrl, #[MapFrom('following_url')]
     public string $followingUrl, #[MapFrom('gists_url')]
     public string $gistsUrl, #[MapFrom('hub_url')]
-    public string $hubUrl, #[MapFrom('issue_search_url')]
+    public string|null $hubUrl, #[MapFrom('issue_search_url')]
     public string $issueSearchUrl, #[MapFrom('issues_url')]
     public string $issuesUrl, #[MapFrom('keys_url')]
     public string $keysUrl, #[MapFrom('label_search_url')]

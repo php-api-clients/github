@@ -1740,7 +1740,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/actions/runs') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\ListWorkflowRunsForRepo\\Response\\ApplicationJson\\Ok');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/actions/runs/{run_id}') {
@@ -1888,7 +1888,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\ListWorkflowRuns\\Response\\ApplicationJson\\Ok\\Application\\Json');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing') {

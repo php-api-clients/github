@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet6E2F9577\TietDA128ABF\Tiet5ED532B6;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet59467073\Tiet58CE2E2F\Tiet6601455F;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class Tiet57F1B98F
+abstract readonly class TietF3A22DF2
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -99,10 +99,13 @@ abstract readonly class Tiet57F1B98F
                         "enum": [
                             "queued",
                             "in_progress",
-                            "completed"
+                            "completed",
+                            "waiting",
+                            "requested",
+                            "pending"
                         ],
                         "type": "string",
-                        "description": "The phase of the lifecycle that the check is currently in.",
+                        "description": "The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.",
                         "examples": [
                             "queued"
                         ]

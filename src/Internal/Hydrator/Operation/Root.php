@@ -182,7 +182,7 @@ class Root implements ObjectMapper
             $value = $payload['hub_url'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'hub_url';
+                $properties['hubUrl'] = null;
                 goto after_hubUrl;
             }
 
@@ -559,7 +559,12 @@ class Root implements ObjectMapper
         $gistsUrl                                   = $object->gistsUrl;
         after_gistsUrl:        $result['gists_url'] = $gistsUrl;
 
-        $hubUrl                                 = $object->hubUrl;
+        $hubUrl = $object->hubUrl;
+
+        if ($hubUrl === null) {
+            goto after_hubUrl;
+        }
+
         after_hubUrl:        $result['hub_url'] = $hubUrl;
 
         $issueSearchUrl                                          = $object->issueSearchUrl;

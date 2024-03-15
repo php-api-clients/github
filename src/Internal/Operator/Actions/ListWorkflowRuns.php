@@ -24,7 +24,6 @@ final readonly class ListWorkflowRuns
     {
     }
 
-    /** @return */
     public function call(string $owner, string $repo, $workflowId, string $actor, string $branch, string $event, string $status, string $created, int $checkSuiteId, string $headSha, int $perPage = 30, int $page = 1, bool $excludePullRequests = false): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListWorkflowRuns($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $workflowId, $actor, $branch, $event, $status, $created, $checkSuiteId, $headSha, $perPage, $page, $excludePullRequests);

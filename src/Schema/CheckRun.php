@@ -88,10 +88,13 @@ final readonly class CheckRun
             "enum": [
                 "queued",
                 "in_progress",
-                "completed"
+                "completed",
+                "waiting",
+                "requested",
+                "pending"
             ],
             "type": "string",
-            "description": "The phase of the lifecycle that the check is currently in.",
+            "description": "The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.",
             "examples": [
                 "queued"
             ]
@@ -1259,7 +1262,7 @@ final readonly class CheckRun
     /**
      * id: The id of the check.
      * headSha: The SHA of the commit that is being checked.
-     * status: The phase of the lifecycle that the check is currently in.
+     * status: The phase of the lifecycle that the check is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check runs.
      * name: The name of the check.
      * pullRequests: Pull requests that are open with a `head_sha` or `head_branch` that matches the check. The returned pull requests do not necessarily indicate pull requests that triggered the check.
      * deployment: A deployment created as the result of an Actions check run from a workflow that references an environment

@@ -63,10 +63,13 @@ final readonly class ApplicationJson
             "enum": [
                 "queued",
                 "in_progress",
-                "completed"
+                "completed",
+                "waiting",
+                "requested",
+                "pending"
             ],
             "type": "string",
-            "description": "The current status.",
+            "description": "The current status of the check run. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.",
             "default": "queued"
         },
         "started_at": {
@@ -239,7 +242,7 @@ final readonly class ApplicationJson
     "head_sha": "generated",
     "details_url": "generated",
     "external_id": "generated",
-    "status": "completed",
+    "status": "pending",
     "started_at": "1970-01-01T00:00:00+00:00",
     "conclusion": "timed_out",
     "completed_at": "1970-01-01T00:00:00+00:00",
@@ -836,7 +839,7 @@ final readonly class ApplicationJson
      * headSha: The SHA of the commit.
      * detailsUrl: The URL of the integrator's site that has the full details of the check. If the integrator does not provide this, then the homepage of the GitHub app is used.
      * externalId: A reference for the run on the integrator's system.
-     * status: The current status.
+     * status: The current status of the check run. Only GitHub Actions can set a status of `waiting`, `pending`, or `requested`.
      * startedAt: The time that the check run began. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`.
      * conclusion: **Required if you provide `completed_at` or a `status` of `completed`**. The final conclusion of the check.
      * *Note:** Providing `conclusion` will automatically set the `status` parameter to `completed`. You cannot change a check run conclusion to `stale`, only GitHub can set this.

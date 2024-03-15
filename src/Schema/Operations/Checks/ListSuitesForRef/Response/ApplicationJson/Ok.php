@@ -76,12 +76,16 @@ final readonly class Ok
                             "queued",
                             "in_progress",
                             "completed",
+                            "waiting",
+                            "requested",
+                            "pending",
                             null
                         ],
                         "type": [
                             "string",
                             "null"
                         ],
+                        "description": "The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.",
                         "examples": [
                             "completed"
                         ]

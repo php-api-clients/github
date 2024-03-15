@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet10427BD1\TietC07505E7\TietDF661D53;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietCB8D9CDC\TietE49C17A9\Tiet0A1449E8;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class Tiet68C00248
+abstract readonly class TietDA465DC8
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -107,7 +107,9 @@ abstract readonly class Tiet68C00248
                             "queued",
                             "in_progress",
                             "completed",
-                            "waiting"
+                            "waiting",
+                            "requested",
+                            "pending"
                         ],
                         "type": "string",
                         "description": "The phase of the lifecycle that the job is currently in.",

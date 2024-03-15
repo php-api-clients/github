@@ -65,12 +65,16 @@ final readonly class CheckSuite
                 "queued",
                 "in_progress",
                 "completed",
+                "waiting",
+                "requested",
+                "pending",
                 null
             ],
             "type": [
                 "string",
                 "null"
             ],
+            "description": "The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.",
             "examples": [
                 "completed"
             ]
@@ -1715,6 +1719,7 @@ final readonly class CheckSuite
 
     /**
      * headSha: The SHA of the head commit that is being checked.
+     * status: The phase of the lifecycle that the check suite is currently in. Statuses of waiting, requested, and pending are reserved for GitHub Actions check suites.
      * repository: Minimal Repository
      * headCommit: A commit.
      */

@@ -95,7 +95,9 @@ final readonly class Job
                 "queued",
                 "in_progress",
                 "completed",
-                "waiting"
+                "waiting",
+                "requested",
+                "pending"
             ],
             "type": "string",
             "description": "The phase of the lifecycle that the job is currently in.",

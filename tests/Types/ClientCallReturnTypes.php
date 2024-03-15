@@ -441,7 +441,7 @@ assertType('', $client->call('PUT /repos/{owner}/{repo}/actions/runners/{runner_
 assertType('', $client->call('POST /repos/{owner}/{repo}/actions/runners/{runner_id}/labels'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/actions/runners/{runner_id}/labels/{name}'));
-assertType('', $client->call('GET /repos/{owner}/{repo}/actions/runs'));
+assertType('Schema\\Operations\\Actions\\ListWorkflowRunsForRepo\\Response\\ApplicationJson\\Ok', $client->call('GET /repos/{owner}/{repo}/actions/runs'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/actions/runs/{run_id}'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/actions/runs/{run_id}'));
 assertType('Observable<Schema\\EnvironmentApprovals>', $client->call('GET /repos/{owner}/{repo}/actions/runs/{run_id}/approvals'));
@@ -478,7 +478,7 @@ assertType('', $client->call('GET /repos/{owner}/{repo}/actions/workflows/{workf
 assertType('', $client->call('PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/disable'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/actions/workflows/{workflow_id}/dispatches'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/actions/workflows/{workflow_id}/enable'));
-assertType('', $client->call('GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs'));
+assertType('Schema\\Operations\\Actions\\ListWorkflowRuns\\Response\\ApplicationJson\\Ok\\Application\\Json', $client->call('GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/runs'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/actions/workflows/{workflow_id}/timing'));
 assertType('Observable<Schema\\Activity>', $client->call('GET /repos/{owner}/{repo}/activity'));
 assertType('Observable<Schema\\SimpleUser>', $client->call('GET /repos/{owner}/{repo}/assignees'));
