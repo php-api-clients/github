@@ -670,7 +670,6 @@ final class Repos
         return $this->operators->repos👷GetDeploymentStatus()->call($owner, $repo, $deploymentId, $statusId);
     }
 
-    /** @return */
     public function createDispatchEvent(string $owner, string $repo, array $params): WithoutBody
     {
         return $this->operators->repos👷CreateDispatchEvent()->call($owner, $repo, $params);

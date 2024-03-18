@@ -227,7 +227,6 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
     public function createDispatchEvent(array $params): WithoutBody
     {
         $arguments = [];
