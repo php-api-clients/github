@@ -35,6 +35,7 @@ use function assert;
 use function count;
 use function is_a;
 use function is_array;
+use function is_object;
 
 class SecretScanningAlertLocation implements ObjectMapper
 {
@@ -724,7 +725,7 @@ class SecretScanningAlertLocation implements ObjectMapper
             $value = $payload['type'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'type';
+                $properties['type'] = null;
                 goto after_type;
             }
 
@@ -735,7 +736,7 @@ class SecretScanningAlertLocation implements ObjectMapper
             $value = $payload['details'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'details';
+                $properties['details'] = null;
                 goto after_details;
             }
 
@@ -748,7 +749,7 @@ class SecretScanningAlertLocation implements ObjectMapper
             $value = $detailsCaster1->cast($value, $this);
 
             if ($value === null) {
-                                $missingFields[] = 'details';
+                                $properties['details'] = null;
                 goto after_details;
             }
 
@@ -4235,24 +4236,24 @@ class SecretScanningAlertLocation implements ObjectMapper
         assert($object instanceof SecretScanningLocation);
         $result = [];
 
-        $type                              = $object->type;
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
         after_type:        $result['type'] = $type;
 
         $details = $object->details;
-        $details = match ($details::class) {
-                        'ApiClients\Client\GitHub\Schema\SecretScanningLocationCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationCommit($details),
-            'ApiClients\Client\GitHub\Schema\SecretScanningLocationIssueTitle' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationIssueTitle($details),
-            'ApiClients\Client\GitHub\Schema\SecretScanningLocationIssueBody' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationIssueBody($details),
-            'ApiClients\Client\GitHub\Schema\SecretScanningLocationIssueComment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationIssueComment($details),
-            'ApiClients\Client\GitHub\Schema\SecretScanningLocationDiscussionTitle' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationDiscussionTitle($details),
-            'ApiClients\Client\GitHub\Schema\SecretScanningLocationDiscussionBody' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationDiscussionBody($details),
-            'ApiClients\Client\GitHub\Schema\SecretScanningLocationDiscussionComment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationDiscussionComment($details),
-            'ApiClients\Client\GitHub\Schema\SecretScanningLocationPullRequestTitle' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationPullRequestTitle($details),
-            'ApiClients\Client\GitHub\Schema\SecretScanningLocationPullRequestBody' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationPullRequestBody($details),
-            'ApiClients\Client\GitHub\Schema\SecretScanningLocationPullRequestComment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationPullRequestComment($details),
-            'ApiClients\Client\GitHub\Schema\SecretScanningLocationPullRequestReview' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationPullRequestReview($details),
-            'ApiClients\Client\GitHub\Schema\SecretScanningLocationPullRequestReviewComment' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningLocationPullRequestReviewComment($details),
-        };
+
+        if ($details === null) {
+            goto after_details;
+        }
+
+        if (is_object($details)) {
+            $details = $this->serializeObject($details);
+        }
+
         after_details:        $result['details'] = $details;
 
         return $result;

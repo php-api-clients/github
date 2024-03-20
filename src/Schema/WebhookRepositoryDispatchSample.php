@@ -22,10 +22,8 @@ final readonly class WebhookRepositoryDispatchSample
     "type": "object",
     "properties": {
         "action": {
-            "enum": [
-                "sample.collected"
-            ],
-            "type": "string"
+            "type": "string",
+            "description": "The `event_type` that was specified in the `POST \\/repos\\/{owner}\\/{repo}\\/dispatches` request body."
         },
         "branch": {
             "type": "string"
@@ -35,6 +33,7 @@ final readonly class WebhookRepositoryDispatchSample
                 "object",
                 "null"
             ],
+            "description": "The `client_payload` that was specified in the `POST \\/repos\\/{owner}\\/{repo}\\/dispatches` request body.",
             "additionalProperties": true
         },
         "enterprise": {
@@ -1891,7 +1890,7 @@ final readonly class WebhookRepositoryDispatchSample
     public const SCHEMA_TITLE        = 'repository_dispatch event';
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{
-    "action": "sample.collected",
+    "action": "generated",
     "branch": "generated",
     "client_payload": [],
     "enterprise": {
@@ -2228,6 +2227,8 @@ final readonly class WebhookRepositoryDispatchSample
 }';
 
     /**
+     * action: The `event_type` that was specified in the `POST /repos/{owner}/{repo}/dispatches` request body.
+     * clientPayload: The `client_payload` that was specified in the `POST /repos/{owner}/{repo}/dispatches` request body.
      * enterprise: An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
     on an enterprise account or an organization that's part of an enterprise account. For more information,
     see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."

@@ -624,7 +624,7 @@ assertType('Observable<Schema\\DeploymentStatus>', $client->call('GET /repos/{ow
 assertType('Observable<Schema\\DeploymentStatus>', $client->call('LIST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/deployments/{deployment_id}/statuses'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/deployments/{deployment_id}/statuses/{status_id}'));
-assertType('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('POST /repos/{owner}/{repo}/dispatches'));
+assertType('', $client->call('POST /repos/{owner}/{repo}/dispatches'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/environments'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/environments/{environment_name}'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/environments/{environment_name}'));

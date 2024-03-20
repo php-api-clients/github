@@ -32,6 +32,13 @@ final class Details implements PropertyCaster
                 }
             }
 
+            if ($signature === 'blob_sha|commit_sha|commit_url|end_column|end_line|page_url|path|start_column|start_line') {
+                try {
+                    return $hydrator->hydrateObject(Schema\SecretScanningLocationWikiCommit::class, $value);
+                } catch (Throwable) {
+                }
+            }
+
             if ($signature === 'issue_title_url') {
                 try {
                     return $hydrator->hydrateObject(Schema\SecretScanningLocationIssueTitle::class, $value);

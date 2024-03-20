@@ -4,8 +4,21 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookRepositoryDispatchSample;
 
-use ApiClients\Client\GitHub\Schema;
-
-final readonly class ClientPayload extends Schema\AliasAbstract\Tiet76B5D9AD\Tiet3F1D0B82\Tiet9290F302\Tiet5AB2627C
+final readonly class ClientPayload
 {
+    public const SCHEMA_JSON         = '{
+    "type": [
+        "object",
+        "null"
+    ],
+    "description": "The `client_payload` that was specified in the `POST \\/repos\\/{owner}\\/{repo}\\/dispatches` request body.",
+    "additionalProperties": true
+}';
+    public const SCHEMA_TITLE        = '';
+    public const SCHEMA_DESCRIPTION  = 'The `client_payload` that was specified in the `POST /repos/{owner}/{repo}/dispatches` request body.';
+    public const SCHEMA_EXAMPLE_DATA = '[]';
+
+    public function __construct()
+    {
+    }
 }
