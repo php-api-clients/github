@@ -1,5 +1,5 @@
 {
-    "specHash": "2839c344a181beeed5f86fd4195f3b9a",
+    "specHash": "b76fea2cb5ac476be8636e4403ed63dc",
     "generatedFiles": {
         "files": [
             {
@@ -5800,7 +5800,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "2bda5f4297ca2c437fbf084c85c6bac2"
+                "hash": "83236f1e7b6e667c238b9ee90f4f0eb3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
