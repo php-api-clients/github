@@ -66,6 +66,14 @@ final class Get
 
                         throw new ErrorSchemas\BasicError(404, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
+                     * Unacceptable
+                     **/
+
+                    case 406:
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+
+                        throw new ErrorSchemas\BasicError(406, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
+                    /**
                      * Internal Error
                      **/
 
