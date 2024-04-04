@@ -794,7 +794,7 @@ assertType('Observable<Schema\\Reaction>', $client->call('GET /repos/{owner}/{re
 assertType('Observable<Schema\\Reaction>', $client->call('LIST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}'));
-assertType('Schema\\PullRequest|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /repos/{owner}/{repo}/pulls/{pull_number}'));
+assertType('', $client->call('GET /repos/{owner}/{repo}/pulls/{pull_number}'));
 assertType('', $client->call('PATCH /repos/{owner}/{repo}/pulls/{pull_number}'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/pulls/{pull_number}/codespaces'));
 assertType('Observable<Schema\\PullRequestReviewComment>', $client->call('GET /repos/{owner}/{repo}/pulls/{pull_number}/comments'));

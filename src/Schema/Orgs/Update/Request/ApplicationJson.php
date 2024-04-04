@@ -37,7 +37,7 @@ final readonly class ApplicationJson
         },
         "description": {
             "type": "string",
-            "description": "The description of the company."
+            "description": "The description of the company. The maximum size is 160 characters."
         },
         "has_organization_projects": {
             "type": "boolean",
@@ -190,7 +190,7 @@ final readonly class ApplicationJson
      * twitterUsername: The Twitter username of the company.
      * location: The location.
      * name: The shorthand name of the company.
-     * description: The description of the company.
+     * description: The description of the company. The maximum size is 160 characters.
      * hasOrganizationProjects: Whether an organization can use organization projects.
      * hasRepositoryProjects: Whether repositories that belong to the organization can use repository projects.
      * defaultRepositoryPermission: Default permission level members have for organization repositories.
