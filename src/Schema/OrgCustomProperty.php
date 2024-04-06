@@ -37,8 +37,20 @@ final readonly class OrgCustomProperty
         },
         "default_value": {
             "type": [
+                "null",
                 "string",
-                "null"
+                "array"
+            ],
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
             ],
             "description": "Default value of the property"
         },
@@ -85,7 +97,7 @@ final readonly class OrgCustomProperty
     "property_name": "generated",
     "value_type": "single_select",
     "required": false,
-    "default_value": "generated",
+    "default_value": null,
     "description": "generated",
     "allowed_values": null,
     "values_editable_by": "org_actors"
@@ -104,7 +116,7 @@ final readonly class OrgCustomProperty
     public function __construct(#[MapFrom('property_name')]
     public string $propertyName, #[MapFrom('value_type')]
     public string $valueType, public bool|null $required, #[MapFrom('default_value')]
-    public string|null $defaultValue, public string|null $description, #[MapFrom('allowed_values')]
+    public string|array|null $defaultValue, public string|null $description, #[MapFrom('allowed_values')]
     public array|null $allowedValues, #[MapFrom('values_editable_by')]
     public string|null $valuesEditableBy,)
     {

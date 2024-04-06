@@ -31,8 +31,20 @@ final readonly class ApplicationJson
         },
         "default_value": {
             "type": [
+                "null",
                 "string",
-                "null"
+                "array"
+            ],
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
             ],
             "description": "Default value of the property"
         },
@@ -62,7 +74,7 @@ final readonly class ApplicationJson
     public const SCHEMA_EXAMPLE_DATA = '{
     "value_type": "single_select",
     "required": false,
-    "default_value": "generated",
+    "default_value": null,
     "description": "generated",
     "allowed_values": null
 }';
@@ -77,7 +89,7 @@ final readonly class ApplicationJson
      */
     public function __construct(#[MapFrom('value_type')]
     public string $valueType, public bool|null $required, #[MapFrom('default_value')]
-    public string|null $defaultValue, public string|null $description, #[MapFrom('allowed_values')]
+    public string|array|null $defaultValue, public string|null $description, #[MapFrom('allowed_values')]
     public array|null $allowedValues,)
     {
     }

@@ -1,5 +1,5 @@
 {
-    "specHash": "89579af3f1f5255ac2c758a7d1d6bcae",
+    "specHash": "6edac6ad28d0936afe65460dc8c6732f",
     "generatedFiles": {
         "files": [
             {
@@ -5832,7 +5832,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Pulls.php",
-                "hash": "60138d3a0e61f4cd49819b25927d75b3"
+                "hash": "d922518f8c93d21148f0207ad009c14a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/SecurityAdvisories.php",
@@ -29532,7 +29532,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrgCustomProperty.php",
-                "hash": "0aae19a7acee7983d4963de1ebde8c18"
+                "hash": "346a2591793d92ffd067dd78f1b32daa"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CustomPropertyValue.php",
@@ -29544,11 +29544,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Orgs\/CreateOrUpdateCustomProperties\/Request\/ApplicationJson.php",
-                "hash": "21d553f3464fcbb0d062e2f76ddb099f"
+                "hash": "2cf296fc3394bbb6c98cf2f3d3b996b7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Orgs\/CreateOrUpdateCustomProperty\/Request\/ApplicationJson.php",
-                "hash": "002a3303609d5080ee260fb22161cf8a"
+                "hash": "4f93053bc6b09f3cff18e512d6586d22"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Orgs\/CreateOrUpdateCustomPropertiesValuesForRepos\/Request\/ApplicationJson.php",
@@ -29560,7 +29560,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Properties\/Schema\/CustomPropertyName.php",
-                "hash": "84d2feb94ce9ef5afa9c0d286334a71d"
+                "hash": "ccfe72340b3dbbc149134e15f22f6650"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Properties\/Values.php",
@@ -29572,7 +29572,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCustomPropertyCreated.php",
-                "hash": "3c60e4f88ed847b74a7d08f9ea582909"
+                "hash": "9cca145c9c9666d4b2a65cc5cbb6d463"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCustomPropertyDeleted.php",
@@ -29580,7 +29580,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCustomPropertyUpdated.php",
-                "hash": "a1d988d40d57cdfc8f77b297882db162"
+                "hash": "3f6a58bbe7b47887398df894d5a954db"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCustomPropertyValuesUpdated.php",
@@ -30000,7 +30000,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/CustomProperty.php",
-                "hash": "c71e5f46f322f96d38862229390c00fc"
+                "hash": "a65528d0a98cc5095b9760a70c6b4983"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/CustomPropertyValues.php",
@@ -30716,7 +30716,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRuleParamsCodeScanningTool.php",
-                "hash": "10135121514ba5aebc2b0fbec5fd0bec"
+                "hash": "aeea6ead534ee9ce0da99c08a1902e93"
             }
         ]
     },

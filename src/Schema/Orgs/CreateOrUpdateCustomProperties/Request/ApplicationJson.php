@@ -45,8 +45,20 @@ final readonly class ApplicationJson
                     },
                     "default_value": {
                         "type": [
+                            "null",
                             "string",
-                            "null"
+                            "array"
+                        ],
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
                         ],
                         "description": "Default value of the property"
                     },
@@ -99,7 +111,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -108,7 +120,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -117,7 +129,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -126,7 +138,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -135,7 +147,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -144,7 +156,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -153,7 +165,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -162,7 +174,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -171,7 +183,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -180,7 +192,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -189,7 +201,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -198,7 +210,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -207,7 +219,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -216,7 +228,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -225,7 +237,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -234,7 +246,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -243,7 +255,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -252,7 +264,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -261,7 +273,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -270,7 +282,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -279,7 +291,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -288,7 +300,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -297,7 +309,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -306,7 +318,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -315,7 +327,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -324,7 +336,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -333,7 +345,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -342,7 +354,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -351,7 +363,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -360,7 +372,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -369,7 +381,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -378,7 +390,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -387,7 +399,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -396,7 +408,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -405,7 +417,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -414,7 +426,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -423,7 +435,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -432,7 +444,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -441,7 +453,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -450,7 +462,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -459,7 +471,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -468,7 +480,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -477,7 +489,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -486,7 +498,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -495,7 +507,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -504,7 +516,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -513,7 +525,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -522,7 +534,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -531,7 +543,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -540,7 +552,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -549,7 +561,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -558,7 +570,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -567,7 +579,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -576,7 +588,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -585,7 +597,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -594,7 +606,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -603,7 +615,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -612,7 +624,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -621,7 +633,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -630,7 +642,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -639,7 +651,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -648,7 +660,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -657,7 +669,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -666,7 +678,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -675,7 +687,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -684,7 +696,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -693,7 +705,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -702,7 +714,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -711,7 +723,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -720,7 +732,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -729,7 +741,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -738,7 +750,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -747,7 +759,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -756,7 +768,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -765,7 +777,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -774,7 +786,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -783,7 +795,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -792,7 +804,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -801,7 +813,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -810,7 +822,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -819,7 +831,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -828,7 +840,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -837,7 +849,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -846,7 +858,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -855,7 +867,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -864,7 +876,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -873,7 +885,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -882,7 +894,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -891,7 +903,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -900,7 +912,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -909,7 +921,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -918,7 +930,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -927,7 +939,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -936,7 +948,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -945,7 +957,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -954,7 +966,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -963,7 +975,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -972,7 +984,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -981,7 +993,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"
@@ -990,7 +1002,7 @@ final readonly class ApplicationJson
             "property_name": "generated",
             "value_type": "single_select",
             "required": false,
-            "default_value": "generated",
+            "default_value": null,
             "description": "generated",
             "allowed_values": null,
             "values_editable_by": "org_actors"

@@ -1321,6 +1321,13 @@ class CustomProperty implements ObjectMapper
             goto after_defaultValue;
         }
 
+            static $defaultValueSerializer10;
+
+        if ($defaultValueSerializer10 === null) {
+            $defaultValueSerializer10 = new SerializeArrayItems(...[]);
+        }
+
+            $defaultValue                                   = $defaultValueSerializer10->serialize($defaultValue, $this);
         after_defaultValue:        $result['default_value'] = $defaultValue;
 
         $description = $object->description;
