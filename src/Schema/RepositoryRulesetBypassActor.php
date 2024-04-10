@@ -23,10 +23,10 @@ final readonly class RepositoryRulesetBypassActor
         },
         "actor_type": {
             "enum": [
-                "RepositoryRole",
-                "Team",
                 "Integration",
-                "OrganizationAdmin"
+                "OrganizationAdmin",
+                "RepositoryRole",
+                "Team"
             ],
             "type": "string",
             "description": "The type of actor that can bypass a ruleset"
@@ -46,7 +46,7 @@ final readonly class RepositoryRulesetBypassActor
     public const SCHEMA_DESCRIPTION  = 'An actor that can bypass rules in a ruleset';
     public const SCHEMA_EXAMPLE_DATA = '{
     "actor_id": 8,
-    "actor_type": "OrganizationAdmin",
+    "actor_type": "Team",
     "bypass_mode": "always"
 }';
 

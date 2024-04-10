@@ -54,10 +54,10 @@ final readonly class ApplicationJson
                     },
                     "actor_type": {
                         "enum": [
-                            "RepositoryRole",
-                            "Team",
                             "Integration",
-                            "OrganizationAdmin"
+                            "OrganizationAdmin",
+                            "RepositoryRole",
+                            "Team"
                         ],
                         "type": "string",
                         "description": "The type of actor that can bypass a ruleset"
@@ -653,12 +653,12 @@ final readonly class ApplicationJson
     "bypass_actors": [
         {
             "actor_id": 8,
-            "actor_type": "OrganizationAdmin",
+            "actor_type": "Team",
             "bypass_mode": "always"
         },
         {
             "actor_id": 8,
-            "actor_type": "OrganizationAdmin",
+            "actor_type": "Team",
             "bypass_mode": "always"
         }
     ],
