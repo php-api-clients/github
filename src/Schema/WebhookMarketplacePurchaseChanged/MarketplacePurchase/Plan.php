@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookMarketplacePurchaseChanged\Mark
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Plan extends Schema\AliasAbstract\Tiet7AA6A7F1\Tiet3B52E3DE\Tiet4A6A69BC\TietB4BD4493
+final readonly class Plan extends Schema\AliasAbstract\Tiet031C2837\Tiet088472D3\Tiet0BC419C0\Tiet272B9632
 {
 }

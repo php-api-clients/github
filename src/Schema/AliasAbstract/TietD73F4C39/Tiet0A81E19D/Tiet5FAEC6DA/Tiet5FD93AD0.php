@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet62DE450E\TietBDB05BA1\Tiet285A643A;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietD73F4C39\Tiet0A81E19D\Tiet5FAEC6DA;
 
 use ApiClients\Client\GitHub\Schema;
 
-abstract readonly class Tiet4D2CA009
+abstract readonly class Tiet5FD93AD0
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -16,7 +16,10 @@ abstract readonly class Tiet4D2CA009
         "head",
         "base"
     ],
-    "type": "object",
+    "type": [
+        "object",
+        "null"
+    ],
     "properties": {
         "base": {
             "required": [

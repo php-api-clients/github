@@ -3496,7 +3496,7 @@ final readonly class WebhookPullRequestOpened
                                 "MERGE_MESSAGE"
                             ],
                             "type": "string",
-                            "description": "The default value for a merge commit title.\\n- `PR_TITLE` - default to the pull request\'s title.\\n- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name)."
+                            "description": "The default value for a merge commit title.\\n- `PR_TITLE` - default to the pull request\'s title.\\n- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., \\"Merge pull request #123 from branch-name\\")."
                         },
                         "squash_merge_commit_message": {
                             "enum": [

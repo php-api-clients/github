@@ -2,27 +2,27 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet1CF91DE0\Tiet4DB5DE15\Tiet56410125;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietFB7ED289\TietE0F0595F\TietF991A337;
 
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class Tiet72117C37
+abstract readonly class Tiet2E474A82
 {
     public const SCHEMA_JSON         = '{
     "title": "Repository Vulnerability Alert Alert",
     "required": [
-        "id",
-        "number",
-        "node_id",
-        "state",
-        "affected_range",
         "affected_package_name",
-        "ghsa_id",
-        "severity",
-        "external_reference",
+        "affected_range",
+        "created_at",
         "external_identifier",
-        "created_at"
+        "external_reference",
+        "ghsa_id",
+        "id",
+        "node_id",
+        "number",
+        "severity",
+        "state"
     ],
     "type": "object",
     "properties": {
@@ -174,9 +174,7 @@ abstract readonly class Tiet72117C37
         },
         "state": {
             "enum": [
-                "open",
-                "dismissed",
-                "fixed"
+                "open"
             ],
             "type": "string"
         }

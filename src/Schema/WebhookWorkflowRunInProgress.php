@@ -1932,604 +1932,85 @@ final readonly class WebhookWorkflowRunInProgress
             }
         },
         "workflow_run": {
-            "allOf": [
-                {
-                    "title": "Workflow Run",
+            "title": "Workflow Run",
+            "required": [
+                "actor",
+                "artifacts_url",
+                "cancel_url",
+                "check_suite_id",
+                "check_suite_node_id",
+                "check_suite_url",
+                "conclusion",
+                "created_at",
+                "event",
+                "head_branch",
+                "head_commit",
+                "head_repository",
+                "head_sha",
+                "html_url",
+                "id",
+                "jobs_url",
+                "logs_url",
+                "name",
+                "node_id",
+                "path",
+                "previous_attempt_url",
+                "pull_requests",
+                "repository",
+                "rerun_url",
+                "run_attempt",
+                "run_number",
+                "run_started_at",
+                "status",
+                "triggering_actor",
+                "updated_at",
+                "url",
+                "workflow_id",
+                "workflow_url"
+            ],
+            "type": "object",
+            "properties": {
+                "actor": {
+                    "title": "User",
                     "required": [
-                        "artifacts_url",
-                        "cancel_url",
-                        "check_suite_url",
-                        "check_suite_id",
-                        "check_suite_node_id",
-                        "conclusion",
-                        "created_at",
-                        "event",
-                        "head_branch",
-                        "head_commit",
-                        "head_repository",
-                        "head_sha",
-                        "html_url",
-                        "id",
-                        "jobs_url",
-                        "logs_url",
-                        "node_id",
-                        "name",
-                        "path",
-                        "pull_requests",
-                        "repository",
-                        "rerun_url",
-                        "run_number",
-                        "status",
-                        "updated_at",
-                        "url",
-                        "workflow_id",
-                        "workflow_url",
-                        "run_attempt",
-                        "run_started_at",
-                        "previous_attempt_url",
-                        "actor",
-                        "triggering_actor"
+                        "login",
+                        "id"
                     ],
-                    "type": "object",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
                     "properties": {
-                        "actor": {
-                            "title": "User",
-                            "required": [
-                                "login",
-                                "id"
-                            ],
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "properties": {
-                                "avatar_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "deleted": {
-                                    "type": "boolean"
-                                },
-                                "email": {
-                                    "type": [
-                                        "string",
-                                        "null"
-                                    ]
-                                },
-                                "events_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "followers_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "following_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "gists_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "gravatar_id": {
-                                    "type": "string"
-                                },
-                                "html_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "id": {
-                                    "type": "integer"
-                                },
-                                "login": {
-                                    "type": "string"
-                                },
-                                "name": {
-                                    "type": "string"
-                                },
-                                "node_id": {
-                                    "type": "string"
-                                },
-                                "organizations_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "received_events_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "repos_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "site_admin": {
-                                    "type": "boolean"
-                                },
-                                "starred_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "subscriptions_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "type": {
-                                    "enum": [
-                                        "Bot",
-                                        "User",
-                                        "Organization"
-                                    ],
-                                    "type": "string"
-                                },
-                                "url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                }
-                            }
-                        },
-                        "artifacts_url": {
+                        "avatar_url": {
                             "type": "string",
                             "format": "uri"
                         },
-                        "cancel_url": {
-                            "type": "string",
-                            "format": "uri"
+                        "deleted": {
+                            "type": "boolean"
                         },
-                        "check_suite_id": {
-                            "type": "integer"
-                        },
-                        "check_suite_node_id": {
-                            "type": "string"
-                        },
-                        "check_suite_url": {
-                            "type": "string",
-                            "format": "uri"
-                        },
-                        "conclusion": {
-                            "enum": [
-                                "success",
-                                "failure",
-                                "neutral",
-                                "cancelled",
-                                "timed_out",
-                                "action_required",
-                                "stale",
-                                "skipped",
-                                null
-                            ],
+                        "email": {
                             "type": [
                                 "string",
                                 "null"
                             ]
                         },
-                        "created_at": {
+                        "events_url": {
                             "type": "string",
-                            "format": "date-time"
+                            "format": "uri-template"
                         },
-                        "event": {
-                            "type": "string"
+                        "followers_url": {
+                            "type": "string",
+                            "format": "uri"
                         },
-                        "head_branch": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
+                        "following_url": {
+                            "type": "string",
+                            "format": "uri-template"
                         },
-                        "head_commit": {
-                            "title": "SimpleCommit",
-                            "required": [
-                                "id",
-                                "tree_id",
-                                "message",
-                                "timestamp",
-                                "author",
-                                "committer"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "author": {
-                                    "title": "Committer",
-                                    "required": [
-                                        "email",
-                                        "name"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "date": {
-                                            "type": "string",
-                                            "format": "date-time"
-                                        },
-                                        "email": {
-                                            "type": [
-                                                "string",
-                                                "null"
-                                            ],
-                                            "format": "email"
-                                        },
-                                        "name": {
-                                            "type": "string",
-                                            "description": "The git author\'s name."
-                                        },
-                                        "username": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "description": "Metaproperties for Git author\\/committer information."
-                                },
-                                "committer": {
-                                    "title": "Committer",
-                                    "required": [
-                                        "email",
-                                        "name"
-                                    ],
-                                    "type": "object",
-                                    "properties": {
-                                        "date": {
-                                            "type": "string",
-                                            "format": "date-time"
-                                        },
-                                        "email": {
-                                            "type": [
-                                                "string",
-                                                "null"
-                                            ],
-                                            "format": "email"
-                                        },
-                                        "name": {
-                                            "type": "string",
-                                            "description": "The git author\'s name."
-                                        },
-                                        "username": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "description": "Metaproperties for Git author\\/committer information."
-                                },
-                                "id": {
-                                    "type": "string"
-                                },
-                                "message": {
-                                    "type": "string"
-                                },
-                                "timestamp": {
-                                    "type": "string"
-                                },
-                                "tree_id": {
-                                    "type": "string"
-                                }
-                            }
+                        "gists_url": {
+                            "type": "string",
+                            "format": "uri-template"
                         },
-                        "head_repository": {
-                            "title": "Repository Lite",
-                            "required": [
-                                "archive_url",
-                                "assignees_url",
-                                "blobs_url",
-                                "branches_url",
-                                "collaborators_url",
-                                "comments_url",
-                                "commits_url",
-                                "compare_url",
-                                "contents_url",
-                                "contributors_url",
-                                "deployments_url",
-                                "description",
-                                "downloads_url",
-                                "events_url",
-                                "fork",
-                                "forks_url",
-                                "full_name",
-                                "git_commits_url",
-                                "git_refs_url",
-                                "git_tags_url",
-                                "hooks_url",
-                                "html_url",
-                                "id",
-                                "issue_comment_url",
-                                "issue_events_url",
-                                "issues_url",
-                                "keys_url",
-                                "labels_url",
-                                "languages_url",
-                                "merges_url",
-                                "milestones_url",
-                                "name",
-                                "node_id",
-                                "notifications_url",
-                                "owner",
-                                "private",
-                                "pulls_url",
-                                "releases_url",
-                                "stargazers_url",
-                                "statuses_url",
-                                "subscribers_url",
-                                "subscription_url",
-                                "tags_url",
-                                "teams_url",
-                                "trees_url",
-                                "url"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "archive_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "assignees_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "blobs_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "branches_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "collaborators_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "comments_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "commits_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "compare_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "contents_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "contributors_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "deployments_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "description": {
-                                    "type": [
-                                        "string",
-                                        "null"
-                                    ]
-                                },
-                                "downloads_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "events_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "fork": {
-                                    "type": "boolean"
-                                },
-                                "forks_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "full_name": {
-                                    "type": "string"
-                                },
-                                "git_commits_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "git_refs_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "git_tags_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "hooks_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "html_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "id": {
-                                    "type": "integer",
-                                    "description": "Unique identifier of the repository"
-                                },
-                                "issue_comment_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "issue_events_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "issues_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "keys_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "labels_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "languages_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "merges_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "milestones_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "name": {
-                                    "type": "string",
-                                    "description": "The name of the repository."
-                                },
-                                "node_id": {
-                                    "type": "string"
-                                },
-                                "notifications_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "owner": {
-                                    "title": "User",
-                                    "required": [
-                                        "login",
-                                        "id"
-                                    ],
-                                    "type": [
-                                        "object",
-                                        "null"
-                                    ],
-                                    "properties": {
-                                        "avatar_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "deleted": {
-                                            "type": "boolean"
-                                        },
-                                        "email": {
-                                            "type": [
-                                                "string",
-                                                "null"
-                                            ]
-                                        },
-                                        "events_url": {
-                                            "type": "string",
-                                            "format": "uri-template"
-                                        },
-                                        "followers_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "following_url": {
-                                            "type": "string",
-                                            "format": "uri-template"
-                                        },
-                                        "gists_url": {
-                                            "type": "string",
-                                            "format": "uri-template"
-                                        },
-                                        "gravatar_id": {
-                                            "type": "string"
-                                        },
-                                        "html_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "id": {
-                                            "type": "integer"
-                                        },
-                                        "login": {
-                                            "type": "string"
-                                        },
-                                        "name": {
-                                            "type": "string"
-                                        },
-                                        "node_id": {
-                                            "type": "string"
-                                        },
-                                        "organizations_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "received_events_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "repos_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "site_admin": {
-                                            "type": "boolean"
-                                        },
-                                        "starred_url": {
-                                            "type": "string",
-                                            "format": "uri-template"
-                                        },
-                                        "subscriptions_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "type": {
-                                            "enum": [
-                                                "Bot",
-                                                "User",
-                                                "Organization"
-                                            ],
-                                            "type": "string"
-                                        },
-                                        "url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        }
-                                    }
-                                },
-                                "private": {
-                                    "type": "boolean",
-                                    "description": "Whether the repository is private or public."
-                                },
-                                "pulls_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "releases_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "stargazers_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "statuses_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "subscribers_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "subscription_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "tags_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "teams_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "trees_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                }
-                            }
-                        },
-                        "head_sha": {
+                        "gravatar_id": {
                             "type": "string"
                         },
                         "html_url": {
@@ -2539,1138 +2020,425 @@ final readonly class WebhookWorkflowRunInProgress
                         "id": {
                             "type": "integer"
                         },
-                        "jobs_url": {
-                            "type": "string",
-                            "format": "uri"
-                        },
-                        "logs_url": {
-                            "type": "string",
-                            "format": "uri"
+                        "login": {
+                            "type": "string"
                         },
                         "name": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
+                            "type": "string"
                         },
                         "node_id": {
                             "type": "string"
                         },
-                        "path": {
-                            "type": "string"
-                        },
-                        "previous_attempt_url": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "format": "uri"
-                        },
-                        "pull_requests": {
-                            "type": "array",
-                            "items": {
-                                "required": [
-                                    "url",
-                                    "id",
-                                    "number",
-                                    "head",
-                                    "base"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "base": {
-                                        "required": [
-                                            "ref",
-                                            "sha",
-                                            "repo"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "ref": {
-                                                "type": "string"
-                                            },
-                                            "repo": {
-                                                "title": "Repo Ref",
-                                                "required": [
-                                                    "id",
-                                                    "url",
-                                                    "name"
-                                                ],
-                                                "type": "object",
-                                                "properties": {
-                                                    "id": {
-                                                        "type": "integer"
-                                                    },
-                                                    "name": {
-                                                        "type": "string"
-                                                    },
-                                                    "url": {
-                                                        "type": "string",
-                                                        "format": "uri"
-                                                    }
-                                                }
-                                            },
-                                            "sha": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "head": {
-                                        "required": [
-                                            "ref",
-                                            "sha",
-                                            "repo"
-                                        ],
-                                        "type": "object",
-                                        "properties": {
-                                            "ref": {
-                                                "type": "string"
-                                            },
-                                            "repo": {
-                                                "title": "Repo Ref",
-                                                "required": [
-                                                    "id",
-                                                    "url",
-                                                    "name"
-                                                ],
-                                                "type": "object",
-                                                "properties": {
-                                                    "id": {
-                                                        "type": "integer"
-                                                    },
-                                                    "name": {
-                                                        "type": "string"
-                                                    },
-                                                    "url": {
-                                                        "type": "string",
-                                                        "format": "uri"
-                                                    }
-                                                }
-                                            },
-                                            "sha": {
-                                                "type": "string"
-                                            }
-                                        }
-                                    },
-                                    "id": {
-                                        "type": "number"
-                                    },
-                                    "number": {
-                                        "type": "number"
-                                    },
-                                    "url": {
-                                        "type": "string",
-                                        "format": "uri"
-                                    }
-                                }
-                            }
-                        },
-                        "referenced_workflows": {
-                            "type": [
-                                "array",
-                                "null"
-                            ],
-                            "items": {
-                                "required": [
-                                    "path",
-                                    "sha"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "path": {
-                                        "type": "string"
-                                    },
-                                    "ref": {
-                                        "type": "string"
-                                    },
-                                    "sha": {
-                                        "type": "string"
-                                    }
-                                }
-                            }
-                        },
-                        "repository": {
-                            "title": "Repository Lite",
-                            "required": [
-                                "archive_url",
-                                "assignees_url",
-                                "blobs_url",
-                                "branches_url",
-                                "collaborators_url",
-                                "comments_url",
-                                "commits_url",
-                                "compare_url",
-                                "contents_url",
-                                "contributors_url",
-                                "deployments_url",
-                                "description",
-                                "downloads_url",
-                                "events_url",
-                                "fork",
-                                "forks_url",
-                                "full_name",
-                                "git_commits_url",
-                                "git_refs_url",
-                                "git_tags_url",
-                                "hooks_url",
-                                "html_url",
-                                "id",
-                                "issue_comment_url",
-                                "issue_events_url",
-                                "issues_url",
-                                "keys_url",
-                                "labels_url",
-                                "languages_url",
-                                "merges_url",
-                                "milestones_url",
-                                "name",
-                                "node_id",
-                                "notifications_url",
-                                "owner",
-                                "private",
-                                "pulls_url",
-                                "releases_url",
-                                "stargazers_url",
-                                "statuses_url",
-                                "subscribers_url",
-                                "subscription_url",
-                                "tags_url",
-                                "teams_url",
-                                "trees_url",
-                                "url"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "archive_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "assignees_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "blobs_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "branches_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "collaborators_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "comments_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "commits_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "compare_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "contents_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "contributors_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "deployments_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "description": {
-                                    "type": [
-                                        "string",
-                                        "null"
-                                    ]
-                                },
-                                "downloads_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "events_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "fork": {
-                                    "type": "boolean"
-                                },
-                                "forks_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "full_name": {
-                                    "type": "string"
-                                },
-                                "git_commits_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "git_refs_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "git_tags_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "hooks_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "html_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "id": {
-                                    "type": "integer",
-                                    "description": "Unique identifier of the repository"
-                                },
-                                "issue_comment_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "issue_events_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "issues_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "keys_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "labels_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "languages_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "merges_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "milestones_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "name": {
-                                    "type": "string",
-                                    "description": "The name of the repository."
-                                },
-                                "node_id": {
-                                    "type": "string"
-                                },
-                                "notifications_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "owner": {
-                                    "title": "User",
-                                    "required": [
-                                        "login",
-                                        "id"
-                                    ],
-                                    "type": [
-                                        "object",
-                                        "null"
-                                    ],
-                                    "properties": {
-                                        "avatar_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "deleted": {
-                                            "type": "boolean"
-                                        },
-                                        "email": {
-                                            "type": [
-                                                "string",
-                                                "null"
-                                            ]
-                                        },
-                                        "events_url": {
-                                            "type": "string",
-                                            "format": "uri-template"
-                                        },
-                                        "followers_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "following_url": {
-                                            "type": "string",
-                                            "format": "uri-template"
-                                        },
-                                        "gists_url": {
-                                            "type": "string",
-                                            "format": "uri-template"
-                                        },
-                                        "gravatar_id": {
-                                            "type": "string"
-                                        },
-                                        "html_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "id": {
-                                            "type": "integer"
-                                        },
-                                        "login": {
-                                            "type": "string"
-                                        },
-                                        "name": {
-                                            "type": "string"
-                                        },
-                                        "node_id": {
-                                            "type": "string"
-                                        },
-                                        "organizations_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "received_events_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "repos_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "site_admin": {
-                                            "type": "boolean"
-                                        },
-                                        "starred_url": {
-                                            "type": "string",
-                                            "format": "uri-template"
-                                        },
-                                        "subscriptions_url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        },
-                                        "type": {
-                                            "enum": [
-                                                "Bot",
-                                                "User",
-                                                "Organization"
-                                            ],
-                                            "type": "string"
-                                        },
-                                        "url": {
-                                            "type": "string",
-                                            "format": "uri"
-                                        }
-                                    }
-                                },
-                                "private": {
-                                    "type": "boolean",
-                                    "description": "Whether the repository is private or public."
-                                },
-                                "pulls_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "releases_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "stargazers_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "statuses_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "subscribers_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "subscription_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "tags_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "teams_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "trees_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                }
-                            }
-                        },
-                        "rerun_url": {
+                        "organizations_url": {
                             "type": "string",
                             "format": "uri"
                         },
-                        "run_attempt": {
-                            "type": "integer"
-                        },
-                        "run_number": {
-                            "type": "integer"
-                        },
-                        "run_started_at": {
+                        "received_events_url": {
                             "type": "string",
-                            "format": "date-time"
+                            "format": "uri"
                         },
-                        "status": {
+                        "repos_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "site_admin": {
+                            "type": "boolean"
+                        },
+                        "starred_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "subscriptions_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "type": {
                             "enum": [
-                                "requested",
-                                "in_progress",
-                                "completed",
-                                "queued",
-                                "pending"
+                                "Bot",
+                                "User",
+                                "Organization"
                             ],
                             "type": "string"
-                        },
-                        "triggering_actor": {
-                            "title": "User",
-                            "required": [
-                                "login",
-                                "id"
-                            ],
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "properties": {
-                                "avatar_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "deleted": {
-                                    "type": "boolean"
-                                },
-                                "email": {
-                                    "type": [
-                                        "string",
-                                        "null"
-                                    ]
-                                },
-                                "events_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "followers_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "following_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "gists_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "gravatar_id": {
-                                    "type": "string"
-                                },
-                                "html_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "id": {
-                                    "type": "integer"
-                                },
-                                "login": {
-                                    "type": "string"
-                                },
-                                "name": {
-                                    "type": "string"
-                                },
-                                "node_id": {
-                                    "type": "string"
-                                },
-                                "organizations_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "received_events_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "repos_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "site_admin": {
-                                    "type": "boolean"
-                                },
-                                "starred_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "subscriptions_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "type": {
-                                    "enum": [
-                                        "Bot",
-                                        "User",
-                                        "Organization"
-                                    ],
-                                    "type": "string"
-                                },
-                                "url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                }
-                            }
-                        },
-                        "updated_at": {
-                            "type": "string",
-                            "format": "date-time"
                         },
                         "url": {
-                            "type": "string",
-                            "format": "uri"
-                        },
-                        "workflow_id": {
-                            "type": "integer"
-                        },
-                        "workflow_url": {
                             "type": "string",
                             "format": "uri"
                         }
                     }
                 },
-                {
+                "artifacts_url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "cancel_url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "check_suite_id": {
+                    "type": "integer"
+                },
+                "check_suite_node_id": {
+                    "type": "string"
+                },
+                "check_suite_url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "conclusion": {
+                    "enum": [
+                        "action_required",
+                        "cancelled",
+                        "failure",
+                        "neutral",
+                        "skipped",
+                        "stale",
+                        "success",
+                        "timed_out",
+                        null
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "created_at": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "event": {
+                    "type": "string"
+                },
+                "head_branch": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "head_commit": {
+                    "title": "SimpleCommit",
                     "required": [
-                        "conclusion"
+                        "id",
+                        "tree_id",
+                        "message",
+                        "timestamp",
+                        "author",
+                        "committer"
                     ],
                     "type": "object",
                     "properties": {
-                        "actor": {
-                            "type": "object",
-                            "properties": {
-                                "avatar_url": {
-                                    "type": "string"
-                                },
-                                "events_url": {
-                                    "type": "string"
-                                },
-                                "followers_url": {
-                                    "type": "string"
-                                },
-                                "following_url": {
-                                    "type": "string"
-                                },
-                                "gists_url": {
-                                    "type": "string"
-                                },
-                                "gravatar_id": {
-                                    "type": "string"
-                                },
-                                "html_url": {
-                                    "type": "string"
-                                },
-                                "id": {
-                                    "type": "integer"
-                                },
-                                "login": {
-                                    "type": "string"
-                                },
-                                "node_id": {
-                                    "type": "string"
-                                },
-                                "organizations_url": {
-                                    "type": "string"
-                                },
-                                "received_events_url": {
-                                    "type": "string"
-                                },
-                                "repos_url": {
-                                    "type": "string"
-                                },
-                                "site_admin": {
-                                    "type": "boolean"
-                                },
-                                "starred_url": {
-                                    "type": "string"
-                                },
-                                "subscriptions_url": {
-                                    "type": "string"
-                                },
-                                "type": {
-                                    "type": "string"
-                                },
-                                "url": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "artifacts_url": {
-                            "type": "string"
-                        },
-                        "cancel_url": {
-                            "type": "string"
-                        },
-                        "check_suite_id": {
-                            "type": "integer"
-                        },
-                        "check_suite_node_id": {
-                            "type": "string"
-                        },
-                        "check_suite_url": {
-                            "type": "string"
-                        },
-                        "conclusion": {
-                            "enum": [
-                                "success",
-                                "failure",
-                                "neutral",
-                                "cancelled",
-                                "timed_out",
-                                "action_required",
-                                "skipped",
-                                "stale",
-                                null
+                        "author": {
+                            "title": "Committer",
+                            "required": [
+                                "email",
+                                "name"
                             ],
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "created_at": {
-                            "type": "string"
-                        },
-                        "event": {
-                            "type": "string"
-                        },
-                        "head_branch": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "head_commit": {
                             "type": "object",
                             "properties": {
-                                "author": {
-                                    "type": "object",
-                                    "properties": {
-                                        "email": {
-                                            "type": "string"
-                                        },
-                                        "name": {
-                                            "type": "string"
-                                        }
-                                    }
+                                "date": {
+                                    "type": "string",
+                                    "format": "date-time"
                                 },
-                                "committer": {
-                                    "type": "object",
-                                    "properties": {
-                                        "email": {
-                                            "type": "string"
-                                        },
-                                        "name": {
-                                            "type": "string"
-                                        }
-                                    }
-                                },
-                                "id": {
-                                    "type": "string"
-                                },
-                                "message": {
-                                    "type": "string"
-                                },
-                                "timestamp": {
-                                    "type": "string"
-                                },
-                                "tree_id": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "head_repository": {
-                            "type": "object",
-                            "properties": {
-                                "archive_url": {
-                                    "type": "string"
-                                },
-                                "assignees_url": {
-                                    "type": "string"
-                                },
-                                "blobs_url": {
-                                    "type": "string"
-                                },
-                                "branches_url": {
-                                    "type": "string"
-                                },
-                                "collaborators_url": {
-                                    "type": "string"
-                                },
-                                "comments_url": {
-                                    "type": "string"
-                                },
-                                "commits_url": {
-                                    "type": "string"
-                                },
-                                "compare_url": {
-                                    "type": "string"
-                                },
-                                "contents_url": {
-                                    "type": "string"
-                                },
-                                "contributors_url": {
-                                    "type": "string"
-                                },
-                                "deployments_url": {
-                                    "type": "string"
-                                },
-                                "description": {
+                                "email": {
                                     "type": [
                                         "string",
                                         "null"
-                                    ]
-                                },
-                                "downloads_url": {
-                                    "type": "string"
-                                },
-                                "events_url": {
-                                    "type": "string"
-                                },
-                                "fork": {
-                                    "type": "boolean"
-                                },
-                                "forks_url": {
-                                    "type": "string"
-                                },
-                                "full_name": {
-                                    "type": "string"
-                                },
-                                "git_commits_url": {
-                                    "type": "string"
-                                },
-                                "git_refs_url": {
-                                    "type": "string"
-                                },
-                                "git_tags_url": {
-                                    "type": "string"
-                                },
-                                "hooks_url": {
-                                    "type": "string"
-                                },
-                                "html_url": {
-                                    "type": "string"
-                                },
-                                "id": {
-                                    "type": "integer"
-                                },
-                                "issue_comment_url": {
-                                    "type": "string"
-                                },
-                                "issue_events_url": {
-                                    "type": "string"
-                                },
-                                "issues_url": {
-                                    "type": "string"
-                                },
-                                "keys_url": {
-                                    "type": "string"
-                                },
-                                "labels_url": {
-                                    "type": "string"
-                                },
-                                "languages_url": {
-                                    "type": "string"
-                                },
-                                "merges_url": {
-                                    "type": "string"
-                                },
-                                "milestones_url": {
-                                    "type": "string"
+                                    ],
+                                    "format": "email"
                                 },
                                 "name": {
+                                    "type": "string",
+                                    "description": "The git author\'s name."
+                                },
+                                "username": {
+                                    "type": "string"
+                                }
+                            },
+                            "description": "Metaproperties for Git author\\/committer information."
+                        },
+                        "committer": {
+                            "title": "Committer",
+                            "required": [
+                                "email",
+                                "name"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "date": {
+                                    "type": "string",
+                                    "format": "date-time"
+                                },
+                                "email": {
                                     "type": [
                                         "string",
                                         "null"
-                                    ]
+                                    ],
+                                    "format": "email"
                                 },
-                                "node_id": {
-                                    "type": "string"
+                                "name": {
+                                    "type": "string",
+                                    "description": "The git author\'s name."
                                 },
-                                "notifications_url": {
-                                    "type": "string"
-                                },
-                                "owner": {
-                                    "type": "object",
-                                    "properties": {
-                                        "avatar_url": {
-                                            "type": "string"
-                                        },
-                                        "events_url": {
-                                            "type": "string"
-                                        },
-                                        "followers_url": {
-                                            "type": "string"
-                                        },
-                                        "following_url": {
-                                            "type": "string"
-                                        },
-                                        "gists_url": {
-                                            "type": "string"
-                                        },
-                                        "gravatar_id": {
-                                            "type": "string"
-                                        },
-                                        "html_url": {
-                                            "type": "string"
-                                        },
-                                        "id": {
-                                            "type": "integer"
-                                        },
-                                        "login": {
-                                            "type": "string"
-                                        },
-                                        "node_id": {
-                                            "type": "string"
-                                        },
-                                        "organizations_url": {
-                                            "type": "string"
-                                        },
-                                        "received_events_url": {
-                                            "type": "string"
-                                        },
-                                        "repos_url": {
-                                            "type": "string"
-                                        },
-                                        "site_admin": {
-                                            "type": "boolean"
-                                        },
-                                        "starred_url": {
-                                            "type": "string"
-                                        },
-                                        "subscriptions_url": {
-                                            "type": "string"
-                                        },
-                                        "type": {
-                                            "type": "string"
-                                        },
-                                        "url": {
-                                            "type": "string"
-                                        }
-                                    }
-                                },
-                                "private": {
-                                    "type": "boolean"
-                                },
-                                "pulls_url": {
-                                    "type": "string"
-                                },
-                                "releases_url": {
-                                    "type": "string"
-                                },
-                                "stargazers_url": {
-                                    "type": "string"
-                                },
-                                "statuses_url": {
-                                    "type": "string"
-                                },
-                                "subscribers_url": {
-                                    "type": "string"
-                                },
-                                "subscription_url": {
-                                    "type": "string"
-                                },
-                                "tags_url": {
-                                    "type": "string"
-                                },
-                                "teams_url": {
-                                    "type": "string"
-                                },
-                                "trees_url": {
-                                    "type": "string"
-                                },
-                                "url": {
+                                "username": {
                                     "type": "string"
                                 }
-                            }
-                        },
-                        "head_sha": {
-                            "type": "string"
-                        },
-                        "html_url": {
-                            "type": "string"
+                            },
+                            "description": "Metaproperties for Git author\\/committer information."
                         },
                         "id": {
-                            "type": "integer"
-                        },
-                        "jobs_url": {
                             "type": "string"
                         },
-                        "logs_url": {
+                        "message": {
                             "type": "string"
+                        },
+                        "timestamp": {
+                            "type": "string"
+                        },
+                        "tree_id": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "head_repository": {
+                    "title": "Repository Lite",
+                    "required": [
+                        "archive_url",
+                        "assignees_url",
+                        "blobs_url",
+                        "branches_url",
+                        "collaborators_url",
+                        "comments_url",
+                        "commits_url",
+                        "compare_url",
+                        "contents_url",
+                        "contributors_url",
+                        "deployments_url",
+                        "description",
+                        "downloads_url",
+                        "events_url",
+                        "fork",
+                        "forks_url",
+                        "full_name",
+                        "git_commits_url",
+                        "git_refs_url",
+                        "git_tags_url",
+                        "hooks_url",
+                        "html_url",
+                        "id",
+                        "issue_comment_url",
+                        "issue_events_url",
+                        "issues_url",
+                        "keys_url",
+                        "labels_url",
+                        "languages_url",
+                        "merges_url",
+                        "milestones_url",
+                        "name",
+                        "node_id",
+                        "notifications_url",
+                        "owner",
+                        "private",
+                        "pulls_url",
+                        "releases_url",
+                        "stargazers_url",
+                        "statuses_url",
+                        "subscribers_url",
+                        "subscription_url",
+                        "tags_url",
+                        "teams_url",
+                        "trees_url",
+                        "url"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "archive_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "assignees_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "blobs_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "branches_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "collaborators_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "comments_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "commits_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "compare_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "contents_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "contributors_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "deployments_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "description": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "downloads_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "events_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "fork": {
+                            "type": "boolean"
+                        },
+                        "forks_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "full_name": {
+                            "type": "string"
+                        },
+                        "git_commits_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "git_refs_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "git_tags_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "hooks_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "html_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "id": {
+                            "type": "integer",
+                            "description": "Unique identifier of the repository"
+                        },
+                        "issue_comment_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "issue_events_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "issues_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "keys_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "labels_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "languages_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "merges_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "milestones_url": {
+                            "type": "string",
+                            "format": "uri-template"
                         },
                         "name": {
                             "type": [
                                 "string",
                                 "null"
-                            ]
+                            ],
+                            "description": "The name of the repository."
                         },
                         "node_id": {
                             "type": "string"
                         },
-                        "path": {
-                            "type": "string"
+                        "notifications_url": {
+                            "type": "string",
+                            "format": "uri-template"
                         },
-                        "previous_attempt_url": {
+                        "owner": {
+                            "title": "User",
+                            "required": [
+                                "login",
+                                "id"
+                            ],
                             "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "pull_requests": {
-                            "type": "array",
-                            "items": {
-                                "type": [
-                                    "object",
-                                    "null"
-                                ]
-                            }
-                        },
-                        "referenced_workflows": {
-                            "type": [
-                                "array",
+                                "object",
                                 "null"
                             ],
-                            "items": {
-                                "required": [
-                                    "path",
-                                    "sha"
-                                ],
-                                "type": "object",
-                                "properties": {
-                                    "path": {
-                                        "type": "string"
-                                    },
-                                    "ref": {
-                                        "type": "string"
-                                    },
-                                    "sha": {
-                                        "type": "string"
-                                    }
-                                }
-                            }
-                        },
-                        "repository": {
-                            "type": "object",
                             "properties": {
-                                "archive_url": {
-                                    "type": "string"
+                                "avatar_url": {
+                                    "type": "string",
+                                    "format": "uri"
                                 },
-                                "assignees_url": {
-                                    "type": "string"
+                                "deleted": {
+                                    "type": "boolean"
                                 },
-                                "blobs_url": {
-                                    "type": "string"
-                                },
-                                "branches_url": {
-                                    "type": "string"
-                                },
-                                "collaborators_url": {
-                                    "type": "string"
-                                },
-                                "comments_url": {
-                                    "type": "string"
-                                },
-                                "commits_url": {
-                                    "type": "string"
-                                },
-                                "compare_url": {
-                                    "type": "string"
-                                },
-                                "contents_url": {
-                                    "type": "string"
-                                },
-                                "contributors_url": {
-                                    "type": "string"
-                                },
-                                "deployments_url": {
-                                    "type": "string"
-                                },
-                                "description": {
+                                "email": {
                                     "type": [
                                         "string",
                                         "null"
                                     ]
                                 },
-                                "downloads_url": {
-                                    "type": "string"
-                                },
                                 "events_url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri-template"
                                 },
-                                "fork": {
-                                    "type": "boolean"
+                                "followers_url": {
+                                    "type": "string",
+                                    "format": "uri"
                                 },
-                                "forks_url": {
-                                    "type": "string"
+                                "following_url": {
+                                    "type": "string",
+                                    "format": "uri-template"
                                 },
-                                "full_name": {
-                                    "type": "string"
+                                "gists_url": {
+                                    "type": "string",
+                                    "format": "uri-template"
                                 },
-                                "git_commits_url": {
-                                    "type": "string"
-                                },
-                                "git_refs_url": {
-                                    "type": "string"
-                                },
-                                "git_tags_url": {
-                                    "type": "string"
-                                },
-                                "hooks_url": {
+                                "gravatar_id": {
                                     "type": "string"
                                 },
                                 "html_url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri"
                                 },
                                 "id": {
                                     "type": "integer"
                                 },
-                                "issue_comment_url": {
-                                    "type": "string"
-                                },
-                                "issue_events_url": {
-                                    "type": "string"
-                                },
-                                "issues_url": {
-                                    "type": "string"
-                                },
-                                "keys_url": {
-                                    "type": "string"
-                                },
-                                "labels_url": {
-                                    "type": "string"
-                                },
-                                "languages_url": {
-                                    "type": "string"
-                                },
-                                "merges_url": {
-                                    "type": "string"
-                                },
-                                "milestones_url": {
+                                "login": {
                                     "type": "string"
                                 },
                                 "name": {
@@ -3679,141 +2447,485 @@ final readonly class WebhookWorkflowRunInProgress
                                 "node_id": {
                                     "type": "string"
                                 },
-                                "notifications_url": {
-                                    "type": "string"
+                                "organizations_url": {
+                                    "type": "string",
+                                    "format": "uri"
                                 },
-                                "owner": {
-                                    "type": "object",
-                                    "properties": {
-                                        "avatar_url": {
-                                            "type": "string"
-                                        },
-                                        "events_url": {
-                                            "type": "string"
-                                        },
-                                        "followers_url": {
-                                            "type": "string"
-                                        },
-                                        "following_url": {
-                                            "type": "string"
-                                        },
-                                        "gists_url": {
-                                            "type": "string"
-                                        },
-                                        "gravatar_id": {
-                                            "type": "string"
-                                        },
-                                        "html_url": {
-                                            "type": "string"
-                                        },
-                                        "id": {
-                                            "type": "integer"
-                                        },
-                                        "login": {
-                                            "type": "string"
-                                        },
-                                        "node_id": {
-                                            "type": "string"
-                                        },
-                                        "organizations_url": {
-                                            "type": "string"
-                                        },
-                                        "received_events_url": {
-                                            "type": "string"
-                                        },
-                                        "repos_url": {
-                                            "type": "string"
-                                        },
-                                        "site_admin": {
-                                            "type": "boolean"
-                                        },
-                                        "starred_url": {
-                                            "type": "string"
-                                        },
-                                        "subscriptions_url": {
-                                            "type": "string"
-                                        },
-                                        "type": {
-                                            "type": "string"
-                                        },
-                                        "url": {
-                                            "type": "string"
-                                        }
-                                    }
+                                "received_events_url": {
+                                    "type": "string",
+                                    "format": "uri"
                                 },
-                                "private": {
+                                "repos_url": {
+                                    "type": "string",
+                                    "format": "uri"
+                                },
+                                "site_admin": {
                                     "type": "boolean"
                                 },
-                                "pulls_url": {
-                                    "type": "string"
+                                "starred_url": {
+                                    "type": "string",
+                                    "format": "uri-template"
                                 },
-                                "releases_url": {
-                                    "type": "string"
+                                "subscriptions_url": {
+                                    "type": "string",
+                                    "format": "uri"
                                 },
-                                "stargazers_url": {
-                                    "type": "string"
-                                },
-                                "statuses_url": {
-                                    "type": "string"
-                                },
-                                "subscribers_url": {
-                                    "type": "string"
-                                },
-                                "subscription_url": {
-                                    "type": "string"
-                                },
-                                "tags_url": {
-                                    "type": "string"
-                                },
-                                "teams_url": {
-                                    "type": "string"
-                                },
-                                "trees_url": {
+                                "type": {
+                                    "enum": [
+                                        "Bot",
+                                        "User",
+                                        "Organization"
+                                    ],
                                     "type": "string"
                                 },
                                 "url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri"
                                 }
                             }
                         },
-                        "rerun_url": {
+                        "private": {
+                            "type": "boolean",
+                            "description": "Whether the repository is private or public."
+                        },
+                        "pulls_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "releases_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "stargazers_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "statuses_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "subscribers_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "subscription_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "tags_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "teams_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "trees_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "url": {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
+                },
+                "head_sha": {
+                    "type": "string"
+                },
+                "html_url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "jobs_url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "logs_url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "node_id": {
+                    "type": "string"
+                },
+                "path": {
+                    "type": "string"
+                },
+                "previous_attempt_url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "uri"
+                },
+                "pull_requests": {
+                    "type": "array",
+                    "items": {
+                        "required": [
+                            "url",
+                            "id",
+                            "number",
+                            "head",
+                            "base"
+                        ],
+                        "type": [
+                            "object",
+                            "null"
+                        ],
+                        "properties": {
+                            "base": {
+                                "required": [
+                                    "ref",
+                                    "sha",
+                                    "repo"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "ref": {
+                                        "type": "string"
+                                    },
+                                    "repo": {
+                                        "title": "Repo Ref",
+                                        "required": [
+                                            "id",
+                                            "url",
+                                            "name"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "url": {
+                                                "type": "string",
+                                                "format": "uri"
+                                            }
+                                        }
+                                    },
+                                    "sha": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "head": {
+                                "required": [
+                                    "ref",
+                                    "sha",
+                                    "repo"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "ref": {
+                                        "type": "string"
+                                    },
+                                    "repo": {
+                                        "title": "Repo Ref",
+                                        "required": [
+                                            "id",
+                                            "url",
+                                            "name"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "id": {
+                                                "type": "integer"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "url": {
+                                                "type": "string",
+                                                "format": "uri"
+                                            }
+                                        }
+                                    },
+                                    "sha": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "id": {
+                                "type": "number"
+                            },
+                            "number": {
+                                "type": "number"
+                            },
+                            "url": {
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        }
+                    }
+                },
+                "referenced_workflows": {
+                    "type": [
+                        "array",
+                        "null"
+                    ],
+                    "items": {
+                        "required": [
+                            "path",
+                            "sha"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "path": {
+                                "type": "string"
+                            },
+                            "ref": {
+                                "type": "string"
+                            },
+                            "sha": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                },
+                "repository": {
+                    "title": "Repository Lite",
+                    "required": [
+                        "archive_url",
+                        "assignees_url",
+                        "blobs_url",
+                        "branches_url",
+                        "collaborators_url",
+                        "comments_url",
+                        "commits_url",
+                        "compare_url",
+                        "contents_url",
+                        "contributors_url",
+                        "deployments_url",
+                        "description",
+                        "downloads_url",
+                        "events_url",
+                        "fork",
+                        "forks_url",
+                        "full_name",
+                        "git_commits_url",
+                        "git_refs_url",
+                        "git_tags_url",
+                        "hooks_url",
+                        "html_url",
+                        "id",
+                        "issue_comment_url",
+                        "issue_events_url",
+                        "issues_url",
+                        "keys_url",
+                        "labels_url",
+                        "languages_url",
+                        "merges_url",
+                        "milestones_url",
+                        "name",
+                        "node_id",
+                        "notifications_url",
+                        "owner",
+                        "private",
+                        "pulls_url",
+                        "releases_url",
+                        "stargazers_url",
+                        "statuses_url",
+                        "subscribers_url",
+                        "subscription_url",
+                        "tags_url",
+                        "teams_url",
+                        "trees_url",
+                        "url"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "archive_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "assignees_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "blobs_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "branches_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "collaborators_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "comments_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "commits_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "compare_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "contents_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "contributors_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "deployments_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "description": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "downloads_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "events_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "fork": {
+                            "type": "boolean"
+                        },
+                        "forks_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "full_name": {
                             "type": "string"
                         },
-                        "run_attempt": {
-                            "type": "integer"
+                        "git_commits_url": {
+                            "type": "string",
+                            "format": "uri-template"
                         },
-                        "run_number": {
-                            "type": "integer"
+                        "git_refs_url": {
+                            "type": "string",
+                            "format": "uri-template"
                         },
-                        "run_started_at": {
+                        "git_tags_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "hooks_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "html_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "id": {
+                            "type": "integer",
+                            "description": "Unique identifier of the repository"
+                        },
+                        "issue_comment_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "issue_events_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "issues_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "keys_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "labels_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "languages_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "merges_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "milestones_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "name": {
+                            "type": "string",
+                            "description": "The name of the repository."
+                        },
+                        "node_id": {
                             "type": "string"
                         },
-                        "status": {
-                            "type": "string"
+                        "notifications_url": {
+                            "type": "string",
+                            "format": "uri-template"
                         },
-                        "triggering_actor": {
-                            "type": "object",
+                        "owner": {
+                            "title": "User",
+                            "required": [
+                                "login",
+                                "id"
+                            ],
+                            "type": [
+                                "object",
+                                "null"
+                            ],
                             "properties": {
                                 "avatar_url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri"
+                                },
+                                "deleted": {
+                                    "type": "boolean"
+                                },
+                                "email": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
                                 },
                                 "events_url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri-template"
                                 },
                                 "followers_url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri"
                                 },
                                 "following_url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri-template"
                                 },
                                 "gists_url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri-template"
                                 },
                                 "gravatar_id": {
                                     "type": "string"
                                 },
                                 "html_url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri"
                                 },
                                 "id": {
                                     "type": "integer"
@@ -3821,50 +2933,231 @@ final readonly class WebhookWorkflowRunInProgress
                                 "login": {
                                     "type": "string"
                                 },
+                                "name": {
+                                    "type": "string"
+                                },
                                 "node_id": {
                                     "type": "string"
                                 },
                                 "organizations_url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri"
                                 },
                                 "received_events_url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri"
                                 },
                                 "repos_url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri"
                                 },
                                 "site_admin": {
                                     "type": "boolean"
                                 },
                                 "starred_url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri-template"
                                 },
                                 "subscriptions_url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri"
                                 },
                                 "type": {
+                                    "enum": [
+                                        "Bot",
+                                        "User",
+                                        "Organization"
+                                    ],
                                     "type": "string"
                                 },
                                 "url": {
-                                    "type": "string"
+                                    "type": "string",
+                                    "format": "uri"
                                 }
                             }
                         },
-                        "updated_at": {
+                        "private": {
+                            "type": "boolean",
+                            "description": "Whether the repository is private or public."
+                        },
+                        "pulls_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "releases_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "stargazers_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "statuses_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "subscribers_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "subscription_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "tags_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "teams_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "trees_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "url": {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
+                },
+                "rerun_url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "run_attempt": {
+                    "type": "integer"
+                },
+                "run_number": {
+                    "type": "integer"
+                },
+                "run_started_at": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "status": {
+                    "enum": [
+                        "requested",
+                        "in_progress",
+                        "completed",
+                        "queued",
+                        "pending"
+                    ],
+                    "type": "string"
+                },
+                "triggering_actor": {
+                    "title": "User",
+                    "required": [
+                        "login",
+                        "id"
+                    ],
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "avatar_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "deleted": {
+                            "type": "boolean"
+                        },
+                        "email": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
+                        },
+                        "events_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "followers_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "following_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "gists_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "gravatar_id": {
+                            "type": "string"
+                        },
+                        "html_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "id": {
+                            "type": "integer"
+                        },
+                        "login": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "node_id": {
+                            "type": "string"
+                        },
+                        "organizations_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "received_events_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "repos_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "site_admin": {
+                            "type": "boolean"
+                        },
+                        "starred_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "subscriptions_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "type": {
+                            "enum": [
+                                "Bot",
+                                "User",
+                                "Organization"
+                            ],
                             "type": "string"
                         },
                         "url": {
-                            "type": "string"
-                        },
-                        "workflow_id": {
-                            "type": "integer"
-                        },
-                        "workflow_url": {
-                            "type": "string"
+                            "type": "string",
+                            "format": "uri"
                         }
                     }
+                },
+                "updated_at": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "workflow_id": {
+                    "type": "integer"
+                },
+                "workflow_url": {
+                    "type": "string",
+                    "format": "uri"
                 }
-            ]
+            }
         }
     }
 }';
@@ -4244,7 +3537,7 @@ final readonly class WebhookWorkflowRunInProgress
         "check_suite_id": 14,
         "check_suite_node_id": "generated",
         "check_suite_url": "https:\\/\\/example.com\\/",
-        "conclusion": "skipped",
+        "conclusion": "timed_out",
         "created_at": "1970-01-01T00:00:00+00:00",
         "event": "generated",
         "head_branch": "generated",

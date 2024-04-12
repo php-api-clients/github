@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\WorkflowR
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class PullRequests extends Schema\AliasAbstract\Tiet62DE450E\TietBDB05BA1\Tiet285A643A\Tiet4D2CA009
+final readonly class PullRequests extends Schema\AliasAbstract\TietD73F4C39\Tiet0A81E19D\Tiet5FAEC6DA\Tiet5FD93AD0
 {
 }

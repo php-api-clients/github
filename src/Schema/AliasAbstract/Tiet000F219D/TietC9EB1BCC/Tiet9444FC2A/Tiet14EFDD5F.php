@@ -2,22 +2,23 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietB8723F66\Tiet5958F165\TietEBB4D40C;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet000F219D\TietC9EB1BCC\Tiet9444FC2A;
 
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class TietFFD41F70
+abstract readonly class Tiet14EFDD5F
 {
     public const SCHEMA_JSON         = '{
     "title": "Marketplace Purchase",
     "required": [
         "account",
         "billing_cycle",
-        "unit_count",
-        "on_free_trial",
         "free_trial_ends_on",
-        "plan"
+        "next_billing_date",
+        "on_free_trial",
+        "plan",
+        "unit_count"
     ],
     "type": "object",
     "properties": {
@@ -86,7 +87,10 @@ abstract readonly class TietFFD41F70
                 "bullets": {
                     "type": "array",
                     "items": {
-                        "type": "string"
+                        "type": [
+                            "string",
+                            "null"
+                        ]
                     }
                 },
                 "description": {

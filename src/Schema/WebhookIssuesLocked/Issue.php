@@ -12,27 +12,28 @@ final readonly class Issue
     public const SCHEMA_JSON         = '{
     "title": "Issue",
     "required": [
-        "url",
-        "repository_url",
-        "labels_url",
+        "active_lock_reason",
+        "assignees",
+        "author_association",
+        "body",
+        "closed_at",
+        "comments",
         "comments_url",
+        "created_at",
         "events_url",
         "html_url",
         "id",
+        "labels_url",
+        "locked",
+        "milestone",
         "node_id",
         "number",
+        "reactions",
+        "repository_url",
         "title",
-        "user",
-        "assignees",
-        "milestone",
-        "comments",
-        "created_at",
         "updated_at",
-        "closed_at",
-        "author_association",
-        "active_lock_reason",
-        "body",
-        "reactions"
+        "url",
+        "user"
     ],
     "type": "object",
     "properties": {
@@ -312,7 +313,10 @@ final readonly class Issue
                     "default",
                     "description"
                 ],
-                "type": "object",
+                "type": [
+                    "object",
+                    "null"
+                ],
                 "properties": {
                     "color": {
                         "type": "string",
@@ -350,6 +354,9 @@ final readonly class Issue
             "format": "uri-template"
         },
         "locked": {
+            "enum": [
+                true
+            ],
             "type": "boolean"
         },
         "milestone": {
@@ -1340,7 +1347,7 @@ final readonly class Issue
         }
     ],
     "labels_url": "generated",
-    "locked": false,
+    "locked": true,
     "milestone": {
         "closed_at": "1970-01-01T00:00:00+00:00",
         "closed_issues": 13,
@@ -1526,7 +1533,7 @@ final readonly class Issue
     public string $createdAt, public bool|null $draft, #[MapFrom('events_url')]
     public string $eventsUrl, #[MapFrom('html_url')]
     public string $htmlUrl, public int $id, public array|null $labels, #[MapFrom('labels_url')]
-    public string $labelsUrl, public bool|null $locked, public Schema\WebhookIssuesLocked\Issue\Milestone|null $milestone, #[MapFrom('node_id')]
+    public string $labelsUrl, public bool $locked, public Schema\WebhookIssuesLocked\Issue\Milestone|null $milestone, #[MapFrom('node_id')]
     public string $nodeId, public int $number, #[MapFrom('performed_via_github_app')]
     public Schema\WebhookIssuesLocked\Issue\PerformedViaGithubApp|null $performedViaGithubApp, #[MapFrom('pull_request')]
     public Schema\WebhookIssuesLocked\Issue\PullRequest|null $pullRequest, public Schema\WebhookIssuesLocked\Issue\Reactions $reactions, #[MapFrom('repository_url')]

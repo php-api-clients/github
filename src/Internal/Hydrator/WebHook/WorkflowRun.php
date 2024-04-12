@@ -4275,6 +4275,17 @@ class WorkflowRun implements ObjectMapper
             $properties['workflowUrl'] = $value;
 
             after_workflowUrl:
+
+            $value = $payload['display_title'] ?? null;
+
+            if ($value === null) {
+                $properties['displayTitle'] = null;
+                goto after_displayTitle;
+            }
+
+            $properties['displayTitle'] = $value;
+
+            after_displayTitle:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun', $exception, stack: $this->hydrationStack);
         }
@@ -8152,7 +8163,7 @@ class WorkflowRun implements ObjectMapper
             $value = $payload['name'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'name';
+                $properties['name'] = null;
                 goto after_name;
             }
 
@@ -8192,7 +8203,7 @@ class WorkflowRun implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️WorkflowRun⚡️HeadRepository⚡️Owner($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️WorkflowRun⚡️HeadRepository⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -14996,6 +15007,14 @@ class WorkflowRun implements ObjectMapper
         $workflowUrl                                      = $object->workflowUrl;
         after_workflowUrl:        $result['workflow_url'] = $workflowUrl;
 
+        $displayTitle = $object->displayTitle;
+
+        if ($displayTitle === null) {
+            goto after_displayTitle;
+        }
+
+        after_displayTitle:        $result['display_title'] = $displayTitle;
+
         return $result;
     }
 
@@ -16703,7 +16722,12 @@ class WorkflowRun implements ObjectMapper
         $milestonesUrl                                        = $object->milestonesUrl;
         after_milestonesUrl:        $result['milestones_url'] = $milestonesUrl;
 
-        $name                              = $object->name;
+        $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
+
         after_name:        $result['name'] = $name;
 
         $nodeId                                 = $object->nodeId;
@@ -16718,7 +16742,7 @@ class WorkflowRun implements ObjectMapper
             goto after_owner;
         }
 
-        $owner                               = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️WorkflowRun⚡️HeadRepository⚡️Owner($owner);
+        $owner                               = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️WorkflowRun⚡️HeadRepository⚡️Owner($owner);
         after_owner:        $result['owner'] = $owner;
 
         $private                                 = $object->private;

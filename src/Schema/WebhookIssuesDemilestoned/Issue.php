@@ -12,27 +12,27 @@ final readonly class Issue
     public const SCHEMA_JSON         = '{
     "title": "Issue",
     "required": [
-        "url",
-        "repository_url",
-        "labels_url",
+        "active_lock_reason",
+        "assignees",
+        "author_association",
+        "body",
+        "closed_at",
+        "comments",
         "comments_url",
+        "created_at",
         "events_url",
         "html_url",
         "id",
+        "labels_url",
+        "milestone",
         "node_id",
         "number",
+        "reactions",
+        "repository_url",
         "title",
-        "user",
-        "assignees",
-        "milestone",
-        "comments",
-        "created_at",
         "updated_at",
-        "closed_at",
-        "author_association",
-        "active_lock_reason",
-        "body",
-        "reactions"
+        "url",
+        "user"
     ],
     "type": "object",
     "properties": {
@@ -314,7 +314,10 @@ final readonly class Issue
                     "default",
                     "description"
                 ],
-                "type": "object",
+                "type": [
+                    "object",
+                    "null"
+                ],
                 "properties": {
                     "color": {
                         "type": "string",

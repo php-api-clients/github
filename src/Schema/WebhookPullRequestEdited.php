@@ -3578,7 +3578,7 @@ final readonly class WebhookPullRequestEdited
                         },
                         "use_squash_pr_title_as_default": {
                             "type": "boolean",
-                            "description": "Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
+                            "description": "Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.**",
                             "default": false
                         }
                     }

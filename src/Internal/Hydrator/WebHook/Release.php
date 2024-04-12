@@ -6283,7 +6283,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release⚡️Author($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6413,7 +6413,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reactions';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release⚡️Reactions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7069,7 +7069,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Author($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7199,7 +7199,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reactions';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Reactions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8641,7 +8641,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'author';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Author($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8771,7 +8771,7 @@ class Release implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reactions';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Reactions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -12466,7 +12466,7 @@ class Release implements ObjectMapper
             goto after_author;
         }
 
-        $author                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($author);
+        $author                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release⚡️Author($author);
         after_author:        $result['author'] = $author;
 
         $body = $object->body;
@@ -12530,7 +12530,7 @@ class Release implements ObjectMapper
             goto after_reactions;
         }
 
-        $reactions                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($reactions);
+        $reactions                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePrereleased⚡️Release⚡️Reactions($reactions);
         after_reactions:        $result['reactions'] = $reactions;
 
         $tagName                                  = $object->tagName;
@@ -12847,7 +12847,7 @@ class Release implements ObjectMapper
             goto after_author;
         }
 
-        $author                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($author);
+        $author                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Author($author);
         after_author:        $result['author'] = $author;
 
         $body = $object->body;
@@ -12911,7 +12911,7 @@ class Release implements ObjectMapper
             goto after_reactions;
         }
 
-        $reactions                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($reactions);
+        $reactions                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Reactions($reactions);
         after_reactions:        $result['reactions'] = $reactions;
 
         $tagName                                  = $object->tagName;
@@ -13609,7 +13609,7 @@ class Release implements ObjectMapper
             goto after_author;
         }
 
-        $author                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Author($author);
+        $author                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Author($author);
         after_author:        $result['author'] = $author;
 
         $body = $object->body;
@@ -13673,7 +13673,7 @@ class Release implements ObjectMapper
             goto after_reactions;
         }
 
-        $reactions                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleaseCreated⚡️Release⚡️Reactions($reactions);
+        $reactions                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookReleasePublished⚡️Release⚡️Reactions($reactions);
         after_reactions:        $result['reactions'] = $reactions;
 
         $tagName                                  = $object->tagName;

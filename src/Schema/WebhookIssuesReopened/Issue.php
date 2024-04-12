@@ -12,27 +12,28 @@ final readonly class Issue
     public const SCHEMA_JSON         = '{
     "title": "Issue",
     "required": [
-        "url",
-        "repository_url",
-        "labels_url",
+        "active_lock_reason",
+        "assignees",
+        "author_association",
+        "body",
+        "closed_at",
+        "comments",
         "comments_url",
+        "created_at",
         "events_url",
         "html_url",
         "id",
+        "labels_url",
+        "milestone",
         "node_id",
         "number",
+        "reactions",
+        "repository_url",
+        "state",
         "title",
-        "user",
-        "assignees",
-        "milestone",
-        "comments",
-        "created_at",
         "updated_at",
-        "closed_at",
-        "author_association",
-        "active_lock_reason",
-        "body",
-        "reactions"
+        "url",
+        "user"
     ],
     "type": "object",
     "properties": {
@@ -313,7 +314,10 @@ final readonly class Issue
                     "default",
                     "description"
                 ],
-                "type": "object",
+                "type": [
+                    "object",
+                    "null"
+                ],
                 "properties": {
                     "color": {
                         "type": "string",
@@ -1535,7 +1539,7 @@ final readonly class Issue
     public string $nodeId, public int $number, #[MapFrom('performed_via_github_app')]
     public Schema\WebhookIssuesReopened\Issue\PerformedViaGithubApp|null $performedViaGithubApp, #[MapFrom('pull_request')]
     public Schema\WebhookIssuesReopened\Issue\PullRequest|null $pullRequest, public Schema\WebhookIssuesReopened\Issue\Reactions $reactions, #[MapFrom('repository_url')]
-    public string $repositoryUrl, public string|null $state, #[MapFrom('state_reason')]
+    public string $repositoryUrl, public string $state, #[MapFrom('state_reason')]
     public string|null $stateReason, #[MapFrom('timeline_url')]
     public string|null $timelineUrl, public string $title, #[MapFrom('updated_at')]
     public string $updatedAt, public string $url, public Schema\WebhookIssuesReopened\Issue\User|null $user,)

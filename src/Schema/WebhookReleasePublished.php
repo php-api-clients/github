@@ -238,570 +238,429 @@ final readonly class WebhookReleasePublished
             "description": "A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an\\norganization, or when the event occurs from activity in a repository owned by an organization."
         },
         "release": {
-            "allOf": [
-                {
-                    "title": "Release",
-                    "required": [
-                        "url",
-                        "assets_url",
-                        "upload_url",
-                        "html_url",
-                        "id",
-                        "node_id",
-                        "tag_name",
-                        "target_commitish",
-                        "name",
-                        "draft",
-                        "author",
-                        "prerelease",
-                        "created_at",
-                        "published_at",
-                        "assets",
-                        "tarball_url",
-                        "zipball_url",
-                        "body"
-                    ],
-                    "type": "object",
-                    "properties": {
-                        "assets": {
-                            "type": "array",
-                            "items": {
-                                "title": "Release Asset",
-                                "required": [
-                                    "url",
-                                    "browser_download_url",
-                                    "id",
-                                    "node_id",
-                                    "name",
-                                    "label",
-                                    "state",
-                                    "content_type",
-                                    "size",
-                                    "download_count",
-                                    "created_at",
-                                    "updated_at"
+            "title": "Release",
+            "required": [
+                "assets",
+                "assets_url",
+                "author",
+                "body",
+                "created_at",
+                "draft",
+                "html_url",
+                "id",
+                "name",
+                "node_id",
+                "prerelease",
+                "published_at",
+                "tag_name",
+                "tarball_url",
+                "target_commitish",
+                "upload_url",
+                "url",
+                "zipball_url"
+            ],
+            "type": "object",
+            "properties": {
+                "assets": {
+                    "type": "array",
+                    "items": {
+                        "title": "Release Asset",
+                        "required": [
+                            "url",
+                            "browser_download_url",
+                            "id",
+                            "node_id",
+                            "name",
+                            "label",
+                            "state",
+                            "content_type",
+                            "size",
+                            "download_count",
+                            "created_at",
+                            "updated_at"
+                        ],
+                        "type": [
+                            "object",
+                            "null"
+                        ],
+                        "properties": {
+                            "browser_download_url": {
+                                "type": "string",
+                                "format": "uri"
+                            },
+                            "content_type": {
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "download_count": {
+                                "type": "integer"
+                            },
+                            "id": {
+                                "type": "integer"
+                            },
+                            "label": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "The file name of the asset."
+                            },
+                            "node_id": {
+                                "type": "string"
+                            },
+                            "size": {
+                                "type": "integer"
+                            },
+                            "state": {
+                                "enum": [
+                                    "uploaded"
                                 ],
-                                "type": "object",
+                                "type": "string",
+                                "description": "State of the release asset."
+                            },
+                            "updated_at": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "uploader": {
+                                "title": "User",
+                                "required": [
+                                    "login",
+                                    "id"
+                                ],
+                                "type": [
+                                    "object",
+                                    "null"
+                                ],
                                 "properties": {
-                                    "browser_download_url": {
+                                    "avatar_url": {
                                         "type": "string",
                                         "format": "uri"
                                     },
-                                    "content_type": {
-                                        "type": "string"
+                                    "deleted": {
+                                        "type": "boolean"
                                     },
-                                    "created_at": {
-                                        "type": "string",
-                                        "format": "date-time"
-                                    },
-                                    "download_count": {
-                                        "type": "integer"
-                                    },
-                                    "id": {
-                                        "type": "integer"
-                                    },
-                                    "label": {
+                                    "email": {
                                         "type": [
                                             "string",
                                             "null"
                                         ]
                                     },
-                                    "name": {
+                                    "events_url": {
                                         "type": "string",
-                                        "description": "The file name of the asset."
+                                        "format": "uri-template"
+                                    },
+                                    "followers_url": {
+                                        "type": "string",
+                                        "format": "uri"
+                                    },
+                                    "following_url": {
+                                        "type": "string",
+                                        "format": "uri-template"
+                                    },
+                                    "gists_url": {
+                                        "type": "string",
+                                        "format": "uri-template"
+                                    },
+                                    "gravatar_id": {
+                                        "type": "string"
+                                    },
+                                    "html_url": {
+                                        "type": "string",
+                                        "format": "uri"
+                                    },
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "login": {
+                                        "type": "string"
+                                    },
+                                    "name": {
+                                        "type": "string"
                                     },
                                     "node_id": {
                                         "type": "string"
                                     },
-                                    "size": {
-                                        "type": "integer"
+                                    "organizations_url": {
+                                        "type": "string",
+                                        "format": "uri"
                                     },
-                                    "state": {
+                                    "received_events_url": {
+                                        "type": "string",
+                                        "format": "uri"
+                                    },
+                                    "repos_url": {
+                                        "type": "string",
+                                        "format": "uri"
+                                    },
+                                    "site_admin": {
+                                        "type": "boolean"
+                                    },
+                                    "starred_url": {
+                                        "type": "string",
+                                        "format": "uri-template"
+                                    },
+                                    "subscriptions_url": {
+                                        "type": "string",
+                                        "format": "uri"
+                                    },
+                                    "type": {
                                         "enum": [
-                                            "uploaded"
+                                            "Bot",
+                                            "User",
+                                            "Organization"
                                         ],
-                                        "type": "string",
-                                        "description": "State of the release asset."
-                                    },
-                                    "updated_at": {
-                                        "type": "string",
-                                        "format": "date-time"
-                                    },
-                                    "uploader": {
-                                        "title": "User",
-                                        "required": [
-                                            "login",
-                                            "id"
-                                        ],
-                                        "type": [
-                                            "object",
-                                            "null"
-                                        ],
-                                        "properties": {
-                                            "avatar_url": {
-                                                "type": "string",
-                                                "format": "uri"
-                                            },
-                                            "deleted": {
-                                                "type": "boolean"
-                                            },
-                                            "email": {
-                                                "type": [
-                                                    "string",
-                                                    "null"
-                                                ]
-                                            },
-                                            "events_url": {
-                                                "type": "string",
-                                                "format": "uri-template"
-                                            },
-                                            "followers_url": {
-                                                "type": "string",
-                                                "format": "uri"
-                                            },
-                                            "following_url": {
-                                                "type": "string",
-                                                "format": "uri-template"
-                                            },
-                                            "gists_url": {
-                                                "type": "string",
-                                                "format": "uri-template"
-                                            },
-                                            "gravatar_id": {
-                                                "type": "string"
-                                            },
-                                            "html_url": {
-                                                "type": "string",
-                                                "format": "uri"
-                                            },
-                                            "id": {
-                                                "type": "integer"
-                                            },
-                                            "login": {
-                                                "type": "string"
-                                            },
-                                            "name": {
-                                                "type": "string"
-                                            },
-                                            "node_id": {
-                                                "type": "string"
-                                            },
-                                            "organizations_url": {
-                                                "type": "string",
-                                                "format": "uri"
-                                            },
-                                            "received_events_url": {
-                                                "type": "string",
-                                                "format": "uri"
-                                            },
-                                            "repos_url": {
-                                                "type": "string",
-                                                "format": "uri"
-                                            },
-                                            "site_admin": {
-                                                "type": "boolean"
-                                            },
-                                            "starred_url": {
-                                                "type": "string",
-                                                "format": "uri-template"
-                                            },
-                                            "subscriptions_url": {
-                                                "type": "string",
-                                                "format": "uri"
-                                            },
-                                            "type": {
-                                                "enum": [
-                                                    "Bot",
-                                                    "User",
-                                                    "Organization"
-                                                ],
-                                                "type": "string"
-                                            },
-                                            "url": {
-                                                "type": "string",
-                                                "format": "uri"
-                                            }
-                                        }
+                                        "type": "string"
                                     },
                                     "url": {
                                         "type": "string",
                                         "format": "uri"
                                     }
-                                },
-                                "description": "Data related to a release."
+                                }
+                            },
+                            "url": {
+                                "type": "string",
+                                "format": "uri"
                             }
                         },
-                        "assets_url": {
+                        "description": "Data related to a release."
+                    }
+                },
+                "assets_url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "author": {
+                    "title": "User",
+                    "required": [
+                        "login",
+                        "id"
+                    ],
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "avatar_url": {
                             "type": "string",
                             "format": "uri"
                         },
-                        "author": {
-                            "title": "User",
-                            "required": [
-                                "login",
-                                "id"
-                            ],
-                            "type": [
-                                "object",
-                                "null"
-                            ],
-                            "properties": {
-                                "avatar_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "deleted": {
-                                    "type": "boolean"
-                                },
-                                "email": {
-                                    "type": [
-                                        "string",
-                                        "null"
-                                    ]
-                                },
-                                "events_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "followers_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "following_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "gists_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "gravatar_id": {
-                                    "type": "string"
-                                },
-                                "html_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "id": {
-                                    "type": "integer"
-                                },
-                                "login": {
-                                    "type": "string"
-                                },
-                                "name": {
-                                    "type": "string"
-                                },
-                                "node_id": {
-                                    "type": "string"
-                                },
-                                "organizations_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "received_events_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "repos_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "site_admin": {
-                                    "type": "boolean"
-                                },
-                                "starred_url": {
-                                    "type": "string",
-                                    "format": "uri-template"
-                                },
-                                "subscriptions_url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                },
-                                "type": {
-                                    "enum": [
-                                        "Bot",
-                                        "User",
-                                        "Organization"
-                                    ],
-                                    "type": "string"
-                                },
-                                "url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                }
-                            }
+                        "deleted": {
+                            "type": "boolean"
                         },
-                        "body": {
+                        "email": {
                             "type": [
                                 "string",
                                 "null"
                             ]
                         },
-                        "created_at": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "format": "date-time"
-                        },
-                        "discussion_url": {
-                            "type": "string",
-                            "format": "uri"
-                        },
-                        "draft": {
-                            "type": "boolean",
-                            "description": "Whether the release is a draft or published"
-                        },
-                        "html_url": {
-                            "type": "string",
-                            "format": "uri"
-                        },
-                        "id": {
-                            "type": "integer"
-                        },
-                        "name": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "node_id": {
-                            "type": "string"
-                        },
-                        "prerelease": {
-                            "type": "boolean",
-                            "description": "Whether the release is identified as a prerelease or a full release."
-                        },
-                        "published_at": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "format": "date-time"
-                        },
-                        "reactions": {
-                            "title": "Reactions",
-                            "required": [
-                                "url",
-                                "total_count",
-                                "+1",
-                                "-1",
-                                "laugh",
-                                "confused",
-                                "heart",
-                                "hooray",
-                                "eyes",
-                                "rocket"
-                            ],
-                            "type": "object",
-                            "properties": {
-                                "+1": {
-                                    "type": "integer"
-                                },
-                                "-1": {
-                                    "type": "integer"
-                                },
-                                "confused": {
-                                    "type": "integer"
-                                },
-                                "eyes": {
-                                    "type": "integer"
-                                },
-                                "heart": {
-                                    "type": "integer"
-                                },
-                                "hooray": {
-                                    "type": "integer"
-                                },
-                                "laugh": {
-                                    "type": "integer"
-                                },
-                                "rocket": {
-                                    "type": "integer"
-                                },
-                                "total_count": {
-                                    "type": "integer"
-                                },
-                                "url": {
-                                    "type": "string",
-                                    "format": "uri"
-                                }
-                            }
-                        },
-                        "tag_name": {
-                            "type": "string",
-                            "description": "The name of the tag."
-                        },
-                        "tarball_url": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "format": "uri"
-                        },
-                        "target_commitish": {
-                            "type": "string",
-                            "description": "Specifies the commitish value that determines where the Git tag is created from."
-                        },
-                        "upload_url": {
+                        "events_url": {
                             "type": "string",
                             "format": "uri-template"
                         },
-                        "url": {
+                        "followers_url": {
                             "type": "string",
                             "format": "uri"
                         },
-                        "zipball_url": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "format": "uri"
-                        }
-                    },
-                    "description": "The [release](https:\\/\\/docs.github.com\\/rest\\/releases\\/releases\\/#get-a-release) object."
-                },
-                {
-                    "required": [
-                        "published_at"
-                    ],
-                    "type": "object",
-                    "properties": {
-                        "assets": {
-                            "type": "array",
-                            "items": {
-                                "type": [
-                                    "object",
-                                    "null"
-                                ]
-                            }
+                        "following_url": {
+                            "type": "string",
+                            "format": "uri-template"
                         },
-                        "assets_url": {
+                        "gists_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "gravatar_id": {
                             "type": "string"
-                        },
-                        "author": {
-                            "type": "object",
-                            "properties": {
-                                "avatar_url": {
-                                    "type": "string"
-                                },
-                                "events_url": {
-                                    "type": "string"
-                                },
-                                "followers_url": {
-                                    "type": "string"
-                                },
-                                "following_url": {
-                                    "type": "string"
-                                },
-                                "gists_url": {
-                                    "type": "string"
-                                },
-                                "gravatar_id": {
-                                    "type": "string"
-                                },
-                                "html_url": {
-                                    "type": "string"
-                                },
-                                "id": {
-                                    "type": "integer"
-                                },
-                                "login": {
-                                    "type": "string"
-                                },
-                                "node_id": {
-                                    "type": "string"
-                                },
-                                "organizations_url": {
-                                    "type": "string"
-                                },
-                                "received_events_url": {
-                                    "type": "string"
-                                },
-                                "repos_url": {
-                                    "type": "string"
-                                },
-                                "site_admin": {
-                                    "type": "boolean"
-                                },
-                                "starred_url": {
-                                    "type": "string"
-                                },
-                                "subscriptions_url": {
-                                    "type": "string"
-                                },
-                                "type": {
-                                    "type": "string"
-                                },
-                                "url": {
-                                    "type": "string"
-                                }
-                            }
-                        },
-                        "body": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "created_at": {
-                            "type": "string"
-                        },
-                        "draft": {
-                            "type": "boolean"
                         },
                         "html_url": {
-                            "type": "string"
+                            "type": "string",
+                            "format": "uri"
                         },
                         "id": {
                             "type": "integer"
                         },
+                        "login": {
+                            "type": "string"
+                        },
                         "name": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
+                            "type": "string"
                         },
                         "node_id": {
                             "type": "string"
                         },
-                        "prerelease": {
+                        "organizations_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "received_events_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "repos_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "site_admin": {
                             "type": "boolean"
                         },
-                        "published_at": {
-                            "type": [
-                                "string",
-                                "null"
+                        "starred_url": {
+                            "type": "string",
+                            "format": "uri-template"
+                        },
+                        "subscriptions_url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "type": {
+                            "enum": [
+                                "Bot",
+                                "User",
+                                "Organization"
                             ],
-                            "format": "date-time"
-                        },
-                        "tag_name": {
-                            "type": "string"
-                        },
-                        "tarball_url": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "target_commitish": {
-                            "type": "string"
-                        },
-                        "upload_url": {
                             "type": "string"
                         },
                         "url": {
-                            "type": "string"
-                        },
-                        "zipball_url": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
+                            "type": "string",
+                            "format": "uri"
                         }
                     }
+                },
+                "body": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "created_at": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "date-time"
+                },
+                "discussion_url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "draft": {
+                    "type": "boolean",
+                    "description": "Whether the release is a draft or published"
+                },
+                "html_url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "node_id": {
+                    "type": "string"
+                },
+                "prerelease": {
+                    "type": "boolean",
+                    "description": "Whether the release is identified as a prerelease or a full release."
+                },
+                "published_at": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "date-time"
+                },
+                "reactions": {
+                    "title": "Reactions",
+                    "required": [
+                        "url",
+                        "total_count",
+                        "+1",
+                        "-1",
+                        "laugh",
+                        "confused",
+                        "heart",
+                        "hooray",
+                        "eyes",
+                        "rocket"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "+1": {
+                            "type": "integer"
+                        },
+                        "-1": {
+                            "type": "integer"
+                        },
+                        "confused": {
+                            "type": "integer"
+                        },
+                        "eyes": {
+                            "type": "integer"
+                        },
+                        "heart": {
+                            "type": "integer"
+                        },
+                        "hooray": {
+                            "type": "integer"
+                        },
+                        "laugh": {
+                            "type": "integer"
+                        },
+                        "rocket": {
+                            "type": "integer"
+                        },
+                        "total_count": {
+                            "type": "integer"
+                        },
+                        "url": {
+                            "type": "string",
+                            "format": "uri"
+                        }
+                    }
+                },
+                "tag_name": {
+                    "type": "string",
+                    "description": "The name of the tag."
+                },
+                "tarball_url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "uri"
+                },
+                "target_commitish": {
+                    "type": "string",
+                    "description": "Specifies the commitish value that determines where the Git tag is created from."
+                },
+                "upload_url": {
+                    "type": "string",
+                    "format": "uri-template"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "zipball_url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "uri"
                 }
-            ]
+            },
+            "description": "The [release](https:\\/\\/docs.github.com\\/rest\\/releases\\/releases\\/#get-a-release) object."
         },
         "repository": {
             "title": "Repository",
@@ -2917,6 +2776,7 @@ final readonly class WebhookReleasePublished
     see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
      * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
     organization, or when the event occurs from activity in a repository owned by an organization.
+     * release: The [release](https://docs.github.com/rest/releases/releases/#get-a-release) object.
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.

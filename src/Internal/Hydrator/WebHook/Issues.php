@@ -20413,7 +20413,7 @@ class Issues implements ObjectMapper
             $value = $payload['locked'] ?? null;
 
             if ($value === null) {
-                $properties['locked'] = null;
+                $missingFields[] = 'locked';
                 goto after_locked;
             }
 
@@ -35070,7 +35070,7 @@ class Issues implements ObjectMapper
             $value = $payload['state'] ?? null;
 
             if ($value === null) {
-                $properties['state'] = null;
+                $missingFields[] = 'state';
                 goto after_state;
             }
 
@@ -49235,7 +49235,7 @@ class Issues implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'assignee';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned⚡️Issue⚡️Assignee($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️Assignee($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -49391,7 +49391,7 @@ class Issues implements ObjectMapper
             $value = $payload['locked'] ?? null;
 
             if ($value === null) {
-                $properties['locked'] = null;
+                $missingFields[] = 'locked';
                 goto after_locked;
             }
 
@@ -49409,7 +49409,7 @@ class Issues implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'milestone';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned⚡️Issue⚡️Milestone($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️Milestone($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -49451,7 +49451,7 @@ class Issues implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'performedViaGithubApp';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned⚡️Issue⚡️PerformedViaGithubApp($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️PerformedViaGithubApp($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -49471,7 +49471,7 @@ class Issues implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'pullRequest';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned⚡️Issue⚡️PullRequest($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️PullRequest($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -49491,7 +49491,7 @@ class Issues implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'reactions';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned⚡️Issue⚡️Reactions($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️Reactions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -49588,7 +49588,7 @@ class Issues implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned⚡️Issue⚡️User($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -68343,12 +68343,7 @@ class Issues implements ObjectMapper
         $labelsUrl                                    = $object->labelsUrl;
         after_labelsUrl:        $result['labels_url'] = $labelsUrl;
 
-        $locked = $object->locked;
-
-        if ($locked === null) {
-            goto after_locked;
-        }
-
+        $locked                                = $object->locked;
         after_locked:        $result['locked'] = $locked;
 
         $milestone = $object->milestone;
@@ -76515,12 +76510,7 @@ class Issues implements ObjectMapper
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
 
-        $state = $object->state;
-
-        if ($state === null) {
-            goto after_state;
-        }
-
+        $state                               = $object->state;
         after_state:        $result['state'] = $state;
 
         $stateReason = $object->stateReason;
@@ -84471,7 +84461,7 @@ class Issues implements ObjectMapper
             goto after_assignee;
         }
 
-        $assignee                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned⚡️Issue⚡️Assignee($assignee);
+        $assignee                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️Assignee($assignee);
         after_assignee:        $result['assignee'] = $assignee;
 
         $assignees = $object->assignees;
@@ -84547,12 +84537,7 @@ class Issues implements ObjectMapper
         $labelsUrl                                    = $object->labelsUrl;
         after_labelsUrl:        $result['labels_url'] = $labelsUrl;
 
-        $locked = $object->locked;
-
-        if ($locked === null) {
-            goto after_locked;
-        }
-
+        $locked                                = $object->locked;
         after_locked:        $result['locked'] = $locked;
 
         $milestone = $object->milestone;
@@ -84561,7 +84546,7 @@ class Issues implements ObjectMapper
             goto after_milestone;
         }
 
-        $milestone                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned⚡️Issue⚡️Milestone($milestone);
+        $milestone                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️Milestone($milestone);
         after_milestone:        $result['milestone'] = $milestone;
 
         $nodeId                                 = $object->nodeId;
@@ -84576,7 +84561,7 @@ class Issues implements ObjectMapper
             goto after_performedViaGithubApp;
         }
 
-        $performedViaGithubApp                                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned⚡️Issue⚡️PerformedViaGithubApp($performedViaGithubApp);
+        $performedViaGithubApp                                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️PerformedViaGithubApp($performedViaGithubApp);
         after_performedViaGithubApp:        $result['performed_via_github_app'] = $performedViaGithubApp;
 
         $pullRequest = $object->pullRequest;
@@ -84585,11 +84570,11 @@ class Issues implements ObjectMapper
             goto after_pullRequest;
         }
 
-        $pullRequest                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned⚡️Issue⚡️PullRequest($pullRequest);
+        $pullRequest                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️PullRequest($pullRequest);
         after_pullRequest:        $result['pull_request'] = $pullRequest;
 
         $reactions                                   = $object->reactions;
-        $reactions                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned⚡️Issue⚡️Reactions($reactions);
+        $reactions                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️Reactions($reactions);
         after_reactions:        $result['reactions'] = $reactions;
 
         $repositoryUrl                                        = $object->repositoryUrl;
@@ -84634,7 +84619,7 @@ class Issues implements ObjectMapper
             goto after_user;
         }
 
-        $user                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned⚡️Issue⚡️User($user);
+        $user                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️User($user);
         after_user:        $result['user'] = $user;
 
         return $result;

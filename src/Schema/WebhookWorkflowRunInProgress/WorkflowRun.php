@@ -12,11 +12,12 @@ final readonly class WorkflowRun
     public const SCHEMA_JSON         = '{
     "title": "Workflow Run",
     "required": [
+        "actor",
         "artifacts_url",
         "cancel_url",
-        "check_suite_url",
         "check_suite_id",
         "check_suite_node_id",
+        "check_suite_url",
         "conclusion",
         "created_at",
         "event",
@@ -28,23 +29,22 @@ final readonly class WorkflowRun
         "id",
         "jobs_url",
         "logs_url",
-        "node_id",
         "name",
+        "node_id",
         "path",
+        "previous_attempt_url",
         "pull_requests",
         "repository",
         "rerun_url",
+        "run_attempt",
         "run_number",
+        "run_started_at",
         "status",
+        "triggering_actor",
         "updated_at",
         "url",
         "workflow_id",
-        "workflow_url",
-        "run_attempt",
-        "run_started_at",
-        "previous_attempt_url",
-        "actor",
-        "triggering_actor"
+        "workflow_url"
     ],
     "type": "object",
     "properties": {
@@ -164,14 +164,14 @@ final readonly class WorkflowRun
         },
         "conclusion": {
             "enum": [
-                "success",
+                "action_required",
+                "cancelled",
                 "failure",
                 "neutral",
-                "cancelled",
-                "timed_out",
-                "action_required",
-                "stale",
                 "skipped",
+                "stale",
+                "success",
+                "timed_out",
                 null
             ],
             "type": [
@@ -453,7 +453,10 @@ final readonly class WorkflowRun
                     "format": "uri-template"
                 },
                 "name": {
-                    "type": "string",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
                     "description": "The name of the repository."
                 },
                 "node_id": {
@@ -652,7 +655,10 @@ final readonly class WorkflowRun
                     "head",
                     "base"
                 ],
-                "type": "object",
+                "type": [
+                    "object",
+                    "null"
+                ],
                 "properties": {
                     "base": {
                         "required": [
@@ -1262,7 +1268,7 @@ final readonly class WorkflowRun
     "check_suite_id": 14,
     "check_suite_node_id": "generated",
     "check_suite_url": "https:\\/\\/example.com\\/",
-    "conclusion": "skipped",
+    "conclusion": "timed_out",
     "created_at": "1970-01-01T00:00:00+00:00",
     "event": "generated",
     "head_branch": "generated",

@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue;
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Labels extends Schema\AliasAbstract\TietCBFBC5DA\Tiet410A0D57\TietB65A397E\Tiet98165A46
+final readonly class Labels extends Schema\AliasAbstract\TietD0156E29\Tiet718D0614\Tiet1A091EF2\TietD0F00D93
 {
 }

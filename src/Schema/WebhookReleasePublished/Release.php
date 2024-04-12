@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookReleasePublished;
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Release extends Schema\AliasAbstract\Tiet47806848\Tiet17CCE525\Tiet67EAA3D6\Tiet432C87C3
+final readonly class Release extends Schema\AliasAbstract\Tiet4AB90ABC\Tiet5A194DC0\Tiet0804935B\Tiet866E042C
 {
 }
