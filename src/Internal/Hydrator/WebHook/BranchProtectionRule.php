@@ -16,7 +16,6 @@ use ApiClients\Client\GitHub\Schema\SimpleInstallation;
 use ApiClients\Client\GitHub\Schema\SimpleUser;
 use ApiClients\Client\GitHub\Schema\SimpleUserWebhooks;
 use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleCreated;
-use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleCreated\Rule;
 use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleDeleted;
 use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited;
 use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes;
@@ -27,6 +26,7 @@ use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\Au
 use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel;
 use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecks;
 use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecksEnforcementLevel;
+use ApiClients\Client\GitHub\Schema\WebhooksRule;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems;
@@ -73,10 +73,9 @@ class BranchProtectionRule implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleCreated\Rule' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleCreated⚡️Rule($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksRule' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksRule($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleDeleted' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleDeleted($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleDeleted\Rule' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleDeleted⚡️Rule($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\AdminEnforced' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AdminEnforced($payload),
@@ -86,7 +85,6 @@ class BranchProtectionRule implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LinearHistoryRequirementEnforcementLevel($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequiredStatusChecks($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecksEnforcementLevel' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequiredStatusChecksEnforcementLevel($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Rule' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Rule($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\CustomProperties' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️CustomProperties($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -198,7 +196,7 @@ class BranchProtectionRule implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'rule';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleCreated⚡️Rule($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksRule($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -3430,7 +3428,7 @@ class BranchProtectionRule implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleCreated⚡️Rule(array $payload): Rule
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksRule(array $payload): WebhooksRule
     {
         $properties    = [];
         $missingFields = [];
@@ -3721,17 +3719,17 @@ class BranchProtectionRule implements ObjectMapper
 
             after_updatedAt:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleCreated\Rule', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksRule', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(Rule::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(WebhooksRule::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new Rule(...$properties);
+            return new WebhooksRule(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleCreated\Rule', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksRule', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -4091,7 +4089,7 @@ class BranchProtectionRule implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'rule';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleDeleted⚡️Rule($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksRule($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4132,311 +4130,6 @@ class BranchProtectionRule implements ObjectMapper
             return new WebhookBranchProtectionRuleDeleted(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleDeleted', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleDeleted⚡️Rule(array $payload): \ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleDeleted\Rule
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['admin_enforced'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'admin_enforced';
-                goto after_adminEnforced;
-            }
-
-            $properties['adminEnforced'] = $value;
-
-            after_adminEnforced:
-
-            $value = $payload['allow_deletions_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'allow_deletions_enforcement_level';
-                goto after_allowDeletionsEnforcementLevel;
-            }
-
-            $properties['allowDeletionsEnforcementLevel'] = $value;
-
-            after_allowDeletionsEnforcementLevel:
-
-            $value = $payload['allow_force_pushes_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'allow_force_pushes_enforcement_level';
-                goto after_allowForcePushesEnforcementLevel;
-            }
-
-            $properties['allowForcePushesEnforcementLevel'] = $value;
-
-            after_allowForcePushesEnforcementLevel:
-
-            $value = $payload['authorized_actor_names'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'authorized_actor_names';
-                goto after_authorizedActorNames;
-            }
-
-            $properties['authorizedActorNames'] = $value;
-
-            after_authorizedActorNames:
-
-            $value = $payload['authorized_actors_only'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'authorized_actors_only';
-                goto after_authorizedActorsOnly;
-            }
-
-            $properties['authorizedActorsOnly'] = $value;
-
-            after_authorizedActorsOnly:
-
-            $value = $payload['authorized_dismissal_actors_only'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'authorized_dismissal_actors_only';
-                goto after_authorizedDismissalActorsOnly;
-            }
-
-            $properties['authorizedDismissalActorsOnly'] = $value;
-
-            after_authorizedDismissalActorsOnly:
-
-            $value = $payload['create_protected'] ?? null;
-
-            if ($value === null) {
-                $properties['createProtected'] = null;
-                goto after_createProtected;
-            }
-
-            $properties['createProtected'] = $value;
-
-            after_createProtected:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['dismiss_stale_reviews_on_push'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'dismiss_stale_reviews_on_push';
-                goto after_dismissStaleReviewsOnPush;
-            }
-
-            $properties['dismissStaleReviewsOnPush'] = $value;
-
-            after_dismissStaleReviewsOnPush:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['ignore_approvals_from_contributors'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'ignore_approvals_from_contributors';
-                goto after_ignoreApprovalsFromContributors;
-            }
-
-            $properties['ignoreApprovalsFromContributors'] = $value;
-
-            after_ignoreApprovalsFromContributors:
-
-            $value = $payload['linear_history_requirement_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'linear_history_requirement_enforcement_level';
-                goto after_linearHistoryRequirementEnforcementLevel;
-            }
-
-            $properties['linearHistoryRequirementEnforcementLevel'] = $value;
-
-            after_linearHistoryRequirementEnforcementLevel:
-
-            $value = $payload['merge_queue_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'merge_queue_enforcement_level';
-                goto after_mergeQueueEnforcementLevel;
-            }
-
-            $properties['mergeQueueEnforcementLevel'] = $value;
-
-            after_mergeQueueEnforcementLevel:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['pull_request_reviews_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'pull_request_reviews_enforcement_level';
-                goto after_pullRequestReviewsEnforcementLevel;
-            }
-
-            $properties['pullRequestReviewsEnforcementLevel'] = $value;
-
-            after_pullRequestReviewsEnforcementLevel:
-
-            $value = $payload['repository_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'repository_id';
-                goto after_repositoryId;
-            }
-
-            $properties['repositoryId'] = $value;
-
-            after_repositoryId:
-
-            $value = $payload['require_code_owner_review'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'require_code_owner_review';
-                goto after_requireCodeOwnerReview;
-            }
-
-            $properties['requireCodeOwnerReview'] = $value;
-
-            after_requireCodeOwnerReview:
-
-            $value = $payload['require_last_push_approval'] ?? null;
-
-            if ($value === null) {
-                $properties['requireLastPushApproval'] = null;
-                goto after_requireLastPushApproval;
-            }
-
-            $properties['requireLastPushApproval'] = $value;
-
-            after_requireLastPushApproval:
-
-            $value = $payload['required_approving_review_count'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'required_approving_review_count';
-                goto after_requiredApprovingReviewCount;
-            }
-
-            $properties['requiredApprovingReviewCount'] = $value;
-
-            after_requiredApprovingReviewCount:
-
-            $value = $payload['required_conversation_resolution_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'required_conversation_resolution_level';
-                goto after_requiredConversationResolutionLevel;
-            }
-
-            $properties['requiredConversationResolutionLevel'] = $value;
-
-            after_requiredConversationResolutionLevel:
-
-            $value = $payload['required_deployments_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'required_deployments_enforcement_level';
-                goto after_requiredDeploymentsEnforcementLevel;
-            }
-
-            $properties['requiredDeploymentsEnforcementLevel'] = $value;
-
-            after_requiredDeploymentsEnforcementLevel:
-
-            $value = $payload['required_status_checks'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'required_status_checks';
-                goto after_requiredStatusChecks;
-            }
-
-            $properties['requiredStatusChecks'] = $value;
-
-            after_requiredStatusChecks:
-
-            $value = $payload['required_status_checks_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'required_status_checks_enforcement_level';
-                goto after_requiredStatusChecksEnforcementLevel;
-            }
-
-            $properties['requiredStatusChecksEnforcementLevel'] = $value;
-
-            after_requiredStatusChecksEnforcementLevel:
-
-            $value = $payload['signature_requirement_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'signature_requirement_enforcement_level';
-                goto after_signatureRequirementEnforcementLevel;
-            }
-
-            $properties['signatureRequirementEnforcementLevel'] = $value;
-
-            after_signatureRequirementEnforcementLevel:
-
-            $value = $payload['strict_required_status_checks_policy'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'strict_required_status_checks_policy';
-                goto after_strictRequiredStatusChecksPolicy;
-            }
-
-            $properties['strictRequiredStatusChecksPolicy'] = $value;
-
-            after_strictRequiredStatusChecksPolicy:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleDeleted\Rule', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleDeleted\Rule::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleDeleted\Rule(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleDeleted\Rule', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -4566,7 +4259,7 @@ class BranchProtectionRule implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'rule';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Rule($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksRule($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4979,311 +4672,6 @@ class BranchProtectionRule implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Rule(array $payload): \ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Rule
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['admin_enforced'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'admin_enforced';
-                goto after_adminEnforced;
-            }
-
-            $properties['adminEnforced'] = $value;
-
-            after_adminEnforced:
-
-            $value = $payload['allow_deletions_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'allow_deletions_enforcement_level';
-                goto after_allowDeletionsEnforcementLevel;
-            }
-
-            $properties['allowDeletionsEnforcementLevel'] = $value;
-
-            after_allowDeletionsEnforcementLevel:
-
-            $value = $payload['allow_force_pushes_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'allow_force_pushes_enforcement_level';
-                goto after_allowForcePushesEnforcementLevel;
-            }
-
-            $properties['allowForcePushesEnforcementLevel'] = $value;
-
-            after_allowForcePushesEnforcementLevel:
-
-            $value = $payload['authorized_actor_names'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'authorized_actor_names';
-                goto after_authorizedActorNames;
-            }
-
-            $properties['authorizedActorNames'] = $value;
-
-            after_authorizedActorNames:
-
-            $value = $payload['authorized_actors_only'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'authorized_actors_only';
-                goto after_authorizedActorsOnly;
-            }
-
-            $properties['authorizedActorsOnly'] = $value;
-
-            after_authorizedActorsOnly:
-
-            $value = $payload['authorized_dismissal_actors_only'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'authorized_dismissal_actors_only';
-                goto after_authorizedDismissalActorsOnly;
-            }
-
-            $properties['authorizedDismissalActorsOnly'] = $value;
-
-            after_authorizedDismissalActorsOnly:
-
-            $value = $payload['create_protected'] ?? null;
-
-            if ($value === null) {
-                $properties['createProtected'] = null;
-                goto after_createProtected;
-            }
-
-            $properties['createProtected'] = $value;
-
-            after_createProtected:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['dismiss_stale_reviews_on_push'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'dismiss_stale_reviews_on_push';
-                goto after_dismissStaleReviewsOnPush;
-            }
-
-            $properties['dismissStaleReviewsOnPush'] = $value;
-
-            after_dismissStaleReviewsOnPush:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['ignore_approvals_from_contributors'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'ignore_approvals_from_contributors';
-                goto after_ignoreApprovalsFromContributors;
-            }
-
-            $properties['ignoreApprovalsFromContributors'] = $value;
-
-            after_ignoreApprovalsFromContributors:
-
-            $value = $payload['linear_history_requirement_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'linear_history_requirement_enforcement_level';
-                goto after_linearHistoryRequirementEnforcementLevel;
-            }
-
-            $properties['linearHistoryRequirementEnforcementLevel'] = $value;
-
-            after_linearHistoryRequirementEnforcementLevel:
-
-            $value = $payload['merge_queue_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'merge_queue_enforcement_level';
-                goto after_mergeQueueEnforcementLevel;
-            }
-
-            $properties['mergeQueueEnforcementLevel'] = $value;
-
-            after_mergeQueueEnforcementLevel:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['pull_request_reviews_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'pull_request_reviews_enforcement_level';
-                goto after_pullRequestReviewsEnforcementLevel;
-            }
-
-            $properties['pullRequestReviewsEnforcementLevel'] = $value;
-
-            after_pullRequestReviewsEnforcementLevel:
-
-            $value = $payload['repository_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'repository_id';
-                goto after_repositoryId;
-            }
-
-            $properties['repositoryId'] = $value;
-
-            after_repositoryId:
-
-            $value = $payload['require_code_owner_review'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'require_code_owner_review';
-                goto after_requireCodeOwnerReview;
-            }
-
-            $properties['requireCodeOwnerReview'] = $value;
-
-            after_requireCodeOwnerReview:
-
-            $value = $payload['require_last_push_approval'] ?? null;
-
-            if ($value === null) {
-                $properties['requireLastPushApproval'] = null;
-                goto after_requireLastPushApproval;
-            }
-
-            $properties['requireLastPushApproval'] = $value;
-
-            after_requireLastPushApproval:
-
-            $value = $payload['required_approving_review_count'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'required_approving_review_count';
-                goto after_requiredApprovingReviewCount;
-            }
-
-            $properties['requiredApprovingReviewCount'] = $value;
-
-            after_requiredApprovingReviewCount:
-
-            $value = $payload['required_conversation_resolution_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'required_conversation_resolution_level';
-                goto after_requiredConversationResolutionLevel;
-            }
-
-            $properties['requiredConversationResolutionLevel'] = $value;
-
-            after_requiredConversationResolutionLevel:
-
-            $value = $payload['required_deployments_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'required_deployments_enforcement_level';
-                goto after_requiredDeploymentsEnforcementLevel;
-            }
-
-            $properties['requiredDeploymentsEnforcementLevel'] = $value;
-
-            after_requiredDeploymentsEnforcementLevel:
-
-            $value = $payload['required_status_checks'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'required_status_checks';
-                goto after_requiredStatusChecks;
-            }
-
-            $properties['requiredStatusChecks'] = $value;
-
-            after_requiredStatusChecks:
-
-            $value = $payload['required_status_checks_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'required_status_checks_enforcement_level';
-                goto after_requiredStatusChecksEnforcementLevel;
-            }
-
-            $properties['requiredStatusChecksEnforcementLevel'] = $value;
-
-            after_requiredStatusChecksEnforcementLevel:
-
-            $value = $payload['signature_requirement_enforcement_level'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'signature_requirement_enforcement_level';
-                goto after_signatureRequirementEnforcementLevel;
-            }
-
-            $properties['signatureRequirementEnforcementLevel'] = $value;
-
-            after_signatureRequirementEnforcementLevel:
-
-            $value = $payload['strict_required_status_checks_policy'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'strict_required_status_checks_policy';
-                goto after_strictRequiredStatusChecksPolicy;
-            }
-
-            $properties['strictRequiredStatusChecksPolicy'] = $value;
-
-            after_strictRequiredStatusChecksPolicy:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Rule', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Rule::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Rule(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Rule', $exception, stack: $this->hydrationStack);
-        }
-    }
-
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️CustomProperties(array $payload): CustomProperties
     {
         $properties    = [];
@@ -5346,10 +4734,9 @@ class BranchProtectionRule implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($object),
-                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleCreated\Rule' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleCreated⚡️Rule($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksRule' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksRule($object),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleDeleted' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleDeleted($object),
-                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleDeleted\Rule' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleDeleted⚡️Rule($object),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited($object),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes($object),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\AdminEnforced' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AdminEnforced($object),
@@ -5359,7 +4746,6 @@ class BranchProtectionRule implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LinearHistoryRequirementEnforcementLevel($object),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequiredStatusChecks($object),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecksEnforcementLevel' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequiredStatusChecksEnforcementLevel($object),
-                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Rule' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Rule($object),
                 default => throw new LogicException('No serialization defined for $className'),
             };
         } catch (Throwable $exception) {
@@ -5462,7 +4848,7 @@ class BranchProtectionRule implements ObjectMapper
         after_repository:        $result['repository'] = $repository;
 
         $rule                              = $object->rule;
-        $rule                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleCreated⚡️Rule($rule);
+        $rule                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksRule($rule);
         after_rule:        $result['rule'] = $rule;
 
         $sender                                = $object->sender;
@@ -7167,9 +6553,9 @@ class BranchProtectionRule implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleCreated⚡️Rule(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksRule(mixed $object): mixed
     {
-        assert($object instanceof Rule);
+        assert($object instanceof WebhooksRule);
         $result = [];
 
         $adminEnforced                                        = $object->adminEnforced;
@@ -7408,122 +6794,12 @@ class BranchProtectionRule implements ObjectMapper
         after_repository:        $result['repository'] = $repository;
 
         $rule                              = $object->rule;
-        $rule                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleDeleted⚡️Rule($rule);
+        $rule                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksRule($rule);
         after_rule:        $result['rule'] = $rule;
 
         $sender                                = $object->sender;
         $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
         after_sender:        $result['sender'] = $sender;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleDeleted⚡️Rule(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleDeleted\Rule);
-        $result = [];
-
-        $adminEnforced                                        = $object->adminEnforced;
-        after_adminEnforced:        $result['admin_enforced'] = $adminEnforced;
-
-        $allowDeletionsEnforcementLevel                                                           = $object->allowDeletionsEnforcementLevel;
-        after_allowDeletionsEnforcementLevel:        $result['allow_deletions_enforcement_level'] = $allowDeletionsEnforcementLevel;
-
-        $allowForcePushesEnforcementLevel                                                              = $object->allowForcePushesEnforcementLevel;
-        after_allowForcePushesEnforcementLevel:        $result['allow_force_pushes_enforcement_level'] = $allowForcePushesEnforcementLevel;
-
-        $authorizedActorNames = $object->authorizedActorNames;
-        static $authorizedActorNamesSerializer0;
-
-        if ($authorizedActorNamesSerializer0 === null) {
-            $authorizedActorNamesSerializer0 = new SerializeArrayItems(...[]);
-        }
-
-        $authorizedActorNames                                                = $authorizedActorNamesSerializer0->serialize($authorizedActorNames, $this);
-        after_authorizedActorNames:        $result['authorized_actor_names'] = $authorizedActorNames;
-
-        $authorizedActorsOnly                                                = $object->authorizedActorsOnly;
-        after_authorizedActorsOnly:        $result['authorized_actors_only'] = $authorizedActorsOnly;
-
-        $authorizedDismissalActorsOnly                                                          = $object->authorizedDismissalActorsOnly;
-        after_authorizedDismissalActorsOnly:        $result['authorized_dismissal_actors_only'] = $authorizedDismissalActorsOnly;
-
-        $createProtected = $object->createProtected;
-
-        if ($createProtected === null) {
-            goto after_createProtected;
-        }
-
-        after_createProtected:        $result['create_protected'] = $createProtected;
-
-        $createdAt                                    = $object->createdAt;
-        after_createdAt:        $result['created_at'] = $createdAt;
-
-        $dismissStaleReviewsOnPush                                                       = $object->dismissStaleReviewsOnPush;
-        after_dismissStaleReviewsOnPush:        $result['dismiss_stale_reviews_on_push'] = $dismissStaleReviewsOnPush;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $ignoreApprovalsFromContributors                                                            = $object->ignoreApprovalsFromContributors;
-        after_ignoreApprovalsFromContributors:        $result['ignore_approvals_from_contributors'] = $ignoreApprovalsFromContributors;
-
-        $linearHistoryRequirementEnforcementLevel                                                                      = $object->linearHistoryRequirementEnforcementLevel;
-        after_linearHistoryRequirementEnforcementLevel:        $result['linear_history_requirement_enforcement_level'] = $linearHistoryRequirementEnforcementLevel;
-
-        $mergeQueueEnforcementLevel                                                       = $object->mergeQueueEnforcementLevel;
-        after_mergeQueueEnforcementLevel:        $result['merge_queue_enforcement_level'] = $mergeQueueEnforcementLevel;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $pullRequestReviewsEnforcementLevel                                                                = $object->pullRequestReviewsEnforcementLevel;
-        after_pullRequestReviewsEnforcementLevel:        $result['pull_request_reviews_enforcement_level'] = $pullRequestReviewsEnforcementLevel;
-
-        $repositoryId                                       = $object->repositoryId;
-        after_repositoryId:        $result['repository_id'] = $repositoryId;
-
-        $requireCodeOwnerReview                                                   = $object->requireCodeOwnerReview;
-        after_requireCodeOwnerReview:        $result['require_code_owner_review'] = $requireCodeOwnerReview;
-
-        $requireLastPushApproval = $object->requireLastPushApproval;
-
-        if ($requireLastPushApproval === null) {
-            goto after_requireLastPushApproval;
-        }
-
-        after_requireLastPushApproval:        $result['require_last_push_approval'] = $requireLastPushApproval;
-
-        $requiredApprovingReviewCount                                                         = $object->requiredApprovingReviewCount;
-        after_requiredApprovingReviewCount:        $result['required_approving_review_count'] = $requiredApprovingReviewCount;
-
-        $requiredConversationResolutionLevel                                                                = $object->requiredConversationResolutionLevel;
-        after_requiredConversationResolutionLevel:        $result['required_conversation_resolution_level'] = $requiredConversationResolutionLevel;
-
-        $requiredDeploymentsEnforcementLevel                                                                = $object->requiredDeploymentsEnforcementLevel;
-        after_requiredDeploymentsEnforcementLevel:        $result['required_deployments_enforcement_level'] = $requiredDeploymentsEnforcementLevel;
-
-        $requiredStatusChecks = $object->requiredStatusChecks;
-        static $requiredStatusChecksSerializer0;
-
-        if ($requiredStatusChecksSerializer0 === null) {
-            $requiredStatusChecksSerializer0 = new SerializeArrayItems(...[]);
-        }
-
-        $requiredStatusChecks                                                = $requiredStatusChecksSerializer0->serialize($requiredStatusChecks, $this);
-        after_requiredStatusChecks:        $result['required_status_checks'] = $requiredStatusChecks;
-
-        $requiredStatusChecksEnforcementLevel                                                                  = $object->requiredStatusChecksEnforcementLevel;
-        after_requiredStatusChecksEnforcementLevel:        $result['required_status_checks_enforcement_level'] = $requiredStatusChecksEnforcementLevel;
-
-        $signatureRequirementEnforcementLevel                                                                 = $object->signatureRequirementEnforcementLevel;
-        after_signatureRequirementEnforcementLevel:        $result['signature_requirement_enforcement_level'] = $signatureRequirementEnforcementLevel;
-
-        $strictRequiredStatusChecksPolicy                                                              = $object->strictRequiredStatusChecksPolicy;
-        after_strictRequiredStatusChecksPolicy:        $result['strict_required_status_checks_policy'] = $strictRequiredStatusChecksPolicy;
-
-        $updatedAt                                    = $object->updatedAt;
-        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         return $result;
     }
@@ -7577,7 +6853,7 @@ class BranchProtectionRule implements ObjectMapper
         after_repository:        $result['repository'] = $repository;
 
         $rule                              = $object->rule;
-        $rule                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Rule($rule);
+        $rule                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksRule($rule);
         after_rule:        $result['rule'] = $rule;
 
         $sender                                = $object->sender;
@@ -7760,116 +7036,6 @@ class BranchProtectionRule implements ObjectMapper
 
         $from                              = $object->from;
         after_from:        $result['from'] = $from;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Rule(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Rule);
-        $result = [];
-
-        $adminEnforced                                        = $object->adminEnforced;
-        after_adminEnforced:        $result['admin_enforced'] = $adminEnforced;
-
-        $allowDeletionsEnforcementLevel                                                           = $object->allowDeletionsEnforcementLevel;
-        after_allowDeletionsEnforcementLevel:        $result['allow_deletions_enforcement_level'] = $allowDeletionsEnforcementLevel;
-
-        $allowForcePushesEnforcementLevel                                                              = $object->allowForcePushesEnforcementLevel;
-        after_allowForcePushesEnforcementLevel:        $result['allow_force_pushes_enforcement_level'] = $allowForcePushesEnforcementLevel;
-
-        $authorizedActorNames = $object->authorizedActorNames;
-        static $authorizedActorNamesSerializer0;
-
-        if ($authorizedActorNamesSerializer0 === null) {
-            $authorizedActorNamesSerializer0 = new SerializeArrayItems(...[]);
-        }
-
-        $authorizedActorNames                                                = $authorizedActorNamesSerializer0->serialize($authorizedActorNames, $this);
-        after_authorizedActorNames:        $result['authorized_actor_names'] = $authorizedActorNames;
-
-        $authorizedActorsOnly                                                = $object->authorizedActorsOnly;
-        after_authorizedActorsOnly:        $result['authorized_actors_only'] = $authorizedActorsOnly;
-
-        $authorizedDismissalActorsOnly                                                          = $object->authorizedDismissalActorsOnly;
-        after_authorizedDismissalActorsOnly:        $result['authorized_dismissal_actors_only'] = $authorizedDismissalActorsOnly;
-
-        $createProtected = $object->createProtected;
-
-        if ($createProtected === null) {
-            goto after_createProtected;
-        }
-
-        after_createProtected:        $result['create_protected'] = $createProtected;
-
-        $createdAt                                    = $object->createdAt;
-        after_createdAt:        $result['created_at'] = $createdAt;
-
-        $dismissStaleReviewsOnPush                                                       = $object->dismissStaleReviewsOnPush;
-        after_dismissStaleReviewsOnPush:        $result['dismiss_stale_reviews_on_push'] = $dismissStaleReviewsOnPush;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $ignoreApprovalsFromContributors                                                            = $object->ignoreApprovalsFromContributors;
-        after_ignoreApprovalsFromContributors:        $result['ignore_approvals_from_contributors'] = $ignoreApprovalsFromContributors;
-
-        $linearHistoryRequirementEnforcementLevel                                                                      = $object->linearHistoryRequirementEnforcementLevel;
-        after_linearHistoryRequirementEnforcementLevel:        $result['linear_history_requirement_enforcement_level'] = $linearHistoryRequirementEnforcementLevel;
-
-        $mergeQueueEnforcementLevel                                                       = $object->mergeQueueEnforcementLevel;
-        after_mergeQueueEnforcementLevel:        $result['merge_queue_enforcement_level'] = $mergeQueueEnforcementLevel;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $pullRequestReviewsEnforcementLevel                                                                = $object->pullRequestReviewsEnforcementLevel;
-        after_pullRequestReviewsEnforcementLevel:        $result['pull_request_reviews_enforcement_level'] = $pullRequestReviewsEnforcementLevel;
-
-        $repositoryId                                       = $object->repositoryId;
-        after_repositoryId:        $result['repository_id'] = $repositoryId;
-
-        $requireCodeOwnerReview                                                   = $object->requireCodeOwnerReview;
-        after_requireCodeOwnerReview:        $result['require_code_owner_review'] = $requireCodeOwnerReview;
-
-        $requireLastPushApproval = $object->requireLastPushApproval;
-
-        if ($requireLastPushApproval === null) {
-            goto after_requireLastPushApproval;
-        }
-
-        after_requireLastPushApproval:        $result['require_last_push_approval'] = $requireLastPushApproval;
-
-        $requiredApprovingReviewCount                                                         = $object->requiredApprovingReviewCount;
-        after_requiredApprovingReviewCount:        $result['required_approving_review_count'] = $requiredApprovingReviewCount;
-
-        $requiredConversationResolutionLevel                                                                = $object->requiredConversationResolutionLevel;
-        after_requiredConversationResolutionLevel:        $result['required_conversation_resolution_level'] = $requiredConversationResolutionLevel;
-
-        $requiredDeploymentsEnforcementLevel                                                                = $object->requiredDeploymentsEnforcementLevel;
-        after_requiredDeploymentsEnforcementLevel:        $result['required_deployments_enforcement_level'] = $requiredDeploymentsEnforcementLevel;
-
-        $requiredStatusChecks = $object->requiredStatusChecks;
-        static $requiredStatusChecksSerializer0;
-
-        if ($requiredStatusChecksSerializer0 === null) {
-            $requiredStatusChecksSerializer0 = new SerializeArrayItems(...[]);
-        }
-
-        $requiredStatusChecks                                                = $requiredStatusChecksSerializer0->serialize($requiredStatusChecks, $this);
-        after_requiredStatusChecks:        $result['required_status_checks'] = $requiredStatusChecks;
-
-        $requiredStatusChecksEnforcementLevel                                                                  = $object->requiredStatusChecksEnforcementLevel;
-        after_requiredStatusChecksEnforcementLevel:        $result['required_status_checks_enforcement_level'] = $requiredStatusChecksEnforcementLevel;
-
-        $signatureRequirementEnforcementLevel                                                                 = $object->signatureRequirementEnforcementLevel;
-        after_signatureRequirementEnforcementLevel:        $result['signature_requirement_enforcement_level'] = $signatureRequirementEnforcementLevel;
-
-        $strictRequiredStatusChecksPolicy                                                              = $object->strictRequiredStatusChecksPolicy;
-        after_strictRequiredStatusChecksPolicy:        $result['strict_required_status_checks_policy'] = $strictRequiredStatusChecksPolicy;
-
-        $updatedAt                                    = $object->updatedAt;
-        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         return $result;
     }

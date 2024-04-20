@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet0ABDF2D6\TietD332BA16\Tiet9CCDE2C1;
+namespace ApiClients\Client\GitHub\Schema;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class Tiet52522D82
+final readonly class WebhooksRule
 {
     public const SCHEMA_JSON         = '{
     "title": "branch protection rule",

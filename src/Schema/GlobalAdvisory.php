@@ -252,7 +252,7 @@ final readonly class GlobalAdvisory
                             "string",
                             "null"
                         ],
-                        "description": "The package version that resolve the vulnerability."
+                        "description": "The package version that resolves the vulnerability."
                     },
                     "vulnerable_functions": {
                         "type": [
@@ -265,7 +265,8 @@ final readonly class GlobalAdvisory
                         "description": "The functions in the package that are affected by the vulnerability.",
                         "readOnly": true
                     }
-                }
+                },
+                "description": "A vulnerability describing the product and its affected versions within a GitHub Security Advisory."
             },
             "description": "The products and respective version ranges affected by the advisory."
         },

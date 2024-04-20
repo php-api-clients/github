@@ -1,5 +1,5 @@
 {
-    "specHash": "627e7866ca107dff7a8236c103eb53a4",
+    "specHash": "31d970a125b23e50df0d710a170852d6",
     "generatedFiles": {
         "files": [
             {
@@ -1568,15 +1568,15 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionRuleCreated.php",
-                "hash": "949dc107dad2eed1b8559594de2943b0"
+                "hash": "92a60913ee15d20f8fc012314a77458a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionRuleDeleted.php",
-                "hash": "38e1411576db6d2cf6aeae69d45cad15"
+                "hash": "7d9ee78c90d1a0b5bc68fbf5cfa99c5c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionRuleEdited.php",
-                "hash": "68cae17007b303fa98a72bad4490c198"
+                "hash": "c32100398fc50f5c80f88d1ad6ac20f9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCheckRunCompleted.php",
@@ -3281,10 +3281,6 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/PersonalAccessTokenRequest\/Repositories.php",
                 "hash": "8f6ff6fa01564ee54e5f9af85aa69087"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionRuleCreated\/Rule.php",
-                "hash": "40d0413409ed68c6acb9808546a963e5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionRuleEdited\/Changes.php",
@@ -8017,14 +8013,6 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookInstallationUnsuspend\/Repositories.php",
                 "hash": "c1613cf1fd1c8036c027cdf6b973ff6c"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionRuleDeleted\/Rule.php",
-                "hash": "d03c22f9cc308060d090bfed2ab06e03"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionRuleEdited\/Rule.php",
-                "hash": "066985398da6ef8c60e9032457cba07b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietF72F794E\/Tiet2732DFB6\/Tiet73CCB569\/Tiet295F5040.php",
@@ -13411,10 +13399,6 @@
                 "hash": "3d201f058e987a5819a5fa0c24643ced"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet0ABDF2D6\/TietD332BA16\/Tiet9CCDE2C1\/Tiet52522D82.php",
-                "hash": "d0d2de473a9b2388b2ad07595133748a"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietF690ED31\/TietD3330210\/Tiet500A0F49\/Tiet18AD180E.php",
                 "hash": "b3581616cf72bb25be2f44b6e9262d41"
             },
@@ -13508,7 +13492,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GlobalAdvisory.php",
-                "hash": "745d1a1047354f6e7af97ec8832af83f"
+                "hash": "2dbc7a2cd293a676243689cf89b0610a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/SecretScanningAlertResolutionWebhook.php",
@@ -13527,16 +13511,8 @@
                 "hash": "7ca434691dd0d63c3f946652da4876bd"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GlobalAdvisory\/Vulnerabilities.php",
-                "hash": "5c732612e098be966b7a064085025e38"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet50219D5A\/TietA7CA62E1\/TietD2A60B5B\/Tiet86219BF7.php",
                 "hash": "beff21b9fea147625ba16950e2a0f42d"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GlobalAdvisory\/Vulnerabilities\/Package.php",
-                "hash": "3e8e782211f7671ca26a068a44537307"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet8F563A59\/Tiet87B65946\/TietB1731FB8\/Tiet3CD786E5.php",
@@ -29012,7 +28988,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrators.php",
-                "hash": "d38a9a816344eba926d3b1f5dae7d095"
+                "hash": "3591c22e0fadd0285c0b97020a696554"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrganizationSimpleWebhooks.php",
@@ -29944,7 +29920,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/BranchProtectionRule.php",
-                "hash": "bc3bcb10f186758e1304f0598f44df63"
+                "hash": "b7d84ea45846a5081a698463a3be896e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/CheckRun.php",
@@ -30717,6 +30693,18 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietD73F4C39\/Tiet0A81E19D\/Tiet5FAEC6DA\/Tiet5FD93AD0.php",
                 "hash": "a15cd031cecf09196af812c55f47cf3e"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Vulnerability.php",
+                "hash": "56a7b14d5e97d5d666452a14cd666e0f"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhooksRule.php",
+                "hash": "ad3ec272506ac732cb2a46624c4ae9c1"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Vulnerability\/Package.php",
+                "hash": "d94656843729ac738d0d39b3c9c434c4"
             }
         ]
     },
