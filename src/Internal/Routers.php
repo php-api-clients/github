@@ -33,11 +33,11 @@ final class Routers
     private Internal\Router\Get\Interactions|null $internal🔀Router🔀Get🔀Interactions                 = null;
     private Internal\Router\Get\Migrations|null $internal🔀Router🔀Get🔀Migrations                     = null;
     private Internal\Router\Get\Packages|null $internal🔀Router🔀Get🔀Packages                         = null;
+    private Internal\Router\Get\Copilot|null $internal🔀Router🔀Get🔀Copilot                           = null;
     private Internal\Router\Get\Dependabot|null $internal🔀Router🔀Get🔀Dependabot                     = null;
     private Internal\Router\Get\SecretScanning|null $internal🔀Router🔀Get🔀SecretScanning             = null;
     private Internal\Router\Get\Actions|null $internal🔀Router🔀Get🔀Actions                           = null;
     private Internal\Router\Get\CodeScanning|null $internal🔀Router🔀Get🔀CodeScanning                 = null;
-    private Internal\Router\Get\Copilot|null $internal🔀Router🔀Get🔀Copilot                           = null;
     private Internal\Router\Get\Pulls|null $internal🔀Router🔀Get🔀Pulls                               = null;
     private Internal\Router\Get\Billing|null $internal🔀Router🔀Get🔀Billing                           = null;
     private Internal\Router\Get\Checks|null $internal🔀Router🔀Get🔀Checks                             = null;
@@ -98,6 +98,7 @@ final class Routers
     private Internal\Router\List\Classroom|null $internal🔀Router🔀List🔀Classroom                     = null;
     private Internal\Router\List\Projects|null $internal🔀Router🔀List🔀Projects                       = null;
     private Internal\Router\List\Licenses|null $internal🔀Router🔀List🔀Licenses                       = null;
+    private Internal\Router\List\Copilot|null $internal🔀Router🔀List🔀Copilot                         = null;
     private Internal\Router\List\CodeScanning|null $internal🔀Router🔀List🔀CodeScanning               = null;
     private Internal\Router\List\SecretScanning|null $internal🔀Router🔀List🔀SecretScanning           = null;
     private Internal\Router\List\Pulls|null $internal🔀Router🔀List🔀Pulls                             = null;
@@ -346,6 +347,15 @@ final class Routers
         return $this->internal🔀Router🔀Get🔀Packages;
     }
 
+    public function internal🔀Router🔀Get🔀Copilot(): Internal\Router\Get\Copilot
+    {
+        if ($this->internal🔀Router🔀Get🔀Copilot instanceof Internal\Router\Get\Copilot === false) {
+            $this->internal🔀Router🔀Get🔀Copilot = new Internal\Router\Get\Copilot(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀Get🔀Copilot;
+    }
+
     public function internal🔀Router🔀Get🔀Dependabot(): Internal\Router\Get\Dependabot
     {
         if ($this->internal🔀Router🔀Get🔀Dependabot instanceof Internal\Router\Get\Dependabot === false) {
@@ -380,15 +390,6 @@ final class Routers
         }
 
         return $this->internal🔀Router🔀Get🔀CodeScanning;
-    }
-
-    public function internal🔀Router🔀Get🔀Copilot(): Internal\Router\Get\Copilot
-    {
-        if ($this->internal🔀Router🔀Get🔀Copilot instanceof Internal\Router\Get\Copilot === false) {
-            $this->internal🔀Router🔀Get🔀Copilot = new Internal\Router\Get\Copilot(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
-        }
-
-        return $this->internal🔀Router🔀Get🔀Copilot;
     }
 
     public function internal🔀Router🔀Get🔀Pulls(): Internal\Router\Get\Pulls
@@ -929,6 +930,15 @@ final class Routers
         }
 
         return $this->internal🔀Router🔀List🔀Licenses;
+    }
+
+    public function internal🔀Router🔀List🔀Copilot(): Internal\Router\List\Copilot
+    {
+        if ($this->internal🔀Router🔀List🔀Copilot instanceof Internal\Router\List\Copilot === false) {
+            $this->internal🔀Router🔀List🔀Copilot = new Internal\Router\List\Copilot(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀List🔀Copilot;
     }
 
     public function internal🔀Router🔀List🔀CodeScanning(): Internal\Router\List\CodeScanning

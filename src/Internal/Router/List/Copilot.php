@@ -2,20 +2,17 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Internal\Router\Get;
+namespace ApiClients\Client\GitHub\Internal\Router\List;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
-use ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails;
-use ApiClients\Client\GitHub\Schema\CopilotSeatDetails;
-use ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
-use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use React\Http\Browser;
 
 use function array_key_exists;
+use function count;
 
 final class Copilot
 {
@@ -24,7 +21,7 @@ final class Copilot
     }
 
     /** @return iterable<int,Schema\CopilotUsageMetrics> */
-    public function usageMetricsForEnterprise(array $params): iterable
+    public function usageMetricsForEnterpriseListing(array $params): iterable
     {
         $arguments = [];
         if (array_key_exists('enterprise', $params) === false) {
@@ -57,28 +54,19 @@ final class Copilot
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
-        $operator = new Internal\Operator\Copilot\UsageMetricsForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Copilot🌀Usage());
+        $arguments['page'] = 1;
+        do {
+            $operator = new Internal\Operator\Copilot\UsageMetricsForEnterpriseListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Copilot🌀Usage());
+            $items    = [...$operator->call($arguments['enterprise'], $arguments['since'], $arguments['until'], $arguments['page'], $arguments['per_page'])];
 
-        return $operator->call($arguments['enterprise'], $arguments['since'], $arguments['until'], $arguments['page'], $arguments['per_page']);
-    }
+            yield from $items;
 
-    /** @return */
-    public function getCopilotOrganizationDetails(array $params): CopilotOrganizationDetails|WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        $operator = new Internal\Operator\Copilot\GetCopilotOrganizationDetails($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing());
-
-        return $operator->call($arguments['org']);
+            $arguments['page']++;
+        } while (count($items) > 0);
     }
 
     /** @return iterable<int,Schema\CopilotUsageMetrics> */
-    public function usageMetricsForOrg(array $params): iterable
+    public function usageMetricsForOrgListing(array $params): iterable
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -111,61 +99,19 @@ final class Copilot
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
-        $operator = new Internal\Operator\Copilot\UsageMetricsForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Usage());
+        $arguments['page'] = 1;
+        do {
+            $operator = new Internal\Operator\Copilot\UsageMetricsForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Usage());
+            $items    = [...$operator->call($arguments['org'], $arguments['since'], $arguments['until'], $arguments['page'], $arguments['per_page'])];
 
-        return $operator->call($arguments['org'], $arguments['since'], $arguments['until'], $arguments['page'], $arguments['per_page']);
-    }
+            yield from $items;
 
-    /** @return */
-    public function listCopilotSeats(array $params): Ok
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        $operator = new Internal\Operator\Copilot\ListCopilotSeats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Billing🌀Seats());
-
-        return $operator->call($arguments['org'], $arguments['page'], $arguments['per_page']);
-    }
-
-    /** @return */
-    public function getCopilotSeatDetailsForUser(array $params): CopilotSeatDetails|WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('username', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: username');
-        }
-
-        $arguments['username'] = $params['username'];
-        unset($params['username']);
-        $operator = new Internal\Operator\Copilot\GetCopilotSeatDetailsForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Copilot());
-
-        return $operator->call($arguments['org'], $arguments['username']);
+            $arguments['page']++;
+        } while (count($items) > 0);
     }
 
     /** @return iterable<int,Schema\CopilotUsageMetrics> */
-    public function usageMetricsForTeam(array $params): iterable
+    public function usageMetricsForTeamListing(array $params): iterable
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {
@@ -204,8 +150,14 @@ final class Copilot
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
-        $operator = new Internal\Operator\Copilot\UsageMetricsForTeam($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Usage());
+        $arguments['page'] = 1;
+        do {
+            $operator = new Internal\Operator\Copilot\UsageMetricsForTeamListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Usage());
+            $items    = [...$operator->call($arguments['org'], $arguments['team_slug'], $arguments['since'], $arguments['until'], $arguments['page'], $arguments['per_page'])];
 
-        return $operator->call($arguments['org'], $arguments['team_slug'], $arguments['since'], $arguments['until'], $arguments['page'], $arguments['per_page']);
+            yield from $items;
+
+            $arguments['page']++;
+        } while (count($items) > 0);
     }
 }

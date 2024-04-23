@@ -18,6 +18,8 @@ interface OperationsInterface
 
     public function emojis(): Operation\Emojis;
 
+    public function copilot(): Operation\Copilot;
+
     public function dependabot(): Operation\Dependabot;
 
     public function secretScanning(): Operation\SecretScanning;
@@ -43,8 +45,6 @@ interface OperationsInterface
     public function codeScanning(): Operation\CodeScanning;
 
     public function codespaces(): Operation\Codespaces;
-
-    public function copilot(): Operation\Copilot;
 
     public function packages(): Operation\Packages;
 

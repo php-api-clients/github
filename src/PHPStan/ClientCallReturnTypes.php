@@ -191,6 +191,14 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('');
         }
 
+        if ($call === 'GET /enterprises/{enterprise}/copilot/usage') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+        }
+
+        if ($call === 'LIST /enterprises/{enterprise}/copilot/usage') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+        }
+
         if ($call === 'GET /enterprises/{enterprise}/dependabot/alerts') {
             return $this->typeResolver->resolve('Observable<Schema\\DependabotAlertWithRepository>|WithoutBody');
         }
@@ -741,6 +749,14 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
 
         if ($call === 'DELETE /orgs/{org}/copilot/billing/selected_users') {
             return $this->typeResolver->resolve('');
+        }
+
+        if ($call === 'GET /orgs/{org}/copilot/usage') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+        }
+
+        if ($call === 'LIST /orgs/{org}/copilot/usage') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
         }
 
         if ($call === 'GET /orgs/{org}/dependabot/alerts') {
@@ -1301,6 +1317,14 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
 
         if ($call === 'GET /orgs/{org}/settings/billing/shared-storage') {
             return $this->typeResolver->resolve('');
+        }
+
+        if ($call === 'GET /orgs/{org}/team/{team_slug}/copilot/usage') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+        }
+
+        if ($call === 'LIST /orgs/{org}/team/{team_slug}/copilot/usage') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
         }
 
         if ($call === 'GET /orgs/{org}/teams') {

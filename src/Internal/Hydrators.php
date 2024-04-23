@@ -38,6 +38,7 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\CodesOfConduct|null $operation🌀CodesOfConduct                                                                                                                                                                     = null;
     private Internal\Hydrator\Operation\CodesOfConduct\Key|null $operation🌀CodesOfConduct🌀Key                                                                                                                                                             = null;
     private Internal\Hydrator\Operation\Emojis|null $operation🌀Emojis                                                                                                                                                                                     = null;
+    private Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Usage|null $operation🌀Enterprises🌀Enterprise🌀Copilot🌀Usage                                                                                                                         = null;
     private Internal\Hydrator\Operation\Enterprises\Enterprise\Dependabot\Alerts|null $operation🌀Enterprises🌀Enterprise🌀Dependabot🌀Alerts                                                                                                                 = null;
     private Internal\Hydrator\Operation\Enterprises\Enterprise\SecretScanning\Alerts|null $operation🌀Enterprises🌀Enterprise🌀SecretScanning🌀Alerts                                                                                                         = null;
     private Internal\Hydrator\Operation\Events|null $operation🌀Events                                                                                                                                                                                     = null;
@@ -115,6 +116,7 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Orgs\Org\Copilot\Billing\Seats|null $operation🌀Orgs🌀Org🌀Copilot🌀Billing🌀Seats                                                                                                                                     = null;
     private Internal\Hydrator\Operation\Orgs\Org\Copilot\Billing\SelectedTeams|null $operation🌀Orgs🌀Org🌀Copilot🌀Billing🌀SelectedTeams                                                                                                                     = null;
     private Internal\Hydrator\Operation\Orgs\Org\Copilot\Billing\SelectedUsers|null $operation🌀Orgs🌀Org🌀Copilot🌀Billing🌀SelectedUsers                                                                                                                     = null;
+    private Internal\Hydrator\Operation\Orgs\Org\Copilot\Usage|null $operation🌀Orgs🌀Org🌀Copilot🌀Usage                                                                                                                                                     = null;
     private Internal\Hydrator\Operation\Orgs\Org\Dependabot\Alerts|null $operation🌀Orgs🌀Org🌀Dependabot🌀Alerts                                                                                                                                             = null;
     private Internal\Hydrator\Operation\Orgs\Org\Dependabot\Secrets|null $operation🌀Orgs🌀Org🌀Dependabot🌀Secrets                                                                                                                                           = null;
     private Internal\Hydrator\Operation\Orgs\Org\Dependabot\Secrets\PublicKey|null $operation🌀Orgs🌀Org🌀Dependabot🌀Secrets🌀PublicKey                                                                                                                       = null;
@@ -191,6 +193,7 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Orgs\Org\Settings\Billing\Actions|null $operation🌀Orgs🌀Org🌀Settings🌀Billing🌀Actions                                                                                                                               = null;
     private Internal\Hydrator\Operation\Orgs\Org\Settings\Billing\Packages|null $operation🌀Orgs🌀Org🌀Settings🌀Billing🌀Packages                                                                                                                             = null;
     private Internal\Hydrator\Operation\Orgs\Org\Settings\Billing\SharedStorage|null $operation🌀Orgs🌀Org🌀Settings🌀Billing🌀SharedStorage                                                                                                                   = null;
+    private Internal\Hydrator\Operation\Orgs\Org\Team\TeamSlug\Copilot\Usage|null $operation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Usage                                                                                                                         = null;
     private Internal\Hydrator\Operation\Orgs\Org\Teams|null $operation🌀Orgs🌀Org🌀Teams                                                                                                                                                                     = null;
     private Internal\Hydrator\Operation\Orgs\Org\Teams\TeamSlug|null $operation🌀Orgs🌀Org🌀Teams🌀TeamSlug                                                                                                                                                   = null;
     private Internal\Hydrator\Operation\Orgs\Org\Teams\TeamSlug\Discussions|null $operation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Discussions                                                                                                                           = null;
@@ -1612,6 +1615,15 @@ final class Hydrators implements ObjectMapper
         return $this->operation🌀Emojis;
     }
 
+    public function getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Copilot🌀Usage(): Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Usage
+    {
+        if ($this->operation🌀Enterprises🌀Enterprise🌀Copilot🌀Usage instanceof Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Usage === false) {
+            $this->operation🌀Enterprises🌀Enterprise🌀Copilot🌀Usage = new Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Usage();
+        }
+
+        return $this->operation🌀Enterprises🌀Enterprise🌀Copilot🌀Usage;
+    }
+
     public function getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Dependabot🌀Alerts(): Internal\Hydrator\Operation\Enterprises\Enterprise\Dependabot\Alerts
     {
         if ($this->operation🌀Enterprises🌀Enterprise🌀Dependabot🌀Alerts instanceof Internal\Hydrator\Operation\Enterprises\Enterprise\Dependabot\Alerts === false) {
@@ -2305,6 +2317,15 @@ final class Hydrators implements ObjectMapper
         return $this->operation🌀Orgs🌀Org🌀Copilot🌀Billing🌀SelectedUsers;
     }
 
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Usage(): Internal\Hydrator\Operation\Orgs\Org\Copilot\Usage
+    {
+        if ($this->operation🌀Orgs🌀Org🌀Copilot🌀Usage instanceof Internal\Hydrator\Operation\Orgs\Org\Copilot\Usage === false) {
+            $this->operation🌀Orgs🌀Org🌀Copilot🌀Usage = new Internal\Hydrator\Operation\Orgs\Org\Copilot\Usage();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀Copilot🌀Usage;
+    }
+
     public function getObjectMapperOperation🌀Orgs🌀Org🌀Dependabot🌀Alerts(): Internal\Hydrator\Operation\Orgs\Org\Dependabot\Alerts
     {
         if ($this->operation🌀Orgs🌀Org🌀Dependabot🌀Alerts instanceof Internal\Hydrator\Operation\Orgs\Org\Dependabot\Alerts === false) {
@@ -2987,6 +3008,15 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Orgs🌀Org🌀Settings🌀Billing🌀SharedStorage;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Usage(): Internal\Hydrator\Operation\Orgs\Org\Team\TeamSlug\Copilot\Usage
+    {
+        if ($this->operation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Usage instanceof Internal\Hydrator\Operation\Orgs\Org\Team\TeamSlug\Copilot\Usage === false) {
+            $this->operation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Usage = new Internal\Hydrator\Operation\Orgs\Org\Team\TeamSlug\Copilot\Usage();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Usage;
     }
 
     public function getObjectMapperOperation🌀Orgs🌀Org🌀Teams(): Internal\Hydrator\Operation\Orgs\Org\Teams

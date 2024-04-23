@@ -14,7 +14,7 @@ final class Seven
     {
     }
 
-    /** @return Observable<Schema\PackageVersion>|Observable<Schema\CheckAnnotation>|Observable<Schema\Reaction>|Observable<Schema\CommitComment>|Observable<Schema\PullRequestSimple>|Observable<Schema\Status>|Schema\BasicError|Observable<Schema\DeploymentStatus>|Observable<Schema\IssueComment>|Observable<Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\AssignedIssueEvent|Schema\UnassignedIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent>|Observable<Schema\Label>|Schema\ConvertedNoteToIssueIssueEvent|Schema\TimelineCommentEvent|Schema\TimelineCrossReferencedEvent|Schema\TimelineCommittedEvent|Schema\TimelineReviewedEvent|Schema\TimelineLineCommentedEvent|Schema\TimelineCommitCommentedEvent|Schema\TimelineAssignedIssueEvent|Schema\TimelineUnassignedIssueEvent|Schema\StateChangeIssueEvent>|Observable<Schema\PullRequestReviewComment>|Observable<Schema\Commit>|Observable<Schema\DiffEntry>|Observable<Schema\PullRequestReview>|Observable<Schema\ReleaseAsset>|Observable<Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern|Schema\RepositoryRuleWorkflows> */
+    /** @return Observable<Schema\PackageVersion>|iterable<int,Schema\CopilotUsageMetrics>|Observable<Schema\CheckAnnotation>|Observable<Schema\Reaction>|Observable<Schema\CommitComment>|Observable<Schema\PullRequestSimple>|Observable<Schema\Status>|Schema\BasicError|Observable<Schema\DeploymentStatus>|Observable<Schema\IssueComment>|Observable<Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\AssignedIssueEvent|Schema\UnassignedIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent>|Observable<Schema\Label>|Schema\ConvertedNoteToIssueIssueEvent|Schema\TimelineCommentEvent|Schema\TimelineCrossReferencedEvent|Schema\TimelineCommittedEvent|Schema\TimelineReviewedEvent|Schema\TimelineLineCommentedEvent|Schema\TimelineCommitCommentedEvent|Schema\TimelineAssignedIssueEvent|Schema\TimelineUnassignedIssueEvent|Schema\StateChangeIssueEvent>|Observable<Schema\PullRequestReviewComment>|Observable<Schema\Commit>|Observable<Schema\DiffEntry>|Observable<Schema\PullRequestReview>|Observable<Schema\ReleaseAsset>|Observable<Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern|Schema\RepositoryRuleWorkflows> */
     public function call(string $call, array $params, array $pathChunks): iterable|BasicError
     {
         if ($pathChunks[0] === '') {
@@ -26,6 +26,16 @@ final class Seven
                                 if ($pathChunks[6] === 'versions') {
                                     if ($call === 'LIST /orgs/{org}/packages/{package_type}/{package_name}/versions') {
                                         return $this->routers->internal🔀Router🔀List🔀Packages()->getAllPackageVersionsForPackageOwnedByOrgListing($params);
+                                    }
+                                }
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'team') {
+                        if ($pathChunks[4] === '{team_slug}') {
+                            if ($pathChunks[5] === 'copilot') {
+                                if ($pathChunks[6] === 'usage') {
+                                    if ($call === 'LIST /orgs/{org}/team/{team_slug}/copilot/usage') {
+                                        return $this->routers->internal🔀Router🔀List🔀Copilot()->usageMetricsForTeamListing($params);
                                     }
                                 }
                             }

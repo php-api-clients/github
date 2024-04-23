@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Operation;
 
 use ApiClients\Client\GitHub\Internal;
+use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails;
 use ApiClients\Client\GitHub\Schema\CopilotSeatDetails;
 use ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForTeams\Response\ApplicationJson\Created;
@@ -16,6 +17,18 @@ final class Copilot
 {
     public function __construct(private Internal\Operators $operators)
     {
+    }
+
+    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    public function usageMetricsForEnterprise(string $enterprise, string $since, string $until, int $page, int $perPage): iterable
+    {
+        return $this->operators->copilot👷UsageMetricsForEnterprise()->call($enterprise, $since, $until, $page, $perPage);
+    }
+
+    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    public function usageMetricsForEnterpriseListing(string $enterprise, string $since, string $until, int $page, int $perPage): iterable
+    {
+        return $this->operators->copilot👷UsageMetricsForEnterpriseListing()->call($enterprise, $since, $until, $page, $perPage);
     }
 
     /** @return */
@@ -54,9 +67,33 @@ final class Copilot
         return $this->operators->copilot👷CancelCopilotSeatAssignmentForUsers()->call($org, $params);
     }
 
+    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    public function usageMetricsForOrg(string $org, string $since, string $until, int $page, int $perPage): iterable
+    {
+        return $this->operators->copilot👷UsageMetricsForOrg()->call($org, $since, $until, $page, $perPage);
+    }
+
+    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    public function usageMetricsForOrgListing(string $org, string $since, string $until, int $page, int $perPage): iterable
+    {
+        return $this->operators->copilot👷UsageMetricsForOrgListing()->call($org, $since, $until, $page, $perPage);
+    }
+
     /** @return */
     public function getCopilotSeatDetailsForUser(string $org, string $username): CopilotSeatDetails|WithoutBody
     {
         return $this->operators->copilot👷GetCopilotSeatDetailsForUser()->call($org, $username);
+    }
+
+    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    public function usageMetricsForTeam(string $org, string $teamSlug, string $since, string $until, int $page, int $perPage): iterable
+    {
+        return $this->operators->copilot👷UsageMetricsForTeam()->call($org, $teamSlug, $since, $until, $page, $perPage);
+    }
+
+    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    public function usageMetricsForTeamListing(string $org, string $teamSlug, string $since, string $until, int $page, int $perPage): iterable
+    {
+        return $this->operators->copilot👷UsageMetricsForTeamListing()->call($org, $teamSlug, $since, $until, $page, $perPage);
     }
 }
