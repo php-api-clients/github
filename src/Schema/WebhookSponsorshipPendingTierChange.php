@@ -2705,8 +2705,8 @@ final readonly class WebhookSponsorshipPendingTierChange
     when the event occurs from activity in a repository.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\WebhookSponsorshipPendingTierChange\Changes $changes, #[MapFrom('effective_date')]
-    public string|null $effectiveDate, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhookSponsorshipPendingTierChange\Sponsorship $sponsorship,)
+    public function __construct(public string $action, public Schema\WebhooksChanges8 $changes, #[MapFrom('effective_date')]
+    public string|null $effectiveDate, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhooksSponsorship $sponsorship,)
     {
     }
 }

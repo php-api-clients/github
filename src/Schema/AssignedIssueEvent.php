@@ -229,7 +229,10 @@ final readonly class AssignedIssueEvent
                 "permissions",
                 "events"
             ],
-            "type": "object",
+            "type": [
+                "object",
+                "null"
+            ],
             "properties": {
                 "id": {
                     "type": "integer",
@@ -1006,7 +1009,7 @@ final readonly class AssignedIssueEvent
     public string|null $commitId, #[MapFrom('commit_url')]
     public string|null $commitUrl, #[MapFrom('created_at')]
     public string $createdAt, #[MapFrom('performed_via_github_app')]
-    public Schema\Integration $performedViaGithubApp, public Schema\SimpleUser $assignee, public Schema\SimpleUser $assigner,)
+    public Schema\Integration|null $performedViaGithubApp, public Schema\SimpleUser $assignee, public Schema\SimpleUser $assigner,)
     {
     }
 }

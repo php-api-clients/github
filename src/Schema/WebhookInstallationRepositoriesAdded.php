@@ -3486,7 +3486,7 @@ final readonly class WebhookInstallationRepositoriesAdded
     public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\Installation $installation, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('repositories_added')]
     public array $repositoriesAdded, #[MapFrom('repositories_removed')]
     public array $repositoriesRemoved, public Schema\RepositoryWebhooks|null $repository, #[MapFrom('repository_selection')]
-    public string $repositorySelection, public Schema\WebhookInstallationRepositoriesAdded\Requester|null $requester, public Schema\SimpleUserWebhooks $sender,)
+    public string $repositorySelection, public Schema\WebhooksUser|null $requester, public Schema\SimpleUserWebhooks $sender,)
     {
     }
 }

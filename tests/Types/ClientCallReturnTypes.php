@@ -54,8 +54,8 @@ assertType('Observable<Schema\\SimpleClassroomAssignment>', $client->call('LIST 
 assertType('Observable<Schema\\CodeOfConduct>|WithoutBody', $client->call('GET /codes_of_conduct'));
 assertType('', $client->call('GET /codes_of_conduct/{key}'));
 assertType('', $client->call('GET /emojis'));
-assertType('iterable<int,Schema\\CopilotUsageMetrics>', $client->call('GET /enterprises/{enterprise}/copilot/usage'));
-assertType('iterable<int,Schema\\CopilotUsageMetrics>', $client->call('LIST /enterprises/{enterprise}/copilot/usage'));
+assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('GET /enterprises/{enterprise}/copilot/usage'));
+assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('LIST /enterprises/{enterprise}/copilot/usage'));
 assertType('Observable<Schema\\DependabotAlertWithRepository>|WithoutBody', $client->call('GET /enterprises/{enterprise}/dependabot/alerts'));
 assertType('Observable<Schema\\OrganizationSecretScanningAlert>', $client->call('GET /enterprises/{enterprise}/secret-scanning/alerts'));
 assertType('Observable<Schema\\Event>|WithoutBody', $client->call('GET /events'));
@@ -194,8 +194,8 @@ assertType('', $client->call('POST /orgs/{org}/copilot/billing/selected_teams'))
 assertType('', $client->call('DELETE /orgs/{org}/copilot/billing/selected_teams'));
 assertType('', $client->call('POST /orgs/{org}/copilot/billing/selected_users'));
 assertType('', $client->call('DELETE /orgs/{org}/copilot/billing/selected_users'));
-assertType('iterable<int,Schema\\CopilotUsageMetrics>', $client->call('GET /orgs/{org}/copilot/usage'));
-assertType('iterable<int,Schema\\CopilotUsageMetrics>', $client->call('LIST /orgs/{org}/copilot/usage'));
+assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('GET /orgs/{org}/copilot/usage'));
+assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('LIST /orgs/{org}/copilot/usage'));
 assertType('Observable<Schema\\DependabotAlertWithRepository>|WithoutBody', $client->call('GET /orgs/{org}/dependabot/alerts'));
 assertType('', $client->call('GET /orgs/{org}/dependabot/secrets'));
 assertType('', $client->call('GET /orgs/{org}/dependabot/secrets/public-key'));
@@ -336,8 +336,8 @@ assertType('', $client->call('DELETE /orgs/{org}/security-managers/teams/{team_s
 assertType('', $client->call('GET /orgs/{org}/settings/billing/actions'));
 assertType('', $client->call('GET /orgs/{org}/settings/billing/packages'));
 assertType('', $client->call('GET /orgs/{org}/settings/billing/shared-storage'));
-assertType('iterable<int,Schema\\CopilotUsageMetrics>', $client->call('GET /orgs/{org}/team/{team_slug}/copilot/usage'));
-assertType('iterable<int,Schema\\CopilotUsageMetrics>', $client->call('LIST /orgs/{org}/team/{team_slug}/copilot/usage'));
+assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('GET /orgs/{org}/team/{team_slug}/copilot/usage'));
+assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('LIST /orgs/{org}/team/{team_slug}/copilot/usage'));
 assertType('Observable<Schema\\Team>', $client->call('GET /orgs/{org}/teams'));
 assertType('Observable<Schema\\Team>', $client->call('LIST /orgs/{org}/teams'));
 assertType('', $client->call('POST /orgs/{org}/teams'));

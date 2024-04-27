@@ -2858,7 +2858,7 @@ final readonly class WebhookDiscussionUnanswered
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
     public function __construct(public string $action, public Schema\Discussion $discussion, #[MapFrom('old_answer')]
-    public Schema\WebhookDiscussionUnanswered\OldAnswer $oldAnswer, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks|null $sender,)
+    public Schema\WebhooksAnswer $oldAnswer, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks|null $sender,)
     {
     }
 }

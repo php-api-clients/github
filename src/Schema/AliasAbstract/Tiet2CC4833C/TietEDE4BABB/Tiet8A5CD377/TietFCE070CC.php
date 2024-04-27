@@ -569,7 +569,7 @@ abstract readonly class TietFCE070CC
     public string|null $createdAt, public string|null $description, public array|null $events, #[MapFrom('external_url')]
     public string|null $externalUrl, #[MapFrom('html_url')]
     public string $htmlUrl, public int|null $id, public string $name, #[MapFrom('node_id')]
-    public string $nodeId, public Schema\WebhookIssueCommentDeleted\Issue\PerformedViaGithubApp\Owner|null $owner, public Schema\WebhookIssueCommentDeleted\Issue\PerformedViaGithubApp\Permissions|null $permissions, public string|null $slug, #[MapFrom('updated_at')]
+    public string $nodeId, public Schema\WebhooksIssue2\PerformedViaGithubApp\Owner|null $owner, public Schema\WebhooksIssue2\PerformedViaGithubApp\Permissions|null $permissions, public string|null $slug, #[MapFrom('updated_at')]
     public string|null $updatedAt,)
     {
     }

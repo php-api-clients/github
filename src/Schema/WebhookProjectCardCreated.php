@@ -2429,7 +2429,7 @@ final readonly class WebhookProjectCardCreated
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
     public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('project_card')]
-    public Schema\WebhookProjectCardCreated\ProjectCard $projectCard, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks $sender,)
+    public Schema\WebhooksProjectCard $projectCard, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks $sender,)
     {
     }
 }

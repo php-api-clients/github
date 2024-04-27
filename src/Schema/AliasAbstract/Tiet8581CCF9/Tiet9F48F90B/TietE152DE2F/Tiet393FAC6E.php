@@ -253,7 +253,7 @@ abstract readonly class Tiet393FAC6E
     public function __construct(#[MapFrom('closed_at')]
     public string|null $closedAt, #[MapFrom('closed_issues')]
     public int $closedIssues, #[MapFrom('created_at')]
-    public string $createdAt, public Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator|null $creator, public string|null $description, #[MapFrom('due_on')]
+    public string $createdAt, public Schema\WebhooksIssue\Milestone\Creator|null $creator, public string|null $description, #[MapFrom('due_on')]
     public string|null $dueOn, #[MapFrom('html_url')]
     public string $htmlUrl, public int $id, #[MapFrom('labels_url')]
     public string $labelsUrl, #[MapFrom('node_id')]

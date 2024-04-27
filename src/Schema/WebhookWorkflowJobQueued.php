@@ -2391,7 +2391,10 @@ final readonly class WebhookWorkflowJobQueued
                                 "permissions",
                                 "events"
                             ],
-                            "type": "object",
+                            "type": [
+                                "object",
+                                "null"
+                            ],
                             "properties": {
                                 "id": {
                                     "type": "integer",

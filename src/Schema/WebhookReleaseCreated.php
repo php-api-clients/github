@@ -2779,7 +2779,7 @@ final readonly class WebhookReleaseCreated
     when the event occurs from activity in a repository.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\WebhookReleaseCreated\Release $release, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender)
+    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\WebhooksRelease $release, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender)
     {
     }
 }

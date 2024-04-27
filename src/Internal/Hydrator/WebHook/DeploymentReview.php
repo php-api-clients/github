@@ -16,8 +16,6 @@ use ApiClients\Client\GitHub\Schema\SimpleInstallation;
 use ApiClients\Client\GitHub\Schema\SimpleUser;
 use ApiClients\Client\GitHub\Schema\SimpleUserWebhooks;
 use ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved;
-use ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\Approver;
-use ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowJobRun;
 use ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun;
 use ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun\Actor;
 use ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun\HeadCommit;
@@ -26,7 +24,10 @@ use ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun\
 use ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun\TriggeringActor;
 use ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected;
 use ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested;
-use ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\Requestor;
+use ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowJobRun;
+use ApiClients\Client\GitHub\Schema\WebhooksApprover;
+use ApiClients\Client\GitHub\Schema\WebhooksUser;
+use ApiClients\Client\GitHub\Schema\WebhooksWorkflowJobRun;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems;
@@ -63,7 +64,7 @@ class DeploymentReview implements ObjectMapper
     {
         return match ($className) {
             'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\Approver' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️Approver($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksApprover' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksApprover($payload),
                 'ApiClients\Client\GitHub\Schema\EnterpriseWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($payload),
@@ -75,7 +76,7 @@ class DeploymentReview implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowJobRun' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowJobRun($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksWorkflowJobRun' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflowJobRun($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowRun($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun\Actor' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowRun⚡️Actor($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun\HeadRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowRun⚡️HeadRepository($payload),
@@ -84,8 +85,6 @@ class DeploymentReview implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun\Repository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowRun⚡️Repository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun\TriggeringActor' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowRun⚡️TriggeringActor($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\Approver' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️Approver($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowJobRun' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowJobRun($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowRun' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowRun($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowRun\Actor' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowRun⚡️Actor($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowRun\HeadRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowRun⚡️HeadRepository($payload),
@@ -94,7 +93,7 @@ class DeploymentReview implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowRun\Repository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowRun⚡️Repository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowRun\TriggeringActor' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowRun⚡️TriggeringActor($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\Requestor' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️Requestor($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksUser($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowJobRun' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️WorkflowJobRun($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowRun' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️WorkflowRun($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowRun\Actor' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️WorkflowRun⚡️Actor($payload),
@@ -137,7 +136,7 @@ class DeploymentReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'approver';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️Approver($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksApprover($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -290,7 +289,7 @@ class DeploymentReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'workflowJobRun';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowJobRun($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflowJobRun($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -345,7 +344,7 @@ class DeploymentReview implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️Approver(array $payload): Approver
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksApprover(array $payload): WebhooksApprover
     {
         $properties    = [];
         $missingFields = [];
@@ -548,17 +547,17 @@ class DeploymentReview implements ObjectMapper
 
             after_url:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\Approver', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksApprover', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(Approver::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(WebhooksApprover::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new Approver(...$properties);
+            return new WebhooksApprover(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\Approver', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksApprover', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -4000,7 +3999,7 @@ class DeploymentReview implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowJobRun(array $payload): WorkflowJobRun
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflowJobRun(array $payload): WebhooksWorkflowJobRun
     {
         $properties    = [];
         $missingFields = [];
@@ -4093,17 +4092,17 @@ class DeploymentReview implements ObjectMapper
 
             after_updatedAt:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowJobRun', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksWorkflowJobRun', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(WorkflowJobRun::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(WebhooksWorkflowJobRun::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new WorkflowJobRun(...$properties);
+            return new WebhooksWorkflowJobRun(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowJobRun', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksWorkflowJobRun', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -6584,7 +6583,7 @@ class DeploymentReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'approver';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️Approver($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksApprover($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6737,7 +6736,7 @@ class DeploymentReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'workflowJobRun';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowJobRun($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflowJobRun($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6789,330 +6788,6 @@ class DeploymentReview implements ObjectMapper
             return new WebhookDeploymentReviewRejected(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️Approver(array $payload): \ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\Approver
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['avatar_url'] ?? null;
-
-            if ($value === null) {
-                $properties['avatarUrl'] = null;
-                goto after_avatarUrl;
-            }
-
-            $properties['avatarUrl'] = $value;
-
-            after_avatarUrl:
-
-            $value = $payload['events_url'] ?? null;
-
-            if ($value === null) {
-                $properties['eventsUrl'] = null;
-                goto after_eventsUrl;
-            }
-
-            $properties['eventsUrl'] = $value;
-
-            after_eventsUrl:
-
-            $value = $payload['followers_url'] ?? null;
-
-            if ($value === null) {
-                $properties['followersUrl'] = null;
-                goto after_followersUrl;
-            }
-
-            $properties['followersUrl'] = $value;
-
-            after_followersUrl:
-
-            $value = $payload['following_url'] ?? null;
-
-            if ($value === null) {
-                $properties['followingUrl'] = null;
-                goto after_followingUrl;
-            }
-
-            $properties['followingUrl'] = $value;
-
-            after_followingUrl:
-
-            $value = $payload['gists_url'] ?? null;
-
-            if ($value === null) {
-                $properties['gistsUrl'] = null;
-                goto after_gistsUrl;
-            }
-
-            $properties['gistsUrl'] = $value;
-
-            after_gistsUrl:
-
-            $value = $payload['gravatar_id'] ?? null;
-
-            if ($value === null) {
-                $properties['gravatarId'] = null;
-                goto after_gravatarId;
-            }
-
-            $properties['gravatarId'] = $value;
-
-            after_gravatarId:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $properties['htmlUrl'] = null;
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $properties['id'] = null;
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['login'] ?? null;
-
-            if ($value === null) {
-                $properties['login'] = null;
-                goto after_login;
-            }
-
-            $properties['login'] = $value;
-
-            after_login:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $properties['nodeId'] = null;
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['organizations_url'] ?? null;
-
-            if ($value === null) {
-                $properties['organizationsUrl'] = null;
-                goto after_organizationsUrl;
-            }
-
-            $properties['organizationsUrl'] = $value;
-
-            after_organizationsUrl:
-
-            $value = $payload['received_events_url'] ?? null;
-
-            if ($value === null) {
-                $properties['receivedEventsUrl'] = null;
-                goto after_receivedEventsUrl;
-            }
-
-            $properties['receivedEventsUrl'] = $value;
-
-            after_receivedEventsUrl:
-
-            $value = $payload['repos_url'] ?? null;
-
-            if ($value === null) {
-                $properties['reposUrl'] = null;
-                goto after_reposUrl;
-            }
-
-            $properties['reposUrl'] = $value;
-
-            after_reposUrl:
-
-            $value = $payload['site_admin'] ?? null;
-
-            if ($value === null) {
-                $properties['siteAdmin'] = null;
-                goto after_siteAdmin;
-            }
-
-            $properties['siteAdmin'] = $value;
-
-            after_siteAdmin:
-
-            $value = $payload['starred_url'] ?? null;
-
-            if ($value === null) {
-                $properties['starredUrl'] = null;
-                goto after_starredUrl;
-            }
-
-            $properties['starredUrl'] = $value;
-
-            after_starredUrl:
-
-            $value = $payload['subscriptions_url'] ?? null;
-
-            if ($value === null) {
-                $properties['subscriptionsUrl'] = null;
-                goto after_subscriptionsUrl;
-            }
-
-            $properties['subscriptionsUrl'] = $value;
-
-            after_subscriptionsUrl:
-
-            $value = $payload['type'] ?? null;
-
-            if ($value === null) {
-                $properties['type'] = null;
-                goto after_type;
-            }
-
-            $properties['type'] = $value;
-
-            after_type:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $properties['url'] = null;
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\Approver', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\Approver::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\Approver(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\Approver', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowJobRun(array $payload): \ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowJobRun
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['conclusion'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'conclusion';
-                goto after_conclusion;
-            }
-
-            $properties['conclusion'] = $value;
-
-            after_conclusion:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['environment'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'environment';
-                goto after_environment;
-            }
-
-            $properties['environment'] = $value;
-
-            after_environment:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['status'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'status';
-                goto after_status;
-            }
-
-            $properties['status'] = $value;
-
-            after_status:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowJobRun', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowJobRun::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowJobRun(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowJobRun', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -9684,7 +9359,7 @@ class DeploymentReview implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'requestor';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️Requestor($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9790,7 +9465,7 @@ class DeploymentReview implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️Requestor(array $payload): Requestor
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksUser(array $payload): WebhooksUser
     {
         $properties    = [];
         $missingFields = [];
@@ -10026,21 +9701,21 @@ class DeploymentReview implements ObjectMapper
 
             after_url:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\Requestor', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksUser', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(Requestor::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(WebhooksUser::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new Requestor(...$properties);
+            return new WebhooksUser(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\Requestor', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksUser', $exception, stack: $this->hydrationStack);
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️WorkflowJobRun(array $payload): \ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowJobRun
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️WorkflowJobRun(array $payload): WorkflowJobRun
     {
         $properties    = [];
         $missingFields = [];
@@ -10137,11 +9812,11 @@ class DeploymentReview implements ObjectMapper
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowJobRun::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(WorkflowJobRun::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowJobRun(...$properties);
+            return new WorkflowJobRun(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowJobRun', $exception, stack: $this->hydrationStack);
         }
@@ -12710,7 +12385,7 @@ class DeploymentReview implements ObjectMapper
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved($object),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\Approver' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️Approver($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksApprover' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksApprover($object),
                 'ApiClients\Client\GitHub\Schema\EnterpriseWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($object),
@@ -12722,7 +12397,7 @@ class DeploymentReview implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($object),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowJobRun' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowJobRun($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksWorkflowJobRun' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflowJobRun($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowRun($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun\Actor' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowRun⚡️Actor($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun\HeadRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowRun⚡️HeadRepository($object),
@@ -12731,8 +12406,6 @@ class DeploymentReview implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun\Repository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowRun⚡️Repository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewApproved\WorkflowRun\TriggeringActor' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowRun⚡️TriggeringActor($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected($object),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\Approver' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️Approver($object),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowJobRun' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowJobRun($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowRun' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowRun($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowRun\Actor' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowRun⚡️Actor($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowRun\HeadRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowRun⚡️HeadRepository($object),
@@ -12741,7 +12414,7 @@ class DeploymentReview implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowRun\Repository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowRun⚡️Repository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowRun\TriggeringActor' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowRun⚡️TriggeringActor($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested($object),
-                'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\Requestor' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️Requestor($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksUser($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowJobRun' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️WorkflowJobRun($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowRun' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️WorkflowRun($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowRun\Actor' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️WorkflowRun⚡️Actor($object),
@@ -12826,7 +12499,7 @@ class DeploymentReview implements ObjectMapper
             goto after_approver;
         }
 
-        $approver                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️Approver($approver);
+        $approver                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksApprover($approver);
         after_approver:        $result['approver'] = $approver;
 
         $comment = $object->comment;
@@ -12891,7 +12564,7 @@ class DeploymentReview implements ObjectMapper
             goto after_workflowJobRun;
         }
 
-        $workflowJobRun                                          = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowJobRun($workflowJobRun);
+        $workflowJobRun                                          = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflowJobRun($workflowJobRun);
         after_workflowJobRun:        $result['workflow_job_run'] = $workflowJobRun;
 
         $workflowJobRuns = $object->workflowJobRuns;
@@ -12921,9 +12594,9 @@ class DeploymentReview implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️Approver(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksApprover(mixed $object): mixed
     {
-        assert($object instanceof Approver);
+        assert($object instanceof WebhooksApprover);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -14859,9 +14532,9 @@ class DeploymentReview implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewApproved⚡️WorkflowJobRun(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflowJobRun(mixed $object): mixed
     {
-        assert($object instanceof WorkflowJobRun);
+        assert($object instanceof WebhooksWorkflowJobRun);
         $result = [];
 
         $conclusion                                    = $object->conclusion;
@@ -16502,7 +16175,7 @@ class DeploymentReview implements ObjectMapper
             goto after_approver;
         }
 
-        $approver                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️Approver($approver);
+        $approver                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksApprover($approver);
         after_approver:        $result['approver'] = $approver;
 
         $comment = $object->comment;
@@ -16567,7 +16240,7 @@ class DeploymentReview implements ObjectMapper
             goto after_workflowJobRun;
         }
 
-        $workflowJobRun                                          = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowJobRun($workflowJobRun);
+        $workflowJobRun                                          = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflowJobRun($workflowJobRun);
         after_workflowJobRun:        $result['workflow_job_run'] = $workflowJobRun;
 
         $workflowJobRuns = $object->workflowJobRuns;
@@ -16593,190 +16266,6 @@ class DeploymentReview implements ObjectMapper
 
         $workflowRun                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowRun($workflowRun);
         after_workflowRun:        $result['workflow_run'] = $workflowRun;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️Approver(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\Approver);
-        $result = [];
-
-        $avatarUrl = $object->avatarUrl;
-
-        if ($avatarUrl === null) {
-            goto after_avatarUrl;
-        }
-
-        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
-
-        $eventsUrl = $object->eventsUrl;
-
-        if ($eventsUrl === null) {
-            goto after_eventsUrl;
-        }
-
-        after_eventsUrl:        $result['events_url'] = $eventsUrl;
-
-        $followersUrl = $object->followersUrl;
-
-        if ($followersUrl === null) {
-            goto after_followersUrl;
-        }
-
-        after_followersUrl:        $result['followers_url'] = $followersUrl;
-
-        $followingUrl = $object->followingUrl;
-
-        if ($followingUrl === null) {
-            goto after_followingUrl;
-        }
-
-        after_followingUrl:        $result['following_url'] = $followingUrl;
-
-        $gistsUrl = $object->gistsUrl;
-
-        if ($gistsUrl === null) {
-            goto after_gistsUrl;
-        }
-
-        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
-
-        $gravatarId = $object->gravatarId;
-
-        if ($gravatarId === null) {
-            goto after_gravatarId;
-        }
-
-        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
-
-        $htmlUrl = $object->htmlUrl;
-
-        if ($htmlUrl === null) {
-            goto after_htmlUrl;
-        }
-
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id = $object->id;
-
-        if ($id === null) {
-            goto after_id;
-        }
-
-        after_id:        $result['id'] = $id;
-
-        $login = $object->login;
-
-        if ($login === null) {
-            goto after_login;
-        }
-
-        after_login:        $result['login'] = $login;
-
-        $nodeId = $object->nodeId;
-
-        if ($nodeId === null) {
-            goto after_nodeId;
-        }
-
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $organizationsUrl = $object->organizationsUrl;
-
-        if ($organizationsUrl === null) {
-            goto after_organizationsUrl;
-        }
-
-        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
-
-        $receivedEventsUrl = $object->receivedEventsUrl;
-
-        if ($receivedEventsUrl === null) {
-            goto after_receivedEventsUrl;
-        }
-
-        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
-
-        $reposUrl = $object->reposUrl;
-
-        if ($reposUrl === null) {
-            goto after_reposUrl;
-        }
-
-        after_reposUrl:        $result['repos_url'] = $reposUrl;
-
-        $siteAdmin = $object->siteAdmin;
-
-        if ($siteAdmin === null) {
-            goto after_siteAdmin;
-        }
-
-        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
-
-        $starredUrl = $object->starredUrl;
-
-        if ($starredUrl === null) {
-            goto after_starredUrl;
-        }
-
-        after_starredUrl:        $result['starred_url'] = $starredUrl;
-
-        $subscriptionsUrl = $object->subscriptionsUrl;
-
-        if ($subscriptionsUrl === null) {
-            goto after_subscriptionsUrl;
-        }
-
-        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
-
-        $type = $object->type;
-
-        if ($type === null) {
-            goto after_type;
-        }
-
-        after_type:        $result['type'] = $type;
-
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-
-        after_url:        $result['url'] = $url;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRejected⚡️WorkflowJobRun(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\WorkflowJobRun);
-        $result = [];
-
-        $conclusion                                    = $object->conclusion;
-        after_conclusion:        $result['conclusion'] = $conclusion;
-
-        $createdAt                                    = $object->createdAt;
-        after_createdAt:        $result['created_at'] = $createdAt;
-
-        $environment                                     = $object->environment;
-        after_environment:        $result['environment'] = $environment;
-
-        $htmlUrl                                  = $object->htmlUrl;
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $status                                = $object->status;
-        after_status:        $result['status'] = $status;
-
-        $updatedAt                                    = $object->updatedAt;
-        after_updatedAt:        $result['updated_at'] = $updatedAt;
 
         return $result;
     }
@@ -18421,7 +17910,7 @@ class DeploymentReview implements ObjectMapper
             goto after_requestor;
         }
 
-        $requestor                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️Requestor($requestor);
+        $requestor                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksUser($requestor);
         after_requestor:        $result['requestor'] = $requestor;
 
         $reviewers = $object->reviewers;
@@ -18457,9 +17946,9 @@ class DeploymentReview implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️Requestor(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksUser(mixed $object): mixed
     {
-        assert($object instanceof Requestor);
+        assert($object instanceof WebhooksUser);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -18625,7 +18114,7 @@ class DeploymentReview implements ObjectMapper
 
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️WorkflowJobRun(mixed $object): mixed
     {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowJobRun);
+        assert($object instanceof WorkflowJobRun);
         $result = [];
 
         $conclusion                                    = $object->conclusion;

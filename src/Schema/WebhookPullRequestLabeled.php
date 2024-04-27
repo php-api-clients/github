@@ -5987,7 +5987,7 @@ final readonly class WebhookPullRequestLabeled
     when the event occurs from activity in a repository.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\WebhookPullRequestLabeled\Label|null $label, public int $number, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('pull_request')]
+    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\WebhooksLabel|null $label, public int $number, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('pull_request')]
     public Schema\WebhookPullRequestLabeled\PullRequest $pullRequest, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender,)
     {
     }

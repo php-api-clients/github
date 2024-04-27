@@ -3424,7 +3424,7 @@ final readonly class WebhookInstallationCreated
     when the event occurs from activity in a repository.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\Installation $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public array|null $repositories, public Schema\RepositoryWebhooks|null $repository, public Schema\WebhookInstallationCreated\Requester|null $requester, public Schema\SimpleUserWebhooks $sender)
+    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\Installation $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public array|null $repositories, public Schema\RepositoryWebhooks|null $repository, public Schema\WebhooksUser|null $requester, public Schema\SimpleUserWebhooks $sender)
     {
     }
 }

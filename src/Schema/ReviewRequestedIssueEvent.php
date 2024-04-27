@@ -233,7 +233,10 @@ final readonly class ReviewRequestedIssueEvent
                         "permissions",
                         "events"
                     ],
-                    "type": "object",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
                     "properties": {
                         "id": {
                             "type": "integer",

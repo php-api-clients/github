@@ -227,7 +227,10 @@ final readonly class ConvertedNoteToIssueIssueEvent
                 "permissions",
                 "events"
             ],
-            "type": "object",
+            "type": [
+                "object",
+                "null"
+            ],
             "properties": {
                 "id": {
                     "type": "integer",
@@ -674,7 +677,7 @@ final readonly class ConvertedNoteToIssueIssueEvent
     public string|null $commitId, #[MapFrom('commit_url')]
     public string|null $commitUrl, #[MapFrom('created_at')]
     public string $createdAt, #[MapFrom('performed_via_github_app')]
-    public Schema\Integration $performedViaGithubApp, #[MapFrom('project_card')]
+    public Schema\Integration|null $performedViaGithubApp, #[MapFrom('project_card')]
     public Schema\ConvertedNoteToIssueIssueEvent\ProjectCard|null $projectCard,)
     {
     }

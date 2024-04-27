@@ -1399,7 +1399,7 @@ final readonly class WebhookTeamRemovedFromRepository
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      * team: Groups of organization members that gives permissions on specified repositories.
      */
-    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks $organization, public Schema\WebhookTeamRemovedFromRepository\Repository|null $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhookTeamRemovedFromRepository\Team $team)
+    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks $organization, public Schema\WebhookTeamRemovedFromRepository\Repository|null $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhooksTeam1 $team)
     {
     }
 }

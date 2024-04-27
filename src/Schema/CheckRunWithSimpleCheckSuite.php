@@ -51,7 +51,10 @@ final readonly class CheckRunWithSimpleCheckSuite
                         "permissions",
                         "events"
                     ],
-                    "type": "object",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
                     "properties": {
                         "id": {
                             "type": "integer",
@@ -390,7 +393,10 @@ final readonly class CheckRunWithSimpleCheckSuite
                         "permissions",
                         "events"
                     ],
-                    "type": "object",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
                     "properties": {
                         "id": {
                             "type": "integer",
@@ -1847,7 +1853,10 @@ final readonly class CheckRunWithSimpleCheckSuite
                                 "permissions",
                                 "events"
                             ],
-                            "type": "object",
+                            "type": [
+                                "object",
+                                "null"
+                            ],
                             "properties": {
                                 "id": {
                                     "type": "integer",

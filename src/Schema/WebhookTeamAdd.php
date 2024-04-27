@@ -2400,7 +2400,7 @@ final readonly class WebhookTeamAdd
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      * team: Groups of organization members that gives permissions on specified repositories.
      */
-    public function __construct(public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhookTeamAdd\Team $team)
+    public function __construct(public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhooksTeam1 $team)
     {
     }
 }

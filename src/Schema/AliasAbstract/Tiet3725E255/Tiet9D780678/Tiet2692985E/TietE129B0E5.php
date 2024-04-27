@@ -55,8 +55,8 @@ abstract readonly class TietE129B0E5
     }
 }';
 
-    public function __construct(public Schema\WebhookPullRequestReviewDismissed\Review\Links\Html $html, #[MapFrom('pull_request')]
-    public Schema\WebhookPullRequestReviewDismissed\Review\Links\PullRequest $pullRequest,)
+    public function __construct(public Schema\WebhooksReview\Links\Html $html, #[MapFrom('pull_request')]
+    public Schema\WebhooksReview\Links\PullRequest $pullRequest,)
     {
     }
 }

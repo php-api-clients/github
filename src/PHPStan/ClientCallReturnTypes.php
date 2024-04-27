@@ -192,11 +192,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /enterprises/{enterprise}/copilot/usage') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
         }
 
         if ($call === 'LIST /enterprises/{enterprise}/copilot/usage') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
         }
 
         if ($call === 'GET /enterprises/{enterprise}/dependabot/alerts') {
@@ -752,11 +752,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/copilot/usage') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
         }
 
         if ($call === 'LIST /orgs/{org}/copilot/usage') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
         }
 
         if ($call === 'GET /orgs/{org}/dependabot/alerts') {
@@ -1320,11 +1320,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/team/{team_slug}/copilot/usage') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
         }
 
         if ($call === 'LIST /orgs/{org}/team/{team_slug}/copilot/usage') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
         }
 
         if ($call === 'GET /orgs/{org}/teams') {

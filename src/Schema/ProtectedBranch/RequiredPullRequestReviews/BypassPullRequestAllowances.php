@@ -407,7 +407,10 @@ final readonly class BypassPullRequestAllowances
                     "permissions",
                     "events"
                 ],
-                "type": "object",
+                "type": [
+                    "object",
+                    "null"
+                ],
                 "properties": {
                     "id": {
                         "type": "integer",

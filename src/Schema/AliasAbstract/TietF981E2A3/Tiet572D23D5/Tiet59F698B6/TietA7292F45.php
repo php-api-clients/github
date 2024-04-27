@@ -479,7 +479,7 @@ abstract readonly class TietA7292F45
      * url: URL for the pull request review comment
      */
     public function __construct(#[MapFrom('_links')]
-    public Schema\WebhookPullRequestReviewCommentDeleted\Comment\Links $links, #[MapFrom('author_association')]
+    public Schema\WebhooksReviewComment\Links $links, #[MapFrom('author_association')]
     public string $authorAssociation, public string $body, #[MapFrom('commit_id')]
     public string $commitId, #[MapFrom('created_at')]
     public string $createdAt, #[MapFrom('diff_hunk')]
@@ -492,11 +492,11 @@ abstract readonly class TietA7292F45
     public int $originalPosition, #[MapFrom('original_start_line')]
     public int|null $originalStartLine, public string $path, public int|null $position, #[MapFrom('pull_request_review_id')]
     public int|null $pullRequestReviewId, #[MapFrom('pull_request_url')]
-    public string $pullRequestUrl, public Schema\WebhookPullRequestReviewCommentDeleted\Comment\Reactions $reactions, public string $side, #[MapFrom('start_line')]
+    public string $pullRequestUrl, public Schema\WebhooksReviewComment\Reactions $reactions, public string $side, #[MapFrom('start_line')]
     public int|null $startLine, #[MapFrom('start_side')]
     public string|null $startSide, #[MapFrom('subject_type')]
     public string|null $subjectType, #[MapFrom('updated_at')]
-    public string $updatedAt, public string $url, public Schema\WebhookPullRequestReviewCommentDeleted\Comment\User|null $user,)
+    public string $updatedAt, public string $url, public Schema\WebhooksReviewComment\User|null $user,)
     {
     }
 }

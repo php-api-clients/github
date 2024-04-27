@@ -2308,7 +2308,10 @@ final readonly class Event
                                         "permissions",
                                         "events"
                                     ],
-                                    "type": "object",
+                                    "type": [
+                                        "object",
+                                        "null"
+                                    ],
                                     "properties": {
                                         "id": {
                                             "type": "integer",
@@ -2965,7 +2968,10 @@ final readonly class Event
                                         "permissions",
                                         "events"
                                     ],
-                                    "type": "object",
+                                    "type": [
+                                        "object",
+                                        "null"
+                                    ],
                                     "properties": {
                                         "id": {
                                             "type": "integer",

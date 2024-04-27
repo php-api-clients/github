@@ -16,7 +16,6 @@ use ApiClients\Client\GitHub\Schema\SimpleInstallation;
 use ApiClients\Client\GitHub\Schema\SimpleUser;
 use ApiClients\Client\GitHub\Schema\SimpleUserWebhooks;
 use ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed;
-use ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed\Milestone\Creator;
 use ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated;
 use ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted;
 use ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited;
@@ -25,6 +24,9 @@ use ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Changes\Description;
 use ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Changes\DueOn;
 use ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Changes\Title;
 use ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened;
+use ApiClients\Client\GitHub\Schema\WebhooksMilestone;
+use ApiClients\Client\GitHub\Schema\WebhooksMilestone\Creator;
+use ApiClients\Client\GitHub\Schema\WebhooksMilestone3;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems;
@@ -63,8 +65,8 @@ class Milestone implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneClosed($payload),
                 'ApiClients\Client\GitHub\Schema\EnterpriseWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed\Milestone' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneClosed⚡️Milestone($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneClosed⚡️Milestone⚡️Creator($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksMilestone' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksMilestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone⚡️Creator($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($payload),
@@ -75,22 +77,15 @@ class Milestone implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone⚡️Creator($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksMilestone3' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksMilestone3\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3⚡️Creator($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneDeleted($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneDeleted⚡️Milestone($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneDeleted⚡️Milestone⚡️Creator($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Changes' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Changes($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Changes\Description' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Changes⚡️Description($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Changes\DueOn' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Changes⚡️DueOn($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Changes\Title' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Changes⚡️Title($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Milestone($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Milestone⚡️Creator($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened⚡️Milestone($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened⚡️Milestone⚡️Creator($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Milestone⚡️Creator($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\CustomProperties' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️CustomProperties($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -162,7 +157,7 @@ class Milestone implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'milestone';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneClosed⚡️Milestone($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -416,7 +411,7 @@ class Milestone implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneClosed⚡️Milestone(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed\Milestone
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone(array $payload): WebhooksMilestone
     {
         $properties    = [];
         $missingFields = [];
@@ -464,7 +459,7 @@ class Milestone implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'creator';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Milestone⚡️Creator($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone⚡️Creator($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -606,21 +601,21 @@ class Milestone implements ObjectMapper
 
             after_url:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed\Milestone', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksMilestone', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed\Milestone::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(WebhooksMilestone::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed\Milestone(...$properties);
+            return new WebhooksMilestone(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed\Milestone', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksMilestone', $exception, stack: $this->hydrationStack);
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneClosed⚡️Milestone⚡️Creator(array $payload): Creator
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone⚡️Creator(array $payload): Creator
     {
         $properties    = [];
         $missingFields = [];
@@ -856,7 +851,7 @@ class Milestone implements ObjectMapper
 
             after_url:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksMilestone\Creator', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
@@ -866,7 +861,7 @@ class Milestone implements ObjectMapper
         try {
             return new Creator(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksMilestone\Creator', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -4204,7 +4199,7 @@ class Milestone implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'milestone';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4288,7 +4283,7 @@ class Milestone implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3(array $payload): WebhooksMilestone3
     {
         $properties    = [];
         $missingFields = [];
@@ -4336,7 +4331,7 @@ class Milestone implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'creator';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone⚡️Creator($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3⚡️Creator($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4478,21 +4473,21 @@ class Milestone implements ObjectMapper
 
             after_url:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksMilestone3', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(WebhooksMilestone3::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone(...$properties);
+            return new WebhooksMilestone3(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksMilestone3', $exception, stack: $this->hydrationStack);
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone\Creator
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3⚡️Creator(array $payload): \ApiClients\Client\GitHub\Schema\WebhooksMilestone3\Creator
     {
         $properties    = [];
         $missingFields = [];
@@ -4728,17 +4723,17 @@ class Milestone implements ObjectMapper
 
             after_url:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksMilestone3\Creator', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhooksMilestone3\Creator::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone\Creator(...$properties);
+            return new \ApiClients\Client\GitHub\Schema\WebhooksMilestone3\Creator(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone\Creator', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksMilestone3\Creator', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -4808,7 +4803,7 @@ class Milestone implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'milestone';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneDeleted⚡️Milestone($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4889,460 +4884,6 @@ class Milestone implements ObjectMapper
             return new WebhookMilestoneDeleted(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneDeleted⚡️Milestone(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['closed_at'] ?? null;
-
-            if ($value === null) {
-                $properties['closedAt'] = null;
-                goto after_closedAt;
-            }
-
-            $properties['closedAt'] = $value;
-
-            after_closedAt:
-
-            $value = $payload['closed_issues'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'closed_issues';
-                goto after_closedIssues;
-            }
-
-            $properties['closedIssues'] = $value;
-
-            after_closedIssues:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['creator'] ?? null;
-
-            if ($value === null) {
-                $properties['creator'] = null;
-                goto after_creator;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'creator';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Milestone⚡️Creator($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['creator'] = $value;
-
-            after_creator:
-
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['due_on'] ?? null;
-
-            if ($value === null) {
-                $properties['dueOn'] = null;
-                goto after_dueOn;
-            }
-
-            $properties['dueOn'] = $value;
-
-            after_dueOn:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['labels_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'labels_url';
-                goto after_labelsUrl;
-            }
-
-            $properties['labelsUrl'] = $value;
-
-            after_labelsUrl:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['number'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'number';
-                goto after_number;
-            }
-
-            $properties['number'] = $value;
-
-            after_number:
-
-            $value = $payload['open_issues'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'open_issues';
-                goto after_openIssues;
-            }
-
-            $properties['openIssues'] = $value;
-
-            after_openIssues:
-
-            $value = $payload['state'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'state';
-                goto after_state;
-            }
-
-            $properties['state'] = $value;
-
-            after_state:
-
-            $value = $payload['title'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'title';
-                goto after_title;
-            }
-
-            $properties['title'] = $value;
-
-            after_title:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneDeleted⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone\Creator
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['avatar_url'] ?? null;
-
-            if ($value === null) {
-                $properties['avatarUrl'] = null;
-                goto after_avatarUrl;
-            }
-
-            $properties['avatarUrl'] = $value;
-
-            after_avatarUrl:
-
-            $value = $payload['deleted'] ?? null;
-
-            if ($value === null) {
-                $properties['deleted'] = null;
-                goto after_deleted;
-            }
-
-            $properties['deleted'] = $value;
-
-            after_deleted:
-
-            $value = $payload['email'] ?? null;
-
-            if ($value === null) {
-                $properties['email'] = null;
-                goto after_email;
-            }
-
-            $properties['email'] = $value;
-
-            after_email:
-
-            $value = $payload['events_url'] ?? null;
-
-            if ($value === null) {
-                $properties['eventsUrl'] = null;
-                goto after_eventsUrl;
-            }
-
-            $properties['eventsUrl'] = $value;
-
-            after_eventsUrl:
-
-            $value = $payload['followers_url'] ?? null;
-
-            if ($value === null) {
-                $properties['followersUrl'] = null;
-                goto after_followersUrl;
-            }
-
-            $properties['followersUrl'] = $value;
-
-            after_followersUrl:
-
-            $value = $payload['following_url'] ?? null;
-
-            if ($value === null) {
-                $properties['followingUrl'] = null;
-                goto after_followingUrl;
-            }
-
-            $properties['followingUrl'] = $value;
-
-            after_followingUrl:
-
-            $value = $payload['gists_url'] ?? null;
-
-            if ($value === null) {
-                $properties['gistsUrl'] = null;
-                goto after_gistsUrl;
-            }
-
-            $properties['gistsUrl'] = $value;
-
-            after_gistsUrl:
-
-            $value = $payload['gravatar_id'] ?? null;
-
-            if ($value === null) {
-                $properties['gravatarId'] = null;
-                goto after_gravatarId;
-            }
-
-            $properties['gravatarId'] = $value;
-
-            after_gravatarId:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $properties['htmlUrl'] = null;
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['login'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'login';
-                goto after_login;
-            }
-
-            $properties['login'] = $value;
-
-            after_login:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $properties['name'] = null;
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $properties['nodeId'] = null;
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['organizations_url'] ?? null;
-
-            if ($value === null) {
-                $properties['organizationsUrl'] = null;
-                goto after_organizationsUrl;
-            }
-
-            $properties['organizationsUrl'] = $value;
-
-            after_organizationsUrl:
-
-            $value = $payload['received_events_url'] ?? null;
-
-            if ($value === null) {
-                $properties['receivedEventsUrl'] = null;
-                goto after_receivedEventsUrl;
-            }
-
-            $properties['receivedEventsUrl'] = $value;
-
-            after_receivedEventsUrl:
-
-            $value = $payload['repos_url'] ?? null;
-
-            if ($value === null) {
-                $properties['reposUrl'] = null;
-                goto after_reposUrl;
-            }
-
-            $properties['reposUrl'] = $value;
-
-            after_reposUrl:
-
-            $value = $payload['site_admin'] ?? null;
-
-            if ($value === null) {
-                $properties['siteAdmin'] = null;
-                goto after_siteAdmin;
-            }
-
-            $properties['siteAdmin'] = $value;
-
-            after_siteAdmin:
-
-            $value = $payload['starred_url'] ?? null;
-
-            if ($value === null) {
-                $properties['starredUrl'] = null;
-                goto after_starredUrl;
-            }
-
-            $properties['starredUrl'] = $value;
-
-            after_starredUrl:
-
-            $value = $payload['subscriptions_url'] ?? null;
-
-            if ($value === null) {
-                $properties['subscriptionsUrl'] = null;
-                goto after_subscriptionsUrl;
-            }
-
-            $properties['subscriptionsUrl'] = $value;
-
-            after_subscriptionsUrl:
-
-            $value = $payload['type'] ?? null;
-
-            if ($value === null) {
-                $properties['type'] = null;
-                goto after_type;
-            }
-
-            $properties['type'] = $value;
-
-            after_type:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $properties['url'] = null;
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone\Creator', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone\Creator(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -5432,7 +4973,7 @@ class Milestone implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'milestone';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Milestone($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5685,460 +5226,6 @@ class Milestone implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Milestone(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['closed_at'] ?? null;
-
-            if ($value === null) {
-                $properties['closedAt'] = null;
-                goto after_closedAt;
-            }
-
-            $properties['closedAt'] = $value;
-
-            after_closedAt:
-
-            $value = $payload['closed_issues'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'closed_issues';
-                goto after_closedIssues;
-            }
-
-            $properties['closedIssues'] = $value;
-
-            after_closedIssues:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['creator'] ?? null;
-
-            if ($value === null) {
-                $properties['creator'] = null;
-                goto after_creator;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'creator';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Milestone⚡️Creator($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['creator'] = $value;
-
-            after_creator:
-
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['due_on'] ?? null;
-
-            if ($value === null) {
-                $properties['dueOn'] = null;
-                goto after_dueOn;
-            }
-
-            $properties['dueOn'] = $value;
-
-            after_dueOn:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['labels_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'labels_url';
-                goto after_labelsUrl;
-            }
-
-            $properties['labelsUrl'] = $value;
-
-            after_labelsUrl:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['number'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'number';
-                goto after_number;
-            }
-
-            $properties['number'] = $value;
-
-            after_number:
-
-            $value = $payload['open_issues'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'open_issues';
-                goto after_openIssues;
-            }
-
-            $properties['openIssues'] = $value;
-
-            after_openIssues:
-
-            $value = $payload['state'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'state';
-                goto after_state;
-            }
-
-            $properties['state'] = $value;
-
-            after_state:
-
-            $value = $payload['title'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'title';
-                goto after_title;
-            }
-
-            $properties['title'] = $value;
-
-            after_title:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone\Creator
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['avatar_url'] ?? null;
-
-            if ($value === null) {
-                $properties['avatarUrl'] = null;
-                goto after_avatarUrl;
-            }
-
-            $properties['avatarUrl'] = $value;
-
-            after_avatarUrl:
-
-            $value = $payload['deleted'] ?? null;
-
-            if ($value === null) {
-                $properties['deleted'] = null;
-                goto after_deleted;
-            }
-
-            $properties['deleted'] = $value;
-
-            after_deleted:
-
-            $value = $payload['email'] ?? null;
-
-            if ($value === null) {
-                $properties['email'] = null;
-                goto after_email;
-            }
-
-            $properties['email'] = $value;
-
-            after_email:
-
-            $value = $payload['events_url'] ?? null;
-
-            if ($value === null) {
-                $properties['eventsUrl'] = null;
-                goto after_eventsUrl;
-            }
-
-            $properties['eventsUrl'] = $value;
-
-            after_eventsUrl:
-
-            $value = $payload['followers_url'] ?? null;
-
-            if ($value === null) {
-                $properties['followersUrl'] = null;
-                goto after_followersUrl;
-            }
-
-            $properties['followersUrl'] = $value;
-
-            after_followersUrl:
-
-            $value = $payload['following_url'] ?? null;
-
-            if ($value === null) {
-                $properties['followingUrl'] = null;
-                goto after_followingUrl;
-            }
-
-            $properties['followingUrl'] = $value;
-
-            after_followingUrl:
-
-            $value = $payload['gists_url'] ?? null;
-
-            if ($value === null) {
-                $properties['gistsUrl'] = null;
-                goto after_gistsUrl;
-            }
-
-            $properties['gistsUrl'] = $value;
-
-            after_gistsUrl:
-
-            $value = $payload['gravatar_id'] ?? null;
-
-            if ($value === null) {
-                $properties['gravatarId'] = null;
-                goto after_gravatarId;
-            }
-
-            $properties['gravatarId'] = $value;
-
-            after_gravatarId:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $properties['htmlUrl'] = null;
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['login'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'login';
-                goto after_login;
-            }
-
-            $properties['login'] = $value;
-
-            after_login:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $properties['name'] = null;
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $properties['nodeId'] = null;
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['organizations_url'] ?? null;
-
-            if ($value === null) {
-                $properties['organizationsUrl'] = null;
-                goto after_organizationsUrl;
-            }
-
-            $properties['organizationsUrl'] = $value;
-
-            after_organizationsUrl:
-
-            $value = $payload['received_events_url'] ?? null;
-
-            if ($value === null) {
-                $properties['receivedEventsUrl'] = null;
-                goto after_receivedEventsUrl;
-            }
-
-            $properties['receivedEventsUrl'] = $value;
-
-            after_receivedEventsUrl:
-
-            $value = $payload['repos_url'] ?? null;
-
-            if ($value === null) {
-                $properties['reposUrl'] = null;
-                goto after_reposUrl;
-            }
-
-            $properties['reposUrl'] = $value;
-
-            after_reposUrl:
-
-            $value = $payload['site_admin'] ?? null;
-
-            if ($value === null) {
-                $properties['siteAdmin'] = null;
-                goto after_siteAdmin;
-            }
-
-            $properties['siteAdmin'] = $value;
-
-            after_siteAdmin:
-
-            $value = $payload['starred_url'] ?? null;
-
-            if ($value === null) {
-                $properties['starredUrl'] = null;
-                goto after_starredUrl;
-            }
-
-            $properties['starredUrl'] = $value;
-
-            after_starredUrl:
-
-            $value = $payload['subscriptions_url'] ?? null;
-
-            if ($value === null) {
-                $properties['subscriptionsUrl'] = null;
-                goto after_subscriptionsUrl;
-            }
-
-            $properties['subscriptionsUrl'] = $value;
-
-            after_subscriptionsUrl:
-
-            $value = $payload['type'] ?? null;
-
-            if ($value === null) {
-                $properties['type'] = null;
-                goto after_type;
-            }
-
-            $properties['type'] = $value;
-
-            after_type:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $properties['url'] = null;
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone\Creator', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone\Creator(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone\Creator', $exception, stack: $this->hydrationStack);
-        }
-    }
-
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened(array $payload): WebhookMilestoneOpened
     {
         $properties    = [];
@@ -6205,7 +5292,7 @@ class Milestone implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'milestone';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened⚡️Milestone($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6289,710 +5376,6 @@ class Milestone implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened⚡️Milestone(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['closed_at'] ?? null;
-
-            if ($value === null) {
-                $properties['closedAt'] = null;
-                goto after_closedAt;
-            }
-
-            $properties['closedAt'] = $value;
-
-            after_closedAt:
-
-            $value = $payload['closed_issues'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'closed_issues';
-                goto after_closedIssues;
-            }
-
-            $properties['closedIssues'] = $value;
-
-            after_closedIssues:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['creator'] ?? null;
-
-            if ($value === null) {
-                $properties['creator'] = null;
-                goto after_creator;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'creator';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone⚡️Creator($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['creator'] = $value;
-
-            after_creator:
-
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['due_on'] ?? null;
-
-            if ($value === null) {
-                $properties['dueOn'] = null;
-                goto after_dueOn;
-            }
-
-            $properties['dueOn'] = $value;
-
-            after_dueOn:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['labels_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'labels_url';
-                goto after_labelsUrl;
-            }
-
-            $properties['labelsUrl'] = $value;
-
-            after_labelsUrl:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['number'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'number';
-                goto after_number;
-            }
-
-            $properties['number'] = $value;
-
-            after_number:
-
-            $value = $payload['open_issues'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'open_issues';
-                goto after_openIssues;
-            }
-
-            $properties['openIssues'] = $value;
-
-            after_openIssues:
-
-            $value = $payload['state'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'state';
-                goto after_state;
-            }
-
-            $properties['state'] = $value;
-
-            after_state:
-
-            $value = $payload['title'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'title';
-                goto after_title;
-            }
-
-            $properties['title'] = $value;
-
-            after_title:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone\Creator
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['avatar_url'] ?? null;
-
-            if ($value === null) {
-                $properties['avatarUrl'] = null;
-                goto after_avatarUrl;
-            }
-
-            $properties['avatarUrl'] = $value;
-
-            after_avatarUrl:
-
-            $value = $payload['deleted'] ?? null;
-
-            if ($value === null) {
-                $properties['deleted'] = null;
-                goto after_deleted;
-            }
-
-            $properties['deleted'] = $value;
-
-            after_deleted:
-
-            $value = $payload['email'] ?? null;
-
-            if ($value === null) {
-                $properties['email'] = null;
-                goto after_email;
-            }
-
-            $properties['email'] = $value;
-
-            after_email:
-
-            $value = $payload['events_url'] ?? null;
-
-            if ($value === null) {
-                $properties['eventsUrl'] = null;
-                goto after_eventsUrl;
-            }
-
-            $properties['eventsUrl'] = $value;
-
-            after_eventsUrl:
-
-            $value = $payload['followers_url'] ?? null;
-
-            if ($value === null) {
-                $properties['followersUrl'] = null;
-                goto after_followersUrl;
-            }
-
-            $properties['followersUrl'] = $value;
-
-            after_followersUrl:
-
-            $value = $payload['following_url'] ?? null;
-
-            if ($value === null) {
-                $properties['followingUrl'] = null;
-                goto after_followingUrl;
-            }
-
-            $properties['followingUrl'] = $value;
-
-            after_followingUrl:
-
-            $value = $payload['gists_url'] ?? null;
-
-            if ($value === null) {
-                $properties['gistsUrl'] = null;
-                goto after_gistsUrl;
-            }
-
-            $properties['gistsUrl'] = $value;
-
-            after_gistsUrl:
-
-            $value = $payload['gravatar_id'] ?? null;
-
-            if ($value === null) {
-                $properties['gravatarId'] = null;
-                goto after_gravatarId;
-            }
-
-            $properties['gravatarId'] = $value;
-
-            after_gravatarId:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $properties['htmlUrl'] = null;
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['login'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'login';
-                goto after_login;
-            }
-
-            $properties['login'] = $value;
-
-            after_login:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $properties['name'] = null;
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $properties['nodeId'] = null;
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['organizations_url'] ?? null;
-
-            if ($value === null) {
-                $properties['organizationsUrl'] = null;
-                goto after_organizationsUrl;
-            }
-
-            $properties['organizationsUrl'] = $value;
-
-            after_organizationsUrl:
-
-            $value = $payload['received_events_url'] ?? null;
-
-            if ($value === null) {
-                $properties['receivedEventsUrl'] = null;
-                goto after_receivedEventsUrl;
-            }
-
-            $properties['receivedEventsUrl'] = $value;
-
-            after_receivedEventsUrl:
-
-            $value = $payload['repos_url'] ?? null;
-
-            if ($value === null) {
-                $properties['reposUrl'] = null;
-                goto after_reposUrl;
-            }
-
-            $properties['reposUrl'] = $value;
-
-            after_reposUrl:
-
-            $value = $payload['site_admin'] ?? null;
-
-            if ($value === null) {
-                $properties['siteAdmin'] = null;
-                goto after_siteAdmin;
-            }
-
-            $properties['siteAdmin'] = $value;
-
-            after_siteAdmin:
-
-            $value = $payload['starred_url'] ?? null;
-
-            if ($value === null) {
-                $properties['starredUrl'] = null;
-                goto after_starredUrl;
-            }
-
-            $properties['starredUrl'] = $value;
-
-            after_starredUrl:
-
-            $value = $payload['subscriptions_url'] ?? null;
-
-            if ($value === null) {
-                $properties['subscriptionsUrl'] = null;
-                goto after_subscriptionsUrl;
-            }
-
-            $properties['subscriptionsUrl'] = $value;
-
-            after_subscriptionsUrl:
-
-            $value = $payload['type'] ?? null;
-
-            if ($value === null) {
-                $properties['type'] = null;
-                goto after_type;
-            }
-
-            $properties['type'] = $value;
-
-            after_type:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $properties['url'] = null;
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone\Creator', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone\Creator(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone\Creator', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Milestone⚡️Creator(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Milestone\Creator
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['avatar_url'] ?? null;
-
-            if ($value === null) {
-                $properties['avatarUrl'] = null;
-                goto after_avatarUrl;
-            }
-
-            $properties['avatarUrl'] = $value;
-
-            after_avatarUrl:
-
-            $value = $payload['deleted'] ?? null;
-
-            if ($value === null) {
-                $properties['deleted'] = null;
-                goto after_deleted;
-            }
-
-            $properties['deleted'] = $value;
-
-            after_deleted:
-
-            $value = $payload['email'] ?? null;
-
-            if ($value === null) {
-                $properties['email'] = null;
-                goto after_email;
-            }
-
-            $properties['email'] = $value;
-
-            after_email:
-
-            $value = $payload['events_url'] ?? null;
-
-            if ($value === null) {
-                $properties['eventsUrl'] = null;
-                goto after_eventsUrl;
-            }
-
-            $properties['eventsUrl'] = $value;
-
-            after_eventsUrl:
-
-            $value = $payload['followers_url'] ?? null;
-
-            if ($value === null) {
-                $properties['followersUrl'] = null;
-                goto after_followersUrl;
-            }
-
-            $properties['followersUrl'] = $value;
-
-            after_followersUrl:
-
-            $value = $payload['following_url'] ?? null;
-
-            if ($value === null) {
-                $properties['followingUrl'] = null;
-                goto after_followingUrl;
-            }
-
-            $properties['followingUrl'] = $value;
-
-            after_followingUrl:
-
-            $value = $payload['gists_url'] ?? null;
-
-            if ($value === null) {
-                $properties['gistsUrl'] = null;
-                goto after_gistsUrl;
-            }
-
-            $properties['gistsUrl'] = $value;
-
-            after_gistsUrl:
-
-            $value = $payload['gravatar_id'] ?? null;
-
-            if ($value === null) {
-                $properties['gravatarId'] = null;
-                goto after_gravatarId;
-            }
-
-            $properties['gravatarId'] = $value;
-
-            after_gravatarId:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $properties['htmlUrl'] = null;
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['login'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'login';
-                goto after_login;
-            }
-
-            $properties['login'] = $value;
-
-            after_login:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $properties['name'] = null;
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $properties['nodeId'] = null;
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['organizations_url'] ?? null;
-
-            if ($value === null) {
-                $properties['organizationsUrl'] = null;
-                goto after_organizationsUrl;
-            }
-
-            $properties['organizationsUrl'] = $value;
-
-            after_organizationsUrl:
-
-            $value = $payload['received_events_url'] ?? null;
-
-            if ($value === null) {
-                $properties['receivedEventsUrl'] = null;
-                goto after_receivedEventsUrl;
-            }
-
-            $properties['receivedEventsUrl'] = $value;
-
-            after_receivedEventsUrl:
-
-            $value = $payload['repos_url'] ?? null;
-
-            if ($value === null) {
-                $properties['reposUrl'] = null;
-                goto after_reposUrl;
-            }
-
-            $properties['reposUrl'] = $value;
-
-            after_reposUrl:
-
-            $value = $payload['site_admin'] ?? null;
-
-            if ($value === null) {
-                $properties['siteAdmin'] = null;
-                goto after_siteAdmin;
-            }
-
-            $properties['siteAdmin'] = $value;
-
-            after_siteAdmin:
-
-            $value = $payload['starred_url'] ?? null;
-
-            if ($value === null) {
-                $properties['starredUrl'] = null;
-                goto after_starredUrl;
-            }
-
-            $properties['starredUrl'] = $value;
-
-            after_starredUrl:
-
-            $value = $payload['subscriptions_url'] ?? null;
-
-            if ($value === null) {
-                $properties['subscriptionsUrl'] = null;
-                goto after_subscriptionsUrl;
-            }
-
-            $properties['subscriptionsUrl'] = $value;
-
-            after_subscriptionsUrl:
-
-            $value = $payload['type'] ?? null;
-
-            if ($value === null) {
-                $properties['type'] = null;
-                goto after_type;
-            }
-
-            $properties['type'] = $value;
-
-            after_type:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $properties['url'] = null;
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Milestone\Creator', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Milestone\Creator::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Milestone\Creator(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Milestone\Creator', $exception, stack: $this->hydrationStack);
-        }
-    }
-
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️CustomProperties(array $payload): CustomProperties
     {
         $properties    = [];
@@ -7047,8 +5430,8 @@ class Milestone implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneClosed($object),
                 'ApiClients\Client\GitHub\Schema\EnterpriseWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed\Milestone' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneClosed⚡️Milestone($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed\Milestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneClosed⚡️Milestone⚡️Creator($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksMilestone' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksMilestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone⚡️Creator($object),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($object),
@@ -7059,21 +5442,15 @@ class Milestone implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone⚡️Creator($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksMilestone3' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksMilestone3\Creator' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3⚡️Creator($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneDeleted($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneDeleted⚡️Milestone($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneDeleted⚡️Milestone⚡️Creator($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Changes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Changes($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Changes\Description' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Changes⚡️Description($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Changes\DueOn' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Changes⚡️DueOn($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Changes\Title' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Changes⚡️Title($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Milestone($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Milestone⚡️Creator($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened⚡️Milestone($object),
-                'ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened⚡️Milestone⚡️Creator($object),
                 default => throw new LogicException('No serialization defined for $className'),
             };
         } catch (Throwable $exception) {
@@ -7163,7 +5540,7 @@ class Milestone implements ObjectMapper
         after_installation:        $result['installation'] = $installation;
 
         $milestone                                   = $object->milestone;
-        $milestone                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneClosed⚡️Milestone($milestone);
+        $milestone                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone($milestone);
         after_milestone:        $result['milestone'] = $milestone;
 
         $organization = $object->organization;
@@ -7258,9 +5635,9 @@ class Milestone implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneClosed⚡️Milestone(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone(mixed $object): mixed
     {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMilestoneClosed\Milestone);
+        assert($object instanceof WebhooksMilestone);
         $result = [];
 
         $closedAt = $object->closedAt;
@@ -7283,7 +5660,7 @@ class Milestone implements ObjectMapper
             goto after_creator;
         }
 
-        $creator                                 = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Milestone⚡️Creator($creator);
+        $creator                                 = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone⚡️Creator($creator);
         after_creator:        $result['creator'] = $creator;
 
         $description = $object->description;
@@ -7335,7 +5712,7 @@ class Milestone implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneClosed⚡️Milestone⚡️Creator(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone⚡️Creator(mixed $object): mixed
     {
         assert($object instanceof Creator);
         $result = [];
@@ -9242,7 +7619,7 @@ class Milestone implements ObjectMapper
         after_installation:        $result['installation'] = $installation;
 
         $milestone                                   = $object->milestone;
-        $milestone                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone($milestone);
+        $milestone                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3($milestone);
         after_milestone:        $result['milestone'] = $milestone;
 
         $organization = $object->organization;
@@ -9265,9 +7642,9 @@ class Milestone implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3(mixed $object): mixed
     {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone);
+        assert($object instanceof WebhooksMilestone3);
         $result = [];
 
         $closedAt = $object->closedAt;
@@ -9290,7 +7667,7 @@ class Milestone implements ObjectMapper
             goto after_creator;
         }
 
-        $creator                                 = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone⚡️Creator($creator);
+        $creator                                 = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3⚡️Creator($creator);
         after_creator:        $result['creator'] = $creator;
 
         $description = $object->description;
@@ -9342,9 +7719,9 @@ class Milestone implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone⚡️Creator(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3⚡️Creator(mixed $object): mixed
     {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMilestoneCreated\Milestone\Creator);
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhooksMilestone3\Creator);
         $result = [];
 
         $avatarUrl = $object->avatarUrl;
@@ -9535,7 +7912,7 @@ class Milestone implements ObjectMapper
         after_installation:        $result['installation'] = $installation;
 
         $milestone                                   = $object->milestone;
-        $milestone                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneDeleted⚡️Milestone($milestone);
+        $milestone                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone($milestone);
         after_milestone:        $result['milestone'] = $milestone;
 
         $organization = $object->organization;
@@ -9554,249 +7931,6 @@ class Milestone implements ObjectMapper
         $sender                                = $object->sender;
         $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
         after_sender:        $result['sender'] = $sender;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneDeleted⚡️Milestone(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone);
-        $result = [];
-
-        $closedAt = $object->closedAt;
-
-        if ($closedAt === null) {
-            goto after_closedAt;
-        }
-
-        after_closedAt:        $result['closed_at'] = $closedAt;
-
-        $closedIssues                                       = $object->closedIssues;
-        after_closedIssues:        $result['closed_issues'] = $closedIssues;
-
-        $createdAt                                    = $object->createdAt;
-        after_createdAt:        $result['created_at'] = $createdAt;
-
-        $creator = $object->creator;
-
-        if ($creator === null) {
-            goto after_creator;
-        }
-
-        $creator                                 = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Milestone⚡️Creator($creator);
-        after_creator:        $result['creator'] = $creator;
-
-        $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
-
-        after_description:        $result['description'] = $description;
-
-        $dueOn = $object->dueOn;
-
-        if ($dueOn === null) {
-            goto after_dueOn;
-        }
-
-        after_dueOn:        $result['due_on'] = $dueOn;
-
-        $htmlUrl                                  = $object->htmlUrl;
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $labelsUrl                                    = $object->labelsUrl;
-        after_labelsUrl:        $result['labels_url'] = $labelsUrl;
-
-        $nodeId                                 = $object->nodeId;
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $number                                = $object->number;
-        after_number:        $result['number'] = $number;
-
-        $openIssues                                     = $object->openIssues;
-        after_openIssues:        $result['open_issues'] = $openIssues;
-
-        $state                               = $object->state;
-        after_state:        $result['state'] = $state;
-
-        $title                               = $object->title;
-        after_title:        $result['title'] = $title;
-
-        $updatedAt                                    = $object->updatedAt;
-        after_updatedAt:        $result['updated_at'] = $updatedAt;
-
-        $url                             = $object->url;
-        after_url:        $result['url'] = $url;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneDeleted⚡️Milestone⚡️Creator(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMilestoneDeleted\Milestone\Creator);
-        $result = [];
-
-        $avatarUrl = $object->avatarUrl;
-
-        if ($avatarUrl === null) {
-            goto after_avatarUrl;
-        }
-
-        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
-
-        $deleted = $object->deleted;
-
-        if ($deleted === null) {
-            goto after_deleted;
-        }
-
-        after_deleted:        $result['deleted'] = $deleted;
-
-        $email = $object->email;
-
-        if ($email === null) {
-            goto after_email;
-        }
-
-        after_email:        $result['email'] = $email;
-
-        $eventsUrl = $object->eventsUrl;
-
-        if ($eventsUrl === null) {
-            goto after_eventsUrl;
-        }
-
-        after_eventsUrl:        $result['events_url'] = $eventsUrl;
-
-        $followersUrl = $object->followersUrl;
-
-        if ($followersUrl === null) {
-            goto after_followersUrl;
-        }
-
-        after_followersUrl:        $result['followers_url'] = $followersUrl;
-
-        $followingUrl = $object->followingUrl;
-
-        if ($followingUrl === null) {
-            goto after_followingUrl;
-        }
-
-        after_followingUrl:        $result['following_url'] = $followingUrl;
-
-        $gistsUrl = $object->gistsUrl;
-
-        if ($gistsUrl === null) {
-            goto after_gistsUrl;
-        }
-
-        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
-
-        $gravatarId = $object->gravatarId;
-
-        if ($gravatarId === null) {
-            goto after_gravatarId;
-        }
-
-        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
-
-        $htmlUrl = $object->htmlUrl;
-
-        if ($htmlUrl === null) {
-            goto after_htmlUrl;
-        }
-
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $login                               = $object->login;
-        after_login:        $result['login'] = $login;
-
-        $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
-
-        after_name:        $result['name'] = $name;
-
-        $nodeId = $object->nodeId;
-
-        if ($nodeId === null) {
-            goto after_nodeId;
-        }
-
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $organizationsUrl = $object->organizationsUrl;
-
-        if ($organizationsUrl === null) {
-            goto after_organizationsUrl;
-        }
-
-        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
-
-        $receivedEventsUrl = $object->receivedEventsUrl;
-
-        if ($receivedEventsUrl === null) {
-            goto after_receivedEventsUrl;
-        }
-
-        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
-
-        $reposUrl = $object->reposUrl;
-
-        if ($reposUrl === null) {
-            goto after_reposUrl;
-        }
-
-        after_reposUrl:        $result['repos_url'] = $reposUrl;
-
-        $siteAdmin = $object->siteAdmin;
-
-        if ($siteAdmin === null) {
-            goto after_siteAdmin;
-        }
-
-        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
-
-        $starredUrl = $object->starredUrl;
-
-        if ($starredUrl === null) {
-            goto after_starredUrl;
-        }
-
-        after_starredUrl:        $result['starred_url'] = $starredUrl;
-
-        $subscriptionsUrl = $object->subscriptionsUrl;
-
-        if ($subscriptionsUrl === null) {
-            goto after_subscriptionsUrl;
-        }
-
-        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
-
-        $type = $object->type;
-
-        if ($type === null) {
-            goto after_type;
-        }
-
-        after_type:        $result['type'] = $type;
-
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-
-        after_url:        $result['url'] = $url;
 
         return $result;
     }
@@ -9832,7 +7966,7 @@ class Milestone implements ObjectMapper
         after_installation:        $result['installation'] = $installation;
 
         $milestone                                   = $object->milestone;
-        $milestone                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Milestone($milestone);
+        $milestone                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone($milestone);
         after_milestone:        $result['milestone'] = $milestone;
 
         $organization = $object->organization;
@@ -9923,249 +8057,6 @@ class Milestone implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Milestone(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone);
-        $result = [];
-
-        $closedAt = $object->closedAt;
-
-        if ($closedAt === null) {
-            goto after_closedAt;
-        }
-
-        after_closedAt:        $result['closed_at'] = $closedAt;
-
-        $closedIssues                                       = $object->closedIssues;
-        after_closedIssues:        $result['closed_issues'] = $closedIssues;
-
-        $createdAt                                    = $object->createdAt;
-        after_createdAt:        $result['created_at'] = $createdAt;
-
-        $creator = $object->creator;
-
-        if ($creator === null) {
-            goto after_creator;
-        }
-
-        $creator                                 = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Milestone⚡️Creator($creator);
-        after_creator:        $result['creator'] = $creator;
-
-        $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
-
-        after_description:        $result['description'] = $description;
-
-        $dueOn = $object->dueOn;
-
-        if ($dueOn === null) {
-            goto after_dueOn;
-        }
-
-        after_dueOn:        $result['due_on'] = $dueOn;
-
-        $htmlUrl                                  = $object->htmlUrl;
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $labelsUrl                                    = $object->labelsUrl;
-        after_labelsUrl:        $result['labels_url'] = $labelsUrl;
-
-        $nodeId                                 = $object->nodeId;
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $number                                = $object->number;
-        after_number:        $result['number'] = $number;
-
-        $openIssues                                     = $object->openIssues;
-        after_openIssues:        $result['open_issues'] = $openIssues;
-
-        $state                               = $object->state;
-        after_state:        $result['state'] = $state;
-
-        $title                               = $object->title;
-        after_title:        $result['title'] = $title;
-
-        $updatedAt                                    = $object->updatedAt;
-        after_updatedAt:        $result['updated_at'] = $updatedAt;
-
-        $url                             = $object->url;
-        after_url:        $result['url'] = $url;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneEdited⚡️Milestone⚡️Creator(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMilestoneEdited\Milestone\Creator);
-        $result = [];
-
-        $avatarUrl = $object->avatarUrl;
-
-        if ($avatarUrl === null) {
-            goto after_avatarUrl;
-        }
-
-        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
-
-        $deleted = $object->deleted;
-
-        if ($deleted === null) {
-            goto after_deleted;
-        }
-
-        after_deleted:        $result['deleted'] = $deleted;
-
-        $email = $object->email;
-
-        if ($email === null) {
-            goto after_email;
-        }
-
-        after_email:        $result['email'] = $email;
-
-        $eventsUrl = $object->eventsUrl;
-
-        if ($eventsUrl === null) {
-            goto after_eventsUrl;
-        }
-
-        after_eventsUrl:        $result['events_url'] = $eventsUrl;
-
-        $followersUrl = $object->followersUrl;
-
-        if ($followersUrl === null) {
-            goto after_followersUrl;
-        }
-
-        after_followersUrl:        $result['followers_url'] = $followersUrl;
-
-        $followingUrl = $object->followingUrl;
-
-        if ($followingUrl === null) {
-            goto after_followingUrl;
-        }
-
-        after_followingUrl:        $result['following_url'] = $followingUrl;
-
-        $gistsUrl = $object->gistsUrl;
-
-        if ($gistsUrl === null) {
-            goto after_gistsUrl;
-        }
-
-        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
-
-        $gravatarId = $object->gravatarId;
-
-        if ($gravatarId === null) {
-            goto after_gravatarId;
-        }
-
-        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
-
-        $htmlUrl = $object->htmlUrl;
-
-        if ($htmlUrl === null) {
-            goto after_htmlUrl;
-        }
-
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $login                               = $object->login;
-        after_login:        $result['login'] = $login;
-
-        $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
-
-        after_name:        $result['name'] = $name;
-
-        $nodeId = $object->nodeId;
-
-        if ($nodeId === null) {
-            goto after_nodeId;
-        }
-
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $organizationsUrl = $object->organizationsUrl;
-
-        if ($organizationsUrl === null) {
-            goto after_organizationsUrl;
-        }
-
-        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
-
-        $receivedEventsUrl = $object->receivedEventsUrl;
-
-        if ($receivedEventsUrl === null) {
-            goto after_receivedEventsUrl;
-        }
-
-        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
-
-        $reposUrl = $object->reposUrl;
-
-        if ($reposUrl === null) {
-            goto after_reposUrl;
-        }
-
-        after_reposUrl:        $result['repos_url'] = $reposUrl;
-
-        $siteAdmin = $object->siteAdmin;
-
-        if ($siteAdmin === null) {
-            goto after_siteAdmin;
-        }
-
-        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
-
-        $starredUrl = $object->starredUrl;
-
-        if ($starredUrl === null) {
-            goto after_starredUrl;
-        }
-
-        after_starredUrl:        $result['starred_url'] = $starredUrl;
-
-        $subscriptionsUrl = $object->subscriptionsUrl;
-
-        if ($subscriptionsUrl === null) {
-            goto after_subscriptionsUrl;
-        }
-
-        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
-
-        $type = $object->type;
-
-        if ($type === null) {
-            goto after_type;
-        }
-
-        after_type:        $result['type'] = $type;
-
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-
-        after_url:        $result['url'] = $url;
-
-        return $result;
-    }
-
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened(mixed $object): mixed
     {
         assert($object instanceof WebhookMilestoneOpened);
@@ -10193,7 +8084,7 @@ class Milestone implements ObjectMapper
         after_installation:        $result['installation'] = $installation;
 
         $milestone                                   = $object->milestone;
-        $milestone                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened⚡️Milestone($milestone);
+        $milestone                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone3($milestone);
         after_milestone:        $result['milestone'] = $milestone;
 
         $organization = $object->organization;
@@ -10212,249 +8103,6 @@ class Milestone implements ObjectMapper
         $sender                                = $object->sender;
         $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
         after_sender:        $result['sender'] = $sender;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened⚡️Milestone(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone);
-        $result = [];
-
-        $closedAt = $object->closedAt;
-
-        if ($closedAt === null) {
-            goto after_closedAt;
-        }
-
-        after_closedAt:        $result['closed_at'] = $closedAt;
-
-        $closedIssues                                       = $object->closedIssues;
-        after_closedIssues:        $result['closed_issues'] = $closedIssues;
-
-        $createdAt                                    = $object->createdAt;
-        after_createdAt:        $result['created_at'] = $createdAt;
-
-        $creator = $object->creator;
-
-        if ($creator === null) {
-            goto after_creator;
-        }
-
-        $creator                                 = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneCreated⚡️Milestone⚡️Creator($creator);
-        after_creator:        $result['creator'] = $creator;
-
-        $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
-
-        after_description:        $result['description'] = $description;
-
-        $dueOn = $object->dueOn;
-
-        if ($dueOn === null) {
-            goto after_dueOn;
-        }
-
-        after_dueOn:        $result['due_on'] = $dueOn;
-
-        $htmlUrl                                  = $object->htmlUrl;
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $labelsUrl                                    = $object->labelsUrl;
-        after_labelsUrl:        $result['labels_url'] = $labelsUrl;
-
-        $nodeId                                 = $object->nodeId;
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $number                                = $object->number;
-        after_number:        $result['number'] = $number;
-
-        $openIssues                                     = $object->openIssues;
-        after_openIssues:        $result['open_issues'] = $openIssues;
-
-        $state                               = $object->state;
-        after_state:        $result['state'] = $state;
-
-        $title                               = $object->title;
-        after_title:        $result['title'] = $title;
-
-        $updatedAt                                    = $object->updatedAt;
-        after_updatedAt:        $result['updated_at'] = $updatedAt;
-
-        $url                             = $object->url;
-        after_url:        $result['url'] = $url;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMilestoneOpened⚡️Milestone⚡️Creator(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookMilestoneOpened\Milestone\Creator);
-        $result = [];
-
-        $avatarUrl = $object->avatarUrl;
-
-        if ($avatarUrl === null) {
-            goto after_avatarUrl;
-        }
-
-        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
-
-        $deleted = $object->deleted;
-
-        if ($deleted === null) {
-            goto after_deleted;
-        }
-
-        after_deleted:        $result['deleted'] = $deleted;
-
-        $email = $object->email;
-
-        if ($email === null) {
-            goto after_email;
-        }
-
-        after_email:        $result['email'] = $email;
-
-        $eventsUrl = $object->eventsUrl;
-
-        if ($eventsUrl === null) {
-            goto after_eventsUrl;
-        }
-
-        after_eventsUrl:        $result['events_url'] = $eventsUrl;
-
-        $followersUrl = $object->followersUrl;
-
-        if ($followersUrl === null) {
-            goto after_followersUrl;
-        }
-
-        after_followersUrl:        $result['followers_url'] = $followersUrl;
-
-        $followingUrl = $object->followingUrl;
-
-        if ($followingUrl === null) {
-            goto after_followingUrl;
-        }
-
-        after_followingUrl:        $result['following_url'] = $followingUrl;
-
-        $gistsUrl = $object->gistsUrl;
-
-        if ($gistsUrl === null) {
-            goto after_gistsUrl;
-        }
-
-        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
-
-        $gravatarId = $object->gravatarId;
-
-        if ($gravatarId === null) {
-            goto after_gravatarId;
-        }
-
-        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
-
-        $htmlUrl = $object->htmlUrl;
-
-        if ($htmlUrl === null) {
-            goto after_htmlUrl;
-        }
-
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $login                               = $object->login;
-        after_login:        $result['login'] = $login;
-
-        $name = $object->name;
-
-        if ($name === null) {
-            goto after_name;
-        }
-
-        after_name:        $result['name'] = $name;
-
-        $nodeId = $object->nodeId;
-
-        if ($nodeId === null) {
-            goto after_nodeId;
-        }
-
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $organizationsUrl = $object->organizationsUrl;
-
-        if ($organizationsUrl === null) {
-            goto after_organizationsUrl;
-        }
-
-        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
-
-        $receivedEventsUrl = $object->receivedEventsUrl;
-
-        if ($receivedEventsUrl === null) {
-            goto after_receivedEventsUrl;
-        }
-
-        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
-
-        $reposUrl = $object->reposUrl;
-
-        if ($reposUrl === null) {
-            goto after_reposUrl;
-        }
-
-        after_reposUrl:        $result['repos_url'] = $reposUrl;
-
-        $siteAdmin = $object->siteAdmin;
-
-        if ($siteAdmin === null) {
-            goto after_siteAdmin;
-        }
-
-        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
-
-        $starredUrl = $object->starredUrl;
-
-        if ($starredUrl === null) {
-            goto after_starredUrl;
-        }
-
-        after_starredUrl:        $result['starred_url'] = $starredUrl;
-
-        $subscriptionsUrl = $object->subscriptionsUrl;
-
-        if ($subscriptionsUrl === null) {
-            goto after_subscriptionsUrl;
-        }
-
-        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
-
-        $type = $object->type;
-
-        if ($type === null) {
-            goto after_type;
-        }
-
-        after_type:        $result['type'] = $type;
-
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-
-        after_url:        $result['url'] = $url;
 
         return $result;
     }

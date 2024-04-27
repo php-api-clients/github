@@ -5066,7 +5066,7 @@ final readonly class WebhookDeploymentStatusCreated
      */
     public function __construct(public string $action, #[MapFrom('check_run')]
     public Schema\WebhookDeploymentStatusCreated\CheckRun|null $checkRun, public Schema\WebhookDeploymentStatusCreated\Deployment $deployment, #[MapFrom('deployment_status')]
-    public Schema\WebhookDeploymentStatusCreated\DeploymentStatus $deploymentStatus, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhookDeploymentStatusCreated\Workflow|null $workflow, #[MapFrom('workflow_run')]
+    public Schema\WebhookDeploymentStatusCreated\DeploymentStatus $deploymentStatus, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhooksWorkflow|null $workflow, #[MapFrom('workflow_run')]
     public Schema\WebhookDeploymentStatusCreated\WorkflowRun|null $workflowRun,)
     {
     }

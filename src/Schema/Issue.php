@@ -2186,7 +2186,10 @@ final readonly class Issue
                         "permissions",
                         "events"
                     ],
-                    "type": "object",
+                    "type": [
+                        "object",
+                        "null"
+                    ],
                     "properties": {
                         "id": {
                             "type": "integer",

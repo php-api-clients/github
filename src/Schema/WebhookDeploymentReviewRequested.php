@@ -3710,7 +3710,7 @@ final readonly class WebhookDeploymentReviewRequested
     when the event occurs from activity in a repository.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public string $environment, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks $organization, public Schema\RepositoryWebhooks $repository, public Schema\WebhookDeploymentReviewRequested\Requestor|null $requestor, public array $reviewers, public Schema\SimpleUserWebhooks $sender, public string $since, #[MapFrom('workflow_job_run')]
+    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public string $environment, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks $organization, public Schema\RepositoryWebhooks $repository, public Schema\WebhooksUser|null $requestor, public array $reviewers, public Schema\SimpleUserWebhooks $sender, public string $since, #[MapFrom('workflow_job_run')]
     public Schema\WebhookDeploymentReviewRequested\WorkflowJobRun $workflowJobRun, #[MapFrom('workflow_run')]
     public Schema\WebhookDeploymentReviewRequested\WorkflowRun|null $workflowRun,)
     {

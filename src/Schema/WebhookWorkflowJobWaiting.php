@@ -2392,7 +2392,10 @@ final readonly class WebhookWorkflowJobWaiting
                                 "permissions",
                                 "events"
                             ],
-                            "type": "object",
+                            "type": [
+                                "object",
+                                "null"
+                            ],
                             "properties": {
                                 "id": {
                                     "type": "integer",

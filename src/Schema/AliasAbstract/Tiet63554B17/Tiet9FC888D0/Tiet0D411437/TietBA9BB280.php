@@ -72,8 +72,8 @@ abstract readonly class TietBA9BB280
     }
 }';
 
-    public function __construct(public Schema\WebhookPullRequestReviewCommentCreated\Comment\Links\Html $html, #[MapFrom('pull_request')]
-    public Schema\WebhookPullRequestReviewCommentCreated\Comment\Links\PullRequest $pullRequest, public Schema\WebhookPullRequestReviewCommentCreated\Comment\Links\Self_ $self,)
+    public function __construct(public Schema\WebhooksReviewComment\Links\Html $html, #[MapFrom('pull_request')]
+    public Schema\WebhooksReviewComment\Links\PullRequest $pullRequest, public Schema\WebhooksReviewComment\Links\Self_ $self,)
     {
     }
 }

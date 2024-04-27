@@ -3812,7 +3812,7 @@ final readonly class WebhookWorkflowRunCompleted
     when the event occurs from activity in a repository.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhookWorkflowRunCompleted\Workflow|null $workflow, #[MapFrom('workflow_run')]
+    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhooksWorkflow|null $workflow, #[MapFrom('workflow_run')]
     public Schema\WebhookWorkflowRunCompleted\WorkflowRun $workflowRun,)
     {
     }

@@ -70,7 +70,7 @@ abstract readonly class TietD15AFC5C
 }';
 
     public function __construct(#[MapFrom('first_patched_version')]
-    public Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory\Vulnerabilities\FirstPatchedVersion|null $firstPatchedVersion, public Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory\Vulnerabilities\Package $package, public string $severity, #[MapFrom('vulnerable_version_range')]
+    public Schema\WebhooksSecurityAdvisory\Vulnerabilities\FirstPatchedVersion|null $firstPatchedVersion, public Schema\WebhooksSecurityAdvisory\Vulnerabilities\Package $package, public string $severity, #[MapFrom('vulnerable_version_range')]
     public string $vulnerableVersionRange,)
     {
     }

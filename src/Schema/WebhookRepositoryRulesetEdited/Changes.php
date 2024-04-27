@@ -652,6 +652,128 @@ final readonly class Changes
                                 "description": "Parameters to be used for the tag_name_pattern rule"
                             },
                             {
+                                "title": "file_path_restriction",
+                                "required": [
+                                    "type"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "enum": [
+                                            "file_path_restriction"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "parameters": {
+                                        "required": [
+                                            "restricted_file_paths"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "restricted_file_paths": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "description": "The file paths that are restricted from being pushed to the commit graph."
+                                            }
+                                        }
+                                    }
+                                },
+                                "description": "Note: file_path_restriction is in beta and subject to change.\\n\\nPrevent commits that include changes in specified file paths from being pushed to the commit graph."
+                            },
+                            {
+                                "title": "max_file_path_length",
+                                "required": [
+                                    "type"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "enum": [
+                                            "max_file_path_length"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "parameters": {
+                                        "required": [
+                                            "max_file_path_length"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "max_file_path_length": {
+                                                "maximum": 256,
+                                                "minimum": 1,
+                                                "type": "integer",
+                                                "description": "The maximum amount of characters allowed in file paths"
+                                            }
+                                        }
+                                    }
+                                },
+                                "description": "Note: max_file_path_length is in beta and subject to change.\\n\\nPrevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+                            },
+                            {
+                                "title": "file_extension_restriction",
+                                "required": [
+                                    "type"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "enum": [
+                                            "file_extension_restriction"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "parameters": {
+                                        "required": [
+                                            "restricted_file_extensions"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "restricted_file_extensions": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "description": "The file extensions that are restricted from being pushed to the commit graph."
+                                            }
+                                        }
+                                    }
+                                },
+                                "description": "Note: file_extension_restriction is in beta and subject to change.\\n\\nPrevent commits that include files with specified file extensions from being pushed to the commit graph."
+                            },
+                            {
+                                "title": "max_file_size",
+                                "required": [
+                                    "type"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "enum": [
+                                            "max_file_size"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "parameters": {
+                                        "required": [
+                                            "max_file_size"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "max_file_size": {
+                                                "maximum": 100,
+                                                "minimum": 1,
+                                                "type": "integer",
+                                                "description": "The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS)."
+                                            }
+                                        }
+                                    }
+                                },
+                                "description": "Note: max_file_size is in beta and subject to change.\\n\\nPrevent commits that exceed a specified file size limit from being pushed to the commit."
+                            },
+                            {
                                 "title": "workflows",
                                 "required": [
                                     "type"
@@ -1190,6 +1312,128 @@ final readonly class Changes
                                     }
                                 },
                                 "description": "Parameters to be used for the tag_name_pattern rule"
+                            },
+                            {
+                                "title": "file_path_restriction",
+                                "required": [
+                                    "type"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "enum": [
+                                            "file_path_restriction"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "parameters": {
+                                        "required": [
+                                            "restricted_file_paths"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "restricted_file_paths": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "description": "The file paths that are restricted from being pushed to the commit graph."
+                                            }
+                                        }
+                                    }
+                                },
+                                "description": "Note: file_path_restriction is in beta and subject to change.\\n\\nPrevent commits that include changes in specified file paths from being pushed to the commit graph."
+                            },
+                            {
+                                "title": "max_file_path_length",
+                                "required": [
+                                    "type"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "enum": [
+                                            "max_file_path_length"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "parameters": {
+                                        "required": [
+                                            "max_file_path_length"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "max_file_path_length": {
+                                                "maximum": 256,
+                                                "minimum": 1,
+                                                "type": "integer",
+                                                "description": "The maximum amount of characters allowed in file paths"
+                                            }
+                                        }
+                                    }
+                                },
+                                "description": "Note: max_file_path_length is in beta and subject to change.\\n\\nPrevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+                            },
+                            {
+                                "title": "file_extension_restriction",
+                                "required": [
+                                    "type"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "enum": [
+                                            "file_extension_restriction"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "parameters": {
+                                        "required": [
+                                            "restricted_file_extensions"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "restricted_file_extensions": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "description": "The file extensions that are restricted from being pushed to the commit graph."
+                                            }
+                                        }
+                                    }
+                                },
+                                "description": "Note: file_extension_restriction is in beta and subject to change.\\n\\nPrevent commits that include files with specified file extensions from being pushed to the commit graph."
+                            },
+                            {
+                                "title": "max_file_size",
+                                "required": [
+                                    "type"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "enum": [
+                                            "max_file_size"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "parameters": {
+                                        "required": [
+                                            "max_file_size"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "max_file_size": {
+                                                "maximum": 100,
+                                                "minimum": 1,
+                                                "type": "integer",
+                                                "description": "The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS)."
+                                            }
+                                        }
+                                    }
+                                },
+                                "description": "Note: max_file_size is in beta and subject to change.\\n\\nPrevent commits that exceed a specified file size limit from being pushed to the commit."
                             },
                             {
                                 "title": "workflows",
@@ -1733,6 +1977,128 @@ final readonly class Changes
                                             }
                                         },
                                         "description": "Parameters to be used for the tag_name_pattern rule"
+                                    },
+                                    {
+                                        "title": "file_path_restriction",
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "type": {
+                                                "enum": [
+                                                    "file_path_restriction"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "parameters": {
+                                                "required": [
+                                                    "restricted_file_paths"
+                                                ],
+                                                "type": "object",
+                                                "properties": {
+                                                    "restricted_file_paths": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "description": "The file paths that are restricted from being pushed to the commit graph."
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "description": "Note: file_path_restriction is in beta and subject to change.\\n\\nPrevent commits that include changes in specified file paths from being pushed to the commit graph."
+                                    },
+                                    {
+                                        "title": "max_file_path_length",
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "type": {
+                                                "enum": [
+                                                    "max_file_path_length"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "parameters": {
+                                                "required": [
+                                                    "max_file_path_length"
+                                                ],
+                                                "type": "object",
+                                                "properties": {
+                                                    "max_file_path_length": {
+                                                        "maximum": 256,
+                                                        "minimum": 1,
+                                                        "type": "integer",
+                                                        "description": "The maximum amount of characters allowed in file paths"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "description": "Note: max_file_path_length is in beta and subject to change.\\n\\nPrevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+                                    },
+                                    {
+                                        "title": "file_extension_restriction",
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "type": {
+                                                "enum": [
+                                                    "file_extension_restriction"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "parameters": {
+                                                "required": [
+                                                    "restricted_file_extensions"
+                                                ],
+                                                "type": "object",
+                                                "properties": {
+                                                    "restricted_file_extensions": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "description": "The file extensions that are restricted from being pushed to the commit graph."
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "description": "Note: file_extension_restriction is in beta and subject to change.\\n\\nPrevent commits that include files with specified file extensions from being pushed to the commit graph."
+                                    },
+                                    {
+                                        "title": "max_file_size",
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "type": {
+                                                "enum": [
+                                                    "max_file_size"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "parameters": {
+                                                "required": [
+                                                    "max_file_size"
+                                                ],
+                                                "type": "object",
+                                                "properties": {
+                                                    "max_file_size": {
+                                                        "maximum": 100,
+                                                        "minimum": 1,
+                                                        "type": "integer",
+                                                        "description": "The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS)."
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "description": "Note: max_file_size is in beta and subject to change.\\n\\nPrevent commits that exceed a specified file size limit from being pushed to the commit."
                                     },
                                     {
                                         "title": "workflows",

@@ -16,8 +16,8 @@ use ApiClients\Client\GitHub\Schema\SimpleInstallation;
 use ApiClients\Client\GitHub\Schema\SimpleUser;
 use ApiClients\Client\GitHub\Schema\SimpleUserWebhooks;
 use ApiClients\Client\GitHub\Schema\WebhookDeployKeyCreated;
-use ApiClients\Client\GitHub\Schema\WebhookDeployKeyCreated\Key;
 use ApiClients\Client\GitHub\Schema\WebhookDeployKeyDeleted;
+use ApiClients\Client\GitHub\Schema\WebhooksDeployKey;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems;
@@ -56,7 +56,7 @@ class DeployKey implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\WebhookDeployKeyCreated' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyCreated($payload),
                 'ApiClients\Client\GitHub\Schema\EnterpriseWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookDeployKeyCreated\Key' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyCreated⚡️Key($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksDeployKey' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksDeployKey($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($payload),
@@ -67,7 +67,6 @@ class DeployKey implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookDeployKeyDeleted' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyDeleted($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookDeployKeyDeleted\Key' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyDeleted⚡️Key($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\CustomProperties' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️CustomProperties($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -139,7 +138,7 @@ class DeployKey implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'key';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyCreated⚡️Key($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksDeployKey($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -393,7 +392,7 @@ class DeployKey implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyCreated⚡️Key(array $payload): Key
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksDeployKey(array $payload): WebhooksDeployKey
     {
         $properties    = [];
         $missingFields = [];
@@ -497,17 +496,17 @@ class DeployKey implements ObjectMapper
 
             after_verified:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeployKeyCreated\Key', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksDeployKey', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(Key::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(WebhooksDeployKey::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new Key(...$properties);
+            return new WebhooksDeployKey(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeployKeyCreated\Key', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksDeployKey', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -3845,7 +3844,7 @@ class DeployKey implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'key';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyDeleted⚡️Key($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksDeployKey($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -3929,124 +3928,6 @@ class DeployKey implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyDeleted⚡️Key(array $payload): \ApiClients\Client\GitHub\Schema\WebhookDeployKeyDeleted\Key
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['added_by'] ?? null;
-
-            if ($value === null) {
-                $properties['addedBy'] = null;
-                goto after_addedBy;
-            }
-
-            $properties['addedBy'] = $value;
-
-            after_addedBy:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['key'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'key';
-                goto after_key;
-            }
-
-            $properties['key'] = $value;
-
-            after_key:
-
-            $value = $payload['last_used'] ?? null;
-
-            if ($value === null) {
-                $properties['lastUsed'] = null;
-                goto after_lastUsed;
-            }
-
-            $properties['lastUsed'] = $value;
-
-            after_lastUsed:
-
-            $value = $payload['read_only'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'read_only';
-                goto after_readOnly;
-            }
-
-            $properties['readOnly'] = $value;
-
-            after_readOnly:
-
-            $value = $payload['title'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'title';
-                goto after_title;
-            }
-
-            $properties['title'] = $value;
-
-            after_title:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-
-            $value = $payload['verified'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'verified';
-                goto after_verified;
-            }
-
-            $properties['verified'] = $value;
-
-            after_verified:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeployKeyDeleted\Key', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookDeployKeyDeleted\Key::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookDeployKeyDeleted\Key(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookDeployKeyDeleted\Key', $exception, stack: $this->hydrationStack);
-        }
-    }
-
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️CustomProperties(array $payload): CustomProperties
     {
         $properties    = [];
@@ -4101,7 +3982,7 @@ class DeployKey implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookDeployKeyCreated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyCreated($object),
                 'ApiClients\Client\GitHub\Schema\EnterpriseWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
-                'ApiClients\Client\GitHub\Schema\WebhookDeployKeyCreated\Key' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyCreated⚡️Key($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksDeployKey' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksDeployKey($object),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($object),
@@ -4112,7 +3993,6 @@ class DeployKey implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeployKeyDeleted' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyDeleted($object),
-                'ApiClients\Client\GitHub\Schema\WebhookDeployKeyDeleted\Key' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyDeleted⚡️Key($object),
                 default => throw new LogicException('No serialization defined for $className'),
             };
         } catch (Throwable $exception) {
@@ -4202,7 +4082,7 @@ class DeployKey implements ObjectMapper
         after_installation:        $result['installation'] = $installation;
 
         $key                             = $object->key;
-        $key                             = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyCreated⚡️Key($key);
+        $key                             = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksDeployKey($key);
         after_key:        $result['key'] = $key;
 
         $organization = $object->organization;
@@ -4297,9 +4177,9 @@ class DeployKey implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyCreated⚡️Key(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksDeployKey(mixed $object): mixed
     {
-        assert($object instanceof Key);
+        assert($object instanceof WebhooksDeployKey);
         $result = [];
 
         $addedBy = $object->addedBy;
@@ -6083,7 +5963,7 @@ class DeployKey implements ObjectMapper
         after_installation:        $result['installation'] = $installation;
 
         $key                             = $object->key;
-        $key                             = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyDeleted⚡️Key($key);
+        $key                             = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksDeployKey($key);
         after_key:        $result['key'] = $key;
 
         $organization = $object->organization;
@@ -6102,51 +5982,6 @@ class DeployKey implements ObjectMapper
         $sender                                = $object->sender;
         $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
         after_sender:        $result['sender'] = $sender;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeployKeyDeleted⚡️Key(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookDeployKeyDeleted\Key);
-        $result = [];
-
-        $addedBy = $object->addedBy;
-
-        if ($addedBy === null) {
-            goto after_addedBy;
-        }
-
-        after_addedBy:        $result['added_by'] = $addedBy;
-
-        $createdAt                                    = $object->createdAt;
-        after_createdAt:        $result['created_at'] = $createdAt;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $key                             = $object->key;
-        after_key:        $result['key'] = $key;
-
-        $lastUsed = $object->lastUsed;
-
-        if ($lastUsed === null) {
-            goto after_lastUsed;
-        }
-
-        after_lastUsed:        $result['last_used'] = $lastUsed;
-
-        $readOnly                                   = $object->readOnly;
-        after_readOnly:        $result['read_only'] = $readOnly;
-
-        $title                               = $object->title;
-        after_title:        $result['title'] = $title;
-
-        $url                             = $object->url;
-        after_url:        $result['url'] = $url;
-
-        $verified                                  = $object->verified;
-        after_verified:        $result['verified'] = $verified;
 
         return $result;
     }

@@ -424,7 +424,10 @@ final readonly class DismissalRestrictions
                     "permissions",
                     "events"
                 ],
-                "type": "object",
+                "type": [
+                    "object",
+                    "null"
+                ],
                 "properties": {
                     "id": {
                         "type": "integer",

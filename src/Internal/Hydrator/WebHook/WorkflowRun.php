@@ -15,8 +15,8 @@ use ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Owner;
 use ApiClients\Client\GitHub\Schema\SimpleInstallation;
 use ApiClients\Client\GitHub\Schema\SimpleUser;
 use ApiClients\Client\GitHub\Schema\SimpleUserWebhooks;
+use ApiClients\Client\GitHub\Schema\WebhooksWorkflow;
 use ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted;
-use ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\Workflow;
 use ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun\Actor;
 use ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun\HeadCommit;
 use ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun\HeadCommit\Author;
@@ -73,7 +73,7 @@ class WorkflowRun implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\Workflow' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️Workflow($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksWorkflow' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflow($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️WorkflowRun($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun\Actor' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️WorkflowRun⚡️Actor($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun\HeadCommit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️WorkflowRun⚡️HeadCommit($payload),
@@ -85,7 +85,6 @@ class WorkflowRun implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun\Repository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️WorkflowRun⚡️Repository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun\TriggeringActor' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️WorkflowRun⚡️TriggeringActor($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\Workflow' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️Workflow($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\WorkflowRun' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️WorkflowRun($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\WorkflowRun\Actor' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️WorkflowRun⚡️Actor($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\WorkflowRun\HeadCommit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️WorkflowRun⚡️HeadCommit($payload),
@@ -97,7 +96,6 @@ class WorkflowRun implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\WorkflowRun\Repository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️WorkflowRun⚡️Repository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\WorkflowRun\TriggeringActor' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️WorkflowRun⚡️TriggeringActor($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\Workflow' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️Workflow($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\WorkflowRun' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️WorkflowRun($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\WorkflowRun\Actor' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️WorkflowRun⚡️Actor($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\WorkflowRun\HeadCommit' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️WorkflowRun⚡️HeadCommit($payload),
@@ -241,7 +239,7 @@ class WorkflowRun implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'workflow';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️Workflow($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflow($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -3723,7 +3721,7 @@ class WorkflowRun implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️Workflow(array $payload): Workflow
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflow(array $payload): WebhooksWorkflow
     {
         $properties    = [];
         $missingFields = [];
@@ -3838,17 +3836,17 @@ class WorkflowRun implements ObjectMapper
 
             after_url:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\Workflow', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksWorkflow', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(Workflow::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(WebhooksWorkflow::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new Workflow(...$properties);
+            return new WebhooksWorkflow(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\Workflow', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksWorkflow', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -6724,7 +6722,7 @@ class WorkflowRun implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'workflow';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️Workflow($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflow($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6765,135 +6763,6 @@ class WorkflowRun implements ObjectMapper
             return new WebhookWorkflowRunInProgress(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️Workflow(array $payload): \ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\Workflow
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['badge_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'badge_url';
-                goto after_badgeUrl;
-            }
-
-            $properties['badgeUrl'] = $value;
-
-            after_badgeUrl:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['path'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'path';
-                goto after_path;
-            }
-
-            $properties['path'] = $value;
-
-            after_path:
-
-            $value = $payload['state'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'state';
-                goto after_state;
-            }
-
-            $properties['state'] = $value;
-
-            after_state:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\Workflow', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\Workflow::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\Workflow(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\Workflow', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -9758,7 +9627,7 @@ class WorkflowRun implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'workflow';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️Workflow($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflow($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9799,135 +9668,6 @@ class WorkflowRun implements ObjectMapper
             return new WebhookWorkflowRunRequested(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️Workflow(array $payload): \ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\Workflow
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['badge_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'badge_url';
-                goto after_badgeUrl;
-            }
-
-            $properties['badgeUrl'] = $value;
-
-            after_badgeUrl:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['path'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'path';
-                goto after_path;
-            }
-
-            $properties['path'] = $value;
-
-            after_path:
-
-            $value = $payload['state'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'state';
-                goto after_state;
-            }
-
-            $properties['state'] = $value;
-
-            after_state:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\Workflow', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\Workflow::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\Workflow(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\Workflow', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -12866,7 +12606,7 @@ class WorkflowRun implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($object),
-                'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\Workflow' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️Workflow($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksWorkflow' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflow($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️WorkflowRun($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun\Actor' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️WorkflowRun⚡️Actor($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun\HeadCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️WorkflowRun⚡️HeadCommit($object),
@@ -12878,7 +12618,6 @@ class WorkflowRun implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun\Repository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️WorkflowRun⚡️Repository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunCompleted\WorkflowRun\TriggeringActor' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️WorkflowRun⚡️TriggeringActor($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress($object),
-                'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\Workflow' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️Workflow($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\WorkflowRun' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️WorkflowRun($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\WorkflowRun\Actor' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️WorkflowRun⚡️Actor($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\WorkflowRun\HeadCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️WorkflowRun⚡️HeadCommit($object),
@@ -12890,7 +12629,6 @@ class WorkflowRun implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\WorkflowRun\Repository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️WorkflowRun⚡️Repository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\WorkflowRun\TriggeringActor' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️WorkflowRun⚡️TriggeringActor($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested($object),
-                'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\Workflow' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️Workflow($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\WorkflowRun' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️WorkflowRun($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\WorkflowRun\Actor' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️WorkflowRun⚡️Actor($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\WorkflowRun\HeadCommit' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️WorkflowRun⚡️HeadCommit($object),
@@ -13012,7 +12750,7 @@ class WorkflowRun implements ObjectMapper
             goto after_workflow;
         }
 
-        $workflow                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️Workflow($workflow);
+        $workflow                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflow($workflow);
         after_workflow:        $result['workflow'] = $workflow;
 
         $workflowRun                                      = $object->workflowRun;
@@ -14808,9 +14546,9 @@ class WorkflowRun implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunCompleted⚡️Workflow(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflow(mixed $object): mixed
     {
-        assert($object instanceof Workflow);
+        assert($object instanceof WebhooksWorkflow);
         $result = [];
 
         $badgeUrl                                   = $object->badgeUrl;
@@ -16143,50 +15881,12 @@ class WorkflowRun implements ObjectMapper
             goto after_workflow;
         }
 
-        $workflow                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️Workflow($workflow);
+        $workflow                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflow($workflow);
         after_workflow:        $result['workflow'] = $workflow;
 
         $workflowRun                                      = $object->workflowRun;
         $workflowRun                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️WorkflowRun($workflowRun);
         after_workflowRun:        $result['workflow_run'] = $workflowRun;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunInProgress⚡️Workflow(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookWorkflowRunInProgress\Workflow);
-        $result = [];
-
-        $badgeUrl                                   = $object->badgeUrl;
-        after_badgeUrl:        $result['badge_url'] = $badgeUrl;
-
-        $createdAt                                    = $object->createdAt;
-        after_createdAt:        $result['created_at'] = $createdAt;
-
-        $htmlUrl                                  = $object->htmlUrl;
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $nodeId                                 = $object->nodeId;
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $path                              = $object->path;
-        after_path:        $result['path'] = $path;
-
-        $state                               = $object->state;
-        after_state:        $result['state'] = $state;
-
-        $updatedAt                                    = $object->updatedAt;
-        after_updatedAt:        $result['updated_at'] = $updatedAt;
-
-        $url                             = $object->url;
-        after_url:        $result['url'] = $url;
 
         return $result;
     }
@@ -17485,50 +17185,12 @@ class WorkflowRun implements ObjectMapper
             goto after_workflow;
         }
 
-        $workflow                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️Workflow($workflow);
+        $workflow                                  = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksWorkflow($workflow);
         after_workflow:        $result['workflow'] = $workflow;
 
         $workflowRun                                      = $object->workflowRun;
         $workflowRun                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️WorkflowRun($workflowRun);
         after_workflowRun:        $result['workflow_run'] = $workflowRun;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️Workflow(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\Workflow);
-        $result = [];
-
-        $badgeUrl                                   = $object->badgeUrl;
-        after_badgeUrl:        $result['badge_url'] = $badgeUrl;
-
-        $createdAt                                    = $object->createdAt;
-        after_createdAt:        $result['created_at'] = $createdAt;
-
-        $htmlUrl                                  = $object->htmlUrl;
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $nodeId                                 = $object->nodeId;
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $path                              = $object->path;
-        after_path:        $result['path'] = $path;
-
-        $state                               = $object->state;
-        after_state:        $result['state'] = $state;
-
-        $updatedAt                                    = $object->updatedAt;
-        after_updatedAt:        $result['updated_at'] = $updatedAt;
-
-        $url                             = $object->url;
-        after_url:        $result['url'] = $url;
 
         return $result;
     }

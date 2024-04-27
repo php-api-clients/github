@@ -227,7 +227,7 @@ abstract readonly class TietBA3333E0
     public string $createdAt, #[MapFrom('download_count')]
     public int $downloadCount, public int $id, public string|null $label, public string $name, #[MapFrom('node_id')]
     public string $nodeId, public int $size, public string $state, #[MapFrom('updated_at')]
-    public string $updatedAt, public Schema\WebhookReleasePrereleased\Release\Assets\Uploader|null $uploader, public string $url,)
+    public string $updatedAt, public Schema\WebhooksRelease1\Assets\Uploader|null $uploader, public string $url,)
     {
     }
 }

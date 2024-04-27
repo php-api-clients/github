@@ -2374,7 +2374,10 @@ final readonly class TimelineCrossReferencedEvent
                                         "permissions",
                                         "events"
                                     ],
-                                    "type": "object",
+                                    "type": [
+                                        "object",
+                                        "null"
+                                    ],
                                     "properties": {
                                         "id": {
                                             "type": "integer",

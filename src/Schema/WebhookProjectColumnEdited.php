@@ -2312,7 +2312,7 @@ final readonly class WebhookProjectColumnEdited
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
     public function __construct(public string $action, public Schema\WebhookProjectColumnEdited\Changes $changes, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('project_column')]
-    public Schema\WebhookProjectColumnEdited\ProjectColumn $projectColumn, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks|null $sender,)
+    public Schema\WebhooksProjectColumn $projectColumn, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks|null $sender,)
     {
     }
 }

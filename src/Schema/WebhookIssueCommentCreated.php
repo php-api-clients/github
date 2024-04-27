@@ -102,7 +102,10 @@ final readonly class WebhookIssueCommentCreated
                                 "permissions",
                                 "events"
                             ],
-                            "type": "object",
+                            "type": [
+                                "object",
+                                "null"
+                            ],
                             "properties": {
                                 "id": {
                                     "type": "integer",

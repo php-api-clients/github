@@ -6197,7 +6197,7 @@ final readonly class WebhookPullRequestReviewCommentEdited
     when the event occurs from activity in a repository.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\WebhookPullRequestReviewCommentEdited\Changes $changes, public Schema\WebhookPullRequestReviewCommentEdited\Comment $comment, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('pull_request')]
+    public function __construct(public string $action, public Schema\WebhooksChanges $changes, public Schema\WebhooksReviewComment $comment, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('pull_request')]
     public Schema\WebhookPullRequestReviewCommentEdited\PullRequest $pullRequest, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender,)
     {
     }

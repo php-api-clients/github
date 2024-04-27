@@ -2531,7 +2531,7 @@ final readonly class WebhookMarketplacePurchasePendingChange
      */
     public function __construct(public string $action, #[MapFrom('effective_date')]
     public string $effectiveDate, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, #[MapFrom('marketplace_purchase')]
-    public Schema\WebhookMarketplacePurchasePendingChange\MarketplacePurchase $marketplacePurchase, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('previous_marketplace_purchase')]
+    public Schema\WebhooksMarketplacePurchase $marketplacePurchase, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('previous_marketplace_purchase')]
     public Schema\WebhookMarketplacePurchasePendingChange\PreviousMarketplacePurchase|null $previousMarketplacePurchase, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks $sender,)
     {
     }

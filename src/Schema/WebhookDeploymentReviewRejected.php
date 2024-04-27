@@ -3724,8 +3724,8 @@ final readonly class WebhookDeploymentReviewRejected
     when the event occurs from activity in a repository.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\WebhookDeploymentReviewRejected\Approver|null $approver, public string|null $comment, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks $organization, public Schema\RepositoryWebhooks $repository, public array|null $reviewers, public Schema\SimpleUserWebhooks $sender, public string $since, #[MapFrom('workflow_job_run')]
-    public Schema\WebhookDeploymentReviewRejected\WorkflowJobRun|null $workflowJobRun, #[MapFrom('workflow_job_runs')]
+    public function __construct(public string $action, public Schema\WebhooksApprover|null $approver, public string|null $comment, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks $organization, public Schema\RepositoryWebhooks $repository, public array|null $reviewers, public Schema\SimpleUserWebhooks $sender, public string $since, #[MapFrom('workflow_job_run')]
+    public Schema\WebhooksWorkflowJobRun|null $workflowJobRun, #[MapFrom('workflow_job_runs')]
     public array|null $workflowJobRuns, #[MapFrom('workflow_run')]
     public Schema\WebhookDeploymentReviewRejected\WorkflowRun|null $workflowRun,)
     {

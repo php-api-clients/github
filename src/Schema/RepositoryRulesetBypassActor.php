@@ -11,14 +11,16 @@ final readonly class RepositoryRulesetBypassActor
     public const SCHEMA_JSON         = '{
     "title": "Repository Ruleset Bypass Actor",
     "required": [
-        "actor_id",
         "actor_type",
         "bypass_mode"
     ],
     "type": "object",
     "properties": {
         "actor_id": {
-            "type": "integer",
+            "type": [
+                "integer",
+                "null"
+            ],
             "description": "The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`."
         },
         "actor_type": {
@@ -56,7 +58,7 @@ final readonly class RepositoryRulesetBypassActor
      * bypassMode: When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests.
      */
     public function __construct(#[MapFrom('actor_id')]
-    public int $actorId, #[MapFrom('actor_type')]
+    public int|null $actorId, #[MapFrom('actor_type')]
     public string $actorType, #[MapFrom('bypass_mode')]
     public string $bypassMode,)
     {

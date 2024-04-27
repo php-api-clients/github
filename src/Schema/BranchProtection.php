@@ -507,7 +507,10 @@ final readonly class BranchProtection
                                     "permissions",
                                     "events"
                                 ],
-                                "type": "object",
+                                "type": [
+                                    "object",
+                                    "null"
+                                ],
                                 "properties": {
                                     "id": {
                                         "type": "integer",
@@ -1238,7 +1241,10 @@ final readonly class BranchProtection
                                     "permissions",
                                     "events"
                                 ],
-                                "type": "object",
+                                "type": [
+                                    "object",
+                                    "null"
+                                ],
                                 "properties": {
                                     "id": {
                                         "type": "integer",

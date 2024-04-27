@@ -183,7 +183,7 @@ abstract readonly class TietC3D76EBB
     public function __construct(#[MapFrom('commit_message')]
     public string|null $commitMessage, #[MapFrom('commit_title')]
     public string|null $commitTitle, #[MapFrom('enabled_by')]
-    public Schema\WebhookPullRequestAssigned\PullRequest\AutoMerge\EnabledBy|null $enabledBy, #[MapFrom('merge_method')]
+    public Schema\WebhooksPullRequest5\AutoMerge\EnabledBy|null $enabledBy, #[MapFrom('merge_method')]
     public string $mergeMethod,)
     {
     }

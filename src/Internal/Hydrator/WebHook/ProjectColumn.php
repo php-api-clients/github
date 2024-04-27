@@ -21,6 +21,7 @@ use ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited;
 use ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\Changes;
 use ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\Changes\Name;
 use ApiClients\Client\GitHub\Schema\WebhookProjectColumnMoved;
+use ApiClients\Client\GitHub\Schema\WebhooksProjectColumn;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems;
@@ -60,7 +61,7 @@ class ProjectColumn implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\EnterpriseWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookProjectColumnCreated\ProjectColumn' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnCreated⚡️ProjectColumn($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksProjectColumn' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksProjectColumn($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
@@ -70,13 +71,10 @@ class ProjectColumn implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectColumnDeleted' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnDeleted($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookProjectColumnDeleted\ProjectColumn' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnDeleted⚡️ProjectColumn($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnEdited($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\Changes' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnEdited⚡️Changes($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\Changes\Name' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnEdited⚡️Changes⚡️Name($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\ProjectColumn' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnEdited⚡️ProjectColumn($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectColumnMoved' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnMoved($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookProjectColumnMoved\ProjectColumn' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnMoved⚡️ProjectColumn($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\CustomProperties' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️CustomProperties($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -168,7 +166,7 @@ class ProjectColumn implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'projectColumn';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnCreated⚡️ProjectColumn($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksProjectColumn($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -553,7 +551,7 @@ class ProjectColumn implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnCreated⚡️ProjectColumn(array $payload): \ApiClients\Client\GitHub\Schema\WebhookProjectColumnCreated\ProjectColumn
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksProjectColumn(array $payload): WebhooksProjectColumn
     {
         $properties    = [];
         $missingFields = [];
@@ -657,17 +655,17 @@ class ProjectColumn implements ObjectMapper
 
             after_url:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectColumnCreated\ProjectColumn', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksProjectColumn', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookProjectColumnCreated\ProjectColumn::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(WebhooksProjectColumn::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookProjectColumnCreated\ProjectColumn(...$properties);
+            return new WebhooksProjectColumn(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectColumnCreated\ProjectColumn', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksProjectColumn', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -3874,7 +3872,7 @@ class ProjectColumn implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'projectColumn';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnDeleted⚡️ProjectColumn($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksProjectColumn($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -3935,124 +3933,6 @@ class ProjectColumn implements ObjectMapper
             return new WebhookProjectColumnDeleted(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectColumnDeleted', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnDeleted⚡️ProjectColumn(array $payload): \ApiClients\Client\GitHub\Schema\WebhookProjectColumnDeleted\ProjectColumn
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['after_id'] ?? null;
-
-            if ($value === null) {
-                $properties['afterId'] = null;
-                goto after_afterId;
-            }
-
-            $properties['afterId'] = $value;
-
-            after_afterId:
-
-            $value = $payload['cards_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'cards_url';
-                goto after_cardsUrl;
-            }
-
-            $properties['cardsUrl'] = $value;
-
-            after_cardsUrl:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['project_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'project_url';
-                goto after_projectUrl;
-            }
-
-            $properties['projectUrl'] = $value;
-
-            after_projectUrl:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectColumnDeleted\ProjectColumn', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookProjectColumnDeleted\ProjectColumn::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookProjectColumnDeleted\ProjectColumn(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectColumnDeleted\ProjectColumn', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -4162,7 +4042,7 @@ class ProjectColumn implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'projectColumn';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnEdited⚡️ProjectColumn($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksProjectColumn($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4295,124 +4175,6 @@ class ProjectColumn implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnEdited⚡️ProjectColumn(array $payload): \ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\ProjectColumn
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['after_id'] ?? null;
-
-            if ($value === null) {
-                $properties['afterId'] = null;
-                goto after_afterId;
-            }
-
-            $properties['afterId'] = $value;
-
-            after_afterId:
-
-            $value = $payload['cards_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'cards_url';
-                goto after_cardsUrl;
-            }
-
-            $properties['cardsUrl'] = $value;
-
-            after_cardsUrl:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['project_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'project_url';
-                goto after_projectUrl;
-            }
-
-            $properties['projectUrl'] = $value;
-
-            after_projectUrl:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\ProjectColumn', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\ProjectColumn::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\ProjectColumn(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\ProjectColumn', $exception, stack: $this->hydrationStack);
-        }
-    }
-
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnMoved(array $payload): WebhookProjectColumnMoved
     {
         $properties    = [];
@@ -4499,7 +4261,7 @@ class ProjectColumn implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'projectColumn';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnMoved⚡️ProjectColumn($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksProjectColumn($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4563,124 +4325,6 @@ class ProjectColumn implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnMoved⚡️ProjectColumn(array $payload): \ApiClients\Client\GitHub\Schema\WebhookProjectColumnMoved\ProjectColumn
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['after_id'] ?? null;
-
-            if ($value === null) {
-                $properties['afterId'] = null;
-                goto after_afterId;
-            }
-
-            $properties['afterId'] = $value;
-
-            after_afterId:
-
-            $value = $payload['cards_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'cards_url';
-                goto after_cardsUrl;
-            }
-
-            $properties['cardsUrl'] = $value;
-
-            after_cardsUrl:
-
-            $value = $payload['created_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'created_at';
-                goto after_createdAt;
-            }
-
-            $properties['createdAt'] = $value;
-
-            after_createdAt:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['project_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'project_url';
-                goto after_projectUrl;
-            }
-
-            $properties['projectUrl'] = $value;
-
-            after_projectUrl:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectColumnMoved\ProjectColumn', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookProjectColumnMoved\ProjectColumn::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookProjectColumnMoved\ProjectColumn(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookProjectColumnMoved\ProjectColumn', $exception, stack: $this->hydrationStack);
-        }
-    }
-
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️CustomProperties(array $payload): CustomProperties
     {
         $properties    = [];
@@ -4736,7 +4380,7 @@ class ProjectColumn implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\EnterpriseWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($object),
-                'ApiClients\Client\GitHub\Schema\WebhookProjectColumnCreated\ProjectColumn' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnCreated⚡️ProjectColumn($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksProjectColumn' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksProjectColumn($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\LicenseSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️LicenseSimple($object),
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
@@ -4746,13 +4390,10 @@ class ProjectColumn implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectColumnDeleted' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnDeleted($object),
-                'ApiClients\Client\GitHub\Schema\WebhookProjectColumnDeleted\ProjectColumn' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnDeleted⚡️ProjectColumn($object),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnEdited($object),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\Changes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnEdited⚡️Changes($object),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\Changes\Name' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnEdited⚡️Changes⚡️Name($object),
-                'ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\ProjectColumn' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnEdited⚡️ProjectColumn($object),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectColumnMoved' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnMoved($object),
-                'ApiClients\Client\GitHub\Schema\WebhookProjectColumnMoved\ProjectColumn' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnMoved⚡️ProjectColumn($object),
                 default => throw new LogicException('No serialization defined for $className'),
             };
         } catch (Throwable $exception) {
@@ -4851,7 +4492,7 @@ class ProjectColumn implements ObjectMapper
         after_organization:        $result['organization'] = $organization;
 
         $projectColumn                                        = $object->projectColumn;
-        $projectColumn                                        = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnCreated⚡️ProjectColumn($projectColumn);
+        $projectColumn                                        = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksProjectColumn($projectColumn);
         after_projectColumn:        $result['project_column'] = $projectColumn;
 
         $repository = $object->repository;
@@ -4996,9 +4637,9 @@ class ProjectColumn implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnCreated⚡️ProjectColumn(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksProjectColumn(mixed $object): mixed
     {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookProjectColumnCreated\ProjectColumn);
+        assert($object instanceof WebhooksProjectColumn);
         $result = [];
 
         $afterId = $object->afterId;
@@ -6737,7 +6378,7 @@ class ProjectColumn implements ObjectMapper
         after_organization:        $result['organization'] = $organization;
 
         $projectColumn                                        = $object->projectColumn;
-        $projectColumn                                        = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnDeleted⚡️ProjectColumn($projectColumn);
+        $projectColumn                                        = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksProjectColumn($projectColumn);
         after_projectColumn:        $result['project_column'] = $projectColumn;
 
         $repository = $object->repository;
@@ -6757,46 +6398,6 @@ class ProjectColumn implements ObjectMapper
 
         $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
         after_sender:        $result['sender'] = $sender;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnDeleted⚡️ProjectColumn(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookProjectColumnDeleted\ProjectColumn);
-        $result = [];
-
-        $afterId = $object->afterId;
-
-        if ($afterId === null) {
-            goto after_afterId;
-        }
-
-        after_afterId:        $result['after_id'] = $afterId;
-
-        $cardsUrl                                   = $object->cardsUrl;
-        after_cardsUrl:        $result['cards_url'] = $cardsUrl;
-
-        $createdAt                                    = $object->createdAt;
-        after_createdAt:        $result['created_at'] = $createdAt;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $nodeId                                 = $object->nodeId;
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $projectUrl                                     = $object->projectUrl;
-        after_projectUrl:        $result['project_url'] = $projectUrl;
-
-        $updatedAt                                    = $object->updatedAt;
-        after_updatedAt:        $result['updated_at'] = $updatedAt;
-
-        $url                             = $object->url;
-        after_url:        $result['url'] = $url;
 
         return $result;
     }
@@ -6841,7 +6442,7 @@ class ProjectColumn implements ObjectMapper
         after_organization:        $result['organization'] = $organization;
 
         $projectColumn                                        = $object->projectColumn;
-        $projectColumn                                        = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnEdited⚡️ProjectColumn($projectColumn);
+        $projectColumn                                        = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksProjectColumn($projectColumn);
         after_projectColumn:        $result['project_column'] = $projectColumn;
 
         $repository = $object->repository;
@@ -6893,46 +6494,6 @@ class ProjectColumn implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnEdited⚡️ProjectColumn(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookProjectColumnEdited\ProjectColumn);
-        $result = [];
-
-        $afterId = $object->afterId;
-
-        if ($afterId === null) {
-            goto after_afterId;
-        }
-
-        after_afterId:        $result['after_id'] = $afterId;
-
-        $cardsUrl                                   = $object->cardsUrl;
-        after_cardsUrl:        $result['cards_url'] = $cardsUrl;
-
-        $createdAt                                    = $object->createdAt;
-        after_createdAt:        $result['created_at'] = $createdAt;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $nodeId                                 = $object->nodeId;
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $projectUrl                                     = $object->projectUrl;
-        after_projectUrl:        $result['project_url'] = $projectUrl;
-
-        $updatedAt                                    = $object->updatedAt;
-        after_updatedAt:        $result['updated_at'] = $updatedAt;
-
-        $url                             = $object->url;
-        after_url:        $result['url'] = $url;
-
-        return $result;
-    }
-
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnMoved(mixed $object): mixed
     {
         assert($object instanceof WebhookProjectColumnMoved);
@@ -6969,7 +6530,7 @@ class ProjectColumn implements ObjectMapper
         after_organization:        $result['organization'] = $organization;
 
         $projectColumn                                        = $object->projectColumn;
-        $projectColumn                                        = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnMoved⚡️ProjectColumn($projectColumn);
+        $projectColumn                                        = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksProjectColumn($projectColumn);
         after_projectColumn:        $result['project_column'] = $projectColumn;
 
         $repository = $object->repository;
@@ -6984,46 +6545,6 @@ class ProjectColumn implements ObjectMapper
         $sender                                = $object->sender;
         $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
         after_sender:        $result['sender'] = $sender;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectColumnMoved⚡️ProjectColumn(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookProjectColumnMoved\ProjectColumn);
-        $result = [];
-
-        $afterId = $object->afterId;
-
-        if ($afterId === null) {
-            goto after_afterId;
-        }
-
-        after_afterId:        $result['after_id'] = $afterId;
-
-        $cardsUrl                                   = $object->cardsUrl;
-        after_cardsUrl:        $result['cards_url'] = $cardsUrl;
-
-        $createdAt                                    = $object->createdAt;
-        after_createdAt:        $result['created_at'] = $createdAt;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $nodeId                                 = $object->nodeId;
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $projectUrl                                     = $object->projectUrl;
-        after_projectUrl:        $result['project_url'] = $projectUrl;
-
-        $updatedAt                                    = $object->updatedAt;
-        after_updatedAt:        $result['updated_at'] = $updatedAt;
-
-        $url                             = $object->url;
-        after_url:        $result['url'] = $url;
 
         return $result;
     }

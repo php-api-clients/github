@@ -2469,7 +2469,7 @@ final readonly class WebhookProjectEdited
     when the event occurs from activity in a repository.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\WebhookProjectEdited\Changes|null $changes, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\WebhookProjectEdited\Project $project, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks|null $sender)
+    public function __construct(public string $action, public Schema\WebhookProjectEdited\Changes|null $changes, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\WebhooksProject $project, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks|null $sender)
     {
     }
 }

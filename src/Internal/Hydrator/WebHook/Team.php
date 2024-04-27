@@ -8,13 +8,14 @@ use ApiClients\Client\GitHub\Schema\EnterpriseWebhooks;
 use ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks;
 use ApiClients\Client\GitHub\Schema\SimpleInstallation;
 use ApiClients\Client\GitHub\Schema\SimpleUserWebhooks;
+use ApiClients\Client\GitHub\Schema\WebhooksTeam1;
+use ApiClients\Client\GitHub\Schema\WebhooksTeam1\Parent_;
 use ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository;
 use ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository;
 use ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\CustomProperties;
 use ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\License;
 use ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\Owner;
 use ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\Permissions;
-use ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Team\Parent_;
 use ApiClients\Client\GitHub\Schema\WebhookTeamCreated;
 use ApiClients\Client\GitHub\Schema\WebhookTeamDeleted;
 use ApiClients\Client\GitHub\Schema\WebhookTeamEdited;
@@ -69,22 +70,18 @@ class Team implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Repository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Repository⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Team' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Team($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Team\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Team⚡️Parent_($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksTeam1' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksTeam1\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1⚡️Parent_($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamCreated' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Repository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Repository($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Repository\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Repository⚡️License($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Repository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Repository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Repository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Team($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Team⚡️Parent_($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Repository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Repository($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Repository\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Repository⚡️License($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Repository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Repository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Repository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Team($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Team⚡️Parent_($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Description' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Description($payload),
@@ -98,17 +95,12 @@ class Team implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Repository\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Repository⚡️License($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Repository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Repository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Repository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Team($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Team⚡️Parent_($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Repository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Repository($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Repository\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Repository⚡️License($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Repository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Repository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Repository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Team($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Team⚡️Parent_($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\CustomProperties' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Repository⚡️CustomProperties($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -239,7 +231,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'team';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Team($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -2277,7 +2269,7 @@ class Team implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Team(array $payload): \ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Team
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1(array $payload): WebhooksTeam1
     {
         $properties    = [];
         $missingFields = [];
@@ -2369,7 +2361,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'parent';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1⚡️Parent_($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -2445,21 +2437,21 @@ class Team implements ObjectMapper
 
             after_url:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Team', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksTeam1', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Team::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(WebhooksTeam1::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Team(...$properties);
+            return new WebhooksTeam1(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Team', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksTeam1', $exception, stack: $this->hydrationStack);
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Team⚡️Parent_(array $payload): Parent_
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1⚡️Parent_(array $payload): Parent_
     {
         $properties    = [];
         $missingFields = [];
@@ -2596,7 +2588,7 @@ class Team implements ObjectMapper
 
             after_url:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Team\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksTeam1\Parent_', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
@@ -2606,7 +2598,7 @@ class Team implements ObjectMapper
         try {
             return new Parent_(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Team\Parent_', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksTeam1\Parent_', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -2736,7 +2728,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'team';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Team($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4203,339 +4195,6 @@ class Team implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Team(array $payload): \ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['deleted'] ?? null;
-
-            if ($value === null) {
-                $properties['deleted'] = null;
-                goto after_deleted;
-            }
-
-            $properties['deleted'] = $value;
-
-            after_deleted:
-
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $properties['htmlUrl'] = null;
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['members_url'] ?? null;
-
-            if ($value === null) {
-                $properties['membersUrl'] = null;
-                goto after_membersUrl;
-            }
-
-            $properties['membersUrl'] = $value;
-
-            after_membersUrl:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $properties['nodeId'] = null;
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['parent'] ?? null;
-
-            if ($value === null) {
-                $properties['parent'] = null;
-                goto after_parent;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'parent';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['parent'] = $value;
-
-            after_parent:
-
-            $value = $payload['permission'] ?? null;
-
-            if ($value === null) {
-                $properties['permission'] = null;
-                goto after_permission;
-            }
-
-            $properties['permission'] = $value;
-
-            after_permission:
-
-            $value = $payload['privacy'] ?? null;
-
-            if ($value === null) {
-                $properties['privacy'] = null;
-                goto after_privacy;
-            }
-
-            $properties['privacy'] = $value;
-
-            after_privacy:
-
-            $value = $payload['notification_setting'] ?? null;
-
-            if ($value === null) {
-                $properties['notificationSetting'] = null;
-                goto after_notificationSetting;
-            }
-
-            $properties['notificationSetting'] = $value;
-
-            after_notificationSetting:
-
-            $value = $payload['repositories_url'] ?? null;
-
-            if ($value === null) {
-                $properties['repositoriesUrl'] = null;
-                goto after_repositoriesUrl;
-            }
-
-            $properties['repositoriesUrl'] = $value;
-
-            after_repositoriesUrl:
-
-            $value = $payload['slug'] ?? null;
-
-            if ($value === null) {
-                $properties['slug'] = null;
-                goto after_slug;
-            }
-
-            $properties['slug'] = $value;
-
-            after_slug:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $properties['url'] = null;
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Team⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team\Parent_
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['members_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'members_url';
-                goto after_membersUrl;
-            }
-
-            $properties['membersUrl'] = $value;
-
-            after_membersUrl:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['permission'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'permission';
-                goto after_permission;
-            }
-
-            $properties['permission'] = $value;
-
-            after_permission:
-
-            $value = $payload['privacy'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'privacy';
-                goto after_privacy;
-            }
-
-            $properties['privacy'] = $value;
-
-            after_privacy:
-
-            $value = $payload['notification_setting'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'notification_setting';
-                goto after_notificationSetting;
-            }
-
-            $properties['notificationSetting'] = $value;
-
-            after_notificationSetting:
-
-            $value = $payload['repositories_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'repositories_url';
-                goto after_repositoriesUrl;
-            }
-
-            $properties['repositoriesUrl'] = $value;
-
-            after_repositoriesUrl:
-
-            $value = $payload['slug'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'slug';
-                goto after_slug;
-            }
-
-            $properties['slug'] = $value;
-
-            after_slug:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team\Parent_', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team\Parent_::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team\Parent_(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team\Parent_', $exception, stack: $this->hydrationStack);
-        }
-    }
-
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted(array $payload): WebhookTeamDeleted
     {
         $properties    = [];
@@ -4662,7 +4321,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'team';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Team($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -6129,339 +5788,6 @@ class Team implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Team(array $payload): \ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['deleted'] ?? null;
-
-            if ($value === null) {
-                $properties['deleted'] = null;
-                goto after_deleted;
-            }
-
-            $properties['deleted'] = $value;
-
-            after_deleted:
-
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $properties['htmlUrl'] = null;
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['members_url'] ?? null;
-
-            if ($value === null) {
-                $properties['membersUrl'] = null;
-                goto after_membersUrl;
-            }
-
-            $properties['membersUrl'] = $value;
-
-            after_membersUrl:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $properties['nodeId'] = null;
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['parent'] ?? null;
-
-            if ($value === null) {
-                $properties['parent'] = null;
-                goto after_parent;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'parent';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['parent'] = $value;
-
-            after_parent:
-
-            $value = $payload['permission'] ?? null;
-
-            if ($value === null) {
-                $properties['permission'] = null;
-                goto after_permission;
-            }
-
-            $properties['permission'] = $value;
-
-            after_permission:
-
-            $value = $payload['privacy'] ?? null;
-
-            if ($value === null) {
-                $properties['privacy'] = null;
-                goto after_privacy;
-            }
-
-            $properties['privacy'] = $value;
-
-            after_privacy:
-
-            $value = $payload['notification_setting'] ?? null;
-
-            if ($value === null) {
-                $properties['notificationSetting'] = null;
-                goto after_notificationSetting;
-            }
-
-            $properties['notificationSetting'] = $value;
-
-            after_notificationSetting:
-
-            $value = $payload['repositories_url'] ?? null;
-
-            if ($value === null) {
-                $properties['repositoriesUrl'] = null;
-                goto after_repositoriesUrl;
-            }
-
-            $properties['repositoriesUrl'] = $value;
-
-            after_repositoriesUrl:
-
-            $value = $payload['slug'] ?? null;
-
-            if ($value === null) {
-                $properties['slug'] = null;
-                goto after_slug;
-            }
-
-            $properties['slug'] = $value;
-
-            after_slug:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $properties['url'] = null;
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Team⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team\Parent_
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['members_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'members_url';
-                goto after_membersUrl;
-            }
-
-            $properties['membersUrl'] = $value;
-
-            after_membersUrl:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['permission'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'permission';
-                goto after_permission;
-            }
-
-            $properties['permission'] = $value;
-
-            after_permission:
-
-            $value = $payload['privacy'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'privacy';
-                goto after_privacy;
-            }
-
-            $properties['privacy'] = $value;
-
-            after_privacy:
-
-            $value = $payload['notification_setting'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'notification_setting';
-                goto after_notificationSetting;
-            }
-
-            $properties['notificationSetting'] = $value;
-
-            after_notificationSetting:
-
-            $value = $payload['repositories_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'repositories_url';
-                goto after_repositoriesUrl;
-            }
-
-            $properties['repositoriesUrl'] = $value;
-
-            after_repositoriesUrl:
-
-            $value = $payload['slug'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'slug';
-                goto after_slug;
-            }
-
-            $properties['slug'] = $value;
-
-            after_slug:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team\Parent_', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team\Parent_::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team\Parent_(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team\Parent_', $exception, stack: $this->hydrationStack);
-        }
-    }
-
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited(array $payload): WebhookTeamEdited
     {
         $properties    = [];
@@ -6608,7 +5934,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'team';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Team($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -8444,339 +7770,6 @@ class Team implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Team(array $payload): \ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['deleted'] ?? null;
-
-            if ($value === null) {
-                $properties['deleted'] = null;
-                goto after_deleted;
-            }
-
-            $properties['deleted'] = $value;
-
-            after_deleted:
-
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $properties['htmlUrl'] = null;
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['members_url'] ?? null;
-
-            if ($value === null) {
-                $properties['membersUrl'] = null;
-                goto after_membersUrl;
-            }
-
-            $properties['membersUrl'] = $value;
-
-            after_membersUrl:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $properties['nodeId'] = null;
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['parent'] ?? null;
-
-            if ($value === null) {
-                $properties['parent'] = null;
-                goto after_parent;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'parent';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['parent'] = $value;
-
-            after_parent:
-
-            $value = $payload['permission'] ?? null;
-
-            if ($value === null) {
-                $properties['permission'] = null;
-                goto after_permission;
-            }
-
-            $properties['permission'] = $value;
-
-            after_permission:
-
-            $value = $payload['privacy'] ?? null;
-
-            if ($value === null) {
-                $properties['privacy'] = null;
-                goto after_privacy;
-            }
-
-            $properties['privacy'] = $value;
-
-            after_privacy:
-
-            $value = $payload['notification_setting'] ?? null;
-
-            if ($value === null) {
-                $properties['notificationSetting'] = null;
-                goto after_notificationSetting;
-            }
-
-            $properties['notificationSetting'] = $value;
-
-            after_notificationSetting:
-
-            $value = $payload['repositories_url'] ?? null;
-
-            if ($value === null) {
-                $properties['repositoriesUrl'] = null;
-                goto after_repositoriesUrl;
-            }
-
-            $properties['repositoriesUrl'] = $value;
-
-            after_repositoriesUrl:
-
-            $value = $payload['slug'] ?? null;
-
-            if ($value === null) {
-                $properties['slug'] = null;
-                goto after_slug;
-            }
-
-            $properties['slug'] = $value;
-
-            after_slug:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $properties['url'] = null;
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Team⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team\Parent_
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['members_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'members_url';
-                goto after_membersUrl;
-            }
-
-            $properties['membersUrl'] = $value;
-
-            after_membersUrl:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['permission'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'permission';
-                goto after_permission;
-            }
-
-            $properties['permission'] = $value;
-
-            after_permission:
-
-            $value = $payload['privacy'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'privacy';
-                goto after_privacy;
-            }
-
-            $properties['privacy'] = $value;
-
-            after_privacy:
-
-            $value = $payload['notification_setting'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'notification_setting';
-                goto after_notificationSetting;
-            }
-
-            $properties['notificationSetting'] = $value;
-
-            after_notificationSetting:
-
-            $value = $payload['repositories_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'repositories_url';
-                goto after_repositoriesUrl;
-            }
-
-            $properties['repositoriesUrl'] = $value;
-
-            after_repositoriesUrl:
-
-            $value = $payload['slug'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'slug';
-                goto after_slug;
-            }
-
-            $properties['slug'] = $value;
-
-            after_slug:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team\Parent_', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team\Parent_::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team\Parent_(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team\Parent_', $exception, stack: $this->hydrationStack);
-        }
-    }
-
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository(array $payload): WebhookTeamRemovedFromRepository
     {
         $properties    = [];
@@ -8903,7 +7896,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'team';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Team($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -10370,339 +9363,6 @@ class Team implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Team(array $payload): \ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['deleted'] ?? null;
-
-            if ($value === null) {
-                $properties['deleted'] = null;
-                goto after_deleted;
-            }
-
-            $properties['deleted'] = $value;
-
-            after_deleted:
-
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $properties['htmlUrl'] = null;
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['members_url'] ?? null;
-
-            if ($value === null) {
-                $properties['membersUrl'] = null;
-                goto after_membersUrl;
-            }
-
-            $properties['membersUrl'] = $value;
-
-            after_membersUrl:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $properties['nodeId'] = null;
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['parent'] ?? null;
-
-            if ($value === null) {
-                $properties['parent'] = null;
-                goto after_parent;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'parent';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['parent'] = $value;
-
-            after_parent:
-
-            $value = $payload['permission'] ?? null;
-
-            if ($value === null) {
-                $properties['permission'] = null;
-                goto after_permission;
-            }
-
-            $properties['permission'] = $value;
-
-            after_permission:
-
-            $value = $payload['privacy'] ?? null;
-
-            if ($value === null) {
-                $properties['privacy'] = null;
-                goto after_privacy;
-            }
-
-            $properties['privacy'] = $value;
-
-            after_privacy:
-
-            $value = $payload['notification_setting'] ?? null;
-
-            if ($value === null) {
-                $properties['notificationSetting'] = null;
-                goto after_notificationSetting;
-            }
-
-            $properties['notificationSetting'] = $value;
-
-            after_notificationSetting:
-
-            $value = $payload['repositories_url'] ?? null;
-
-            if ($value === null) {
-                $properties['repositoriesUrl'] = null;
-                goto after_repositoriesUrl;
-            }
-
-            $properties['repositoriesUrl'] = $value;
-
-            after_repositoriesUrl:
-
-            $value = $payload['slug'] ?? null;
-
-            if ($value === null) {
-                $properties['slug'] = null;
-                goto after_slug;
-            }
-
-            $properties['slug'] = $value;
-
-            after_slug:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $properties['url'] = null;
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Team⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team\Parent_
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['members_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'members_url';
-                goto after_membersUrl;
-            }
-
-            $properties['membersUrl'] = $value;
-
-            after_membersUrl:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['permission'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'permission';
-                goto after_permission;
-            }
-
-            $properties['permission'] = $value;
-
-            after_permission:
-
-            $value = $payload['privacy'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'privacy';
-                goto after_privacy;
-            }
-
-            $properties['privacy'] = $value;
-
-            after_privacy:
-
-            $value = $payload['notification_setting'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'notification_setting';
-                goto after_notificationSetting;
-            }
-
-            $properties['notificationSetting'] = $value;
-
-            after_notificationSetting:
-
-            $value = $payload['repositories_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'repositories_url';
-                goto after_repositoriesUrl;
-            }
-
-            $properties['repositoriesUrl'] = $value;
-
-            after_repositoriesUrl:
-
-            $value = $payload['slug'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'slug';
-                goto after_slug;
-            }
-
-            $properties['slug'] = $value;
-
-            after_slug:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team\Parent_', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team\Parent_::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team\Parent_(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team\Parent_', $exception, stack: $this->hydrationStack);
-        }
-    }
-
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Repository⚡️CustomProperties(array $payload): CustomProperties
     {
         $properties    = [];
@@ -10720,157 +9380,6 @@ class Team implements ObjectMapper
             return new CustomProperties(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\CustomProperties', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_(array $payload): \ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
-            }
-
-            $properties['id'] = $value;
-
-            after_id:
-
-            $value = $payload['members_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'members_url';
-                goto after_membersUrl;
-            }
-
-            $properties['membersUrl'] = $value;
-
-            after_membersUrl:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['permission'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'permission';
-                goto after_permission;
-            }
-
-            $properties['permission'] = $value;
-
-            after_permission:
-
-            $value = $payload['privacy'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'privacy';
-                goto after_privacy;
-            }
-
-            $properties['privacy'] = $value;
-
-            after_privacy:
-
-            $value = $payload['notification_setting'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'notification_setting';
-                goto after_notificationSetting;
-            }
-
-            $properties['notificationSetting'] = $value;
-
-            after_notificationSetting:
-
-            $value = $payload['repositories_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'repositories_url';
-                goto after_repositoriesUrl;
-            }
-
-            $properties['repositoriesUrl'] = $value;
-
-            after_repositoriesUrl:
-
-            $value = $payload['slug'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'slug';
-                goto after_slug;
-            }
-
-            $properties['slug'] = $value;
-
-            after_slug:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookTeamAdd\Team\Parent_', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -10914,22 +9423,18 @@ class Team implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Repository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Repository⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($object),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Team' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Team($object),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Team\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Team⚡️Parent_($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksTeam1' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksTeam1\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1⚡️Parent_($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamCreated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Repository($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Repository\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Repository⚡️License($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Repository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Repository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Repository⚡️Permissions($object),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Team($object),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Team⚡️Parent_($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Repository($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Repository\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Repository⚡️License($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Repository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Repository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Repository⚡️Permissions($object),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Team($object),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Team⚡️Parent_($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Changes\Description' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Changes⚡️Description($object),
@@ -10943,15 +9448,11 @@ class Team implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Repository\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Repository⚡️License($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Repository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Repository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Repository⚡️Permissions($object),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Team($object),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Team⚡️Parent_($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Repository($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Repository\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Repository⚡️License($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Repository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Repository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Repository⚡️Permissions($object),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Team($object),
-                'ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Team⚡️Parent_($object),
                 default => throw new LogicException('No serialization defined for $className'),
             };
         } catch (Throwable $exception) {
@@ -11063,7 +9564,7 @@ class Team implements ObjectMapper
         after_sender:        $result['sender'] = $sender;
 
         $team                              = $object->team;
-        $team                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Team($team);
+        $team                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($team);
         after_team:        $result['team'] = $team;
 
         return $result;
@@ -11907,9 +10408,9 @@ class Team implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Team(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1(mixed $object): mixed
     {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Team);
+        assert($object instanceof WebhooksTeam1);
         $result = [];
 
         $deleted = $object->deleted;
@@ -11964,7 +10465,7 @@ class Team implements ObjectMapper
             goto after_parent;
         }
 
-        $parent                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($parent);
+        $parent                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1⚡️Parent_($parent);
         after_parent:        $result['parent'] = $parent;
 
         $permission = $object->permission;
@@ -12018,7 +10519,7 @@ class Team implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Team⚡️Parent_(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1⚡️Parent_(mixed $object): mixed
     {
         assert($object instanceof Parent_);
         $result = [];
@@ -12111,7 +10612,7 @@ class Team implements ObjectMapper
         after_sender:        $result['sender'] = $sender;
 
         $team                              = $object->team;
-        $team                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Team($team);
+        $team                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($team);
         after_team:        $result['team'] = $team;
 
         return $result;
@@ -12743,166 +11244,6 @@ class Team implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Team(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team);
-        $result = [];
-
-        $deleted = $object->deleted;
-
-        if ($deleted === null) {
-            goto after_deleted;
-        }
-
-        after_deleted:        $result['deleted'] = $deleted;
-
-        $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
-
-        after_description:        $result['description'] = $description;
-
-        $htmlUrl = $object->htmlUrl;
-
-        if ($htmlUrl === null) {
-            goto after_htmlUrl;
-        }
-
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $membersUrl = $object->membersUrl;
-
-        if ($membersUrl === null) {
-            goto after_membersUrl;
-        }
-
-        after_membersUrl:        $result['members_url'] = $membersUrl;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $nodeId = $object->nodeId;
-
-        if ($nodeId === null) {
-            goto after_nodeId;
-        }
-
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $parent = $object->parent;
-
-        if ($parent === null) {
-            goto after_parent;
-        }
-
-        $parent                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($parent);
-        after_parent:        $result['parent'] = $parent;
-
-        $permission = $object->permission;
-
-        if ($permission === null) {
-            goto after_permission;
-        }
-
-        after_permission:        $result['permission'] = $permission;
-
-        $privacy = $object->privacy;
-
-        if ($privacy === null) {
-            goto after_privacy;
-        }
-
-        after_privacy:        $result['privacy'] = $privacy;
-
-        $notificationSetting = $object->notificationSetting;
-
-        if ($notificationSetting === null) {
-            goto after_notificationSetting;
-        }
-
-        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
-
-        $repositoriesUrl = $object->repositoriesUrl;
-
-        if ($repositoriesUrl === null) {
-            goto after_repositoriesUrl;
-        }
-
-        after_repositoriesUrl:        $result['repositories_url'] = $repositoriesUrl;
-
-        $slug = $object->slug;
-
-        if ($slug === null) {
-            goto after_slug;
-        }
-
-        after_slug:        $result['slug'] = $slug;
-
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-
-        after_url:        $result['url'] = $url;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated⚡️Team⚡️Parent_(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookTeamCreated\Team\Parent_);
-        $result = [];
-
-        $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
-
-        after_description:        $result['description'] = $description;
-
-        $htmlUrl                                  = $object->htmlUrl;
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $membersUrl                                     = $object->membersUrl;
-        after_membersUrl:        $result['members_url'] = $membersUrl;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $nodeId                                 = $object->nodeId;
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $permission                                    = $object->permission;
-        after_permission:        $result['permission'] = $permission;
-
-        $privacy                                 = $object->privacy;
-        after_privacy:        $result['privacy'] = $privacy;
-
-        $notificationSetting                                              = $object->notificationSetting;
-        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
-
-        $repositoriesUrl                                          = $object->repositoriesUrl;
-        after_repositoriesUrl:        $result['repositories_url'] = $repositoriesUrl;
-
-        $slug                              = $object->slug;
-        after_slug:        $result['slug'] = $slug;
-
-        $url                             = $object->url;
-        after_url:        $result['url'] = $url;
-
-        return $result;
-    }
-
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted(mixed $object): mixed
     {
         assert($object instanceof WebhookTeamDeleted);
@@ -12952,7 +11293,7 @@ class Team implements ObjectMapper
         after_sender:        $result['sender'] = $sender;
 
         $team                              = $object->team;
-        $team                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Team($team);
+        $team                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($team);
         after_team:        $result['team'] = $team;
 
         return $result;
@@ -13584,166 +11925,6 @@ class Team implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Team(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team);
-        $result = [];
-
-        $deleted = $object->deleted;
-
-        if ($deleted === null) {
-            goto after_deleted;
-        }
-
-        after_deleted:        $result['deleted'] = $deleted;
-
-        $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
-
-        after_description:        $result['description'] = $description;
-
-        $htmlUrl = $object->htmlUrl;
-
-        if ($htmlUrl === null) {
-            goto after_htmlUrl;
-        }
-
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $membersUrl = $object->membersUrl;
-
-        if ($membersUrl === null) {
-            goto after_membersUrl;
-        }
-
-        after_membersUrl:        $result['members_url'] = $membersUrl;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $nodeId = $object->nodeId;
-
-        if ($nodeId === null) {
-            goto after_nodeId;
-        }
-
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $parent = $object->parent;
-
-        if ($parent === null) {
-            goto after_parent;
-        }
-
-        $parent                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($parent);
-        after_parent:        $result['parent'] = $parent;
-
-        $permission = $object->permission;
-
-        if ($permission === null) {
-            goto after_permission;
-        }
-
-        after_permission:        $result['permission'] = $permission;
-
-        $privacy = $object->privacy;
-
-        if ($privacy === null) {
-            goto after_privacy;
-        }
-
-        after_privacy:        $result['privacy'] = $privacy;
-
-        $notificationSetting = $object->notificationSetting;
-
-        if ($notificationSetting === null) {
-            goto after_notificationSetting;
-        }
-
-        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
-
-        $repositoriesUrl = $object->repositoriesUrl;
-
-        if ($repositoriesUrl === null) {
-            goto after_repositoriesUrl;
-        }
-
-        after_repositoriesUrl:        $result['repositories_url'] = $repositoriesUrl;
-
-        $slug = $object->slug;
-
-        if ($slug === null) {
-            goto after_slug;
-        }
-
-        after_slug:        $result['slug'] = $slug;
-
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-
-        after_url:        $result['url'] = $url;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamDeleted⚡️Team⚡️Parent_(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookTeamDeleted\Team\Parent_);
-        $result = [];
-
-        $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
-
-        after_description:        $result['description'] = $description;
-
-        $htmlUrl                                  = $object->htmlUrl;
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $membersUrl                                     = $object->membersUrl;
-        after_membersUrl:        $result['members_url'] = $membersUrl;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $nodeId                                 = $object->nodeId;
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $permission                                    = $object->permission;
-        after_permission:        $result['permission'] = $permission;
-
-        $privacy                                 = $object->privacy;
-        after_privacy:        $result['privacy'] = $privacy;
-
-        $notificationSetting                                              = $object->notificationSetting;
-        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
-
-        $repositoriesUrl                                          = $object->repositoriesUrl;
-        after_repositoriesUrl:        $result['repositories_url'] = $repositoriesUrl;
-
-        $slug                              = $object->slug;
-        after_slug:        $result['slug'] = $slug;
-
-        $url                             = $object->url;
-        after_url:        $result['url'] = $url;
-
-        return $result;
-    }
-
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited(mixed $object): mixed
     {
         assert($object instanceof WebhookTeamEdited);
@@ -13792,7 +11973,7 @@ class Team implements ObjectMapper
         after_sender:        $result['sender'] = $sender;
 
         $team                              = $object->team;
-        $team                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Team($team);
+        $team                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($team);
         after_team:        $result['team'] = $team;
 
         return $result;
@@ -14577,166 +12758,6 @@ class Team implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Team(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team);
-        $result = [];
-
-        $deleted = $object->deleted;
-
-        if ($deleted === null) {
-            goto after_deleted;
-        }
-
-        after_deleted:        $result['deleted'] = $deleted;
-
-        $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
-
-        after_description:        $result['description'] = $description;
-
-        $htmlUrl = $object->htmlUrl;
-
-        if ($htmlUrl === null) {
-            goto after_htmlUrl;
-        }
-
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $membersUrl = $object->membersUrl;
-
-        if ($membersUrl === null) {
-            goto after_membersUrl;
-        }
-
-        after_membersUrl:        $result['members_url'] = $membersUrl;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $nodeId = $object->nodeId;
-
-        if ($nodeId === null) {
-            goto after_nodeId;
-        }
-
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $parent = $object->parent;
-
-        if ($parent === null) {
-            goto after_parent;
-        }
-
-        $parent                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($parent);
-        after_parent:        $result['parent'] = $parent;
-
-        $permission = $object->permission;
-
-        if ($permission === null) {
-            goto after_permission;
-        }
-
-        after_permission:        $result['permission'] = $permission;
-
-        $privacy = $object->privacy;
-
-        if ($privacy === null) {
-            goto after_privacy;
-        }
-
-        after_privacy:        $result['privacy'] = $privacy;
-
-        $notificationSetting = $object->notificationSetting;
-
-        if ($notificationSetting === null) {
-            goto after_notificationSetting;
-        }
-
-        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
-
-        $repositoriesUrl = $object->repositoriesUrl;
-
-        if ($repositoriesUrl === null) {
-            goto after_repositoriesUrl;
-        }
-
-        after_repositoriesUrl:        $result['repositories_url'] = $repositoriesUrl;
-
-        $slug = $object->slug;
-
-        if ($slug === null) {
-            goto after_slug;
-        }
-
-        after_slug:        $result['slug'] = $slug;
-
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-
-        after_url:        $result['url'] = $url;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamEdited⚡️Team⚡️Parent_(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookTeamEdited\Team\Parent_);
-        $result = [];
-
-        $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
-
-        after_description:        $result['description'] = $description;
-
-        $htmlUrl                                  = $object->htmlUrl;
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $membersUrl                                     = $object->membersUrl;
-        after_membersUrl:        $result['members_url'] = $membersUrl;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $nodeId                                 = $object->nodeId;
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $permission                                    = $object->permission;
-        after_permission:        $result['permission'] = $permission;
-
-        $privacy                                 = $object->privacy;
-        after_privacy:        $result['privacy'] = $privacy;
-
-        $notificationSetting                                              = $object->notificationSetting;
-        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
-
-        $repositoriesUrl                                          = $object->repositoriesUrl;
-        after_repositoriesUrl:        $result['repositories_url'] = $repositoriesUrl;
-
-        $slug                              = $object->slug;
-        after_slug:        $result['slug'] = $slug;
-
-        $url                             = $object->url;
-        after_url:        $result['url'] = $url;
-
-        return $result;
-    }
-
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository(mixed $object): mixed
     {
         assert($object instanceof WebhookTeamRemovedFromRepository);
@@ -14781,7 +12802,7 @@ class Team implements ObjectMapper
         after_sender:        $result['sender'] = $sender;
 
         $team                              = $object->team;
-        $team                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Team($team);
+        $team                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($team);
         after_team:        $result['team'] = $team;
 
         return $result;
@@ -15409,166 +13430,6 @@ class Team implements ObjectMapper
         }
 
         after_triage:        $result['triage'] = $triage;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Team(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team);
-        $result = [];
-
-        $deleted = $object->deleted;
-
-        if ($deleted === null) {
-            goto after_deleted;
-        }
-
-        after_deleted:        $result['deleted'] = $deleted;
-
-        $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
-
-        after_description:        $result['description'] = $description;
-
-        $htmlUrl = $object->htmlUrl;
-
-        if ($htmlUrl === null) {
-            goto after_htmlUrl;
-        }
-
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $membersUrl = $object->membersUrl;
-
-        if ($membersUrl === null) {
-            goto after_membersUrl;
-        }
-
-        after_membersUrl:        $result['members_url'] = $membersUrl;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $nodeId = $object->nodeId;
-
-        if ($nodeId === null) {
-            goto after_nodeId;
-        }
-
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $parent = $object->parent;
-
-        if ($parent === null) {
-            goto after_parent;
-        }
-
-        $parent                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAdd⚡️Team⚡️Parent_($parent);
-        after_parent:        $result['parent'] = $parent;
-
-        $permission = $object->permission;
-
-        if ($permission === null) {
-            goto after_permission;
-        }
-
-        after_permission:        $result['permission'] = $permission;
-
-        $privacy = $object->privacy;
-
-        if ($privacy === null) {
-            goto after_privacy;
-        }
-
-        after_privacy:        $result['privacy'] = $privacy;
-
-        $notificationSetting = $object->notificationSetting;
-
-        if ($notificationSetting === null) {
-            goto after_notificationSetting;
-        }
-
-        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
-
-        $repositoriesUrl = $object->repositoriesUrl;
-
-        if ($repositoriesUrl === null) {
-            goto after_repositoriesUrl;
-        }
-
-        after_repositoriesUrl:        $result['repositories_url'] = $repositoriesUrl;
-
-        $slug = $object->slug;
-
-        if ($slug === null) {
-            goto after_slug;
-        }
-
-        after_slug:        $result['slug'] = $slug;
-
-        $url = $object->url;
-
-        if ($url === null) {
-            goto after_url;
-        }
-
-        after_url:        $result['url'] = $url;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamRemovedFromRepository⚡️Team⚡️Parent_(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookTeamRemovedFromRepository\Team\Parent_);
-        $result = [];
-
-        $description = $object->description;
-
-        if ($description === null) {
-            goto after_description;
-        }
-
-        after_description:        $result['description'] = $description;
-
-        $htmlUrl                                  = $object->htmlUrl;
-        after_htmlUrl:        $result['html_url'] = $htmlUrl;
-
-        $id                            = $object->id;
-        after_id:        $result['id'] = $id;
-
-        $membersUrl                                     = $object->membersUrl;
-        after_membersUrl:        $result['members_url'] = $membersUrl;
-
-        $name                              = $object->name;
-        after_name:        $result['name'] = $name;
-
-        $nodeId                                 = $object->nodeId;
-        after_nodeId:        $result['node_id'] = $nodeId;
-
-        $permission                                    = $object->permission;
-        after_permission:        $result['permission'] = $permission;
-
-        $privacy                                 = $object->privacy;
-        after_privacy:        $result['privacy'] = $privacy;
-
-        $notificationSetting                                              = $object->notificationSetting;
-        after_notificationSetting:        $result['notification_setting'] = $notificationSetting;
-
-        $repositoriesUrl                                          = $object->repositoriesUrl;
-        after_repositoriesUrl:        $result['repositories_url'] = $repositoriesUrl;
-
-        $slug                              = $object->slug;
-        after_slug:        $result['slug'] = $slug;
-
-        $url                             = $object->url;
-        after_url:        $result['url'] = $url;
 
         return $result;
     }

@@ -16,9 +16,10 @@ use ApiClients\Client\GitHub\Schema\SimpleInstallation;
 use ApiClients\Client\GitHub\Schema\SimpleUser;
 use ApiClients\Client\GitHub\Schema\SimpleUserWebhooks;
 use ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished;
-use ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory\Cvss;
 use ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated;
 use ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryWithdrawn;
+use ApiClients\Client\GitHub\Schema\WebhooksSecurityAdvisory;
+use ApiClients\Client\GitHub\Schema\WebhooksSecurityAdvisory\Cvss;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems;
@@ -65,12 +66,10 @@ class SecurityAdvisory implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory\Cvss' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Cvss($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksSecurityAdvisory' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksSecurityAdvisory\Cvss' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory⚡️Cvss($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory($payload),
-                'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory\Cvss' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory⚡️Cvss($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryWithdrawn' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryWithdrawn($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryWithdrawn\SecurityAdvisory' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryWithdrawn⚡️SecurityAdvisory($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryWithdrawn\SecurityAdvisory\Cvss' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryWithdrawn⚡️SecurityAdvisory⚡️Cvss($payload),
@@ -185,7 +184,7 @@ class SecurityAdvisory implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'securityAdvisory';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -3417,7 +3416,7 @@ class SecurityAdvisory implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory(array $payload): \ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory(array $payload): WebhooksSecurityAdvisory
     {
         $properties    = [];
         $missingFields = [];
@@ -3432,7 +3431,7 @@ class SecurityAdvisory implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'cvss';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Cvss($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory⚡️Cvss($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -3563,21 +3562,21 @@ class SecurityAdvisory implements ObjectMapper
 
             after_withdrawnAt:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksSecurityAdvisory', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(WebhooksSecurityAdvisory::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory(...$properties);
+            return new WebhooksSecurityAdvisory(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksSecurityAdvisory', $exception, stack: $this->hydrationStack);
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Cvss(array $payload): Cvss
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory⚡️Cvss(array $payload): Cvss
     {
         $properties    = [];
         $missingFields = [];
@@ -3604,7 +3603,7 @@ class SecurityAdvisory implements ObjectMapper
 
             after_vectorString:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory\Cvss', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksSecurityAdvisory\Cvss', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
@@ -3614,7 +3613,7 @@ class SecurityAdvisory implements ObjectMapper
         try {
             return new Cvss(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory\Cvss', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksSecurityAdvisory\Cvss', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -3974,7 +3973,7 @@ class SecurityAdvisory implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'securityAdvisory';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4015,207 +4014,6 @@ class SecurityAdvisory implements ObjectMapper
             return new WebhookSecurityAdvisoryUpdated(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory(array $payload): \ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['cvss'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'cvss';
-                goto after_cvss;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'cvss';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Cvss($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['cvss'] = $value;
-
-            after_cvss:
-
-            $value = $payload['cwes'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'cwes';
-                goto after_cwes;
-            }
-
-            $properties['cwes'] = $value;
-
-            after_cwes:
-
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'description';
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['ghsa_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'ghsa_id';
-                goto after_ghsaId;
-            }
-
-            $properties['ghsaId'] = $value;
-
-            after_ghsaId:
-
-            $value = $payload['identifiers'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'identifiers';
-                goto after_identifiers;
-            }
-
-            $properties['identifiers'] = $value;
-
-            after_identifiers:
-
-            $value = $payload['published_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'published_at';
-                goto after_publishedAt;
-            }
-
-            $properties['publishedAt'] = $value;
-
-            after_publishedAt:
-
-            $value = $payload['references'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'references';
-                goto after_references;
-            }
-
-            $properties['references'] = $value;
-
-            after_references:
-
-            $value = $payload['severity'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'severity';
-                goto after_severity;
-            }
-
-            $properties['severity'] = $value;
-
-            after_severity:
-
-            $value = $payload['summary'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'summary';
-                goto after_summary;
-            }
-
-            $properties['summary'] = $value;
-
-            after_summary:
-
-            $value = $payload['updated_at'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'updated_at';
-                goto after_updatedAt;
-            }
-
-            $properties['updatedAt'] = $value;
-
-            after_updatedAt:
-
-            $value = $payload['vulnerabilities'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'vulnerabilities';
-                goto after_vulnerabilities;
-            }
-
-            $properties['vulnerabilities'] = $value;
-
-            after_vulnerabilities:
-
-            $value = $payload['withdrawn_at'] ?? null;
-
-            if ($value === null) {
-                $properties['withdrawnAt'] = null;
-                goto after_withdrawnAt;
-            }
-
-            $properties['withdrawnAt'] = $value;
-
-            after_withdrawnAt:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory⚡️Cvss(array $payload): \ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory\Cvss
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['score'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'score';
-                goto after_score;
-            }
-
-            $properties['score'] = $value;
-
-            after_score:
-
-            $value = $payload['vector_string'] ?? null;
-
-            if ($value === null) {
-                $properties['vectorString'] = null;
-                goto after_vectorString;
-            }
-
-            $properties['vectorString'] = $value;
-
-            after_vectorString:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory\Cvss', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory\Cvss::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new \ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory\Cvss(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory\Cvss', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -4632,12 +4430,10 @@ class SecurityAdvisory implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($object),
-                'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory($object),
-                'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory\Cvss' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Cvss($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksSecurityAdvisory' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksSecurityAdvisory\Cvss' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory⚡️Cvss($object),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated($object),
-                'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory($object),
-                'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory\Cvss' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory⚡️Cvss($object),
                 'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryWithdrawn' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryWithdrawn($object),
                 'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryWithdrawn\SecurityAdvisory' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryWithdrawn⚡️SecurityAdvisory($object),
                 'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryWithdrawn\SecurityAdvisory\Cvss' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryWithdrawn⚡️SecurityAdvisory⚡️Cvss($object),
@@ -4748,7 +4544,7 @@ class SecurityAdvisory implements ObjectMapper
         after_repository:        $result['repository'] = $repository;
 
         $securityAdvisory                                           = $object->securityAdvisory;
-        $securityAdvisory                                           = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory($securityAdvisory);
+        $securityAdvisory                                           = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory($securityAdvisory);
         after_securityAdvisory:        $result['security_advisory'] = $securityAdvisory;
 
         $sender = $object->sender;
@@ -6458,13 +6254,13 @@ class SecurityAdvisory implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory(mixed $object): mixed
     {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory);
+        assert($object instanceof WebhooksSecurityAdvisory);
         $result = [];
 
         $cvss                              = $object->cvss;
-        $cvss                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Cvss($cvss);
+        $cvss                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory⚡️Cvss($cvss);
         after_cvss:        $result['cvss'] = $cvss;
 
         $cwes = $object->cwes;
@@ -6536,7 +6332,7 @@ class SecurityAdvisory implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Cvss(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory⚡️Cvss(mixed $object): mixed
     {
         assert($object instanceof Cvss);
         $result = [];
@@ -6691,7 +6487,7 @@ class SecurityAdvisory implements ObjectMapper
         after_repository:        $result['repository'] = $repository;
 
         $securityAdvisory                                           = $object->securityAdvisory;
-        $securityAdvisory                                           = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory($securityAdvisory);
+        $securityAdvisory                                           = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksSecurityAdvisory($securityAdvisory);
         after_securityAdvisory:        $result['security_advisory'] = $securityAdvisory;
 
         $sender = $object->sender;
@@ -6702,103 +6498,6 @@ class SecurityAdvisory implements ObjectMapper
 
         $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
         after_sender:        $result['sender'] = $sender;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory);
-        $result = [];
-
-        $cvss                              = $object->cvss;
-        $cvss                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryPublished⚡️SecurityAdvisory⚡️Cvss($cvss);
-        after_cvss:        $result['cvss'] = $cvss;
-
-        $cwes = $object->cwes;
-        static $cwesSerializer0;
-
-        if ($cwesSerializer0 === null) {
-            $cwesSerializer0 = new SerializeArrayItems(...[]);
-        }
-
-        $cwes                              = $cwesSerializer0->serialize($cwes, $this);
-        after_cwes:        $result['cwes'] = $cwes;
-
-        $description                                     = $object->description;
-        after_description:        $result['description'] = $description;
-
-        $ghsaId                                 = $object->ghsaId;
-        after_ghsaId:        $result['ghsa_id'] = $ghsaId;
-
-        $identifiers = $object->identifiers;
-        static $identifiersSerializer0;
-
-        if ($identifiersSerializer0 === null) {
-            $identifiersSerializer0 = new SerializeArrayItems(...[]);
-        }
-
-        $identifiers                                     = $identifiersSerializer0->serialize($identifiers, $this);
-        after_identifiers:        $result['identifiers'] = $identifiers;
-
-        $publishedAt                                      = $object->publishedAt;
-        after_publishedAt:        $result['published_at'] = $publishedAt;
-
-        $references = $object->references;
-        static $referencesSerializer0;
-
-        if ($referencesSerializer0 === null) {
-            $referencesSerializer0 = new SerializeArrayItems(...[]);
-        }
-
-        $references                                    = $referencesSerializer0->serialize($references, $this);
-        after_references:        $result['references'] = $references;
-
-        $severity                                  = $object->severity;
-        after_severity:        $result['severity'] = $severity;
-
-        $summary                                 = $object->summary;
-        after_summary:        $result['summary'] = $summary;
-
-        $updatedAt                                    = $object->updatedAt;
-        after_updatedAt:        $result['updated_at'] = $updatedAt;
-
-        $vulnerabilities = $object->vulnerabilities;
-        static $vulnerabilitiesSerializer0;
-
-        if ($vulnerabilitiesSerializer0 === null) {
-            $vulnerabilitiesSerializer0 = new SerializeArrayItems(...[]);
-        }
-
-        $vulnerabilities                                         = $vulnerabilitiesSerializer0->serialize($vulnerabilities, $this);
-        after_vulnerabilities:        $result['vulnerabilities'] = $vulnerabilities;
-
-        $withdrawnAt = $object->withdrawnAt;
-
-        if ($withdrawnAt === null) {
-            goto after_withdrawnAt;
-        }
-
-        after_withdrawnAt:        $result['withdrawn_at'] = $withdrawnAt;
-
-        return $result;
-    }
-
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryUpdated⚡️SecurityAdvisory⚡️Cvss(mixed $object): mixed
-    {
-        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryUpdated\SecurityAdvisory\Cvss);
-        $result = [];
-
-        $score                               = $object->score;
-        after_score:        $result['score'] = $score;
-
-        $vectorString = $object->vectorString;
-
-        if ($vectorString === null) {
-            goto after_vectorString;
-        }
-
-        after_vectorString:        $result['vector_string'] = $vectorString;
 
         return $result;
     }

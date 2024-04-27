@@ -6235,7 +6235,7 @@ final readonly class WebhookPullRequestMilestoned
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
     public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\Milestone|null $milestone, public int $number, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('pull_request')]
-    public Schema\WebhookPullRequestMilestoned\PullRequest $pullRequest, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks|null $sender,)
+    public Schema\WebhooksPullRequest5 $pullRequest, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks|null $sender,)
     {
     }
 }

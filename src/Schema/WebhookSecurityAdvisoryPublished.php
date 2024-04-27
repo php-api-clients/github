@@ -2454,7 +2454,7 @@ final readonly class WebhookSecurityAdvisoryPublished
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
     public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks|null $repository, #[MapFrom('security_advisory')]
-    public Schema\WebhookSecurityAdvisoryPublished\SecurityAdvisory $securityAdvisory, public Schema\SimpleUserWebhooks|null $sender,)
+    public Schema\WebhooksSecurityAdvisory $securityAdvisory, public Schema\SimpleUserWebhooks|null $sender,)
     {
     }
 }

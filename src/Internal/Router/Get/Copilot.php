@@ -23,7 +23,7 @@ final class Copilot
     {
     }
 
-    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    /** @return Observable<Schema\CopilotUsageMetrics> */
     public function usageMetricsForEnterprise(array $params): iterable
     {
         $arguments = [];
@@ -77,7 +77,7 @@ final class Copilot
         return $operator->call($arguments['org']);
     }
 
-    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    /** @return Observable<Schema\CopilotUsageMetrics> */
     public function usageMetricsForOrg(array $params): iterable
     {
         $arguments = [];
@@ -164,7 +164,7 @@ final class Copilot
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
-    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    /** @return Observable<Schema\CopilotUsageMetrics> */
     public function usageMetricsForTeam(array $params): iterable
     {
         $arguments = [];

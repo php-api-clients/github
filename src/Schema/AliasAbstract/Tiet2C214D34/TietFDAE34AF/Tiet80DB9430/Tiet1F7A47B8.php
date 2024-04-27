@@ -1517,21 +1517,21 @@ abstract readonly class Tiet1F7A47B8
      * url: URL for the issue
      */
     public function __construct(#[MapFrom('active_lock_reason')]
-    public string|null $activeLockReason, public Schema\WebhookIssuesPinned\Issue\Assignee|null $assignee, public array $assignees, #[MapFrom('author_association')]
+    public string|null $activeLockReason, public Schema\WebhooksIssue2\Assignee|null $assignee, public array $assignees, #[MapFrom('author_association')]
     public string $authorAssociation, public string|null $body, #[MapFrom('closed_at')]
     public string|null $closedAt, public int $comments, #[MapFrom('comments_url')]
     public string $commentsUrl, #[MapFrom('created_at')]
     public string $createdAt, public bool|null $draft, #[MapFrom('events_url')]
     public string $eventsUrl, #[MapFrom('html_url')]
     public string $htmlUrl, public int $id, public array|null $labels, #[MapFrom('labels_url')]
-    public string $labelsUrl, public bool|null $locked, public Schema\WebhookIssuesPinned\Issue\Milestone|null $milestone, #[MapFrom('node_id')]
+    public string $labelsUrl, public bool|null $locked, public Schema\WebhooksIssue2\Milestone|null $milestone, #[MapFrom('node_id')]
     public string $nodeId, public int $number, #[MapFrom('performed_via_github_app')]
-    public Schema\WebhookIssuesPinned\Issue\PerformedViaGithubApp|null $performedViaGithubApp, #[MapFrom('pull_request')]
-    public Schema\WebhookIssuesPinned\Issue\PullRequest|null $pullRequest, public Schema\WebhookIssuesPinned\Issue\Reactions $reactions, #[MapFrom('repository_url')]
+    public Schema\WebhooksIssue2\PerformedViaGithubApp|null $performedViaGithubApp, #[MapFrom('pull_request')]
+    public Schema\WebhooksIssue2\PullRequest|null $pullRequest, public Schema\WebhooksIssue2\Reactions $reactions, #[MapFrom('repository_url')]
     public string $repositoryUrl, public string|null $state, #[MapFrom('state_reason')]
     public string|null $stateReason, #[MapFrom('timeline_url')]
     public string|null $timelineUrl, public string $title, #[MapFrom('updated_at')]
-    public string $updatedAt, public string $url, public Schema\WebhookIssuesPinned\Issue\User|null $user,)
+    public string $updatedAt, public string $url, public Schema\WebhooksIssue2\User|null $user,)
     {
     }
 }
