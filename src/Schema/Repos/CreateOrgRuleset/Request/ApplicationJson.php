@@ -54,17 +54,18 @@ final readonly class ApplicationJson
                             "integer",
                             "null"
                         ],
-                        "description": "The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`."
+                        "description": "The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.\\n"
                     },
                     "actor_type": {
                         "enum": [
                             "Integration",
                             "OrganizationAdmin",
                             "RepositoryRole",
-                            "Team"
+                            "Team",
+                            "DeployKey"
                         ],
                         "type": "string",
-                        "description": "The type of actor that can bypass a ruleset"
+                        "description": "The type of actor that can bypass a ruleset.\\n"
                     },
                     "bypass_mode": {
                         "enum": [
@@ -72,7 +73,7 @@ final readonly class ApplicationJson
                             "pull_request"
                         ],
                         "type": "string",
-                        "description": "When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests."
+                        "description": "When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type.\\n"
                     }
                 },
                 "description": "An actor that can bypass rules in a ruleset"
@@ -981,12 +982,12 @@ final readonly class ApplicationJson
     "bypass_actors": [
         {
             "actor_id": 8,
-            "actor_type": "Team",
+            "actor_type": "DeployKey",
             "bypass_mode": "always"
         },
         {
             "actor_id": 8,
-            "actor_type": "Team",
+            "actor_type": "DeployKey",
             "bypass_mode": "always"
         }
     ],
