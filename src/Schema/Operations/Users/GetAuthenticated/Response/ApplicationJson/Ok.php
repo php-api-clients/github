@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\Operations\Users\GetAuthenticated\Resp
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Ok extends Schema\AliasAbstract\TietFA9375D5\TietB4DFA8F3\Tiet91595615\TietBD0ADDF4
+final readonly class Ok extends Schema\AliasAbstract\Tiet9F8559A9\Tiet7FE3917D\TietE7014A4E\Tiet74E14507
 {
 }

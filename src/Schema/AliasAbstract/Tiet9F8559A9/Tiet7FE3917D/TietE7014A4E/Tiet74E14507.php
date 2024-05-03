@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietFA9375D5\TietB4DFA8F3\Tiet91595615;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet9F8559A9\Tiet7FE3917D\TietE7014A4E;
 
-abstract readonly class TietBD0ADDF4
+abstract readonly class Tiet74E14507
 {
     public const SCHEMA_JSON         = '{
     "oneOf": [
@@ -204,6 +204,16 @@ abstract readonly class TietBD0ADDF4
                     ]
                 },
                 "email": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "email",
+                    "examples": [
+                        "octocat@github.com"
+                    ]
+                },
+                "notification_email": {
                     "type": [
                         "string",
                         "null"
@@ -477,6 +487,13 @@ abstract readonly class TietBD0ADDF4
                     ]
                 },
                 "email": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "email"
+                },
+                "notification_email": {
                     "type": [
                         "string",
                         "null"

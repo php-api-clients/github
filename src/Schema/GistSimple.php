@@ -161,6 +161,13 @@ final readonly class GistSimple
                                 ],
                                 "format": "email"
                             },
+                            "notification_email": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "format": "email"
+                            },
                             "hireable": {
                                 "type": [
                                     "boolean",

@@ -152,6 +152,13 @@ final readonly class Forks
                     ],
                     "format": "email"
                 },
+                "notification_email": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "email"
+                },
                 "hireable": {
                     "type": [
                         "boolean",
@@ -293,6 +300,7 @@ final readonly class Forks
         "blog": "generated",
         "location": "generated",
         "email": "hi@example.com",
+        "notification_email": "hi@example.com",
         "hireable": false,
         "bio": "generated",
         "twitter_username": "generated",

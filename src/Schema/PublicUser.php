@@ -142,6 +142,13 @@ final readonly class PublicUser
             ],
             "format": "email"
         },
+        "notification_email": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "email"
+        },
         "hireable": {
             "type": [
                 "boolean",
@@ -270,6 +277,7 @@ final readonly class PublicUser
     "blog": "generated",
     "location": "generated",
     "email": "hi@example.com",
+    "notification_email": "hi@example.com",
     "hireable": false,
     "bio": "generated",
     "twitter_username": "generated",
@@ -307,7 +315,8 @@ final readonly class PublicUser
     public string $reposUrl, #[MapFrom('events_url')]
     public string $eventsUrl, #[MapFrom('received_events_url')]
     public string $receivedEventsUrl, public string $type, #[MapFrom('site_admin')]
-    public bool $siteAdmin, public string|null $name, public string|null $company, public string|null $blog, public string|null $location, public string|null $email, public bool|null $hireable, public string|null $bio, #[MapFrom('twitter_username')]
+    public bool $siteAdmin, public string|null $name, public string|null $company, public string|null $blog, public string|null $location, public string|null $email, #[MapFrom('notification_email')]
+    public string|null $notificationEmail, public bool|null $hireable, public string|null $bio, #[MapFrom('twitter_username')]
     public string|null $twitterUsername, #[MapFrom('public_repos')]
     public int $publicRepos, #[MapFrom('public_gists')]
     public int $publicGists, public int $followers, public int $following, #[MapFrom('created_at')]

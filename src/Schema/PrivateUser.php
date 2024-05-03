@@ -214,6 +214,16 @@ final readonly class PrivateUser
                 "octocat@github.com"
             ]
         },
+        "notification_email": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "format": "email",
+            "examples": [
+                "octocat@github.com"
+            ]
+        },
         "hireable": {
             "type": [
                 "boolean",
@@ -377,6 +387,7 @@ final readonly class PrivateUser
     "blog": "https:\\/\\/github.com\\/blog",
     "location": "San Francisco",
     "email": "octocat@github.com",
+    "notification_email": "octocat@github.com",
     "hireable": false,
     "bio": "There once was...",
     "twitter_username": "monalisa",
@@ -417,7 +428,8 @@ final readonly class PrivateUser
     public string $reposUrl, #[MapFrom('events_url')]
     public string $eventsUrl, #[MapFrom('received_events_url')]
     public string $receivedEventsUrl, public string $type, #[MapFrom('site_admin')]
-    public bool $siteAdmin, public string|null $name, public string|null $company, public string|null $blog, public string|null $location, public string|null $email, public bool|null $hireable, public string|null $bio, #[MapFrom('twitter_username')]
+    public bool $siteAdmin, public string|null $name, public string|null $company, public string|null $blog, public string|null $location, public string|null $email, #[MapFrom('notification_email')]
+    public string|null $notificationEmail, public bool|null $hireable, public string|null $bio, #[MapFrom('twitter_username')]
     public string|null $twitterUsername, #[MapFrom('public_repos')]
     public int $publicRepos, #[MapFrom('public_gists')]
     public int $publicGists, public int $followers, public int $following, #[MapFrom('created_at')]

@@ -157,6 +157,13 @@ final class Rule implements PropertyCaster
                 } catch (Throwable) {
                 }
             }
+
+            if ($signature === 'parameters|type' && $value['type'] === 'code_scanning') {
+                try {
+                    return $hydrator->hydrateObject(Schema\RepositoryRuleCodeScanning::class, $value);
+                } catch (Throwable) {
+                }
+            }
         }
 
         return $value;

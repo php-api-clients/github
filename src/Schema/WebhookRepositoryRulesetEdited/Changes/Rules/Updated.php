@@ -667,6 +667,71 @@ final readonly class Updated
                         }
                     },
                     "description": "Require all changes made to a targeted branch to pass the specified workflows before they can be merged."
+                },
+                {
+                    "title": "code_scanning",
+                    "required": [
+                        "type"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "type": {
+                            "enum": [
+                                "code_scanning"
+                            ],
+                            "type": "string"
+                        },
+                        "parameters": {
+                            "required": [
+                                "code_scanning_tools"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "code_scanning_tools": {
+                                    "type": "array",
+                                    "items": {
+                                        "title": "CodeScanningTool",
+                                        "required": [
+                                            "alerts_threshold",
+                                            "security_alerts_threshold",
+                                            "tool"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "alerts_threshold": {
+                                                "enum": [
+                                                    "none",
+                                                    "errors",
+                                                    "errors_and_warnings",
+                                                    "all"
+                                                ],
+                                                "type": "string",
+                                                "description": "The severity level at which code scanning results that raise alerts block a reference update. For more information on alert severity levels, see \\"[About code scanning alerts](https:\\/\\/docs.github.com\\/code-security\\/code-scanning\\/managing-code-scanning-alerts\\/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels).\\""
+                                            },
+                                            "security_alerts_threshold": {
+                                                "enum": [
+                                                    "none",
+                                                    "critical",
+                                                    "high_or_higher",
+                                                    "medium_or_higher",
+                                                    "all"
+                                                ],
+                                                "type": "string",
+                                                "description": "The severity level at which code scanning results that raise security alerts block a reference update. For more information on security severity levels, see \\"[About code scanning alerts](https:\\/\\/docs.github.com\\/code-security\\/code-scanning\\/managing-code-scanning-alerts\\/about-code-scanning-alerts#about-alert-severity-and-security-severity-levels).\\""
+                                            },
+                                            "tool": {
+                                                "type": "string",
+                                                "description": "The name of a code scanning tool"
+                                            }
+                                        },
+                                        "description": "A tool that must provide code scanning results for this rule to pass."
+                                    },
+                                    "description": "Tools that must provide code scanning results for this rule to pass."
+                                }
+                            }
+                        }
+                    },
+                    "description": "Choose which tools must provide code scanning results before the reference is updated. When configured, code scanning must be enabled and have results for both the commit and the reference being updated."
                 }
             ],
             "description": "A repository rule."
@@ -723,7 +788,7 @@ final readonly class Updated
      * rule: A repository rule.
      */
     public function __construct(#[Rule]
-    public Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern|Schema\RepositoryRuleset\Rules\Fourteen|Schema\RepositoryRuleset\Rules\Fifteen|Schema\RepositoryRuleset\Rules\Sixteen|Schema\RepositoryRuleset\Rules\Seventeen|Schema\RepositoryRuleWorkflows|null $rule, public Schema\WebhookRepositoryRulesetEdited\Changes\Rules\Updated\Changes|null $changes,)
+    public Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern|Schema\RepositoryRuleset\Rules\Fourteen|Schema\RepositoryRuleset\Rules\Fifteen|Schema\RepositoryRuleset\Rules\Sixteen|Schema\RepositoryRuleset\Rules\Seventeen|Schema\RepositoryRuleWorkflows|Schema\RepositoryRuleCodeScanning|null $rule, public Schema\WebhookRepositoryRulesetEdited\Changes\Rules\Updated\Changes|null $changes,)
     {
     }
 }

@@ -372,6 +372,17 @@ class User implements ObjectMapper
 
             after_email:
 
+            $value = $payload['notification_email'] ?? null;
+
+            if ($value === null) {
+                $properties['notificationEmail'] = null;
+                goto after_notificationEmail;
+            }
+
+            $properties['notificationEmail'] = $value;
+
+            after_notificationEmail:
+
             $value = $payload['hireable'] ?? null;
 
             if ($value === null) {
@@ -959,6 +970,14 @@ class User implements ObjectMapper
         }
 
         after_email:        $result['email'] = $email;
+
+        $notificationEmail = $object->notificationEmail;
+
+        if ($notificationEmail === null) {
+            goto after_notificationEmail;
+        }
+
+        after_notificationEmail:        $result['notification_email'] = $notificationEmail;
 
         $hireable = $object->hireable;
 
