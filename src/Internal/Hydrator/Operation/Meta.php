@@ -195,6 +195,17 @@ class Meta implements ObjectMapper
 
             after_actions:
 
+            $value = $payload['actions_macos'] ?? null;
+
+            if ($value === null) {
+                $properties['actionsMacos'] = null;
+                goto after_actionsMacos;
+            }
+
+            $properties['actionsMacos'] = $value;
+
+            after_actionsMacos:
+
             $value = $payload['dependabot'] ?? null;
 
             if ($value === null) {
@@ -639,6 +650,21 @@ class Meta implements ObjectMapper
 
         $actions                                 = $actionsSerializer0->serialize($actions, $this);
         after_actions:        $result['actions'] = $actions;
+
+        $actionsMacos = $object->actionsMacos;
+
+        if ($actionsMacos === null) {
+            goto after_actionsMacos;
+        }
+
+        static $actionsMacosSerializer0;
+
+        if ($actionsMacosSerializer0 === null) {
+            $actionsMacosSerializer0 = new SerializeArrayItems(...[]);
+        }
+
+        $actionsMacos                                       = $actionsMacosSerializer0->serialize($actionsMacos, $this);
+        after_actionsMacos:        $result['actions_macos'] = $actionsMacos;
 
         $dependabot = $object->dependabot;
 

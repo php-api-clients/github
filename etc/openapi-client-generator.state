@@ -1,5 +1,5 @@
 {
-    "specHash": "ed43ce3c2a6bf973841dfa10ad4655d5",
+    "specHash": "3eab7bc09a6d3be61aedace0f4ddc61d",
     "generatedFiles": {
         "files": [
             {
@@ -256,7 +256,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ApiOverview.php",
-                "hash": "61d42cbd662e01c122e574f5aafb98f9"
+                "hash": "6c6374d14557787602804bd2f302d374"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/SecurityAndAnalysis.php",
@@ -5232,7 +5232,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Repos\/UpdateInformationAboutPagesSite\/Request\/ApplicationJson.php",
-                "hash": "a2dcccea9077b69ac6a7c1ef8568b408"
+                "hash": "c930af995197ef35c352db1d0cd00b3e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Repos\/UpdateInformationAboutPagesSite\/Request\/ApplicationJson\/Source\/One.php",
@@ -5616,7 +5616,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "0238447f8d63faa2aab213a5c6fc7e5b"
+                "hash": "5c09e8a2dc1618038dd76aac957c237b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -21076,7 +21076,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/GetBranchRules.php",
-                "hash": "264f3fa7c68e650e1544795b3972e819"
+                "hash": "2c2f35eeda1d4f1761bda694ce64797f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/GetBranchRulesTest.php",
@@ -21088,7 +21088,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/GetBranchRulesListing.php",
-                "hash": "8161d0d1fbcf91b593f8e8e71e4471d5"
+                "hash": "c2dfbc2196c4fd5af0b19a646a035fef"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/GetBranchRulesListingTest.php",
@@ -24544,7 +24544,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Repos.php",
-                "hash": "e5a3402b856fbe79b1046d6894cd0560"
+                "hash": "4d1f695e10a9963cd8f8b2e70d2d11de"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Users.php",
@@ -24820,7 +24820,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Repos.php",
-                "hash": "948f06b8c92d8e33d327278602fbb7a3"
+                "hash": "91846cea69243c2f2d085dfecc115551"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Activity.php",
@@ -25044,7 +25044,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Seven.php",
-                "hash": "c1b860d31a9ea6c6172e2f37efad067c"
+                "hash": "8899e5b01fff9c7d7c64b4b02fa17a9c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Eight.php",
@@ -25148,7 +25148,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Seven.php",
-                "hash": "11af7bddc1760f923a8626f12b0e7fe1"
+                "hash": "377e77661335399e55f0d9a331688bfa"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Eight.php",
@@ -25420,7 +25420,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Meta.php",
-                "hash": "4cfdb4fb4637ac2ec7012c74dae10f31"
+                "hash": "3e215e4d43c9a354a82970e26246657b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Networks\/Owner\/Repo\/Events.php",
@@ -27868,11 +27868,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "1d040f84ac47ba521c4cf21abe112baf"
+                "hash": "331f67488412d70a983a92c856d09e96"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "c054bd22e150fcfa390fa3d9cb58cb34"
+                "hash": "5a20613a86a2e7548e34399388080dfd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
