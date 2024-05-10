@@ -7522,66 +7522,6 @@ $client->operations()->billing()->getSharedStorageBillingOrg(        org: 'gener
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/billing/billing#get-shared-storage-billing-for-an-organization).
 
 
-### copilot/usage-metrics-for-team
-
-Get a summary of Copilot usage for a team
-
-Using the `call` method:
-```php
-$client->call('GET /orgs/{org}/team/{team_slug}/copilot/usage', [
-        'org' => 'generated',
-        'team_slug' => 'generated',
-        'since' => 'generated',
-        'until' => 'generated',
-        'page' => 1,
-        'per_page' => 8,
-]);
-```
-
-Operations method:
-```php
-$client->operations()->copilot()->usageMetricsForTeam(        org: 'generated',
-        team_slug: 'generated',
-        since: 'generated',
-        until: 'generated',
-        page: 1,
-        per_page: 8,
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-a-team).
-
-
-### copilot/usage-metrics-for-team
-
-Get a summary of Copilot usage for a team
-
-Using the `call` method:
-```php
-$client->call('LIST /orgs/{org}/team/{team_slug}/copilot/usage', [
-        'org' => 'generated',
-        'team_slug' => 'generated',
-        'since' => 'generated',
-        'until' => 'generated',
-        'page' => 1,
-        'per_page' => 8,
-]);
-```
-
-Operations method:
-```php
-$client->operations()->copilot()->usageMetricsForTeamListing(        org: 'generated',
-        team_slug: 'generated',
-        since: 'generated',
-        until: 'generated',
-        page: 1,
-        per_page: 8,
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-a-team).
-
-
 ### teams/list
 
 List teams
@@ -13025,6 +12965,80 @@ $client->operations()->codeScanning()->getCodeqlDatabase(        owner: 'generat
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-scanning/code-scanning#get-a-codeql-database-for-a-repository).
+
+
+### code-scanning/create-variant-analysis
+
+Create a CodeQL variant analysis
+
+Using the `call` method:
+```php
+$client->call('POST /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeScanning()->createVariantAnalysis(        owner: 'generated',
+        repo: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-scanning/code-scanning#create-a-codeql-variant-analysis).
+
+
+### code-scanning/get-variant-analysis
+
+Get the summary of a CodeQL variant analysis
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'codeql_variant_analysis_id' => 26,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeScanning()->getVariantAnalysis(        owner: 'generated',
+        repo: 'generated',
+        codeql_variant_analysis_id: 26,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-scanning/code-scanning#get-the-summary-of-a-codeql-variant-analysis).
+
+
+### code-scanning/get-variant-analysis-repo-task
+
+Get the analysis status of a repository in a CodeQL variant analysis
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}/repos/{repo_owner}/{repo_name}', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'codeql_variant_analysis_id' => 26,
+        'repo_owner' => 'generated',
+        'repo_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeScanning()->getVariantAnalysisRepoTask(        owner: 'generated',
+        repo: 'generated',
+        codeql_variant_analysis_id: 26,
+        repo_owner: 'generated',
+        repo_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-scanning/code-scanning#get-the-analysis-status-of-a-repository-in-a-codeql-variant-analysis).
 
 
 ### code-scanning/get-default-setup

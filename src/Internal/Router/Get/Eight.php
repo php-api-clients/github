@@ -10,6 +10,7 @@ use ApiClients\Client\GitHub\Schema\ActionsSecret;
 use ApiClients\Client\GitHub\Schema\ActionsVariable;
 use ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy;
 use ApiClients\Client\GitHub\Schema\CodeScanningCodeqlDatabase;
+use ApiClients\Client\GitHub\Schema\CodeScanningVariantAnalysis;
 use ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy;
 use ApiClients\Client\GitHub\Schema\DeploymentProtectionRule;
 use ApiClients\Client\GitHub\Schema\DeploymentStatus;
@@ -34,8 +35,8 @@ final class Eight
     {
     }
 
-    /** @return |Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\EnvironmentApprovals>|Observable<Schema\PendingDeployment>|Observable<Schema\CodeScanningAlertInstance>|Observable<Schema\SecretScanningLocation>|WithoutBody */
-    public function call(string $call, array $params, array $pathChunks): PackageVersion|iterable|TeamRepository|WithoutBody|OidcCustomSubRepo|Ok|Json|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|WorkflowRunUsage|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|WorkflowUsage|ProtectedBranchAdminEnforced|ProtectedBranchPullRequestReview|StatusCheckPolicy|BranchRestrictionPolicy|CodeScanningCodeqlDatabase|DeploymentStatus|DeploymentBranchPolicy|\ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|DeploymentProtectionRule|ActionsPublicKey|ActionsSecret|ActionsVariable|HookDelivery|PullRequestReview
+    /** @return |Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\EnvironmentApprovals>|Observable<Schema\PendingDeployment>|Observable<Schema\CodeScanningAlertInstance>|Schema\CodeScanningVariantAnalysis|Observable<Schema\SecretScanningLocation>|WithoutBody */
+    public function call(string $call, array $params, array $pathChunks): PackageVersion|iterable|TeamRepository|WithoutBody|OidcCustomSubRepo|Ok|Json|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|WorkflowRunUsage|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|WorkflowUsage|ProtectedBranchAdminEnforced|ProtectedBranchPullRequestReview|StatusCheckPolicy|BranchRestrictionPolicy|CodeScanningCodeqlDatabase|CodeScanningVariantAnalysis|DeploymentStatus|DeploymentBranchPolicy|\ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|DeploymentProtectionRule|ActionsPublicKey|ActionsSecret|ActionsVariable|HookDelivery|PullRequestReview
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
@@ -195,6 +196,12 @@ final class Eight
                                     if ($pathChunks[7] === '{language}') {
                                         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}') {
                                             return $this->routers->internal🔀Router🔀Get🔀CodeScanning()->getCodeqlDatabase($params);
+                                        }
+                                    }
+                                } elseif ($pathChunks[6] === 'variant-analyses') {
+                                    if ($pathChunks[7] === '{codeql_variant_analysis_id}') {
+                                        if ($call === 'GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}') {
+                                            return $this->routers->internal🔀Router🔀Get🔀CodeScanning()->getVariantAnalysis($params);
                                         }
                                     }
                                 }

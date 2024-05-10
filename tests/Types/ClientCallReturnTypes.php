@@ -336,8 +336,6 @@ assertType('', $client->call('DELETE /orgs/{org}/security-managers/teams/{team_s
 assertType('', $client->call('GET /orgs/{org}/settings/billing/actions'));
 assertType('', $client->call('GET /orgs/{org}/settings/billing/packages'));
 assertType('', $client->call('GET /orgs/{org}/settings/billing/shared-storage'));
-assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('GET /orgs/{org}/team/{team_slug}/copilot/usage'));
-assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('LIST /orgs/{org}/team/{team_slug}/copilot/usage'));
 assertType('Observable<Schema\\Team>', $client->call('GET /orgs/{org}/teams'));
 assertType('Observable<Schema\\Team>', $client->call('LIST /orgs/{org}/teams'));
 assertType('', $client->call('POST /orgs/{org}/teams'));
@@ -557,6 +555,9 @@ assertType('', $client->call('GET /repos/{owner}/{repo}/code-scanning/analyses/{
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}'));
 assertType('Observable<Schema\\CodeScanningCodeqlDatabase>', $client->call('GET /repos/{owner}/{repo}/code-scanning/codeql/databases'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}'));
+assertType('Schema\\CodeScanningVariantAnalysis', $client->call('POST /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses'));
+assertType('Schema\\CodeScanningVariantAnalysis', $client->call('GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}'));
+assertType('Schema\\CodeScanningVariantAnalysisRepoTask', $client->call('GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}/repos/{repo_owner}/{repo_name}'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/code-scanning/default-setup'));
 assertType('', $client->call('PATCH /repos/{owner}/{repo}/code-scanning/default-setup'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/code-scanning/sarifs'));

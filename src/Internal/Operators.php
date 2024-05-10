@@ -330,8 +330,6 @@ final class Operators
     private Internal\Operator\Billing\GetGithubActionsBillingOrg|null $billing👷GetGithubActionsBillingOrg                                                                           = null;
     private Internal\Operator\Billing\GetGithubPackagesBillingOrg|null $billing👷GetGithubPackagesBillingOrg                                                                         = null;
     private Internal\Operator\Billing\GetSharedStorageBillingOrg|null $billing👷GetSharedStorageBillingOrg                                                                           = null;
-    private Internal\Operator\Copilot\UsageMetricsForTeam|null $copilot👷UsageMetricsForTeam                                                                                         = null;
-    private Internal\Operator\Copilot\UsageMetricsForTeamListing|null $copilot👷UsageMetricsForTeamListing                                                                           = null;
     private Internal\Operator\Teams\List_|null $teams👷List_                                                                                                                         = null;
     private Internal\Operator\Teams\ListListing|null $teams👷ListListing                                                                                                             = null;
     private Internal\Operator\Teams\Create|null $teams👷Create                                                                                                                       = null;
@@ -551,6 +549,9 @@ final class Operators
     private Internal\Operator\CodeScanning\DeleteAnalysis|null $codeScanning👷DeleteAnalysis                                                                                         = null;
     private Internal\Operator\CodeScanning\ListCodeqlDatabases|null $codeScanning👷ListCodeqlDatabases                                                                               = null;
     private Internal\Operator\CodeScanning\GetCodeqlDatabase|null $codeScanning👷GetCodeqlDatabase                                                                                   = null;
+    private Internal\Operator\CodeScanning\CreateVariantAnalysis|null $codeScanning👷CreateVariantAnalysis                                                                           = null;
+    private Internal\Operator\CodeScanning\GetVariantAnalysis|null $codeScanning👷GetVariantAnalysis                                                                                 = null;
+    private Internal\Operator\CodeScanning\GetVariantAnalysisRepoTask|null $codeScanning👷GetVariantAnalysisRepoTask                                                                 = null;
     private Internal\Operator\CodeScanning\GetDefaultSetup|null $codeScanning👷GetDefaultSetup                                                                                       = null;
     private Internal\Operator\CodeScanning\UpdateDefaultSetup|null $codeScanning👷UpdateDefaultSetup                                                                                 = null;
     private Internal\Operator\CodeScanning\UploadSarif|null $codeScanning👷UploadSarif                                                                                               = null;
@@ -3996,24 +3997,6 @@ final class Operators
         return $this->billing👷GetSharedStorageBillingOrg;
     }
 
-    public function copilot👷UsageMetricsForTeam(): Internal\Operator\Copilot\UsageMetricsForTeam
-    {
-        if ($this->copilot👷UsageMetricsForTeam instanceof Internal\Operator\Copilot\UsageMetricsForTeam === false) {
-            $this->copilot👷UsageMetricsForTeam = new Internal\Operator\Copilot\UsageMetricsForTeam($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Usage());
-        }
-
-        return $this->copilot👷UsageMetricsForTeam;
-    }
-
-    public function copilot👷UsageMetricsForTeamListing(): Internal\Operator\Copilot\UsageMetricsForTeamListing
-    {
-        if ($this->copilot👷UsageMetricsForTeamListing instanceof Internal\Operator\Copilot\UsageMetricsForTeamListing === false) {
-            $this->copilot👷UsageMetricsForTeamListing = new Internal\Operator\Copilot\UsageMetricsForTeamListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Usage());
-        }
-
-        return $this->copilot👷UsageMetricsForTeamListing;
-    }
-
     public function teams👷List_(): Internal\Operator\Teams\List_
     {
         if ($this->teams👷List_ instanceof Internal\Operator\Teams\List_ === false) {
@@ -5983,6 +5966,33 @@ final class Operators
         }
 
         return $this->codeScanning👷GetCodeqlDatabase;
+    }
+
+    public function codeScanning👷CreateVariantAnalysis(): Internal\Operator\CodeScanning\CreateVariantAnalysis
+    {
+        if ($this->codeScanning👷CreateVariantAnalysis instanceof Internal\Operator\CodeScanning\CreateVariantAnalysis === false) {
+            $this->codeScanning👷CreateVariantAnalysis = new Internal\Operator\CodeScanning\CreateVariantAnalysis($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Codeql🌀VariantAnalyses());
+        }
+
+        return $this->codeScanning👷CreateVariantAnalysis;
+    }
+
+    public function codeScanning👷GetVariantAnalysis(): Internal\Operator\CodeScanning\GetVariantAnalysis
+    {
+        if ($this->codeScanning👷GetVariantAnalysis instanceof Internal\Operator\CodeScanning\GetVariantAnalysis === false) {
+            $this->codeScanning👷GetVariantAnalysis = new Internal\Operator\CodeScanning\GetVariantAnalysis($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Codeql🌀VariantAnalyses🌀CodeqlVariantAnalysisId());
+        }
+
+        return $this->codeScanning👷GetVariantAnalysis;
+    }
+
+    public function codeScanning👷GetVariantAnalysisRepoTask(): Internal\Operator\CodeScanning\GetVariantAnalysisRepoTask
+    {
+        if ($this->codeScanning👷GetVariantAnalysisRepoTask instanceof Internal\Operator\CodeScanning\GetVariantAnalysisRepoTask === false) {
+            $this->codeScanning👷GetVariantAnalysisRepoTask = new Internal\Operator\CodeScanning\GetVariantAnalysisRepoTask($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Codeql🌀VariantAnalyses🌀CodeqlVariantAnalysisId🌀Repos🌀RepoOwner🌀RepoName());
+        }
+
+        return $this->codeScanning👷GetVariantAnalysisRepoTask;
     }
 
     public function codeScanning👷GetDefaultSetup(): Internal\Operator\CodeScanning\GetDefaultSetup

@@ -11,6 +11,8 @@ use ApiClients\Client\GitHub\Schema\CodeScanningAnalysis;
 use ApiClients\Client\GitHub\Schema\CodeScanningCodeqlDatabase;
 use ApiClients\Client\GitHub\Schema\CodeScanningDefaultSetup;
 use ApiClients\Client\GitHub\Schema\CodeScanningSarifsStatus;
+use ApiClients\Client\GitHub\Schema\CodeScanningVariantAnalysis;
+use ApiClients\Client\GitHub\Schema\CodeScanningVariantAnalysisRepoTask;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
@@ -437,5 +439,69 @@ final class CodeScanning
         $operator = new Internal\Operator\CodeScanning\GetCodeqlDatabase($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Codeql🌀Databases🌀Language());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['language']);
+    }
+
+    public function getVariantAnalysis(array $params): CodeScanningVariantAnalysis
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('codeql_variant_analysis_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: codeql_variant_analysis_id');
+        }
+
+        $arguments['codeql_variant_analysis_id'] = $params['codeql_variant_analysis_id'];
+        unset($params['codeql_variant_analysis_id']);
+        $operator = new Internal\Operator\CodeScanning\GetVariantAnalysis($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Codeql🌀VariantAnalyses🌀CodeqlVariantAnalysisId());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['codeql_variant_analysis_id']);
+    }
+
+    public function getVariantAnalysisRepoTask(array $params): CodeScanningVariantAnalysisRepoTask
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('codeql_variant_analysis_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: codeql_variant_analysis_id');
+        }
+
+        $arguments['codeql_variant_analysis_id'] = $params['codeql_variant_analysis_id'];
+        unset($params['codeql_variant_analysis_id']);
+        if (array_key_exists('repo_owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo_owner');
+        }
+
+        $arguments['repo_owner'] = $params['repo_owner'];
+        unset($params['repo_owner']);
+        if (array_key_exists('repo_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo_name');
+        }
+
+        $arguments['repo_name'] = $params['repo_name'];
+        unset($params['repo_name']);
+        $operator = new Internal\Operator\CodeScanning\GetVariantAnalysisRepoTask($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Codeql🌀VariantAnalyses🌀CodeqlVariantAnalysisId🌀Repos🌀RepoOwner🌀RepoName());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['codeql_variant_analysis_id'], $arguments['repo_owner'], $arguments['repo_name']);
     }
 }

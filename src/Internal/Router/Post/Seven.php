@@ -8,6 +8,7 @@ use ApiClients\Client\GitHub\Internal\Routers;
 use ApiClients\Client\GitHub\Schema\AuthenticationToken;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\BranchWithProtection;
+use ApiClients\Client\GitHub\Schema\CodeScanningVariantAnalysis;
 use ApiClients\Client\GitHub\Schema\Codespace;
 use ApiClients\Client\GitHub\Schema\CommitComment;
 use ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy;
@@ -34,8 +35,8 @@ final class Seven
     {
     }
 
-    /** @return |Observable<Schema\Label>|Schema\BasicError */
-    public function call(string $call, array $params, array $pathChunks): Ok|WithoutBody|Created|AuthenticationToken|BranchWithProtection|EmptyObject|Reaction|CommitComment|DeploymentStatus|DeploymentBranchPolicy|DeploymentProtectionRule|Issue|IssueComment|iterable|BasicError|Codespace|PullRequestReviewComment|PullRequestSimple|PullRequestReview|ReleaseAsset|Json|FullRepository
+    /** @return |Schema\CodeScanningVariantAnalysis|Observable<Schema\Label>|Schema\BasicError */
+    public function call(string $call, array $params, array $pathChunks): Ok|WithoutBody|Created|AuthenticationToken|BranchWithProtection|EmptyObject|CodeScanningVariantAnalysis|Reaction|CommitComment|DeploymentStatus|DeploymentBranchPolicy|DeploymentProtectionRule|Issue|IssueComment|iterable|BasicError|Codespace|PullRequestReviewComment|PullRequestSimple|PullRequestReview|ReleaseAsset|Json|FullRepository
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
@@ -102,6 +103,14 @@ final class Seven
                                 if ($pathChunks[6] === 'rerequest') {
                                     if ($call === 'POST /repos/{owner}/{repo}/check-suites/{check_suite_id}/rerequest') {
                                         return $this->routers->internal🔀Router🔀Post🔀Checks()->rerequestSuite($params);
+                                    }
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'code-scanning') {
+                            if ($pathChunks[5] === 'codeql') {
+                                if ($pathChunks[6] === 'variant-analyses') {
+                                    if ($call === 'POST /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses') {
+                                        return $this->routers->internal🔀Router🔀Post🔀CodeScanning()->createVariantAnalysis($params);
                                     }
                                 }
                             }

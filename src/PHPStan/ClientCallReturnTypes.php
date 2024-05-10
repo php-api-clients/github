@@ -1319,14 +1319,6 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('');
         }
 
-        if ($call === 'GET /orgs/{org}/team/{team_slug}/copilot/usage') {
-            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
-        }
-
-        if ($call === 'LIST /orgs/{org}/team/{team_slug}/copilot/usage') {
-            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
-        }
-
         if ($call === 'GET /orgs/{org}/teams') {
             return $this->typeResolver->resolve('Observable<Schema\\Team>');
         }
@@ -2201,6 +2193,18 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}') {
             return $this->typeResolver->resolve('');
+        }
+
+        if ($call === 'POST /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses') {
+            return $this->typeResolver->resolve('Schema\\CodeScanningVariantAnalysis');
+        }
+
+        if ($call === 'GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}') {
+            return $this->typeResolver->resolve('Schema\\CodeScanningVariantAnalysis');
+        }
+
+        if ($call === 'GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}/repos/{repo_owner}/{repo_name}') {
+            return $this->typeResolver->resolve('Schema\\CodeScanningVariantAnalysisRepoTask');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/default-setup') {
