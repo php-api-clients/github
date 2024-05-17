@@ -24,6 +24,7 @@ final readonly class GetVariantAnalysisRepoTask
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $codeqlVariantAnalysisId, string $repoOwner, string $repoName): CodeScanningVariantAnalysisRepoTask
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\GetVariantAnalysisRepoTask($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $codeqlVariantAnalysisId, $repoOwner, $repoName);

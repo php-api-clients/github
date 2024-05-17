@@ -495,8 +495,8 @@ assertType('', $client->call('DELETE /repos/{owner}/{repo}/autolinks/{autolink_i
 assertType('', $client->call('GET /repos/{owner}/{repo}/automated-security-fixes'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/automated-security-fixes'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/automated-security-fixes'));
-assertType('Observable<Schema\\ShortBranch>', $client->call('GET /repos/{owner}/{repo}/branches'));
-assertType('Observable<Schema\\ShortBranch>', $client->call('LIST /repos/{owner}/{repo}/branches'));
+assertType('iterable<int,Schema\\ShortBranch>', $client->call('GET /repos/{owner}/{repo}/branches'));
+assertType('iterable<int,Schema\\ShortBranch>', $client->call('LIST /repos/{owner}/{repo}/branches'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/branches/{branch}'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/branches/{branch}/protection'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/branches/{branch}/protection'));
@@ -555,9 +555,9 @@ assertType('', $client->call('GET /repos/{owner}/{repo}/code-scanning/analyses/{
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}'));
 assertType('Observable<Schema\\CodeScanningCodeqlDatabase>', $client->call('GET /repos/{owner}/{repo}/code-scanning/codeql/databases'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}'));
-assertType('Schema\\CodeScanningVariantAnalysis', $client->call('POST /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses'));
-assertType('Schema\\CodeScanningVariantAnalysis', $client->call('GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}'));
-assertType('Schema\\CodeScanningVariantAnalysisRepoTask', $client->call('GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}/repos/{repo_owner}/{repo_name}'));
+assertType('', $client->call('POST /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses'));
+assertType('', $client->call('GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}'));
+assertType('', $client->call('GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}/repos/{repo_owner}/{repo_name}'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/code-scanning/default-setup'));
 assertType('', $client->call('PATCH /repos/{owner}/{repo}/code-scanning/default-setup'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/code-scanning/sarifs'));

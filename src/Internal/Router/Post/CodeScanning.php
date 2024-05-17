@@ -42,6 +42,7 @@ final class CodeScanning
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function createVariantAnalysis(array $params): CodeScanningVariantAnalysis
     {
         $arguments = [];

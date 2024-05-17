@@ -29,7 +29,7 @@ final class ListBranches
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    /**Setting to `true` returns only protected branches. When set to `false`, only unprotected branches are returned. Omitting this parameter returns all branches. **/
+    /**Setting to `true` returns only branches protected by branch protections or rulesets. When set to `false`, only unprotected branches are returned. Omitting this parameter returns all branches. **/
     private bool $protected;
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;

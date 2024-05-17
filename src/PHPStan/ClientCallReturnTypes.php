@@ -1956,11 +1956,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/branches') {
-            return $this->typeResolver->resolve('Observable<Schema\\ShortBranch>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\ShortBranch>');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/branches') {
-            return $this->typeResolver->resolve('Observable<Schema\\ShortBranch>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\ShortBranch>');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/branches/{branch}') {
@@ -2196,15 +2196,15 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses') {
-            return $this->typeResolver->resolve('Schema\\CodeScanningVariantAnalysis');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}') {
-            return $this->typeResolver->resolve('Schema\\CodeScanningVariantAnalysis');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/codeql/variant-analyses/{codeql_variant_analysis_id}/repos/{repo_owner}/{repo_name}') {
-            return $this->typeResolver->resolve('Schema\\CodeScanningVariantAnalysisRepoTask');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/default-setup') {

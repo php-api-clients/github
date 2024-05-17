@@ -35,7 +35,7 @@ final class Seven
     {
     }
 
-    /** @return |Schema\CodeScanningVariantAnalysis|Observable<Schema\Label>|Schema\BasicError */
+    /** @return |Observable<Schema\Label>|Schema\BasicError */
     public function call(string $call, array $params, array $pathChunks): Ok|WithoutBody|Created|AuthenticationToken|BranchWithProtection|EmptyObject|CodeScanningVariantAnalysis|Reaction|CommitComment|DeploymentStatus|DeploymentBranchPolicy|DeploymentProtectionRule|Issue|IssueComment|iterable|BasicError|Codespace|PullRequestReviewComment|PullRequestSimple|PullRequestReview|ReleaseAsset|Json|FullRepository
     {
         if ($pathChunks[0] === '') {

@@ -24,6 +24,7 @@ final readonly class CreateVariantAnalysis
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): CodeScanningVariantAnalysis
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\CreateVariantAnalysis($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

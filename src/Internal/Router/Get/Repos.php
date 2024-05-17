@@ -486,7 +486,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return Observable<Schema\ShortBranch> */
+    /** @return iterable<int,Schema\ShortBranch> */
     public function listBranches(array $params): iterable
     {
         $arguments = [];

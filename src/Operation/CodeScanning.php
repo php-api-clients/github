@@ -109,16 +109,19 @@ final class CodeScanning
         return $this->operators->codeScanning👷GetCodeqlDatabase()->call($owner, $repo, $language);
     }
 
+    /** @return */
     public function createVariantAnalysis(string $owner, string $repo, array $params): CodeScanningVariantAnalysis
     {
         return $this->operators->codeScanning👷CreateVariantAnalysis()->call($owner, $repo, $params);
     }
 
+    /** @return */
     public function getVariantAnalysis(string $owner, string $repo, int $codeqlVariantAnalysisId): CodeScanningVariantAnalysis
     {
         return $this->operators->codeScanning👷GetVariantAnalysis()->call($owner, $repo, $codeqlVariantAnalysisId);
     }
 
+    /** @return */
     public function getVariantAnalysisRepoTask(string $owner, string $repo, int $codeqlVariantAnalysisId, string $repoOwner, string $repoName): CodeScanningVariantAnalysisRepoTask
     {
         return $this->operators->codeScanning👷GetVariantAnalysisRepoTask()->call($owner, $repo, $codeqlVariantAnalysisId, $repoOwner, $repoName);
