@@ -310,7 +310,7 @@ final class Repos
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\ShortBranch> */
+    /** @return Observable<Schema\ShortBranch> */
     public function listBranchesListing(array $params): iterable
     {
         $arguments = [];

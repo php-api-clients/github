@@ -69,7 +69,6 @@ final class Pulls
         return $this->operators->pulls👷UpdateReviewComment()->call($owner, $repo, $commentId, $params);
     }
 
-    /** @return */
     public function get(string $owner, string $repo, int $pullNumber): PullRequest|WithoutBody
     {
         return $this->operators->pulls👷Get()->call($owner, $repo, $pullNumber);

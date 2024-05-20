@@ -208,13 +208,13 @@ final class Repos
         return $this->operators->repos👷DisableAutomatedSecurityFixes()->call($owner, $repo);
     }
 
-    /** @return iterable<int,Schema\ShortBranch> */
+    /** @return Observable<Schema\ShortBranch> */
     public function listBranches(string $owner, string $repo, bool $protected, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷ListBranches()->call($owner, $repo, $protected, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\ShortBranch> */
+    /** @return Observable<Schema\ShortBranch> */
     public function listBranchesListing(string $owner, string $repo, bool $protected, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷ListBranchesListing()->call($owner, $repo, $protected, $perPage, $page);

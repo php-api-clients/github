@@ -51,7 +51,7 @@ final class Get
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
-                     * Pass the appropriate [media type](https://docs.github.com/rest/overview/media-types/#commits-commit-comparison-and-pull-requests) to fetch diff and patch formats.
+                     * Pass the appropriate [media type](https://docs.github.com/rest/using-the-rest-api/getting-started-with-the-rest-api#media-types) to fetch diff and patch formats.
                      **/
                     case 200:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\PullRequest::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));

@@ -1956,11 +1956,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/branches') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ShortBranch>');
+            return $this->typeResolver->resolve('Observable<Schema\\ShortBranch>');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/branches') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ShortBranch>');
+            return $this->typeResolver->resolve('Observable<Schema\\ShortBranch>');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/branches/{branch}') {
@@ -3180,7 +3180,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/pulls/{pull_number}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\PullRequest|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'PATCH /repos/{owner}/{repo}/pulls/{pull_number}') {

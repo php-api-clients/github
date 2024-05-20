@@ -495,8 +495,8 @@ assertType('', $client->call('DELETE /repos/{owner}/{repo}/autolinks/{autolink_i
 assertType('', $client->call('GET /repos/{owner}/{repo}/automated-security-fixes'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/automated-security-fixes'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/automated-security-fixes'));
-assertType('iterable<int,Schema\\ShortBranch>', $client->call('GET /repos/{owner}/{repo}/branches'));
-assertType('iterable<int,Schema\\ShortBranch>', $client->call('LIST /repos/{owner}/{repo}/branches'));
+assertType('Observable<Schema\\ShortBranch>', $client->call('GET /repos/{owner}/{repo}/branches'));
+assertType('Observable<Schema\\ShortBranch>', $client->call('LIST /repos/{owner}/{repo}/branches'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/branches/{branch}'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/branches/{branch}/protection'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/branches/{branch}/protection'));
@@ -801,7 +801,7 @@ assertType('Observable<Schema\\Reaction>', $client->call('GET /repos/{owner}/{re
 assertType('Observable<Schema\\Reaction>', $client->call('LIST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/pulls/comments/{comment_id}/reactions/{reaction_id}'));
-assertType('', $client->call('GET /repos/{owner}/{repo}/pulls/{pull_number}'));
+assertType('Schema\\PullRequest|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /repos/{owner}/{repo}/pulls/{pull_number}'));
 assertType('', $client->call('PATCH /repos/{owner}/{repo}/pulls/{pull_number}'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/pulls/{pull_number}/codespaces'));
 assertType('Observable<Schema\\PullRequestReviewComment>', $client->call('GET /repos/{owner}/{repo}/pulls/{pull_number}/comments'));
