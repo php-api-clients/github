@@ -1,5 +1,5 @@
 {
-    "specHash": "e19bc15f772c4b3caf0034592e8e59db",
+    "specHash": "6427e6326d9646fc1b49f1e1dcf2d9db",
     "generatedFiles": {
         "files": [
             {
@@ -52,7 +52,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/HookDeliveryItem.php",
-                "hash": "92b885b2dd522f785b6df7eb60288cbe"
+                "hash": "04479f6019622c2dabb386ebc587c972"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ScimError.php",
@@ -72,7 +72,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/HookDelivery.php",
-                "hash": "3c353f627845f8936e560b37b14b316e"
+                "hash": "5495e2ba35602a1566006ebf77f88a34"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Enterprise.php",
@@ -5616,7 +5616,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "e5f60d41b8ace0bdfc8615cf94ac657f"
+                "hash": "4c7a840e4808d0c8d6ffd9144fd81247"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -5648,7 +5648,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Pulls.php",
-                "hash": "c04a3852a873caba1c1cb5fa1d6809ce"
+                "hash": "60138d3a0e61f4cd49819b25927d75b3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/SecurityAdvisories.php",
@@ -20516,7 +20516,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Pulls\/Get.php",
-                "hash": "92889b523b752b34c4fc662a887df619"
+                "hash": "73ee842fc0292c59dc2200e2846b63bb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Pulls\/GetTest.php",
@@ -24604,7 +24604,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Pulls.php",
-                "hash": "e632b6b1ae6e372daddc51110fac546a"
+                "hash": "5b1290dc5c87df2b913fae08560df1aa"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Billing.php",
@@ -25040,7 +25040,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
-                "hash": "5d810b435cc9e1551a09c8f901cd27b0"
+                "hash": "147555754780b5408e6bdfb6561e2110"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Seven.php",
@@ -25276,7 +25276,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/App\/Hook\/Deliveries\/DeliveryId.php",
-                "hash": "47feb9b49e6215f80ff2d4ec60890fc9"
+                "hash": "59cbfb453048b190c8c4f8b1aecfe5f6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/App\/Hook\/Deliveries\/DeliveryId\/Attempts.php",
@@ -25628,7 +25628,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Hooks\/HookId\/Deliveries\/DeliveryId.php",
-                "hash": "21e98ecb53629e1528b00921a3968927"
+                "hash": "6d00f59f96bd5eb2a1c5debb4150101b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Hooks\/HookId\/Deliveries\/DeliveryId\/Attempts.php",
@@ -26460,7 +26460,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/Hooks\/HookId\/Deliveries\/DeliveryId.php",
-                "hash": "1b183938442baa2681944824fead16cc"
+                "hash": "32d45f73b17491a056d6b8069b26b981"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/Hooks\/HookId\/Deliveries\/DeliveryId\/Attempts.php",
@@ -27868,11 +27868,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "68ec3d3764eb8e18c8d6dc8ebfa25e1d"
+                "hash": "51b4dab62e2beb85905e195adc171a76"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "8e59998f6b2a1a28b19a2e8bdcaf4d8f"
+                "hash": "3436911a55388d4ad5fe3a863f381079"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",

@@ -115,6 +115,17 @@ final readonly class HookDelivery
                 123
             ]
         },
+        "throttled_at": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Time when the webhook delivery was throttled.",
+            "format": "date-time",
+            "examples": [
+                "2021-05-12T20:33:44Z"
+            ]
+        },
         "url": {
             "type": "string",
             "description": "The URL target of the delivery.",
@@ -189,6 +200,7 @@ final readonly class HookDelivery
     "action": "opened",
     "installation_id": 123,
     "repository_id": 123,
+    "throttled_at": "2021-05-12T20:33:44Z",
     "url": "https:\\/\\/www.example.com",
     "request": {
         "headers": [],
@@ -212,13 +224,15 @@ final readonly class HookDelivery
      * action: The type of activity for the event that triggered the delivery.
      * installationId: The id of the GitHub App installation associated with this event.
      * repositoryId: The id of the repository associated with this event.
+     * throttledAt: Time when the webhook delivery was throttled.
      * url: The URL target of the delivery.
      */
     public function __construct(public int $id, public string $guid, #[MapFrom('delivered_at')]
     public string $deliveredAt, public bool $redelivery, public int|float $duration, public string $status, #[MapFrom('status_code')]
     public int $statusCode, public string $event, public string|null $action, #[MapFrom('installation_id')]
     public int|null $installationId, #[MapFrom('repository_id')]
-    public int|null $repositoryId, public string|null $url, public Schema\HookDelivery\Request $request, public Schema\HookDelivery\Response $response,)
+    public int|null $repositoryId, #[MapFrom('throttled_at')]
+    public string|null $throttledAt, public string|null $url, public Schema\HookDelivery\Request $request, public Schema\HookDelivery\Response $response,)
     {
     }
 }

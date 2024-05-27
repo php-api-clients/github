@@ -186,6 +186,17 @@ class DeliveryId implements ObjectMapper
 
             after_repositoryId:
 
+            $value = $payload['throttled_at'] ?? null;
+
+            if ($value === null) {
+                $properties['throttledAt'] = null;
+                goto after_throttledAt;
+            }
+
+            $properties['throttledAt'] = $value;
+
+            after_throttledAt:
+
             $value = $payload['url'] ?? null;
 
             if ($value === null) {
@@ -771,6 +782,14 @@ class DeliveryId implements ObjectMapper
         }
 
         after_repositoryId:        $result['repository_id'] = $repositoryId;
+
+        $throttledAt = $object->throttledAt;
+
+        if ($throttledAt === null) {
+            goto after_throttledAt;
+        }
+
+        after_throttledAt:        $result['throttled_at'] = $throttledAt;
 
         $url = $object->url;
 

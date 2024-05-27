@@ -111,6 +111,17 @@ final readonly class HookDeliveryItem
             "examples": [
                 123
             ]
+        },
+        "throttled_at": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Time when the webhook delivery was throttled.",
+            "format": "date-time",
+            "examples": [
+                "2021-05-12T20:33:44Z"
+            ]
         }
     },
     "description": "Delivery made by a webhook, without request and response information."
@@ -128,7 +139,8 @@ final readonly class HookDeliveryItem
     "event": "issues",
     "action": "opened",
     "installation_id": 123,
-    "repository_id": 123
+    "repository_id": 123,
+    "throttled_at": "2021-05-12T20:33:44Z"
 }';
 
     /**
@@ -143,12 +155,14 @@ final readonly class HookDeliveryItem
      * action: The type of activity for the event that triggered the delivery.
      * installationId: The id of the GitHub App installation associated with this event.
      * repositoryId: The id of the repository associated with this event.
+     * throttledAt: Time when the webhook delivery was throttled.
      */
     public function __construct(public int $id, public string $guid, #[MapFrom('delivered_at')]
     public string $deliveredAt, public bool $redelivery, public int|float $duration, public string $status, #[MapFrom('status_code')]
     public int $statusCode, public string $event, public string|null $action, #[MapFrom('installation_id')]
     public int|null $installationId, #[MapFrom('repository_id')]
-    public int|null $repositoryId,)
+    public int|null $repositoryId, #[MapFrom('throttled_at')]
+    public string|null $throttledAt,)
     {
     }
 }

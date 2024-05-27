@@ -3180,7 +3180,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/pulls/{pull_number}') {
-            return $this->typeResolver->resolve('Schema\\PullRequest|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PATCH /repos/{owner}/{repo}/pulls/{pull_number}') {

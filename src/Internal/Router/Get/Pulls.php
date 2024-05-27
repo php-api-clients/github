@@ -138,6 +138,7 @@ final class Pulls
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['sort'], $arguments['direction'], $arguments['since'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function get(array $params): PullRequest|WithoutBody
     {
         $arguments = [];
