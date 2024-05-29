@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Internal\Hydrator\WebHook;
 
+use ApiClients\Client\GitHub\Schema\EnterpriseWebhooks;
 use ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks;
 use ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsAdded;
 use ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsAdded\Organization;
@@ -59,6 +60,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsAdded' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded($payload),
                 'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsUpgraded' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded($payload),
                 'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsResult' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult($payload),
+                'ApiClients\Client\GitHub\Schema\EnterpriseWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
@@ -113,6 +115,26 @@ class PersonalAccessTokenRequest implements ObjectMapper
             $properties['personalAccessTokenRequest'] = $value;
 
             after_personalAccessTokenRequest:
+
+            $value = $payload['enterprise'] ?? null;
+
+            if ($value === null) {
+                $properties['enterprise'] = null;
+                goto after_enterprise;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'enterprise';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['enterprise'] = $value;
+
+            after_enterprise:
 
             $value = $payload['organization'] ?? null;
 
@@ -862,6 +884,135 @@ class PersonalAccessTokenRequest implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks(array $payload): EnterpriseWebhooks
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['description'] ?? null;
+
+            if ($value === null) {
+                $properties['description'] = null;
+                goto after_description;
+            }
+
+            $properties['description'] = $value;
+
+            after_description:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'html_url';
+                goto after_htmlUrl;
+            }
+
+            $properties['htmlUrl'] = $value;
+
+            after_htmlUrl:
+
+            $value = $payload['website_url'] ?? null;
+
+            if ($value === null) {
+                $properties['websiteUrl'] = null;
+                goto after_websiteUrl;
+            }
+
+            $properties['websiteUrl'] = $value;
+
+            after_websiteUrl:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'node_id';
+                goto after_nodeId;
+            }
+
+            $properties['nodeId'] = $value;
+
+            after_nodeId:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['slug'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'slug';
+                goto after_slug;
+            }
+
+            $properties['slug'] = $value;
+
+            after_slug:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $properties['createdAt'] = null;
+                goto after_createdAt;
+            }
+
+            $properties['createdAt'] = $value;
+
+            after_createdAt:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
+            }
+
+            $properties['updatedAt'] = $value;
+
+            after_updatedAt:
+
+            $value = $payload['avatar_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'avatar_url';
+                goto after_avatarUrl;
+            }
+
+            $properties['avatarUrl'] = $value;
+
+            after_avatarUrl:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\EnterpriseWebhooks', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(EnterpriseWebhooks::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new EnterpriseWebhooks(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\EnterpriseWebhooks', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks(array $payload): OrganizationSimpleWebhooks
     {
         $properties    = [];
@@ -1340,6 +1491,26 @@ class PersonalAccessTokenRequest implements ObjectMapper
 
             after_personalAccessTokenRequest:
 
+            $value = $payload['enterprise'] ?? null;
+
+            if ($value === null) {
+                $properties['enterprise'] = null;
+                goto after_enterprise;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'enterprise';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['enterprise'] = $value;
+
+            after_enterprise:
+
             $value = $payload['organization'] ?? null;
 
             if ($value === null) {
@@ -1450,6 +1621,26 @@ class PersonalAccessTokenRequest implements ObjectMapper
 
             after_personalAccessTokenRequest:
 
+            $value = $payload['enterprise'] ?? null;
+
+            if ($value === null) {
+                $properties['enterprise'] = null;
+                goto after_enterprise;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'enterprise';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['enterprise'] = $value;
+
+            after_enterprise:
+
             $value = $payload['organization'] ?? null;
 
             if ($value === null) {
@@ -1493,7 +1684,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
             $value = $payload['installation'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'installation';
+                $properties['installation'] = null;
                 goto after_installation;
             }
 
@@ -1579,6 +1770,26 @@ class PersonalAccessTokenRequest implements ObjectMapper
             $properties['organization'] = $value;
 
             after_organization:
+
+            $value = $payload['enterprise'] ?? null;
+
+            if ($value === null) {
+                $properties['enterprise'] = null;
+                goto after_enterprise;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'enterprise';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['enterprise'] = $value;
+
+            after_enterprise:
 
             $value = $payload['sender'] ?? null;
 
@@ -1851,6 +2062,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsAdded' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsAdded($object),
                 'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsUpgraded' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsUpgraded($object),
                 'ApiClients\Client\GitHub\Schema\PersonalAccessTokenRequest\PermissionsResult' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest⚡️PermissionsResult($object),
+                'ApiClients\Client\GitHub\Schema\EnterpriseWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
@@ -1930,6 +2142,15 @@ class PersonalAccessTokenRequest implements ObjectMapper
         $personalAccessTokenRequest                                                       = $object->personalAccessTokenRequest;
         $personalAccessTokenRequest                                                       = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest($personalAccessTokenRequest);
         after_personalAccessTokenRequest:        $result['personal_access_token_request'] = $personalAccessTokenRequest;
+
+        $enterprise = $object->enterprise;
+
+        if ($enterprise === null) {
+            goto after_enterprise;
+        }
+
+        $enterprise                                    = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
 
         $organization                                      = $object->organization;
         $organization                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($organization);
@@ -2217,6 +2438,64 @@ class PersonalAccessTokenRequest implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks(mixed $object): mixed
+    {
+        assert($object instanceof EnterpriseWebhooks);
+        $result = [];
+
+        $description = $object->description;
+
+        if ($description === null) {
+            goto after_description;
+        }
+
+        after_description:        $result['description'] = $description;
+
+        $htmlUrl                                  = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
+
+        $websiteUrl = $object->websiteUrl;
+
+        if ($websiteUrl === null) {
+            goto after_websiteUrl;
+        }
+
+        after_websiteUrl:        $result['website_url'] = $websiteUrl;
+
+        $id                            = $object->id;
+        after_id:        $result['id'] = $id;
+
+        $nodeId                                 = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
+
+        $name                              = $object->name;
+        after_name:        $result['name'] = $name;
+
+        $slug                              = $object->slug;
+        after_slug:        $result['slug'] = $slug;
+
+        $createdAt = $object->createdAt;
+
+        if ($createdAt === null) {
+            goto after_createdAt;
+        }
+
+        after_createdAt:        $result['created_at'] = $createdAt;
+
+        $updatedAt = $object->updatedAt;
+
+        if ($updatedAt === null) {
+            goto after_updatedAt;
+        }
+
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
+
+        $avatarUrl                                    = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks(mixed $object): mixed
     {
         assert($object instanceof OrganizationSimpleWebhooks);
@@ -2383,6 +2662,15 @@ class PersonalAccessTokenRequest implements ObjectMapper
         $personalAccessTokenRequest                                                       = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest($personalAccessTokenRequest);
         after_personalAccessTokenRequest:        $result['personal_access_token_request'] = $personalAccessTokenRequest;
 
+        $enterprise = $object->enterprise;
+
+        if ($enterprise === null) {
+            goto after_enterprise;
+        }
+
+        $enterprise                                    = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
         $organization                                      = $object->organization;
         $organization                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($organization);
         after_organization:        $result['organization'] = $organization;
@@ -2410,6 +2698,15 @@ class PersonalAccessTokenRequest implements ObjectMapper
         $personalAccessTokenRequest                                                       = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PersonalAccessTokenRequest($personalAccessTokenRequest);
         after_personalAccessTokenRequest:        $result['personal_access_token_request'] = $personalAccessTokenRequest;
 
+        $enterprise = $object->enterprise;
+
+        if ($enterprise === null) {
+            goto after_enterprise;
+        }
+
+        $enterprise                                    = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
         $organization                                      = $object->organization;
         $organization                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($organization);
         after_organization:        $result['organization'] = $organization;
@@ -2418,7 +2715,12 @@ class PersonalAccessTokenRequest implements ObjectMapper
         $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
         after_sender:        $result['sender'] = $sender;
 
-        $installation                                      = $object->installation;
+        $installation = $object->installation;
+
+        if ($installation === null) {
+            goto after_installation;
+        }
+
         $installation                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
@@ -2440,6 +2742,15 @@ class PersonalAccessTokenRequest implements ObjectMapper
         $organization                                      = $object->organization;
         $organization                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($organization);
         after_organization:        $result['organization'] = $organization;
+
+        $enterprise = $object->enterprise;
+
+        if ($enterprise === null) {
+            goto after_enterprise;
+        }
+
+        $enterprise                                    = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
 
         $sender                                = $object->sender;
         $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);

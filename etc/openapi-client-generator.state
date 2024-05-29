@@ -1,5 +1,5 @@
 {
-    "specHash": "eb75ba12b8f78ce6cf7e307635ad5f13",
+    "specHash": "7b81f53085c7eb703517cc9edd6bed5e",
     "generatedFiles": {
         "files": [
             {
@@ -2024,19 +2024,19 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPersonalAccessTokenRequestApproved.php",
-                "hash": "b64e1c122e457a0de06eefedeac70580"
+                "hash": "dfdb089e4ce6180c84cdc474c872401c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPersonalAccessTokenRequestCancelled.php",
-                "hash": "81dd7797d00263a4c5cecc02f5c03255"
+                "hash": "c20d85e515ea5f3a7b9663d983fa3f1f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPersonalAccessTokenRequestCreated.php",
-                "hash": "e7c5b2518e5a993fd24b83d754a524fe"
+                "hash": "422c94f54154d8af94b1e18298f987e6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPersonalAccessTokenRequestDenied.php",
-                "hash": "9daf007c5edc7d1ddd33a8810ebbe614"
+                "hash": "09d23bd3df65fdd32881b136b27ef6ed"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPing.php",
@@ -28312,7 +28312,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/PersonalAccessTokenRequest.php",
-                "hash": "bdf0d7b3fcd0078e008b3ad5253cac7c"
+                "hash": "bc904feff1609a6e8fcbdeac6be2e9d6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/Ping.php",

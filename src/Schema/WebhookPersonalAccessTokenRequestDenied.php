@@ -458,6 +458,96 @@ final readonly class WebhookPersonalAccessTokenRequestDenied
             },
             "description": "A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an\\norganization, or when the event occurs from activity in a repository owned by an organization."
         },
+        "enterprise": {
+            "title": "Enterprise",
+            "required": [
+                "id",
+                "node_id",
+                "name",
+                "slug",
+                "html_url",
+                "created_at",
+                "updated_at",
+                "avatar_url"
+            ],
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "A short description of the enterprise."
+                },
+                "html_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": [
+                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                    ]
+                },
+                "website_url": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The enterprise\'s website URL.",
+                    "format": "uri"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "Unique identifier of the enterprise",
+                    "examples": [
+                        42
+                    ]
+                },
+                "node_id": {
+                    "type": "string",
+                    "examples": [
+                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                    ]
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the enterprise.",
+                    "examples": [
+                        "Octo Business"
+                    ]
+                },
+                "slug": {
+                    "type": "string",
+                    "description": "The slug url identifier for the enterprise.",
+                    "examples": [
+                        "octo-business"
+                    ]
+                },
+                "created_at": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "date-time",
+                    "examples": [
+                        "2019-01-26T19:01:12Z"
+                    ]
+                },
+                "updated_at": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "format": "date-time",
+                    "examples": [
+                        "2019-01-26T19:14:43Z"
+                    ]
+                },
+                "avatar_url": {
+                    "type": "string",
+                    "format": "uri"
+                }
+            },
+            "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\"\\n"
+        },
         "sender": {
             "title": "Simple User",
             "required": [
@@ -712,6 +802,18 @@ final readonly class WebhookPersonalAccessTokenRequestDenied
         "avatar_url": "https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif",
         "description": "A great organization"
     },
+    "enterprise": {
+        "description": "generated",
+        "html_url": "https:\\/\\/github.com\\/enterprises\\/octo-business",
+        "website_url": "https:\\/\\/example.com\\/",
+        "id": 42,
+        "node_id": "MDEwOlJlcG9zaXRvcnkxMjk2MjY5",
+        "name": "Octo Business",
+        "slug": "octo-business",
+        "created_at": "2019-01-26T19:01:12Z",
+        "updated_at": "2019-01-26T19:14:43Z",
+        "avatar_url": "https:\\/\\/example.com\\/"
+    },
     "sender": {
         "name": "generated",
         "email": "generated",
@@ -745,13 +847,17 @@ final readonly class WebhookPersonalAccessTokenRequestDenied
      * personalAccessTokenRequest: Details of a Personal Access Token Request.
      * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
     organization, or when the event occurs from activity in a repository owned by an organization.
+     * enterprise: An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
+    on an enterprise account or an organization that's part of an enterprise account. For more information,
+    see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
+
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
     for and sent to a GitHub App. For more information,
     see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
      */
     public function __construct(public string $action, #[MapFrom('personal_access_token_request')]
-    public Schema\PersonalAccessTokenRequest $personalAccessTokenRequest, public Schema\OrganizationSimpleWebhooks $organization, public Schema\SimpleUserWebhooks $sender, public Schema\SimpleInstallation $installation,)
+    public Schema\PersonalAccessTokenRequest $personalAccessTokenRequest, public Schema\OrganizationSimpleWebhooks $organization, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleUserWebhooks $sender, public Schema\SimpleInstallation $installation,)
     {
     }
 }
