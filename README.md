@@ -21553,7 +21553,7 @@ You can find more about this operation over at the [API method documentation](ht
 
 ### repos/list-tag-protection
 
-List tag protection states for a repository
+Deprecated - List tag protection states for a repository
 
 Using the `call` method:
 ```php
@@ -21570,12 +21570,12 @@ $client->operations()->repos()->listTagProtection(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#list-tag-protection-states-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#deprecated---list-tag-protection-states-for-a-repository).
 
 
 ### repos/create-tag-protection
 
-Create a tag protection state for a repository
+Deprecated - Create a tag protection state for a repository
 
 Using the `call` method:
 ```php
@@ -21592,12 +21592,12 @@ $client->operations()->repos()->createTagProtection(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#create-a-tag-protection-state-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#deprecated---create-a-tag-protection-state-for-a-repository).
 
 
 ### repos/delete-tag-protection
 
-Delete a tag protection state for a repository
+Deprecated - Delete a tag protection state for a repository
 
 Using the `call` method:
 ```php
@@ -21616,7 +21616,7 @@ $client->operations()->repos()->deleteTagProtection(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#delete-a-tag-protection-state-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#deprecated---delete-a-tag-protection-state-for-a-repository).
 
 
 ### repos/download-tarball-archive

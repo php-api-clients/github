@@ -1,5 +1,5 @@
 {
-    "specHash": "7b81f53085c7eb703517cc9edd6bed5e",
+    "specHash": "165dc4edaf3899f8fa74f18ab70adbb6",
     "generatedFiles": {
         "files": [
             {
@@ -1780,7 +1780,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookFork.php",
-                "hash": "219d173d08eed559835d437d5e781949"
+                "hash": "149c23f333a44134601e9d7075e06671"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookGithubAppAuthorizationRevoked.php",
@@ -3488,7 +3488,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookFork\/Forkee.php",
-                "hash": "e1aa0765ec72888ffd864ec2417e748a"
+                "hash": "005633dcb3201975a6f12481234f7c3f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookFork\/Forkee\/License.php",
@@ -27236,7 +27236,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrators.php",
-                "hash": "99249ec5532c0e46a08937acb5501da3"
+                "hash": "f8a62fdffbd42820e452155cf51ca62f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrganizationSimpleWebhooks.php",
@@ -27783,10 +27783,6 @@
                 "hash": "04a6477eb2edebc4797b68dc827857e2"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookFork\/Forkee\/CustomProperties.php",
-                "hash": "103d90f7b9368728a7cc4b2348bc9797"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesOpened\/Changes\/OldRepository\/CustomProperties.php",
                 "hash": "c80cb58f8a896af192bbf5644a78c021"
             },
@@ -28236,7 +28232,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/Fork.php",
-                "hash": "a967f1db50c975232fad5125c8964d5c"
+                "hash": "926cc24d71e6c029fb051ac43336576d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/GithubAppAuthorization.php",
