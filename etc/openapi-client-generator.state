@@ -1,5 +1,5 @@
 {
-    "specHash": "30445c941a97be3bcb4ba3b3bae9e8f3",
+    "specHash": "90291aa8f69083a3b160c871835515fc",
     "generatedFiles": {
         "files": [
             {
@@ -2397,10 +2397,6 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSecretScanningAlertResolved.php",
                 "hash": "a7318c11f4f8eebbf3da10aba0624516"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSecretScanningAlertRevoked.php",
-                "hash": "c45f03d885ee4705b069d3fe165f2be7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSecurityAdvisoryPublished.php",
@@ -5668,7 +5664,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/WebHooks.php",
-                "hash": "3b8513aeb1b3d6895427fe3e03325435"
+                "hash": "f7c6ac32c80159d1420bf43843340bad"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietEB301A03\/Tiet504AADCF\/Tiet2FEB0C19\/TietF58BE94A.php",
@@ -27236,7 +27232,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrators.php",
-                "hash": "f8a62fdffbd42820e452155cf51ca62f"
+                "hash": "a56ba7b9df5fbe1b7453f77e6ba6fd2c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrganizationSimpleWebhooks.php",
@@ -28108,7 +28104,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/WebHook\/SecretScanningAlert.php",
-                "hash": "f5b4a68d18fa73bd6db6c300bc6d2119"
+                "hash": "8594714076741ae50b0b792ff068abf5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/WebHook\/SecretScanningAlertLocation.php",
@@ -28392,7 +28388,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/SecretScanningAlert.php",
-                "hash": "a4eb94e252a7fc2a08d9a635a134cc68"
+                "hash": "1621b9c57c53b43ddaebc74fc442ae0b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/SecretScanningAlertLocation.php",
