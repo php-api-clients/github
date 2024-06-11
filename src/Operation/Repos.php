@@ -586,7 +586,6 @@ final class Repos
         return $this->operators->repos👷CompareCommits()->call($owner, $repo, $basehead, $page, $perPage);
     }
 
-    /** @return */
     public function getContent(string $owner, string $repo, string $path, string $ref): ContentDirectory|ContentFile|ContentSymlink|ContentSubmodule|WithoutBody
     {
         return $this->operators->repos👷GetContent()->call($owner, $repo, $path, $ref);

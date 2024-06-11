@@ -605,7 +605,7 @@ assertType('Observable<Schema\\Status>|Schema\\BasicError', $client->call('GET /
 assertType('Observable<Schema\\Status>|Schema\\BasicError', $client->call('LIST /repos/{owner}/{repo}/commits/{ref}/statuses'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/community/profile'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/compare/{basehead}'));
-assertType('', $client->call('GET /repos/{owner}/{repo}/contents/{path}'));
+assertType('Schema\\ContentDirectory|Schema\\ContentFile|Schema\\ContentSymlink|Schema\\ContentSubmodule|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /repos/{owner}/{repo}/contents/{path}'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/contents/{path}'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/contents/{path}'));
 assertType('Observable<Schema\\Contributor>|WithoutBody', $client->call('GET /repos/{owner}/{repo}/contributors'));

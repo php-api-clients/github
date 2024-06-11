@@ -256,6 +256,10 @@ final readonly class SecretScanningAlertWebhook
             "type": "string",
             "description": "The type of secret that secret scanning detected."
         },
+        "secret_type_display_name": {
+            "type": "string",
+            "description": "User-friendly name for the detected secret, matching the `secret_type`.\\nFor a list of built-in patterns, see \\"[Secret scanning patterns](https:\\/\\/docs.github.com\\/code-security\\/secret-scanning\\/secret-scanning-patterns#supported-secrets-for-advanced-security).\\""
+        },
         "validity": {
             "enum": [
                 "active",
@@ -486,6 +490,7 @@ final readonly class SecretScanningAlertWebhook
     },
     "resolution_comment": "generated",
     "secret_type": "generated",
+    "secret_type_display_name": "generated",
     "validity": "unknown",
     "push_protection_bypassed": false,
     "push_protection_bypassed_by": {
@@ -524,6 +529,8 @@ final readonly class SecretScanningAlertWebhook
      * resolvedAt: The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      * resolutionComment: An optional comment to resolve an alert.
      * secretType: The type of secret that secret scanning detected.
+     * secretTypeDisplayName: User-friendly name for the detected secret, matching the `secret_type`.
+    For a list of built-in patterns, see "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)."
      * validity: The token status as of the latest validity check.
      * pushProtectionBypassed: Whether push protection was bypassed for the detected secret.
      * pushProtectionBypassedAt: The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
@@ -536,7 +543,8 @@ final readonly class SecretScanningAlertWebhook
     public string|null $resolvedAt, #[MapFrom('resolved_by')]
     public Schema\SimpleUser|null $resolvedBy, #[MapFrom('resolution_comment')]
     public string|null $resolutionComment, #[MapFrom('secret_type')]
-    public string|null $secretType, public string|null $validity, #[MapFrom('push_protection_bypassed')]
+    public string|null $secretType, #[MapFrom('secret_type_display_name')]
+    public string|null $secretTypeDisplayName, public string|null $validity, #[MapFrom('push_protection_bypassed')]
     public bool|null $pushProtectionBypassed, #[MapFrom('push_protection_bypassed_by')]
     public Schema\SimpleUser|null $pushProtectionBypassedBy, #[MapFrom('push_protection_bypassed_at')]
     public string|null $pushProtectionBypassedAt,)

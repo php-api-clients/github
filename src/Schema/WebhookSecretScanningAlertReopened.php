@@ -270,6 +270,10 @@ final readonly class WebhookSecretScanningAlertReopened
                     "type": "string",
                     "description": "The type of secret that secret scanning detected."
                 },
+                "secret_type_display_name": {
+                    "type": "string",
+                    "description": "User-friendly name for the detected secret, matching the `secret_type`.\\nFor a list of built-in patterns, see \\"[Secret scanning patterns](https:\\/\\/docs.github.com\\/code-security\\/secret-scanning\\/secret-scanning-patterns#supported-secrets-for-advanced-security).\\""
+                },
                 "validity": {
                     "enum": [
                         "active",
@@ -2353,6 +2357,7 @@ final readonly class WebhookSecretScanningAlertReopened
         },
         "resolution_comment": "generated",
         "secret_type": "generated",
+        "secret_type_display_name": "generated",
         "validity": "unknown",
         "push_protection_bypassed": false,
         "push_protection_bypassed_by": {

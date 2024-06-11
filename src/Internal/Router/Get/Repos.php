@@ -1476,7 +1476,6 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['basehead'], $arguments['page'], $arguments['per_page']);
     }
 
-    /** @return */
     public function getContent(array $params): ContentDirectory|ContentFile|ContentSymlink|ContentSubmodule|WithoutBody
     {
         $arguments = [];

@@ -122,6 +122,12 @@ final class GetContent
              **/
             case 302:
                 return new WithoutBody(302, []);
+            /**
+             * Not modified
+             **/
+
+            case 304:
+                return new WithoutBody(304, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

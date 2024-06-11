@@ -2396,7 +2396,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/contents/{path}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\ContentDirectory|Schema\\ContentFile|Schema\\ContentSymlink|Schema\\ContentSubmodule|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'PUT /repos/{owner}/{repo}/contents/{path}') {

@@ -359,6 +359,17 @@ class SecretScanningAlertLocation implements ObjectMapper
 
             after_secretType:
 
+            $value = $payload['secret_type_display_name'] ?? null;
+
+            if ($value === null) {
+                $properties['secretTypeDisplayName'] = null;
+                goto after_secretTypeDisplayName;
+            }
+
+            $properties['secretTypeDisplayName'] = $value;
+
+            after_secretTypeDisplayName:
+
             $value = $payload['validity'] ?? null;
 
             if ($value === null) {
@@ -4089,6 +4100,14 @@ class SecretScanningAlertLocation implements ObjectMapper
         }
 
         after_secretType:        $result['secret_type'] = $secretType;
+
+        $secretTypeDisplayName = $object->secretTypeDisplayName;
+
+        if ($secretTypeDisplayName === null) {
+            goto after_secretTypeDisplayName;
+        }
+
+        after_secretTypeDisplayName:        $result['secret_type_display_name'] = $secretTypeDisplayName;
 
         $validity = $object->validity;
 
