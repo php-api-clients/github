@@ -603,7 +603,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Commit> */
+    /** @return iterable<int,Schema\Commit> */
     public function listCommits(array $params): iterable
     {
         $arguments = [];
@@ -1476,6 +1476,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['basehead'], $arguments['page'], $arguments['per_page']);
     }
 
+    /** @return */
     public function getContent(array $params): ContentDirectory|ContentFile|ContentSymlink|ContentSubmodule|WithoutBody
     {
         $arguments = [];

@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Schema;
 
 use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\Assignee;
 use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\AssigningTeam;
+use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\Organization;
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
@@ -573,6 +574,114 @@ final readonly class CopilotSeatDetails
             "description": "The assignee that has been granted access to GitHub Copilot.",
             "additionalProperties": true
         },
+        "organization": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "oneOf": [
+                {
+                    "title": "Organization Simple",
+                    "required": [
+                        "login",
+                        "url",
+                        "id",
+                        "node_id",
+                        "repos_url",
+                        "events_url",
+                        "hooks_url",
+                        "issues_url",
+                        "members_url",
+                        "public_members_url",
+                        "avatar_url",
+                        "description"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "login": {
+                            "type": "string",
+                            "examples": [
+                                "github"
+                            ]
+                        },
+                        "id": {
+                            "type": "integer",
+                            "examples": [
+                                1
+                            ]
+                        },
+                        "node_id": {
+                            "type": "string",
+                            "examples": [
+                                "MDEyOk9yZ2FuaXphdGlvbjE="
+                            ]
+                        },
+                        "url": {
+                            "type": "string",
+                            "format": "uri",
+                            "examples": [
+                                "https:\\/\\/api.github.com\\/orgs\\/github"
+                            ]
+                        },
+                        "repos_url": {
+                            "type": "string",
+                            "format": "uri",
+                            "examples": [
+                                "https:\\/\\/api.github.com\\/orgs\\/github\\/repos"
+                            ]
+                        },
+                        "events_url": {
+                            "type": "string",
+                            "format": "uri",
+                            "examples": [
+                                "https:\\/\\/api.github.com\\/orgs\\/github\\/events"
+                            ]
+                        },
+                        "hooks_url": {
+                            "type": "string",
+                            "examples": [
+                                "https:\\/\\/api.github.com\\/orgs\\/github\\/hooks"
+                            ]
+                        },
+                        "issues_url": {
+                            "type": "string",
+                            "examples": [
+                                "https:\\/\\/api.github.com\\/orgs\\/github\\/issues"
+                            ]
+                        },
+                        "members_url": {
+                            "type": "string",
+                            "examples": [
+                                "https:\\/\\/api.github.com\\/orgs\\/github\\/members{\\/member}"
+                            ]
+                        },
+                        "public_members_url": {
+                            "type": "string",
+                            "examples": [
+                                "https:\\/\\/api.github.com\\/orgs\\/github\\/public_members{\\/member}"
+                            ]
+                        },
+                        "avatar_url": {
+                            "type": "string",
+                            "examples": [
+                                "https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif"
+                            ]
+                        },
+                        "description": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "examples": [
+                                "A great organization"
+                            ]
+                        }
+                    },
+                    "description": "A GitHub organization."
+                }
+            ],
+            "description": "The organization to which this seat belongs."
+        },
         "assigning_team": {
             "type": [
                 "null",
@@ -788,9 +897,73 @@ final readonly class CopilotSeatDetails
                         }
                     },
                     "description": "Groups of organization members that gives permissions on specified repositories."
+                },
+                {
+                    "title": "Enterprise Team",
+                    "required": [
+                        "id",
+                        "url",
+                        "members_url",
+                        "sync_to_organizations",
+                        "name",
+                        "html_url",
+                        "slug",
+                        "created_at",
+                        "updated_at"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        },
+                        "name": {
+                            "type": "string"
+                        },
+                        "slug": {
+                            "type": "string"
+                        },
+                        "url": {
+                            "type": "string",
+                            "format": "uri"
+                        },
+                        "sync_to_organizations": {
+                            "type": "string",
+                            "examples": [
+                                "disabled | all"
+                            ]
+                        },
+                        "group_id": {
+                            "type": [
+                                "integer",
+                                "null"
+                            ],
+                            "examples": [
+                                1
+                            ]
+                        },
+                        "html_url": {
+                            "type": "string",
+                            "format": "uri",
+                            "examples": [
+                                "https:\\/\\/github.com\\/enterprises\\/dc\\/teams\\/justice-league"
+                            ]
+                        },
+                        "members_url": {
+                            "type": "string"
+                        },
+                        "created_at": {
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "updated_at": {
+                            "type": "string",
+                            "format": "date-time"
+                        }
+                    },
+                    "description": "Group of enterprise owners and\\/or members"
                 }
             ],
-            "description": "The team that granted access to GitHub Copilot to the assignee. This will be null if the user was assigned a seat individually."
+            "description": "The team through which the assignee is granted access to GitHub Copilot, if applicable."
         },
         "pending_cancellation_date": {
             "type": [
@@ -833,6 +1006,7 @@ final readonly class CopilotSeatDetails
     public const SCHEMA_DESCRIPTION  = 'Information about a Copilot Business seat assignment for a user, team, or organization.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "assignee": null,
+    "organization": null,
     "assigning_team": null,
     "pending_cancellation_date": "generated",
     "last_activity_at": "1970-01-01T00:00:00+00:00",
@@ -843,7 +1017,8 @@ final readonly class CopilotSeatDetails
 
     /**
      * assignee: The assignee that has been granted access to GitHub Copilot.
-     * assigningTeam: The team that granted access to GitHub Copilot to the assignee. This will be null if the user was assigned a seat individually.
+     * organization: The organization to which this seat belongs.
+     * assigningTeam: The team through which the assignee is granted access to GitHub Copilot, if applicable.
      * pendingCancellationDate: The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.
      * lastActivityAt: Timestamp of user's last GitHub Copilot activity, in ISO 8601 format.
      * lastActivityEditor: Last editor that was used by the user for a GitHub Copilot completion.
@@ -851,9 +1026,10 @@ final readonly class CopilotSeatDetails
      * updatedAt: Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
      */
     public function __construct(#[Assignee]
-    public Schema\SimpleUser|Schema\Team|Schema\Organization $assignee, #[MapFrom('assigning_team')]
+    public Schema\SimpleUser|Schema\Team|Schema\Organization $assignee, #[Organization]
+    public Schema\OrganizationSimple|null $organization, #[MapFrom('assigning_team')]
     #[AssigningTeam]
-    public Schema\Team|null $assigningTeam, #[MapFrom('pending_cancellation_date')]
+    public Schema\Team|Schema\EnterpriseTeam|null $assigningTeam, #[MapFrom('pending_cancellation_date')]
     public string|null $pendingCancellationDate, #[MapFrom('last_activity_at')]
     public string|null $lastActivityAt, #[MapFrom('last_activity_editor')]
     public string|null $lastActivityEditor, #[MapFrom('created_at')]

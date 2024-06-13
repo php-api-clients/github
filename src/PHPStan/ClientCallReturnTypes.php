@@ -2332,11 +2332,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/commits') {
-            return $this->typeResolver->resolve('Observable<Schema\\Commit>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\Commit>');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/commits') {
-            return $this->typeResolver->resolve('Observable<Schema\\Commit>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\Commit>');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head') {
@@ -2396,7 +2396,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/contents/{path}') {
-            return $this->typeResolver->resolve('Schema\\ContentDirectory|Schema\\ContentFile|Schema\\ContentSymlink|Schema\\ContentSubmodule|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PUT /repos/{owner}/{repo}/contents/{path}') {

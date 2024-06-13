@@ -579,6 +579,114 @@ final readonly class Ok
                         "description": "The assignee that has been granted access to GitHub Copilot.",
                         "additionalProperties": true
                     },
+                    "organization": {
+                        "type": [
+                            "object",
+                            "null"
+                        ],
+                        "oneOf": [
+                            {
+                                "title": "Organization Simple",
+                                "required": [
+                                    "login",
+                                    "url",
+                                    "id",
+                                    "node_id",
+                                    "repos_url",
+                                    "events_url",
+                                    "hooks_url",
+                                    "issues_url",
+                                    "members_url",
+                                    "public_members_url",
+                                    "avatar_url",
+                                    "description"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "login": {
+                                        "type": "string",
+                                        "examples": [
+                                            "github"
+                                        ]
+                                    },
+                                    "id": {
+                                        "type": "integer",
+                                        "examples": [
+                                            1
+                                        ]
+                                    },
+                                    "node_id": {
+                                        "type": "string",
+                                        "examples": [
+                                            "MDEyOk9yZ2FuaXphdGlvbjE="
+                                        ]
+                                    },
+                                    "url": {
+                                        "type": "string",
+                                        "format": "uri",
+                                        "examples": [
+                                            "https:\\/\\/api.github.com\\/orgs\\/github"
+                                        ]
+                                    },
+                                    "repos_url": {
+                                        "type": "string",
+                                        "format": "uri",
+                                        "examples": [
+                                            "https:\\/\\/api.github.com\\/orgs\\/github\\/repos"
+                                        ]
+                                    },
+                                    "events_url": {
+                                        "type": "string",
+                                        "format": "uri",
+                                        "examples": [
+                                            "https:\\/\\/api.github.com\\/orgs\\/github\\/events"
+                                        ]
+                                    },
+                                    "hooks_url": {
+                                        "type": "string",
+                                        "examples": [
+                                            "https:\\/\\/api.github.com\\/orgs\\/github\\/hooks"
+                                        ]
+                                    },
+                                    "issues_url": {
+                                        "type": "string",
+                                        "examples": [
+                                            "https:\\/\\/api.github.com\\/orgs\\/github\\/issues"
+                                        ]
+                                    },
+                                    "members_url": {
+                                        "type": "string",
+                                        "examples": [
+                                            "https:\\/\\/api.github.com\\/orgs\\/github\\/members{\\/member}"
+                                        ]
+                                    },
+                                    "public_members_url": {
+                                        "type": "string",
+                                        "examples": [
+                                            "https:\\/\\/api.github.com\\/orgs\\/github\\/public_members{\\/member}"
+                                        ]
+                                    },
+                                    "avatar_url": {
+                                        "type": "string",
+                                        "examples": [
+                                            "https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif"
+                                        ]
+                                    },
+                                    "description": {
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "examples": [
+                                            "A great organization"
+                                        ]
+                                    }
+                                },
+                                "description": "A GitHub organization."
+                            }
+                        ],
+                        "description": "The organization to which this seat belongs."
+                    },
                     "assigning_team": {
                         "type": [
                             "null",
@@ -794,9 +902,73 @@ final readonly class Ok
                                     }
                                 },
                                 "description": "Groups of organization members that gives permissions on specified repositories."
+                            },
+                            {
+                                "title": "Enterprise Team",
+                                "required": [
+                                    "id",
+                                    "url",
+                                    "members_url",
+                                    "sync_to_organizations",
+                                    "name",
+                                    "html_url",
+                                    "slug",
+                                    "created_at",
+                                    "updated_at"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "slug": {
+                                        "type": "string"
+                                    },
+                                    "url": {
+                                        "type": "string",
+                                        "format": "uri"
+                                    },
+                                    "sync_to_organizations": {
+                                        "type": "string",
+                                        "examples": [
+                                            "disabled | all"
+                                        ]
+                                    },
+                                    "group_id": {
+                                        "type": [
+                                            "integer",
+                                            "null"
+                                        ],
+                                        "examples": [
+                                            1
+                                        ]
+                                    },
+                                    "html_url": {
+                                        "type": "string",
+                                        "format": "uri",
+                                        "examples": [
+                                            "https:\\/\\/github.com\\/enterprises\\/dc\\/teams\\/justice-league"
+                                        ]
+                                    },
+                                    "members_url": {
+                                        "type": "string"
+                                    },
+                                    "created_at": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "updated_at": {
+                                        "type": "string",
+                                        "format": "date-time"
+                                    }
+                                },
+                                "description": "Group of enterprise owners and\\/or members"
                             }
                         ],
-                        "description": "The team that granted access to GitHub Copilot to the assignee. This will be null if the user was assigned a seat individually."
+                        "description": "The team through which the assignee is granted access to GitHub Copilot, if applicable."
                     },
                     "pending_cancellation_date": {
                         "type": [
@@ -845,6 +1017,7 @@ final readonly class Ok
     "seats": [
         {
             "assignee": null,
+            "organization": null,
             "assigning_team": null,
             "pending_cancellation_date": "generated",
             "last_activity_at": "1970-01-01T00:00:00+00:00",
@@ -854,6 +1027,7 @@ final readonly class Ok
         },
         {
             "assignee": null,
+            "organization": null,
             "assigning_team": null,
             "pending_cancellation_date": "generated",
             "last_activity_at": "1970-01-01T00:00:00+00:00",

@@ -38,7 +38,9 @@ final readonly class WebhookCustomPropertyCreated
                 "value_type": {
                     "enum": [
                         "string",
-                        "single_select"
+                        "single_select",
+                        "multi_select",
+                        "true_false"
                     ],
                     "type": "string",
                     "description": "The type of the value for the property",

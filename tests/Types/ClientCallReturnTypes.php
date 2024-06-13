@@ -589,8 +589,8 @@ assertType('Observable<Schema\\Reaction>', $client->call('GET /repos/{owner}/{re
 assertType('Observable<Schema\\Reaction>', $client->call('LIST /repos/{owner}/{repo}/comments/{comment_id}/reactions'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/comments/{comment_id}/reactions'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}'));
-assertType('Observable<Schema\\Commit>', $client->call('GET /repos/{owner}/{repo}/commits'));
-assertType('Observable<Schema\\Commit>', $client->call('LIST /repos/{owner}/{repo}/commits'));
+assertType('iterable<int,Schema\\Commit>', $client->call('GET /repos/{owner}/{repo}/commits'));
+assertType('iterable<int,Schema\\Commit>', $client->call('LIST /repos/{owner}/{repo}/commits'));
 assertType('Observable<Schema\\BranchShort>', $client->call('GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head'));
 assertType('Observable<Schema\\CommitComment>', $client->call('GET /repos/{owner}/{repo}/commits/{commit_sha}/comments'));
 assertType('Observable<Schema\\CommitComment>', $client->call('LIST /repos/{owner}/{repo}/commits/{commit_sha}/comments'));
@@ -605,7 +605,7 @@ assertType('Observable<Schema\\Status>|Schema\\BasicError', $client->call('GET /
 assertType('Observable<Schema\\Status>|Schema\\BasicError', $client->call('LIST /repos/{owner}/{repo}/commits/{ref}/statuses'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/community/profile'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/compare/{basehead}'));
-assertType('Schema\\ContentDirectory|Schema\\ContentFile|Schema\\ContentSymlink|Schema\\ContentSubmodule|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /repos/{owner}/{repo}/contents/{path}'));
+assertType('', $client->call('GET /repos/{owner}/{repo}/contents/{path}'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/contents/{path}'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/contents/{path}'));
 assertType('Observable<Schema\\Contributor>|WithoutBody', $client->call('GET /repos/{owner}/{repo}/contributors'));

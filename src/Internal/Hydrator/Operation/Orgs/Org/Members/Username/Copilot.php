@@ -6,11 +6,10 @@ namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Orgs\Org\Members\
 
 use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\Assignee;
 use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\AssigningTeam;
+use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\Organization;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\CopilotSeatDetails;
-use ApiClients\Client\GitHub\Schema\Team;
-use ApiClients\Client\GitHub\Schema\Team\Permissions;
-use ApiClients\Client\GitHub\Schema\TeamSimple;
+use ApiClients\Client\GitHub\Schema\OrganizationSimple;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems;
@@ -27,6 +26,7 @@ use function assert;
 use function count;
 use function is_a;
 use function is_array;
+use function is_object;
 
 class Copilot implements ObjectMapper
 {
@@ -48,9 +48,7 @@ class Copilot implements ObjectMapper
         return match ($className) {
             'ApiClients\Client\GitHub\Schema\CopilotSeatDetails' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CopilotSeatDetails($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
-                'ApiClients\Client\GitHub\Schema\Team' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Team($payload),
-                'ApiClients\Client\GitHub\Schema\Team\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Team⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\TeamSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TeamSimple($payload),
+                'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -84,6 +82,39 @@ class Copilot implements ObjectMapper
 
             after_assignee:
 
+            $value = $payload['organization'] ?? null;
+
+            if ($value === null) {
+                $properties['organization'] = null;
+                goto after_organization;
+            }
+
+            static $organizationCaster1;
+
+            if ($organizationCaster1 === null) {
+                $organizationCaster1 = new Organization(...[]);
+            }
+
+            $value = $organizationCaster1->cast($value, $this);
+
+            if ($value === null) {
+                                $properties['organization'] = null;
+                goto after_organization;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'organization';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['organization'] = $value;
+
+            after_organization:
+
             $value = $payload['assigning_team'] ?? null;
 
             if ($value === null) {
@@ -102,15 +133,6 @@ class Copilot implements ObjectMapper
             if ($value === null) {
                                 $properties['assigningTeam'] = null;
                 goto after_assigningTeam;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'assigningTeam';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Team($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
             }
 
             $properties['assigningTeam'] = $value;
@@ -249,276 +271,22 @@ class Copilot implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Team(array $payload): Team
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple(array $payload): OrganizationSimple
     {
         $properties    = [];
         $missingFields = [];
         try {
-            $value = $payload['id'] ?? null;
+            $value = $payload['login'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'id';
-                goto after_id;
+                $missingFields[] = 'login';
+                goto after_login;
             }
 
-            $properties['id'] = $value;
+            $properties['login'] = $value;
 
-            after_id:
+            after_login:
 
-            $value = $payload['node_id'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'node_id';
-                goto after_nodeId;
-            }
-
-            $properties['nodeId'] = $value;
-
-            after_nodeId:
-
-            $value = $payload['name'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
-            }
-
-            $properties['name'] = $value;
-
-            after_name:
-
-            $value = $payload['slug'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'slug';
-                goto after_slug;
-            }
-
-            $properties['slug'] = $value;
-
-            after_slug:
-
-            $value = $payload['description'] ?? null;
-
-            if ($value === null) {
-                $properties['description'] = null;
-                goto after_description;
-            }
-
-            $properties['description'] = $value;
-
-            after_description:
-
-            $value = $payload['privacy'] ?? null;
-
-            if ($value === null) {
-                $properties['privacy'] = null;
-                goto after_privacy;
-            }
-
-            $properties['privacy'] = $value;
-
-            after_privacy:
-
-            $value = $payload['notification_setting'] ?? null;
-
-            if ($value === null) {
-                $properties['notificationSetting'] = null;
-                goto after_notificationSetting;
-            }
-
-            $properties['notificationSetting'] = $value;
-
-            after_notificationSetting:
-
-            $value = $payload['permission'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'permission';
-                goto after_permission;
-            }
-
-            $properties['permission'] = $value;
-
-            after_permission:
-
-            $value = $payload['permissions'] ?? null;
-
-            if ($value === null) {
-                $properties['permissions'] = null;
-                goto after_permissions;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'permissions';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Team⚡️Permissions($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['permissions'] = $value;
-
-            after_permissions:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'url';
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['members_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'members_url';
-                goto after_membersUrl;
-            }
-
-            $properties['membersUrl'] = $value;
-
-            after_membersUrl:
-
-            $value = $payload['repositories_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'repositories_url';
-                goto after_repositoriesUrl;
-            }
-
-            $properties['repositoriesUrl'] = $value;
-
-            after_repositoriesUrl:
-
-            $value = $payload['parent'] ?? null;
-
-            if ($value === null) {
-                $properties['parent'] = null;
-                goto after_parent;
-            }
-
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'parent';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TeamSimple($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
-            }
-
-            $properties['parent'] = $value;
-
-            after_parent:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Team', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(Team::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new Team(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Team', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Team⚡️Permissions(array $payload): Permissions
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['pull'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'pull';
-                goto after_pull;
-            }
-
-            $properties['pull'] = $value;
-
-            after_pull:
-
-            $value = $payload['triage'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'triage';
-                goto after_triage;
-            }
-
-            $properties['triage'] = $value;
-
-            after_triage:
-
-            $value = $payload['push'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'push';
-                goto after_push;
-            }
-
-            $properties['push'] = $value;
-
-            after_push:
-
-            $value = $payload['maintain'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'maintain';
-                goto after_maintain;
-            }
-
-            $properties['maintain'] = $value;
-
-            after_maintain:
-
-            $value = $payload['admin'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'admin';
-                goto after_admin;
-            }
-
-            $properties['admin'] = $value;
-
-            after_admin:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Team\Permissions', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(Permissions::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new Permissions(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Team\Permissions', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️TeamSimple(array $payload): TeamSimple
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
             $value = $payload['id'] ?? null;
 
             if ($value === null) {
@@ -552,6 +320,50 @@ class Copilot implements ObjectMapper
 
             after_url:
 
+            $value = $payload['repos_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'repos_url';
+                goto after_reposUrl;
+            }
+
+            $properties['reposUrl'] = $value;
+
+            after_reposUrl:
+
+            $value = $payload['events_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'events_url';
+                goto after_eventsUrl;
+            }
+
+            $properties['eventsUrl'] = $value;
+
+            after_eventsUrl:
+
+            $value = $payload['hooks_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'hooks_url';
+                goto after_hooksUrl;
+            }
+
+            $properties['hooksUrl'] = $value;
+
+            after_hooksUrl:
+
+            $value = $payload['issues_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'issues_url';
+                goto after_issuesUrl;
+            }
+
+            $properties['issuesUrl'] = $value;
+
+            after_issuesUrl:
+
             $value = $payload['members_url'] ?? null;
 
             if ($value === null) {
@@ -563,16 +375,27 @@ class Copilot implements ObjectMapper
 
             after_membersUrl:
 
-            $value = $payload['name'] ?? null;
+            $value = $payload['public_members_url'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'name';
-                goto after_name;
+                $missingFields[] = 'public_members_url';
+                goto after_publicMembersUrl;
             }
 
-            $properties['name'] = $value;
+            $properties['publicMembersUrl'] = $value;
 
-            after_name:
+            after_publicMembersUrl:
+
+            $value = $payload['avatar_url'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'avatar_url';
+                goto after_avatarUrl;
+            }
+
+            $properties['avatarUrl'] = $value;
+
+            after_avatarUrl:
 
             $value = $payload['description'] ?? null;
 
@@ -584,95 +407,18 @@ class Copilot implements ObjectMapper
             $properties['description'] = $value;
 
             after_description:
-
-            $value = $payload['permission'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'permission';
-                goto after_permission;
-            }
-
-            $properties['permission'] = $value;
-
-            after_permission:
-
-            $value = $payload['privacy'] ?? null;
-
-            if ($value === null) {
-                $properties['privacy'] = null;
-                goto after_privacy;
-            }
-
-            $properties['privacy'] = $value;
-
-            after_privacy:
-
-            $value = $payload['notification_setting'] ?? null;
-
-            if ($value === null) {
-                $properties['notificationSetting'] = null;
-                goto after_notificationSetting;
-            }
-
-            $properties['notificationSetting'] = $value;
-
-            after_notificationSetting:
-
-            $value = $payload['html_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'html_url';
-                goto after_htmlUrl;
-            }
-
-            $properties['htmlUrl'] = $value;
-
-            after_htmlUrl:
-
-            $value = $payload['repositories_url'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'repositories_url';
-                goto after_repositoriesUrl;
-            }
-
-            $properties['repositoriesUrl'] = $value;
-
-            after_repositoriesUrl:
-
-            $value = $payload['slug'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'slug';
-                goto after_slug;
-            }
-
-            $properties['slug'] = $value;
-
-            after_slug:
-
-            $value = $payload['ldap_dn'] ?? null;
-
-            if ($value === null) {
-                $properties['ldapDn'] = null;
-                goto after_ldapDn;
-            }
-
-            $properties['ldapDn'] = $value;
-
-            after_ldapDn:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\TeamSimple', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(TeamSimple::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(OrganizationSimple::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new TeamSimple(...$properties);
+            return new OrganizationSimple(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\TeamSimple', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationSimple', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -784,13 +530,25 @@ class Copilot implements ObjectMapper
         };
         after_assignee:        $result['assignee'] = $assignee;
 
+        $organization = $object->organization;
+
+        if ($organization === null) {
+            goto after_organization;
+        }
+
+        $organization                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($organization);
+        after_organization:        $result['organization'] = $organization;
+
         $assigningTeam = $object->assigningTeam;
 
         if ($assigningTeam === null) {
             goto after_assigningTeam;
         }
 
-        $assigningTeam                                        = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Team($assigningTeam);
+        if (is_object($assigningTeam)) {
+            $assigningTeam = $this->serializeObject($assigningTeam);
+        }
+
         after_assigningTeam:        $result['assigning_team'] = $assigningTeam;
 
         $pendingCancellationDate = $object->pendingCancellationDate;

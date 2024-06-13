@@ -502,13 +502,13 @@ final class Repos
         return $this->operators->repos👷UpdateCommitComment()->call($owner, $repo, $commentId, $params);
     }
 
-    /** @return Observable<Schema\Commit> */
+    /** @return iterable<int,Schema\Commit> */
     public function listCommits(string $owner, string $repo, string $sha, string $path, string $author, string $committer, string $since, string $until, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷ListCommits()->call($owner, $repo, $sha, $path, $author, $committer, $since, $until, $perPage, $page);
     }
 
-    /** @return Observable<Schema\Commit> */
+    /** @return iterable<int,Schema\Commit> */
     public function listCommitsListing(string $owner, string $repo, string $sha, string $path, string $author, string $committer, string $since, string $until, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷ListCommitsListing()->call($owner, $repo, $sha, $path, $author, $committer, $since, $until, $perPage, $page);
@@ -586,6 +586,7 @@ final class Repos
         return $this->operators->repos👷CompareCommits()->call($owner, $repo, $basehead, $page, $perPage);
     }
 
+    /** @return */
     public function getContent(string $owner, string $repo, string $path, string $ref): ContentDirectory|ContentFile|ContentSymlink|ContentSubmodule|WithoutBody
     {
         return $this->operators->repos👷GetContent()->call($owner, $repo, $path, $ref);
