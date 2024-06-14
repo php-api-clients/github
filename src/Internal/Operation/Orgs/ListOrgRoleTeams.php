@@ -47,7 +47,7 @@ final class ListOrgRoleTeams
         return new Request('GET', str_replace(['{org}', '{role_id}', '{per_page}', '{page}'], [$this->org, $this->roleId, $this->perPage, $this->page], '/orgs/{org}/organization-roles/{role_id}/teams' . '?per_page={per_page}&page={page}'));
     }
 
-    /** @return Observable<Schema\Team>|WithoutBody */
+    /** @return Observable<Schema\TeamRoleAssignment>|WithoutBody */
     public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
@@ -60,12 +60,12 @@ final class ListOrgRoleTeams
                      * Response - List of assigned teams
                      **/
                     case 200:
-                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\Team {
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\TeamRoleAssignment {
                             $error = new RuntimeException();
                             try {
-                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Team::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\TeamRoleAssignment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\Team::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\TeamRoleAssignment::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

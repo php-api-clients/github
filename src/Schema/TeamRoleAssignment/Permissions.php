@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\Team;
+namespace ApiClients\Client\GitHub\Schema\TeamRoleAssignment;
 
 use ApiClients\Client\GitHub\Schema;
 

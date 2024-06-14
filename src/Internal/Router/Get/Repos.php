@@ -603,7 +603,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\Commit> */
+    /** @return Observable<Schema\Commit> */
     public function listCommits(array $params): iterable
     {
         $arguments = [];

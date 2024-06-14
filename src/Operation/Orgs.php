@@ -318,25 +318,25 @@ final class Orgs
         return $this->operators->orgs👷PatchCustomOrganizationRole()->call($org, $roleId, $params);
     }
 
-    /** @return Observable<Schema\Team>|WithoutBody */
+    /** @return iterable<int,Schema\TeamRoleAssignment>|WithoutBody */
     public function listOrgRoleTeams(string $org, int $roleId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->orgs👷ListOrgRoleTeams()->call($org, $roleId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\Team>|WithoutBody */
+    /** @return iterable<int,Schema\TeamRoleAssignment>|WithoutBody */
     public function listOrgRoleTeamsListing(string $org, int $roleId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->orgs👷ListOrgRoleTeamsListing()->call($org, $roleId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\SimpleUser>|WithoutBody */
+    /** @return iterable<int,Schema\UserRoleAssignment>|WithoutBody */
     public function listOrgRoleUsers(string $org, int $roleId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->orgs👷ListOrgRoleUsers()->call($org, $roleId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\SimpleUser>|WithoutBody */
+    /** @return iterable<int,Schema\UserRoleAssignment>|WithoutBody */
     public function listOrgRoleUsersListing(string $org, int $roleId, int $perPage, int $page): iterable|WithoutBody
     {
         return $this->operators->orgs👷ListOrgRoleUsersListing()->call($org, $roleId, $perPage, $page);

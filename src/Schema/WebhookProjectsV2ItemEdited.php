@@ -42,6 +42,160 @@ final readonly class WebhookProjectsV2ItemEdited
                                 },
                                 "field_type": {
                                     "type": "string"
+                                },
+                                "field_name": {
+                                    "type": "string"
+                                },
+                                "project_number": {
+                                    "type": "integer"
+                                },
+                                "from": {
+                                    "type": [
+                                        "null",
+                                        "string",
+                                        "integer",
+                                        "object"
+                                    ],
+                                    "oneOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        },
+                                        {
+                                            "title": "Projects v2 Single Select Option",
+                                            "required": [
+                                                "id",
+                                                "name"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "color": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            },
+                                            "description": "An option for a single select field"
+                                        },
+                                        {
+                                            "title": "Projects v2 Iteration Setting",
+                                            "required": [
+                                                "id",
+                                                "title"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "duration": {
+                                                    "type": [
+                                                        "number",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "start_date": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            },
+                                            "description": "An iteration setting for an iteration field"
+                                        }
+                                    ]
+                                },
+                                "to": {
+                                    "type": [
+                                        "null",
+                                        "string",
+                                        "integer",
+                                        "object"
+                                    ],
+                                    "oneOf": [
+                                        {
+                                            "type": "string"
+                                        },
+                                        {
+                                            "type": "integer"
+                                        },
+                                        {
+                                            "title": "Projects v2 Single Select Option",
+                                            "required": [
+                                                "id",
+                                                "name"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "name": {
+                                                    "type": "string"
+                                                },
+                                                "color": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            },
+                                            "description": "An option for a single select field"
+                                        },
+                                        {
+                                            "title": "Projects v2 Iteration Setting",
+                                            "required": [
+                                                "id",
+                                                "title"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "id": {
+                                                    "type": "string"
+                                                },
+                                                "title": {
+                                                    "type": "string"
+                                                },
+                                                "duration": {
+                                                    "type": [
+                                                        "number",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "start_date": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            },
+                                            "description": "An iteration setting for an iteration field"
+                                        }
+                                    ]
                                 }
                             }
                         }
@@ -72,7 +226,8 @@ final readonly class WebhookProjectsV2ItemEdited
                         }
                     }
                 }
-            ]
+            ],
+            "description": "The changes made to the item may involve modifications in the item\'s fields and draft issue body.\\nIt includes altered values for text, number, date, single select, and iteration fields, along with the GraphQL node ID of the changed field."
         },
         "installation": {
             "title": "Simple Installation",
@@ -665,6 +820,8 @@ final readonly class WebhookProjectsV2ItemEdited
 }';
 
     /**
+     * changes: The changes made to the item may involve modifications in the item's fields and draft issue body.
+    It includes altered values for text, number, date, single select, and iteration fields, along with the GraphQL node ID of the changed field.
      * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
     for and sent to a GitHub App. For more information,
     see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."

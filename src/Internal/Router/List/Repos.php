@@ -445,7 +445,7 @@ final class Repos
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Commit> */
+    /** @return Observable<Schema\Commit> */
     public function listCommitsListing(array $params): iterable
     {
         $arguments = [];

@@ -1,5 +1,5 @@
 {
-    "specHash": "d2d01395df29a6b406754b59eca9b64e",
+    "specHash": "c3f89da8f4e736748f0a13e02db3c36d",
     "generatedFiles": {
         "files": [
             {
@@ -2136,7 +2136,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectsV2ItemEdited.php",
-                "hash": "2353c6b51d435461a6ffdf88665ab035"
+                "hash": "4e1e4f85e24183e2a55ab1ee2a654813"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectsV2ItemReordered.php",
@@ -2676,7 +2676,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Team\/Permissions.php",
-                "hash": "8c1c8b05ff1c19b73e7fab86ce80ff00"
+                "hash": "25861ee6782f5feb5492c836bc232b3b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrgMembership\/Permissions.php",
@@ -3868,11 +3868,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectsV2ItemEdited\/Changes\/Zero.php",
-                "hash": "6a70472113a22f7026a17b8637f8bb46"
+                "hash": "bc323bbed2aa67a04227d4888daab4e6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectsV2ItemEdited\/Changes\/Zero\/FieldValue.php",
-                "hash": "86ef6698eb5379834682a524e2f78552"
+                "hash": "1d47d6cea751aad82aaf163bd23327d4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectsV2ItemEdited\/Changes\/One.php",
@@ -5576,7 +5576,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Orgs.php",
-                "hash": "0725ce6d6c3f5c8f8c8a084acf37ea9e"
+                "hash": "21d3ce857a4a8fd72a90f0fcc0d3dd82"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Actions.php",
@@ -5612,7 +5612,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "b74e6ee7b2f5433a82d81322bbf61f55"
+                "hash": "a4a7d522f173cfb6b3584c6d1e4ab1d1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -18196,7 +18196,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/ListCommits.php",
-                "hash": "f355ab3ab72be2f524e829422aa6d684"
+                "hash": "4458e4274c60575975efe776eb875881"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/ListCommitsTest.php",
@@ -18208,7 +18208,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/ListCommitsListing.php",
-                "hash": "7a38bc52eb26c82f0c3640d3ca409583"
+                "hash": "287c2b6b3d55959e287d286ba8aac6a9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/ListCommitsListingTest.php",
@@ -24532,7 +24532,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Orgs.php",
-                "hash": "96d46743d1ec4745550a93ba77931e6e"
+                "hash": "8cfd6655e4de9ea89ec9da9a3174204f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/RateLimit.php",
@@ -24540,7 +24540,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Repos.php",
-                "hash": "9626ac37bfc5b213733c7725590b0f10"
+                "hash": "4d1f695e10a9963cd8f8b2e70d2d11de"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Users.php",
@@ -24808,7 +24808,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Orgs.php",
-                "hash": "46841c892a2c83b12c66e40760285cc3"
+                "hash": "f86a44a39713da0c180c4d4778f384f1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Packages.php",
@@ -24816,7 +24816,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Repos.php",
-                "hash": "47d873adafe8144a6abcd1a5f99bad64"
+                "hash": "91846cea69243c2f2d085dfecc115551"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Activity.php",
@@ -25032,11 +25032,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Five.php",
-                "hash": "015bbcc6cb245b33fb432fce715542a2"
+                "hash": "4e1280a9e1f8f0b03f90ce4bb54930c1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
-                "hash": "147555754780b5408e6bdfb6561e2110"
+                "hash": "ff1598f5e9ef5299fab4f2da1b0c776b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Seven.php",
@@ -25136,11 +25136,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Five.php",
-                "hash": "91a000b623c924e4346535c91dfe61b2"
+                "hash": "847f3fb360c2b185cfe50d6fb2ad225b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Six.php",
-                "hash": "9087a570dd0a970fb0ee07f49bc3ac87"
+                "hash": "a029c63fd72389c900f76512d5417ffc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Seven.php",
@@ -27860,11 +27860,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "b002443ae2a60a793a714747e3ac2495"
+                "hash": "8e7de1d532cfd6885172eb9cc1d111c8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "445316701971ab3363c5357452971db4"
+                "hash": "85e1300995ec04a030827e737a4f2c5a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -28560,11 +28560,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Orgs\/ListOrgRoleTeams.php",
-                "hash": "90d84395ee361782f63d0e922cdc1022"
+                "hash": "ba58781ba12e7cde3a414dda69c2fb1d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/ListOrgRoleTeams.php",
-                "hash": "7aadf9acadce853f38a11cb64c80035f"
+                "hash": "d3f552dc7ca66dc94503d14a7cbd8b22"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/ListOrgRoleTeamsTest.php",
@@ -28572,11 +28572,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Orgs\/ListOrgRoleTeamsListing.php",
-                "hash": "62d3f39d9646b047547e73a2786a3f64"
+                "hash": "6638dd077f6e138cf723ca5e70d5bc01"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/ListOrgRoleTeamsListing.php",
-                "hash": "425083411ab5cabc9410c7a4c1e4ab6a"
+                "hash": "5575a3abd5ee171b6917143c493cedab"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/ListOrgRoleTeamsListingTest.php",
@@ -28584,11 +28584,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Orgs\/ListOrgRoleUsers.php",
-                "hash": "c620821e2570d612562c09201bc199aa"
+                "hash": "0adb150458efc4a8e0d4bc732598bbf9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/ListOrgRoleUsers.php",
-                "hash": "b06611b476267a6a79f8092cf5e690aa"
+                "hash": "9e2518bbd00baf3ba088472092654ac7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/ListOrgRoleUsersTest.php",
@@ -28596,11 +28596,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Orgs\/ListOrgRoleUsersListing.php",
-                "hash": "14a396b575554917437c642acef05987"
+                "hash": "f0e3d70274fb6dbc22797ba8b0b8ca42"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/ListOrgRoleUsersListing.php",
-                "hash": "ad30f1b2baf527a809f1870a20a38e6f"
+                "hash": "41f6bd72a83e49445b51e1d86c375324"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/ListOrgRoleUsersListingTest.php",
@@ -29753,6 +29753,38 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Attribute\/CastUnionToType\/Schema\/CopilotSeatDetails\/Organization.php",
                 "hash": "49df666bb0c15c4980d06323fd5a13ee"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/TeamRoleAssignment.php",
+                "hash": "3894b060697253081cbcafe9e322e237"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/UserRoleAssignment.php",
+                "hash": "606c27abe6027c7738798f59f11bd24b"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ProjectsV2SingleSelectOption.php",
+                "hash": "aa9b2f92426238ad81c1bac227ddff2d"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ProjectsV2IterationSetting.php",
+                "hash": "a7a3380df9dc010eda864b78b5303067"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet0CB51C69\/TietE939AB7B\/TietD52C4E0A\/Tiet05A5E968.php",
+                "hash": "f352d662fde30770f621650fbe2c0d11"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/TeamRoleAssignment\/Permissions.php",
+                "hash": "746cef9fe02585096b28c85398d37739"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Attribute\/CastUnionToType\/Schema\/WebhookProjectsV2ItemEdited\/Changes\/Zero\/FieldValue\/From.php",
+                "hash": "b13d16440ceb473bdef332acdcd44ba7"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Attribute\/CastUnionToType\/Schema\/WebhookProjectsV2ItemEdited\/Changes\/Zero\/FieldValue\/To.php",
+                "hash": "090374ccd4315dad0c1a6ea7e9b8f5c4"
             }
         ]
     },

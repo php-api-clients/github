@@ -47,7 +47,7 @@ final class ListOrgRoleUsersListing
         return new Request('GET', str_replace(['{org}', '{role_id}', '{per_page}', '{page}'], [$this->org, $this->roleId, $this->perPage, $this->page], '/orgs/{org}/organization-roles/{role_id}/users' . '?per_page={per_page}&page={page}'));
     }
 
-    /** @return Observable<Schema\SimpleUser>|WithoutBody */
+    /** @return Observable<Schema\UserRoleAssignment>|WithoutBody */
     public function createResponse(ResponseInterface $response): Observable|WithoutBody
     {
         $code          = $response->getStatusCode();
@@ -60,12 +60,12 @@ final class ListOrgRoleUsersListing
                      * Response - List of assigned users
                      **/
                     case 200:
-                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\SimpleUser {
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\UserRoleAssignment {
                             $error = new RuntimeException();
                             try {
-                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\SimpleUser::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\UserRoleAssignment::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\SimpleUser::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\UserRoleAssignment::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

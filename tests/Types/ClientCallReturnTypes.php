@@ -269,10 +269,10 @@ assertType('', $client->call('DELETE /orgs/{org}/organization-roles/users/{usern
 assertType('', $client->call('GET /orgs/{org}/organization-roles/{role_id}'));
 assertType('', $client->call('DELETE /orgs/{org}/organization-roles/{role_id}'));
 assertType('', $client->call('PATCH /orgs/{org}/organization-roles/{role_id}'));
-assertType('Observable<Schema\\Team>|WithoutBody', $client->call('GET /orgs/{org}/organization-roles/{role_id}/teams'));
-assertType('Observable<Schema\\Team>|WithoutBody', $client->call('LIST /orgs/{org}/organization-roles/{role_id}/teams'));
-assertType('Observable<Schema\\SimpleUser>|WithoutBody', $client->call('GET /orgs/{org}/organization-roles/{role_id}/users'));
-assertType('Observable<Schema\\SimpleUser>|WithoutBody', $client->call('LIST /orgs/{org}/organization-roles/{role_id}/users'));
+assertType('iterable<int,Schema\\TeamRoleAssignment>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /orgs/{org}/organization-roles/{role_id}/teams'));
+assertType('iterable<int,Schema\\TeamRoleAssignment>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('LIST /orgs/{org}/organization-roles/{role_id}/teams'));
+assertType('iterable<int,Schema\\UserRoleAssignment>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /orgs/{org}/organization-roles/{role_id}/users'));
+assertType('iterable<int,Schema\\UserRoleAssignment>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('LIST /orgs/{org}/organization-roles/{role_id}/users'));
 assertType('Observable<Schema\\SimpleUser>', $client->call('GET /orgs/{org}/outside_collaborators'));
 assertType('Observable<Schema\\SimpleUser>', $client->call('LIST /orgs/{org}/outside_collaborators'));
 assertType('', $client->call('PUT /orgs/{org}/outside_collaborators/{username}'));
@@ -589,8 +589,8 @@ assertType('Observable<Schema\\Reaction>', $client->call('GET /repos/{owner}/{re
 assertType('Observable<Schema\\Reaction>', $client->call('LIST /repos/{owner}/{repo}/comments/{comment_id}/reactions'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/comments/{comment_id}/reactions'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/comments/{comment_id}/reactions/{reaction_id}'));
-assertType('iterable<int,Schema\\Commit>', $client->call('GET /repos/{owner}/{repo}/commits'));
-assertType('iterable<int,Schema\\Commit>', $client->call('LIST /repos/{owner}/{repo}/commits'));
+assertType('Observable<Schema\\Commit>', $client->call('GET /repos/{owner}/{repo}/commits'));
+assertType('Observable<Schema\\Commit>', $client->call('LIST /repos/{owner}/{repo}/commits'));
 assertType('Observable<Schema\\BranchShort>', $client->call('GET /repos/{owner}/{repo}/commits/{commit_sha}/branches-where-head'));
 assertType('Observable<Schema\\CommitComment>', $client->call('GET /repos/{owner}/{repo}/commits/{commit_sha}/comments'));
 assertType('Observable<Schema\\CommitComment>', $client->call('LIST /repos/{owner}/{repo}/commits/{commit_sha}/comments'));
