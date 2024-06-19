@@ -18,24 +18,24 @@ use function json_decode;
 use function json_encode;
 use function React\Promise\resolve;
 
-/** @covers \ApiClients\Client\GitHub\Internal\Operation\Copilot\ListCopilotSeats */
-final class ListCopilotSeatsTest extends AsyncTestCase
+/** @covers \ApiClients\Client\GitHub\Internal\Operation\Copilot\ListCopilotSeatsForEnterprise */
+final class ListCopilotSeatsForEnterpriseTest extends AsyncTestCase
 {
     /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok\Application\Json::SCHEMA_EXAMPLE_DATA, true)));
+        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Copilot\ListCopilotSeatsForEnterprise\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\ListCopilotSeats::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']      = 'generated';
-            $data['page']     = 1;
-            $data['per_page'] = 8;
+        $result = $client->call(Internal\Operation\Copilot\ListCopilotSeatsForEnterprise::OPERATION_MATCH, (static function (array $data): array {
+            $data['enterprise'] = 'generated';
+            $data['page']       = 1;
+            $data['per_page']   = 8;
 
             return $data;
         })([]));
@@ -44,15 +44,15 @@ final class ListCopilotSeatsTest extends AsyncTestCase
     /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok\Application\Json::SCHEMA_EXAMPLE_DATA, true)));
+        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Copilot\ListCopilotSeatsForEnterprise\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->listCopilotSeats('generated', 1, 8);
+        $result = $client->operations()->copilot()->listCopilotSeatsForEnterprise('generated', 1, 8);
     }
 
     /** @test */
@@ -65,12 +65,12 @@ final class ListCopilotSeatsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\ListCopilotSeats::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']      = 'generated';
-            $data['page']     = 1;
-            $data['per_page'] = 8;
+        $result = $client->call(Internal\Operation\Copilot\ListCopilotSeatsForEnterprise::OPERATION_MATCH, (static function (array $data): array {
+            $data['enterprise'] = 'generated';
+            $data['page']       = 1;
+            $data['per_page']   = 8;
 
             return $data;
         })([]));
@@ -86,9 +86,9 @@ final class ListCopilotSeatsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->listCopilotSeats('generated', 1, 8);
+        $result = $client->operations()->copilot()->listCopilotSeatsForEnterprise('generated', 1, 8);
     }
 
     /** @test */
@@ -101,12 +101,12 @@ final class ListCopilotSeatsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\ListCopilotSeats::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']      = 'generated';
-            $data['page']     = 1;
-            $data['per_page'] = 8;
+        $result = $client->call(Internal\Operation\Copilot\ListCopilotSeatsForEnterprise::OPERATION_MATCH, (static function (array $data): array {
+            $data['enterprise'] = 'generated';
+            $data['page']       = 1;
+            $data['per_page']   = 8;
 
             return $data;
         })([]));
@@ -122,9 +122,9 @@ final class ListCopilotSeatsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->listCopilotSeats('generated', 1, 8);
+        $result = $client->operations()->copilot()->listCopilotSeatsForEnterprise('generated', 1, 8);
     }
 
     /** @test */
@@ -137,12 +137,12 @@ final class ListCopilotSeatsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\ListCopilotSeats::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']      = 'generated';
-            $data['page']     = 1;
-            $data['per_page'] = 8;
+        $result = $client->call(Internal\Operation\Copilot\ListCopilotSeatsForEnterprise::OPERATION_MATCH, (static function (array $data): array {
+            $data['enterprise'] = 'generated';
+            $data['page']       = 1;
+            $data['per_page']   = 8;
 
             return $data;
         })([]));
@@ -158,9 +158,9 @@ final class ListCopilotSeatsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->listCopilotSeats('generated', 1, 8);
+        $result = $client->operations()->copilot()->listCopilotSeatsForEnterprise('generated', 1, 8);
     }
 
     /** @test */
@@ -173,12 +173,12 @@ final class ListCopilotSeatsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->call(Internal\Operation\Copilot\ListCopilotSeats::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']      = 'generated';
-            $data['page']     = 1;
-            $data['per_page'] = 8;
+        $result = $client->call(Internal\Operation\Copilot\ListCopilotSeatsForEnterprise::OPERATION_MATCH, (static function (array $data): array {
+            $data['enterprise'] = 'generated';
+            $data['page']       = 1;
+            $data['per_page']   = 8;
 
             return $data;
         })([]));
@@ -194,8 +194,8 @@ final class ListCopilotSeatsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/copilot/billing/seats?page=1&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->copilot()->listCopilotSeats('generated', 1, 8);
+        $result = $client->operations()->copilot()->listCopilotSeatsForEnterprise('generated', 1, 8);
     }
 }

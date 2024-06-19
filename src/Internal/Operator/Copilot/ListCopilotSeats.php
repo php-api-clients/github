@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Copilot;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok;
+use ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
@@ -24,12 +24,11 @@ final readonly class ListCopilotSeats
     {
     }
 
-    /** @return */
-    public function call(string $org, int $page = 1, int $perPage = 50): Ok
+    public function call(string $org, int $page = 1, int $perPage = 50): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Copilot\ListCopilotSeats($this->responseSchemaValidator, $this->hydrator, $org, $page, $perPage);
         $request   = $operation->createRequest();
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

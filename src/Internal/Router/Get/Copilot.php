@@ -8,7 +8,8 @@ use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails;
 use ApiClients\Client\GitHub\Schema\CopilotSeatDetails;
-use ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok;
+use ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok\Application\Json;
+use ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeatsForEnterprise\Response\ApplicationJson\Ok;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
@@ -116,8 +117,33 @@ final class Copilot
         return $operator->call($arguments['org'], $arguments['since'], $arguments['until'], $arguments['page'], $arguments['per_page']);
     }
 
-    /** @return */
-    public function listCopilotSeats(array $params): Ok
+    public function listCopilotSeatsForEnterprise(array $params): Ok
+    {
+        $arguments = [];
+        if (array_key_exists('enterprise', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: enterprise');
+        }
+
+        $arguments['enterprise'] = $params['enterprise'];
+        unset($params['enterprise']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        $operator = new Internal\Operator\Copilot\ListCopilotSeatsForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Copilot🌀Billing🌀Seats());
+
+        return $operator->call($arguments['enterprise'], $arguments['page'], $arguments['per_page']);
+    }
+
+    public function listCopilotSeats(array $params): Json
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

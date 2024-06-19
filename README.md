@@ -828,6 +828,30 @@ $client->operations()->emojis()->get();
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/emojis/emojis#get-emojis).
 
 
+### copilot/list-copilot-seats-for-enterprise
+
+List all Copilot seat assignments for an enterprise
+
+Using the `call` method:
+```php
+$client->call('GET /enterprises/{enterprise}/copilot/billing/seats', [
+        'enterprise' => 'generated',
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->listCopilotSeatsForEnterprise(        enterprise: 'generated',
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-user-management#list-all-copilot-seat-assignments-for-an-enterprise).
+
+
 ### copilot/usage-metrics-for-enterprise
 
 Get a summary of Copilot usage for enterprise members

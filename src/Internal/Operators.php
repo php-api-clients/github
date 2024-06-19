@@ -48,6 +48,7 @@ final class Operators
     private Internal\Operator\CodesOfConduct\GetAllCodesOfConduct|null $codesOfConduct👷GetAllCodesOfConduct                                                                         = null;
     private Internal\Operator\CodesOfConduct\GetConductCode|null $codesOfConduct👷GetConductCode                                                                                     = null;
     private Internal\Operator\Emojis\Get|null $emojis👷Get                                                                                                                           = null;
+    private Internal\Operator\Copilot\ListCopilotSeatsForEnterprise|null $copilot👷ListCopilotSeatsForEnterprise                                                                     = null;
     private Internal\Operator\Copilot\UsageMetricsForEnterprise|null $copilot👷UsageMetricsForEnterprise                                                                             = null;
     private Internal\Operator\Copilot\UsageMetricsForEnterpriseListing|null $copilot👷UsageMetricsForEnterpriseListing                                                               = null;
     private Internal\Operator\Dependabot\ListAlertsForEnterprise|null $dependabot👷ListAlertsForEnterprise                                                                           = null;
@@ -1457,6 +1458,15 @@ final class Operators
         }
 
         return $this->emojis👷Get;
+    }
+
+    public function copilot👷ListCopilotSeatsForEnterprise(): Internal\Operator\Copilot\ListCopilotSeatsForEnterprise
+    {
+        if ($this->copilot👷ListCopilotSeatsForEnterprise instanceof Internal\Operator\Copilot\ListCopilotSeatsForEnterprise === false) {
+            $this->copilot👷ListCopilotSeatsForEnterprise = new Internal\Operator\Copilot\ListCopilotSeatsForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Copilot🌀Billing🌀Seats());
+        }
+
+        return $this->copilot👷ListCopilotSeatsForEnterprise;
     }
 
     public function copilot👷UsageMetricsForEnterprise(): Internal\Operator\Copilot\UsageMetricsForEnterprise

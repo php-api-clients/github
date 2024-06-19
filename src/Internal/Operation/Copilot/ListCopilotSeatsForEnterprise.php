@@ -18,30 +18,30 @@ use function explode;
 use function json_decode;
 use function str_replace;
 
-final class ListCopilotSeats
+final class ListCopilotSeatsForEnterprise
 {
-    public const OPERATION_ID    = 'copilot/list-copilot-seats';
-    public const OPERATION_MATCH = 'GET /orgs/{org}/copilot/billing/seats';
-    /**The organization name. The name is not case sensitive. **/
-    private string $org;
+    public const OPERATION_ID    = 'copilot/list-copilot-seats-for-enterprise';
+    public const OPERATION_MATCH = 'GET /enterprises/{enterprise}/copilot/billing/seats';
+    /**The slug version of the enterprise name. You can also substitute this value with the enterprise id. **/
+    private string $enterprise;
     /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Copilot\Billing\Seats $hydrator, string $org, int $page = 1, int $perPage = 50)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Billing\Seats $hydrator, string $enterprise, int $page = 1, int $perPage = 50)
     {
-        $this->org     = $org;
-        $this->page    = $page;
-        $this->perPage = $perPage;
+        $this->enterprise = $enterprise;
+        $this->page       = $page;
+        $this->perPage    = $perPage;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{org}', '{page}', '{per_page}'], [$this->org, $this->page, $this->perPage], '/orgs/{org}/copilot/billing/seats' . '?page={page}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{enterprise}', '{page}', '{per_page}'], [$this->enterprise, $this->page, $this->perPage], '/enterprises/{enterprise}/copilot/billing/seats' . '?page={page}&per_page={per_page}'));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok\Application\Json
+    public function createResponse(ResponseInterface $response): Schema\Operations\Copilot\ListCopilotSeatsForEnterprise\Response\ApplicationJson\Ok
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -53,9 +53,9 @@ final class ListCopilotSeats
                      * Response
                      **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Copilot\ListCopilotSeatsForEnterprise\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok\Application\Json::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Copilot\ListCopilotSeatsForEnterprise\Response\ApplicationJson\Ok::class, $body);
                     /**
                      * Internal Error
                      **/

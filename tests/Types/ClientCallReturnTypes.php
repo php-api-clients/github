@@ -54,6 +54,7 @@ assertType('Observable<Schema\\SimpleClassroomAssignment>', $client->call('LIST 
 assertType('Observable<Schema\\CodeOfConduct>|WithoutBody', $client->call('GET /codes_of_conduct'));
 assertType('', $client->call('GET /codes_of_conduct/{key}'));
 assertType('', $client->call('GET /emojis'));
+assertType('Schema\\Operations\\Copilot\\ListCopilotSeatsForEnterprise\\Response\\ApplicationJson\\Ok', $client->call('GET /enterprises/{enterprise}/copilot/billing/seats'));
 assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('GET /enterprises/{enterprise}/copilot/usage'));
 assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('LIST /enterprises/{enterprise}/copilot/usage'));
 assertType('Observable<Schema\\DependabotAlertWithRepository>|WithoutBody', $client->call('GET /enterprises/{enterprise}/dependabot/alerts'));
@@ -189,7 +190,7 @@ assertType('', $client->call('PUT /orgs/{org}/codespaces/secrets/{secret_name}/r
 assertType('', $client->call('PUT /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}'));
 assertType('', $client->call('DELETE /orgs/{org}/codespaces/secrets/{secret_name}/repositories/{repository_id}'));
 assertType('', $client->call('GET /orgs/{org}/copilot/billing'));
-assertType('', $client->call('GET /orgs/{org}/copilot/billing/seats'));
+assertType('Schema\\Operations\\Copilot\\ListCopilotSeats\\Response\\ApplicationJson\\Ok\\Application\\Json', $client->call('GET /orgs/{org}/copilot/billing/seats'));
 assertType('', $client->call('POST /orgs/{org}/copilot/billing/selected_teams'));
 assertType('', $client->call('DELETE /orgs/{org}/copilot/billing/selected_teams'));
 assertType('', $client->call('POST /orgs/{org}/copilot/billing/selected_users'));
@@ -269,10 +270,10 @@ assertType('', $client->call('DELETE /orgs/{org}/organization-roles/users/{usern
 assertType('', $client->call('GET /orgs/{org}/organization-roles/{role_id}'));
 assertType('', $client->call('DELETE /orgs/{org}/organization-roles/{role_id}'));
 assertType('', $client->call('PATCH /orgs/{org}/organization-roles/{role_id}'));
-assertType('iterable<int,Schema\\TeamRoleAssignment>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /orgs/{org}/organization-roles/{role_id}/teams'));
-assertType('iterable<int,Schema\\TeamRoleAssignment>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('LIST /orgs/{org}/organization-roles/{role_id}/teams'));
-assertType('iterable<int,Schema\\UserRoleAssignment>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /orgs/{org}/organization-roles/{role_id}/users'));
-assertType('iterable<int,Schema\\UserRoleAssignment>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('LIST /orgs/{org}/organization-roles/{role_id}/users'));
+assertType('Observable<Schema\\TeamRoleAssignment>|WithoutBody', $client->call('GET /orgs/{org}/organization-roles/{role_id}/teams'));
+assertType('Observable<Schema\\TeamRoleAssignment>|WithoutBody', $client->call('LIST /orgs/{org}/organization-roles/{role_id}/teams'));
+assertType('Observable<Schema\\UserRoleAssignment>|WithoutBody', $client->call('GET /orgs/{org}/organization-roles/{role_id}/users'));
+assertType('Observable<Schema\\UserRoleAssignment>|WithoutBody', $client->call('LIST /orgs/{org}/organization-roles/{role_id}/users'));
 assertType('Observable<Schema\\SimpleUser>', $client->call('GET /orgs/{org}/outside_collaborators'));
 assertType('Observable<Schema\\SimpleUser>', $client->call('LIST /orgs/{org}/outside_collaborators'));
 assertType('', $client->call('PUT /orgs/{org}/outside_collaborators/{username}'));

@@ -603,7 +603,7 @@ final class Orgs
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\TeamRoleAssignment>|WithoutBody */
+    /** @return Observable<Schema\TeamRoleAssignment>|WithoutBody */
     public function listOrgRoleTeamsListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -642,7 +642,7 @@ final class Orgs
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\UserRoleAssignment>|WithoutBody */
+    /** @return Observable<Schema\UserRoleAssignment>|WithoutBody */
     public function listOrgRoleUsersListing(array $params): iterable|WithoutBody
     {
         $arguments = [];

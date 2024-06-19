@@ -850,7 +850,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['invitation_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\TeamRoleAssignment>|WithoutBody */
+    /** @return Observable<Schema\TeamRoleAssignment>|WithoutBody */
     public function listOrgRoleTeams(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -883,7 +883,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['role_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\UserRoleAssignment>|WithoutBody */
+    /** @return Observable<Schema\UserRoleAssignment>|WithoutBody */
     public function listOrgRoleUsers(array $params): iterable|WithoutBody
     {
         $arguments = [];
