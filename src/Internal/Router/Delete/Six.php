@@ -18,6 +18,7 @@ final class Six
     {
     }
 
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|Ok|Json|ActionsCacheList|FileCommit
     {
         if ($pathChunks[0] === '') {
@@ -40,6 +41,14 @@ final class Six
                             if ($pathChunks[5] === '{name}') {
                                 if ($call === 'DELETE /orgs/{org}/actions/variables/{name}') {
                                     return $this->routers->internal🔀Router🔀Delete🔀Actions()->deleteOrgVariable($params);
+                                }
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'code-security') {
+                        if ($pathChunks[4] === 'configurations') {
+                            if ($pathChunks[5] === '{configuration_id}') {
+                                if ($call === 'DELETE /orgs/{org}/code-security/configurations/{configuration_id}') {
+                                    return $this->routers->internal🔀Router🔀Delete🔀CodeSecurity()->deleteConfiguration($params);
                                 }
                             }
                         }

@@ -9,6 +9,7 @@ use ApiClients\Client\GitHub\Schema\Authorization;
 use ApiClients\Client\GitHub\Schema\Autolink;
 use ApiClients\Client\GitHub\Schema\CheckRun;
 use ApiClients\Client\GitHub\Schema\CheckSuite;
+use ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration;
 use ApiClients\Client\GitHub\Schema\Codespace;
 use ApiClients\Client\GitHub\Schema\CodespaceExportDetails;
 use ApiClients\Client\GitHub\Schema\CodespaceWithFullRepository;
@@ -41,7 +42,8 @@ final class Five
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|EmptyObject|WithoutBody|ProjectCard|Json|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|CodespaceExportDetails|CodespaceWithFullRepository
+    /** @return |Schema\CodeSecurityConfiguration */
+    public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|EmptyObject|CodeSecurityConfiguration|WithoutBody|ProjectCard|Json|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|CodespaceExportDetails|CodespaceWithFullRepository
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {
@@ -70,6 +72,12 @@ final class Five
                         if ($pathChunks[4] === 'variables') {
                             if ($call === 'POST /orgs/{org}/actions/variables') {
                                 return $this->routers->internal🔀Router🔀Post🔀Actions()->createOrgVariable($params);
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'code-security') {
+                        if ($pathChunks[4] === 'configurations') {
+                            if ($call === 'POST /orgs/{org}/code-security/configurations') {
+                                return $this->routers->internal🔀Router🔀Post🔀CodeSecurity()->createConfiguration($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'personal-access-token-requests') {

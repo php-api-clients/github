@@ -44,6 +44,8 @@ interface OperationsInterface
 
     public function codeScanning(): Operation\CodeScanning;
 
+    public function codeSecurity(): Operation\CodeSecurity;
+
     public function codespaces(): Operation\Codespaces;
 
     public function packages(): Operation\Packages;

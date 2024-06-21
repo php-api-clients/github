@@ -170,6 +170,15 @@ final class Operators
     private Internal\Operator\Orgs\UnblockUser|null $orgs👷UnblockUser                                                                                                               = null;
     private Internal\Operator\CodeScanning\ListAlertsForOrg|null $codeScanning👷ListAlertsForOrg                                                                                     = null;
     private Internal\Operator\CodeScanning\ListAlertsForOrgListing|null $codeScanning👷ListAlertsForOrgListing                                                                       = null;
+    private Internal\Operator\CodeSecurity\GetConfigurationsForOrg|null $codeSecurity👷GetConfigurationsForOrg                                                                       = null;
+    private Internal\Operator\CodeSecurity\CreateConfiguration|null $codeSecurity👷CreateConfiguration                                                                               = null;
+    private Internal\Operator\CodeSecurity\GetDefaultConfigurations|null $codeSecurity👷GetDefaultConfigurations                                                                     = null;
+    private Internal\Operator\CodeSecurity\GetConfiguration|null $codeSecurity👷GetConfiguration                                                                                     = null;
+    private Internal\Operator\CodeSecurity\DeleteConfiguration|null $codeSecurity👷DeleteConfiguration                                                                               = null;
+    private Internal\Operator\CodeSecurity\UpdateConfiguration|null $codeSecurity👷UpdateConfiguration                                                                               = null;
+    private Internal\Operator\CodeSecurity\AttachConfiguration|null $codeSecurity👷AttachConfiguration                                                                               = null;
+    private Internal\Operator\CodeSecurity\SetConfigurationAsDefault|null $codeSecurity👷SetConfigurationAsDefault                                                                   = null;
+    private Internal\Operator\CodeSecurity\GetRepositoriesForConfiguration|null $codeSecurity👷GetRepositoriesForConfiguration                                                       = null;
     private Internal\Operator\Codespaces\ListInOrganization|null $codespaces👷ListInOrganization                                                                                     = null;
     private Internal\Operator\Codespaces\SetCodespacesAccess|null $codespaces👷SetCodespacesAccess                                                                                   = null;
     private Internal\Operator\Codespaces\SetCodespacesAccessUsers|null $codespaces👷SetCodespacesAccessUsers                                                                         = null;
@@ -2556,6 +2565,87 @@ final class Operators
         }
 
         return $this->codeScanning👷ListAlertsForOrgListing;
+    }
+
+    public function codeSecurity👷GetConfigurationsForOrg(): Internal\Operator\CodeSecurity\GetConfigurationsForOrg
+    {
+        if ($this->codeSecurity👷GetConfigurationsForOrg instanceof Internal\Operator\CodeSecurity\GetConfigurationsForOrg === false) {
+            $this->codeSecurity👷GetConfigurationsForOrg = new Internal\Operator\CodeSecurity\GetConfigurationsForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations());
+        }
+
+        return $this->codeSecurity👷GetConfigurationsForOrg;
+    }
+
+    public function codeSecurity👷CreateConfiguration(): Internal\Operator\CodeSecurity\CreateConfiguration
+    {
+        if ($this->codeSecurity👷CreateConfiguration instanceof Internal\Operator\CodeSecurity\CreateConfiguration === false) {
+            $this->codeSecurity👷CreateConfiguration = new Internal\Operator\CodeSecurity\CreateConfiguration($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations());
+        }
+
+        return $this->codeSecurity👷CreateConfiguration;
+    }
+
+    public function codeSecurity👷GetDefaultConfigurations(): Internal\Operator\CodeSecurity\GetDefaultConfigurations
+    {
+        if ($this->codeSecurity👷GetDefaultConfigurations instanceof Internal\Operator\CodeSecurity\GetDefaultConfigurations === false) {
+            $this->codeSecurity👷GetDefaultConfigurations = new Internal\Operator\CodeSecurity\GetDefaultConfigurations($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀Defaults());
+        }
+
+        return $this->codeSecurity👷GetDefaultConfigurations;
+    }
+
+    public function codeSecurity👷GetConfiguration(): Internal\Operator\CodeSecurity\GetConfiguration
+    {
+        if ($this->codeSecurity👷GetConfiguration instanceof Internal\Operator\CodeSecurity\GetConfiguration === false) {
+            $this->codeSecurity👷GetConfiguration = new Internal\Operator\CodeSecurity\GetConfiguration($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀ConfigurationId());
+        }
+
+        return $this->codeSecurity👷GetConfiguration;
+    }
+
+    public function codeSecurity👷DeleteConfiguration(): Internal\Operator\CodeSecurity\DeleteConfiguration
+    {
+        if ($this->codeSecurity👷DeleteConfiguration instanceof Internal\Operator\CodeSecurity\DeleteConfiguration === false) {
+            $this->codeSecurity👷DeleteConfiguration = new Internal\Operator\CodeSecurity\DeleteConfiguration($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀ConfigurationId());
+        }
+
+        return $this->codeSecurity👷DeleteConfiguration;
+    }
+
+    public function codeSecurity👷UpdateConfiguration(): Internal\Operator\CodeSecurity\UpdateConfiguration
+    {
+        if ($this->codeSecurity👷UpdateConfiguration instanceof Internal\Operator\CodeSecurity\UpdateConfiguration === false) {
+            $this->codeSecurity👷UpdateConfiguration = new Internal\Operator\CodeSecurity\UpdateConfiguration($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀ConfigurationId());
+        }
+
+        return $this->codeSecurity👷UpdateConfiguration;
+    }
+
+    public function codeSecurity👷AttachConfiguration(): Internal\Operator\CodeSecurity\AttachConfiguration
+    {
+        if ($this->codeSecurity👷AttachConfiguration instanceof Internal\Operator\CodeSecurity\AttachConfiguration === false) {
+            $this->codeSecurity👷AttachConfiguration = new Internal\Operator\CodeSecurity\AttachConfiguration($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀ConfigurationId🌀Attach());
+        }
+
+        return $this->codeSecurity👷AttachConfiguration;
+    }
+
+    public function codeSecurity👷SetConfigurationAsDefault(): Internal\Operator\CodeSecurity\SetConfigurationAsDefault
+    {
+        if ($this->codeSecurity👷SetConfigurationAsDefault instanceof Internal\Operator\CodeSecurity\SetConfigurationAsDefault === false) {
+            $this->codeSecurity👷SetConfigurationAsDefault = new Internal\Operator\CodeSecurity\SetConfigurationAsDefault($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀ConfigurationId🌀Defaults());
+        }
+
+        return $this->codeSecurity👷SetConfigurationAsDefault;
+    }
+
+    public function codeSecurity👷GetRepositoriesForConfiguration(): Internal\Operator\CodeSecurity\GetRepositoriesForConfiguration
+    {
+        if ($this->codeSecurity👷GetRepositoriesForConfiguration instanceof Internal\Operator\CodeSecurity\GetRepositoriesForConfiguration === false) {
+            $this->codeSecurity👷GetRepositoriesForConfiguration = new Internal\Operator\CodeSecurity\GetRepositoriesForConfiguration($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀ConfigurationId🌀Repositories());
+        }
+
+        return $this->codeSecurity👷GetRepositoriesForConfiguration;
     }
 
     public function codespaces👷ListInOrganization(): Internal\Operator\Codespaces\ListInOrganization

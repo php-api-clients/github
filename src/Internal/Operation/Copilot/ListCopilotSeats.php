@@ -41,7 +41,7 @@ final class ListCopilotSeats
         return new Request('GET', str_replace(['{org}', '{page}', '{per_page}'], [$this->org, $this->page, $this->perPage], '/orgs/{org}/copilot/billing/seats' . '?page={page}&per_page={per_page}'));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok\Application\Json
+    public function createResponse(ResponseInterface $response): Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -53,9 +53,9 @@ final class ListCopilotSeats
                      * Response
                      **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok\Application\Json::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok::class, $body);
                     /**
                      * Internal Error
                      **/

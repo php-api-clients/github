@@ -21,8 +21,8 @@ final class Seven
     {
     }
 
-    /** @return |Observable<Schema\Label>|Schema\BasicError */
-    public function call(string $call, array $params, array $pathChunks): EmptyObject|WithoutBody|Ok|TeamMembership|ProtectedBranch|iterable|BasicError|PullRequestMergeResult|Json
+    /** @return |Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok|Observable<Schema\Label>|Schema\BasicError */
+    public function call(string $call, array $params, array $pathChunks): EmptyObject|WithoutBody|Ok|\ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok|TeamMembership|ProtectedBranch|iterable|BasicError|PullRequestMergeResult|Json
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
@@ -65,6 +65,16 @@ final class Seven
                                 if ($pathChunks[6] === 'repositories') {
                                     if ($call === 'PUT /orgs/{org}/actions/variables/{name}/repositories') {
                                         return $this->routers->internal🔀Router🔀Put🔀Actions()->setSelectedReposForOrgVariable($params);
+                                    }
+                                }
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'code-security') {
+                        if ($pathChunks[4] === 'configurations') {
+                            if ($pathChunks[5] === '{configuration_id}') {
+                                if ($pathChunks[6] === 'defaults') {
+                                    if ($call === 'PUT /orgs/{org}/code-security/configurations/{configuration_id}/defaults') {
+                                        return $this->routers->internal🔀Router🔀Put🔀CodeSecurity()->setConfigurationAsDefault($params);
                                     }
                                 }
                             }

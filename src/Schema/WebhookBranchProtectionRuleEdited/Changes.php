@@ -84,6 +84,66 @@ final readonly class Changes
                 }
             }
         },
+        "lock_branch_enforcement_level": {
+            "required": [
+                "from"
+            ],
+            "type": "object",
+            "properties": {
+                "from": {
+                    "enum": [
+                        "off",
+                        "non_admins",
+                        "everyone"
+                    ],
+                    "type": "string"
+                }
+            }
+        },
+        "lock_allows_fork_sync": {
+            "required": [
+                "from"
+            ],
+            "type": "object",
+            "properties": {
+                "from": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
+        "pull_request_reviews_enforcement_level": {
+            "required": [
+                "from"
+            ],
+            "type": "object",
+            "properties": {
+                "from": {
+                    "enum": [
+                        "off",
+                        "non_admins",
+                        "everyone"
+                    ],
+                    "type": "string"
+                }
+            }
+        },
+        "require_last_push_approval": {
+            "required": [
+                "from"
+            ],
+            "type": "object",
+            "properties": {
+                "from": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ]
+                }
+            }
+        },
         "required_status_checks": {
             "required": [
                 "from"
@@ -138,6 +198,18 @@ final readonly class Changes
     "linear_history_requirement_enforcement_level": {
         "from": "everyone"
     },
+    "lock_branch_enforcement_level": {
+        "from": "everyone"
+    },
+    "lock_allows_fork_sync": {
+        "from": false
+    },
+    "pull_request_reviews_enforcement_level": {
+        "from": "everyone"
+    },
+    "require_last_push_approval": {
+        "from": false
+    },
     "required_status_checks": {
         "from": [
             "generated",
@@ -154,7 +226,11 @@ final readonly class Changes
     public Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorNames|null $authorizedActorNames, #[MapFrom('authorized_actors_only')]
     public Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorsOnly|null $authorizedActorsOnly, #[MapFrom('authorized_dismissal_actors_only')]
     public Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedDismissalActorsOnly|null $authorizedDismissalActorsOnly, #[MapFrom('linear_history_requirement_enforcement_level')]
-    public Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel|null $linearHistoryRequirementEnforcementLevel, #[MapFrom('required_status_checks')]
+    public Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel|null $linearHistoryRequirementEnforcementLevel, #[MapFrom('lock_branch_enforcement_level')]
+    public Schema\WebhookBranchProtectionRuleEdited\Changes\LockBranchEnforcementLevel|null $lockBranchEnforcementLevel, #[MapFrom('lock_allows_fork_sync')]
+    public Schema\WebhookBranchProtectionRuleEdited\Changes\LockAllowsForkSync|null $lockAllowsForkSync, #[MapFrom('pull_request_reviews_enforcement_level')]
+    public Schema\WebhookBranchProtectionRuleEdited\Changes\PullRequestReviewsEnforcementLevel|null $pullRequestReviewsEnforcementLevel, #[MapFrom('require_last_push_approval')]
+    public Schema\WebhookBranchProtectionRuleEdited\Changes\RequireLastPushApproval|null $requireLastPushApproval, #[MapFrom('required_status_checks')]
     public Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecks|null $requiredStatusChecks, #[MapFrom('required_status_checks_enforcement_level')]
     public Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecksEnforcementLevel|null $requiredStatusChecksEnforcementLevel,)
     {

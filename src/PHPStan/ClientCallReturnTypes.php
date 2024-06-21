@@ -192,7 +192,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /enterprises/{enterprise}/copilot/billing/seats') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Copilot\\ListCopilotSeatsForEnterprise\\Response\\ApplicationJson\\Ok');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /enterprises/{enterprise}/copilot/usage') {
@@ -679,6 +679,42 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('Observable<Schema\\CodeScanningOrganizationAlertItems>');
         }
 
+        if ($call === 'GET /orgs/{org}/code-security/configurations') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeSecurityConfiguration>');
+        }
+
+        if ($call === 'POST /orgs/{org}/code-security/configurations') {
+            return $this->typeResolver->resolve('Schema\\CodeSecurityConfiguration');
+        }
+
+        if ($call === 'GET /orgs/{org}/code-security/configurations/defaults') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeSecurityDefaultConfigurations>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'GET /orgs/{org}/code-security/configurations/{configuration_id}') {
+            return $this->typeResolver->resolve('Schema\\CodeSecurityConfiguration|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'DELETE /orgs/{org}/code-security/configurations/{configuration_id}') {
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'PATCH /orgs/{org}/code-security/configurations/{configuration_id}') {
+            return $this->typeResolver->resolve('Schema\\CodeSecurityConfiguration|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'POST /orgs/{org}/code-security/configurations/{configuration_id}/attach') {
+            return $this->typeResolver->resolve('Schema\\Operations\\CodeSecurity\\AttachConfiguration\\Response\\ApplicationJson\\Accepted\\Application\\Json');
+        }
+
+        if ($call === 'PUT /orgs/{org}/code-security/configurations/{configuration_id}/defaults') {
+            return $this->typeResolver->resolve('Schema\\Operations\\CodeSecurity\\SetConfigurationAsDefault\\Response\\ApplicationJson\\Ok');
+        }
+
+        if ($call === 'GET /orgs/{org}/code-security/configurations/{configuration_id}/repositories') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeSecurityConfigurationRepositories>');
+        }
+
         if ($call === 'GET /orgs/{org}/codespaces') {
             return $this->typeResolver->resolve('');
         }
@@ -736,7 +772,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/copilot/billing/seats') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Copilot\\ListCopilotSeats\\Response\\ApplicationJson\\Ok\\Application\\Json');
+            return $this->typeResolver->resolve('Schema\\Operations\\Copilot\\ListCopilotSeats\\Response\\ApplicationJson\\Ok');
         }
 
         if ($call === 'POST /orgs/{org}/copilot/billing/selected_teams') {

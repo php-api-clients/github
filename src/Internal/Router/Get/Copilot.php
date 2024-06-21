@@ -8,7 +8,6 @@ use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails;
 use ApiClients\Client\GitHub\Schema\CopilotSeatDetails;
-use ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeatsForEnterprise\Response\ApplicationJson\Ok;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
@@ -117,6 +116,7 @@ final class Copilot
         return $operator->call($arguments['org'], $arguments['since'], $arguments['until'], $arguments['page'], $arguments['per_page']);
     }
 
+    /** @return */
     public function listCopilotSeatsForEnterprise(array $params): Ok
     {
         $arguments = [];
@@ -143,7 +143,7 @@ final class Copilot
         return $operator->call($arguments['enterprise'], $arguments['page'], $arguments['per_page']);
     }
 
-    public function listCopilotSeats(array $params): Json
+    public function listCopilotSeats(array $params): \ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

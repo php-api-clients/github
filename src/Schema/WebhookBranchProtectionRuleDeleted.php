@@ -1731,6 +1731,7 @@ final readonly class WebhookBranchProtectionRuleDeleted
                 "strict_required_status_checks_policy",
                 "signature_requirement_enforcement_level",
                 "linear_history_requirement_enforcement_level",
+                "lock_branch_enforcement_level",
                 "admin_enforced",
                 "allow_force_pushes_enforcement_level",
                 "allow_deletions_enforcement_level",
@@ -1796,6 +1797,19 @@ final readonly class WebhookBranchProtectionRuleDeleted
                         "everyone"
                     ],
                     "type": "string"
+                },
+                "lock_branch_enforcement_level": {
+                    "enum": [
+                        "off",
+                        "non_admins",
+                        "everyone"
+                    ],
+                    "type": "string",
+                    "description": "The enforcement level of the branch lock setting. `off` means the branch is not locked, `non_admins` means the branch is read-only for non_admins, and `everyone` means the branch is read-only for everyone."
+                },
+                "lock_allows_fork_sync": {
+                    "type": "boolean",
+                    "description": "Whether users can pull changes from upstream when the branch is locked. Set to `true` to allow users to pull changes from upstream when the branch is locked. This setting is only applicable for forks."
                 },
                 "merge_queue_enforcement_level": {
                     "enum": [
@@ -2368,6 +2382,8 @@ final readonly class WebhookBranchProtectionRuleDeleted
         "id": 2,
         "ignore_approvals_from_contributors": false,
         "linear_history_requirement_enforcement_level": "everyone",
+        "lock_branch_enforcement_level": "off",
+        "lock_allows_fork_sync": false,
         "merge_queue_enforcement_level": "off",
         "name": "generated",
         "pull_request_reviews_enforcement_level": "everyone",

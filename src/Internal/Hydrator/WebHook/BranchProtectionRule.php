@@ -24,8 +24,12 @@ use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\Au
 use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorsOnly;
 use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedDismissalActorsOnly;
 use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel;
+use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LockAllowsForkSync;
+use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LockBranchEnforcementLevel;
+use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\PullRequestReviewsEnforcementLevel;
 use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecks;
 use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecksEnforcementLevel;
+use ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequireLastPushApproval;
 use ApiClients\Client\GitHub\Schema\WebhooksRule;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -83,6 +87,10 @@ class BranchProtectionRule implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorsOnly' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AuthorizedActorsOnly($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedDismissalActorsOnly' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AuthorizedDismissalActorsOnly($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LinearHistoryRequirementEnforcementLevel($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LockBranchEnforcementLevel' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LockBranchEnforcementLevel($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LockAllowsForkSync' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LockAllowsForkSync($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\PullRequestReviewsEnforcementLevel' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️PullRequestReviewsEnforcementLevel($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequireLastPushApproval' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequireLastPushApproval($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequiredStatusChecks($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecksEnforcementLevel' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequiredStatusChecksEnforcementLevel($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\CustomProperties' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️CustomProperties($payload),
@@ -3565,6 +3573,28 @@ class BranchProtectionRule implements ObjectMapper
 
             after_linearHistoryRequirementEnforcementLevel:
 
+            $value = $payload['lock_branch_enforcement_level'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'lock_branch_enforcement_level';
+                goto after_lockBranchEnforcementLevel;
+            }
+
+            $properties['lockBranchEnforcementLevel'] = $value;
+
+            after_lockBranchEnforcementLevel:
+
+            $value = $payload['lock_allows_fork_sync'] ?? null;
+
+            if ($value === null) {
+                $properties['lockAllowsForkSync'] = null;
+                goto after_lockAllowsForkSync;
+            }
+
+            $properties['lockAllowsForkSync'] = $value;
+
+            after_lockAllowsForkSync:
+
             $value = $payload['merge_queue_enforcement_level'] ?? null;
 
             if ($value === null) {
@@ -4408,6 +4438,86 @@ class BranchProtectionRule implements ObjectMapper
 
             after_linearHistoryRequirementEnforcementLevel:
 
+            $value = $payload['lock_branch_enforcement_level'] ?? null;
+
+            if ($value === null) {
+                $properties['lockBranchEnforcementLevel'] = null;
+                goto after_lockBranchEnforcementLevel;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'lockBranchEnforcementLevel';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LockBranchEnforcementLevel($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['lockBranchEnforcementLevel'] = $value;
+
+            after_lockBranchEnforcementLevel:
+
+            $value = $payload['lock_allows_fork_sync'] ?? null;
+
+            if ($value === null) {
+                $properties['lockAllowsForkSync'] = null;
+                goto after_lockAllowsForkSync;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'lockAllowsForkSync';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LockAllowsForkSync($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['lockAllowsForkSync'] = $value;
+
+            after_lockAllowsForkSync:
+
+            $value = $payload['pull_request_reviews_enforcement_level'] ?? null;
+
+            if ($value === null) {
+                $properties['pullRequestReviewsEnforcementLevel'] = null;
+                goto after_pullRequestReviewsEnforcementLevel;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'pullRequestReviewsEnforcementLevel';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️PullRequestReviewsEnforcementLevel($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['pullRequestReviewsEnforcementLevel'] = $value;
+
+            after_pullRequestReviewsEnforcementLevel:
+
+            $value = $payload['require_last_push_approval'] ?? null;
+
+            if ($value === null) {
+                $properties['requireLastPushApproval'] = null;
+                goto after_requireLastPushApproval;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'requireLastPushApproval';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequireLastPushApproval($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['requireLastPushApproval'] = $value;
+
+            after_requireLastPushApproval:
+
             $value = $payload['required_status_checks'] ?? null;
 
             if ($value === null) {
@@ -4612,6 +4722,126 @@ class BranchProtectionRule implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LockBranchEnforcementLevel(array $payload): LockBranchEnforcementLevel
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['from'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'from';
+                goto after_from;
+            }
+
+            $properties['from'] = $value;
+
+            after_from:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LockBranchEnforcementLevel', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(LockBranchEnforcementLevel::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new LockBranchEnforcementLevel(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LockBranchEnforcementLevel', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LockAllowsForkSync(array $payload): LockAllowsForkSync
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['from'] ?? null;
+
+            if ($value === null) {
+                $properties['from'] = null;
+                goto after_from;
+            }
+
+            $properties['from'] = $value;
+
+            after_from:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LockAllowsForkSync', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(LockAllowsForkSync::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new LockAllowsForkSync(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LockAllowsForkSync', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️PullRequestReviewsEnforcementLevel(array $payload): PullRequestReviewsEnforcementLevel
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['from'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'from';
+                goto after_from;
+            }
+
+            $properties['from'] = $value;
+
+            after_from:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\PullRequestReviewsEnforcementLevel', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(PullRequestReviewsEnforcementLevel::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new PullRequestReviewsEnforcementLevel(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\PullRequestReviewsEnforcementLevel', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequireLastPushApproval(array $payload): RequireLastPushApproval
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['from'] ?? null;
+
+            if ($value === null) {
+                $properties['from'] = null;
+                goto after_from;
+            }
+
+            $properties['from'] = $value;
+
+            after_from:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequireLastPushApproval', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(RequireLastPushApproval::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new RequireLastPushApproval(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequireLastPushApproval', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequiredStatusChecks(array $payload): RequiredStatusChecks
     {
         $properties    = [];
@@ -4744,6 +4974,10 @@ class BranchProtectionRule implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedActorsOnly' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AuthorizedActorsOnly($object),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\AuthorizedDismissalActorsOnly' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️AuthorizedDismissalActorsOnly($object),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LinearHistoryRequirementEnforcementLevel' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LinearHistoryRequirementEnforcementLevel($object),
+                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LockBranchEnforcementLevel' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LockBranchEnforcementLevel($object),
+                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\LockAllowsForkSync' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LockAllowsForkSync($object),
+                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\PullRequestReviewsEnforcementLevel' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️PullRequestReviewsEnforcementLevel($object),
+                'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequireLastPushApproval' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequireLastPushApproval($object),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequiredStatusChecks($object),
                 'ApiClients\Client\GitHub\Schema\WebhookBranchProtectionRuleEdited\Changes\RequiredStatusChecksEnforcementLevel' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequiredStatusChecksEnforcementLevel($object),
                 default => throw new LogicException('No serialization defined for $className'),
@@ -6606,6 +6840,17 @@ class BranchProtectionRule implements ObjectMapper
         $linearHistoryRequirementEnforcementLevel                                                                      = $object->linearHistoryRequirementEnforcementLevel;
         after_linearHistoryRequirementEnforcementLevel:        $result['linear_history_requirement_enforcement_level'] = $linearHistoryRequirementEnforcementLevel;
 
+        $lockBranchEnforcementLevel                                                       = $object->lockBranchEnforcementLevel;
+        after_lockBranchEnforcementLevel:        $result['lock_branch_enforcement_level'] = $lockBranchEnforcementLevel;
+
+        $lockAllowsForkSync = $object->lockAllowsForkSync;
+
+        if ($lockAllowsForkSync === null) {
+            goto after_lockAllowsForkSync;
+        }
+
+        after_lockAllowsForkSync:        $result['lock_allows_fork_sync'] = $lockAllowsForkSync;
+
         $mergeQueueEnforcementLevel                                                       = $object->mergeQueueEnforcementLevel;
         after_mergeQueueEnforcementLevel:        $result['merge_queue_enforcement_level'] = $mergeQueueEnforcementLevel;
 
@@ -6913,6 +7158,42 @@ class BranchProtectionRule implements ObjectMapper
         $linearHistoryRequirementEnforcementLevel                                                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LinearHistoryRequirementEnforcementLevel($linearHistoryRequirementEnforcementLevel);
         after_linearHistoryRequirementEnforcementLevel:        $result['linear_history_requirement_enforcement_level'] = $linearHistoryRequirementEnforcementLevel;
 
+        $lockBranchEnforcementLevel = $object->lockBranchEnforcementLevel;
+
+        if ($lockBranchEnforcementLevel === null) {
+            goto after_lockBranchEnforcementLevel;
+        }
+
+        $lockBranchEnforcementLevel                                                       = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LockBranchEnforcementLevel($lockBranchEnforcementLevel);
+        after_lockBranchEnforcementLevel:        $result['lock_branch_enforcement_level'] = $lockBranchEnforcementLevel;
+
+        $lockAllowsForkSync = $object->lockAllowsForkSync;
+
+        if ($lockAllowsForkSync === null) {
+            goto after_lockAllowsForkSync;
+        }
+
+        $lockAllowsForkSync                                               = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LockAllowsForkSync($lockAllowsForkSync);
+        after_lockAllowsForkSync:        $result['lock_allows_fork_sync'] = $lockAllowsForkSync;
+
+        $pullRequestReviewsEnforcementLevel = $object->pullRequestReviewsEnforcementLevel;
+
+        if ($pullRequestReviewsEnforcementLevel === null) {
+            goto after_pullRequestReviewsEnforcementLevel;
+        }
+
+        $pullRequestReviewsEnforcementLevel                                                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️PullRequestReviewsEnforcementLevel($pullRequestReviewsEnforcementLevel);
+        after_pullRequestReviewsEnforcementLevel:        $result['pull_request_reviews_enforcement_level'] = $pullRequestReviewsEnforcementLevel;
+
+        $requireLastPushApproval = $object->requireLastPushApproval;
+
+        if ($requireLastPushApproval === null) {
+            goto after_requireLastPushApproval;
+        }
+
+        $requireLastPushApproval                                                    = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequireLastPushApproval($requireLastPushApproval);
+        after_requireLastPushApproval:        $result['require_last_push_approval'] = $requireLastPushApproval;
+
         $requiredStatusChecks = $object->requiredStatusChecks;
 
         if ($requiredStatusChecks === null) {
@@ -7006,6 +7287,60 @@ class BranchProtectionRule implements ObjectMapper
         $result = [];
 
         $from                              = $object->from;
+        after_from:        $result['from'] = $from;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LockBranchEnforcementLevel(mixed $object): mixed
+    {
+        assert($object instanceof LockBranchEnforcementLevel);
+        $result = [];
+
+        $from                              = $object->from;
+        after_from:        $result['from'] = $from;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️LockAllowsForkSync(mixed $object): mixed
+    {
+        assert($object instanceof LockAllowsForkSync);
+        $result = [];
+
+        $from = $object->from;
+
+        if ($from === null) {
+            goto after_from;
+        }
+
+        after_from:        $result['from'] = $from;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️PullRequestReviewsEnforcementLevel(mixed $object): mixed
+    {
+        assert($object instanceof PullRequestReviewsEnforcementLevel);
+        $result = [];
+
+        $from                              = $object->from;
+        after_from:        $result['from'] = $from;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookBranchProtectionRuleEdited⚡️Changes⚡️RequireLastPushApproval(mixed $object): mixed
+    {
+        assert($object instanceof RequireLastPushApproval);
+        $result = [];
+
+        $from = $object->from;
+
+        if ($from === null) {
+            goto after_from;
+        }
+
         after_from:        $result['from'] = $from;
 
         return $result;

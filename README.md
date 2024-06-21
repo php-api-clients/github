@@ -3634,6 +3634,214 @@ $client->operations()->codeScanning()->listAlertsForOrgListing(        org: 'gen
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-scanning/code-scanning#list-code-scanning-alerts-for-an-organization).
 
 
+### code-security/get-configurations-for-org
+
+Get code security configurations for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/code-security/configurations', [
+        'org' => 'generated',
+        'before' => 'generated',
+        'after' => 'generated',
+        'target_type' => 'generated',
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->getConfigurationsForOrg(        org: 'generated',
+        before: 'generated',
+        after: 'generated',
+        target_type: 'generated',
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#get-code-security-configurations-for-an-organization).
+
+
+### code-security/create-configuration
+
+Create a code security configuration
+
+Using the `call` method:
+```php
+$client->call('POST /orgs/{org}/code-security/configurations', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->createConfiguration(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#create-a-code-security-configuration).
+
+
+### code-security/get-default-configurations
+
+Get default code security configurations
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/code-security/configurations/defaults', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->getDefaultConfigurations(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#get-default-code-security-configurations).
+
+
+### code-security/get-configuration
+
+Get a code security configuration
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/code-security/configurations/{configuration_id}', [
+        'org' => 'generated',
+        'configuration_id' => 16,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->getConfiguration(        org: 'generated',
+        configuration_id: 16,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#get-a-code-security-configuration).
+
+
+### code-security/delete-configuration
+
+Delete a code security configuration
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/code-security/configurations/{configuration_id}', [
+        'org' => 'generated',
+        'configuration_id' => 16,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->deleteConfiguration(        org: 'generated',
+        configuration_id: 16,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#delete-a-code-security-configuration).
+
+
+### code-security/update-configuration
+
+Update a code security configuration
+
+Using the `call` method:
+```php
+$client->call('PATCH /orgs/{org}/code-security/configurations/{configuration_id}', [
+        'org' => 'generated',
+        'configuration_id' => 16,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->updateConfiguration(        org: 'generated',
+        configuration_id: 16,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#update-a-code-security-configuration).
+
+
+### code-security/attach-configuration
+
+Attach a configuration to repositories
+
+Using the `call` method:
+```php
+$client->call('POST /orgs/{org}/code-security/configurations/{configuration_id}/attach', [
+        'org' => 'generated',
+        'configuration_id' => 16,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->attachConfiguration(        org: 'generated',
+        configuration_id: 16,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#attach-a-configuration-to-repositories).
+
+
+### code-security/set-configuration-as-default
+
+Set a code security configuration as a default for an organization
+
+Using the `call` method:
+```php
+$client->call('PUT /orgs/{org}/code-security/configurations/{configuration_id}/defaults', [
+        'org' => 'generated',
+        'configuration_id' => 16,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->setConfigurationAsDefault(        org: 'generated',
+        configuration_id: 16,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#set-a-code-security-configuration-as-a-default-for-an-organization).
+
+
+### code-security/get-repositories-for-configuration
+
+Get repositories associated with a code security configuration
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/code-security/configurations/{configuration_id}/repositories', [
+        'org' => 'generated',
+        'configuration_id' => 16,
+        'before' => 'generated',
+        'after' => 'generated',
+        'per_page' => 8,
+        'status' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->getRepositoriesForConfiguration(        org: 'generated',
+        configuration_id: 16,
+        before: 'generated',
+        after: 'generated',
+        per_page: 8,
+        status: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#get-repositories-associated-with-a-code-security-configuration).
+
+
 ### codespaces/list-in-organization
 
 List codespaces for the organization
