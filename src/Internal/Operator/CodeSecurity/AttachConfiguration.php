@@ -24,6 +24,7 @@ final readonly class AttachConfiguration
     {
     }
 
+    /** @return */
     public function call(string $org, int $configurationId, array $params): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\AttachConfiguration($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $configurationId);

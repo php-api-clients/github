@@ -21,7 +21,7 @@ final class CodeSecurity
     {
     }
 
-    /** @return iterable<int,Schema\CodeSecurityConfiguration> */
+    /** @return Observable<Schema\CodeSecurityConfiguration> */
     public function getConfigurationsForOrg(array $params): iterable
     {
         $arguments = [];
@@ -60,7 +60,7 @@ final class CodeSecurity
         return $operator->call($arguments['org'], $arguments['before'], $arguments['after'], $arguments['target_type'], $arguments['per_page']);
     }
 
-    /** @return iterable<int,Schema\CodeSecurityDefaultConfigurations>|WithoutBody */
+    /** @return Observable<Schema\CodeSecurityDefaultConfigurations>|WithoutBody */
     public function getDefaultConfigurations(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -75,6 +75,7 @@ final class CodeSecurity
         return $operator->call($arguments['org']);
     }
 
+    /** @return */
     public function getConfiguration(array $params): CodeSecurityConfiguration|WithoutBody
     {
         $arguments = [];
@@ -95,7 +96,7 @@ final class CodeSecurity
         return $operator->call($arguments['org'], $arguments['configuration_id']);
     }
 
-    /** @return iterable<int,Schema\CodeSecurityConfigurationRepositories> */
+    /** @return Observable<Schema\CodeSecurityConfigurationRepositories> */
     public function getRepositoriesForConfiguration(array $params): iterable
     {
         $arguments = [];

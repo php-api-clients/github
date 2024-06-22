@@ -143,6 +143,7 @@ final class Copilot
         return $operator->call($arguments['enterprise'], $arguments['page'], $arguments['per_page']);
     }
 
+    /** @return */
     public function listCopilotSeats(array $params): \ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok
     {
         $arguments = [];

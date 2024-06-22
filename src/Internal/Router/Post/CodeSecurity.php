@@ -20,6 +20,7 @@ final class CodeSecurity
     {
     }
 
+    /** @return */
     public function createConfiguration(array $params): CodeSecurityConfiguration
     {
         $arguments = [];
@@ -34,6 +35,7 @@ final class CodeSecurity
         return $operator->call($arguments['org'], $params);
     }
 
+    /** @return */
     public function attachConfiguration(array $params): Json
     {
         $arguments = [];

@@ -651,6 +651,10 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('');
         }
 
+        if ($call === 'GET /orgs/{org}/attestations/{subject_digest}') {
+            return $this->typeResolver->resolve('Schema\\Operations\\Orgs\\ListAttestations\\Response\\ApplicationJson\\Ok');
+        }
+
         if ($call === 'GET /orgs/{org}/blocks') {
             return $this->typeResolver->resolve('Observable<Schema\\SimpleUser>');
         }
@@ -680,39 +684,39 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/code-security/configurations') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CodeSecurityConfiguration>');
+            return $this->typeResolver->resolve('Observable<Schema\\CodeSecurityConfiguration>');
         }
 
         if ($call === 'POST /orgs/{org}/code-security/configurations') {
-            return $this->typeResolver->resolve('Schema\\CodeSecurityConfiguration');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/code-security/configurations/defaults') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CodeSecurityDefaultConfigurations>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('Observable<Schema\\CodeSecurityDefaultConfigurations>|WithoutBody');
         }
 
         if ($call === 'GET /orgs/{org}/code-security/configurations/{configuration_id}') {
-            return $this->typeResolver->resolve('Schema\\CodeSecurityConfiguration|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/code-security/configurations/{configuration_id}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PATCH /orgs/{org}/code-security/configurations/{configuration_id}') {
-            return $this->typeResolver->resolve('Schema\\CodeSecurityConfiguration|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'POST /orgs/{org}/code-security/configurations/{configuration_id}/attach') {
-            return $this->typeResolver->resolve('Schema\\Operations\\CodeSecurity\\AttachConfiguration\\Response\\ApplicationJson\\Accepted\\Application\\Json');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PUT /orgs/{org}/code-security/configurations/{configuration_id}/defaults') {
-            return $this->typeResolver->resolve('Schema\\Operations\\CodeSecurity\\SetConfigurationAsDefault\\Response\\ApplicationJson\\Ok');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/code-security/configurations/{configuration_id}/repositories') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CodeSecurityConfigurationRepositories>');
+            return $this->typeResolver->resolve('Observable<Schema\\CodeSecurityConfigurationRepositories>');
         }
 
         if ($call === 'GET /orgs/{org}/codespaces') {
@@ -772,7 +776,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/copilot/billing/seats') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Copilot\\ListCopilotSeats\\Response\\ApplicationJson\\Ok');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'POST /orgs/{org}/copilot/billing/selected_teams') {
@@ -1965,6 +1969,14 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
 
         if ($call === 'GET /repos/{owner}/{repo}/assignees/{assignee}') {
             return $this->typeResolver->resolve('');
+        }
+
+        if ($call === 'POST /repos/{owner}/{repo}/attestations') {
+            return $this->typeResolver->resolve('Schema\\Operations\\Repos\\CreateAttestation\\Response\\ApplicationJson\\Created');
+        }
+
+        if ($call === 'GET /repos/{owner}/{repo}/attestations/{subject_digest}') {
+            return $this->typeResolver->resolve('Schema\\Operations\\Repos\\ListAttestations\\Response\\ApplicationJson\\Ok\\Application\\Json');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/autolinks') {
@@ -4317,6 +4329,10 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
 
         if ($call === 'GET /users/{username}') {
             return $this->typeResolver->resolve('');
+        }
+
+        if ($call === 'GET /users/{username}/attestations/{subject_digest}') {
+            return $this->typeResolver->resolve('Schema\\Operations\\Users\\ListAttestations\\Response\\ApplicationJson\\Ok|Schema\\EmptyObject|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /users/{username}/docker/conflicts') {

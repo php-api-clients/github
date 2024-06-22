@@ -8,7 +8,7 @@ use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\HookDelivery;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\Delete\Response\ApplicationJson\Accepted\Application\Json;
-use ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok;
+use ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAttestations\Response\ApplicationJson\Ok;
 use ApiClients\Client\GitHub\Schema\OrganizationFull;
 use ApiClients\Client\GitHub\Schema\OrganizationInvitation;
 use ApiClients\Client\GitHub\Schema\OrganizationRole;
@@ -46,6 +46,11 @@ final class Orgs
     public function update(string $org, array $params): OrganizationFull
     {
         return $this->operators->orgs👷Update()->call($org, $params);
+    }
+
+    public function listAttestations(string $before, string $after, string $org, string $subjectDigest, int $perPage): Ok
+    {
+        return $this->operators->orgs👷ListAttestations()->call($before, $after, $org, $subjectDigest, $perPage);
     }
 
     /** @return Observable<Schema\SimpleUser> */
@@ -163,7 +168,7 @@ final class Orgs
     }
 
     /** @return */
-    public function listAppInstallations(string $org, int $perPage, int $page): Ok
+    public function listAppInstallations(string $org, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok
     {
         return $this->operators->orgs👷ListAppInstallations()->call($org, $perPage, $page);
     }

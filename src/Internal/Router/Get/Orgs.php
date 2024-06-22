@@ -568,6 +568,44 @@ final class Orgs
         return $operator->call($arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
+    public function listAttestations(array $params): \ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAttestations\Response\ApplicationJson\Ok
+    {
+        $arguments = [];
+        if (array_key_exists('before', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: before');
+        }
+
+        $arguments['before'] = $params['before'];
+        unset($params['before']);
+        if (array_key_exists('after', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: after');
+        }
+
+        $arguments['after'] = $params['after'];
+        unset($params['after']);
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('subject_digest', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: subject_digest');
+        }
+
+        $arguments['subject_digest'] = $params['subject_digest'];
+        unset($params['subject_digest']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        $operator = new Internal\Operator\Orgs\ListAttestations($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Attestations🌀SubjectDigest());
+
+        return $operator->call($arguments['before'], $arguments['after'], $arguments['org'], $arguments['subject_digest'], $arguments['per_page']);
+    }
+
     /** @return */
     public function checkBlockedUser(array $params): WithoutBody
     {

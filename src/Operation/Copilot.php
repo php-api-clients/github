@@ -43,6 +43,7 @@ final class Copilot
         return $this->operators->copilot👷GetCopilotOrganizationDetails()->call($org);
     }
 
+    /** @return */
     public function listCopilotSeats(string $org, int $page, int $perPage): \ApiClients\Client\GitHub\Schema\Operations\Copilot\ListCopilotSeats\Response\ApplicationJson\Ok
     {
         return $this->operators->copilot👷ListCopilotSeats()->call($org, $page, $perPage);

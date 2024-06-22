@@ -19,6 +19,7 @@ final class CodeSecurity
     {
     }
 
+    /** @return */
     public function setConfigurationAsDefault(array $params): Ok
     {
         $arguments = [];

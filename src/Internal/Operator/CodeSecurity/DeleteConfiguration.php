@@ -24,6 +24,7 @@ final readonly class DeleteConfiguration
     {
     }
 
+    /** @return */
     public function call(string $org, int $configurationId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\DeleteConfiguration($this->responseSchemaValidator, $this->hydrator, $org, $configurationId);

@@ -12,6 +12,7 @@ use ApiClients\Client\GitHub\Schema\CodespacesSecret;
 use ApiClients\Client\GitHub\Schema\CodespacesUserPublicKey;
 use ApiClients\Client\GitHub\Schema\ContentFile;
 use ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails;
+use ApiClients\Client\GitHub\Schema\EmptyObject;
 use ApiClients\Client\GitHub\Schema\GistComment;
 use ApiClients\Client\GitHub\Schema\HookDelivery;
 use ApiClients\Client\GitHub\Schema\Import;
@@ -49,8 +50,8 @@ final class Five
     {
     }
 
-    /** @return |Observable<Schema\CopilotUsageMetrics>|Observable<Schema\DependabotAlertWithRepository>|WithoutBody|Observable<Schema\OrganizationSecretScanningAlert>|Observable<Schema\MarketplacePurchase>|Observable<Schema\Event>|Schema\BasicError|Observable<Schema\CodeScanningOrganizationAlertItems>|iterable<int,Schema\CodeSecurityConfiguration>|Observable<Schema\Package>|Observable<Schema\OrgCustomProperty>|Observable<Schema\OrgRepoCustomPropertyValues>|Observable<Schema\RuleSuites>|Observable<Schema\ProjectCard>|Observable<Schema\Activity>|Observable<Schema\SimpleUser>|Observable<Schema\Autolink>|Observable<Schema\ShortBranch>|Observable<Schema\Collaborator>|Observable<Schema\CommitComment>|Observable<Schema\Commit>|Observable<Schema\Contributor>|Observable<Schema\Deployment>|Observable<Schema\MinimalRepository>|Observable<Schema\Hook>|Observable<Schema\RepositoryInvitation>|Observable<Schema\Issue>|Observable<Schema\DeployKey>|Observable<Schema\Label>|Observable<Schema\Milestone>|Observable<Schema\Thread>|Observable<Schema\Project>|Observable<Schema\PullRequestSimple>|Observable<Schema\Release>|Observable<Schema\RepositoryRuleset>|Observable<Schema\RepositoryAdvisory>|Observable<Schema\Tag>|Observable<Schema\Team> */
-    public function call(string $call, array $params, array $pathChunks): HookDelivery|iterable|WithoutBody|GistComment|MarketplacePurchase|BasicError|ThreadSubscription|ActionsOrganizationPermissions|Ok|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListOrgSecrets\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListOrgVariables\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListOrgSecrets\Response\ApplicationJson\Ok|CopilotOrganizationDetails|\ApiClients\Client\GitHub\Schema\Operations\Dependabot\ListOrgSecrets\Response\ApplicationJson\Ok|OrgHook|OrgMembership|Migration|OrganizationRole|RepositoryRuleset|TeamFull|ProjectCard|CheckAutomatedSecurityFixes|Json|\ApiClients\Client\GitHub\Schema\Operations\Repos\GetAllEnvironments\Response\ApplicationJson\Ok|Import|Installation|InteractionLimitResponse|One|Language|LicenseContent|Page|\ApiClients\Client\GitHub\Schema\Operations\Repos\CheckPrivateVulnerabilityReporting\Response\ApplicationJson\Ok|ContentFile|SimpleUser|Stargazer|RepositorySubscription|Topic|TeamDiscussion|TeamMembership|TeamProject|CodespacesUserPublicKey|CodespacesSecret|\ApiClients\Client\GitHub\Schema\Operations\Codespaces\CodespaceMachinesForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|\ApiClients\Client\GitHub\Schema\Operations\Apps\ListInstallationReposForAuthenticatedUser\Response\ApplicationJson\Ok|Package
+    /** @return |Observable<Schema\CopilotUsageMetrics>|Observable<Schema\DependabotAlertWithRepository>|WithoutBody|Observable<Schema\OrganizationSecretScanningAlert>|Observable<Schema\MarketplacePurchase>|Observable<Schema\Event>|Schema\BasicError|Schema\Operations\Orgs\ListAttestations\Response\ApplicationJson\Ok|Observable<Schema\CodeScanningOrganizationAlertItems>|Observable<Schema\CodeSecurityConfiguration>|Observable<Schema\Package>|Observable<Schema\OrgCustomProperty>|Observable<Schema\OrgRepoCustomPropertyValues>|Observable<Schema\RuleSuites>|Observable<Schema\ProjectCard>|Observable<Schema\Activity>|Observable<Schema\SimpleUser>|Observable<Schema\Autolink>|Observable<Schema\ShortBranch>|Observable<Schema\Collaborator>|Observable<Schema\CommitComment>|Observable<Schema\Commit>|Observable<Schema\Contributor>|Observable<Schema\Deployment>|Observable<Schema\MinimalRepository>|Observable<Schema\Hook>|Observable<Schema\RepositoryInvitation>|Observable<Schema\Issue>|Observable<Schema\DeployKey>|Observable<Schema\Label>|Observable<Schema\Milestone>|Observable<Schema\Thread>|Observable<Schema\Project>|Observable<Schema\PullRequestSimple>|Observable<Schema\Release>|Observable<Schema\RepositoryRuleset>|Observable<Schema\RepositoryAdvisory>|Observable<Schema\Tag>|Observable<Schema\Team>|Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok|Schema\EmptyObject|\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
+    public function call(string $call, array $params, array $pathChunks): HookDelivery|iterable|WithoutBody|GistComment|MarketplacePurchase|BasicError|ThreadSubscription|ActionsOrganizationPermissions|Ok|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListOrgSecrets\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListOrgVariables\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAttestations\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Codespaces\ListOrgSecrets\Response\ApplicationJson\Ok|CopilotOrganizationDetails|\ApiClients\Client\GitHub\Schema\Operations\Dependabot\ListOrgSecrets\Response\ApplicationJson\Ok|OrgHook|OrgMembership|Migration|OrganizationRole|RepositoryRuleset|TeamFull|ProjectCard|CheckAutomatedSecurityFixes|Json|\ApiClients\Client\GitHub\Schema\Operations\Repos\GetAllEnvironments\Response\ApplicationJson\Ok|Import|Installation|InteractionLimitResponse|One|Language|LicenseContent|Page|\ApiClients\Client\GitHub\Schema\Operations\Repos\CheckPrivateVulnerabilityReporting\Response\ApplicationJson\Ok|ContentFile|SimpleUser|Stargazer|RepositorySubscription|Topic|TeamDiscussion|TeamMembership|TeamProject|CodespacesUserPublicKey|CodespacesSecret|\ApiClients\Client\GitHub\Schema\Operations\Codespaces\CodespaceMachinesForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|\ApiClients\Client\GitHub\Schema\Operations\Apps\ListInstallationReposForAuthenticatedUser\Response\ApplicationJson\Ok|Package|\ApiClients\Client\GitHub\Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok|EmptyObject
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {
@@ -151,6 +152,12 @@ final class Five
                         } elseif ($pathChunks[4] === 'variables') {
                             if ($call === 'GET /orgs/{org}/actions/variables') {
                                 return $this->routers->internal🔀Router🔀Get🔀Actions()->listOrgVariables($params);
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'attestations') {
+                        if ($pathChunks[4] === '{subject_digest}') {
+                            if ($call === 'GET /orgs/{org}/attestations/{subject_digest}') {
+                                return $this->routers->internal🔀Router🔀Get🔀Orgs()->listAttestations($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'blocks') {
@@ -553,7 +560,13 @@ final class Five
                 }
             } elseif ($pathChunks[1] === 'users') {
                 if ($pathChunks[2] === '{username}') {
-                    if ($pathChunks[3] === 'docker') {
+                    if ($pathChunks[3] === 'attestations') {
+                        if ($pathChunks[4] === '{subject_digest}') {
+                            if ($call === 'GET /users/{username}/attestations/{subject_digest}') {
+                                return $this->routers->internal🔀Router🔀Get🔀Users()->listAttestations($params);
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'docker') {
                         if ($pathChunks[4] === 'conflicts') {
                             if ($call === 'GET /users/{username}/docker/conflicts') {
                                 return $this->routers->internal🔀Router🔀Get🔀Packages()->listDockerMigrationConflictingPackagesForUser($params);

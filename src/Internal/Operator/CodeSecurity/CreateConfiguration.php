@@ -24,6 +24,7 @@ final readonly class CreateConfiguration
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): CodeSecurityConfiguration
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\CreateConfiguration($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

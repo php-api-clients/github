@@ -19,6 +19,7 @@ use ApiClients\Client\GitHub\Schema\FullRepository;
 use ApiClients\Client\GitHub\Schema\Hook;
 use ApiClients\Client\GitHub\Schema\MergedUpstream;
 use ApiClients\Client\GitHub\Schema\MinimalRepository;
+use ApiClients\Client\GitHub\Schema\Operations\Repos\CreateAttestation\Response\ApplicationJson\Created;
 use ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\Page;
 use ApiClients\Client\GitHub\Schema\PageBuildStatus;
@@ -181,6 +182,26 @@ final class Repos
         $arguments['repo'] = $params['repo'];
         unset($params['repo']);
         $operator = new Internal\Operator\Repos\CreateTagProtection($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Tags🌀Protection());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $params);
+    }
+
+    public function createAttestation(array $params): Created
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        $operator = new Internal\Operator\Repos\CreateAttestation($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Attestations());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }

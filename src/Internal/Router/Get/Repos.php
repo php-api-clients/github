@@ -35,7 +35,7 @@ use ApiClients\Client\GitHub\Schema\Hook;
 use ApiClients\Client\GitHub\Schema\HookDelivery;
 use ApiClients\Client\GitHub\Schema\Language;
 use ApiClients\Client\GitHub\Schema\Operations\Repos\GetAllEnvironments\Response\ApplicationJson\Ok;
-use ApiClients\Client\GitHub\Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json;
+use ApiClients\Client\GitHub\Schema\Operations\Repos\ListAttestations\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Client\GitHub\Schema\Page;
 use ApiClients\Client\GitHub\Schema\PageBuild;
 use ApiClients\Client\GitHub\Schema\PagesDeploymentStatus;
@@ -1242,6 +1242,50 @@ final class Repos
         return $operator->call($arguments['org'], $arguments['rule_suite_id']);
     }
 
+    public function listAttestations(array $params): Json
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('before', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: before');
+        }
+
+        $arguments['before'] = $params['before'];
+        unset($params['before']);
+        if (array_key_exists('after', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: after');
+        }
+
+        $arguments['after'] = $params['after'];
+        unset($params['after']);
+        if (array_key_exists('subject_digest', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: subject_digest');
+        }
+
+        $arguments['subject_digest'] = $params['subject_digest'];
+        unset($params['subject_digest']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        $operator = new Internal\Operator\Repos\ListAttestations($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Attestations🌀SubjectDigest());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['before'], $arguments['after'], $arguments['subject_digest'], $arguments['per_page']);
+    }
+
     /** @return */
     public function getAutolink(array $params): Autolink
     {
@@ -1864,7 +1908,7 @@ final class Repos
     }
 
     /** @return Observable<int>|Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json|WithoutBody */
-    public function getCodeFrequencyStats(array $params): iterable|Json|WithoutBody
+    public function getCodeFrequencyStats(array $params): iterable|\ApiClients\Client\GitHub\Schema\Operations\Repos\GetCodeFrequencyStats\Response\ApplicationJson\Accepted\Application\Json|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

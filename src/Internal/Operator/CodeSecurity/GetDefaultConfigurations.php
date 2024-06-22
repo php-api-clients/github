@@ -25,7 +25,7 @@ final readonly class GetDefaultConfigurations
     {
     }
 
-    /** @return iterable<int,Schema\CodeSecurityDefaultConfigurations>|WithoutBody */
+    /** @return Observable<Schema\CodeSecurityDefaultConfigurations>|WithoutBody */
     public function call(string $org): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\GetDefaultConfigurations($this->responseSchemaValidator, $this->hydrator, $org);
