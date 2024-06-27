@@ -24,10 +24,10 @@ final readonly class ApplicationJson
         },
         "dismissed_reason": {
             "enum": [
-                null,
                 "false positive",
                 "won\'t fix",
-                "used in tests"
+                "used in tests",
+                null
             ],
             "type": [
                 "string",

@@ -67,6 +67,13 @@ final readonly class Packages
                 "NOASSERTION"
             ]
         },
+        "copyrightText": {
+            "type": "string",
+            "description": "The copyright holders of the package, and any dates present with those notices, if available.",
+            "examples": [
+                "Copyright (c) 1985 GitHub.com"
+            ]
+        },
         "externalRefs": {
             "type": "array",
             "items": {
@@ -114,6 +121,7 @@ final readonly class Packages
     "licenseConcluded": "MIT",
     "licenseDeclared": "NOASSERTION",
     "supplier": "NOASSERTION",
+    "copyrightText": "Copyright (c) 1985 GitHub.com",
     "externalRefs": [
         {
             "referenceCategory": "PACKAGE-MANAGER",
@@ -141,9 +149,10 @@ final readonly class Packages
      * licenseDeclared: The license of the package as declared by its author, or NOASSERTION if this information
     was not available when the SPDX document was created.
      * supplier: The distribution source of this package, or NOASSERTION if this was not determined.
+     * copyrightText: The copyright holders of the package, and any dates present with those notices, if available.
      */
     public function __construct(#[MapFrom('SPDXID')]
-    public string|null $spdxid, public string|null $name, public string|null $versionInfo, public string|null $downloadLocation, public bool|null $filesAnalyzed, public string|null $licenseConcluded, public string|null $licenseDeclared, public string|null $supplier, public array|null $externalRefs,)
+    public string|null $spdxid, public string|null $name, public string|null $versionInfo, public string|null $downloadLocation, public bool|null $filesAnalyzed, public string|null $licenseConcluded, public string|null $licenseDeclared, public string|null $supplier, public string|null $copyrightText, public array|null $externalRefs,)
     {
     }
 }

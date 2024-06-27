@@ -26062,6 +26062,26 @@ $client->operations()->teams()->listForAuthenticatedUserListing(        per_page
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/teams/teams#list-teams-for-the-authenticated-user).
 
 
+### users/get-by-id
+
+Get a user using their ID
+
+Using the `call` method:
+```php
+$client->call('GET /user/{account_id}', [
+        'account_id' => 10,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->users()->getById(        account_id: 10,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/users/users#get-a-user-using-their-id).
+
+
 ### users/list
 
 List users

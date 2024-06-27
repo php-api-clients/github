@@ -246,6 +246,20 @@ final class Users
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
+    public function getById(array $params): PrivateUser|PublicUser
+    {
+        $arguments = [];
+        if (array_key_exists('account_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: account_id');
+        }
+
+        $arguments['account_id'] = $params['account_id'];
+        unset($params['account_id']);
+        $operator = new Internal\Operator\Users\GetById($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀AccountId());
+
+        return $operator->call($arguments['account_id']);
+    }
+
     /** @return */
     public function getByUsername(array $params): PrivateUser|PublicUser
     {
@@ -525,6 +539,7 @@ final class Users
         return $operator->call($arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function listAttestations(array $params): Ok|EmptyObject|WithoutBody
     {
         $arguments = [];

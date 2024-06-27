@@ -162,6 +162,13 @@ final readonly class Sbom
                             "NOASSERTION"
                         ]
                     },
+                    "copyrightText": {
+                        "type": "string",
+                        "description": "The copyright holders of the package, and any dates present with those notices, if available.",
+                        "examples": [
+                            "Copyright (c) 1985 GitHub.com"
+                        ]
+                    },
                     "externalRefs": {
                         "type": "array",
                         "items": {
@@ -230,6 +237,7 @@ final readonly class Sbom
             "licenseConcluded": "MIT",
             "licenseDeclared": "NOASSERTION",
             "supplier": "NOASSERTION",
+            "copyrightText": "Copyright (c) 1985 GitHub.com",
             "externalRefs": [
                 {
                     "referenceCategory": "PACKAGE-MANAGER",
@@ -252,6 +260,7 @@ final readonly class Sbom
             "licenseConcluded": "MIT",
             "licenseDeclared": "NOASSERTION",
             "supplier": "NOASSERTION",
+            "copyrightText": "Copyright (c) 1985 GitHub.com",
             "externalRefs": [
                 {
                     "referenceCategory": "PACKAGE-MANAGER",

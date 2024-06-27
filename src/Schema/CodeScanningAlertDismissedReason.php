@@ -8,10 +8,10 @@ final readonly class CodeScanningAlertDismissedReason
 {
     public const SCHEMA_JSON         = '{
     "enum": [
-        null,
         "false positive",
         "won\'t fix",
-        "used in tests"
+        "used in tests",
+        null
     ],
     "type": [
         "string",

@@ -45,12 +45,14 @@ final readonly class ReviewComment
                 "integer",
                 "null"
             ],
+            "format": "int64",
             "examples": [
                 42
             ]
         },
         "id": {
             "type": "integer",
+            "format": "int64",
             "examples": [
                 10
             ]

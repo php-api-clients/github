@@ -191,6 +191,14 @@ final readonly class OrgRulesetConditions
                                                     "type": "string"
                                                 },
                                                 "description": "The values to match for the repository property"
+                                            },
+                                            "source": {
+                                                "enum": [
+                                                    "custom",
+                                                    "system"
+                                                ],
+                                                "type": "string",
+                                                "description": "The source of the repository property. Defaults to \'custom\' if not specified."
                                             }
                                         },
                                         "description": "Parameters for a targeting a repository property"
@@ -217,6 +225,14 @@ final readonly class OrgRulesetConditions
                                                     "type": "string"
                                                 },
                                                 "description": "The values to match for the repository property"
+                                            },
+                                            "source": {
+                                                "enum": [
+                                                    "custom",
+                                                    "system"
+                                                ],
+                                                "type": "string",
+                                                "description": "The source of the repository property. Defaults to \'custom\' if not specified."
                                             }
                                         },
                                         "description": "Parameters for a targeting a repository property"

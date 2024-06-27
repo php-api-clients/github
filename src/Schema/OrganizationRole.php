@@ -23,7 +23,8 @@ final readonly class OrganizationRole
     "properties": {
         "id": {
             "type": "integer",
-            "description": "The unique identifier of the role."
+            "description": "The unique identifier of the role.",
+            "format": "int64"
         },
         "name": {
             "type": "string",

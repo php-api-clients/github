@@ -262,6 +262,11 @@ final class Users
         return $this->operators->users👷DeleteSshSigningKeyForAuthenticatedUser()->call($sshSigningKeyId);
     }
 
+    public function getById(int $accountId): PrivateUser|PublicUser
+    {
+        return $this->operators->users👷GetById()->call($accountId);
+    }
+
     /** @return Observable<Schema\SimpleUser>|WithoutBody */
     public function list(int $since, int $perPage): iterable|WithoutBody
     {
@@ -274,6 +279,7 @@ final class Users
         return $this->operators->users👷GetByUsername()->call($username);
     }
 
+    /** @return */
     public function listAttestations(string $before, string $after, string $username, string $subjectDigest, int $perPage): Ok|EmptyObject|WithoutBody
     {
         return $this->operators->users👷ListAttestations()->call($before, $after, $username, $subjectDigest, $perPage);

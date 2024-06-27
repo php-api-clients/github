@@ -29,7 +29,8 @@ final readonly class Authorization
     "type": "object",
     "properties": {
         "id": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
         },
         "url": {
             "type": "string",

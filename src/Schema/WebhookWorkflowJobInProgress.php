@@ -2275,6 +2275,7 @@ final readonly class WebhookWorkflowJobInProgress
                 "id": {
                     "type": "integer",
                     "description": "Unique identifier of the deployment",
+                    "format": "int64",
                     "examples": [
                         42
                     ]

@@ -144,7 +144,8 @@ final readonly class CheckSuite
                 "type": "object",
                 "properties": {
                     "id": {
-                        "type": "integer"
+                        "type": "integer",
+                        "format": "int64"
                     },
                     "number": {
                         "type": "integer"
@@ -175,7 +176,8 @@ final readonly class CheckSuite
                                 "type": "object",
                                 "properties": {
                                     "id": {
-                                        "type": "integer"
+                                        "type": "integer",
+                                        "format": "int64"
                                     },
                                     "url": {
                                         "type": "string"
@@ -210,7 +212,8 @@ final readonly class CheckSuite
                                 "type": "object",
                                 "properties": {
                                     "id": {
-                                        "type": "integer"
+                                        "type": "integer",
+                                        "format": "int64"
                                     },
                                     "url": {
                                         "type": "string"

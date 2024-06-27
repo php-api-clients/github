@@ -30,7 +30,7 @@ final class Three
     {
     }
 
-    /** @return |Observable<Schema\IntegrationInstallationRequest>|WithoutBody|Observable<Schema\Installation>|Observable<Schema\BaseGist>|Observable<string>|Observable<Schema\MarketplaceListingPlan>|Observable<Schema\SimpleUser>|Observable<Schema\Email>|Observable<Schema\GpgKey>|Observable<Schema\Issue>|Observable<Schema\Key>|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\Migration>|Observable<Schema\OrganizationSimple>|Observable<Schema\Package>|Observable<Schema\Repository>|Observable<Schema\RepositoryInvitation>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey>|Observable<Schema\MinimalRepository>|Observable<Schema\TeamFull> */
+    /** @return |Observable<Schema\IntegrationInstallationRequest>|WithoutBody|Observable<Schema\Installation>|Observable<Schema\BaseGist>|Observable<string>|Observable<Schema\MarketplaceListingPlan>|Observable<Schema\SimpleUser>|Observable<Schema\Email>|Observable<Schema\GpgKey>|Observable<Schema\Issue>|Observable<Schema\Key>|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\Migration>|Observable<Schema\OrganizationSimple>|Observable<Schema\Package>|Observable<Schema\Repository>|Observable<Schema\RepositoryInvitation>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey>|Observable<Schema\MinimalRepository>|Observable<Schema\TeamFull>|Schema\PrivateUser|Schema\PublicUser */
     public function call(string $call, array $params, array $pathChunks): GlobalAdvisory|iterable|WithoutBody|Integration|ClassroomAssignment|Classroom|CodeOfConduct|GistSimple|Ok|License|OrganizationFull|Project|\ApiClients\Client\GitHub\Schema\Operations\Search\Code\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Commits\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Labels\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Repos\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Topics\Response\ApplicationJson\Ok|\ApiClients\Client\GitHub\Schema\Operations\Search\Users\Response\ApplicationJson\Ok|TeamFull|Json|\ApiClients\Client\GitHub\Schema\Operations\Apps\ListInstallationsForAuthenticatedUser\Response\ApplicationJson\Ok\Application\Json|InteractionLimitResponse|One|PrivateUser|PublicUser
     {
         if ($pathChunks[0] === '') {
@@ -248,6 +248,10 @@ final class Three
                 } elseif ($pathChunks[2] === 'teams') {
                     if ($call === 'GET /user/teams') {
                         return $this->routers->internal🔀Router🔀Get🔀Teams()->listForAuthenticatedUser($params);
+                    }
+                } elseif ($pathChunks[2] === '{account_id}') {
+                    if ($call === 'GET /user/{account_id}') {
+                        return $this->routers->internal🔀Router🔀Get🔀Users()->getById($params);
                     }
                 }
             } elseif ($pathChunks[1] === 'users') {

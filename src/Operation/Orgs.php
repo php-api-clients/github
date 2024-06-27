@@ -48,6 +48,7 @@ final class Orgs
         return $this->operators->orgs👷Update()->call($org, $params);
     }
 
+    /** @return */
     public function listAttestations(string $before, string $after, string $org, string $subjectDigest, int $perPage): Ok
     {
         return $this->operators->orgs👷ListAttestations()->call($before, $after, $org, $subjectDigest, $perPage);

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietF341CA71\Tiet6DE061C1\TietFEFA2352;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietE4BB9977\TietF45FC8D5\TietB2858012;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class TietE1DBE7BA
+abstract readonly class Tiet3B7B8894
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -556,7 +556,8 @@ abstract readonly class TietE1DBE7BA
                             "type": "object",
                             "properties": {
                                 "id": {
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "format": "int64"
                                 },
                                 "number": {
                                     "type": "integer"
@@ -587,7 +588,8 @@ abstract readonly class TietE1DBE7BA
                                             "type": "object",
                                             "properties": {
                                                 "id": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "format": "int64"
                                                 },
                                                 "url": {
                                                     "type": "string"
@@ -622,7 +624,8 @@ abstract readonly class TietE1DBE7BA
                                             "type": "object",
                                             "properties": {
                                                 "id": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "format": "int64"
                                                 },
                                                 "url": {
                                                     "type": "string"

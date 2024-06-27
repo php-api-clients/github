@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet72F32616\Tiet6A9787BA\Tiet9DDC9E7E;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietEF18BFE0\TietE1B3D88F\TietF6D547A0;
 
-abstract readonly class Tiet8E246D35
+abstract readonly class Tiet8236C017
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -15,7 +15,8 @@ abstract readonly class Tiet8E246D35
     "type": "object",
     "properties": {
         "id": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
         },
         "url": {
             "type": "string"

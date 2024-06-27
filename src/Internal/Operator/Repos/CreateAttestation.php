@@ -24,6 +24,7 @@ final readonly class CreateAttestation
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, array $params): Created
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\CreateAttestation($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo);

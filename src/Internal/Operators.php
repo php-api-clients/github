@@ -1081,6 +1081,7 @@ final class Operators
     private Internal\Operator\Activity\ListWatchedReposForAuthenticatedUserListing|null $activity👷ListWatchedReposForAuthenticatedUserListing                                       = null;
     private Internal\Operator\Teams\ListForAuthenticatedUser|null $teams👷ListForAuthenticatedUser                                                                                   = null;
     private Internal\Operator\Teams\ListForAuthenticatedUserListing|null $teams👷ListForAuthenticatedUserListing                                                                     = null;
+    private Internal\Operator\Users\GetById|null $users👷GetById                                                                                                                     = null;
     private Internal\Operator\Users\List_|null $users👷List_                                                                                                                         = null;
     private Internal\Operator\Users\GetByUsername|null $users👷GetByUsername                                                                                                         = null;
     private Internal\Operator\Users\ListAttestations|null $users👷ListAttestations                                                                                                   = null;
@@ -10768,6 +10769,15 @@ final class Operators
         }
 
         return $this->teams👷ListForAuthenticatedUserListing;
+    }
+
+    public function users👷GetById(): Internal\Operator\Users\GetById
+    {
+        if ($this->users👷GetById instanceof Internal\Operator\Users\GetById === false) {
+            $this->users👷GetById = new Internal\Operator\Users\GetById($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀AccountId());
+        }
+
+        return $this->users👷GetById;
     }
 
     public function users👷List_(): Internal\Operator\Users\List_

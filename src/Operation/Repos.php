@@ -167,11 +167,13 @@ final class Repos
         return $this->operators->repos👷ListActivities()->call($owner, $repo, $before, $after, $ref, $actor, $timePeriod, $activityType, $direction, $perPage);
     }
 
+    /** @return */
     public function createAttestation(string $owner, string $repo, array $params): Created
     {
         return $this->operators->repos👷CreateAttestation()->call($owner, $repo, $params);
     }
 
+    /** @return */
     public function listAttestations(string $owner, string $repo, string $before, string $after, string $subjectDigest, int $perPage): Json
     {
         return $this->operators->repos👷ListAttestations()->call($owner, $repo, $before, $after, $subjectDigest, $perPage);

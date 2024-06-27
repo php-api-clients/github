@@ -568,6 +568,7 @@ final class Orgs
         return $operator->call($arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function listAttestations(array $params): \ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAttestations\Response\ApplicationJson\Ok
     {
         $arguments = [];

@@ -364,6 +364,7 @@ final readonly class WebhookPullRequestEdited
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

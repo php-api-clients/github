@@ -303,6 +303,7 @@ final readonly class WebhookPullRequestConvertedToDraft
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

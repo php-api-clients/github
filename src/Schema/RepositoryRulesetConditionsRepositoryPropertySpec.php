@@ -26,6 +26,14 @@ final readonly class RepositoryRulesetConditionsRepositoryPropertySpec
                 "type": "string"
             },
             "description": "The values to match for the repository property"
+        },
+        "source": {
+            "enum": [
+                "custom",
+                "system"
+            ],
+            "type": "string",
+            "description": "The source of the repository property. Defaults to \'custom\' if not specified."
         }
     },
     "description": "Parameters for a targeting a repository property"
@@ -37,15 +45,17 @@ final readonly class RepositoryRulesetConditionsRepositoryPropertySpec
     "property_values": [
         "generated",
         "generated"
-    ]
+    ],
+    "source": "system"
 }';
 
     /**
      * name: The name of the repository property to target
      * propertyValues: The values to match for the repository property
+     * source: The source of the repository property. Defaults to 'custom' if not specified.
      */
     public function __construct(public string $name, #[MapFrom('property_values')]
-    public array $propertyValues,)
+    public array $propertyValues, public string|null $source,)
     {
     }
 }

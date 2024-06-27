@@ -12423,6 +12423,7 @@ final readonly class TimelineIssueEvents
                                     "null"
                                 ],
                                 "description": "The ID of the pull request review to which the comment belongs.",
+                                "format": "int64",
                                 "examples": [
                                     42
                                 ]
@@ -12430,6 +12431,7 @@ final readonly class TimelineIssueEvents
                             "id": {
                                 "type": "integer",
                                 "description": "The ID of the pull request review comment.",
+                                "format": "int64",
                                 "examples": [
                                     1
                                 ]

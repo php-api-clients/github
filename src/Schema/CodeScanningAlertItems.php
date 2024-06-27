@@ -258,10 +258,10 @@ final readonly class CodeScanningAlertItems
         },
         "dismissed_reason": {
             "enum": [
-                null,
                 "false positive",
                 "won\'t fix",
-                "used in tests"
+                "used in tests",
+                null
             ],
             "type": [
                 "string",

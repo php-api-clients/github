@@ -24,6 +24,7 @@ final readonly class ListAttestations
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $before, string $after, string $subjectDigest, int $perPage = 30): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\ListAttestations($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $before, $after, $subjectDigest, $perPage);

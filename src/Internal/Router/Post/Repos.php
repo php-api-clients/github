@@ -186,6 +186,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function createAttestation(array $params): Created
     {
         $arguments = [];

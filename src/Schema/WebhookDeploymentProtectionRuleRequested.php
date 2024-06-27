@@ -62,6 +62,7 @@ final readonly class WebhookDeploymentProtectionRuleRequested
                 "id": {
                     "type": "integer",
                     "description": "Unique identifier of the deployment",
+                    "format": "int64",
                     "examples": [
                         42
                     ]
@@ -732,6 +733,7 @@ final readonly class WebhookDeploymentProtectionRuleRequested
                     },
                     "id": {
                         "type": "integer",
+                        "format": "int64",
                         "examples": [
                             1
                         ]
