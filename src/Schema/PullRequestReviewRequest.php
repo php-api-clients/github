@@ -60,6 +60,7 @@ final readonly class PullRequestReviewRequest
                     },
                     "id": {
                         "type": "integer",
+                        "format": "int64",
                         "examples": [
                             1
                         ]

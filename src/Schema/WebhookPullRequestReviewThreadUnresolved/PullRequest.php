@@ -1212,7 +1212,8 @@ final readonly class PullRequest
                             "format": "uri"
                         },
                         "id": {
-                            "type": "integer"
+                            "type": "integer",
+                            "format": "int64"
                         },
                         "login": {
                             "type": "string"
@@ -1979,7 +1980,8 @@ final readonly class PullRequest
                             "format": "uri"
                         },
                         "id": {
-                            "type": "integer"
+                            "type": "integer",
+                            "format": "int64"
                         },
                         "login": {
                             "type": "string"
@@ -2756,7 +2758,8 @@ final readonly class PullRequest
                     "format": "uri"
                 },
                 "id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "login": {
                     "type": "string"

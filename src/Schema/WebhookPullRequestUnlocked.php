@@ -1489,7 +1489,8 @@ final readonly class WebhookPullRequestUnlocked
                                     "format": "uri"
                                 },
                                 "id": {
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "format": "int64"
                                 },
                                 "login": {
                                     "type": "string"
@@ -2313,7 +2314,8 @@ final readonly class WebhookPullRequestUnlocked
                                     "format": "uri"
                                 },
                                 "id": {
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "format": "int64"
                                 },
                                 "login": {
                                     "type": "string"
@@ -3219,7 +3221,8 @@ final readonly class WebhookPullRequestUnlocked
                             "format": "uri"
                         },
                         "id": {
-                            "type": "integer"
+                            "type": "integer",
+                            "format": "int64"
                         },
                         "login": {
                             "type": "string"
@@ -3485,6 +3488,7 @@ final readonly class WebhookPullRequestUnlocked
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -3676,6 +3680,7 @@ final readonly class WebhookPullRequestUnlocked
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

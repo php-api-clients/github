@@ -72,6 +72,7 @@ final readonly class ProjectsV2StatusUpdate
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]

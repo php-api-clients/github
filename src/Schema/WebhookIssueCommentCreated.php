@@ -176,6 +176,7 @@ final readonly class WebhookIssueCommentCreated
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -523,7 +524,8 @@ final readonly class WebhookIssueCommentCreated
                             "format": "uri"
                         },
                         "id": {
-                            "type": "integer"
+                            "type": "integer",
+                            "format": "int64"
                         },
                         "login": {
                             "type": "string"
@@ -1870,7 +1872,8 @@ final readonly class WebhookIssueCommentCreated
                                     "format": "uri"
                                 },
                                 "id": {
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "format": "int64"
                                 },
                                 "login": {
                                     "type": "string"
@@ -2229,7 +2232,8 @@ final readonly class WebhookIssueCommentCreated
                                     "type": "string"
                                 },
                                 "id": {
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "format": "int64"
                                 },
                                 "login": {
                                     "type": "string"
@@ -2583,6 +2587,7 @@ final readonly class WebhookIssueCommentCreated
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -2774,6 +2779,7 @@ final readonly class WebhookIssueCommentCreated
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

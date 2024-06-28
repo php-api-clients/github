@@ -503,6 +503,7 @@ final readonly class WebhookDeployKeyCreated
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -694,6 +695,7 @@ final readonly class WebhookDeployKeyCreated
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

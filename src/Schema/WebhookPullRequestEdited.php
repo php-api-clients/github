@@ -512,6 +512,7 @@ final readonly class WebhookPullRequestEdited
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -824,6 +825,7 @@ final readonly class WebhookPullRequestEdited
                                                         },
                                                         "id": {
                                                             "type": "integer",
+                                                            "format": "int64",
                                                             "examples": [
                                                                 1
                                                             ]
@@ -1095,6 +1097,7 @@ final readonly class WebhookPullRequestEdited
                                         },
                                         "id": {
                                             "type": "integer",
+                                            "format": "int64",
                                             "examples": [
                                                 1
                                             ]
@@ -1263,6 +1266,7 @@ final readonly class WebhookPullRequestEdited
                                     },
                                     "id": {
                                         "type": "integer",
+                                        "format": "int64",
                                         "examples": [
                                             1
                                         ]
@@ -1430,6 +1434,7 @@ final readonly class WebhookPullRequestEdited
                                     },
                                     "id": {
                                         "type": "integer",
+                                        "format": "int64",
                                         "examples": [
                                             1
                                         ]
@@ -2254,7 +2259,8 @@ final readonly class WebhookPullRequestEdited
                                             "format": "uri"
                                         },
                                         "id": {
-                                            "type": "integer"
+                                            "type": "integer",
+                                            "format": "int64"
                                         },
                                         "node_id": {
                                             "type": "string"
@@ -2906,7 +2912,8 @@ final readonly class WebhookPullRequestEdited
                                             "format": "uri"
                                         },
                                         "id": {
-                                            "type": "integer"
+                                            "type": "integer",
+                                            "format": "int64"
                                         },
                                         "node_id": {
                                             "type": "string"
@@ -3141,6 +3148,7 @@ final readonly class WebhookPullRequestEdited
                                         },
                                         "id": {
                                             "type": "integer",
+                                            "format": "int64",
                                             "examples": [
                                                 1
                                             ]
@@ -3361,6 +3369,7 @@ final readonly class WebhookPullRequestEdited
                                         },
                                         "id": {
                                             "type": "integer",
+                                            "format": "int64",
                                             "examples": [
                                                 1
                                             ]
@@ -3802,6 +3811,7 @@ final readonly class WebhookPullRequestEdited
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -3993,6 +4003,7 @@ final readonly class WebhookPullRequestEdited
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

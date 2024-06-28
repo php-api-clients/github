@@ -1184,7 +1184,8 @@ final readonly class OldIssue
                     "format": "uri"
                 },
                 "id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "login": {
                     "type": "string"

@@ -62,6 +62,7 @@ final readonly class GistHistory
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

@@ -248,6 +248,7 @@ final readonly class Repository
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]

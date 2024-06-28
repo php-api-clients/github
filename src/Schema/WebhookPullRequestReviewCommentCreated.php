@@ -348,7 +348,8 @@ final readonly class WebhookPullRequestReviewCommentCreated
                             "format": "uri"
                         },
                         "id": {
-                            "type": "integer"
+                            "type": "integer",
+                            "format": "int64"
                         },
                         "login": {
                             "type": "string"
@@ -1857,7 +1858,8 @@ final readonly class WebhookPullRequestReviewCommentCreated
                                     "format": "uri"
                                 },
                                 "id": {
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "format": "int64"
                                 },
                                 "login": {
                                     "type": "string"
@@ -2665,7 +2667,8 @@ final readonly class WebhookPullRequestReviewCommentCreated
                                     "format": "uri"
                                 },
                                 "id": {
-                                    "type": "integer"
+                                    "type": "integer",
+                                    "format": "int64"
                                 },
                                 "login": {
                                     "type": "string"
@@ -3453,7 +3456,8 @@ final readonly class WebhookPullRequestReviewCommentCreated
                             "format": "uri"
                         },
                         "id": {
-                            "type": "integer"
+                            "type": "integer",
+                            "format": "int64"
                         },
                         "login": {
                             "type": "string"
@@ -3720,6 +3724,7 @@ final readonly class WebhookPullRequestReviewCommentCreated
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -3911,6 +3916,7 @@ final readonly class WebhookPullRequestReviewCommentCreated
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

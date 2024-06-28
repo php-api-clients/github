@@ -68,6 +68,7 @@ final readonly class ProjectCollaboratorPermission
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

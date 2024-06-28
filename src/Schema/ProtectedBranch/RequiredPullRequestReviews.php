@@ -101,6 +101,7 @@ final readonly class RequiredPullRequestReviews
                             },
                             "id": {
                                 "type": "integer",
+                                "format": "int64",
                                 "examples": [
                                     1
                                 ]
@@ -523,6 +524,7 @@ final readonly class RequiredPullRequestReviews
                                             },
                                             "id": {
                                                 "type": "integer",
+                                                "format": "int64",
                                                 "examples": [
                                                     1
                                                 ]
@@ -818,6 +820,7 @@ final readonly class RequiredPullRequestReviews
                             },
                             "id": {
                                 "type": "integer",
+                                "format": "int64",
                                 "examples": [
                                     1
                                 ]
@@ -1240,6 +1243,7 @@ final readonly class RequiredPullRequestReviews
                                             },
                                             "id": {
                                                 "type": "integer",
+                                                "format": "int64",
                                                 "examples": [
                                                     1
                                                 ]

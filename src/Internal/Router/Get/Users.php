@@ -246,6 +246,7 @@ final class Users
         return $operator->call($arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function getById(array $params): PrivateUser|PublicUser
     {
         $arguments = [];

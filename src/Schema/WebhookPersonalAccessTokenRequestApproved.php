@@ -92,6 +92,7 @@ final readonly class WebhookPersonalAccessTokenRequestApproved
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

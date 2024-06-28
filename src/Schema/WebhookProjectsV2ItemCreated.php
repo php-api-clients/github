@@ -227,6 +227,7 @@ final readonly class WebhookProjectsV2ItemCreated
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

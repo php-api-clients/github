@@ -379,6 +379,7 @@ final readonly class GlobalAdvisory
                             },
                             "id": {
                                 "type": "integer",
+                                "format": "int64",
                                 "examples": [
                                     1
                                 ]

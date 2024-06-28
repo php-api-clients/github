@@ -666,6 +666,7 @@ final readonly class InstallationToken
                             },
                             "id": {
                                 "type": "integer",
+                                "format": "int64",
                                 "examples": [
                                     1
                                 ]

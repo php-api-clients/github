@@ -211,6 +211,7 @@ final readonly class CommitSearchResultItem
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -499,6 +500,7 @@ final readonly class CommitSearchResultItem
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

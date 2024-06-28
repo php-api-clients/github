@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookPullRequestDequeued\PullRequest
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class User extends Schema\AliasAbstract\Tiet93E44327\TietD0AB6C73\Tiet62032077\Tiet6B97FD42
+final readonly class User extends Schema\AliasAbstract\TietCE7694F2\Tiet7ECCBCAF\TietF71CBA25\Tiet10035FEE
 {
 }

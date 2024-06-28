@@ -223,7 +223,8 @@ final readonly class WebhookMemberEdited
                     "format": "uri"
                 },
                 "id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "login": {
                     "type": "string"
@@ -586,6 +587,7 @@ final readonly class WebhookMemberEdited
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -777,6 +779,7 @@ final readonly class WebhookMemberEdited
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

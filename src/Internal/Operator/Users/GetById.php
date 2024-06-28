@@ -25,6 +25,7 @@ final readonly class GetById
     {
     }
 
+    /** @return */
     public function call(int $accountId): PrivateUser|PublicUser
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\GetById($this->responseSchemaValidator, $this->hydrator, $accountId);

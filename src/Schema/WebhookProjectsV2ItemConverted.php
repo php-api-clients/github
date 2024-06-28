@@ -247,6 +247,7 @@ final readonly class WebhookProjectsV2ItemConverted
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

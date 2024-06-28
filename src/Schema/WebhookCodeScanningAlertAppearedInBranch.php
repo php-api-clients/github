@@ -756,6 +756,7 @@ final readonly class WebhookCodeScanningAlertAppearedInBranch
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -947,6 +948,7 @@ final readonly class WebhookCodeScanningAlertAppearedInBranch
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

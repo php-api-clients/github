@@ -1087,7 +1087,7 @@ assertType('Observable<Schema\\MinimalRepository>|WithoutBody', $client->call('G
 assertType('Observable<Schema\\MinimalRepository>|WithoutBody', $client->call('LIST /user/subscriptions'));
 assertType('Observable<Schema\\TeamFull>|WithoutBody', $client->call('GET /user/teams'));
 assertType('Observable<Schema\\TeamFull>|WithoutBody', $client->call('LIST /user/teams'));
-assertType('Schema\\PrivateUser|Schema\\PublicUser', $client->call('GET /user/{account_id}'));
+assertType('', $client->call('GET /user/{account_id}'));
 assertType('Observable<Schema\\SimpleUser>|WithoutBody', $client->call('GET /users'));
 assertType('', $client->call('GET /users/{username}'));
 assertType('', $client->call('GET /users/{username}/attestations/{subject_digest}'));

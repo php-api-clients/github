@@ -81,6 +81,7 @@ final readonly class TeamDiscussion
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

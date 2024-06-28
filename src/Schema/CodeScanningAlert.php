@@ -128,6 +128,7 @@ final readonly class CodeScanningAlert
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

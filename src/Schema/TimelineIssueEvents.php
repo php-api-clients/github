@@ -79,6 +79,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -308,6 +309,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -636,6 +638,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -865,6 +868,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -1193,6 +1197,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -1422,6 +1427,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -1746,6 +1752,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -1975,6 +1982,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -2299,6 +2307,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -2528,6 +2537,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -2856,6 +2866,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -3085,6 +3096,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -3370,6 +3382,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -3741,6 +3754,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -3930,6 +3944,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -4159,6 +4174,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -4444,6 +4460,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -4815,6 +4832,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -5004,6 +5022,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -5233,6 +5252,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -5571,6 +5591,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -5800,6 +5821,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -6121,6 +6143,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -6350,6 +6373,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -6694,6 +6718,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -6923,6 +6948,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -7267,6 +7293,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -7496,6 +7523,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -7840,6 +7868,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -8064,6 +8093,7 @@ final readonly class TimelineIssueEvents
                                         },
                                         "id": {
                                             "type": "integer",
+                                            "format": "int64",
                                             "examples": [
                                                 1
                                             ]
@@ -8402,6 +8432,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -8598,6 +8629,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -8845,6 +8877,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -9195,6 +9228,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -9483,6 +9517,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -9700,6 +9735,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -9868,6 +9904,7 @@ final readonly class TimelineIssueEvents
                                             },
                                             "id": {
                                                 "type": "integer",
+                                                "format": "int64",
                                                 "examples": [
                                                     1
                                                 ]
@@ -10130,6 +10167,7 @@ final readonly class TimelineIssueEvents
                                                                 },
                                                                 "id": {
                                                                     "type": "integer",
+                                                                    "format": "int64",
                                                                     "examples": [
                                                                         1
                                                                     ]
@@ -10425,6 +10463,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -10793,6 +10832,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -11577,6 +11617,7 @@ final readonly class TimelineIssueEvents
                                                                 },
                                                                 "id": {
                                                                     "type": "integer",
+                                                                    "format": "int64",
                                                                     "examples": [
                                                                         1
                                                                     ]
@@ -12160,6 +12201,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -12536,6 +12578,7 @@ final readonly class TimelineIssueEvents
                                     },
                                     "id": {
                                         "type": "integer",
+                                        "format": "int64",
                                         "examples": [
                                             1
                                         ]
@@ -13016,6 +13059,7 @@ final readonly class TimelineIssueEvents
                                             },
                                             "id": {
                                                 "type": "integer",
+                                                "format": "int64",
                                                 "examples": [
                                                     1
                                                 ]
@@ -13286,6 +13330,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -13515,6 +13560,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -13800,6 +13846,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -13989,6 +14036,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -14218,6 +14266,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]
@@ -14503,6 +14552,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -14691,6 +14741,7 @@ final readonly class TimelineIssueEvents
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -14920,6 +14971,7 @@ final readonly class TimelineIssueEvents
                                                 },
                                                 "id": {
                                                     "type": "integer",
+                                                    "format": "int64",
                                                     "examples": [
                                                         1
                                                     ]

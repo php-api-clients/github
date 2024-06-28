@@ -1312,7 +1312,8 @@ final readonly class WebhookIssuesDeleted
                             "format": "uri"
                         },
                         "id": {
-                            "type": "integer"
+                            "type": "integer",
+                            "format": "int64"
                         },
                         "login": {
                             "type": "string"
@@ -1678,6 +1679,7 @@ final readonly class WebhookIssuesDeleted
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -1869,6 +1871,7 @@ final readonly class WebhookIssuesDeleted
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

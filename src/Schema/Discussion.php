@@ -374,7 +374,8 @@ final readonly class Discussion
                     "format": "uri"
                 },
                 "id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "login": {
                     "type": "string"

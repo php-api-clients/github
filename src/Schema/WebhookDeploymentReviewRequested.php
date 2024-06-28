@@ -463,6 +463,7 @@ final readonly class WebhookDeploymentReviewRequested
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -654,6 +655,7 @@ final readonly class WebhookDeploymentReviewRequested
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -1769,7 +1771,8 @@ final readonly class WebhookDeploymentReviewRequested
                     "format": "uri"
                 },
                 "id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "login": {
                     "type": "string"

@@ -101,6 +101,7 @@ final readonly class Ok
                                     },
                                     "id": {
                                         "type": "integer",
+                                        "format": "int64",
                                         "examples": [
                                             1
                                         ]

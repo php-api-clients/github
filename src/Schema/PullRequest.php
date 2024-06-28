@@ -214,6 +214,7 @@ final readonly class PullRequest
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -526,6 +527,7 @@ final readonly class PullRequest
                                         },
                                         "id": {
                                             "type": "integer",
+                                            "format": "int64",
                                             "examples": [
                                                 1
                                             ]
@@ -797,6 +799,7 @@ final readonly class PullRequest
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -965,6 +968,7 @@ final readonly class PullRequest
                     },
                     "id": {
                         "type": "integer",
+                        "format": "int64",
                         "examples": [
                             1
                         ]
@@ -1132,6 +1136,7 @@ final readonly class PullRequest
                     },
                     "id": {
                         "type": "integer",
+                        "format": "int64",
                         "examples": [
                             1
                         ]
@@ -1956,7 +1961,8 @@ final readonly class PullRequest
                             "format": "uri"
                         },
                         "id": {
-                            "type": "integer"
+                            "type": "integer",
+                            "format": "int64"
                         },
                         "node_id": {
                             "type": "string"
@@ -2608,7 +2614,8 @@ final readonly class PullRequest
                             "format": "uri"
                         },
                         "id": {
-                            "type": "integer"
+                            "type": "integer",
+                            "format": "int64"
                         },
                         "node_id": {
                             "type": "string"
@@ -2843,6 +2850,7 @@ final readonly class PullRequest
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -3063,6 +3071,7 @@ final readonly class PullRequest
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

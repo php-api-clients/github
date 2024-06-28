@@ -506,6 +506,7 @@ final readonly class DependabotAlert
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

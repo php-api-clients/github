@@ -262,6 +262,7 @@ final class Users
         return $this->operators->users👷DeleteSshSigningKeyForAuthenticatedUser()->call($sshSigningKeyId);
     }
 
+    /** @return */
     public function getById(int $accountId): PrivateUser|PublicUser
     {
         return $this->operators->users👷GetById()->call($accountId);

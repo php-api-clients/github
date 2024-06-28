@@ -79,6 +79,7 @@ final readonly class AssignedIssueEvent
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -303,6 +304,7 @@ final readonly class AssignedIssueEvent
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -586,6 +588,7 @@ final readonly class AssignedIssueEvent
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -747,6 +750,7 @@ final readonly class AssignedIssueEvent
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]

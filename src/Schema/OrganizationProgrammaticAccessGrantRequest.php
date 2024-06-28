@@ -80,6 +80,7 @@ final readonly class OrganizationProgrammaticAccessGrantRequest
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]

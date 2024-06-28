@@ -1318,7 +1318,8 @@ final readonly class WebhookIssuesUnlocked
                             "format": "uri"
                         },
                         "id": {
-                            "type": "integer"
+                            "type": "integer",
+                            "format": "int64"
                         },
                         "login": {
                             "type": "string"
@@ -1684,6 +1685,7 @@ final readonly class WebhookIssuesUnlocked
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -1875,6 +1877,7 @@ final readonly class WebhookIssuesUnlocked
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

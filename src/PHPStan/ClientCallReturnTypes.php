@@ -4324,7 +4324,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /user/{account_id}') {
-            return $this->typeResolver->resolve('Schema\\PrivateUser|Schema\\PublicUser');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /users') {

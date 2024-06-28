@@ -466,6 +466,7 @@ final readonly class WebhookDelete
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -657,6 +658,7 @@ final readonly class WebhookDelete
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]

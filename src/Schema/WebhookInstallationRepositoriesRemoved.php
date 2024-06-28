@@ -198,6 +198,7 @@ final readonly class WebhookInstallationRepositoriesRemoved
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -941,6 +942,7 @@ final readonly class WebhookInstallationRepositoriesRemoved
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -1462,6 +1464,7 @@ final readonly class WebhookInstallationRepositoriesRemoved
                                 },
                                 "id": {
                                     "type": "integer",
+                                    "format": "int64",
                                     "examples": [
                                         1
                                     ]
@@ -1653,6 +1656,7 @@ final readonly class WebhookInstallationRepositoriesRemoved
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -2776,7 +2780,8 @@ final readonly class WebhookInstallationRepositoriesRemoved
                     "format": "uri"
                 },
                 "id": {
-                    "type": "integer"
+                    "type": "integer",
+                    "format": "int64"
                 },
                 "login": {
                     "type": "string"

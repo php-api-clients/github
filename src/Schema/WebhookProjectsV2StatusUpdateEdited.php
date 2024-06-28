@@ -305,6 +305,7 @@ final readonly class WebhookProjectsV2StatusUpdateEdited
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
