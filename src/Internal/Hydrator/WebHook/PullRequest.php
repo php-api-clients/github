@@ -20710,7 +20710,7 @@ class PullRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'repo';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAutoMergeEnabled⚡️PullRequest⚡️Head⚡️Repo($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -20741,7 +20741,7 @@ class PullRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'user';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAutoMergeEnabled⚡️PullRequest⚡️Head⚡️User($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -21363,7 +21363,7 @@ class PullRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'license';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAutoMergeEnabled⚡️PullRequest⚡️Head⚡️Repo⚡️License($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -21515,7 +21515,7 @@ class PullRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'owner';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAutoMergeEnabled⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -21535,7 +21535,7 @@ class PullRequest implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'permissions';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAutoMergeEnabled⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -99942,7 +99942,7 @@ class PullRequest implements ObjectMapper
         after_ref:        $result['ref'] = $ref;
 
         $repo                              = $object->repo;
-        $repo                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo($repo);
+        $repo                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAutoMergeEnabled⚡️PullRequest⚡️Head⚡️Repo($repo);
         after_repo:        $result['repo'] = $repo;
 
         $sha                             = $object->sha;
@@ -99954,7 +99954,7 @@ class PullRequest implements ObjectMapper
             goto after_user;
         }
 
-        $user                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️User($user);
+        $user                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAutoMergeEnabled⚡️PullRequest⚡️Head⚡️User($user);
         after_user:        $result['user'] = $user;
 
         return $result;
@@ -100190,7 +100190,7 @@ class PullRequest implements ObjectMapper
             goto after_license;
         }
 
-        $license                                 = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️License($license);
+        $license                                 = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAutoMergeEnabled⚡️PullRequest⚡️Head⚡️Repo⚡️License($license);
         after_license:        $result['license'] = $license;
 
         $masterBranch = $object->masterBranch;
@@ -100260,7 +100260,7 @@ class PullRequest implements ObjectMapper
             goto after_owner;
         }
 
-        $owner                               = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Owner($owner);
+        $owner                               = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAutoMergeEnabled⚡️PullRequest⚡️Head⚡️Repo⚡️Owner($owner);
         after_owner:        $result['owner'] = $owner;
 
         $permissions = $object->permissions;
@@ -100269,7 +100269,7 @@ class PullRequest implements ObjectMapper
             goto after_permissions;
         }
 
-        $permissions                                     = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAssigned⚡️PullRequest⚡️Base⚡️Repo⚡️Permissions($permissions);
+        $permissions                                     = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestAutoMergeEnabled⚡️PullRequest⚡️Head⚡️Repo⚡️Permissions($permissions);
         after_permissions:        $result['permissions'] = $permissions;
 
         $private                                 = $object->private;

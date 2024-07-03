@@ -841,6 +841,7 @@ final readonly class WorkflowRun
             "properties": {
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1296269
                     ]
@@ -1646,6 +1647,7 @@ final readonly class WorkflowRun
             "properties": {
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1296269
                     ]

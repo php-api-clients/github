@@ -320,6 +320,7 @@ final readonly class WebhookRepositoryAdvisoryPublished
                 "id": {
                     "type": "integer",
                     "description": "Unique identifier of the repository",
+                    "format": "int64",
                     "examples": [
                         42
                     ]
@@ -3065,6 +3066,7 @@ final readonly class WebhookRepositoryAdvisoryPublished
                                 "id": {
                                     "type": "integer",
                                     "description": "A unique identifier of the repository.",
+                                    "format": "int64",
                                     "examples": [
                                         1296269
                                     ]

@@ -1344,7 +1344,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'PUT /orgs/{org}/security-managers/teams/{team_slug}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'DELETE /orgs/{org}/security-managers/teams/{team_slug}') {

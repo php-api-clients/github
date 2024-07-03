@@ -319,6 +319,7 @@ final readonly class OrganizationSecretScanningAlert
                 "id": {
                     "type": "integer",
                     "description": "A unique identifier of the repository.",
+                    "format": "int64",
                     "examples": [
                         1296269
                     ]

@@ -920,7 +920,8 @@ final readonly class Ok
                                 "type": "object",
                                 "properties": {
                                     "id": {
-                                        "type": "integer"
+                                        "type": "integer",
+                                        "format": "int64"
                                     },
                                     "name": {
                                         "type": "string"

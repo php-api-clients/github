@@ -434,6 +434,7 @@ final readonly class CommitSearchResultItem
             "properties": {
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1296269
                     ]

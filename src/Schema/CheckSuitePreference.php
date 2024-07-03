@@ -93,6 +93,7 @@ final readonly class CheckSuitePreference
             "properties": {
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1296269
                     ]

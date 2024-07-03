@@ -381,6 +381,7 @@ final readonly class WebhookSecurityAndAnalysis
             "properties": {
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1296269
                     ]
@@ -1115,6 +1116,7 @@ final readonly class WebhookSecurityAndAnalysis
                                 "id": {
                                     "type": "integer",
                                     "description": "Unique identifier of the repository",
+                                    "format": "int64",
                                     "examples": [
                                         42
                                     ]
@@ -2390,6 +2392,7 @@ final readonly class WebhookSecurityAndAnalysis
                         "id": {
                             "type": "integer",
                             "description": "Unique identifier of the repository",
+                            "format": "int64",
                             "examples": [
                                 42
                             ]
@@ -3320,6 +3323,7 @@ final readonly class WebhookSecurityAndAnalysis
                         "id": {
                             "type": "integer",
                             "description": "Unique identifier of the repository",
+                            "format": "int64",
                             "examples": [
                                 42
                             ]

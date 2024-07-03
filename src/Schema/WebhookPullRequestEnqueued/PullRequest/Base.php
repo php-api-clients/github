@@ -299,7 +299,8 @@ final readonly class Base
                 },
                 "id": {
                     "type": "integer",
-                    "description": "Unique identifier of the repository"
+                    "description": "Unique identifier of the repository",
+                    "format": "int64"
                 },
                 "is_template": {
                     "type": "boolean"

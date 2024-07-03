@@ -181,7 +181,6 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['custom_property_name'], $params);
     }
 
-    /** @return */
     public function addSecurityManagerTeam(array $params): WithoutBody
     {
         $arguments = [];

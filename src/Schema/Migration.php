@@ -33,6 +33,7 @@ final readonly class Migration
     "properties": {
         "id": {
             "type": "integer",
+            "format": "int64",
             "examples": [
                 79
             ]
@@ -326,6 +327,7 @@ final readonly class Migration
                     "id": {
                         "type": "integer",
                         "description": "Unique identifier of the repository",
+                        "format": "int64",
                         "examples": [
                             42
                         ]

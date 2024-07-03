@@ -915,7 +915,8 @@ final readonly class CopilotSeatDetails
                     "type": "object",
                     "properties": {
                         "id": {
-                            "type": "integer"
+                            "type": "integer",
+                            "format": "int64"
                         },
                         "name": {
                             "type": "string"

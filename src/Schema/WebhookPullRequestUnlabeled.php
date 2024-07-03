@@ -1102,7 +1102,8 @@ final readonly class WebhookPullRequestUnlabeled
                                 },
                                 "id": {
                                     "type": "integer",
-                                    "description": "Unique identifier of the repository"
+                                    "description": "Unique identifier of the repository",
+                                    "format": "int64"
                                 },
                                 "is_template": {
                                     "type": "boolean"
@@ -1930,7 +1931,8 @@ final readonly class WebhookPullRequestUnlabeled
                                 },
                                 "id": {
                                     "type": "integer",
-                                    "description": "Unique identifier of the repository"
+                                    "description": "Unique identifier of the repository",
+                                    "format": "int64"
                                 },
                                 "is_template": {
                                     "type": "boolean"
@@ -3417,6 +3419,7 @@ final readonly class WebhookPullRequestUnlabeled
                 "id": {
                     "type": "integer",
                     "description": "Unique identifier of the repository",
+                    "format": "int64",
                     "examples": [
                         42
                     ]

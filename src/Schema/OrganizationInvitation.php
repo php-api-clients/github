@@ -25,7 +25,8 @@ final readonly class OrganizationInvitation
     "type": "object",
     "properties": {
         "id": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
         },
         "login": {
             "type": [

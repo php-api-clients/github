@@ -25,7 +25,8 @@ final readonly class Key
             "type": "string"
         },
         "id": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
         },
         "url": {
             "type": "string"

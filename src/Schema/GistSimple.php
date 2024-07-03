@@ -69,7 +69,8 @@ final readonly class GistSimple
                                 "type": "string"
                             },
                             "id": {
-                                "type": "integer"
+                                "type": "integer",
+                                "format": "int64"
                             },
                             "node_id": {
                                 "type": "string"

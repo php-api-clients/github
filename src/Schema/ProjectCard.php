@@ -34,6 +34,7 @@ final readonly class ProjectCard
         "id": {
             "type": "integer",
             "description": "The project card\'s ID",
+            "format": "int64",
             "examples": [
                 42
             ]

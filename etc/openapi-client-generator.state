@@ -1,5 +1,5 @@
 {
-    "specHash": "81b4fcdf6c7b3f61c17f56a0c4f2231d",
+    "specHash": "ed9f9c8a528083c4f510bc9ec29e7cbc",
     "generatedFiles": {
         "files": [
             {
@@ -96,11 +96,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Repository.php",
-                "hash": "c440cd04aaf433ee096c0dfc3c779b78"
+                "hash": "41b56d225e09af11a5e25f47640a71f9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/InstallationToken.php",
-                "hash": "77afbc67a0e16bd94d480932f886491e"
+                "hash": "accb379a60463e6e74e999f62edc6c45"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ScopedInstallation.php",
@@ -160,11 +160,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/SimpleRepository.php",
-                "hash": "25fa8e1f337b8a224cf2effe4cd4878b"
+                "hash": "7dbf3e06eeaf31f684d19f3b0f8b9148"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/DependabotAlertWithRepository.php",
-                "hash": "c5bbf72cdff6134902f80a70a2aaa4b5"
+                "hash": "f8c5d92fe757c2d870c3a312fdc03537"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/SecretScanningAlertState.php",
@@ -176,7 +176,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrganizationSecretScanningAlert.php",
-                "hash": "9a48d74394f7335b75c7605d9909e518"
+                "hash": "05e97f0ab6c6a0b92824122969e63396"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Actor.php",
@@ -196,7 +196,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Issue.php",
-                "hash": "6deb6e3416ccf6640ffec85a487d9999"
+                "hash": "f5a14a2e7cc3fe8941f1dd1a84617a53"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/IssueComment.php",
@@ -204,7 +204,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Event.php",
-                "hash": "a516e383bd017d4724e0c99108e47333"
+                "hash": "03898a444b3f488efde29011061a6a8f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/LinkWithType.php",
@@ -220,7 +220,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/PublicUser.php",
-                "hash": "f000ec1a04b1859c43eb518a2644f795"
+                "hash": "3150f63ecb39de3ad4ac845ecb4b6c14"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GistHistory.php",
@@ -228,7 +228,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GistSimple.php",
-                "hash": "0411b6c59a6d1286008d2d04dff9e886"
+                "hash": "e7c22e985ae6f2eeceb2950766e7f633"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GistComment.php",
@@ -264,11 +264,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/MinimalRepository.php",
-                "hash": "8c00f19d4c0f08e75da5e11e394cce02"
+                "hash": "3c3a4befb04e494bb4b9240a46bca4d1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Thread.php",
-                "hash": "f0e3012e644a818ef51411fe5e566917"
+                "hash": "7dc05b5a79b9c38f032011bfc46e490d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ThreadSubscription.php",
@@ -356,7 +356,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AuthenticationToken.php",
-                "hash": "36a1f85c788be47389ced7aa1e2b3546"
+                "hash": "3f0d7f5391891ef315383480dd7cd73d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrganizationActionsSecret.php",
@@ -440,7 +440,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningOrganizationAlertItems.php",
-                "hash": "b2f4ca7c3b485cc3536bde8a7fbfcd1b"
+                "hash": "2f8e2e63012bcce47f7b26ec709174c6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodespaceMachine.php",
@@ -448,7 +448,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Codespace.php",
-                "hash": "d1e9bc1da409b9bd5d764958e7c0c3a4"
+                "hash": "f9536415c796062043fdbab4e3f14790"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodespacesOrgSecret.php",
@@ -468,11 +468,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Package.php",
-                "hash": "8ed364810e838a3177bb9729fb16b7e9"
+                "hash": "91fbc370f1677fbc7734df24d148eaa5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrganizationInvitation.php",
-                "hash": "fa429d22b1891e7b12909d63b39234b3"
+                "hash": "6b5723a6315a7a87bd587fd44353b0ad"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrgHook.php",
@@ -508,7 +508,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Migration.php",
-                "hash": "5b56e62fa620123deae01158971a6ed4"
+                "hash": "6966ca48ac30b4866c58dcf82571c1a2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/PackageVersion.php",
@@ -652,7 +652,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ProjectCard.php",
-                "hash": "91bfc151c020cf1e653a449f3322d6bc"
+                "hash": "bb879cc9a4104590e404dfed36a4ce09"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ProjectColumn.php",
@@ -680,7 +680,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/FullRepository.php",
-                "hash": "7ea3b28b3be3a8be4c8b3bf4693e17eb"
+                "hash": "497065eb12c11b706055484bed237a4d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Artifact.php",
@@ -732,7 +732,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WorkflowRun.php",
-                "hash": "09f1335d6f8ddabc86779c573d758eb9"
+                "hash": "459bd81e9f067b292ea23a100aa5cf1b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/EnvironmentApprovals.php",
@@ -836,11 +836,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CheckSuite.php",
-                "hash": "688da7b0c435bb9c7ef6b41dfc16f12f"
+                "hash": "fa2703b73cef0cd390ad71f6849b7321"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CheckSuitePreference.php",
-                "hash": "e155746fe0e47b1a14e89d6471e01703"
+                "hash": "ba7e1272a35df743a5232937d1d00e9d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningAlertRuleSummary.php",
@@ -928,7 +928,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryInvitation.php",
-                "hash": "d63617670f73c8b16f08d46be803ee1e"
+                "hash": "0e2366205cdbd50f429bbc400322b65e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryCollaboratorPermission.php",
@@ -952,7 +952,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/PullRequestSimple.php",
-                "hash": "f19921902731d6f5d20f1c664824612b"
+                "hash": "585c078d1709524cc80bb2d15e710e69"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/SimpleCommitStatus.php",
@@ -960,7 +960,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CombinedCommitStatus.php",
-                "hash": "b137eeb30f489e49d9913c1519f7bc2e"
+                "hash": "e9982327349011b136a66c2d337d758e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Status.php",
@@ -1136,7 +1136,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/IssueEvent.php",
-                "hash": "e1a84d7c810498cdf34a17e99761a6ea"
+                "hash": "e5f9f433aadba2b977872ef5a6d5c3c9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/LabeledIssueEvent.php",
@@ -1212,7 +1212,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/TimelineCrossReferencedEvent.php",
-                "hash": "fe2bbb854a2a4316a3617f41196a849f"
+                "hash": "0726aa373aa4ffce63e996a638ea903d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/TimelineCommittedEvent.php",
@@ -1248,7 +1248,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/TimelineIssueEvents.php",
-                "hash": "605b4a24891f4b9566dd600d2f13542b"
+                "hash": "3ee3568571e7c5b3287953fa79573170"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/DeployKey.php",
@@ -1372,7 +1372,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryAdvisory.php",
-                "hash": "df4e53bf8eccfdef46d3800231da1da2"
+                "hash": "712b8ad75ab04caf2e3183ba65b1051b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryAdvisoryCreate.php",
@@ -1448,15 +1448,15 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeSearchResultItem.php",
-                "hash": "c81e94cdc316bf1ba6e2567bc956d4e6"
+                "hash": "eae16b3cbc6c227d0fc09d70dbc8bfbb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CommitSearchResultItem.php",
-                "hash": "dd8c804058ac317d16dcecbfc48c0ed3"
+                "hash": "6319ba8f7edf473861f33876fce8bd7c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/IssueSearchResultItem.php",
-                "hash": "42bfce756b288f17d5d94567d59be33a"
+                "hash": "15216df02d63024e28a65ebcb9cd7c23"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/LabelSearchResultItem.php",
@@ -1472,11 +1472,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/UserSearchResultItem.php",
-                "hash": "83000b6a9f2efdf43599f87037a31e88"
+                "hash": "37d40997988eef3d00cdc2ced8da7340"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/PrivateUser.php",
-                "hash": "e028f20c0bf87acb7fb98093a39b0ed6"
+                "hash": "d481fbc62095ec4ce45c9ff689f4ab7f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodespacesSecret.php",
@@ -1492,7 +1492,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodespaceWithFullRepository.php",
-                "hash": "d0683ae49386e7613a02367269d55793"
+                "hash": "a30ac392e68073d6922ba53e1763db47"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Email.php",
@@ -1500,11 +1500,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GpgKey.php",
-                "hash": "c19719531444f3e8c79e5b1e0de7de53"
+                "hash": "e9f77969c822430bd52dc7d3bff461de"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Key.php",
-                "hash": "d1d2523f47900eb1eff093c871ba9754"
+                "hash": "bb7d921b9039a6297790e49cd60c7130"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/MarketplaceAccount.php",
@@ -1524,7 +1524,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/StarredRepository.php",
-                "hash": "dab7cff7a8cbf0356bd098086e5c0baa"
+                "hash": "7f2355e5a74aac22c7fc0b5254ddfec4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Hovercard.php",
@@ -1540,11 +1540,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/SimpleCheckSuite.php",
-                "hash": "36dc074a2da94b595cafe6df94cda111"
+                "hash": "20be30ada1810a4d11d381326c441c80"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CheckRunWithSimpleCheckSuite.php",
-                "hash": "7f15aaf996db8cc68a57535f19a4453c"
+                "hash": "16d95e0d90c1a6af85c374abeb2ddc00"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Discussion.php",
@@ -1568,19 +1568,19 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionRuleCreated.php",
-                "hash": "980227ba248fa848e89b231c1e883b0b"
+                "hash": "b299a2d501058c46ac88ad9ca4e46d03"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionRuleDeleted.php",
-                "hash": "4ada5e8f6cff05a5422c3848464a4ff8"
+                "hash": "4eefc03318b1ad7f0e8d8fe88e459a92"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionRuleEdited.php",
-                "hash": "7d80749017c6b550da6e7e05eafe56c7"
+                "hash": "9683ed1275688ba50e0948d70f85c285"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCheckRunCompleted.php",
-                "hash": "65ca14789eacaecaa452f133970c226e"
+                "hash": "37fb0ce2dce5d74cc9339f9827fcf1f8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCheckRunCompletedFormEncoded.php",
@@ -1588,7 +1588,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCheckRunCreated.php",
-                "hash": "858865db3dc60165cc3f2286e564b4cb"
+                "hash": "e0a93e315b6ab1eae92cd952fce8c881"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCheckRunCreatedFormEncoded.php",
@@ -1596,7 +1596,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCheckRunRequestedAction.php",
-                "hash": "b8ac53cd7e255aa04f24007e2549a2d7"
+                "hash": "8a43fb73eb58d802357f076bd2f73ff5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCheckRunRequestedActionFormEncoded.php",
@@ -1604,7 +1604,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCheckRunRerequested.php",
-                "hash": "ef0ab2fad985a0f8d6feebb12dfedbec"
+                "hash": "a4e0edae5a74c310d1a83989c16de9ac"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCheckRunRerequestedFormEncoded.php",
@@ -1612,175 +1612,175 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCheckSuiteCompleted.php",
-                "hash": "2ae69b5f0c1f0854e48cd36c1acec395"
+                "hash": "5324dcabece32a11f02e423cbb2e5e38"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCheckSuiteRequested.php",
-                "hash": "51985b3e7a3afbb281eb54f9b850da71"
+                "hash": "60f3b631e78dd3caaec0b9d14da53c97"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCheckSuiteRerequested.php",
-                "hash": "3fc9838602b9be6170d3aabe57f16d4c"
+                "hash": "bd9cd140f3647c62205262100cce34b1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertAppearedInBranch.php",
-                "hash": "b7b079ccb256082da8428108975275d8"
+                "hash": "5f4f32a878c52c1a0652400d316332f5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertClosedByUser.php",
-                "hash": "b5f379c495912f5111f990fd95a0191e"
+                "hash": "04f850b6f985ac8780b5be82cb366162"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertCreated.php",
-                "hash": "681acc8f2aeb9fb86e2cd239dcde02f7"
+                "hash": "d86c99c1b0cf29c619a163e45217da4c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertFixed.php",
-                "hash": "68cc1fb49316c3fb5b32c197b97c3573"
+                "hash": "cf245a369f45643174df3a93b74d1ef9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertReopened.php",
-                "hash": "2b848c586fb1e840de3813b9bb596f5d"
+                "hash": "e57103ef236c06b589ce2b5db416e9b4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertReopenedByUser.php",
-                "hash": "77156725a84a78d858979bec236db348"
+                "hash": "66bf649af26a3a5672637ac15f9b6959"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCommitCommentCreated.php",
-                "hash": "a4e95be07c1526c39bc7d169e8323062"
+                "hash": "b5e1bfe69651600100a8c5fdb66ca717"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCreate.php",
-                "hash": "8a7a779d7787dcd91786df60a07fe87c"
+                "hash": "9fa1ae4bb81f5253dbc7e2f414dad975"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDelete.php",
-                "hash": "a6ed93e95cd4c3883b29a50888ef1b2f"
+                "hash": "65f6d659a85f71022f77e1e5e1e952fc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDependabotAlertAutoDismissed.php",
-                "hash": "2ab2aed0f6c4fedf61d88759294fd508"
+                "hash": "a185bd65ca2646049a53a820785bc4b8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDependabotAlertAutoReopened.php",
-                "hash": "b3d434a0885ec7a7546258fe49613851"
+                "hash": "11456a91986df0a3ee5f9502e52e63d0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDependabotAlertCreated.php",
-                "hash": "4efc91fc03add72b3b003677f8592e47"
+                "hash": "8435c775ef4626295c81f960bdad85d2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDependabotAlertDismissed.php",
-                "hash": "e937b6f483d2cc2115b98daf1fb50cba"
+                "hash": "68fce7345efcd3cd10ff95b78157594d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDependabotAlertFixed.php",
-                "hash": "b6e636b11b070582f2541eb8540b863d"
+                "hash": "f8b3c41aa9e4888524abc910cbda3861"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDependabotAlertReintroduced.php",
-                "hash": "8b4fe4b7c750d7ed0dd7b4287396e107"
+                "hash": "5bff271271f1bd11f2878a32ca1c90a8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDependabotAlertReopened.php",
-                "hash": "2d02fd014898ff69c61d996a8585ce7c"
+                "hash": "bd0408af1d496147666163ff47e416dd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDeployKeyCreated.php",
-                "hash": "5b0c20be8bcbb4420a4a1570401fa4f8"
+                "hash": "4de2dc49f7e7744d9f03e1634f058304"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDeployKeyDeleted.php",
-                "hash": "cba7dc5e9579b8158f0c85aa23924360"
+                "hash": "7935415cc8c4d7e575eb9c001988033e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDeploymentCreated.php",
-                "hash": "53b5879ddf8240b607d73f03f842ae1c"
+                "hash": "7030eb964c3043ec61dee12eeb23a874"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDeploymentProtectionRuleRequested.php",
-                "hash": "c3530d0cce10f4e02a6f96e8a6a981cc"
+                "hash": "d1614dd4ddea5bac3151f7313caac979"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDeploymentStatusCreated.php",
-                "hash": "7e74f3839993c6fdf3418ea4ddc0fdd5"
+                "hash": "79e789682d00f38fe70e86bb53520208"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionAnswered.php",
-                "hash": "977d2dd2edb160196934859b73366105"
+                "hash": "fd5afbf759274c57b95299dcf158c8d5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionCategoryChanged.php",
-                "hash": "8caa5eb1dac959d8cd3cc1086bdb98b3"
+                "hash": "038ab98a81c3e7154283aebfa77de154"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionClosed.php",
-                "hash": "d5eedf92f89533c9c2e05a794abb7ef2"
+                "hash": "ddecf9423e69a6553908f0abaff66a40"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionCommentCreated.php",
-                "hash": "7cf6487cd725bd1fe74bd3e45ac66986"
+                "hash": "c182d8c4622e0bde88e956ac36a13646"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionCommentDeleted.php",
-                "hash": "a7b4ca8005330b0620bb9f4bc092686e"
+                "hash": "76fd021dbd495dda8f4a11acdbcbfc79"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionCommentEdited.php",
-                "hash": "6b4df600be2a4ae1a7540768cbdc1a9d"
+                "hash": "2f45e1aa688ea378ef45a1eea8b2007f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionCreated.php",
-                "hash": "3cfe95122f6951498187c27fa305d124"
+                "hash": "45486a5e745f2e32d9913131bbb13d80"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionDeleted.php",
-                "hash": "bcd00f76ad258c9e73813a694e54a8a2"
+                "hash": "89336f529ba43cb9576c38334f647933"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionEdited.php",
-                "hash": "9e252bfc92c77996209ccd5decf23e9e"
+                "hash": "cbf9680f94784eef7fa5f0975326406e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionLabeled.php",
-                "hash": "a41c7188ea20274397f3eebc37e4a6fe"
+                "hash": "0e0fe10049a6d05e4bc973872ba138bd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionLocked.php",
-                "hash": "24c2a6b5a7e6430a148d9dc4312cfdb1"
+                "hash": "0816233cf9978c459d5a53a4ed976f25"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionPinned.php",
-                "hash": "9e4c28b118a2b2e1cdc3dee3bf8cb458"
+                "hash": "f194ae91052ca3b2461a44f2053125fa"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionReopened.php",
-                "hash": "55f8c80f8cd5005b13a1b685beb9f684"
+                "hash": "10317163ee66edab60d6006a75416ae0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionTransferred.php",
-                "hash": "6148c7b15070b0a1fa56ddfccb089fc7"
+                "hash": "d291c0363d1d96d513d3ce4e9af5f011"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionUnanswered.php",
-                "hash": "fcba4ff496dfe67c40a1bf424e21d4f2"
+                "hash": "9e7e491b29cd7f31448c66cefe09b83d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionUnlabeled.php",
-                "hash": "04c9e5538be2fe696237bbfc904a646c"
+                "hash": "8536124536f03d44b0e34dfcc4d5e76d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionUnlocked.php",
-                "hash": "b08f203d28eae015fe2b0e40c0096d16"
+                "hash": "f2cf08892028d2e9a37fc8655335cdcf"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionUnpinned.php",
-                "hash": "05d97ca18042fa5421cac6f7913d59a5"
+                "hash": "f0dea93af46097b19f983caf864a56b8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookFork.php",
-                "hash": "6002e54ad20244853ec59e0a28f39680"
+                "hash": "d6d202a56bbd83fc9b78c9c24c5dff0b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookGithubAppAuthorizationRevoked.php",
@@ -1788,223 +1788,223 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookGollum.php",
-                "hash": "4a2fc219f7c50f55470c312e02835989"
+                "hash": "3ce83cb35f1c29d376c60716e2c1cf0c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookInstallationCreated.php",
-                "hash": "d72c451ca758e90ad3df5558771d3aae"
+                "hash": "8b31a39fb705c33dda7716e97f47d626"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookInstallationDeleted.php",
-                "hash": "31a7526f55d2f9cc6aa5542565af4c95"
+                "hash": "4795d0049465b7d718611447686e0217"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookInstallationNewPermissionsAccepted.php",
-                "hash": "8d0beb65f97c836be09d28d165af5651"
+                "hash": "23593f8cd434f01298b1d9b46372c86b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookInstallationRepositoriesAdded.php",
-                "hash": "e0d05a260ce7610167c715474babd6b7"
+                "hash": "99725f19d0c7c726fa2b3061e3aadb00"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookInstallationRepositoriesRemoved.php",
-                "hash": "6b803be37f312de23f14e1aa8eb8c226"
+                "hash": "aa3aa44a82bd878dd77d507e787ba6e0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookInstallationSuspend.php",
-                "hash": "64e08f07ca54f9748cd7b178d896b766"
+                "hash": "f01a7bb44a79d337e35d26157ae293aa"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookInstallationTargetRenamed.php",
-                "hash": "74e1d72c7249ce78fb001fd9b1a29abc"
+                "hash": "fe8b8449b3a68d4e689b017258652b29"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookInstallationUnsuspend.php",
-                "hash": "54cb09d1f5f1e504b6e893a6f72ff853"
+                "hash": "f58621b4ef01e661c02cae70f5407a70"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssueCommentCreated.php",
-                "hash": "0bf96ff901c40ddd168ebb5f6c5651da"
+                "hash": "841a8a120c5c931d99461b7e5646fc22"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssueCommentDeleted.php",
-                "hash": "ba97e5b0aef58c0b9cd1cc4e0fb2ff67"
+                "hash": "543f649b11cf841a5362841e27485bfe"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssueCommentEdited.php",
-                "hash": "10dcf5b1d8c40cb9ce53b3107345d483"
+                "hash": "b110877e9f8e49eb99d2e176779a74db"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesAssigned.php",
-                "hash": "df76abc97e0d38002da5999585a95e5e"
+                "hash": "9ff859eb99fe355e14e3f321d34522ba"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesClosed.php",
-                "hash": "c1b39f032962a2423e2669e4fae385f4"
+                "hash": "51ee1426fd05041640dbdc93acca0fcb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesDeleted.php",
-                "hash": "3f108a48bcadfe98269fbc061d7e7fda"
+                "hash": "e0f5d69e459b980970359b7bf689399e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesDemilestoned.php",
-                "hash": "689c61414717efbbee6020820235202a"
+                "hash": "a119f70ef7c4b8a262493c12e307c70e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesEdited.php",
-                "hash": "83e9e553cc5101554e9d7cfd603e5080"
+                "hash": "ca4627b66e2d8ee32f32064a0e9e3541"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesLabeled.php",
-                "hash": "3fa0cae1fb4fae52aed0c55963397519"
+                "hash": "39339b392f40591b30fef9e86810e576"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesLocked.php",
-                "hash": "c40468c69ad39ded319f325f7cd25722"
+                "hash": "1c5af68dfd9761192f7b32e43e78292a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesMilestoned.php",
-                "hash": "e804a284dfb65d1ed55effb11f21e575"
+                "hash": "a9a26e9bafdd4f9ab3271ae35dfef76f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesOpened.php",
-                "hash": "e25626cffe70bf23f6d0ae90287463ea"
+                "hash": "639b7eff248daa6e5a6372f967701923"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesPinned.php",
-                "hash": "706be68c4297e5348a416db6281815de"
+                "hash": "cfc05844b19b63031d62578326b304bc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesReopened.php",
-                "hash": "f5f01d4912bc01d72231e0b6fdf1b328"
+                "hash": "37e368cd12ecc225d24bf187cec36183"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesTransferred.php",
-                "hash": "0b52cbcbd0c852118e04bc76e6c45445"
+                "hash": "2b6e348edb28c072a7ab1e67cefb4d33"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesUnassigned.php",
-                "hash": "70c1d4f89e7ada1196d7189a6d90eca6"
+                "hash": "be24db9cbef6708809e1543acb83b4c6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesUnlabeled.php",
-                "hash": "9cb02e84c2a0be7975970fd9fadcd9da"
+                "hash": "7129b7ead46dad4134efb41c752c732d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesUnlocked.php",
-                "hash": "c05308ce65a548ec70f057bc0279e351"
+                "hash": "4723b193ce9220a578c0f30b2bbf1927"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesUnpinned.php",
-                "hash": "82987f2c47d645e41ebd9b045e62e13b"
+                "hash": "5cf71108555add5b9a69e7947d2dace1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookLabelCreated.php",
-                "hash": "dd210558b948549c39055b3fbf680851"
+                "hash": "cf297ef9db61b72820b1a7b3c2931302"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookLabelDeleted.php",
-                "hash": "f138aeb07e5600a4bccbf7c593c44612"
+                "hash": "4c714eb554f1646e5f6b5e1b0ee5a511"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookLabelEdited.php",
-                "hash": "052549128f89072201ad7f6d6f5eba32"
+                "hash": "4675e2918806d9da78b43614e4a52a99"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMarketplacePurchaseCancelled.php",
-                "hash": "eaa0392f3ca54d360f55edf98649eed2"
+                "hash": "04bc8106aee859838106d7a3cdf959cd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMarketplacePurchaseChanged.php",
-                "hash": "1192a1d19287f74fb4c04ce5cf058338"
+                "hash": "8c6e5f5d4c56fdc4c742b4ad5f88184e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMarketplacePurchasePendingChange.php",
-                "hash": "333b4ec074043a3ab5022499a4bb98bc"
+                "hash": "176301bc120fc9e2cd801a38ecddf2a2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMarketplacePurchasePendingChangeCancelled.php",
-                "hash": "4c732c26b37da92ae2327f9acd7efe46"
+                "hash": "5c704a4c84b8a72e755b229012c808f2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMarketplacePurchasePurchased.php",
-                "hash": "ce4c851c329aa1bd5c87f4e9b1273087"
+                "hash": "ca8d068ec61d4e9405f50f10bb574732"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMemberAdded.php",
-                "hash": "2935f90567796bee4b4aa58df82ed5bd"
+                "hash": "2ff9dc1f2e0f3da444b33f29a4eb0999"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMemberEdited.php",
-                "hash": "7e4229fff0b1870da6ef4319fa4a721c"
+                "hash": "dc6c2f32a2b1d18772537284e37dd50a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMemberRemoved.php",
-                "hash": "a8d86413c319ee13eaabfc72872af5d9"
+                "hash": "7aba68ab4c9fefcc5e6b44c154270970"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMembershipAdded.php",
-                "hash": "073f08836fcfa6d7523518e38f32b786"
+                "hash": "8492e0e811ea7ee37ec7629febd55425"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMembershipRemoved.php",
-                "hash": "01ef8ed718a7cd4a9a888f9129ccf31f"
+                "hash": "2396bd6a4ba20387f841666da1932638"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMergeGroupChecksRequested.php",
-                "hash": "1255192eaf8c56c31b36573ff664f18d"
+                "hash": "f4c113fde697c03f299a9442c35ea550"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMetaDeleted.php",
-                "hash": "7d4fbd23bb6a26e5f74c443b704b08d4"
+                "hash": "d1c7bc9932356e014cc40b211519ea4e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMilestoneClosed.php",
-                "hash": "11a0cd59bd7673ab57ef01834454e300"
+                "hash": "0ff1a1c402539942dd5186bf4cb5b122"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMilestoneCreated.php",
-                "hash": "a45c143fd8a20fd0dc945bc6ba820e81"
+                "hash": "fb2f4e0dffcbf0f3f8d47a67cca9b6b9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMilestoneDeleted.php",
-                "hash": "0dd5d542633858a3317ca16afcb4628d"
+                "hash": "d25b25b95ef1d6e923432f13b1f94062"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMilestoneEdited.php",
-                "hash": "3b5ca4daa98c1a2e815a182aaac037a6"
+                "hash": "399c9b2dbc13bae79029a38e17ff6c5b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMilestoneOpened.php",
-                "hash": "06d8539d088518150d58aaac5bcba559"
+                "hash": "09a7631ab5fffb245c228e921fec009d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookOrgBlockBlocked.php",
-                "hash": "f9b9e5b9af2c2d6c7fa02bd500e4a19d"
+                "hash": "3819eff27faede077cc829832b39e364"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookOrgBlockUnblocked.php",
-                "hash": "322c8a2f30d2310528d6d35f6ff745df"
+                "hash": "95fe31599154cad4d2deb6b217159dde"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookOrganizationDeleted.php",
-                "hash": "f8425cb5b5fb86f2b3e884e00df8c499"
+                "hash": "f4135d467b91d54c61ff4e331211bfa1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookOrganizationMemberAdded.php",
-                "hash": "ba09d0855a53308f6c1aa49c0680e69c"
+                "hash": "0c481c63f96180d62ac61541adff5ef9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookOrganizationMemberInvited.php",
-                "hash": "cefd4f44f49653c9c811f0fbf707c683"
+                "hash": "5ec088be2437034d44168878ca8ecc59"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookOrganizationMemberRemoved.php",
-                "hash": "9ab1fd19a1aa68718261673ab7e024fc"
+                "hash": "bc8ae2912ce67067026c3fa66cb668b1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookOrganizationRenamed.php",
-                "hash": "7a040b049ebbe53a3f559d75dc8c7416"
+                "hash": "2c6f252bb00094721bf05b8f34d5d06c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRubygemsMetadata.php",
@@ -2012,15 +2012,15 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPackagePublished.php",
-                "hash": "2cfa584b60c1433dc3052fc0fa88168f"
+                "hash": "96585cd695b5f31e289d3449432bfdb1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPackageUpdated.php",
-                "hash": "c01449300f4bc85631ec655fc2451c32"
+                "hash": "280cbbc28dc84afc916852ecd6981cb8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPageBuild.php",
-                "hash": "21e3d93892cbf9730773c11d8c2a43c4"
+                "hash": "bc7f34e18cbe3a2eed5480c433f8519d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPersonalAccessTokenRequestApproved.php",
@@ -2040,7 +2040,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPing.php",
-                "hash": "0f4ba8a20c7b8e4caa2880bf9eb77680"
+                "hash": "0cf8f2bf7a888dd956390cbdae6be085"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPingFormEncoded.php",
@@ -2048,59 +2048,59 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectCardConverted.php",
-                "hash": "a3ca4aebc7f8bce5ee534490b4b63a77"
+                "hash": "f4a3a79906f495d3abec3fb8c77f449e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectCardCreated.php",
-                "hash": "6e2658a7ab415d398158dba1ed1e6518"
+                "hash": "6cbe9b3a2b855a0887e21e6b3f028620"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectCardDeleted.php",
-                "hash": "6e189c04009f96e7e9eeb32751fe4ecf"
+                "hash": "24e316e92f9f1523bb48a12ea63011b8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectCardEdited.php",
-                "hash": "6b86b62fa5eb6dae090c0ec4252bf7de"
+                "hash": "6c928a798b89899ab128d7e96976e155"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectCardMoved.php",
-                "hash": "86df9b1a0b30c47440607e5635c5a601"
+                "hash": "15e9664c6f02dfba376120c22339f2a8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectClosed.php",
-                "hash": "070b1d4fa6f36cec0b7c2b4d3285a57e"
+                "hash": "9d91b9585e752c1eb7bbdb6f574fb4c5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectColumnCreated.php",
-                "hash": "a2432db7d8bc328b8cce94ea1e5b5c0f"
+                "hash": "bea713bf26899c395e1260360a9b0f20"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectColumnDeleted.php",
-                "hash": "e3393ebac8800fb2b5781616f75fa0b2"
+                "hash": "b2557c2b4cb1b9560bd7ad3758f804a3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectColumnEdited.php",
-                "hash": "04de1920b49bb682ef752b369026104a"
+                "hash": "659a828aa119932eef87290bb21ec539"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectColumnMoved.php",
-                "hash": "61a7d83d8425a498fbb7c4f6de633253"
+                "hash": "c5ecf37d5036b2c423b9267909382dd1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectCreated.php",
-                "hash": "a9348b7908134d7e665750998d119158"
+                "hash": "aa3bbe4eb36fa2efc633898c1e542c3d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectDeleted.php",
-                "hash": "9c62b3ef2ad30246f5554038fb04bed9"
+                "hash": "23d34d634c8536a4ee55e7f0b7d762f4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectEdited.php",
-                "hash": "07291a545d843308061ff8ac3f0bedbc"
+                "hash": "adedd0b605ea12b3a2aed7a1e7054e29"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectReopened.php",
-                "hash": "24244f47b613fad4ff00af3245fd7a23"
+                "hash": "90304fa742133e5c8f9eab9b9a043045"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookProjectsV2ProjectClosed.php",
@@ -2152,239 +2152,239 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPublic.php",
-                "hash": "5b3386badad54cf1d7319b28835e6fe4"
+                "hash": "3b5d357350d1d2182c45423cfc2927f5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAssigned.php",
-                "hash": "a6093d828533e9eb99b46509aca38d9a"
+                "hash": "c1146e60a7f76157005958947da23b1a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAutoMergeDisabled.php",
-                "hash": "60c5e00a54c0ae0cd5a229761ee84f2f"
+                "hash": "d2218ccae271bc80525e81e36387918e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAutoMergeEnabled.php",
-                "hash": "f328cddbee9ec89ddd3c35251ce60e71"
+                "hash": "66c8e5f2fc33506dba041ef8e6a7607b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestClosed.php",
-                "hash": "fc01ca67f522b63d058ba6ea6c525cae"
+                "hash": "b8ccdfe37c1e3af9956abba7736bc753"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestConvertedToDraft.php",
-                "hash": "1de184f471e950ce33a52659e09c0a0e"
+                "hash": "694cec2fef6e13f069484ead0c810630"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestDemilestoned.php",
-                "hash": "a14e4b72c80461c69056201c2f8ca985"
+                "hash": "830b7b1b8e928f17ff1b8f5040c78949"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestDequeued.php",
-                "hash": "d7132b5a9093471e749d9beaa448b708"
+                "hash": "43a20669bb90d13dfe27be1b91e6b234"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestEdited.php",
-                "hash": "64e4ce74424bd5b7d36864324c7005a0"
+                "hash": "b0c5dcbe41188162c5db4d3123b8936d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestEnqueued.php",
-                "hash": "c8115165cea0c46a502e0a42b1d819b5"
+                "hash": "37c35912eb58ab627d949efb5ddf159f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestLabeled.php",
-                "hash": "77a90697cad5383fad3108f07ce2699d"
+                "hash": "508567324aa4465df67d61d25bded6f0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestLocked.php",
-                "hash": "083420566f5ad37344209285339b14f6"
+                "hash": "36fbc959aecdeb3f4a40acd1db77891d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestMilestoned.php",
-                "hash": "7f4c30ed5a60d40c569ba71d697ebeee"
+                "hash": "da71acfa1d94d619ecdbb7de84ee236d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestOpened.php",
-                "hash": "7a5aa20ea831f078fa9750bf198c41a7"
+                "hash": "cb1fd8b7d13971a82215af43de57e77a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReadyForReview.php",
-                "hash": "9585b6a28b6691283fb4975ce14135eb"
+                "hash": "e2e3e83ac25e683c2ff44abb56d9ae9b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReopened.php",
-                "hash": "1578acb3b45c062c7857e58fa8363182"
+                "hash": "46fd374bc77b05942080808c6cc96571"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentCreated.php",
-                "hash": "e4f91b3f0e42da55b389ac50b7303952"
+                "hash": "5bac3c2f68fdcfdc91907821e8cab201"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentDeleted.php",
-                "hash": "1175d446776da7a170b8b792773e0ae6"
+                "hash": "6f92fa8d25fead7dd7e8bca418cf4ebc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentEdited.php",
-                "hash": "4a9b17833a8c298de558fca5971baa98"
+                "hash": "df4671224cb05b5e414d6170f844205c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewDismissed.php",
-                "hash": "975af0a4630851a3b3713512766d273b"
+                "hash": "0bde752bbb921e448979e3b200e1e4e4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewEdited.php",
-                "hash": "83275e08276d3e80b0af5bf360730afe"
+                "hash": "1f6cd45438531659c4b19d1ffeff597e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewRequestRemoved.php",
-                "hash": "ac633834e43fd0fdb9c4cda815196695"
+                "hash": "25015d4ec3ef8b7e9d176ed03004e253"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewRequested.php",
-                "hash": "40ea896833a3f9dd4ded6fd83bfeaa42"
+                "hash": "2e1ce81e73300592649ef7644974b524"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewSubmitted.php",
-                "hash": "e3f48efffaba579ec212aa605ec79bea"
+                "hash": "1eeac033f4a70413e40a438640620237"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadResolved.php",
-                "hash": "0b70a3a5086e017e58f1510243469065"
+                "hash": "1d7296a8818794eef99e0ea9197ea37a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadUnresolved.php",
-                "hash": "a4bc0f3f3e7b5e5321062e2de1c870cd"
+                "hash": "208d20a7aaa8130742b9f4cbba4aa529"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestSynchronize.php",
-                "hash": "8f1315b416b09f9f8e66ca487bd78e55"
+                "hash": "41aca64c8f1ed37e815605e036591818"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnassigned.php",
-                "hash": "e80d2acd50ced94a19682e914b6c7892"
+                "hash": "bb5bdf33f6b7adbd590470c019bcf60f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnlabeled.php",
-                "hash": "17bf1a56d15466caf556b6f678a22b33"
+                "hash": "4d1255a662178c1c33a38e2f09c41f1f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnlocked.php",
-                "hash": "53d89b58445d11ea570622035eeaab74"
+                "hash": "a8a8f6c554da7a4a22729550cc13380b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPush.php",
-                "hash": "a92e954d794bf3c6b382a2657adb7037"
+                "hash": "697a20442bce1132aa4038a4091e8cf9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRegistryPackagePublished.php",
-                "hash": "2f725a2e9918a20db23fa8fd4106bccb"
+                "hash": "ad3c374d45e2bd012008d8358255a91f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRegistryPackageUpdated.php",
-                "hash": "f19f5450133491ba2dfc05a212c43992"
+                "hash": "5cbe2d56c910ca1b01e8c57910c96a44"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookReleaseCreated.php",
-                "hash": "6a878fd9b1feee3cc272368492a4f131"
+                "hash": "f096893d2090e13e2572b65fac51b545"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookReleaseDeleted.php",
-                "hash": "d51c2791f820b71b091e2637d19856a2"
+                "hash": "2794b0f38058c96c05204430e9c068c4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookReleaseEdited.php",
-                "hash": "eb43e5c76ab53bdf123ab3eb5ba75324"
+                "hash": "2e9e40c6dca0f66eb835458d2f36ee67"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookReleasePrereleased.php",
-                "hash": "ab3d94cf0599e0428485231a221a711a"
+                "hash": "513218b8ad67b1b26e28b281c5bcadcd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookReleasePublished.php",
-                "hash": "55b9ea4e2e42faff99a0597785310d5d"
+                "hash": "e97ce2586b21c94787f47a810d02fd0b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookReleaseReleased.php",
-                "hash": "2b58606d78a244ff3c4147cc94790911"
+                "hash": "c4ab249d1155e36f5cdf710d91397fa0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookReleaseUnpublished.php",
-                "hash": "503b371fd3e92b59b8bebb7f28f63876"
+                "hash": "1c7cede7ad601d1f0e06f868d30384bf"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryAdvisoryPublished.php",
-                "hash": "bed3f7327c5b50a923218bcbb530b7f0"
+                "hash": "e860e2f527c8fcbcd7d51515c033df8c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryAdvisoryReported.php",
-                "hash": "2b176a54934443abe430c6d8cddab026"
+                "hash": "9fc4f959275f3191208f0b67c382d248"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryArchived.php",
-                "hash": "8d0fad0ee8f3643f38624674f90646e8"
+                "hash": "9d2d87754a5efde6a2e422bdabc89c0d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryCreated.php",
-                "hash": "f8f0142f8dce274e78afed2c323821bd"
+                "hash": "d5c37fec14fc5e7f2609bfa6aa1c2c7a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryDeleted.php",
-                "hash": "02b26b84ca2a45f31d65c118ef7e74dc"
+                "hash": "e2bfbe550a5c5a2804b0a6cec3f8954a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryDispatchSample.php",
-                "hash": "6feb98fb28fbb592f559a28c95e204a8"
+                "hash": "f0e7fb380e7e174b336ddd8f8c8bd212"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryEdited.php",
-                "hash": "5b3919d75c34a0ff6ad8274fb598f416"
+                "hash": "7ea241ad11f09cd470b36dfef801e4bc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryImport.php",
-                "hash": "f1532ba4558bfb056ca34d539e2941ab"
+                "hash": "031a58dea609e200dac0210af21ade01"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryPrivatized.php",
-                "hash": "5124103b3b0ba8b5106f792eb8f3d051"
+                "hash": "7d71516823c6105b886ef6cfeb63ba67"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryPublicized.php",
-                "hash": "d5dc55669ee392e5fb6c487e38265d91"
+                "hash": "268f17e5ade4a410212a36fd5b4ce966"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryRenamed.php",
-                "hash": "2d35cb9e3ac106f34e4b9112c10fc133"
+                "hash": "4fea0f6a0877da3849d496f78c254d35"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryTransferred.php",
-                "hash": "38585f097774930a16e01031b0b5a930"
+                "hash": "4d35e18fbd0b34d7c6e67bedc6ca5d4b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryUnarchived.php",
-                "hash": "a73089895519f9dbebd5ec4fd0329540"
+                "hash": "8d833634bfbc181d156ab6c543dd58f7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryVulnerabilityAlertCreate.php",
-                "hash": "42a984b96b02c97f36358370e3fd33dd"
+                "hash": "66dbca5f4e5c4861e60305305f0082e5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryVulnerabilityAlertDismiss.php",
-                "hash": "dfe9725d232efa5b812738170ac6d63e"
+                "hash": "4e71e22410de15360b5e2fcb84259c1b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryVulnerabilityAlertReopen.php",
-                "hash": "8ac8c4ae416560bbbc489c6983407fe4"
+                "hash": "7d000fa91aa06870a56b5069e0ff29bd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryVulnerabilityAlertResolve.php",
-                "hash": "423cc97aee487754206cae9f70c38036"
+                "hash": "d862a5de81462f85729013f8617c4cd5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSecretScanningAlertCreated.php",
-                "hash": "d7b34f78727bcf5ed787981acbce254b"
+                "hash": "f4f7aad4541e0bce724b4cf6527338a4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSecretScanningAlertLocationCreated.php",
-                "hash": "bc36339b419db6031124c9f370eb4b4b"
+                "hash": "debfce28e5f9ea4d6d44c2d96ff36cdf"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSecretScanningAlertLocationCreatedFormEncoded.php",
@@ -2392,123 +2392,123 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSecretScanningAlertReopened.php",
-                "hash": "ccc854633916c780b10d535fe2fff550"
+                "hash": "e7825bd769a432f5a64ae0343035015e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSecretScanningAlertResolved.php",
-                "hash": "56dbdc2aac8dccb8419191711edca51b"
+                "hash": "3d4bc6f73044ff12b163b3053a93dd6d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSecurityAdvisoryPublished.php",
-                "hash": "6b11ac720c153aa0ee27b1b0094e28c7"
+                "hash": "8664cd53d9a5375396a193c5e1139344"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSecurityAdvisoryUpdated.php",
-                "hash": "8cd899576b459752e33a2c07192659e5"
+                "hash": "8d57d4f89e2e63bf162fde96569cf6f0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSecurityAdvisoryWithdrawn.php",
-                "hash": "fdee0413c60d1768a182b8b86c531a9f"
+                "hash": "8bde710c874bd346d34bca828d275958"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSecurityAndAnalysis.php",
-                "hash": "d07958f3ba920e6adcbdb36566603fe7"
+                "hash": "11490136f27beba57edff9ea4ed7a453"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSponsorshipCancelled.php",
-                "hash": "532a59bb3582e435523e7ce59ca18ef2"
+                "hash": "dfaf50291c0181db3f80c6ecf759a1c5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSponsorshipCreated.php",
-                "hash": "a84bde45952d009ff9442f8c0c868605"
+                "hash": "3c27bdee8e3e2103742bc8f328681ac7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSponsorshipEdited.php",
-                "hash": "eb79573f1a8ed8211d621b8d96bc29c1"
+                "hash": "09f084aa20573c9f6e6ed68466a7eb85"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSponsorshipPendingCancellation.php",
-                "hash": "b7e9f03bc9d7ec107ea25aaf845ed8b2"
+                "hash": "12daadd40211207d7a82863b7fbe7edf"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSponsorshipPendingTierChange.php",
-                "hash": "d525a2e934e64cca541e24cfd1abe45f"
+                "hash": "6dbc3ff5022b7e6ab8ff71382b89b649"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSponsorshipTierChanged.php",
-                "hash": "450035c91d5e52826d8ff7b4e4a958e4"
+                "hash": "07f19c1896b4a433a2134d5035917aa8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookStarCreated.php",
-                "hash": "550fd3d011029becad2c4a56f6207571"
+                "hash": "9881b43430fbf2853f90f48f3e3ccc94"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookStarDeleted.php",
-                "hash": "c962aaf5ade4bf70634456e10acd7b9b"
+                "hash": "a236e0ff7a01155bdf7d5488481f6279"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookStatus.php",
-                "hash": "572b54cf019799d82050d18dd0fa57bf"
+                "hash": "5046973d9112ec169b2480e44242e872"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookTeamAdd.php",
-                "hash": "0ae38c5666f103ad37cdfebd85068beb"
+                "hash": "3fec74596781c4604f1c8e4d6bb1a00c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookTeamAddedToRepository.php",
-                "hash": "1b3d8f4ce528d5e0e5d05c2f00a7c1c5"
+                "hash": "1d82c2eafd30b28a1a08d77f7ae3c534"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookTeamCreated.php",
-                "hash": "41dd02a978d3759302259da670db6a67"
+                "hash": "56c61916b33eb4ae838fe29bf69e106b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookTeamDeleted.php",
-                "hash": "7919369d86e0231618c7882ded9dfca6"
+                "hash": "391d7028595f4d6ba8fe934e72aa2d5b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookTeamEdited.php",
-                "hash": "8fe3899f93a92ea85e0d63efc616dd19"
+                "hash": "35029777c20068eef09a5ca317406303"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookTeamRemovedFromRepository.php",
-                "hash": "35e6f06a172f33669094d89b6f99d55f"
+                "hash": "7acc46902d6ea511aefb05a7042b06dd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookWatchStarted.php",
-                "hash": "ba22d92ae07608e31a7683ecd227ae80"
+                "hash": "5696f92896ac03aa5dce88689e08c0b2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookWorkflowDispatch.php",
-                "hash": "51ddd6af1188136c8c001e3c8d0ca5e3"
+                "hash": "dc3269c88ff7f14b84c28f59123d7460"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookWorkflowJobCompleted.php",
-                "hash": "665d69da7b106233807652e3d99a5b71"
+                "hash": "42fd4ba9b61d48164053269b0ba6c5df"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookWorkflowJobInProgress.php",
-                "hash": "0fcc93d349c75e725905009150309e6b"
+                "hash": "de4870ccd889611b2270ea6089d98001"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookWorkflowJobQueued.php",
-                "hash": "d8ad1677a239a75b0bd14624ee7f3e60"
+                "hash": "eab4443d61670ce2670a4a7a2db9033d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookWorkflowJobWaiting.php",
-                "hash": "4f48e2b47ca45555a1427369d9d29a62"
+                "hash": "9f894fdec9eb733138bba6bcdcfa506b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookWorkflowRunCompleted.php",
-                "hash": "9b3b7831d719f7a350b245b60e5867f6"
+                "hash": "01da4519315a244da828ce90b90a5dc4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookWorkflowRunInProgress.php",
-                "hash": "12ee6a2454c6c4e0f99bdd7f1c2e5988"
+                "hash": "0074cecbab5c6b371171cc221544f157"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookWorkflowRunRequested.php",
-                "hash": "40575cbaf4cfce1ce8849e3bd4aaaa2e"
+                "hash": "68d4586e9c33eba868d36d47775727a5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Integration\/Permissions.php",
@@ -2584,7 +2584,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Event\/Payload.php",
-                "hash": "66e269b635cdd34c15d8a9343958decb"
+                "hash": "e4bd3552b0284bcab80bae69e73c6bd3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Event\/Payload\/Pages.php",
@@ -2608,7 +2608,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GistSimple\/Forks.php",
-                "hash": "7538915cface74e244bc1d727c168446"
+                "hash": "03ce8becae380d6e582c737cc2ff0178"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GistSimple\/ForkOf.php",
@@ -2944,7 +2944,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/PullRequestSimple\/Head.php",
-                "hash": "d4fc634a8408cc8bb8bdc635c8339c0a"
+                "hash": "8268c4e13ddc5b13922f384c965007bc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/PullRequestSimple\/Links.php",
@@ -3100,7 +3100,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/TimelineCrossReferencedEvent\/Source.php",
-                "hash": "e7cc9b15ae8e7939eb030690130260d1"
+                "hash": "09d833557c1a085024c0d36f05ee1637"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/TimelineReviewedEvent\/Links.php",
@@ -3240,7 +3240,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GpgKey\/Subkeys.php",
-                "hash": "e110d8ebf150dfdd2bcd215369cabe24"
+                "hash": "67cb2cf6fec223046f7f5ac8d4360801"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Hovercard\/Contexts.php",
@@ -3480,11 +3480,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDiscussionTransferred\/Changes.php",
-                "hash": "c77b12e6111d08806e187a81d30df6cf"
+                "hash": "30c45b645fbd57aeff603447bf4414f1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookFork\/Forkee.php",
-                "hash": "005633dcb3201975a6f12481234f7c3f"
+                "hash": "5eec62252f069377bf3577b79fcad729"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookFork\/Forkee\/License.php",
@@ -3624,7 +3624,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesOpened\/Changes.php",
-                "hash": "11311c3bb113efab3bda647ebe4b0f8f"
+                "hash": "c6e8f6c9d23c4c081991b21469504889"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesOpened\/Changes\/OldIssue.php",
@@ -3632,7 +3632,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesOpened\/Changes\/OldRepository.php",
-                "hash": "e60e916c6c6005cc137e2d6eec61b830"
+                "hash": "6d1188f0282f3df4a206a32ccda3decd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesOpened\/Issue.php",
@@ -3648,11 +3648,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesTransferred\/Changes.php",
-                "hash": "07fb38eb29199bc012c4dc2f70f2466a"
+                "hash": "c7f5786ee73366e433ddc1fb112a2cd5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesTransferred\/Changes\/NewRepository.php",
-                "hash": "4e149001f87a6316e0a4f345c7ff5af4"
+                "hash": "1d0acd6e9f1f646ba769901b5db0485f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookLabelEdited\/Changes.php",
@@ -3884,7 +3884,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAssigned\/PullRequest.php",
-                "hash": "28608bcf3482c5ecf01399603b4d2793"
+                "hash": "9462c82c88ecc44cadb2a8bcf320934f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAssigned\/PullRequest\/Links.php",
@@ -3900,19 +3900,19 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAssigned\/PullRequest\/Base.php",
-                "hash": "5d4a81ccc4dded8c59175082550b629f"
+                "hash": "5a81e86614cb0903a8ff2379fb16d74e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAssigned\/PullRequest\/Base\/Repo.php",
-                "hash": "037d3ee0e219776df151486ee650d15f"
+                "hash": "664d201841efe9beb5abc940d03406ba"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAssigned\/PullRequest\/Head.php",
-                "hash": "49ce00bfa1de39c02b68c4a89400f611"
+                "hash": "dbc57b68fccbeca969011b38145010ce"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAssigned\/PullRequest\/Head\/Repo.php",
-                "hash": "9cc4319dfa5f0e6ee6ff1ae41f2bb028"
+                "hash": "fe38227ec600e5f2275ab0a6cb4877d2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAssigned\/PullRequest\/RequestedReviewers\/One.php",
@@ -3928,23 +3928,23 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAutoMergeDisabled\/PullRequest.php",
-                "hash": "5daa84a2edc8483498ec6f40bd233823"
+                "hash": "076ee8a12c236042207f993d0201756f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAutoMergeDisabled\/PullRequest\/Base.php",
-                "hash": "beff74b23f6baaf3a81d972e3b724703"
+                "hash": "f325ad04766d96b1ba998455abd2f92e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAutoMergeDisabled\/PullRequest\/Base\/Repo.php",
-                "hash": "9e5745606966ecd7a7806d055e08da76"
+                "hash": "5847a812c3f01c0cf8acbad3146262cb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAutoMergeEnabled\/PullRequest.php",
-                "hash": "72932ddf55579ec4cb0fdf54ecca5285"
+                "hash": "ec1b75080e58576e285c4afc671f54bb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestDequeued\/PullRequest.php",
-                "hash": "9e12de4f4ec10b5e55e738dd00f56d32"
+                "hash": "7b45e78db6c74a55f6fda2116e797bd9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestEdited\/Changes.php",
@@ -3956,23 +3956,23 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestEnqueued\/PullRequest.php",
-                "hash": "9e480e711428a06845db27d592363763"
+                "hash": "93464ccfa7faa1dd9e8a39cda675bf1c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestEnqueued\/PullRequest\/Base.php",
-                "hash": "50ca52ebf06ce816bca495cbb0a0c94d"
+                "hash": "7386b8083755c2e0c403df686400f3ae"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestEnqueued\/PullRequest\/Base\/Repo.php",
-                "hash": "1372b541a062f3af99473a6aaf33b7a4"
+                "hash": "dced34cfc211b75a5077ecfba72137ba"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestLabeled\/PullRequest.php",
-                "hash": "6327af0a21c3dfb6c2bee73259f1f5dd"
+                "hash": "eaa05c9e9f985ab3fff05d25ceaaca84"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestLocked\/PullRequest.php",
-                "hash": "c139cafb1de970f927d4a70028aab61c"
+                "hash": "2596481622cfb7a6025d8f3771116478"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentCreated\/Comment.php",
@@ -3984,31 +3984,31 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentCreated\/PullRequest.php",
-                "hash": "1c5bf76c9022a6f0e8245ea1f810f9e4"
+                "hash": "f78733ee913c16c064d44439283dedf6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentCreated\/PullRequest\/Head.php",
-                "hash": "cee43c3d1b43dc6e1eb945303d1df8ad"
+                "hash": "d0e3f00a79129183b203ed5331467e4f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentCreated\/PullRequest\/Head\/Repo.php",
-                "hash": "4179b92a59429b51bf250906836446b5"
+                "hash": "bef80f1a0d58d17837683831587a3f90"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentDeleted\/PullRequest.php",
-                "hash": "be96fab316c64239b6e730bfe73dde54"
+                "hash": "92c72e5ca5d3ebbeb9ac8049c6db75e8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentDeleted\/PullRequest\/Head.php",
-                "hash": "eb85ed884c25c91e5ba060b911d4cdb8"
+                "hash": "ca0d42f18c3762b9ab4e82b45b48f1de"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentEdited\/PullRequest.php",
-                "hash": "6e5a31fb9704516e522c1d05e2747949"
+                "hash": "edc4b94190ac2a5873d731b3919a874d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewDismissed\/PullRequest.php",
-                "hash": "3293523d3a5633ae6db3fd6f376c9b49"
+                "hash": "35870f5106141bb6df87d770583865d2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewDismissed\/Review.php",
@@ -4024,39 +4024,39 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewEdited\/PullRequest.php",
-                "hash": "3d910f23d98d56d07988d41bff13b7b5"
+                "hash": "b181d58b10215c86f00dc02572831012"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewEdited\/PullRequest\/Base.php",
-                "hash": "def1213ba1c8d6666d10e1c0b8534b49"
+                "hash": "f07faa41b174651e499ec0267ad6bf70"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewEdited\/PullRequest\/Head.php",
-                "hash": "548cf97587542b487f6bbae028fcd5cf"
+                "hash": "3bcb4d12373216e650895c565de61e6d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewEdited\/PullRequest\/Head\/Repo.php",
-                "hash": "d6a0b247546e5b15e76bffca86b7de56"
+                "hash": "4d6a65d79dc82d78843ea4ced1ee19df"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewSubmitted\/PullRequest.php",
-                "hash": "9af133fc470fc69657a434ca996e756d"
+                "hash": "ab2e38e6b8b20bf15211abc5ad372331"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadResolved\/PullRequest.php",
-                "hash": "ce207421cbe98d98caeaeb7ba4a96cee"
+                "hash": "8eb7235756da2c1ee2ef125ff4353120"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadResolved\/PullRequest\/Base.php",
-                "hash": "820f67a4a80d699d542e127558ef25b6"
+                "hash": "17e073d3968a1977d6c6a36d2d919809"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadResolved\/PullRequest\/Head.php",
-                "hash": "763ca1bf64d1dc3a426cee10af9e74e7"
+                "hash": "3bb771940b14d18c42e80f348a3b290a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadResolved\/PullRequest\/Head\/Repo.php",
-                "hash": "3014eef3581a56ad4858ae2afae96388"
+                "hash": "47db2d33874f06d5fda5f597a12d77b4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadResolved\/Thread.php",
@@ -4068,7 +4068,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadUnresolved\/PullRequest.php",
-                "hash": "6eacd03e601abc8bca34ce8e0ecf01aa"
+                "hash": "00573e40ce01f199768539ced2a4fcc6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadUnresolved\/PullRequest\/AutoMerge.php",
@@ -4080,39 +4080,39 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestSynchronize\/PullRequest.php",
-                "hash": "97fd957971801abe612318f11c6f7c35"
+                "hash": "cd6f7e7cd532ab0bd1687c6cdbb3325f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestSynchronize\/PullRequest\/Head.php",
-                "hash": "3462b1b62117fc58d2f7935c3529ff19"
+                "hash": "e3749a40f545af432196197f7b9bf469"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestSynchronize\/PullRequest\/Head\/Repo.php",
-                "hash": "b40c1e90ec16ddebdc3bf8d3b4d8d874"
+                "hash": "662465d21ceaa9f419774d2313f1d9f5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnassigned\/PullRequest.php",
-                "hash": "d1fdbd05aafb88afe1caee5ecb23f639"
+                "hash": "3c53832a7c878ed8353ebae7ab6b11b6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnassigned\/PullRequest\/Base.php",
-                "hash": "3cb541b499187eee2ef6f5c39c42ff86"
+                "hash": "6eb7227e4b946ea940e8fc03e17c39e2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnlabeled\/PullRequest.php",
-                "hash": "195028783fdf899d958292a8687db0a1"
+                "hash": "135be2ac4499f32eda8c53f490a63801"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnlabeled\/PullRequest\/Head.php",
-                "hash": "63045f0e2f56d5fa736a0d7576a4c8e1"
+                "hash": "44806c9e49662ad5d54e5973f6aaa049"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnlabeled\/PullRequest\/Head\/Repo.php",
-                "hash": "31313cf498c1429a73a99788217e4321"
+                "hash": "592a56f98cc4c888e3ec6f688b898eb9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnlocked\/PullRequest.php",
-                "hash": "5c40eb2c60ee65c0d3a0ddee7deb3894"
+                "hash": "8ac4759075f212fecd209defc579005a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPush\/Commits.php",
@@ -4432,7 +4432,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Apps\/ListReposAccessibleToInstallation\/Response\/ApplicationJson\/Ok.php",
-                "hash": "6a2609180e0fac74a5cdd35e0d98ef0e"
+                "hash": "517cc7eeb7047f9cbb2de9032170157f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Markdown\/Render\/Request\/ApplicationJson.php",
@@ -4488,7 +4488,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Actions\/ListSelectedRepositoriesEnabledGithubActionsOrganization\/Response\/ApplicationJson\/Ok.php",
-                "hash": "8633f6c2fb2defefc14742a9945f76ad"
+                "hash": "3f763875fe6c54c52efbf03524a79c43"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Actions\/SetSelectedRepositoriesEnabledGithubActionsOrganization\/Request\/ApplicationJson.php",
@@ -4520,7 +4520,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Actions\/ListSelectedReposForOrgSecret\/Response\/ApplicationJson\/Ok.php",
-                "hash": "f34fda8c5702cf44446025c1b49b2ede"
+                "hash": "2bf8bd71c14fba6e6aec224522843145"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Actions\/SetSelectedReposForOrgSecret\/Request\/ApplicationJson.php",
@@ -4544,7 +4544,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Codespaces\/ListInOrganization\/Response\/ApplicationJson\/Ok.php",
-                "hash": "9b0dd9fbf1cc2e7232f85f0e013b28a5"
+                "hash": "18a8bbf6bed26a1109d0ae6a629310ff"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Codespaces\/ListOrgSecrets\/Response\/ApplicationJson\/Ok.php",
@@ -4672,7 +4672,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Teams\/AddOrUpdateRepoPermissionsInOrg\/Request\/ApplicationJson.php",
-                "hash": "0e18e87e5d00fd3809890856149e0c64"
+                "hash": "432ddd36a33eab7cc02401197fdd91e3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Projects\/DeleteCard\/Response\/ApplicationJson\/Forbidden.php",
@@ -4976,7 +4976,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Checks\/ListSuitesForRef\/Response\/ApplicationJson\/Ok.php",
-                "hash": "957d7d398f04fd3bebc0556a83ead7b9"
+                "hash": "f880bc5e8c918dac96d2deb9d3c66a4a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Repos\/GetContent\/Response\/ApplicationJson\/Ok.php",
@@ -5384,15 +5384,15 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Search\/Code\/Response\/ApplicationJson\/Ok.php",
-                "hash": "33b3217e22d50c781fe29c3124ead469"
+                "hash": "9f85b122d4051e73ef60c59876125207"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Search\/Commits\/Response\/ApplicationJson\/Ok.php",
-                "hash": "af8b60f46fdb3f5e2bbd0baebc5c4ec1"
+                "hash": "baad29ef023ca67e298682efc5feb6db"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Search\/IssuesAndPullRequests\/Response\/ApplicationJson\/Ok.php",
-                "hash": "29345f169205b7d9db27d63118facb54"
+                "hash": "903381cc357d65a18a6f6bc4cd98040c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Search\/Labels\/Response\/ApplicationJson\/Ok.php",
@@ -5408,7 +5408,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Search\/Users\/Response\/ApplicationJson\/Ok.php",
-                "hash": "367b55b5233a943deee8b94ff8741b3e"
+                "hash": "2914e76f86b7ea03ca3bc9a72a7d3a0d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Teams\/UpdateLegacy\/Request\/ApplicationJson.php",
@@ -5424,7 +5424,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Users\/GetAuthenticated\/Response\/ApplicationJson\/Ok.php",
-                "hash": "c7c9b5936a168d53908c6f4c1a327ef0"
+                "hash": "d9adaf4fb2f828690afbdb19b9ef578d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Users\/UpdateAuthenticated\/Request\/ApplicationJson.php",
@@ -5472,7 +5472,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Apps\/ListInstallationReposForAuthenticatedUser\/Response\/ApplicationJson\/Ok.php",
-                "hash": "cc110a35492235a4012aaddd33749dcb"
+                "hash": "7d1397c2ed420499661bc2e6f6f13cbc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Users\/CreatePublicSshKeyForAuthenticatedUser\/Request\/ApplicationJson.php",
@@ -5508,7 +5508,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Activity\/ListReposStarredByUser\/Response\/ApplicationJson\/Ok.php",
-                "hash": "3e987e0a191d2e8b70986bf0e41687c1"
+                "hash": "73ba85d7b1145cd5b58ab50f64166f46"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Meta\/GetAllVersions\/Response\/ApplicationJson\/Ok.php",
@@ -5576,7 +5576,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Orgs.php",
-                "hash": "04a4181b514e74b22765c1f5edf6516e"
+                "hash": "b70830c3e9116294d4024aa1c4b96d82"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Actions.php",
@@ -5656,7 +5656,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Users.php",
-                "hash": "c8ecca7a758b0b349786562874763528"
+                "hash": "3dbce1b405bb6506b17dffb6b89b814f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operations.php",
@@ -6064,7 +6064,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/PullRequestSimple\/Base.php",
-                "hash": "cec597c730b15f3cf89884fee633eec2"
+                "hash": "7b094e18c8a8c0578e0ee9f5f9d5f718"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet7041333D\/Tiet2B9B5CD7\/Tiet6273FDFD\/Tiet58068E3B.php",
@@ -9288,27 +9288,27 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewEdited\/PullRequest\/Base\/Repo.php",
-                "hash": "a83f5a9c4ebc627a729f32ce7df13e25"
+                "hash": "efbea4dcdd9edde4d9ce0cd7533b0469"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookTeamAddedToRepository\/Repository.php",
-                "hash": "3bd9cd9ae68b6cc8d225bfa50536a8d5"
+                "hash": "a317784108500d6f9a66772dd013a9c4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookTeamCreated\/Repository.php",
-                "hash": "c48f201f7fae3c688e589460f7e20277"
+                "hash": "0e198d5aa386140ffffe1cdfaf8bfd8d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookTeamDeleted\/Repository.php",
-                "hash": "2fbb016bee060d5c60236ca9af408ad2"
+                "hash": "3ba0730ff0debd0c1abf075c2947282c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookTeamEdited\/Repository.php",
-                "hash": "9f17900f8d618112c6cfa608317d18ab"
+                "hash": "c77109fedf8b3833150c0b2146f3daa1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookTeamRemovedFromRepository\/Repository.php",
-                "hash": "2b4bc98223a9e6d4584df39221431529"
+                "hash": "d284126943efeb517533c0e3f36e0a85"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesTransferred\/Changes\/NewIssue.php",
@@ -9319,24 +9319,20 @@
                 "hash": "87057559247290f69cde4857d719c236"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet0974F8A2\/TietC4E2BC26\/Tiet68B9FD34\/Tiet172D517C.php",
-                "hash": "7507d0862826a43454fb6df535151349"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadResolved\/PullRequest\/Base\/Repo.php",
-                "hash": "5865c2a47e462581f423769875fa1fd4"
+                "hash": "dc4cbdba5eb1da6cf1ed47d9c73f718c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadUnresolved\/PullRequest\/Base\/Repo.php",
-                "hash": "f7dbfe676ab9be0b40d6ddc25f1f8808"
+                "hash": "1c950c5932b813368a61ef9e83e4857b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadUnresolved\/PullRequest\/Head\/Repo.php",
-                "hash": "57754f3983f2245cb8c4c89650724c36"
+                "hash": "3c195fbf82751df48ea02c1562f44592"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPush\/Repository.php",
-                "hash": "32700efad5fddf95d817e279397d4c9c"
+                "hash": "94d9607b9d5eb8f2ddb27e2192ed16b3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet90B64BAD\/TietF15E2FA0\/Tiet4430BD5A\/Tiet9EE541ED.php",
@@ -10296,191 +10292,183 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAutoMergeDisabled\/PullRequest\/Head.php",
-                "hash": "017c77b3387a52d1a27f6e70fc95732d"
+                "hash": "c4b5fdec108af3e875aba1001dad5275"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAutoMergeEnabled\/PullRequest\/Base.php",
-                "hash": "f72e727a6eeb79027487273d6f178664"
+                "hash": "7220de8f4dde9fa5db417c9b0f74570b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAutoMergeEnabled\/PullRequest\/Head.php",
-                "hash": "7731993b150169aad8ca218f0b253ef6"
+                "hash": "0f82918f7386173ed7a1aae81714aa69"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestDequeued\/PullRequest\/Base.php",
-                "hash": "a8038ea9db42893777c66c950e9d6851"
+                "hash": "50c85f8eacf9aed72e64095c897548d0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestDequeued\/PullRequest\/Head.php",
-                "hash": "54bd5c7132c9ec7b0fe92ba0c395d80c"
+                "hash": "d38c304579bf133a6604b5d362353e8c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestEnqueued\/PullRequest\/Head.php",
-                "hash": "f044c1e31aafccdca2fc16f17a67c8f4"
+                "hash": "2ce2740e2ded4044bea857a818c578f6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestLabeled\/PullRequest\/Base.php",
-                "hash": "2ea10aa278438fc9a412cad0196dde9d"
+                "hash": "b988f26978891f3cda750df1e455899f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestLocked\/PullRequest\/Base.php",
-                "hash": "1d3205bcb37bd3951913736dcfb1fd71"
+                "hash": "11995eea02bfac9647f519ab6b4408b8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentCreated\/PullRequest\/Base.php",
-                "hash": "0ef6f9e38298c8f453819411a1e91c5c"
+                "hash": "e0e08ac97bc5e0557c27a89c317d25b0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentDeleted\/PullRequest\/Base.php",
-                "hash": "0963de66519a53ac5c5bde0409d30a55"
+                "hash": "b9e471ff8171fae742a4078fa27970a6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentEdited\/PullRequest\/Base.php",
-                "hash": "c522c2e63836f86ab64e3fa640ff2531"
+                "hash": "24db0e30c44aabb5ccc1373ef3cd3c87"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewDismissed\/PullRequest\/Base.php",
-                "hash": "71a8110217134f9e562a239440c15b73"
+                "hash": "bd55210ba1e79f4471fc0b9de3de653c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewSubmitted\/PullRequest\/Base.php",
-                "hash": "495aaf7680021ad71e9b753c47f61a85"
+                "hash": "927df446cc74d3ade045a0845353ae3e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestSynchronize\/PullRequest\/Base.php",
-                "hash": "f2850364361f4a08f62d58722f395934"
+                "hash": "7fbe5c02d61a46d7a1c319f9d1d637fc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnlabeled\/PullRequest\/Base.php",
-                "hash": "cc38f9d5809de97aae78d7534af1c216"
+                "hash": "046a63deda6f510ea977a2b7252cf31f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnlocked\/PullRequest\/Base.php",
-                "hash": "2e62d7a623bb857ba92245ef3cad3821"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietD0F4187F\/Tiet80279EC8\/Tiet0EDB1C19\/Tiet55CCD6EA.php",
-                "hash": "e18bf2009f43a3fe97824f6d92629ed4"
+                "hash": "cd490e6efd06b72343420720b7a0f45a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAutoMergeDisabled\/PullRequest\/Head\/Repo.php",
-                "hash": "cd86e5e76889b6b44220dcab4de9315b"
+                "hash": "acc54c0ff83ab122c5bf5e31647a5a85"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAutoMergeEnabled\/PullRequest\/Base\/Repo.php",
-                "hash": "0ce19693c7d5bafa78b03bd657b2ca58"
+                "hash": "dc06f167f3338d66d6ad341fdfa5172a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestAutoMergeEnabled\/PullRequest\/Head\/Repo.php",
-                "hash": "bbca8c13e2d897a5a85f04a1b65c7663"
+                "hash": "1c58b0b2d1416d053c4224fead855a5a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestDequeued\/PullRequest\/Base\/Repo.php",
-                "hash": "865d4519df359e23cfd4bb5acb60419b"
+                "hash": "003402a9c5b9c580d8f7be0e8bb30de1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestDequeued\/PullRequest\/Head\/Repo.php",
-                "hash": "cfcaf770b7636a87005a5a7849aedb75"
+                "hash": "124996709748e00ee21b179362ce757f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestEnqueued\/PullRequest\/Head\/Repo.php",
-                "hash": "a255db11c15f5da134a300656d493c78"
+                "hash": "da622b1a0cdb49166d87418ea1b9e4d3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestLabeled\/PullRequest\/Base\/Repo.php",
-                "hash": "d6ef8e72efac2191c2faa2887952dfe8"
+                "hash": "929de9321a9ec682c0d041f3c7fced24"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestLocked\/PullRequest\/Base\/Repo.php",
-                "hash": "083cc5d40d9dd4dbec5c2f73bd99fed3"
+                "hash": "5ae503336a569ff2a712a157fe30165a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentCreated\/PullRequest\/Base\/Repo.php",
-                "hash": "4a625b3837db71223c18cb9f06364e7d"
+                "hash": "6c33b7c2bcf5961559c1214466bfa534"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentDeleted\/PullRequest\/Base\/Repo.php",
-                "hash": "b871fdfeffa85f231f3657fbbcb1a0c3"
+                "hash": "49df4b5f4eb448058d92410eea36dcb3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentEdited\/PullRequest\/Base\/Repo.php",
-                "hash": "c1ae9cefc36e133dc528b1b5b7ec91cb"
+                "hash": "1f842d7808db6576273012043693baaa"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewDismissed\/PullRequest\/Base\/Repo.php",
-                "hash": "e0dc371d012aaea9cc594c8d2297b3f2"
+                "hash": "5ef9875aeccb6137265dd9c83a80d649"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewSubmitted\/PullRequest\/Base\/Repo.php",
-                "hash": "43b1b94cb7206d01b5cc2652f2a7e00f"
+                "hash": "cd9a3be9594a12eda8ff3f4179028490"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestSynchronize\/PullRequest\/Base\/Repo.php",
-                "hash": "9d2d7a98a8a7c22f079a7adb680387b9"
+                "hash": "4b07f4a61eea5d3aee3e8df335c2b144"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnassigned\/PullRequest\/Base\/Repo.php",
-                "hash": "fb42d4f46cb27fc4d6acaaa8a962b2a0"
+                "hash": "2270e32831c9480ecc1ffe47171d5aa9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnlabeled\/PullRequest\/Base\/Repo.php",
-                "hash": "07c43fb605d175496b3073807cd69aad"
+                "hash": "48901d75b0c416d9bc16d34c403250bb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnlocked\/PullRequest\/Base\/Repo.php",
-                "hash": "ea8f668de9a0445484ba6fed0771ee87"
+                "hash": "c3db9dc1de7a757af244ae770913b952"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestLabeled\/PullRequest\/Head.php",
-                "hash": "bf001c12252fa064a1265d997f6de3d6"
+                "hash": "31c75fca3a928854465e3881a5fd40b6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestLocked\/PullRequest\/Head.php",
-                "hash": "6e707bcafde4c4467ab978903cd0c0d1"
+                "hash": "15e33c14090c5ff6278a667b310b696f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewSubmitted\/PullRequest\/Head.php",
-                "hash": "659504f2ad1ae1f5ac73e8b6e027d33c"
+                "hash": "84745ac46ccafed77caec7e1f42038c7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnassigned\/PullRequest\/Head.php",
-                "hash": "960307035096a53d27eb73422197ec58"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietDA0148FC\/Tiet07C85FF7\/Tiet950A70E3\/TietEDDA17E3.php",
-                "hash": "5dd688c36f423321736221b59e84da97"
+                "hash": "33f60cf6d817a1be53733eed6c011d22"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestLabeled\/PullRequest\/Head\/Repo.php",
-                "hash": "1bcf57a94400ef21bceacafebe8787e3"
+                "hash": "a680a3ec8a61c5a3afdec01c8ce90867"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestLocked\/PullRequest\/Head\/Repo.php",
-                "hash": "96430f049937230585b087fbe5a15c71"
+                "hash": "f8f2c379e97a3c9f9caeef7a56d52a70"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentDeleted\/PullRequest\/Head\/Repo.php",
-                "hash": "427f741a637f6270a768109de66848b2"
+                "hash": "d7724c89676aa412ed01bd088ba4f963"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentEdited\/PullRequest\/Head\/Repo.php",
-                "hash": "7c0d65ec572c15d7d221e28f30046e8e"
+                "hash": "9a6eabdfe3baee46717aaaf348b811ce"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewDismissed\/PullRequest\/Head\/Repo.php",
-                "hash": "24106a745206468c85cc91637c5e36fd"
+                "hash": "c11cf97feb6381c74fec496de37556e4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewSubmitted\/PullRequest\/Head\/Repo.php",
-                "hash": "e4a775ab15ae04dcdd6838da6021fe16"
+                "hash": "e884423dfefcd247de97b6a4f6beec4e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnassigned\/PullRequest\/Head\/Repo.php",
-                "hash": "3ee785ee83f5f0c5c5e20f6880eaaff9"
+                "hash": "fc077177d031caddc2c2deca14e2cb9c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnlocked\/PullRequest\/Head\/Repo.php",
-                "hash": "5fa08f517fe93775c35a9fb28f4e8cfe"
+                "hash": "dd52b0d79e93aee22126980d6936a27d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet51D306B5\/Tiet4F835975\/TietBE2CDDF8\/Tiet6848B990.php",
@@ -10787,10 +10775,6 @@
                 "hash": "a38eb64cf5fbfd4cb3e2aa84dd00c20f"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet78A1ED87\/Tiet350943AE\/TietDA8047D8\/Tiet006E988E.php",
-                "hash": "456ad1a02453717c849e768b3d073028"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet63554B17\/Tiet9FC888D0\/Tiet0D411437\/TietBA9BB280.php",
                 "hash": "bbfb4dc7ba89d670fcab9a4830bff03a"
             },
@@ -10808,15 +10792,15 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewCommentEdited\/PullRequest\/Head.php",
-                "hash": "ff9ed73dc4e34389a30047df4295bdeb"
+                "hash": "120dbe5e4cd673f415a12a6227485222"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewDismissed\/PullRequest\/Head.php",
-                "hash": "8f8aa238afea56fe71f62a4b0fba9139"
+                "hash": "b5fc6de47a98e48aaa5b2ffbf011d57e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestUnlocked\/PullRequest\/Head.php",
-                "hash": "e7fdfe1b53dec428b75f6a341a7fdd69"
+                "hash": "07c3a67d50db910bb5ea8ca19d422701"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet3725E255\/Tiet9D780678\/Tiet2692985E\/TietE129B0E5.php",
@@ -10824,11 +10808,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadUnresolved\/PullRequest\/Base.php",
-                "hash": "dd4f239e3529b16f3bca26dce2184ec3"
+                "hash": "4be08e492219a39ab9281bccb3e68999"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookPullRequestReviewThreadUnresolved\/PullRequest\/Head.php",
-                "hash": "a0a8e64edb9824c72f863549d5de889d"
+                "hash": "3b97684ee24e9be7912291a9e4ff5d7c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet86CD80DF\/Tiet7447BE97\/TietF36F9C9D\/Tiet51ABC919.php",
@@ -11160,59 +11144,59 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Actions\/ListSelectedReposForOrgVariable\/Response\/ApplicationJson\/Ok.php",
-                "hash": "5ec99320779c79c5836c206eaac6b05d"
+                "hash": "bbf8c176c48f4780ef6fbc08879b61e4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Actions\/ListSelectedReposForOrgVariable\/Response\/ApplicationJson\/Ok\/Application\/Json.php",
-                "hash": "822f45b7e0e6afc6f296fcafc437798b"
+                "hash": "fb31904fd90b914c71d69a54f70a8451"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Codespaces\/ListSelectedReposForOrgSecret\/Response\/ApplicationJson\/Ok.php",
-                "hash": "613d9b036028b6752815e99597d86115"
+                "hash": "9b7dfe904557eb638cdde18ef03eebc5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Codespaces\/ListSelectedReposForOrgSecret\/Response\/ApplicationJson\/Ok\/Application\/Json.php",
-                "hash": "7186c42b858e3692f360fdca996ddc0f"
+                "hash": "62f3e1292c40849203cd5a7c428481a7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Dependabot\/ListSelectedReposForOrgSecret\/Response\/ApplicationJson\/Ok.php",
-                "hash": "ec65e6dcb564c5669a8dc02817e7d4fe"
+                "hash": "ce89bc60eae8bc59b3624cc8d766eadc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Dependabot\/ListSelectedReposForOrgSecret\/Response\/ApplicationJson\/Ok\/Application\/Json.php",
-                "hash": "d018bf0ce3e1350e054b693558126b10"
+                "hash": "1f00465437534f84610d77689c0c3014"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Codespaces\/ListRepositoriesForSecretForAuthenticatedUser\/Response\/ApplicationJson\/Ok.php",
-                "hash": "98578144cd0e3ead631ac7baaa0c6b4d"
+                "hash": "9f96d98da5c5322ccf0bf787402eaf7c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Codespaces\/ListRepositoriesForSecretForAuthenticatedUser\/Response\/ApplicationJson\/Ok\/Application\/Json.php",
-                "hash": "ff1a4b13b7daa599cdc194ddfbac12cb"
+                "hash": "7f5c3bc00a80ae61de75351310f13102"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Codespaces\/GetCodespacesForUserInOrg\/Response\/ApplicationJson\/Ok.php",
-                "hash": "07d73db47b0c5c26f289b659c55cce1d"
+                "hash": "d9503b767e3a0488a095d264eba97595"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Codespaces\/GetCodespacesForUserInOrg\/Response\/ApplicationJson\/Ok\/Application\/Json.php",
-                "hash": "756fb335a1fe7a8a248c6af464d9124b"
+                "hash": "9740c3611d2824ef7d835695894134c8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Codespaces\/ListInRepositoryForAuthenticatedUser\/Response\/ApplicationJson\/Ok.php",
-                "hash": "dbf30f73b4af008e991e6c74278e1153"
+                "hash": "228f6c7eabbc20358eefc400380acd4c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Codespaces\/ListInRepositoryForAuthenticatedUser\/Response\/ApplicationJson\/Ok\/Application\/Json.php",
-                "hash": "642a9f481757cc6bec095b4d32f73bbc"
+                "hash": "1414b6bce903d0adc002d1c053f03a85"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Codespaces\/ListForAuthenticatedUser\/Response\/ApplicationJson\/Ok.php",
-                "hash": "125ef5f0b974d76e2a023cf66c59d569"
+                "hash": "3e3bef95c167d482c76059ab151709ef"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Codespaces\/ListForAuthenticatedUser\/Response\/ApplicationJson\/Ok\/Application\/Json.php",
-                "hash": "a5d136a8b896ab46cbb70be1d5f91455"
+                "hash": "97962228baaf3e82eb36596f6b1c84c0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Apps\/ListInstallationsForAuthenticatedUser\/Response\/ApplicationJson\/Ok.php",
@@ -11448,15 +11432,15 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Actions\/ListWorkflowRunsForRepo\/Response\/ApplicationJson\/Ok.php",
-                "hash": "3e42f644f2ff9034996f12e6b9d8e926"
+                "hash": "6e586d570cb65cf4ee590239d401834c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Actions\/ListWorkflowRuns\/Response\/ApplicationJson\/Ok.php",
-                "hash": "18a22442bc4f50c388ee3aee6f696593"
+                "hash": "14aba41cba00e3ea1a60217a6c799185"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Actions\/ListWorkflowRuns\/Response\/ApplicationJson\/Ok\/Application\/Json.php",
-                "hash": "f0dba4bfa28c547452788a22f2003e32"
+                "hash": "480b53839d070107fd4ff63d32a39de0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Actions\/ListJobsForWorkflowRun\/Response\/ApplicationJson\/Ok.php",
@@ -11620,7 +11604,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Users\/GetByUsername\/Response\/ApplicationJson\/Ok.php",
-                "hash": "506cdd6b59ee3baf500b52e805422fcb"
+                "hash": "165e208972d4b7e349e4557ffe3350fb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningAlertStateQuery.php",
@@ -11636,7 +11620,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookMergeGroupDestroyed.php",
-                "hash": "0310e0b79ba903dc721afc5ec9a30edd"
+                "hash": "ffd736270c6f9230b540e550c093bf40"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ApiOverview\/Domains.php",
@@ -11700,7 +11684,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotSeatDetails.php",
-                "hash": "e965116045123a1aa94e4c4e0947b7fb"
+                "hash": "92e2a1ef84e4c3e5b25451da72311a94"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Organization\/Plan.php",
@@ -11708,7 +11692,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Copilot\/ListCopilotSeats\/Response\/ApplicationJson\/Ok.php",
-                "hash": "3172f06abfdc56258b38948c96d62c60"
+                "hash": "24daee07f3e46d924018ae9cc0c0c94d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietF5944C0A\/TietAA99D7D8\/Tiet9AE1F544\/TietA28F869C.php",
@@ -11812,27 +11796,27 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDeploymentReviewApproved.php",
-                "hash": "78a179695c3dd67d796953af68f2d992"
+                "hash": "fdc8bfecc01dab4d57c848a443e358ab"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDeploymentReviewRejected.php",
-                "hash": "704229e370cd92c36e5036b79fd8a5e9"
+                "hash": "5a36ba39fe8b618d449b4249879e639e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDeploymentReviewRequested.php",
-                "hash": "f11207eceaba92c738688e479b40f157"
+                "hash": "0c5f0adcf83487e9bd5e3197dc8a91de"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryRulesetCreated.php",
-                "hash": "9b96619a76bae00de627da7df1d889a6"
+                "hash": "6af9e14dd879481555147657d535bb98"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryRulesetDeleted.php",
-                "hash": "6f817e96e311dec4f74910eea292175a"
+                "hash": "d9a606f04f5982ea347c9fe8b56349b2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryRulesetEdited.php",
-                "hash": "8714821c8b6df096eb6874b37bff3842"
+                "hash": "1e245483da2215221f7bd448f21ca720"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDeploymentReviewApproved\/WorkflowRun\/Actor.php",
@@ -12124,11 +12108,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionConfigurationDisabled.php",
-                "hash": "ca8f8a0d3db12d70976938fed8ab5531"
+                "hash": "b189d831f2832ae119eee5b542c95761"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionConfigurationEnabled.php",
-                "hash": "11d97f8bde02a9305e1049573e320116"
+                "hash": "369f62ac8cc8a8950b630236e7d9ff7d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Meta\/Root.php",
@@ -15268,11 +15252,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Orgs\/AddSecurityManagerTeam.php",
-                "hash": "230aa9594e3a7744ac07988900854c32"
+                "hash": "e17332ac4895cd957759ae3fca787eb5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/AddSecurityManagerTeam.php",
-                "hash": "2e655db0da01ce7954a01700e3299829"
+                "hash": "d2fce870b2cb247448df55fad25e7db6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Orgs\/RemoveSecurityManagerTeam.php",
@@ -24904,7 +24888,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Orgs.php",
-                "hash": "d9fa1cd41ee4ef5dc9e80b71f39c5771"
+                "hash": "036a72c9ebe842c9829dfcc14984247a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Codespaces.php",
@@ -25160,7 +25144,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Six.php",
-                "hash": "2d193ba8e2a36a3ea0fe0a7e952dd209"
+                "hash": "0e732f175758864698227b1f673bf2b3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Eight.php",
@@ -27192,7 +27176,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryWebhooks.php",
-                "hash": "30d7ffcdeff792f71c541e2a61034fda"
+                "hash": "9d4706ce77b43742defcdd0d66902dc3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/SimpleUserWebhooks.php",
@@ -27724,7 +27708,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCustomPropertyValuesUpdated.php",
-                "hash": "85c0756b6f7a444019232d6ddaef8c23"
+                "hash": "9d2b394559d69574b52cf618706d7784"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet822B8B83\/Tiet93E9FF34\/Tiet64571DFE\/Tiet4D2FA622.php",
@@ -27771,14 +27755,6 @@
                 "hash": "fe4c5eb8edc8014f0f24e246875ef8ce"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet50E90A81\/TietC28AD061\/Tiet3E2243BE\/TietC859F456.php",
-                "hash": "e49d3e343ffe9b5ff3e1c46bc1705f49"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietA90DC353\/TietDD22FACF\/TietDB1B96CA\/TietC29B2C46.php",
-                "hash": "6e461248bb389ef2ba60151edad9e6cb"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebHookHeader\/XGithubHookId.php",
                 "hash": "f3fb1a95fb04e96f6b82c41bbf96eac4"
             },
@@ -27812,11 +27788,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "34097be811968901ed3316c689e3d3eb"
+                "hash": "e7abe40b6c23a63db1d22af67a244d0a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "b24dfb45ef8936c0dcfc11f99fb51c47"
+                "hash": "0d934126b3c4a55fdb6b817bd106c15e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -28288,7 +28264,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/PullRequest.php",
-                "hash": "e32994bfcc8eb665f1a5e9e7e30905be"
+                "hash": "8acf0acfbc3a96f4cf2a23b389de479b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/PullRequestReviewComment.php",
@@ -28696,7 +28672,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookSecretScanningAlertValidated.php",
-                "hash": "b3142114941565a3a8e7359e5ababd69"
+                "hash": "469c5ee20dd2b2f7f1312fb824487b07"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/Pages\/Deployments.php",
@@ -29228,7 +29204,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhooksPullRequest5.php",
-                "hash": "ac3028e257b942cc7a140e05ed92f5d6"
+                "hash": "cd06361aad8669fbca39ed44835cc61e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhooksReviewComment.php",
@@ -29468,19 +29444,19 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhooksPullRequest5\/Head.php",
-                "hash": "a2ba334cd9c1607a1aaec3eea4aa7ba2"
+                "hash": "d8e3100f4c64a22b11dcd1ead44d8ca4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhooksPullRequest5\/Base.php",
-                "hash": "854acdc735473183fc509836172a36f0"
+                "hash": "f67178a9cadabb8b0c9952045488187f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhooksPullRequest5\/Head\/Repo.php",
-                "hash": "d9bcec57392af50d527f1180a281b1ef"
+                "hash": "3be33894631ca0a6e94636180afe7c33"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhooksPullRequest5\/Base\/Repo.php",
-                "hash": "4a043f20c3b8f56cc68a61c923d91cb1"
+                "hash": "1ec831f16eb2494cb0ddb12642b244de"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhooksPullRequest5\/Head\/Repo\/License.php",
@@ -29579,10 +29555,6 @@
                 "hash": "3a7dfe61554e0bde61f9d0ad9c82cff1"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet9F8559A9\/Tiet7FE3917D\/TietE7014A4E\/Tiet74E14507.php",
-                "hash": "731806949701c7b579c6468e205d87d6"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/CodeScanning\/CreateVariantAnalysis.php",
                 "hash": "0974fad95683bf9de0cc82dfbf363dc9"
             },
@@ -29636,11 +29608,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningVariantAnalysis.php",
-                "hash": "68cacca6800d4a23b58ca1d6196d0658"
+                "hash": "7382c52d5062f8e76c63d1f100fd4aeb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningVariantAnalysisRepoTask.php",
-                "hash": "83184e0bcae1f0891daa474a11cdb6fa"
+                "hash": "61544ee1ea7513c73220059885218a3b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningVariantAnalysis\/ScannedRepositories.php",
@@ -29676,7 +29648,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/EnterpriseTeam.php",
-                "hash": "51e5783bc5a7386bf224c3f287495da8"
+                "hash": "7fc1fb4a6b32ed3dbc505149bcfddaa0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Attribute\/CastUnionToType\/Schema\/CopilotSeatDetails\/Organization.php",
@@ -29728,7 +29700,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Copilot\/ListCopilotSeatsForEnterprise\/Response\/ApplicationJson\/Ok.php",
-                "hash": "b212bc65fdf06cf1c92e90ccc075a677"
+                "hash": "e56860ef1e46c65d051b19c5e30e6480"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Enterprises\/Enterprise\/Copilot\/Billing\/Seats.php",
@@ -29852,7 +29824,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeSecurityConfigurationRepositories.php",
-                "hash": "c80a9b18774427699fa7afd0975f796c"
+                "hash": "57e29c9da4fd2c0fcd7883610028402e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionRuleEdited\/Changes\/LockAllowsForkSync.php",
@@ -30200,7 +30172,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Users\/GetById\/Response\/ApplicationJson\/Ok.php",
-                "hash": "e4b411c08fcda720a5042f3d83b3530a"
+                "hash": "fe1b859ba1f7633498684cc0bb873d5a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/WebHook\/ProjectsV2StatusUpdate.php",
@@ -30235,10 +30207,6 @@
                 "hash": "e5bc56ab37ad6c8563a9afe45c6fbf6e"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietFD3327C5\/Tiet24308F51\/TietDBCC1705\/TietD0D02E7C.php",
-                "hash": "eb4d44950f82b1fcb159ccb0d22338ee"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietDB1818F3\/TietFAAF4593\/Tiet69E637B9\/TietC5935A1F.php",
                 "hash": "f59c6d388bc88d4ec194073d562deea0"
             },
@@ -30247,44 +30215,76 @@
                 "hash": "2399c66c0e1789d061a5a9b20dc8bdff"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet73D03AC6\/Tiet052682E9\/Tiet3922826A\/Tiet25B9F4B0.php",
-                "hash": "8ccfcc99aa6602bf74c9857f3ce19c1c"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet9FCB5AB1\/TietCE48D446\/TietD8B2ACF3\/Tiet688D9716.php",
-                "hash": "5e3ef575e6c80079a4b71348fcda22fd"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietA1A170D3\/Tiet6BB4F183\/Tiet5A21E86F\/Tiet6C397B72.php",
-                "hash": "45dde49d6225bb2151cff1c7c8f15abb"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietFF85C0C8\/Tiet0DD04D4E\/Tiet8381CD74\/Tiet891F3856.php",
-                "hash": "c97ebdb8df0a80ac14d3212b5c6851bb"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet1F36541D\/TietE8E8E0D0\/TietBA97175F\/TietDC150087.php",
-                "hash": "6dfb8ab42eeab5c6f74673f3dd042990"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet43FD1D88\/TietDEAAA799\/Tiet01ECA36F\/Tiet538E4778.php",
-                "hash": "c8a14989507f8cb04d4648091f25f7f7"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietD1BD15EA\/TietA9D57493\/TietE57747F5\/Tiet4486C3A8.php",
-                "hash": "402f67a2b1d6b657c058d0801779f9cf"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet854A455F\/Tiet2BB1C81C\/Tiet2D8F2395\/Tiet76209270.php",
                 "hash": "790d749b7c19744ba54bcd4bf67ba0c4"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietB5FD6AD8\/Tiet05C50A7F\/TietB25A2C5E\/Tiet69FD0292.php",
-                "hash": "465728f43637318297f99d3b49fd7dcb"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietE9815781\/TietB9DB9714\/Tiet0A501567\/Tiet41334D62.php",
                 "hash": "4609f5d19d9bdff85776533b2a7d6179"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietA8721462\/TietF54A551E\/TietB4F19C3B\/TietDD50B49F.php",
+                "hash": "35677fd52a80514e9e7d90ed6d4882d5"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet1158398C\/TietE3009A11\/Tiet3CE979A2\/Tiet0834F071.php",
+                "hash": "4dad85e54eb1a77bf682ed0b78cba26f"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet708A5A7B\/TietC387586A\/Tiet26E9ACC1\/TietF9004EB5.php",
+                "hash": "90e55e3eb406648416c3e9c123eb3be8"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet9F6D8BFF\/Tiet7F9554AC\/TietC580CE92\/TietC5BAFE6D.php",
+                "hash": "42cefb78192dbfc1c85bfe96a7d3b3c4"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietC81D8778\/TietEEF68881\/TietA575AC5B\/Tiet10C8499E.php",
+                "hash": "e23bca9aa92de0934e8abf96f4e27ab8"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet070CDFA2\/TietE9BEF6E9\/Tiet0F07A943\/Tiet66A40160.php",
+                "hash": "cd0f9e051a6267bf88541ae530bd8ecd"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet01453758\/Tiet6E98457A\/Tiet8F1E61C9\/Tiet3FD9A6C4.php",
+                "hash": "a072b9bf5d621d84ecb9f8522744aa11"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet8354B603\/Tiet6E4D1374\/Tiet4DDFFFE7\/Tiet46656F78.php",
+                "hash": "e1a26b58dba8566bd01aafa5d3eb7332"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet65AF0F7C\/Tiet2249FF1C\/TietFB00DC6B\/Tiet30B55640.php",
+                "hash": "278e083163d4473532822aa88e4018ad"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet912F8E91\/Tiet252B0CCE\/Tiet2BBBD0F2\/TietCE74E055.php",
+                "hash": "1bac26834d2c76e27c632952604fb33c"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietF4F1FD81\/TietD08ED9C3\/Tiet0EF7D114\/TietCD51C92C.php",
+                "hash": "c2ef827837fa9a1f18828661b88d63a3"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet30EDC031\/Tiet13F69FDF\/Tiet9DEA4839\/Tiet63EE8589.php",
+                "hash": "01846d8f197a347257a58c09f435e6fd"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet4A8830BA\/Tiet7170E02A\/Tiet9CDB3C13\/Tiet33DA8584.php",
+                "hash": "3918a85b46f5a0ee708b35a0ad11c196"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet76BADE77\/Tiet47C9CE08\/Tiet352DAA6F\/Tiet98EDCA2A.php",
+                "hash": "07a0f16f132a19e9d8cec462c3a8cfc1"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietE551D4D6\/Tiet53E870DE\/TietB41DE73C\/Tiet949CC655.php",
+                "hash": "136ffe98ff82664a690bbaa9490792ad"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietA56E04B2\/Tiet87E35262\/Tiet960294EF\/Tiet9CED5A0E.php",
+                "hash": "2cc0aacc6a4cef12676e8a260c2b0e83"
             }
         ]
     },

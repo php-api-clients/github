@@ -156,6 +156,7 @@ final readonly class CombinedCommitStatus
             "properties": {
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1296269
                     ]

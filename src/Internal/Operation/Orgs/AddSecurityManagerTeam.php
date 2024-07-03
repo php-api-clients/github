@@ -41,12 +41,6 @@ final class AddSecurityManagerTeam
              **/
             case 204:
                 return new WithoutBody(204, []);
-            /**
-             * The organization has reached the maximum number of security manager teams.
-             **/
-
-            case 409:
-                return new WithoutBody(409, []);
         }
 
         throw new RuntimeException('Unable to find matching response code and content type');

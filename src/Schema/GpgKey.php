@@ -30,6 +30,7 @@ final readonly class GpgKey
     "properties": {
         "id": {
             "type": "integer",
+            "format": "int64",
             "examples": [
                 3
             ]
@@ -87,7 +88,8 @@ final readonly class GpgKey
                 "type": "object",
                 "properties": {
                     "id": {
-                        "type": "integer"
+                        "type": "integer",
+                        "format": "int64"
                     },
                     "primary_key_id": {
                         "type": "integer"

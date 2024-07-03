@@ -837,6 +837,7 @@ final readonly class WebhookDiscussionUnanswered
                 "id": {
                     "type": "integer",
                     "description": "Unique identifier of the repository",
+                    "format": "int64",
                     "examples": [
                         42
                     ]

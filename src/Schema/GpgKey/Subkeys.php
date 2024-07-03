@@ -12,7 +12,8 @@ final readonly class Subkeys
     "type": "object",
     "properties": {
         "id": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
         },
         "primary_key_id": {
             "type": "integer"

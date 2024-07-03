@@ -509,6 +509,7 @@ final readonly class InstallationToken
                     "id": {
                         "type": "integer",
                         "description": "Unique identifier of the repository",
+                        "format": "int64",
                         "examples": [
                             42
                         ]

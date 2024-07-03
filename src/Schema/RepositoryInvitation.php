@@ -27,6 +27,7 @@ final readonly class RepositoryInvitation
         "id": {
             "type": "integer",
             "description": "Unique identifier of the repository invitation.",
+            "format": "int64",
             "examples": [
                 42
             ]
@@ -85,6 +86,7 @@ final readonly class RepositoryInvitation
             "properties": {
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1296269
                     ]

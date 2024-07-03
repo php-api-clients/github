@@ -22,7 +22,6 @@ final readonly class AddSecurityManagerTeam
     {
     }
 
-    /** @return */
     public function call(string $org, string $teamSlug): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\AddSecurityManagerTeam($org, $teamSlug);

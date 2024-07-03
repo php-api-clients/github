@@ -528,7 +528,6 @@ final class Orgs
         return $this->operators->orgs👷ListSecurityManagerTeams()->call($org);
     }
 
-    /** @return */
     public function addSecurityManagerTeam(string $org, string $teamSlug): WithoutBody
     {
         return $this->operators->orgs👷AddSecurityManagerTeam()->call($org, $teamSlug);

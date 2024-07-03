@@ -24,7 +24,8 @@ final readonly class EnterpriseTeam
     "type": "object",
     "properties": {
         "id": {
-            "type": "integer"
+            "type": "integer",
+            "format": "int64"
         },
         "name": {
             "type": "string"

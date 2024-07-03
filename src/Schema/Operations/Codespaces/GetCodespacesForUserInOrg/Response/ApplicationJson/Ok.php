@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\Operations\Codespaces\GetCodespacesFor
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Ok extends Schema\AliasAbstract\TietD1BD15EA\TietA9D57493\TietE57747F5\Tiet4486C3A8
+final readonly class Ok extends Schema\AliasAbstract\Tiet76BADE77\Tiet47C9CE08\Tiet352DAA6F\Tiet98EDCA2A
 {
 }
