@@ -221,10 +221,11 @@ final readonly class BranchWithProtection
                     }
                 },
                 "author": {
-                    "anyOf": [
-                        {
-                            "type": "null"
-                        },
+                    "type": [
+                        "null",
+                        "object"
+                    ],
+                    "oneOf": [
                         {
                             "title": "Simple User",
                             "required": [
@@ -386,14 +387,22 @@ final readonly class BranchWithProtection
                                 }
                             },
                             "description": "A GitHub user."
+                        },
+                        {
+                            "title": "Empty Object",
+                            "type": "object",
+                            "properties": {},
+                            "description": "An object without any properties.",
+                            "additionalProperties": false
                         }
                     ]
                 },
                 "committer": {
-                    "anyOf": [
-                        {
-                            "type": "null"
-                        },
+                    "type": [
+                        "null",
+                        "object"
+                    ],
+                    "oneOf": [
                         {
                             "title": "Simple User",
                             "required": [
@@ -555,6 +564,13 @@ final readonly class BranchWithProtection
                                 }
                             },
                             "description": "A GitHub user."
+                        },
+                        {
+                            "title": "Empty Object",
+                            "type": "object",
+                            "properties": {},
+                            "description": "An object without any properties.",
+                            "additionalProperties": false
                         }
                     ]
                 },
@@ -2774,52 +2790,8 @@ final readonly class BranchWithProtection
                 "signature": "generated"
             }
         },
-        "author": {
-            "name": "generated",
-            "email": "generated",
-            "login": "octocat",
-            "id": 1,
-            "node_id": "MDQ6VXNlcjE=",
-            "avatar_url": "https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif",
-            "gravatar_id": "41d064eb2195891e12d0413f63227ea7",
-            "url": "https:\\/\\/api.github.com\\/users\\/octocat",
-            "html_url": "https:\\/\\/github.com\\/octocat",
-            "followers_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/followers",
-            "following_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/following{\\/other_user}",
-            "gists_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/gists{\\/gist_id}",
-            "starred_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/starred{\\/owner}{\\/repo}",
-            "subscriptions_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/subscriptions",
-            "organizations_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/orgs",
-            "repos_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/repos",
-            "events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/events{\\/privacy}",
-            "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
-            "type": "User",
-            "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
-        },
-        "committer": {
-            "name": "generated",
-            "email": "generated",
-            "login": "octocat",
-            "id": 1,
-            "node_id": "MDQ6VXNlcjE=",
-            "avatar_url": "https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif",
-            "gravatar_id": "41d064eb2195891e12d0413f63227ea7",
-            "url": "https:\\/\\/api.github.com\\/users\\/octocat",
-            "html_url": "https:\\/\\/github.com\\/octocat",
-            "followers_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/followers",
-            "following_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/following{\\/other_user}",
-            "gists_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/gists{\\/gist_id}",
-            "starred_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/starred{\\/owner}{\\/repo}",
-            "subscriptions_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/subscriptions",
-            "organizations_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/orgs",
-            "repos_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/repos",
-            "events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/events{\\/privacy}",
-            "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
-            "type": "User",
-            "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
-        },
+        "author": null,
+        "committer": null,
         "parents": [
             {
                 "sha": "7638417db6d59f3c431d3e1f261cc637155684cd",

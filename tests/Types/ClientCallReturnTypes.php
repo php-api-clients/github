@@ -342,7 +342,7 @@ assertType('Observable<Schema\\OrganizationSecretScanningAlert>', $client->call(
 assertType('Observable<Schema\\OrganizationSecretScanningAlert>', $client->call('LIST /orgs/{org}/secret-scanning/alerts'));
 assertType('Observable<Schema\\RepositoryAdvisory>', $client->call('GET /orgs/{org}/security-advisories'));
 assertType('Observable<Schema\\TeamSimple>', $client->call('GET /orgs/{org}/security-managers'));
-assertType('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('PUT /orgs/{org}/security-managers/teams/{team_slug}'));
+assertType('', $client->call('PUT /orgs/{org}/security-managers/teams/{team_slug}'));
 assertType('', $client->call('DELETE /orgs/{org}/security-managers/teams/{team_slug}'));
 assertType('', $client->call('GET /orgs/{org}/settings/billing/actions'));
 assertType('', $client->call('GET /orgs/{org}/settings/billing/packages'));

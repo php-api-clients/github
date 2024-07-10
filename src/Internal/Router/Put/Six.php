@@ -20,7 +20,6 @@ final class Six
     {
     }
 
-    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|EmptyObject|OrgCustomProperty|RepositoryInvitation|FileCommit|Environment|RepositoryRuleset
     {
         if ($pathChunks[0] === '') {
