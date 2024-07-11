@@ -82,6 +82,15 @@ final readonly class ApplicationJson
             "type": "string",
             "description": "The enablement status of secret scanning push protection"
         },
+        "secret_scanning_validity_checks": {
+            "enum": [
+                "enabled",
+                "disabled",
+                "not_set"
+            ],
+            "type": "string",
+            "description": "The enablement status of secret scanning validity checks"
+        },
         "private_vulnerability_reporting": {
             "enum": [
                 "enabled",
@@ -106,6 +115,7 @@ final readonly class ApplicationJson
     "code_scanning_default_setup": "enabled",
     "secret_scanning": "enabled",
     "secret_scanning_push_protection": "enabled",
+    "secret_scanning_validity_checks": "enabled",
     "private_vulnerability_reporting": "enabled"
 }';
 
@@ -119,6 +129,7 @@ final readonly class ApplicationJson
      * codeScanningDefaultSetup: The enablement status of code scanning default setup
      * secretScanning: The enablement status of secret scanning
      * secretScanningPushProtection: The enablement status of secret scanning push protection
+     * secretScanningValidityChecks: The enablement status of secret scanning validity checks
      * privateVulnerabilityReporting: The enablement status of private vulnerability reporting
      */
     public function __construct(public string|null $name, public string|null $description, #[MapFrom('advanced_security')]
@@ -128,7 +139,8 @@ final readonly class ApplicationJson
     public string|null $dependabotSecurityUpdates, #[MapFrom('code_scanning_default_setup')]
     public string|null $codeScanningDefaultSetup, #[MapFrom('secret_scanning')]
     public string|null $secretScanning, #[MapFrom('secret_scanning_push_protection')]
-    public string|null $secretScanningPushProtection, #[MapFrom('private_vulnerability_reporting')]
+    public string|null $secretScanningPushProtection, #[MapFrom('secret_scanning_validity_checks')]
+    public string|null $secretScanningValidityChecks, #[MapFrom('private_vulnerability_reporting')]
     public string|null $privateVulnerabilityReporting,)
     {
     }

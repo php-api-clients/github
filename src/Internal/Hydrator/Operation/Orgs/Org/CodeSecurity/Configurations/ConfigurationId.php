@@ -173,6 +173,17 @@ class ConfigurationId implements ObjectMapper
 
             after_secretScanningPushProtection:
 
+            $value = $payload['secret_scanning_validity_checks'] ?? null;
+
+            if ($value === null) {
+                $properties['secretScanningValidityChecks'] = null;
+                goto after_secretScanningValidityChecks;
+            }
+
+            $properties['secretScanningValidityChecks'] = $value;
+
+            after_secretScanningValidityChecks:
+
             $value = $payload['private_vulnerability_reporting'] ?? null;
 
             if ($value === null) {
@@ -578,6 +589,14 @@ class ConfigurationId implements ObjectMapper
         }
 
         after_secretScanningPushProtection:        $result['secret_scanning_push_protection'] = $secretScanningPushProtection;
+
+        $secretScanningValidityChecks = $object->secretScanningValidityChecks;
+
+        if ($secretScanningValidityChecks === null) {
+            goto after_secretScanningValidityChecks;
+        }
+
+        after_secretScanningValidityChecks:        $result['secret_scanning_validity_checks'] = $secretScanningValidityChecks;
 
         $privateVulnerabilityReporting = $object->privateVulnerabilityReporting;
 

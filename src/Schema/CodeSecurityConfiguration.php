@@ -93,6 +93,15 @@ final readonly class CodeSecurityConfiguration
             "type": "string",
             "description": "The enablement status of secret scanning push protection"
         },
+        "secret_scanning_validity_checks": {
+            "enum": [
+                "enabled",
+                "disabled",
+                "not_set"
+            ],
+            "type": "string",
+            "description": "The enablement status of secret scanning validity checks"
+        },
         "private_vulnerability_reporting": {
             "enum": [
                 "enabled",
@@ -137,6 +146,7 @@ final readonly class CodeSecurityConfiguration
     "code_scanning_default_setup": "enabled",
     "secret_scanning": "enabled",
     "secret_scanning_push_protection": "enabled",
+    "secret_scanning_validity_checks": "enabled",
     "private_vulnerability_reporting": "enabled",
     "url": "https:\\/\\/example.com\\/",
     "html_url": "https:\\/\\/example.com\\/",
@@ -156,6 +166,7 @@ final readonly class CodeSecurityConfiguration
      * codeScanningDefaultSetup: The enablement status of code scanning default setup
      * secretScanning: The enablement status of secret scanning
      * secretScanningPushProtection: The enablement status of secret scanning push protection
+     * secretScanningValidityChecks: The enablement status of secret scanning validity checks
      * privateVulnerabilityReporting: The enablement status of private vulnerability reporting
      * url: The URL of the configuration
      * htmlUrl: The URL of the configuration
@@ -168,7 +179,8 @@ final readonly class CodeSecurityConfiguration
     public string|null $dependabotSecurityUpdates, #[MapFrom('code_scanning_default_setup')]
     public string|null $codeScanningDefaultSetup, #[MapFrom('secret_scanning')]
     public string|null $secretScanning, #[MapFrom('secret_scanning_push_protection')]
-    public string|null $secretScanningPushProtection, #[MapFrom('private_vulnerability_reporting')]
+    public string|null $secretScanningPushProtection, #[MapFrom('secret_scanning_validity_checks')]
+    public string|null $secretScanningValidityChecks, #[MapFrom('private_vulnerability_reporting')]
     public string|null $privateVulnerabilityReporting, public string|null $url, #[MapFrom('html_url')]
     public string|null $htmlUrl, #[MapFrom('created_at')]
     public string|null $createdAt, #[MapFrom('updated_at')]

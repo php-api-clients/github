@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet4A8830BA\Tiet7170E02A\Tiet9CDB3C13;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet17613DC9\TietF76E0494\TietB0772899;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class Tiet33DA8584
+abstract readonly class Tiet91E3F984
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -820,6 +820,18 @@ abstract readonly class Tiet33DA8584
                                         "type": "string"
                                     }
                                 }
+                            },
+                            "secret_scanning_non_provider_patterns": {
+                                "type": "object",
+                                "properties": {
+                                    "status": {
+                                        "enum": [
+                                            "enabled",
+                                            "disabled"
+                                        ],
+                                        "type": "string"
+                                    }
+                                }
                             }
                         }
                     }
@@ -976,6 +988,9 @@ abstract readonly class Tiet33DA8584
                 },
                 "secret_scanning_push_protection": {
                     "status": "disabled"
+                },
+                "secret_scanning_non_provider_patterns": {
+                    "status": "disabled"
                 }
             }
         },
@@ -1120,6 +1135,9 @@ abstract readonly class Tiet33DA8584
                     "status": "disabled"
                 },
                 "secret_scanning_push_protection": {
+                    "status": "disabled"
+                },
+                "secret_scanning_non_provider_patterns": {
                     "status": "disabled"
                 }
             }

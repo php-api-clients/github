@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietE551D4D6\Tiet53E870DE\TietB41DE73C;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietA5593530\TietD4C63CAD\Tiet95D73CC3;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class Tiet949CC655
+abstract readonly class TietF1B17EC4
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -1598,6 +1598,18 @@ abstract readonly class Tiet949CC655
                                                 "type": "string"
                                             }
                                         }
+                                    },
+                                    "secret_scanning_non_provider_patterns": {
+                                        "type": "object",
+                                        "properties": {
+                                            "status": {
+                                                "enum": [
+                                                    "enabled",
+                                                    "disabled"
+                                                ],
+                                                "type": "string"
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -2404,6 +2416,18 @@ abstract readonly class Tiet949CC655
                                                 "type": "string"
                                             }
                                         }
+                                    },
+                                    "secret_scanning_non_provider_patterns": {
+                                        "type": "object",
+                                        "properties": {
+                                            "status": {
+                                                "enum": [
+                                                    "enabled",
+                                                    "disabled"
+                                                ],
+                                                "type": "string"
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -2666,6 +2690,9 @@ abstract readonly class Tiet949CC655
                     },
                     "secret_scanning_push_protection": {
                         "status": "disabled"
+                    },
+                    "secret_scanning_non_provider_patterns": {
+                        "status": "disabled"
                     }
                 }
             },
@@ -2810,6 +2837,9 @@ abstract readonly class Tiet949CC655
                         "status": "disabled"
                     },
                     "secret_scanning_push_protection": {
+                        "status": "disabled"
+                    },
+                    "secret_scanning_non_provider_patterns": {
                         "status": "disabled"
                     }
                 }
@@ -3049,6 +3079,9 @@ abstract readonly class Tiet949CC655
                     },
                     "secret_scanning_push_protection": {
                         "status": "disabled"
+                    },
+                    "secret_scanning_non_provider_patterns": {
+                        "status": "disabled"
                     }
                 }
             },
@@ -3193,6 +3226,9 @@ abstract readonly class Tiet949CC655
                         "status": "disabled"
                     },
                     "secret_scanning_push_protection": {
+                        "status": "disabled"
+                    },
+                    "secret_scanning_non_provider_patterns": {
                         "status": "disabled"
                     }
                 }

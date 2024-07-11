@@ -832,6 +832,18 @@ final readonly class RepositoryInvitation
                                     "type": "string"
                                 }
                             }
+                        },
+                        "secret_scanning_non_provider_patterns": {
+                            "type": "object",
+                            "properties": {
+                                "status": {
+                                    "enum": [
+                                        "enabled",
+                                        "disabled"
+                                    ],
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 }
@@ -1365,6 +1377,9 @@ final readonly class RepositoryInvitation
                 "status": "disabled"
             },
             "secret_scanning_push_protection": {
+                "status": "disabled"
+            },
+            "secret_scanning_non_provider_patterns": {
                 "status": "disabled"
             }
         }

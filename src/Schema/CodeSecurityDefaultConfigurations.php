@@ -105,6 +105,15 @@ final readonly class CodeSecurityDefaultConfigurations
                     "type": "string",
                     "description": "The enablement status of secret scanning push protection"
                 },
+                "secret_scanning_validity_checks": {
+                    "enum": [
+                        "enabled",
+                        "disabled",
+                        "not_set"
+                    ],
+                    "type": "string",
+                    "description": "The enablement status of secret scanning validity checks"
+                },
                 "private_vulnerability_reporting": {
                     "enum": [
                         "enabled",
@@ -153,6 +162,7 @@ final readonly class CodeSecurityDefaultConfigurations
         "code_scanning_default_setup": "enabled",
         "secret_scanning": "enabled",
         "secret_scanning_push_protection": "enabled",
+        "secret_scanning_validity_checks": "enabled",
         "private_vulnerability_reporting": "enabled",
         "url": "https:\\/\\/example.com\\/",
         "html_url": "https:\\/\\/example.com\\/",

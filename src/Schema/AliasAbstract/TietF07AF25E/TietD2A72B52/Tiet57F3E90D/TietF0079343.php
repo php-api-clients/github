@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet76BADE77\Tiet47C9CE08\Tiet352DAA6F;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietF07AF25E\TietD2A72B52\Tiet57F3E90D;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class Tiet98EDCA2A
+abstract readonly class TietF0079343
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -1206,6 +1206,18 @@ abstract readonly class Tiet98EDCA2A
                                                 "type": "string"
                                             }
                                         }
+                                    },
+                                    "secret_scanning_non_provider_patterns": {
+                                        "type": "object",
+                                        "properties": {
+                                            "status": {
+                                                "enum": [
+                                                    "enabled",
+                                                    "disabled"
+                                                ],
+                                                "type": "string"
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -1737,6 +1749,9 @@ abstract readonly class Tiet98EDCA2A
                     },
                     "secret_scanning_push_protection": {
                         "status": "disabled"
+                    },
+                    "secret_scanning_non_provider_patterns": {
+                        "status": "disabled"
                     }
                 }
             },
@@ -1977,6 +1992,9 @@ abstract readonly class Tiet98EDCA2A
                         "status": "disabled"
                     },
                     "secret_scanning_push_protection": {
+                        "status": "disabled"
+                    },
+                    "secret_scanning_non_provider_patterns": {
                         "status": "disabled"
                     }
                 }
