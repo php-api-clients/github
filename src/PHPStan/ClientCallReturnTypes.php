@@ -695,6 +695,10 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('Observable<Schema\\CodeSecurityDefaultConfigurations>|WithoutBody');
         }
 
+        if ($call === 'DELETE /orgs/{org}/code-security/configurations/detach') {
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
         if ($call === 'GET /orgs/{org}/code-security/configurations/{configuration_id}') {
             return $this->typeResolver->resolve('');
         }
@@ -1996,7 +2000,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/automated-security-fixes') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\CheckAutomatedSecurityFixes|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'PUT /repos/{owner}/{repo}/automated-security-fixes') {

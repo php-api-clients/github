@@ -3730,6 +3730,26 @@ $client->operations()->codeSecurity()->getDefaultConfigurations(        org: 'ge
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#get-default-code-security-configurations).
 
 
+### code-security/detach-configuration
+
+Detach configurations from repositories
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/code-security/configurations/detach', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->detachConfiguration(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#detach-configurations-from-repositories).
+
+
 ### code-security/get-configuration
 
 Get a code security configuration

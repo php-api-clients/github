@@ -111,6 +111,14 @@ final readonly class CodeSecurityConfiguration
             "type": "string",
             "description": "The enablement status of private vulnerability reporting"
         },
+        "enforcement": {
+            "enum": [
+                "enforced",
+                "unenforced"
+            ],
+            "type": "string",
+            "description": "The enforcement status for a security configuration"
+        },
         "url": {
             "type": "string",
             "description": "The URL of the configuration",
@@ -148,6 +156,7 @@ final readonly class CodeSecurityConfiguration
     "secret_scanning_push_protection": "enabled",
     "secret_scanning_validity_checks": "enabled",
     "private_vulnerability_reporting": "enabled",
+    "enforcement": "enforced",
     "url": "https:\\/\\/example.com\\/",
     "html_url": "https:\\/\\/example.com\\/",
     "created_at": "1970-01-01T00:00:00+00:00",
@@ -168,6 +177,7 @@ final readonly class CodeSecurityConfiguration
      * secretScanningPushProtection: The enablement status of secret scanning push protection
      * secretScanningValidityChecks: The enablement status of secret scanning validity checks
      * privateVulnerabilityReporting: The enablement status of private vulnerability reporting
+     * enforcement: The enforcement status for a security configuration
      * url: The URL of the configuration
      * htmlUrl: The URL of the configuration
      */
@@ -181,7 +191,7 @@ final readonly class CodeSecurityConfiguration
     public string|null $secretScanning, #[MapFrom('secret_scanning_push_protection')]
     public string|null $secretScanningPushProtection, #[MapFrom('secret_scanning_validity_checks')]
     public string|null $secretScanningValidityChecks, #[MapFrom('private_vulnerability_reporting')]
-    public string|null $privateVulnerabilityReporting, public string|null $url, #[MapFrom('html_url')]
+    public string|null $privateVulnerabilityReporting, public string|null $enforcement, public string|null $url, #[MapFrom('html_url')]
     public string|null $htmlUrl, #[MapFrom('created_at')]
     public string|null $createdAt, #[MapFrom('updated_at')]
     public string|null $updatedAt,)

@@ -47,7 +47,7 @@ final class CheckAutomatedSecurityFixes
                 $body = json_decode($response->getBody()->getContents(), true);
                 switch ($code) {
                     /**
-                     * Response if dependabot is enabled
+                     * Response if Dependabot is enabled
                      **/
                     case 200:
                         $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CheckAutomatedSecurityFixes::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
@@ -60,7 +60,7 @@ final class CheckAutomatedSecurityFixes
 
         switch ($code) {
             /**
-             * Not Found if dependabot is not enabled for the repository
+             * Not Found if Dependabot is not enabled for the repository
              **/
             case 404:
                 return new WithoutBody(404, []);

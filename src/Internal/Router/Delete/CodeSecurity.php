@@ -19,6 +19,20 @@ final class CodeSecurity
     {
     }
 
+    public function detachConfiguration(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        $operator = new Internal\Operator\CodeSecurity\DetachConfiguration($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀Detach());
+
+        return $operator->call($arguments['org'], $params);
+    }
+
     /** @return */
     public function deleteConfiguration(array $params): WithoutBody
     {

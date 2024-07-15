@@ -1,5 +1,5 @@
 {
-    "specHash": "12b8dbc76c459480c3e846bc22d32615",
+    "specHash": "c956dacd1ed3014e8efb91f1eb6a337d",
     "generatedFiles": {
         "files": [
             {
@@ -288,7 +288,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrganizationFull.php",
-                "hash": "fd40f8505e02daedbc846d0406c9eb96"
+                "hash": "3a018ac7ea2387bbc8405cb2b90dfd3f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ActionsCacheUsageOrgEnterprise.php",
@@ -4468,7 +4468,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Orgs\/Update\/Request\/ApplicationJson.php",
-                "hash": "c0422933c5557db861e6207a78b73542"
+                "hash": "f6f7aad784e525decd37a79916b6a09d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Orgs\/Update\/Response\/ApplicationJson\/UnprocessableEntity.php",
@@ -5612,7 +5612,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "a0291fcee4301d2224ce2487ce42e878"
+                "hash": "b05be33ef97b8b7d3366d6e585dcd44a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -17040,11 +17040,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Repos\/CheckAutomatedSecurityFixes.php",
-                "hash": "8c5af271c27f39436ecca2b44c4ee10e"
+                "hash": "d111ff8130aefccc96d5cfbc13ecab4b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/CheckAutomatedSecurityFixes.php",
-                "hash": "661435f046f86ba7d65213887f17c7f1"
+                "hash": "80f967cdb9cdd63cbcd64a69372c81e9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/CheckAutomatedSecurityFixesTest.php",
@@ -24476,7 +24476,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Repos.php",
-                "hash": "7f939a283bd4c652ec2384e186010197"
+                "hash": "99af889ce5ea9d2586ba5898f4edc7b3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Users.php",
@@ -24968,7 +24968,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Five.php",
-                "hash": "d99d9cc5cb5c29690e0b91c96416f739"
+                "hash": "f7000d6c43a48afcf7602d52940ffd2a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
@@ -25112,7 +25112,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Six.php",
-                "hash": "741f8353ae766d2cdbd56c0c5a43b801"
+                "hash": "08ccaed3cd1c6bf14a3562ee889d0655"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Eight.php",
@@ -25176,7 +25176,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operators.php",
-                "hash": "6dbff33fe8e4f51ca2329a661168cf0c"
+                "hash": "6a427f682377fe3c4636b772e67b5bf4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Root.php",
@@ -27168,7 +27168,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrators.php",
-                "hash": "c4d66f4e9938472ee0098a2e3cd70430"
+                "hash": "5acd7ef5acdf5f96cee2384a7f5c9bb9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrganizationSimpleWebhooks.php",
@@ -27788,11 +27788,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "34097be811968901ed3316c689e3d3eb"
+                "hash": "c4f8b4e0d0daaf6de6571573822d30a7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "b24dfb45ef8936c0dcfc11f99fb51c47"
+                "hash": "ff978093ecf334a8785c1f3add0fabe3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -29816,11 +29816,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeSecurityConfiguration.php",
-                "hash": "b8a95e4449711ae850dcd4a7e1380c6b"
+                "hash": "3079c2fbeb9341d5128ad0d86124c8a5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeSecurityDefaultConfigurations.php",
-                "hash": "30594d8562f33fb560d2de7512b01029"
+                "hash": "80a90378337a30e5cb817beb5bb56f4f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeSecurityConfigurationRepositories.php",
@@ -29852,11 +29852,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeSecurity\/CreateConfiguration\/Request\/ApplicationJson.php",
-                "hash": "a8a7a883076d166c4f26d1d27ee1a52c"
+                "hash": "dde9c21271d743e986c64b6b1c1e6039"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeSecurity\/UpdateConfiguration\/Request\/ApplicationJson.php",
-                "hash": "c2a989ef2179f49a9e7d74142d281468"
+                "hash": "f2e0674220f301a4860e99d1e2d407c5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeSecurity\/AttachConfiguration\/Request\/ApplicationJson.php",
@@ -29868,7 +29868,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/CodeSecurity\/SetConfigurationAsDefault\/Response\/ApplicationJson\/Ok.php",
-                "hash": "f0088d18c282cdae90d6c87195bb4d5d"
+                "hash": "e9b8b4a9300ca7d9535d546f1a9b80f6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/CodeSecurity.php",
@@ -29884,7 +29884,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/CodeSecurity.php",
-                "hash": "a692bc85c60dc4f6bcab53efd490a715"
+                "hash": "fb93ff0e33eac9591443590799764b01"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/CodeSecurity.php",
@@ -29892,11 +29892,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/CodeSecurity.php",
-                "hash": "3be55afa7a9f4ffce735a60d8aeba814"
+                "hash": "b4c7c93d9dbb2fd7c7f460a2962ab710"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/CodeSecurity\/Configurations.php",
-                "hash": "6094cba68ed0dfb76e28d8a5dff5f067"
+                "hash": "0b53c9f45bd4aae9493fd73813bf88da"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/CodeSecurity\/Configurations\/Defaults.php",
@@ -29904,7 +29904,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/CodeSecurity\/Configurations\/ConfigurationId.php",
-                "hash": "bd7df38d46045fecb136fe6256407f8a"
+                "hash": "870c6ee31d40d795fa4e3ee2027a4fd0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/CodeSecurity\/Configurations\/ConfigurationId\/Attach.php",
@@ -29912,7 +29912,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/CodeSecurity\/Configurations\/ConfigurationId\/Defaults.php",
-                "hash": "cf56ca7c6cbccfef97767e36022ac7fa"
+                "hash": "c2b302e68f2bfae240995c434f49c4c0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/CodeSecurity\/Configurations\/ConfigurationId\/Repositories.php",
@@ -30301,6 +30301,26 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietA5593530\/TietD4C63CAD\/Tiet95D73CC3\/TietF1B17EC4.php",
                 "hash": "d3532c34c3e68099213cce4009785394"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/CodeSecurity\/DetachConfiguration.php",
+                "hash": "e73f415e19fd297e7cff67ce040bfa7e"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/CodeSecurity\/DetachConfiguration.php",
+                "hash": "2ca4499f84bbfaa55ef332d199c03945"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/CodeSecurity\/DetachConfigurationTest.php",
+                "hash": "db4e24ba6dc75672ab80bbba15b3b07a"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeSecurity\/DetachConfiguration\/Request\/ApplicationJson.php",
+                "hash": "fa12f56c092f423a8bb62eec4443235b"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/CodeSecurity\/Configurations\/Detach.php",
+                "hash": "561cacd15f68beda2496e4381907de94"
             }
         ]
     },

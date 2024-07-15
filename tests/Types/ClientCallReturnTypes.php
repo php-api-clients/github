@@ -180,6 +180,7 @@ assertType('Observable<Schema\\CodeScanningOrganizationAlertItems>', $client->ca
 assertType('Observable<Schema\\CodeSecurityConfiguration>', $client->call('GET /orgs/{org}/code-security/configurations'));
 assertType('', $client->call('POST /orgs/{org}/code-security/configurations'));
 assertType('Observable<Schema\\CodeSecurityDefaultConfigurations>|WithoutBody', $client->call('GET /orgs/{org}/code-security/configurations/defaults'));
+assertType('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('DELETE /orgs/{org}/code-security/configurations/detach'));
 assertType('', $client->call('GET /orgs/{org}/code-security/configurations/{configuration_id}'));
 assertType('', $client->call('DELETE /orgs/{org}/code-security/configurations/{configuration_id}'));
 assertType('', $client->call('PATCH /orgs/{org}/code-security/configurations/{configuration_id}'));
@@ -505,7 +506,7 @@ assertType('Observable<Schema\\Autolink>', $client->call('GET /repos/{owner}/{re
 assertType('', $client->call('POST /repos/{owner}/{repo}/autolinks'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/autolinks/{autolink_id}'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/autolinks/{autolink_id}'));
-assertType('', $client->call('GET /repos/{owner}/{repo}/automated-security-fixes'));
+assertType('Schema\\CheckAutomatedSecurityFixes|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /repos/{owner}/{repo}/automated-security-fixes'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/automated-security-fixes'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/automated-security-fixes'));
 assertType('Observable<Schema\\ShortBranch>', $client->call('GET /repos/{owner}/{repo}/branches'));

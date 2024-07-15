@@ -203,7 +203,6 @@ final class Repos
         return $this->operators->repos👷DeleteAutolink()->call($owner, $repo, $autolinkId);
     }
 
-    /** @return */
     public function checkAutomatedSecurityFixes(string $owner, string $repo): CheckAutomatedSecurityFixes|WithoutBody
     {
         return $this->operators->repos👷CheckAutomatedSecurityFixes()->call($owner, $repo);

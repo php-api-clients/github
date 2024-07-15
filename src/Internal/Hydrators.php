@@ -108,6 +108,7 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Orgs\Org\CodeScanning\Alerts|null $operation🌀Orgs🌀Org🌀CodeScanning🌀Alerts                                                                                                                                                   = null;
     private Internal\Hydrator\Operation\Orgs\Org\CodeSecurity\Configurations|null $operation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations                                                                                                                                   = null;
     private Internal\Hydrator\Operation\Orgs\Org\CodeSecurity\Configurations\Defaults|null $operation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀Defaults                                                                                                                 = null;
+    private Internal\Hydrator\Operation\Orgs\Org\CodeSecurity\Configurations\Detach|null $operation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀Detach                                                                                                                     = null;
     private Internal\Hydrator\Operation\Orgs\Org\CodeSecurity\Configurations\ConfigurationId|null $operation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀ConfigurationId                                                                                                   = null;
     private Internal\Hydrator\Operation\Orgs\Org\CodeSecurity\Configurations\ConfigurationId\Attach|null $operation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀ConfigurationId🌀Attach                                                                                     = null;
     private Internal\Hydrator\Operation\Orgs\Org\CodeSecurity\Configurations\ConfigurationId\Defaults|null $operation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀ConfigurationId🌀Defaults                                                                                 = null;
@@ -2280,6 +2281,15 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀Defaults;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀Detach(): Internal\Hydrator\Operation\Orgs\Org\CodeSecurity\Configurations\Detach
+    {
+        if ($this->operation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀Detach instanceof Internal\Hydrator\Operation\Orgs\Org\CodeSecurity\Configurations\Detach === false) {
+            $this->operation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀Detach = new Internal\Hydrator\Operation\Orgs\Org\CodeSecurity\Configurations\Detach();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀Detach;
     }
 
     public function getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀ConfigurationId(): Internal\Hydrator\Operation\Orgs\Org\CodeSecurity\Configurations\ConfigurationId

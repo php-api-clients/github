@@ -123,6 +123,14 @@ final readonly class CodeSecurityDefaultConfigurations
                     "type": "string",
                     "description": "The enablement status of private vulnerability reporting"
                 },
+                "enforcement": {
+                    "enum": [
+                        "enforced",
+                        "unenforced"
+                    ],
+                    "type": "string",
+                    "description": "The enforcement status for a security configuration"
+                },
                 "url": {
                     "type": "string",
                     "description": "The URL of the configuration",
@@ -164,6 +172,7 @@ final readonly class CodeSecurityDefaultConfigurations
         "secret_scanning_push_protection": "enabled",
         "secret_scanning_validity_checks": "enabled",
         "private_vulnerability_reporting": "enabled",
+        "enforcement": "enforced",
         "url": "https:\\/\\/example.com\\/",
         "html_url": "https:\\/\\/example.com\\/",
         "created_at": "1970-01-01T00:00:00+00:00",

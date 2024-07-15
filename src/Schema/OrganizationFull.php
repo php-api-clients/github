@@ -369,42 +369,48 @@ final readonly class OrganizationFull
         },
         "advanced_security_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "deprecated": true,
             "examples": [
                 false
             ]
         },
         "dependabot_alerts_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to\\nthis organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "deprecated": true,
             "examples": [
                 false
             ]
         },
         "dependabot_security_updates_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "Whether dependabot security updates are automatically enabled for new repositories and repositories transferred\\nto this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "deprecated": true,
             "examples": [
                 false
             ]
         },
         "dependency_graph_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "Whether dependency graph is automatically enabled for new repositories and repositories transferred to this\\norganization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "deprecated": true,
             "examples": [
                 false
             ]
         },
         "secret_scanning_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "Whether secret scanning is automatically enabled for new repositories and repositories transferred to this\\norganization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "deprecated": true,
             "examples": [
                 false
             ]
         },
         "secret_scanning_push_protection_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "Whether secret scanning push protection is automatically enabled for new repositories and repositories\\ntransferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "deprecated": true,
             "examples": [
                 false
             ]
@@ -516,27 +522,34 @@ final readonly class OrganizationFull
 }';
 
     /**
-     * advancedSecurityEnabledForNewRepositories: Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.
+     * advancedSecurityEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+    Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.
 
     This field is only visible to organization owners or members of a team with the security manager role.
-     * dependabotAlertsEnabledForNewRepositories: Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to
-    this organization.
+     * dependabotAlertsEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+    Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.
 
     This field is only visible to organization owners or members of a team with the security manager role.
-     * dependabotSecurityUpdatesEnabledForNewRepositories: Whether dependabot security updates are automatically enabled for new repositories and repositories transferred
-    to this organization.
+     * dependabotSecurityUpdatesEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+    Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.
 
     This field is only visible to organization owners or members of a team with the security manager role.
-     * dependencyGraphEnabledForNewRepositories: Whether dependency graph is automatically enabled for new repositories and repositories transferred to this
-    organization.
+     * dependencyGraphEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+    Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.
 
     This field is only visible to organization owners or members of a team with the security manager role.
-     * secretScanningEnabledForNewRepositories: Whether secret scanning is automatically enabled for new repositories and repositories transferred to this
-    organization.
+     * secretScanningEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+    Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.
 
     This field is only visible to organization owners or members of a team with the security manager role.
-     * secretScanningPushProtectionEnabledForNewRepositories: Whether secret scanning push protection is automatically enabled for new repositories and repositories
-    transferred to this organization.
+     * secretScanningPushProtectionEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+
+    Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.
 
     This field is only visible to organization owners or members of a team with the security manager role.
      * secretScanningPushProtectionCustomLinkEnabled: Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.

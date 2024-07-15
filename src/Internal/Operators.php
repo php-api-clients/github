@@ -174,6 +174,7 @@ final class Operators
     private Internal\Operator\CodeSecurity\GetConfigurationsForOrg|null $codeSecurity👷GetConfigurationsForOrg                                                                       = null;
     private Internal\Operator\CodeSecurity\CreateConfiguration|null $codeSecurity👷CreateConfiguration                                                                               = null;
     private Internal\Operator\CodeSecurity\GetDefaultConfigurations|null $codeSecurity👷GetDefaultConfigurations                                                                     = null;
+    private Internal\Operator\CodeSecurity\DetachConfiguration|null $codeSecurity👷DetachConfiguration                                                                               = null;
     private Internal\Operator\CodeSecurity\GetConfiguration|null $codeSecurity👷GetConfiguration                                                                                     = null;
     private Internal\Operator\CodeSecurity\DeleteConfiguration|null $codeSecurity👷DeleteConfiguration                                                                               = null;
     private Internal\Operator\CodeSecurity\UpdateConfiguration|null $codeSecurity👷UpdateConfiguration                                                                               = null;
@@ -2606,6 +2607,15 @@ final class Operators
         }
 
         return $this->codeSecurity👷GetDefaultConfigurations;
+    }
+
+    public function codeSecurity👷DetachConfiguration(): Internal\Operator\CodeSecurity\DetachConfiguration
+    {
+        if ($this->codeSecurity👷DetachConfiguration instanceof Internal\Operator\CodeSecurity\DetachConfiguration === false) {
+            $this->codeSecurity👷DetachConfiguration = new Internal\Operator\CodeSecurity\DetachConfiguration($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀Detach());
+        }
+
+        return $this->codeSecurity👷DetachConfiguration;
     }
 
     public function codeSecurity👷GetConfiguration(): Internal\Operator\CodeSecurity\GetConfiguration

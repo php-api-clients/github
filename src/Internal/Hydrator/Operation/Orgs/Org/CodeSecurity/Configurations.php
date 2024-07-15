@@ -256,6 +256,17 @@ class Configurations implements ObjectMapper
 
             after_privateVulnerabilityReporting:
 
+            $value = $payload['enforcement'] ?? null;
+
+            if ($value === null) {
+                $properties['enforcement'] = null;
+                goto after_enforcement;
+            }
+
+            $properties['enforcement'] = $value;
+
+            after_enforcement:
+
             $value = $payload['url'] ?? null;
 
             if ($value === null) {
@@ -557,6 +568,14 @@ class Configurations implements ObjectMapper
         }
 
         after_privateVulnerabilityReporting:        $result['private_vulnerability_reporting'] = $privateVulnerabilityReporting;
+
+        $enforcement = $object->enforcement;
+
+        if ($enforcement === null) {
+            goto after_enforcement;
+        }
+
+        after_enforcement:        $result['enforcement'] = $enforcement;
 
         $url = $object->url;
 

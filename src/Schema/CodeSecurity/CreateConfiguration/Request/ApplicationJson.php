@@ -112,6 +112,15 @@ final readonly class ApplicationJson
             "type": "string",
             "description": "The enablement status of private vulnerability reporting",
             "default": "disabled"
+        },
+        "enforcement": {
+            "enum": [
+                "enforced",
+                "unenforced"
+            ],
+            "type": "string",
+            "description": "The status of enforcement",
+            "default": "enforced"
         }
     },
     "additionalProperties": false
@@ -129,7 +138,8 @@ final readonly class ApplicationJson
     "secret_scanning": "enabled",
     "secret_scanning_push_protection": "enabled",
     "secret_scanning_validity_checks": "enabled",
-    "private_vulnerability_reporting": "enabled"
+    "private_vulnerability_reporting": "enabled",
+    "enforcement": "enforced"
 }';
 
     /**
@@ -144,6 +154,7 @@ final readonly class ApplicationJson
      * secretScanningPushProtection: The enablement status of secret scanning push protection
      * secretScanningValidityChecks: The enablement status of secret scanning validity checks
      * privateVulnerabilityReporting: The enablement status of private vulnerability reporting
+     * enforcement: The status of enforcement
      */
     public function __construct(public string $name, public string $description, #[MapFrom('advanced_security')]
     public string|null $advancedSecurity, #[MapFrom('dependency_graph')]
@@ -154,7 +165,7 @@ final readonly class ApplicationJson
     public string|null $secretScanning, #[MapFrom('secret_scanning_push_protection')]
     public string|null $secretScanningPushProtection, #[MapFrom('secret_scanning_validity_checks')]
     public string|null $secretScanningValidityChecks, #[MapFrom('private_vulnerability_reporting')]
-    public string|null $privateVulnerabilityReporting,)
+    public string|null $privateVulnerabilityReporting, public string|null $enforcement,)
     {
     }
 }
