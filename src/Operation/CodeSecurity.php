@@ -35,6 +35,7 @@ final class CodeSecurity
         return $this->operators->codeSecurity👷GetDefaultConfigurations()->call($org);
     }
 
+    /** @return */
     public function detachConfiguration(string $org, array $params): WithoutBody
     {
         return $this->operators->codeSecurity👷DetachConfiguration()->call($org, $params);

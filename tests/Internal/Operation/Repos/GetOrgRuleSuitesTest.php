@@ -31,10 +31,11 @@ final class GetOrgRuleSuitesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/rulesets/rule-suites?repository_name=15&actor_name=generated&time_period=generated&rule_suite_result=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/rulesets/rule-suites?ref=generated&repository_name=15&actor_name=generated&time_period=generated&rule_suite_result=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Repos\GetOrgRuleSuites::OPERATION_MATCH, (static function (array $data): array {
             $data['org']               = 'generated';
+            $data['ref']               = 'generated';
             $data['repository_name']   = 15;
             $data['actor_name']        = 'generated';
             $data['time_period']       = 'generated';
@@ -56,9 +57,9 @@ final class GetOrgRuleSuitesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/rulesets/rule-suites?repository_name=15&actor_name=generated&time_period=generated&rule_suite_result=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/rulesets/rule-suites?ref=generated&repository_name=15&actor_name=generated&time_period=generated&rule_suite_result=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->getOrgRuleSuites('generated', 15, 'generated', 'generated', 'generated', 8, 1);
+        $result = $client->operations()->repos()->getOrgRuleSuites('generated', 'generated', 15, 'generated', 'generated', 'generated', 8, 1);
     }
 
     /** @test */
@@ -71,10 +72,11 @@ final class GetOrgRuleSuitesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/rulesets/rule-suites?repository_name=15&actor_name=generated&time_period=generated&rule_suite_result=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/rulesets/rule-suites?ref=generated&repository_name=15&actor_name=generated&time_period=generated&rule_suite_result=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Repos\GetOrgRuleSuites::OPERATION_MATCH, (static function (array $data): array {
             $data['org']               = 'generated';
+            $data['ref']               = 'generated';
             $data['repository_name']   = 15;
             $data['actor_name']        = 'generated';
             $data['time_period']       = 'generated';
@@ -96,8 +98,8 @@ final class GetOrgRuleSuitesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/rulesets/rule-suites?repository_name=15&actor_name=generated&time_period=generated&rule_suite_result=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/rulesets/rule-suites?ref=generated&repository_name=15&actor_name=generated&time_period=generated&rule_suite_result=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->getOrgRuleSuites('generated', 15, 'generated', 'generated', 'generated', 8, 1);
+        $result = $client->operations()->repos()->getOrgRuleSuites('generated', 'generated', 15, 'generated', 'generated', 'generated', 8, 1);
     }
 }

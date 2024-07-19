@@ -5828,26 +5828,6 @@ $client->operations()->migrations()->listReposForOrgListing(        org: 'genera
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/migrations/orgs#list-repositories-in-an-organization-migration).
 
 
-### orgs/list-organization-fine-grained-permissions
-
-List organization fine-grained permissions for an organization
-
-Using the `call` method:
-```php
-$client->call('GET /orgs/{org}/organization-fine-grained-permissions', [
-        'org' => 'generated',
-]);
-```
-
-Operations method:
-```php
-$client->operations()->orgs()->listOrganizationFineGrainedPermissions(        org: 'generated',
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#list-organization-fine-grained-permissions-for-an-organization).
-
-
 ### orgs/list-org-roles
 
 Get all organization roles for an organization
@@ -5866,26 +5846,6 @@ $client->operations()->orgs()->listOrgRoles(        org: 'generated',
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#get-all-organization-roles-for-an-organization).
-
-
-### orgs/create-custom-organization-role
-
-Create a custom organization role
-
-Using the `call` method:
-```php
-$client->call('POST /orgs/{org}/organization-roles', [
-        'org' => 'generated',
-]);
-```
-
-Operations method:
-```php
-$client->operations()->orgs()->createCustomOrganizationRole(        org: 'generated',
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#create-a-custom-organization-role).
 
 
 ### orgs/revoke-all-org-roles-team
@@ -6048,50 +6008,6 @@ $client->operations()->orgs()->getOrgRole(        org: 'generated',
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#get-an-organization-role).
-
-
-### orgs/delete-custom-organization-role
-
-Delete a custom organization role.
-
-Using the `call` method:
-```php
-$client->call('DELETE /orgs/{org}/organization-roles/{role_id}', [
-        'org' => 'generated',
-        'role_id' => 7,
-]);
-```
-
-Operations method:
-```php
-$client->operations()->orgs()->deleteCustomOrganizationRole(        org: 'generated',
-        role_id: 7,
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#delete-a-custom-organization-role).
-
-
-### orgs/patch-custom-organization-role
-
-Update a custom organization role
-
-Using the `call` method:
-```php
-$client->call('PATCH /orgs/{org}/organization-roles/{role_id}', [
-        'org' => 'generated',
-        'role_id' => 7,
-]);
-```
-
-Operations method:
-```php
-$client->operations()->orgs()->patchCustomOrganizationRole(        org: 'generated',
-        role_id: 7,
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/organization-roles#update-a-custom-organization-role).
 
 
 ### orgs/list-org-role-teams
@@ -7422,6 +7338,7 @@ Using the `call` method:
 ```php
 $client->call('GET /orgs/{org}/rulesets/rule-suites', [
         'org' => 'generated',
+        'ref' => 'generated',
         'repository_name' => 15,
         'actor_name' => 'generated',
         'time_period' => 'generated',
@@ -7434,6 +7351,7 @@ $client->call('GET /orgs/{org}/rulesets/rule-suites', [
 Operations method:
 ```php
 $client->operations()->repos()->getOrgRuleSuites(        org: 'generated',
+        ref: 'generated',
         repository_name: 15,
         actor_name: 'generated',
         time_period: 'generated',
@@ -7454,6 +7372,7 @@ Using the `call` method:
 ```php
 $client->call('LIST /orgs/{org}/rulesets/rule-suites', [
         'org' => 'generated',
+        'ref' => 'generated',
         'repository_name' => 15,
         'actor_name' => 'generated',
         'time_period' => 'generated',
@@ -7466,6 +7385,7 @@ $client->call('LIST /orgs/{org}/rulesets/rule-suites', [
 Operations method:
 ```php
 $client->operations()->repos()->getOrgRuleSuitesListing(        org: 'generated',
+        ref: 'generated',
         repository_name: 15,
         actor_name: 'generated',
         time_period: 'generated',

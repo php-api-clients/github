@@ -107,16 +107,16 @@ final class Repos
         return $this->operators->repos👷CreateOrgRuleset()->call($org, $params);
     }
 
-    /** @return Observable<Schema\RuleSuites> */
-    public function getOrgRuleSuites(string $org, int $repositoryName, string $actorName, string $timePeriod, string $ruleSuiteResult, int $perPage, int $page): iterable
+    /** @return iterable<int,Schema\RuleSuites> */
+    public function getOrgRuleSuites(string $org, string $ref, int $repositoryName, string $actorName, string $timePeriod, string $ruleSuiteResult, int $perPage, int $page): iterable
     {
-        return $this->operators->repos👷GetOrgRuleSuites()->call($org, $repositoryName, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);
+        return $this->operators->repos👷GetOrgRuleSuites()->call($org, $ref, $repositoryName, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);
     }
 
-    /** @return Observable<Schema\RuleSuites> */
-    public function getOrgRuleSuitesListing(string $org, int $repositoryName, string $actorName, string $timePeriod, string $ruleSuiteResult, int $perPage, int $page): iterable
+    /** @return iterable<int,Schema\RuleSuites> */
+    public function getOrgRuleSuitesListing(string $org, string $ref, int $repositoryName, string $actorName, string $timePeriod, string $ruleSuiteResult, int $perPage, int $page): iterable
     {
-        return $this->operators->repos👷GetOrgRuleSuitesListing()->call($org, $repositoryName, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);
+        return $this->operators->repos👷GetOrgRuleSuitesListing()->call($org, $ref, $repositoryName, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);
     }
 
     /** @return */
@@ -203,6 +203,7 @@ final class Repos
         return $this->operators->repos👷DeleteAutolink()->call($owner, $repo, $autolinkId);
     }
 
+    /** @return */
     public function checkAutomatedSecurityFixes(string $owner, string $repo): CheckAutomatedSecurityFixes|WithoutBody
     {
         return $this->operators->repos👷CheckAutomatedSecurityFixes()->call($owner, $repo);
@@ -1180,13 +1181,13 @@ final class Repos
         return $this->operators->repos👷CreateRepoRuleset()->call($owner, $repo, $params);
     }
 
-    /** @return Observable<Schema\RuleSuites> */
+    /** @return iterable<int,Schema\RuleSuites> */
     public function getRepoRuleSuites(string $owner, string $repo, string $ref, string $actorName, string $timePeriod, string $ruleSuiteResult, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷GetRepoRuleSuites()->call($owner, $repo, $ref, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);
     }
 
-    /** @return Observable<Schema\RuleSuites> */
+    /** @return iterable<int,Schema\RuleSuites> */
     public function getRepoRuleSuitesListing(string $owner, string $repo, string $ref, string $actorName, string $timePeriod, string $ruleSuiteResult, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷GetRepoRuleSuitesListing()->call($owner, $repo, $ref, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);

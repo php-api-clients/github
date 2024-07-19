@@ -36,6 +36,7 @@ final readonly class Ok
                     "id": {
                         "type": "integer",
                         "description": "The id of the environment.",
+                        "format": "int64",
                         "examples": [
                             56780428
                         ]

@@ -24,7 +24,7 @@ final readonly class GetRepoRuleSuitesListing
     {
     }
 
-    /** @return Observable<Schema\RuleSuites> */
+    /** @return iterable<int,Schema\RuleSuites> */
     public function call(string $owner, string $repo, string $ref, string $actorName, string $timePeriod = 'day', string $ruleSuiteResult = 'all', int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetRepoRuleSuitesListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);

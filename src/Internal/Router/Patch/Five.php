@@ -7,7 +7,6 @@ namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 use ApiClients\Client\GitHub\Internal\Routers;
 use ApiClients\Client\GitHub\Schema\GistComment;
 use ApiClients\Client\GitHub\Schema\Import;
-use ApiClients\Client\GitHub\Schema\OrganizationRole;
 use ApiClients\Client\GitHub\Schema\OrgHook;
 use ApiClients\Client\GitHub\Schema\OrgMembership;
 use ApiClients\Client\GitHub\Schema\ProjectCard;
@@ -23,7 +22,7 @@ final class Five
     }
 
     /** @return |Observable<Schema\OrgCustomProperty> */
-    public function call(string $call, array $params, array $pathChunks): GistComment|OrgHook|OrganizationRole|iterable|WithoutBody|TeamFull|ProjectCard|Import|TeamDiscussion|OrgMembership
+    public function call(string $call, array $params, array $pathChunks): GistComment|OrgHook|iterable|WithoutBody|TeamFull|ProjectCard|Import|TeamDiscussion|OrgMembership
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'gists') {
@@ -42,12 +41,6 @@ final class Five
                         if ($pathChunks[4] === '{hook_id}') {
                             if ($call === 'PATCH /orgs/{org}/hooks/{hook_id}') {
                                 return $this->routers->internal🔀Router🔀Patch🔀Orgs()->updateWebhook($params);
-                            }
-                        }
-                    } elseif ($pathChunks[3] === 'organization-roles') {
-                        if ($pathChunks[4] === '{role_id}') {
-                            if ($call === 'PATCH /orgs/{org}/organization-roles/{role_id}') {
-                                return $this->routers->internal🔀Router🔀Patch🔀Orgs()->patchCustomOrganizationRole($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'properties') {

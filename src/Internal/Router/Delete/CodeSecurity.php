@@ -19,6 +19,7 @@ final class CodeSecurity
     {
     }
 
+    /** @return */
     public function detachConfiguration(array $params): WithoutBody
     {
         $arguments = [];

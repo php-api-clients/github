@@ -24,10 +24,10 @@ final readonly class GetOrgRuleSuites
     {
     }
 
-    /** @return Observable<Schema\RuleSuites> */
-    public function call(string $org, int $repositoryName, string $actorName, string $timePeriod = 'day', string $ruleSuiteResult = 'all', int $perPage = 30, int $page = 1): iterable
+    /** @return iterable<int,Schema\RuleSuites> */
+    public function call(string $org, string $ref, int $repositoryName, string $actorName, string $timePeriod = 'day', string $ruleSuiteResult = 'all', int $perPage = 30, int $page = 1): iterable
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetOrgRuleSuites($this->responseSchemaValidator, $this->hydrator, $org, $repositoryName, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetOrgRuleSuites($this->responseSchemaValidator, $this->hydrator, $org, $ref, $repositoryName, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);

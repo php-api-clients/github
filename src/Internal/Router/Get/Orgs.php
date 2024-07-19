@@ -271,21 +271,6 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['filter'], $arguments['role'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\OrganizationFineGrainedPermission> */
-    public function listOrganizationFineGrainedPermissions(array $params): iterable
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        $operator = new Internal\Operator\Orgs\ListOrganizationFineGrainedPermissions($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationFineGrainedPermissions());
-
-        return $operator->call($arguments['org']);
-    }
-
     /** @return */
     public function listOrgRoles(array $params): \ApiClients\Client\GitHub\Schema\Operations\Orgs\ListOrgRoles\Response\ApplicationJson\Ok
     {

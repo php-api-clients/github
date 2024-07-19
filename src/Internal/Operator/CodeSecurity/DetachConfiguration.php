@@ -24,6 +24,7 @@ final readonly class DetachConfiguration
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\DetachConfiguration($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

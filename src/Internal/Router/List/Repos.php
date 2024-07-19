@@ -253,7 +253,7 @@ final class Repos
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\RuleSuites> */
+    /** @return iterable<int,Schema\RuleSuites> */
     public function getOrgRuleSuitesListing(array $params): iterable
     {
         $arguments = [];
@@ -263,6 +263,12 @@ final class Repos
 
         $arguments['org'] = $params['org'];
         unset($params['org']);
+        if (array_key_exists('ref', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ref');
+        }
+
+        $arguments['ref'] = $params['ref'];
+        unset($params['ref']);
         if (array_key_exists('repository_name', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: repository_name');
         }
@@ -302,7 +308,7 @@ final class Repos
         $arguments['page'] = 1;
         do {
             $operator = new Internal\Operator\Repos\GetOrgRuleSuitesListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RuleSuites());
-            $items    = [...$operator->call($arguments['org'], $arguments['repository_name'], $arguments['actor_name'], $arguments['time_period'], $arguments['rule_suite_result'], $arguments['per_page'], $arguments['page'])];
+            $items    = [...$operator->call($arguments['org'], $arguments['ref'], $arguments['repository_name'], $arguments['actor_name'], $arguments['time_period'], $arguments['rule_suite_result'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 
@@ -991,7 +997,7 @@ final class Repos
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\RuleSuites> */
+    /** @return iterable<int,Schema\RuleSuites> */
     public function getRepoRuleSuitesListing(array $params): iterable
     {
         $arguments = [];

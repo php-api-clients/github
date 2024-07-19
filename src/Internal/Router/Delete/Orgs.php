@@ -126,27 +126,6 @@ final class Orgs
     }
 
     /** @return */
-    public function deleteCustomOrganizationRole(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('role_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: role_id');
-        }
-
-        $arguments['role_id'] = $params['role_id'];
-        unset($params['role_id']);
-        $operator = new Internal\Operator\Orgs\DeleteCustomOrganizationRole($this->browser, $this->authentication);
-
-        return $operator->call($arguments['org'], $arguments['role_id']);
-    }
-
-    /** @return */
     public function removeOutsideCollaborator(array $params): WithoutBody
     {
         $arguments = [];

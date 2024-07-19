@@ -180,7 +180,7 @@ assertType('Observable<Schema\\CodeScanningOrganizationAlertItems>', $client->ca
 assertType('Observable<Schema\\CodeSecurityConfiguration>', $client->call('GET /orgs/{org}/code-security/configurations'));
 assertType('', $client->call('POST /orgs/{org}/code-security/configurations'));
 assertType('Observable<Schema\\CodeSecurityDefaultConfigurations>|WithoutBody', $client->call('GET /orgs/{org}/code-security/configurations/defaults'));
-assertType('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('DELETE /orgs/{org}/code-security/configurations/detach'));
+assertType('', $client->call('DELETE /orgs/{org}/code-security/configurations/detach'));
 assertType('', $client->call('GET /orgs/{org}/code-security/configurations/{configuration_id}'));
 assertType('', $client->call('DELETE /orgs/{org}/code-security/configurations/{configuration_id}'));
 assertType('', $client->call('PATCH /orgs/{org}/code-security/configurations/{configuration_id}'));
@@ -269,9 +269,7 @@ assertType('', $client->call('DELETE /orgs/{org}/migrations/{migration_id}/archi
 assertType('', $client->call('DELETE /orgs/{org}/migrations/{migration_id}/repos/{repo_name}/lock'));
 assertType('Observable<Schema\\MinimalRepository>', $client->call('GET /orgs/{org}/migrations/{migration_id}/repositories'));
 assertType('Observable<Schema\\MinimalRepository>', $client->call('LIST /orgs/{org}/migrations/{migration_id}/repositories'));
-assertType('Observable<Schema\\OrganizationFineGrainedPermission>', $client->call('GET /orgs/{org}/organization-fine-grained-permissions'));
 assertType('', $client->call('GET /orgs/{org}/organization-roles'));
-assertType('', $client->call('POST /orgs/{org}/organization-roles'));
 assertType('', $client->call('DELETE /orgs/{org}/organization-roles/teams/{team_slug}'));
 assertType('', $client->call('PUT /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}'));
 assertType('', $client->call('DELETE /orgs/{org}/organization-roles/teams/{team_slug}/{role_id}'));
@@ -279,8 +277,6 @@ assertType('', $client->call('DELETE /orgs/{org}/organization-roles/users/{usern
 assertType('', $client->call('PUT /orgs/{org}/organization-roles/users/{username}/{role_id}'));
 assertType('', $client->call('DELETE /orgs/{org}/organization-roles/users/{username}/{role_id}'));
 assertType('', $client->call('GET /orgs/{org}/organization-roles/{role_id}'));
-assertType('', $client->call('DELETE /orgs/{org}/organization-roles/{role_id}'));
-assertType('', $client->call('PATCH /orgs/{org}/organization-roles/{role_id}'));
 assertType('Observable<Schema\\TeamRoleAssignment>|WithoutBody', $client->call('GET /orgs/{org}/organization-roles/{role_id}/teams'));
 assertType('Observable<Schema\\TeamRoleAssignment>|WithoutBody', $client->call('LIST /orgs/{org}/organization-roles/{role_id}/teams'));
 assertType('Observable<Schema\\UserRoleAssignment>|WithoutBody', $client->call('GET /orgs/{org}/organization-roles/{role_id}/users'));
@@ -333,8 +329,8 @@ assertType('', $client->call('POST /orgs/{org}/repos'));
 assertType('Observable<Schema\\RepositoryRuleset>', $client->call('GET /orgs/{org}/rulesets'));
 assertType('Observable<Schema\\RepositoryRuleset>', $client->call('LIST /orgs/{org}/rulesets'));
 assertType('', $client->call('POST /orgs/{org}/rulesets'));
-assertType('Observable<Schema\\RuleSuites>', $client->call('GET /orgs/{org}/rulesets/rule-suites'));
-assertType('Observable<Schema\\RuleSuites>', $client->call('LIST /orgs/{org}/rulesets/rule-suites'));
+assertType('iterable<int,Schema\\RuleSuites>', $client->call('GET /orgs/{org}/rulesets/rule-suites'));
+assertType('iterable<int,Schema\\RuleSuites>', $client->call('LIST /orgs/{org}/rulesets/rule-suites'));
 assertType('', $client->call('GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}'));
 assertType('', $client->call('GET /orgs/{org}/rulesets/{ruleset_id}'));
 assertType('', $client->call('PUT /orgs/{org}/rulesets/{ruleset_id}'));
@@ -506,7 +502,7 @@ assertType('Observable<Schema\\Autolink>', $client->call('GET /repos/{owner}/{re
 assertType('', $client->call('POST /repos/{owner}/{repo}/autolinks'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/autolinks/{autolink_id}'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/autolinks/{autolink_id}'));
-assertType('Schema\\CheckAutomatedSecurityFixes|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /repos/{owner}/{repo}/automated-security-fixes'));
+assertType('', $client->call('GET /repos/{owner}/{repo}/automated-security-fixes'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/automated-security-fixes'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/automated-security-fixes'));
 assertType('Observable<Schema\\ShortBranch>', $client->call('GET /repos/{owner}/{repo}/branches'));
@@ -868,8 +864,8 @@ assertType('Observable<Schema\\RepositoryRuleCreation|Schema\\RepositoryRuleUpda
 assertType('Observable<Schema\\RepositoryRuleset>', $client->call('GET /repos/{owner}/{repo}/rulesets'));
 assertType('Observable<Schema\\RepositoryRuleset>', $client->call('LIST /repos/{owner}/{repo}/rulesets'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/rulesets'));
-assertType('Observable<Schema\\RuleSuites>', $client->call('GET /repos/{owner}/{repo}/rulesets/rule-suites'));
-assertType('Observable<Schema\\RuleSuites>', $client->call('LIST /repos/{owner}/{repo}/rulesets/rule-suites'));
+assertType('iterable<int,Schema\\RuleSuites>', $client->call('GET /repos/{owner}/{repo}/rulesets/rule-suites'));
+assertType('iterable<int,Schema\\RuleSuites>', $client->call('LIST /repos/{owner}/{repo}/rulesets/rule-suites'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/rulesets/rule-suites/{rule_suite_id}'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/rulesets/{ruleset_id}'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}'));

@@ -696,7 +696,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'DELETE /orgs/{org}/code-security/configurations/detach') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/code-security/configurations/{configuration_id}') {
@@ -1051,15 +1051,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('Observable<Schema\\MinimalRepository>');
         }
 
-        if ($call === 'GET /orgs/{org}/organization-fine-grained-permissions') {
-            return $this->typeResolver->resolve('Observable<Schema\\OrganizationFineGrainedPermission>');
-        }
-
         if ($call === 'GET /orgs/{org}/organization-roles') {
-            return $this->typeResolver->resolve('');
-        }
-
-        if ($call === 'POST /orgs/{org}/organization-roles') {
             return $this->typeResolver->resolve('');
         }
 
@@ -1088,14 +1080,6 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/organization-roles/{role_id}') {
-            return $this->typeResolver->resolve('');
-        }
-
-        if ($call === 'DELETE /orgs/{org}/organization-roles/{role_id}') {
-            return $this->typeResolver->resolve('');
-        }
-
-        if ($call === 'PATCH /orgs/{org}/organization-roles/{role_id}') {
             return $this->typeResolver->resolve('');
         }
 
@@ -1308,11 +1292,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/rulesets/rule-suites') {
-            return $this->typeResolver->resolve('Observable<Schema\\RuleSuites>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\RuleSuites>');
         }
 
         if ($call === 'LIST /orgs/{org}/rulesets/rule-suites') {
-            return $this->typeResolver->resolve('Observable<Schema\\RuleSuites>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\RuleSuites>');
         }
 
         if ($call === 'GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}') {
@@ -2000,7 +1984,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/automated-security-fixes') {
-            return $this->typeResolver->resolve('Schema\\CheckAutomatedSecurityFixes|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PUT /repos/{owner}/{repo}/automated-security-fixes') {
@@ -3448,11 +3432,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/rulesets/rule-suites') {
-            return $this->typeResolver->resolve('Observable<Schema\\RuleSuites>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\RuleSuites>');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/rulesets/rule-suites') {
-            return $this->typeResolver->resolve('Observable<Schema\\RuleSuites>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\RuleSuites>');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/rulesets/rule-suites/{rule_suite_id}') {

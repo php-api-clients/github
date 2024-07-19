@@ -252,22 +252,10 @@ final class Orgs
         return $this->operators->orgs👷RemoveMembershipForUser()->call($org, $username);
     }
 
-    /** @return Observable<Schema\OrganizationFineGrainedPermission> */
-    public function listOrganizationFineGrainedPermissions(string $org): iterable
-    {
-        return $this->operators->orgs👷ListOrganizationFineGrainedPermissions()->call($org);
-    }
-
     /** @return */
     public function listOrgRoles(string $org): \ApiClients\Client\GitHub\Schema\Operations\Orgs\ListOrgRoles\Response\ApplicationJson\Ok
     {
         return $this->operators->orgs👷ListOrgRoles()->call($org);
-    }
-
-    /** @return */
-    public function createCustomOrganizationRole(string $org, array $params): OrganizationRole
-    {
-        return $this->operators->orgs👷CreateCustomOrganizationRole()->call($org, $params);
     }
 
     /** @return */
@@ -310,18 +298,6 @@ final class Orgs
     public function getOrgRole(string $org, int $roleId): OrganizationRole
     {
         return $this->operators->orgs👷GetOrgRole()->call($org, $roleId);
-    }
-
-    /** @return */
-    public function deleteCustomOrganizationRole(string $org, int $roleId): WithoutBody
-    {
-        return $this->operators->orgs👷DeleteCustomOrganizationRole()->call($org, $roleId);
-    }
-
-    /** @return */
-    public function patchCustomOrganizationRole(string $org, int $roleId, array $params): OrganizationRole
-    {
-        return $this->operators->orgs👷PatchCustomOrganizationRole()->call($org, $roleId, $params);
     }
 
     /** @return Observable<Schema\TeamRoleAssignment>|WithoutBody */

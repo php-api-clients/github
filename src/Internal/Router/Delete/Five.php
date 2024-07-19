@@ -79,12 +79,6 @@ final class Five
                                 return $this->routers->internal🔀Router🔀Delete🔀Orgs()->removeMembershipForUser($params);
                             }
                         }
-                    } elseif ($pathChunks[3] === 'organization-roles') {
-                        if ($pathChunks[4] === '{role_id}') {
-                            if ($call === 'DELETE /orgs/{org}/organization-roles/{role_id}') {
-                                return $this->routers->internal🔀Router🔀Delete🔀Orgs()->deleteCustomOrganizationRole($params);
-                            }
-                        }
                     } elseif ($pathChunks[3] === 'outside_collaborators') {
                         if ($pathChunks[4] === '{username}') {
                             if ($call === 'DELETE /orgs/{org}/outside_collaborators/{username}') {

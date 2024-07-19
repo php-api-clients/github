@@ -7,7 +7,6 @@ namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\OrganizationFull;
-use ApiClients\Client\GitHub\Schema\OrganizationRole;
 use ApiClients\Client\GitHub\Schema\OrgHook;
 use ApiClients\Client\GitHub\Schema\OrgMembership;
 use ApiClients\Client\GitHub\Schema\WebhookConfig;
@@ -59,27 +58,6 @@ final class Orgs
         $operator = new Internal\Operator\Orgs\UpdateWebhook($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Hooks🌀HookId());
 
         return $operator->call($arguments['org'], $arguments['hook_id'], $params);
-    }
-
-    /** @return */
-    public function patchCustomOrganizationRole(array $params): OrganizationRole
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('role_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: role_id');
-        }
-
-        $arguments['role_id'] = $params['role_id'];
-        unset($params['role_id']);
-        $operator = new Internal\Operator\Orgs\PatchCustomOrganizationRole($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId());
-
-        return $operator->call($arguments['org'], $arguments['role_id'], $params);
     }
 
     /** @return Observable<Schema\OrgCustomProperty> */

@@ -161,7 +161,6 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Archive|null $operation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Archive                                                                                                                             = null;
     private Internal\Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Repos\RepoName\Lock|null $operation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Repos🌀RepoName🌀Lock                                                                                                     = null;
     private Internal\Hydrator\Operation\Orgs\Org\Migrations\MigrationId\Repositories|null $operation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Repositories                                                                                                                   = null;
-    private Internal\Hydrator\Operation\Orgs\Org\OrganizationFineGrainedPermissions|null $operation🌀Orgs🌀Org🌀OrganizationFineGrainedPermissions                                                                                                                     = null;
     private Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles|null $operation🌀Orgs🌀Org🌀OrganizationRoles                                                                                                                                                       = null;
     private Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Teams\TeamSlug|null $operation🌀Orgs🌀Org🌀OrganizationRoles🌀Teams🌀TeamSlug                                                                                                                         = null;
     private Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles\Teams\TeamSlug\RoleId|null $operation🌀Orgs🌀Org🌀OrganizationRoles🌀Teams🌀TeamSlug🌀RoleId                                                                                                           = null;
@@ -793,7 +792,8 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\CopilotSeatDetails' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Copilot()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\OrgMembership', '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationSimple', '\\ApiClients\\Client\\GitHub\\Schema\\OrgMembership\\Permissions' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Memberships🌀Username()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Migration' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations()->hydrateObject($className, $payload),
-            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\ListOrgRoles\\Response\\ApplicationJson\\Ok', '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationRole' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\ListOrgRoles\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationRole' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\ConvertMemberToOutsideCollaborator\\Response\\ApplicationJson\\Accepted\\Application\\Json', '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\RemoveOutsideCollaborator\\Response\\ApplicationJson\\UnprocessableEntity' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀OutsideCollaborators🌀Username()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Package' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata\\Container', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata\\Docker' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId()->hydrateObject($className, $payload),
@@ -1144,7 +1144,8 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\CopilotSeatDetails' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Members🌀Username🌀Copilot()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\OrgMembership', '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationSimple', '\\ApiClients\\Client\\GitHub\\Schema\\OrgMembership\\Permissions' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Memberships🌀Username()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Migration' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations()->serializeObject($object),
-            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\ListOrgRoles\\Response\\ApplicationJson\\Ok', '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationRole' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\ListOrgRoles\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationRole' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles🌀RoleId()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\ConvertMemberToOutsideCollaborator\\Response\\ApplicationJson\\Accepted\\Application\\Json', '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\RemoveOutsideCollaborator\\Response\\ApplicationJson\\UnprocessableEntity' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀OutsideCollaborators🌀Username()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Package' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata\\Container', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata\\Docker' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId()->serializeObject($object),
@@ -2758,15 +2759,6 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Repositories;
-    }
-
-    public function getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationFineGrainedPermissions(): Internal\Hydrator\Operation\Orgs\Org\OrganizationFineGrainedPermissions
-    {
-        if ($this->operation🌀Orgs🌀Org🌀OrganizationFineGrainedPermissions instanceof Internal\Hydrator\Operation\Orgs\Org\OrganizationFineGrainedPermissions === false) {
-            $this->operation🌀Orgs🌀Org🌀OrganizationFineGrainedPermissions = new Internal\Hydrator\Operation\Orgs\Org\OrganizationFineGrainedPermissions();
-        }
-
-        return $this->operation🌀Orgs🌀Org🌀OrganizationFineGrainedPermissions;
     }
 
     public function getObjectMapperOperation🌀Orgs🌀Org🌀OrganizationRoles(): Internal\Hydrator\Operation\Orgs\Org\OrganizationRoles
