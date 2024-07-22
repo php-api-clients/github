@@ -113,7 +113,7 @@ final readonly class WebhookPullRequestMilestoned
                     "format": "uri"
                 }
             },
-            "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\"\\n"
+            "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\""
         },
         "milestone": {
             "title": "Milestone",
@@ -6234,7 +6234,6 @@ final readonly class WebhookPullRequestMilestoned
      * enterprise: An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
     on an enterprise account or an organization that's part of an enterprise account. For more information,
     see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
-
      * milestone: A collection of related issues and pull requests.
      * number: The pull request number.
      * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an

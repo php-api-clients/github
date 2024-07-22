@@ -96,13 +96,12 @@ final readonly class EnterpriseWebhooks
             "format": "uri"
         }
     },
-    "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\"\\n"
+    "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\""
 }';
     public const SCHEMA_TITLE        = 'Enterprise';
     public const SCHEMA_DESCRIPTION  = 'An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
 on an enterprise account or an organization that\'s part of an enterprise account. For more information,
-see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
-';
+see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."';
     public const SCHEMA_EXAMPLE_DATA = '{
     "description": "generated",
     "html_url": "https:\\/\\/github.com\\/enterprises\\/octo-business",

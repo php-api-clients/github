@@ -35,7 +35,7 @@ final readonly class RepositoryRuleset
                 "push"
             ],
             "type": "string",
-            "description": "The target of the ruleset\\n\\n**Note**: The `push` target is in beta and is subject to change."
+            "description": "The target of the ruleset\\n\\n> [!NOTE]\\n> The `push` target is in beta and is subject to change."
         },
         "source_type": {
             "enum": [
@@ -1195,7 +1195,8 @@ final readonly class RepositoryRuleset
      * name: The name of the ruleset
      * target: The target of the ruleset
 
-     * *Note**: The `push` target is in beta and is subject to change.
+    > [!NOTE]
+    > The `push` target is in beta and is subject to change.
      * sourceType: The type of the source of the ruleset
      * source: The name of the source
      * enforcement: The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).

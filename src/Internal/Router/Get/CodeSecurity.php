@@ -21,7 +21,7 @@ final class CodeSecurity
     {
     }
 
-    /** @return Observable<Schema\CodeSecurityConfiguration> */
+    /** @return iterable<int,Schema\CodeSecurityConfiguration> */
     public function getConfigurationsForOrg(array $params): iterable
     {
         $arguments = [];

@@ -24,7 +24,7 @@ final readonly class GetConfigurationsForOrg
     {
     }
 
-    /** @return Observable<Schema\CodeSecurityConfiguration> */
+    /** @return iterable<int,Schema\CodeSecurityConfiguration> */
     public function call(string $org, string $before, string $after, string $targetType = 'all', int $perPage = 30): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\GetConfigurationsForOrg($this->responseSchemaValidator, $this->hydrator, $org, $before, $after, $targetType, $perPage);

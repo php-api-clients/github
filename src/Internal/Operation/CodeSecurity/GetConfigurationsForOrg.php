@@ -33,8 +33,7 @@ final class GetConfigurationsForOrg
     private string $after;
     /**The target type of the code security configuration **/
     private string $targetType;
-    /**'The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)."'
-     **/
+    /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\CodeSecurity\Configurations $hydrator, string $org, string $before, string $after, string $targetType = 'all', int $perPage = 30)

@@ -898,7 +898,7 @@ final readonly class WebhookDependabotAlertDismissed
                     "format": "uri"
                 }
             },
-            "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\"\\n"
+            "description": "An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured\\non an enterprise account or an organization that\'s part of an enterprise account. For more information,\\nsee \\"[About enterprise accounts](https:\\/\\/docs.github.com\\/admin\\/overview\\/about-enterprise-accounts).\\""
         },
         "repository": {
             "title": "Repository",
@@ -3008,7 +3008,6 @@ final readonly class WebhookDependabotAlertDismissed
      * enterprise: An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
     on an enterprise account or an organization that's part of an enterprise account. For more information,
     see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
-
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.

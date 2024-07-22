@@ -23,7 +23,7 @@ final readonly class ApplicationJson
                 "push"
             ],
             "type": "string",
-            "description": "The target of the ruleset\\n\\n**Note**: The `push` target is in beta and is subject to change."
+            "description": "The target of the ruleset\\n\\n> [!NOTE]\\n> The `push` target is in beta and is subject to change."
         },
         "enforcement": {
             "enum": [
@@ -870,7 +870,9 @@ final readonly class ApplicationJson
     /**
      * name: The name of the ruleset.
      * target: The target of the ruleset
-     * *Note**: The `push` target is in beta and is subject to change.
+
+    > [!NOTE]
+    > The `push` target is in beta and is subject to change.
      * enforcement: The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
      * bypassActors: The actors that can bypass the rules in this ruleset
      * conditions: Parameters for a repository ruleset ref name condition
