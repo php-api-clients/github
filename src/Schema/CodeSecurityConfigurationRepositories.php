@@ -16,9 +16,11 @@ final readonly class CodeSecurityConfigurationRepositories
                 "attached",
                 "attaching",
                 "detached",
+                "removed",
                 "enforced",
                 "failed",
-                "updating"
+                "updating",
+                "removed_by_enterprise"
             ],
             "type": "string",
             "description": "The attachment status of the code security configuration on the repository."
@@ -574,7 +576,7 @@ final readonly class CodeSecurityConfigurationRepositories
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = 'Repositories associated with a code security configuration and attachment status';
     public const SCHEMA_EXAMPLE_DATA = '{
-    "status": "updating",
+    "status": "removed_by_enterprise",
     "repository": {
         "id": 1296269,
         "node_id": "MDEwOlJlcG9zaXRvcnkxMjk2MjY5",

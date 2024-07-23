@@ -684,7 +684,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/code-security/configurations') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CodeSecurityConfiguration>');
+            return $this->typeResolver->resolve('Observable<Schema\\CodeSecurityConfiguration>');
         }
 
         if ($call === 'POST /orgs/{org}/code-security/configurations') {

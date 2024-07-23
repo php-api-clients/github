@@ -17,7 +17,7 @@ final class CodeSecurity
     {
     }
 
-    /** @return iterable<int,Schema\CodeSecurityConfiguration> */
+    /** @return Observable<Schema\CodeSecurityConfiguration> */
     public function getConfigurationsForOrg(string $org, string $before, string $after, string $targetType, int $perPage): iterable
     {
         return $this->operators->codeSecurity👷GetConfigurationsForOrg()->call($org, $before, $after, $targetType, $perPage);

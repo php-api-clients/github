@@ -1,5 +1,5 @@
 {
-    "specHash": "ee23af97204cde51d4c62161bf274df2",
+    "specHash": "a5a20c93e8ace47c79943304e911cf70",
     "generatedFiles": {
         "files": [
             {
@@ -5612,7 +5612,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "a8c5db6d9355b53d6d50f183f4b46d3c"
+                "hash": "e381fc2ab1bec61faae5d7c7ec67269c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -24968,7 +24968,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Five.php",
-                "hash": "ad415b3841dc9b800f1cc7a6c234741d"
+                "hash": "d99d9cc5cb5c29690e0b91c96416f739"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
@@ -27788,11 +27788,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "3337e3cb0fec269eaa0777dec7fb27fb"
+                "hash": "4550bdb89fce474ead600772552c8d66"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "03cab3a7415102e84c221abd10f4d4c2"
+                "hash": "d24d1361c76ad52b02ce010e49d18d83"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -29652,7 +29652,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/CodeSecurity\/GetConfigurationsForOrg.php",
-                "hash": "c7b24a212c12432e9a4aeee0029906d8"
+                "hash": "b9029eb24ca041abb2dc0f82b4d77870"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/CodeSecurity\/GetConfigurationsForOrgTest.php",
@@ -29764,7 +29764,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeSecurityConfigurationRepositories.php",
-                "hash": "57e29c9da4fd2c0fcd7883610028402e"
+                "hash": "0e5a6895e8d6283c426d89c9c3fbde0d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookBranchProtectionRuleEdited\/Changes\/LockAllowsForkSync.php",
@@ -29812,7 +29812,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/CodeSecurity.php",
-                "hash": "5058da12ea42949d4f191bd9dd481708"
+                "hash": "1dc44fb96797b0a5a6285ed99a7607f0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Post\/CodeSecurity.php",
@@ -29832,7 +29832,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/CodeSecurity.php",
-                "hash": "e24885ddb3664c0684e653da102206e0"
+                "hash": "89a797debae8bbbb18e991e556957a09"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/CodeSecurity\/Configurations.php",

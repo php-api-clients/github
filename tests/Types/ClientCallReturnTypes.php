@@ -177,7 +177,7 @@ assertType('', $client->call('PUT /orgs/{org}/blocks/{username}'));
 assertType('', $client->call('DELETE /orgs/{org}/blocks/{username}'));
 assertType('Observable<Schema\\CodeScanningOrganizationAlertItems>', $client->call('GET /orgs/{org}/code-scanning/alerts'));
 assertType('Observable<Schema\\CodeScanningOrganizationAlertItems>', $client->call('LIST /orgs/{org}/code-scanning/alerts'));
-assertType('iterable<int,Schema\\CodeSecurityConfiguration>', $client->call('GET /orgs/{org}/code-security/configurations'));
+assertType('Observable<Schema\\CodeSecurityConfiguration>', $client->call('GET /orgs/{org}/code-security/configurations'));
 assertType('', $client->call('POST /orgs/{org}/code-security/configurations'));
 assertType('Observable<Schema\\CodeSecurityDefaultConfigurations>|WithoutBody', $client->call('GET /orgs/{org}/code-security/configurations/defaults'));
 assertType('', $client->call('DELETE /orgs/{org}/code-security/configurations/detach'));
