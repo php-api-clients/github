@@ -9,7 +9,7 @@ use ApiClients\Client\GitHub\Schema;
 final readonly class Fifteen
 {
     public const SCHEMA_JSON         = '{
-    "title": "max_file_path_length",
+    "title": "file_path_restriction",
     "required": [
         "type"
     ],
@@ -17,35 +17,40 @@ final readonly class Fifteen
     "properties": {
         "type": {
             "enum": [
-                "max_file_path_length"
+                "file_path_restriction"
             ],
             "type": "string"
         },
         "parameters": {
             "required": [
-                "max_file_path_length"
+                "restricted_file_paths"
             ],
             "type": "object",
             "properties": {
-                "max_file_path_length": {
-                    "maximum": 256,
-                    "minimum": 1,
-                    "type": "integer",
-                    "description": "The maximum amount of characters allowed in file paths"
+                "restricted_file_paths": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The file paths that are restricted from being pushed to the commit graph."
                 }
             }
         }
     },
-    "description": "Note: max_file_path_length is in beta and subject to change.\\n\\nPrevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+    "description": "> [!NOTE]\\n> `file_path_restriction` is in beta and subject to change.\\n\\nPrevent commits that include changes in specified file paths from being pushed to the commit graph."
 }';
-    public const SCHEMA_TITLE        = 'max_file_path_length';
-    public const SCHEMA_DESCRIPTION  = 'Note: max_file_path_length is in beta and subject to change.
+    public const SCHEMA_TITLE        = 'file_path_restriction';
+    public const SCHEMA_DESCRIPTION  = '> [!NOTE]
+> `file_path_restriction` is in beta and subject to change.
 
-Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph.';
+Prevent commits that include changes in specified file paths from being pushed to the commit graph.';
     public const SCHEMA_EXAMPLE_DATA = '{
-    "type": "max_file_path_length",
+    "type": "file_path_restriction",
     "parameters": {
-        "max_file_path_length": 20
+        "restricted_file_paths": [
+            "generated",
+            "generated"
+        ]
     }
 }';
 

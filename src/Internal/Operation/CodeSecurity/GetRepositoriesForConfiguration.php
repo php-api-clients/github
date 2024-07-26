@@ -37,7 +37,7 @@ final class GetRepositoriesForConfiguration
     private int $perPage;
     /**A comma-separated list of statuses. If specified, only repositories with these attachment statuses will be returned.
 
-    Can be: `all`, `attached`, `attaching`, `detached`, `enforced`, `failed`, `updating` **/
+    Can be: `all`, `attached`, `attaching`, `detached`, `removed`, `enforced`, `failed`, `updating`, `removed_by_enterprise` **/
     private string $status;
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\CodeSecurity\Configurations\ConfigurationId\Repositories $hydrator, string $org, int $configurationId, string $before, string $after, int $perPage = 30, string $status = 'all')

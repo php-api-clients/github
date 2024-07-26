@@ -71,7 +71,7 @@ final class CodeSecurity
         return $this->operators->codeSecurity👷SetConfigurationAsDefault()->call($org, $configurationId, $params);
     }
 
-    /** @return Observable<Schema\CodeSecurityConfigurationRepositories> */
+    /** @return iterable<int,Schema\CodeSecurityConfigurationRepositories> */
     public function getRepositoriesForConfiguration(string $org, int $configurationId, string $before, string $after, int $perPage, string $status): iterable
     {
         return $this->operators->codeSecurity👷GetRepositoriesForConfiguration()->call($org, $configurationId, $before, $after, $perPage, $status);

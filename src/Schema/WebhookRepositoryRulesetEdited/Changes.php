@@ -253,6 +253,83 @@ final readonly class Changes
                                 "description": "Prevent merge commits from being pushed to matching refs."
                             },
                             {
+                                "title": "merge_queue",
+                                "required": [
+                                    "type"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "enum": [
+                                            "merge_queue"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "parameters": {
+                                        "required": [
+                                            "check_response_timeout_minutes",
+                                            "grouping_strategy",
+                                            "max_entries_to_build",
+                                            "max_entries_to_merge",
+                                            "merge_method",
+                                            "min_entries_to_merge",
+                                            "min_entries_to_merge_wait_minutes"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "check_response_timeout_minutes": {
+                                                "maximum": 360,
+                                                "minimum": 1,
+                                                "type": "integer",
+                                                "description": "Maximum time for a required status check to report a conclusion. After this much time has elapsed, checks that have not reported a conclusion will be assumed to have failed"
+                                            },
+                                            "grouping_strategy": {
+                                                "enum": [
+                                                    "ALLGREEN",
+                                                    "HEADGREEN"
+                                                ],
+                                                "type": "string",
+                                                "description": "When set to ALLGREEN, the merge commit created by merge queue for each PR in the group must pass all required checks to merge. When set to HEADGREEN, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge."
+                                            },
+                                            "max_entries_to_build": {
+                                                "maximum": 100,
+                                                "minimum": 0,
+                                                "type": "integer",
+                                                "description": "Limit the number of queued pull requests requesting checks and workflow runs at the same time."
+                                            },
+                                            "max_entries_to_merge": {
+                                                "maximum": 100,
+                                                "minimum": 0,
+                                                "type": "integer",
+                                                "description": "The maximum number of PRs that will be merged together in a group."
+                                            },
+                                            "merge_method": {
+                                                "enum": [
+                                                    "MERGE",
+                                                    "SQUASH",
+                                                    "REBASE"
+                                                ],
+                                                "type": "string",
+                                                "description": "Method to use when merging changes from queued pull requests."
+                                            },
+                                            "min_entries_to_merge": {
+                                                "maximum": 100,
+                                                "minimum": 0,
+                                                "type": "integer",
+                                                "description": "The minimum number of PRs that will be merged together in a group."
+                                            },
+                                            "min_entries_to_merge_wait_minutes": {
+                                                "maximum": 360,
+                                                "minimum": 0,
+                                                "type": "integer",
+                                                "description": "The time merge queue should wait after the first PR is added to the queue for the minimum group size to be met. After this time has elapsed, the minimum group size will be ignored and a smaller group will be merged."
+                                            }
+                                        }
+                                    }
+                                },
+                                "description": "Merges must be performed via a merge queue."
+                            },
+                            {
                                 "title": "required_deployments",
                                 "required": [
                                     "type"
@@ -369,6 +446,10 @@ final readonly class Changes
                                         ],
                                         "type": "object",
                                         "properties": {
+                                            "do_not_enforce_on_create": {
+                                                "type": "boolean",
+                                                "description": "Allow repositories and branches to be created if a check would otherwise prohibit it."
+                                            },
                                             "required_status_checks": {
                                                 "type": "array",
                                                 "items": {
@@ -680,7 +761,7 @@ final readonly class Changes
                                         }
                                     }
                                 },
-                                "description": "Note: file_path_restriction is in beta and subject to change.\\n\\nPrevent commits that include changes in specified file paths from being pushed to the commit graph."
+                                "description": "> [!NOTE]\\n> `file_path_restriction` is in beta and subject to change.\\n\\nPrevent commits that include changes in specified file paths from being pushed to the commit graph."
                             },
                             {
                                 "title": "max_file_path_length",
@@ -710,7 +791,7 @@ final readonly class Changes
                                         }
                                     }
                                 },
-                                "description": "Note: max_file_path_length is in beta and subject to change.\\n\\nPrevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+                                "description": "> [!NOTE]\\n> `max_file_path_length` is in beta and subject to change.\\n\\nPrevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
                             },
                             {
                                 "title": "file_extension_restriction",
@@ -741,7 +822,7 @@ final readonly class Changes
                                         }
                                     }
                                 },
-                                "description": "Note: file_extension_restriction is in beta and subject to change.\\n\\nPrevent commits that include files with specified file extensions from being pushed to the commit graph."
+                                "description": "> [!NOTE]\\n> `file_extension_restriction` is in beta and subject to change.\\n\\nPrevent commits that include files with specified file extensions from being pushed to the commit graph."
                             },
                             {
                                 "title": "max_file_size",
@@ -771,7 +852,7 @@ final readonly class Changes
                                         }
                                     }
                                 },
-                                "description": "Note: max_file_size is in beta and subject to change.\\n\\nPrevent commits that exceed a specified file size limit from being pushed to the commit."
+                                "description": "> [!NOTE]\\n> `max_file_size` is in beta and subject to change.\\n\\nPrevent commits that exceed a specified file size limit from being pushed to the commit."
                             },
                             {
                                 "title": "workflows",
@@ -792,6 +873,10 @@ final readonly class Changes
                                         ],
                                         "type": "object",
                                         "properties": {
+                                            "do_not_enforce_on_create": {
+                                                "type": "boolean",
+                                                "description": "Allow repositories and branches to be created if a check would otherwise prohibit it."
+                                            },
                                             "workflows": {
                                                 "type": "array",
                                                 "items": {
@@ -980,6 +1065,83 @@ final readonly class Changes
                                 "description": "Prevent merge commits from being pushed to matching refs."
                             },
                             {
+                                "title": "merge_queue",
+                                "required": [
+                                    "type"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "type": {
+                                        "enum": [
+                                            "merge_queue"
+                                        ],
+                                        "type": "string"
+                                    },
+                                    "parameters": {
+                                        "required": [
+                                            "check_response_timeout_minutes",
+                                            "grouping_strategy",
+                                            "max_entries_to_build",
+                                            "max_entries_to_merge",
+                                            "merge_method",
+                                            "min_entries_to_merge",
+                                            "min_entries_to_merge_wait_minutes"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "check_response_timeout_minutes": {
+                                                "maximum": 360,
+                                                "minimum": 1,
+                                                "type": "integer",
+                                                "description": "Maximum time for a required status check to report a conclusion. After this much time has elapsed, checks that have not reported a conclusion will be assumed to have failed"
+                                            },
+                                            "grouping_strategy": {
+                                                "enum": [
+                                                    "ALLGREEN",
+                                                    "HEADGREEN"
+                                                ],
+                                                "type": "string",
+                                                "description": "When set to ALLGREEN, the merge commit created by merge queue for each PR in the group must pass all required checks to merge. When set to HEADGREEN, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge."
+                                            },
+                                            "max_entries_to_build": {
+                                                "maximum": 100,
+                                                "minimum": 0,
+                                                "type": "integer",
+                                                "description": "Limit the number of queued pull requests requesting checks and workflow runs at the same time."
+                                            },
+                                            "max_entries_to_merge": {
+                                                "maximum": 100,
+                                                "minimum": 0,
+                                                "type": "integer",
+                                                "description": "The maximum number of PRs that will be merged together in a group."
+                                            },
+                                            "merge_method": {
+                                                "enum": [
+                                                    "MERGE",
+                                                    "SQUASH",
+                                                    "REBASE"
+                                                ],
+                                                "type": "string",
+                                                "description": "Method to use when merging changes from queued pull requests."
+                                            },
+                                            "min_entries_to_merge": {
+                                                "maximum": 100,
+                                                "minimum": 0,
+                                                "type": "integer",
+                                                "description": "The minimum number of PRs that will be merged together in a group."
+                                            },
+                                            "min_entries_to_merge_wait_minutes": {
+                                                "maximum": 360,
+                                                "minimum": 0,
+                                                "type": "integer",
+                                                "description": "The time merge queue should wait after the first PR is added to the queue for the minimum group size to be met. After this time has elapsed, the minimum group size will be ignored and a smaller group will be merged."
+                                            }
+                                        }
+                                    }
+                                },
+                                "description": "Merges must be performed via a merge queue."
+                            },
+                            {
                                 "title": "required_deployments",
                                 "required": [
                                     "type"
@@ -1096,6 +1258,10 @@ final readonly class Changes
                                         ],
                                         "type": "object",
                                         "properties": {
+                                            "do_not_enforce_on_create": {
+                                                "type": "boolean",
+                                                "description": "Allow repositories and branches to be created if a check would otherwise prohibit it."
+                                            },
                                             "required_status_checks": {
                                                 "type": "array",
                                                 "items": {
@@ -1407,7 +1573,7 @@ final readonly class Changes
                                         }
                                     }
                                 },
-                                "description": "Note: file_path_restriction is in beta and subject to change.\\n\\nPrevent commits that include changes in specified file paths from being pushed to the commit graph."
+                                "description": "> [!NOTE]\\n> `file_path_restriction` is in beta and subject to change.\\n\\nPrevent commits that include changes in specified file paths from being pushed to the commit graph."
                             },
                             {
                                 "title": "max_file_path_length",
@@ -1437,7 +1603,7 @@ final readonly class Changes
                                         }
                                     }
                                 },
-                                "description": "Note: max_file_path_length is in beta and subject to change.\\n\\nPrevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+                                "description": "> [!NOTE]\\n> `max_file_path_length` is in beta and subject to change.\\n\\nPrevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
                             },
                             {
                                 "title": "file_extension_restriction",
@@ -1468,7 +1634,7 @@ final readonly class Changes
                                         }
                                     }
                                 },
-                                "description": "Note: file_extension_restriction is in beta and subject to change.\\n\\nPrevent commits that include files with specified file extensions from being pushed to the commit graph."
+                                "description": "> [!NOTE]\\n> `file_extension_restriction` is in beta and subject to change.\\n\\nPrevent commits that include files with specified file extensions from being pushed to the commit graph."
                             },
                             {
                                 "title": "max_file_size",
@@ -1498,7 +1664,7 @@ final readonly class Changes
                                         }
                                     }
                                 },
-                                "description": "Note: max_file_size is in beta and subject to change.\\n\\nPrevent commits that exceed a specified file size limit from being pushed to the commit."
+                                "description": "> [!NOTE]\\n> `max_file_size` is in beta and subject to change.\\n\\nPrevent commits that exceed a specified file size limit from being pushed to the commit."
                             },
                             {
                                 "title": "workflows",
@@ -1519,6 +1685,10 @@ final readonly class Changes
                                         ],
                                         "type": "object",
                                         "properties": {
+                                            "do_not_enforce_on_create": {
+                                                "type": "boolean",
+                                                "description": "Allow repositories and branches to be created if a check would otherwise prohibit it."
+                                            },
                                             "workflows": {
                                                 "type": "array",
                                                 "items": {
@@ -1710,6 +1880,83 @@ final readonly class Changes
                                         "description": "Prevent merge commits from being pushed to matching refs."
                                     },
                                     {
+                                        "title": "merge_queue",
+                                        "required": [
+                                            "type"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "type": {
+                                                "enum": [
+                                                    "merge_queue"
+                                                ],
+                                                "type": "string"
+                                            },
+                                            "parameters": {
+                                                "required": [
+                                                    "check_response_timeout_minutes",
+                                                    "grouping_strategy",
+                                                    "max_entries_to_build",
+                                                    "max_entries_to_merge",
+                                                    "merge_method",
+                                                    "min_entries_to_merge",
+                                                    "min_entries_to_merge_wait_minutes"
+                                                ],
+                                                "type": "object",
+                                                "properties": {
+                                                    "check_response_timeout_minutes": {
+                                                        "maximum": 360,
+                                                        "minimum": 1,
+                                                        "type": "integer",
+                                                        "description": "Maximum time for a required status check to report a conclusion. After this much time has elapsed, checks that have not reported a conclusion will be assumed to have failed"
+                                                    },
+                                                    "grouping_strategy": {
+                                                        "enum": [
+                                                            "ALLGREEN",
+                                                            "HEADGREEN"
+                                                        ],
+                                                        "type": "string",
+                                                        "description": "When set to ALLGREEN, the merge commit created by merge queue for each PR in the group must pass all required checks to merge. When set to HEADGREEN, only the commit at the head of the merge group, i.e. the commit containing changes from all of the PRs in the group, must pass its required checks to merge."
+                                                    },
+                                                    "max_entries_to_build": {
+                                                        "maximum": 100,
+                                                        "minimum": 0,
+                                                        "type": "integer",
+                                                        "description": "Limit the number of queued pull requests requesting checks and workflow runs at the same time."
+                                                    },
+                                                    "max_entries_to_merge": {
+                                                        "maximum": 100,
+                                                        "minimum": 0,
+                                                        "type": "integer",
+                                                        "description": "The maximum number of PRs that will be merged together in a group."
+                                                    },
+                                                    "merge_method": {
+                                                        "enum": [
+                                                            "MERGE",
+                                                            "SQUASH",
+                                                            "REBASE"
+                                                        ],
+                                                        "type": "string",
+                                                        "description": "Method to use when merging changes from queued pull requests."
+                                                    },
+                                                    "min_entries_to_merge": {
+                                                        "maximum": 100,
+                                                        "minimum": 0,
+                                                        "type": "integer",
+                                                        "description": "The minimum number of PRs that will be merged together in a group."
+                                                    },
+                                                    "min_entries_to_merge_wait_minutes": {
+                                                        "maximum": 360,
+                                                        "minimum": 0,
+                                                        "type": "integer",
+                                                        "description": "The time merge queue should wait after the first PR is added to the queue for the minimum group size to be met. After this time has elapsed, the minimum group size will be ignored and a smaller group will be merged."
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "description": "Merges must be performed via a merge queue."
+                                    },
+                                    {
                                         "title": "required_deployments",
                                         "required": [
                                             "type"
@@ -1826,6 +2073,10 @@ final readonly class Changes
                                                 ],
                                                 "type": "object",
                                                 "properties": {
+                                                    "do_not_enforce_on_create": {
+                                                        "type": "boolean",
+                                                        "description": "Allow repositories and branches to be created if a check would otherwise prohibit it."
+                                                    },
                                                     "required_status_checks": {
                                                         "type": "array",
                                                         "items": {
@@ -2137,7 +2388,7 @@ final readonly class Changes
                                                 }
                                             }
                                         },
-                                        "description": "Note: file_path_restriction is in beta and subject to change.\\n\\nPrevent commits that include changes in specified file paths from being pushed to the commit graph."
+                                        "description": "> [!NOTE]\\n> `file_path_restriction` is in beta and subject to change.\\n\\nPrevent commits that include changes in specified file paths from being pushed to the commit graph."
                                     },
                                     {
                                         "title": "max_file_path_length",
@@ -2167,7 +2418,7 @@ final readonly class Changes
                                                 }
                                             }
                                         },
-                                        "description": "Note: max_file_path_length is in beta and subject to change.\\n\\nPrevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+                                        "description": "> [!NOTE]\\n> `max_file_path_length` is in beta and subject to change.\\n\\nPrevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
                                     },
                                     {
                                         "title": "file_extension_restriction",
@@ -2198,7 +2449,7 @@ final readonly class Changes
                                                 }
                                             }
                                         },
-                                        "description": "Note: file_extension_restriction is in beta and subject to change.\\n\\nPrevent commits that include files with specified file extensions from being pushed to the commit graph."
+                                        "description": "> [!NOTE]\\n> `file_extension_restriction` is in beta and subject to change.\\n\\nPrevent commits that include files with specified file extensions from being pushed to the commit graph."
                                     },
                                     {
                                         "title": "max_file_size",
@@ -2228,7 +2479,7 @@ final readonly class Changes
                                                 }
                                             }
                                         },
-                                        "description": "Note: max_file_size is in beta and subject to change.\\n\\nPrevent commits that exceed a specified file size limit from being pushed to the commit."
+                                        "description": "> [!NOTE]\\n> `max_file_size` is in beta and subject to change.\\n\\nPrevent commits that exceed a specified file size limit from being pushed to the commit."
                                     },
                                     {
                                         "title": "workflows",
@@ -2249,6 +2500,10 @@ final readonly class Changes
                                                 ],
                                                 "type": "object",
                                                 "properties": {
+                                                    "do_not_enforce_on_create": {
+                                                        "type": "boolean",
+                                                        "description": "Allow repositories and branches to be created if a check would otherwise prohibit it."
+                                                    },
                                                     "workflows": {
                                                         "type": "array",
                                                         "items": {

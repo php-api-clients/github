@@ -27,6 +27,10 @@ final readonly class RepositoryRuleWorkflows
             ],
             "type": "object",
             "properties": {
+                "do_not_enforce_on_create": {
+                    "type": "boolean",
+                    "description": "Allow repositories and branches to be created if a check would otherwise prohibit it."
+                },
                 "workflows": {
                     "type": "array",
                     "items": {
@@ -68,6 +72,7 @@ final readonly class RepositoryRuleWorkflows
     public const SCHEMA_EXAMPLE_DATA = '{
     "type": "workflows",
     "parameters": {
+        "do_not_enforce_on_create": false,
         "workflows": [
             {
                 "path": "generated",

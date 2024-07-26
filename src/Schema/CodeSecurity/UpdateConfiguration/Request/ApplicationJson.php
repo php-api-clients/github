@@ -106,7 +106,7 @@ final readonly class ApplicationJson
                 "unenforced"
             ],
             "type": "string",
-            "description": "The status of enforcement"
+            "description": "The enforcement status for a security configuration"
         }
     },
     "additionalProperties": false
@@ -140,7 +140,7 @@ final readonly class ApplicationJson
      * secretScanningPushProtection: The enablement status of secret scanning push protection
      * secretScanningValidityChecks: The enablement status of secret scanning validity checks
      * privateVulnerabilityReporting: The enablement status of private vulnerability reporting
-     * enforcement: The status of enforcement
+     * enforcement: The enforcement status for a security configuration
      */
     public function __construct(public string|null $name, public string|null $description, #[MapFrom('advanced_security')]
     public string|null $advancedSecurity, #[MapFrom('dependency_graph')]

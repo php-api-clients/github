@@ -9,7 +9,7 @@ use ApiClients\Client\GitHub\Schema;
 final readonly class Seventeen
 {
     public const SCHEMA_JSON         = '{
-    "title": "max_file_size",
+    "title": "file_extension_restriction",
     "required": [
         "type"
     ],
@@ -17,35 +17,40 @@ final readonly class Seventeen
     "properties": {
         "type": {
             "enum": [
-                "max_file_size"
+                "file_extension_restriction"
             ],
             "type": "string"
         },
         "parameters": {
             "required": [
-                "max_file_size"
+                "restricted_file_extensions"
             ],
             "type": "object",
             "properties": {
-                "max_file_size": {
-                    "maximum": 100,
-                    "minimum": 1,
-                    "type": "integer",
-                    "description": "The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS)."
+                "restricted_file_extensions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "The file extensions that are restricted from being pushed to the commit graph."
                 }
             }
         }
     },
-    "description": "Note: max_file_size is in beta and subject to change.\\n\\nPrevent commits that exceed a specified file size limit from being pushed to the commit."
+    "description": "> [!NOTE]\\n> `file_extension_restriction` is in beta and subject to change.\\n\\nPrevent commits that include files with specified file extensions from being pushed to the commit graph."
 }';
-    public const SCHEMA_TITLE        = 'max_file_size';
-    public const SCHEMA_DESCRIPTION  = 'Note: max_file_size is in beta and subject to change.
+    public const SCHEMA_TITLE        = 'file_extension_restriction';
+    public const SCHEMA_DESCRIPTION  = '> [!NOTE]
+> `file_extension_restriction` is in beta and subject to change.
 
-Prevent commits that exceed a specified file size limit from being pushed to the commit.';
+Prevent commits that include files with specified file extensions from being pushed to the commit graph.';
     public const SCHEMA_EXAMPLE_DATA = '{
-    "type": "max_file_size",
+    "type": "file_extension_restriction",
     "parameters": {
-        "max_file_size": 13
+        "restricted_file_extensions": [
+            "generated",
+            "generated"
+        ]
     }
 }';
 

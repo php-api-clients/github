@@ -10,29 +10,33 @@ final readonly class Parameters
 {
     public const SCHEMA_JSON         = '{
     "required": [
-        "max_file_path_length"
+        "restricted_file_paths"
     ],
     "type": "object",
     "properties": {
-        "max_file_path_length": {
-            "maximum": 256,
-            "minimum": 1,
-            "type": "integer",
-            "description": "The maximum amount of characters allowed in file paths"
+        "restricted_file_paths": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "The file paths that are restricted from being pushed to the commit graph."
         }
     }
 }';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{
-    "max_file_path_length": 20
+    "restricted_file_paths": [
+        "generated",
+        "generated"
+    ]
 }';
 
     /**
-     * maxFilePathLength: The maximum amount of characters allowed in file paths
+     * restrictedFilePaths: The file paths that are restricted from being pushed to the commit graph.
      */
-    public function __construct(#[MapFrom('max_file_path_length')]
-    public int $maxFilePathLength,)
+    public function __construct(#[MapFrom('restricted_file_paths')]
+    public array $restrictedFilePaths,)
     {
     }
 }

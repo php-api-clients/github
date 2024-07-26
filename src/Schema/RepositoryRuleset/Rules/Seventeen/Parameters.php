@@ -10,29 +10,33 @@ final readonly class Parameters
 {
     public const SCHEMA_JSON         = '{
     "required": [
-        "max_file_size"
+        "restricted_file_extensions"
     ],
     "type": "object",
     "properties": {
-        "max_file_size": {
-            "maximum": 100,
-            "minimum": 1,
-            "type": "integer",
-            "description": "The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS)."
+        "restricted_file_extensions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "The file extensions that are restricted from being pushed to the commit graph."
         }
     }
 }';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{
-    "max_file_size": 13
+    "restricted_file_extensions": [
+        "generated",
+        "generated"
+    ]
 }';
 
     /**
-     * maxFileSize: The maximum file size allowed in megabytes. This limit does not apply to Git Large File Storage (Git LFS).
+     * restrictedFileExtensions: The file extensions that are restricted from being pushed to the commit graph.
      */
-    public function __construct(#[MapFrom('max_file_size')]
-    public int $maxFileSize,)
+    public function __construct(#[MapFrom('restricted_file_extensions')]
+    public array $restrictedFileExtensions,)
     {
     }
 }

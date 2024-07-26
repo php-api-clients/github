@@ -1101,6 +1101,17 @@ class DiscussionComment implements ObjectMapper
             $properties['user'] = $value;
 
             after_user:
+
+            $value = $payload['labels'] ?? null;
+
+            if ($value === null) {
+                $properties['labels'] = null;
+                goto after_labels;
+            }
+
+            $properties['labels'] = $value;
+
+            after_labels:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Discussion', $exception, stack: $this->hydrationStack);
         }
@@ -6309,6 +6320,21 @@ class DiscussionComment implements ObjectMapper
 
         $user                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Discussion⚡️User($user);
         after_user:        $result['user'] = $user;
+
+        $labels = $object->labels;
+
+        if ($labels === null) {
+            goto after_labels;
+        }
+
+        static $labelsSerializer0;
+
+        if ($labelsSerializer0 === null) {
+            $labelsSerializer0 = new SerializeArrayItems(...[]);
+        }
+
+        $labels                                = $labelsSerializer0->serialize($labels, $this);
+        after_labels:        $result['labels'] = $labels;
 
         return $result;
     }

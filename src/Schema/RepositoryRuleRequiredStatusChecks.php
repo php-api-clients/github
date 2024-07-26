@@ -28,6 +28,10 @@ final readonly class RepositoryRuleRequiredStatusChecks
             ],
             "type": "object",
             "properties": {
+                "do_not_enforce_on_create": {
+                    "type": "boolean",
+                    "description": "Allow repositories and branches to be created if a check would otherwise prohibit it."
+                },
                 "required_status_checks": {
                     "type": "array",
                     "items": {
@@ -64,6 +68,7 @@ final readonly class RepositoryRuleRequiredStatusChecks
     public const SCHEMA_EXAMPLE_DATA = '{
     "type": "required_status_checks",
     "parameters": {
+        "do_not_enforce_on_create": false,
         "required_status_checks": [
             {
                 "context": "generated",

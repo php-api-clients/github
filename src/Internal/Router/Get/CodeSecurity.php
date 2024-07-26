@@ -96,7 +96,7 @@ final class CodeSecurity
         return $operator->call($arguments['org'], $arguments['configuration_id']);
     }
 
-    /** @return Observable<Schema\CodeSecurityConfigurationRepositories> */
+    /** @return iterable<int,Schema\CodeSecurityConfigurationRepositories> */
     public function getRepositoriesForConfiguration(array $params): iterable
     {
         $arguments = [];

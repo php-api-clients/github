@@ -23,6 +23,7 @@ final readonly class Label
     "properties": {
         "id": {
             "type": "integer",
+            "description": "Unique identifier for the label.",
             "format": "int64",
             "examples": [
                 208045946
@@ -54,6 +55,7 @@ final readonly class Label
                 "string",
                 "null"
             ],
+            "description": "Optional description of the label, such as its purpose.",
             "examples": [
                 "Something isn\'t working"
             ]
@@ -67,6 +69,7 @@ final readonly class Label
         },
         "default": {
             "type": "boolean",
+            "description": "Whether this label comes by default in a new repository.",
             "examples": [
                 true
             ]
@@ -87,9 +90,12 @@ final readonly class Label
 }';
 
     /**
+     * id: Unique identifier for the label.
      * url: URL for the label
      * name: The name of the label.
+     * description: Optional description of the label, such as its purpose.
      * color: 6-character hex code, without the leading #, identifying the color
+     * default: Whether this label comes by default in a new repository.
      */
     public function __construct(public int $id, #[MapFrom('node_id')]
     public string $nodeId, public string $url, public string $name, public string|null $description, public string $color, public bool $default,)

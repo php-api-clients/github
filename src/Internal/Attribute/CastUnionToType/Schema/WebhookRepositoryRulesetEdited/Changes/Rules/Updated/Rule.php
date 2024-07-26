@@ -53,6 +53,13 @@ final class Rule implements PropertyCaster
                 }
             }
 
+            if ($signature === 'parameters|type' && $value['type'] === 'merge_queue') {
+                try {
+                    return $hydrator->hydrateObject(Schema\RepositoryRuleMergeQueue::class, $value);
+                } catch (Throwable) {
+                }
+            }
+
             if ($signature === 'parameters|type' && $value['type'] === 'required_deployments') {
                 try {
                     return $hydrator->hydrateObject(Schema\RepositoryRuleRequiredDeployments::class, $value);
@@ -125,28 +132,28 @@ final class Rule implements PropertyCaster
 
             if ($signature === 'parameters|type' && $value['type'] === 'file_path_restriction') {
                 try {
-                    return $hydrator->hydrateObject(Schema\RepositoryRuleset\Rules\Fourteen::class, $value);
+                    return $hydrator->hydrateObject(Schema\RepositoryRuleset\Rules\Fifteen::class, $value);
                 } catch (Throwable) {
                 }
             }
 
             if ($signature === 'parameters|type' && $value['type'] === 'max_file_path_length') {
                 try {
-                    return $hydrator->hydrateObject(Schema\RepositoryRuleset\Rules\Fifteen::class, $value);
+                    return $hydrator->hydrateObject(Schema\RepositoryRuleset\Rules\Sixteen::class, $value);
                 } catch (Throwable) {
                 }
             }
 
             if ($signature === 'parameters|type' && $value['type'] === 'file_extension_restriction') {
                 try {
-                    return $hydrator->hydrateObject(Schema\RepositoryRuleset\Rules\Sixteen::class, $value);
+                    return $hydrator->hydrateObject(Schema\RepositoryRuleset\Rules\Seventeen::class, $value);
                 } catch (Throwable) {
                 }
             }
 
             if ($signature === 'parameters|type' && $value['type'] === 'max_file_size') {
                 try {
-                    return $hydrator->hydrateObject(Schema\RepositoryRuleset\Rules\Seventeen::class, $value);
+                    return $hydrator->hydrateObject(Schema\RepositoryRuleset\Rules\Eighteen::class, $value);
                 } catch (Throwable) {
                 }
             }

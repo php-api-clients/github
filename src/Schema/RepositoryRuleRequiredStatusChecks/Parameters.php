@@ -15,6 +15,10 @@ final readonly class Parameters
     ],
     "type": "object",
     "properties": {
+        "do_not_enforce_on_create": {
+            "type": "boolean",
+            "description": "Allow repositories and branches to be created if a check would otherwise prohibit it."
+        },
         "required_status_checks": {
             "type": "array",
             "items": {
@@ -46,6 +50,7 @@ final readonly class Parameters
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{
+    "do_not_enforce_on_create": false,
     "required_status_checks": [
         {
             "context": "generated",
@@ -60,10 +65,12 @@ final readonly class Parameters
 }';
 
     /**
+     * doNotEnforceOnCreate: Allow repositories and branches to be created if a check would otherwise prohibit it.
      * requiredStatusChecks: Status checks that are required.
      * strictRequiredStatusChecksPolicy: Whether pull requests targeting a matching branch must be tested with the latest code. This setting will not take effect unless at least one status check is enabled.
      */
-    public function __construct(#[MapFrom('required_status_checks')]
+    public function __construct(#[MapFrom('do_not_enforce_on_create')]
+    public bool|null $doNotEnforceOnCreate, #[MapFrom('required_status_checks')]
     public array $requiredStatusChecks, #[MapFrom('strict_required_status_checks_policy')]
     public bool $strictRequiredStatusChecksPolicy,)
     {
