@@ -140,7 +140,7 @@ class CustomProperty implements ObjectMapper
             $value = $payload['organization'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'organization';
+                $properties['organization'] = null;
                 goto after_organization;
             }
 
@@ -937,7 +937,7 @@ class CustomProperty implements ObjectMapper
             $value = $payload['organization'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'organization';
+                $properties['organization'] = null;
                 goto after_organization;
             }
 
@@ -1097,7 +1097,7 @@ class CustomProperty implements ObjectMapper
             $value = $payload['organization'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'organization';
+                $properties['organization'] = null;
                 goto after_organization;
             }
 
@@ -1280,7 +1280,12 @@ class CustomProperty implements ObjectMapper
         $installation                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
-        $organization                                      = $object->organization;
+        $organization = $object->organization;
+
+        if ($organization === null) {
+            goto after_organization;
+        }
+
         $organization                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($organization);
         after_organization:        $result['organization'] = $organization;
 
@@ -1606,7 +1611,12 @@ class CustomProperty implements ObjectMapper
         $installation                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
-        $organization                                      = $object->organization;
+        $organization = $object->organization;
+
+        if ($organization === null) {
+            goto after_organization;
+        }
+
         $organization                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($organization);
         after_organization:        $result['organization'] = $organization;
 
@@ -1663,7 +1673,12 @@ class CustomProperty implements ObjectMapper
         $installation                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
         after_installation:        $result['installation'] = $installation;
 
-        $organization                                      = $object->organization;
+        $organization = $object->organization;
+
+        if ($organization === null) {
+            goto after_organization;
+        }
+
         $organization                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($organization);
         after_organization:        $result['organization'] = $organization;
 

@@ -12,8 +12,7 @@ final readonly class WebhookCustomPropertyCreated
     "title": "custom property created event",
     "required": [
         "action",
-        "definition",
-        "organization"
+        "definition"
     ],
     "type": "object",
     "properties": {
@@ -565,7 +564,7 @@ final readonly class WebhookCustomPropertyCreated
     organization, or when the event occurs from activity in a repository owned by an organization.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\OrgCustomProperty $definition, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks $organization, public Schema\SimpleUserWebhooks|null $sender)
+    public function __construct(public string $action, public Schema\OrgCustomProperty $definition, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\SimpleUserWebhooks|null $sender)
     {
     }
 }
