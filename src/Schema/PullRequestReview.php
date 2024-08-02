@@ -28,6 +28,7 @@ final readonly class PullRequestReview
         "id": {
             "type": "integer",
             "description": "Unique identifier of the review",
+            "format": "int64",
             "examples": [
                 42
             ]

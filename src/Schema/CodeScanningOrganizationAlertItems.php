@@ -293,16 +293,6 @@ final readonly class CodeScanningOrganizationAlertItems
                     "type": "string",
                     "description": "The name of the rule used to detect the alert."
                 },
-                "tags": {
-                    "type": [
-                        "array",
-                        "null"
-                    ],
-                    "items": {
-                        "type": "string"
-                    },
-                    "description": "A set of tags applicable for the rule."
-                },
                 "severity": {
                     "enum": [
                         "none",
@@ -334,6 +324,16 @@ final readonly class CodeScanningOrganizationAlertItems
                 "description": {
                     "type": "string",
                     "description": "A short description of the rule used to detect the alert."
+                },
+                "tags": {
+                    "type": [
+                        "array",
+                        "null"
+                    ],
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "A set of tags applicable for the rule."
                 }
             }
         },
@@ -1030,10 +1030,10 @@ final readonly class CodeScanningOrganizationAlertItems
     "rule": {
         "id": "generated",
         "name": "generated",
-        "tags": null,
         "severity": "error",
         "security_severity_level": "low",
-        "description": "generated"
+        "description": "generated",
+        "tags": null
     },
     "tool": {
         "name": "generated",
