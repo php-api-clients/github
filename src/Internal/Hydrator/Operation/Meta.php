@@ -217,6 +217,17 @@ class Meta implements ObjectMapper
 
             after_dependabot:
 
+            $value = $payload['copilot'] ?? null;
+
+            if ($value === null) {
+                $properties['copilot'] = null;
+                goto after_copilot;
+            }
+
+            $properties['copilot'] = $value;
+
+            after_copilot:
+
             $value = $payload['domains'] ?? null;
 
             if ($value === null) {
@@ -680,6 +691,21 @@ class Meta implements ObjectMapper
 
         $dependabot                                    = $dependabotSerializer0->serialize($dependabot, $this);
         after_dependabot:        $result['dependabot'] = $dependabot;
+
+        $copilot = $object->copilot;
+
+        if ($copilot === null) {
+            goto after_copilot;
+        }
+
+        static $copilotSerializer0;
+
+        if ($copilotSerializer0 === null) {
+            $copilotSerializer0 = new SerializeArrayItems(...[]);
+        }
+
+        $copilot                                 = $copilotSerializer0->serialize($copilot, $this);
+        after_copilot:        $result['copilot'] = $copilot;
 
         $domains = $object->domains;
 

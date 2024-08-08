@@ -53,6 +53,8 @@ final class Operators
     private Internal\Operator\Copilot\UsageMetricsForEnterpriseListing|null $copilot👷UsageMetricsForEnterpriseListing                                                               = null;
     private Internal\Operator\Dependabot\ListAlertsForEnterprise|null $dependabot👷ListAlertsForEnterprise                                                                           = null;
     private Internal\Operator\SecretScanning\ListAlertsForEnterprise|null $secretScanning👷ListAlertsForEnterprise                                                                   = null;
+    private Internal\Operator\Copilot\UsageMetricsForEnterpriseTeam|null $copilot👷UsageMetricsForEnterpriseTeam                                                                     = null;
+    private Internal\Operator\Copilot\UsageMetricsForEnterpriseTeamListing|null $copilot👷UsageMetricsForEnterpriseTeamListing                                                       = null;
     private Internal\Operator\Activity\ListPublicEvents|null $activity👷ListPublicEvents                                                                                             = null;
     private Internal\Operator\Activity\ListPublicEventsListing|null $activity👷ListPublicEventsListing                                                                               = null;
     private Internal\Operator\Activity\GetFeeds|null $activity👷GetFeeds                                                                                                             = null;
@@ -1514,6 +1516,24 @@ final class Operators
         }
 
         return $this->secretScanning👷ListAlertsForEnterprise;
+    }
+
+    public function copilot👷UsageMetricsForEnterpriseTeam(): Internal\Operator\Copilot\UsageMetricsForEnterpriseTeam
+    {
+        if ($this->copilot👷UsageMetricsForEnterpriseTeam instanceof Internal\Operator\Copilot\UsageMetricsForEnterpriseTeam === false) {
+            $this->copilot👷UsageMetricsForEnterpriseTeam = new Internal\Operator\Copilot\UsageMetricsForEnterpriseTeam($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Usage());
+        }
+
+        return $this->copilot👷UsageMetricsForEnterpriseTeam;
+    }
+
+    public function copilot👷UsageMetricsForEnterpriseTeamListing(): Internal\Operator\Copilot\UsageMetricsForEnterpriseTeamListing
+    {
+        if ($this->copilot👷UsageMetricsForEnterpriseTeamListing instanceof Internal\Operator\Copilot\UsageMetricsForEnterpriseTeamListing === false) {
+            $this->copilot👷UsageMetricsForEnterpriseTeamListing = new Internal\Operator\Copilot\UsageMetricsForEnterpriseTeamListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Usage());
+        }
+
+        return $this->copilot👷UsageMetricsForEnterpriseTeamListing;
     }
 
     public function activity👷ListPublicEvents(): Internal\Operator\Activity\ListPublicEvents

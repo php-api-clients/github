@@ -231,18 +231,18 @@ final class Client implements ClientInterface
                 }
 
                 return $this->router[Internal\Router\List\Five::class]->call($call, $params, $pathChunks);
-            } elseif ($pathChunksCount === 6) {
-                if (\array_key_exists(Internal\Router\List\Six::class, $this->router) === false) {
-                    $this->router[Internal\Router\List\Six::class] = new Internal\Router\List\Six(routers: $this->routers);
-                }
-
-                return $this->router[Internal\Router\List\Six::class]->call($call, $params, $pathChunks);
             } elseif ($pathChunksCount === 7) {
                 if (\array_key_exists(Internal\Router\List\Seven::class, $this->router) === false) {
                     $this->router[Internal\Router\List\Seven::class] = new Internal\Router\List\Seven(routers: $this->routers);
                 }
 
                 return $this->router[Internal\Router\List\Seven::class]->call($call, $params, $pathChunks);
+            } elseif ($pathChunksCount === 6) {
+                if (\array_key_exists(Internal\Router\List\Six::class, $this->router) === false) {
+                    $this->router[Internal\Router\List\Six::class] = new Internal\Router\List\Six(routers: $this->routers);
+                }
+
+                return $this->router[Internal\Router\List\Six::class]->call($call, $params, $pathChunks);
             } elseif ($pathChunksCount === 8) {
                 if (\array_key_exists(Internal\Router\List\Eight::class, $this->router) === false) {
                     $this->router[Internal\Router\List\Eight::class] = new Internal\Router\List\Eight(routers: $this->routers);

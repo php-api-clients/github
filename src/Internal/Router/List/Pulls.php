@@ -91,63 +91,6 @@ final class Pulls
     }
 
     /** @return Observable<Schema\PullRequestReviewComment> */
-    public function listReviewCommentsForRepoListing(array $params): iterable
-    {
-        $arguments = [];
-        if (array_key_exists('owner', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: owner');
-        }
-
-        $arguments['owner'] = $params['owner'];
-        unset($params['owner']);
-        if (array_key_exists('repo', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repo');
-        }
-
-        $arguments['repo'] = $params['repo'];
-        unset($params['repo']);
-        if (array_key_exists('sort', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: sort');
-        }
-
-        $arguments['sort'] = $params['sort'];
-        unset($params['sort']);
-        if (array_key_exists('direction', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: direction');
-        }
-
-        $arguments['direction'] = $params['direction'];
-        unset($params['direction']);
-        if (array_key_exists('since', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: since');
-        }
-
-        $arguments['since'] = $params['since'];
-        unset($params['since']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        $arguments['page'] = 1;
-        do {
-            $operator = new Internal\Operator\Pulls\ListReviewCommentsForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀Comments());
-            $items    = [...$operator->call($arguments['owner'], $arguments['repo'], $arguments['sort'], $arguments['direction'], $arguments['since'], $arguments['per_page'], $arguments['page'])];
-
-            yield from $items;
-
-            $arguments['page']++;
-        } while (count($items) > 0);
-    }
-
-    /** @return Observable<Schema\PullRequestReviewComment> */
     public function listReviewCommentsListing(array $params): iterable
     {
         $arguments = [];
@@ -338,6 +281,63 @@ final class Pulls
         do {
             $operator = new Internal\Operator\Pulls\ListReviewsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀PullNumber🌀Reviews());
             $items    = [...$operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $arguments['per_page'], $arguments['page'])];
+
+            yield from $items;
+
+            $arguments['page']++;
+        } while (count($items) > 0);
+    }
+
+    /** @return Observable<Schema\PullRequestReviewComment> */
+    public function listReviewCommentsForRepoListing(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('sort', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: sort');
+        }
+
+        $arguments['sort'] = $params['sort'];
+        unset($params['sort']);
+        if (array_key_exists('direction', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: direction');
+        }
+
+        $arguments['direction'] = $params['direction'];
+        unset($params['direction']);
+        if (array_key_exists('since', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: since');
+        }
+
+        $arguments['since'] = $params['since'];
+        unset($params['since']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $arguments['page'] = 1;
+        do {
+            $operator = new Internal\Operator\Pulls\ListReviewCommentsForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀Comments());
+            $items    = [...$operator->call($arguments['owner'], $arguments['repo'], $arguments['sort'], $arguments['direction'], $arguments['since'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 

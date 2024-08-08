@@ -990,6 +990,66 @@ $client->operations()->secretScanning()->listAlertsForEnterprise(        enterpr
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/secret-scanning/secret-scanning#list-secret-scanning-alerts-for-an-enterprise).
 
 
+### copilot/usage-metrics-for-enterprise-team
+
+Get a summary of Copilot usage for an enterprise team
+
+Using the `call` method:
+```php
+$client->call('GET /enterprises/{enterprise}/team/{team_slug}/copilot/usage', [
+        'enterprise' => 'generated',
+        'team_slug' => 'generated',
+        'since' => 'generated',
+        'until' => 'generated',
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->usageMetricsForEnterpriseTeam(        enterprise: 'generated',
+        team_slug: 'generated',
+        since: 'generated',
+        until: 'generated',
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-an-enterprise-team).
+
+
+### copilot/usage-metrics-for-enterprise-team
+
+Get a summary of Copilot usage for an enterprise team
+
+Using the `call` method:
+```php
+$client->call('LIST /enterprises/{enterprise}/team/{team_slug}/copilot/usage', [
+        'enterprise' => 'generated',
+        'team_slug' => 'generated',
+        'since' => 'generated',
+        'until' => 'generated',
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->usageMetricsForEnterpriseTeamListing(        enterprise: 'generated',
+        team_slug: 'generated',
+        since: 'generated',
+        until: 'generated',
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-an-enterprise-team).
+
+
 ### activity/list-public-events
 
 List public events

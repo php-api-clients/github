@@ -31,20 +31,6 @@ final class Assignee implements PropertyCaster
                 } catch (Throwable) {
                 }
             }
-
-            if ($signature === 'description|html_url|id|members_url|name|node_id|notification_setting|parent|permission|permissions|privacy|repositories_url|slug|url') {
-                try {
-                    return $hydrator->hydrateObject(Schema\Team::class, $value);
-                } catch (Throwable) {
-                }
-            }
-
-            if ($signature === 'avatar_url|blog|company|created_at|description|email|events_url|followers|following|has_organization_projects|has_repository_projects|hooks_url|html_url|id|is_verified|issues_url|location|login|members_url|name|node_id|plan|public_gists|public_members_url|public_repos|repos_url|type|updated_at|url') {
-                try {
-                    return $hydrator->hydrateObject(Schema\Organization::class, $value);
-                } catch (Throwable) {
-                }
-            }
         }
 
         return $value;

@@ -135,7 +135,7 @@ final readonly class ApplicationJson
                 "COMMIT_OR_PR_TITLE"
             ],
             "type": "string",
-            "description": "The default value for a squash merge commit title:\\n\\n- `PR_TITLE` - default to the pull request\'s title.\\n- `COMMIT_OR_PR_TITLE` - default to the commit\'s title (if only one commit) or the pull request\'s title (when more than one commit)."
+            "description": "Required when using `squash_merge_commit_message`.\\n\\nThe default value for a squash merge commit title:\\n\\n- `PR_TITLE` - default to the pull request\'s title.\\n- `COMMIT_OR_PR_TITLE` - default to the commit\'s title (if only one commit) or the pull request\'s title (when more than one commit)."
         },
         "squash_merge_commit_message": {
             "enum": [
@@ -152,7 +152,7 @@ final readonly class ApplicationJson
                 "MERGE_MESSAGE"
             ],
             "type": "string",
-            "description": "The default value for a merge commit title.\\n\\n- `PR_TITLE` - default to the pull request\'s title.\\n- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name)."
+            "description": "Required when using `merge_commit_message`.\\n\\nThe default value for a merge commit title.\\n\\n- `PR_TITLE` - default to the pull request\'s title.\\n- `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name)."
         },
         "merge_commit_message": {
             "enum": [
@@ -227,7 +227,9 @@ final readonly class ApplicationJson
      * allowRebaseMerge: Whether to allow rebase merges for pull requests.
      * allowAutoMerge: Whether to allow Auto-merge to be used on pull requests.
      * deleteBranchOnMerge: Whether to delete head branches when pull requests are merged
-     * squashMergeCommitTitle: The default value for a squash merge commit title:
+     * squashMergeCommitTitle: Required when using `squash_merge_commit_message`.
+
+    The default value for a squash merge commit title:
 
     - `PR_TITLE` - default to the pull request's title.
     - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
@@ -236,7 +238,9 @@ final readonly class ApplicationJson
     - `PR_BODY` - default to the pull request's body.
     - `COMMIT_MESSAGES` - default to the branch's commit messages.
     - `BLANK` - default to a blank commit message.
-     * mergeCommitTitle: The default value for a merge commit title.
+     * mergeCommitTitle: Required when using `merge_commit_message`.
+
+    The default value for a merge commit title.
 
     - `PR_TITLE` - default to the pull request's title.
     - `MERGE_MESSAGE` - default to the classic title for a merge message (e.g., Merge pull request #123 from branch-name).

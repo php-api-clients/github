@@ -21,51 +21,6 @@ final class Reactions
     }
 
     /** @return Observable<Schema\Reaction> */
-    public function listForTeamDiscussionLegacyListing(array $params): iterable
-    {
-        $arguments = [];
-        if (array_key_exists('team_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: team_id');
-        }
-
-        $arguments['team_id'] = $params['team_id'];
-        unset($params['team_id']);
-        if (array_key_exists('discussion_number', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: discussion_number');
-        }
-
-        $arguments['discussion_number'] = $params['discussion_number'];
-        unset($params['discussion_number']);
-        if (array_key_exists('content', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: content');
-        }
-
-        $arguments['content'] = $params['content'];
-        unset($params['content']);
-        if (array_key_exists('per_page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: per_page');
-        }
-
-        $arguments['per_page'] = $params['per_page'];
-        unset($params['per_page']);
-        if (array_key_exists('page', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: page');
-        }
-
-        $arguments['page'] = $params['page'];
-        unset($params['page']);
-        $arguments['page'] = 1;
-        do {
-            $operator = new Internal\Operator\Reactions\ListForTeamDiscussionLegacyListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Teams🌀TeamId🌀Discussions🌀DiscussionNumber🌀Reactions());
-            $items    = [...$operator->call($arguments['team_id'], $arguments['discussion_number'], $arguments['content'], $arguments['per_page'], $arguments['page'])];
-
-            yield from $items;
-
-            $arguments['page']++;
-        } while (count($items) > 0);
-    }
-
-    /** @return Observable<Schema\Reaction> */
     public function listForCommitCommentListing(array $params): iterable
     {
         $arguments = [];
@@ -211,6 +166,51 @@ final class Reactions
         do {
             $operator = new Internal\Operator\Reactions\ListForReleaseListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀ReleaseId🌀Reactions());
             $items    = [...$operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id'], $arguments['content'], $arguments['per_page'], $arguments['page'])];
+
+            yield from $items;
+
+            $arguments['page']++;
+        } while (count($items) > 0);
+    }
+
+    /** @return Observable<Schema\Reaction> */
+    public function listForTeamDiscussionLegacyListing(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('team_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: team_id');
+        }
+
+        $arguments['team_id'] = $params['team_id'];
+        unset($params['team_id']);
+        if (array_key_exists('discussion_number', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: discussion_number');
+        }
+
+        $arguments['discussion_number'] = $params['discussion_number'];
+        unset($params['discussion_number']);
+        if (array_key_exists('content', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: content');
+        }
+
+        $arguments['content'] = $params['content'];
+        unset($params['content']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $arguments['page'] = 1;
+        do {
+            $operator = new Internal\Operator\Reactions\ListForTeamDiscussionLegacyListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Teams🌀TeamId🌀Discussions🌀DiscussionNumber🌀Reactions());
+            $items    = [...$operator->call($arguments['team_id'], $arguments['discussion_number'], $arguments['content'], $arguments['per_page'], $arguments['page'])];
 
             yield from $items;
 

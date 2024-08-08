@@ -105,9 +105,9 @@ final class Routers
     private Internal\Router\List\CodeScanning|null $internal🔀Router🔀List🔀CodeScanning               = null;
     private Internal\Router\List\SecretScanning|null $internal🔀Router🔀List🔀SecretScanning           = null;
     private Internal\Router\List\Pulls|null $internal🔀Router🔀List🔀Pulls                             = null;
-    private Internal\Router\List\Dependabot|null $internal🔀Router🔀List🔀Dependabot                   = null;
-    private Internal\Router\List\Reactions|null $internal🔀Router🔀List🔀Reactions                     = null;
     private Internal\Router\List\Checks|null $internal🔀Router🔀List🔀Checks                           = null;
+    private Internal\Router\List\Reactions|null $internal🔀Router🔀List🔀Reactions                     = null;
+    private Internal\Router\List\Dependabot|null $internal🔀Router🔀List🔀Dependabot                   = null;
     private Internal\Router\Delete\Apps|null $internal🔀Router🔀Delete🔀Apps                           = null;
     private Internal\Router\Delete\Gists|null $internal🔀Router🔀Delete🔀Gists                         = null;
     private Internal\Router\Delete\Activity|null $internal🔀Router🔀Delete🔀Activity                   = null;
@@ -1000,13 +1000,13 @@ final class Routers
         return $this->internal🔀Router🔀List🔀Pulls;
     }
 
-    public function internal🔀Router🔀List🔀Dependabot(): Internal\Router\List\Dependabot
+    public function internal🔀Router🔀List🔀Checks(): Internal\Router\List\Checks
     {
-        if ($this->internal🔀Router🔀List🔀Dependabot instanceof Internal\Router\List\Dependabot === false) {
-            $this->internal🔀Router🔀List🔀Dependabot = new Internal\Router\List\Dependabot(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        if ($this->internal🔀Router🔀List🔀Checks instanceof Internal\Router\List\Checks === false) {
+            $this->internal🔀Router🔀List🔀Checks = new Internal\Router\List\Checks(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
         }
 
-        return $this->internal🔀Router🔀List🔀Dependabot;
+        return $this->internal🔀Router🔀List🔀Checks;
     }
 
     public function internal🔀Router🔀List🔀Reactions(): Internal\Router\List\Reactions
@@ -1018,13 +1018,13 @@ final class Routers
         return $this->internal🔀Router🔀List🔀Reactions;
     }
 
-    public function internal🔀Router🔀List🔀Checks(): Internal\Router\List\Checks
+    public function internal🔀Router🔀List🔀Dependabot(): Internal\Router\List\Dependabot
     {
-        if ($this->internal🔀Router🔀List🔀Checks instanceof Internal\Router\List\Checks === false) {
-            $this->internal🔀Router🔀List🔀Checks = new Internal\Router\List\Checks(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        if ($this->internal🔀Router🔀List🔀Dependabot instanceof Internal\Router\List\Dependabot === false) {
+            $this->internal🔀Router🔀List🔀Dependabot = new Internal\Router\List\Dependabot(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
         }
 
-        return $this->internal🔀Router🔀List🔀Checks;
+        return $this->internal🔀Router🔀List🔀Dependabot;
     }
 
     public function internal🔀Router🔀Delete🔀Apps(): Internal\Router\Delete\Apps

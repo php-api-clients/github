@@ -37,6 +37,18 @@ final class Copilot
         return $this->operators->copilot👷UsageMetricsForEnterpriseListing()->call($enterprise, $since, $until, $page, $perPage);
     }
 
+    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    public function usageMetricsForEnterpriseTeam(string $enterprise, string $teamSlug, string $since, string $until, int $page, int $perPage): iterable
+    {
+        return $this->operators->copilot👷UsageMetricsForEnterpriseTeam()->call($enterprise, $teamSlug, $since, $until, $page, $perPage);
+    }
+
+    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    public function usageMetricsForEnterpriseTeamListing(string $enterprise, string $teamSlug, string $since, string $until, int $page, int $perPage): iterable
+    {
+        return $this->operators->copilot👷UsageMetricsForEnterpriseTeamListing()->call($enterprise, $teamSlug, $since, $until, $page, $perPage);
+    }
+
     /** @return */
     public function getCopilotOrganizationDetails(string $org): CopilotOrganizationDetails|WithoutBody
     {

@@ -42,6 +42,7 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Usage|null $operation🌀Enterprises🌀Enterprise🌀Copilot🌀Usage                                                                                                                                   = null;
     private Internal\Hydrator\Operation\Enterprises\Enterprise\Dependabot\Alerts|null $operation🌀Enterprises🌀Enterprise🌀Dependabot🌀Alerts                                                                                                                           = null;
     private Internal\Hydrator\Operation\Enterprises\Enterprise\SecretScanning\Alerts|null $operation🌀Enterprises🌀Enterprise🌀SecretScanning🌀Alerts                                                                                                                   = null;
+    private Internal\Hydrator\Operation\Enterprises\Enterprise\Team\TeamSlug\Copilot\Usage|null $operation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Usage                                                                                                       = null;
     private Internal\Hydrator\Operation\Events|null $operation🌀Events                                                                                                                                                                                               = null;
     private Internal\Hydrator\Operation\Feeds|null $operation🌀Feeds                                                                                                                                                                                                 = null;
     private Internal\Hydrator\Operation\Gists|null $operation🌀Gists                                                                                                                                                                                                 = null;
@@ -1688,6 +1689,15 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Enterprises🌀Enterprise🌀SecretScanning🌀Alerts;
+    }
+
+    public function getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Usage(): Internal\Hydrator\Operation\Enterprises\Enterprise\Team\TeamSlug\Copilot\Usage
+    {
+        if ($this->operation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Usage instanceof Internal\Hydrator\Operation\Enterprises\Enterprise\Team\TeamSlug\Copilot\Usage === false) {
+            $this->operation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Usage = new Internal\Hydrator\Operation\Enterprises\Enterprise\Team\TeamSlug\Copilot\Usage();
+        }
+
+        return $this->operation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Usage;
     }
 
     public function getObjectMapperOperation🌀Events(): Internal\Hydrator\Operation\Events

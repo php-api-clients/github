@@ -211,6 +211,14 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('Observable<Schema\\OrganizationSecretScanningAlert>');
         }
 
+        if ($call === 'GET /enterprises/{enterprise}/team/{team_slug}/copilot/usage') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+        }
+
+        if ($call === 'LIST /enterprises/{enterprise}/team/{team_slug}/copilot/usage') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+        }
+
         if ($call === 'GET /events') {
             return $this->typeResolver->resolve('Observable<Schema\\Event>|WithoutBody');
         }
