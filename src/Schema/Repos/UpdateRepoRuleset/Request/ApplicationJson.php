@@ -57,7 +57,8 @@ final readonly class ApplicationJson
                             "OrganizationAdmin",
                             "RepositoryRole",
                             "Team",
-                            "DeployKey"
+                            "DeployKey",
+                            "EnterpriseTeam"
                         ],
                         "type": "string",
                         "description": "The type of actor that can bypass a ruleset.\\n"
@@ -925,12 +926,12 @@ final readonly class ApplicationJson
     "bypass_actors": [
         {
             "actor_id": 8,
-            "actor_type": "DeployKey",
+            "actor_type": "EnterpriseTeam",
             "bypass_mode": "always"
         },
         {
             "actor_id": 8,
-            "actor_type": "DeployKey",
+            "actor_type": "EnterpriseTeam",
             "bypass_mode": "always"
         }
     ],

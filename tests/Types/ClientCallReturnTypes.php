@@ -59,8 +59,8 @@ assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('GET /enterp
 assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('LIST /enterprises/{enterprise}/copilot/usage'));
 assertType('Observable<Schema\\DependabotAlertWithRepository>|WithoutBody', $client->call('GET /enterprises/{enterprise}/dependabot/alerts'));
 assertType('Observable<Schema\\OrganizationSecretScanningAlert>', $client->call('GET /enterprises/{enterprise}/secret-scanning/alerts'));
-assertType('iterable<int,Schema\\CopilotUsageMetrics>', $client->call('GET /enterprises/{enterprise}/team/{team_slug}/copilot/usage'));
-assertType('iterable<int,Schema\\CopilotUsageMetrics>', $client->call('LIST /enterprises/{enterprise}/team/{team_slug}/copilot/usage'));
+assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('GET /enterprises/{enterprise}/team/{team_slug}/copilot/usage'));
+assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('LIST /enterprises/{enterprise}/team/{team_slug}/copilot/usage'));
 assertType('Observable<Schema\\Event>|WithoutBody', $client->call('GET /events'));
 assertType('Observable<Schema\\Event>|WithoutBody', $client->call('LIST /events'));
 assertType('', $client->call('GET /feeds'));

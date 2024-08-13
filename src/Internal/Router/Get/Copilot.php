@@ -191,7 +191,7 @@ final class Copilot
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
-    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    /** @return Observable<Schema\CopilotUsageMetrics> */
     public function usageMetricsForEnterpriseTeam(array $params): iterable
     {
         $arguments = [];
