@@ -24,7 +24,7 @@ final readonly class CreateOrUpdateCustomProperties
     {
     }
 
-    /** @return Observable<Schema\OrgCustomProperty> */
+    /** @return iterable<int,Schema\CustomProperty> */
     public function call(string $org, array $params): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\CreateOrUpdateCustomProperties($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

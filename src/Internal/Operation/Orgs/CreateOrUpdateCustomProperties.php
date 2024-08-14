@@ -41,7 +41,7 @@ final class CreateOrUpdateCustomProperties
         return new Request('PATCH', str_replace(['{org}'], [$this->org], '/orgs/{org}/properties/schema'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    /** @return Observable<Schema\OrgCustomProperty> */
+    /** @return Observable<Schema\CustomProperty> */
     public function createResponse(ResponseInterface $response): Observable
     {
         $code          = $response->getStatusCode();
@@ -54,12 +54,12 @@ final class CreateOrUpdateCustomProperties
                      * Response
                      **/
                     case 200:
-                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\OrgCustomProperty {
+                        return Observable::fromArray($body, new ImmediateScheduler())->map(function (array $body): Schema\CustomProperty {
                             $error = new RuntimeException();
                             try {
-                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrgCustomProperty::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                                $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CustomProperty::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                                return $this->hydrator->hydrateObject(Schema\OrgCustomProperty::class, $body);
+                                return $this->hydrator->hydrateObject(Schema\CustomProperty::class, $body);
                             } catch (Throwable $error) {
                                 goto items_application_json_two_hundred_aaaaa;
                             }

@@ -60,6 +60,25 @@ final readonly class CodeSecurityDefaultConfigurations
                     "type": "string",
                     "description": "The enablement status of Dependency Graph"
                 },
+                "dependency_graph_autosubmit_action": {
+                    "enum": [
+                        "enabled",
+                        "disabled",
+                        "not_set"
+                    ],
+                    "type": "string",
+                    "description": "The enablement status of Automatic dependency submission"
+                },
+                "dependency_graph_autosubmit_action_options": {
+                    "type": "object",
+                    "properties": {
+                        "labeled_runners": {
+                            "type": "boolean",
+                            "description": "Whether to use runners labeled with \'dependency-submission\' or standard GitHub runners."
+                        }
+                    },
+                    "description": "Feature options for Automatic dependency submission"
+                },
                 "dependabot_alerts": {
                     "enum": [
                         "enabled",
@@ -165,6 +184,10 @@ final readonly class CodeSecurityDefaultConfigurations
         "description": "generated",
         "advanced_security": "enabled",
         "dependency_graph": "not_set",
+        "dependency_graph_autosubmit_action": "not_set",
+        "dependency_graph_autosubmit_action_options": {
+            "labeled_runners": false
+        },
         "dependabot_alerts": "enabled",
         "dependabot_security_updates": "enabled",
         "code_scanning_default_setup": "enabled",

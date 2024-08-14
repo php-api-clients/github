@@ -41,7 +41,7 @@ final class CreateOrUpdateCustomProperty
         return new Request('PUT', str_replace(['{org}', '{custom_property_name}'], [$this->org, $this->customPropertyName], '/orgs/{org}/properties/schema/{custom_property_name}'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\OrgCustomProperty
+    public function createResponse(ResponseInterface $response): Schema\CustomProperty
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -53,9 +53,9 @@ final class CreateOrUpdateCustomProperty
                      * Response
                      **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\OrgCustomProperty::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\CustomProperty::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\OrgCustomProperty::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\CustomProperty::class, $body);
                     /**
                      * Forbidden
                      **/

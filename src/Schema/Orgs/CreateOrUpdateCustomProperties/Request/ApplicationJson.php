@@ -28,6 +28,11 @@ final readonly class ApplicationJson
                         "type": "string",
                         "description": "The name of the property"
                     },
+                    "url": {
+                        "type": "string",
+                        "description": "The URL that can be used to fetch, update, or delete info about this property via the API.",
+                        "format": "uri"
+                    },
                     "value_type": {
                         "enum": [
                             "string",
@@ -111,6 +116,7 @@ final readonly class ApplicationJson
     "properties": [
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -120,6 +126,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -129,6 +136,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -138,6 +146,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -147,6 +156,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -156,6 +166,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -165,6 +176,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -174,6 +186,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -183,6 +196,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -192,6 +206,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -201,6 +216,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -210,6 +226,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -219,6 +236,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -228,6 +246,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -237,6 +256,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -246,6 +266,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -255,6 +276,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -264,6 +286,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -273,6 +296,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -282,6 +306,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -291,6 +316,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -300,6 +326,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -309,6 +336,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -318,6 +346,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -327,6 +356,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -336,6 +366,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -345,6 +376,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -354,6 +386,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -363,6 +396,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -372,6 +406,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -381,6 +416,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -390,6 +426,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -399,6 +436,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -408,6 +446,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -417,6 +456,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -426,6 +466,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -435,6 +476,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -444,6 +486,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -453,6 +496,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -462,6 +506,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -471,6 +516,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -480,6 +526,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -489,6 +536,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -498,6 +546,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -507,6 +556,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -516,6 +566,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -525,6 +576,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -534,6 +586,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -543,6 +596,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -552,6 +606,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -561,6 +616,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -570,6 +626,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -579,6 +636,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -588,6 +646,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -597,6 +656,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -606,6 +666,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -615,6 +676,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -624,6 +686,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -633,6 +696,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -642,6 +706,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -651,6 +716,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -660,6 +726,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -669,6 +736,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -678,6 +746,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -687,6 +756,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -696,6 +766,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -705,6 +776,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -714,6 +786,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -723,6 +796,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -732,6 +806,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -741,6 +816,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -750,6 +826,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -759,6 +836,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -768,6 +846,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -777,6 +856,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -786,6 +866,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -795,6 +876,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -804,6 +886,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -813,6 +896,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -822,6 +906,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -831,6 +916,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -840,6 +926,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -849,6 +936,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -858,6 +946,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -867,6 +956,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -876,6 +966,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -885,6 +976,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -894,6 +986,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -903,6 +996,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -912,6 +1006,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -921,6 +1016,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -930,6 +1026,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -939,6 +1036,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -948,6 +1046,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -957,6 +1056,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -966,6 +1066,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -975,6 +1076,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -984,6 +1086,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -993,6 +1096,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,
@@ -1002,6 +1106,7 @@ final readonly class ApplicationJson
         },
         {
             "property_name": "generated",
+            "url": "https:\\/\\/example.com\\/",
             "value_type": "single_select",
             "required": false,
             "default_value": null,

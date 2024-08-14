@@ -34,6 +34,11 @@ final readonly class WebhookCustomPropertyUpdated
                     "type": "string",
                     "description": "The name of the property"
                 },
+                "url": {
+                    "type": "string",
+                    "description": "The URL that can be used to fetch, update, or delete info about this property via the API.",
+                    "format": "uri"
+                },
                 "value_type": {
                     "enum": [
                         "string",
@@ -490,6 +495,7 @@ final readonly class WebhookCustomPropertyUpdated
     "action": "updated",
     "definition": {
         "property_name": "generated",
+        "url": "https:\\/\\/example.com\\/",
         "value_type": "single_select",
         "required": false,
         "default_value": null,
@@ -564,7 +570,7 @@ final readonly class WebhookCustomPropertyUpdated
     organization, or when the event occurs from activity in a repository owned by an organization.
      * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
      */
-    public function __construct(public string $action, public Schema\OrgCustomProperty $definition, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\SimpleUserWebhooks|null $sender)
+    public function __construct(public string $action, public Schema\CustomProperty $definition, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\SimpleUserWebhooks|null $sender)
     {
     }
 }

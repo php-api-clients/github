@@ -19,6 +19,7 @@ use ApiClients\Client\GitHub\Schema\PageDeployment;
 use ApiClients\Client\GitHub\Schema\Reaction;
 use ApiClients\Client\GitHub\Schema\ReleaseNotesContent;
 use ApiClients\Client\GitHub\Schema\RepositoryAdvisory;
+use ApiClients\Client\GitHub\Schema\SecretScanningPushProtectionBypass;
 use ApiClients\Client\GitHub\Schema\ShortBlob;
 use ApiClients\Client\GitHub\Schema\Status;
 use ApiClients\Client\GitHub\Schema\TagProtection;
@@ -33,7 +34,8 @@ final class Six
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): Json|Created|AuthenticationToken|WithoutBody|\ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForTeams\Response\ApplicationJson\Created|\ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json|TeamDiscussion|\ApiClients\Client\GitHub\Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json|EmptyObject|CodeScanningSarifsReceipt|\ApiClients\Client\GitHub\Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created|ShortBlob|GitCommit|GitRef|GitTag|GitTree|PageBuildStatus|PageDeployment|ReleaseNotesContent|RepositoryAdvisory|Status|TagProtection|TeamDiscussionComment|Reaction
+    /** @return |Schema\SecretScanningPushProtectionBypass|\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
+    public function call(string $call, array $params, array $pathChunks): Json|Created|AuthenticationToken|WithoutBody|\ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForTeams\Response\ApplicationJson\Created|\ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json|TeamDiscussion|\ApiClients\Client\GitHub\Schema\Operations\Projects\MoveCard\Response\ApplicationJson\Created\Application\Json|EmptyObject|CodeScanningSarifsReceipt|\ApiClients\Client\GitHub\Schema\Operations\DependencyGraph\CreateRepositorySnapshot\Response\ApplicationJson\Created|ShortBlob|GitCommit|GitRef|GitTag|GitTree|PageBuildStatus|PageDeployment|ReleaseNotesContent|SecretScanningPushProtectionBypass|RepositoryAdvisory|Status|TagProtection|TeamDiscussionComment|Reaction
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {
@@ -173,6 +175,12 @@ final class Six
                             if ($pathChunks[5] === 'generate-notes') {
                                 if ($call === 'POST /repos/{owner}/{repo}/releases/generate-notes') {
                                     return $this->routers->internal🔀Router🔀Post🔀Repos()->generateReleaseNotes($params);
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'secret-scanning') {
+                            if ($pathChunks[5] === 'push-protection-bypasses') {
+                                if ($call === 'POST /repos/{owner}/{repo}/secret-scanning/push-protection-bypasses') {
+                                    return $this->routers->internal🔀Router🔀Post🔀SecretScanning()->createPushProtectionBypass($params);
                                 }
                             }
                         } elseif ($pathChunks[4] === 'security-advisories') {

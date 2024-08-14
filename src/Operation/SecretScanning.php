@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\SecretScanningAlert;
+use ApiClients\Client\GitHub\Schema\SecretScanningPushProtectionBypass;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 
 final class SecretScanning
@@ -67,5 +68,10 @@ final class SecretScanning
     public function listLocationsForAlertListing(string $owner, string $repo, int $alertNumber, int $page, int $perPage): iterable|WithoutBody
     {
         return $this->operators->secretScanning👷ListLocationsForAlertListing()->call($owner, $repo, $alertNumber, $page, $perPage);
+    }
+
+    public function createPushProtectionBypass(string $owner, string $repo, array $params): SecretScanningPushProtectionBypass|WithoutBody
+    {
+        return $this->operators->secretScanning👷CreatePushProtectionBypass()->call($owner, $repo, $params);
     }
 }

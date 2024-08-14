@@ -6,7 +6,7 @@ namespace ApiClients\Client\GitHub\Schema;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-final readonly class OrgCustomProperty
+final readonly class CustomProperty
 {
     public const SCHEMA_JSON         = '{
     "title": "Organization Custom Property",
@@ -19,6 +19,11 @@ final readonly class OrgCustomProperty
         "property_name": {
             "type": "string",
             "description": "The name of the property"
+        },
+        "url": {
+            "type": "string",
+            "description": "The URL that can be used to fetch, update, or delete info about this property via the API.",
+            "format": "uri"
         },
         "value_type": {
             "enum": [
@@ -97,6 +102,7 @@ final readonly class OrgCustomProperty
     public const SCHEMA_DESCRIPTION  = 'Custom property defined on an organization';
     public const SCHEMA_EXAMPLE_DATA = '{
     "property_name": "generated",
+    "url": "https:\\/\\/example.com\\/",
     "value_type": "single_select",
     "required": false,
     "default_value": null,
@@ -107,6 +113,7 @@ final readonly class OrgCustomProperty
 
     /**
      * propertyName: The name of the property
+     * url: The URL that can be used to fetch, update, or delete info about this property via the API.
      * valueType: The type of the value for the property
      * required: Whether the property is required.
      * defaultValue: Default value of the property
@@ -116,7 +123,7 @@ final readonly class OrgCustomProperty
      * valuesEditableBy: Who can edit the values of the property
      */
     public function __construct(#[MapFrom('property_name')]
-    public string $propertyName, #[MapFrom('value_type')]
+    public string $propertyName, public string|null $url, #[MapFrom('value_type')]
     public string $valueType, public bool|null $required, #[MapFrom('default_value')]
     public string|array|null $defaultValue, public string|null $description, #[MapFrom('allowed_values')]
     public array|null $allowedValues, #[MapFrom('values_editable_by')]

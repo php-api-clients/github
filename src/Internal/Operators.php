@@ -340,6 +340,8 @@ final class Operators
     private Internal\Operator\Billing\GetGithubActionsBillingOrg|null $billing👷GetGithubActionsBillingOrg                                                                           = null;
     private Internal\Operator\Billing\GetGithubPackagesBillingOrg|null $billing👷GetGithubPackagesBillingOrg                                                                         = null;
     private Internal\Operator\Billing\GetSharedStorageBillingOrg|null $billing👷GetSharedStorageBillingOrg                                                                           = null;
+    private Internal\Operator\Copilot\UsageMetricsForTeam|null $copilot👷UsageMetricsForTeam                                                                                         = null;
+    private Internal\Operator\Copilot\UsageMetricsForTeamListing|null $copilot👷UsageMetricsForTeamListing                                                                           = null;
     private Internal\Operator\Teams\List_|null $teams👷List_                                                                                                                         = null;
     private Internal\Operator\Teams\ListListing|null $teams👷ListListing                                                                                                             = null;
     private Internal\Operator\Teams\Create|null $teams👷Create                                                                                                                       = null;
@@ -872,6 +874,7 @@ final class Operators
     private Internal\Operator\SecretScanning\UpdateAlert|null $secretScanning👷UpdateAlert                                                                                           = null;
     private Internal\Operator\SecretScanning\ListLocationsForAlert|null $secretScanning👷ListLocationsForAlert                                                                       = null;
     private Internal\Operator\SecretScanning\ListLocationsForAlertListing|null $secretScanning👷ListLocationsForAlertListing                                                         = null;
+    private Internal\Operator\SecretScanning\CreatePushProtectionBypass|null $secretScanning👷CreatePushProtectionBypass                                                             = null;
     private Internal\Operator\SecurityAdvisories\ListRepositoryAdvisories|null $securityAdvisories👷ListRepositoryAdvisories                                                         = null;
     private Internal\Operator\SecurityAdvisories\CreateRepositoryAdvisory|null $securityAdvisories👷CreateRepositoryAdvisory                                                         = null;
     private Internal\Operator\SecurityAdvisories\CreatePrivateVulnerabilityReport|null $securityAdvisories👷CreatePrivateVulnerabilityReport                                         = null;
@@ -4099,6 +4102,24 @@ final class Operators
         }
 
         return $this->billing👷GetSharedStorageBillingOrg;
+    }
+
+    public function copilot👷UsageMetricsForTeam(): Internal\Operator\Copilot\UsageMetricsForTeam
+    {
+        if ($this->copilot👷UsageMetricsForTeam instanceof Internal\Operator\Copilot\UsageMetricsForTeam === false) {
+            $this->copilot👷UsageMetricsForTeam = new Internal\Operator\Copilot\UsageMetricsForTeam($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Usage());
+        }
+
+        return $this->copilot👷UsageMetricsForTeam;
+    }
+
+    public function copilot👷UsageMetricsForTeamListing(): Internal\Operator\Copilot\UsageMetricsForTeamListing
+    {
+        if ($this->copilot👷UsageMetricsForTeamListing instanceof Internal\Operator\Copilot\UsageMetricsForTeamListing === false) {
+            $this->copilot👷UsageMetricsForTeamListing = new Internal\Operator\Copilot\UsageMetricsForTeamListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Usage());
+        }
+
+        return $this->copilot👷UsageMetricsForTeamListing;
     }
 
     public function teams👷List_(): Internal\Operator\Teams\List_
@@ -8887,6 +8908,15 @@ final class Operators
         }
 
         return $this->secretScanning👷ListLocationsForAlertListing;
+    }
+
+    public function secretScanning👷CreatePushProtectionBypass(): Internal\Operator\SecretScanning\CreatePushProtectionBypass
+    {
+        if ($this->secretScanning👷CreatePushProtectionBypass instanceof Internal\Operator\SecretScanning\CreatePushProtectionBypass === false) {
+            $this->secretScanning👷CreatePushProtectionBypass = new Internal\Operator\SecretScanning\CreatePushProtectionBypass($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecretScanning🌀PushProtectionBypasses());
+        }
+
+        return $this->secretScanning👷CreatePushProtectionBypass;
     }
 
     public function securityAdvisories👷ListRepositoryAdvisories(): Internal\Operator\SecurityAdvisories\ListRepositoryAdvisories

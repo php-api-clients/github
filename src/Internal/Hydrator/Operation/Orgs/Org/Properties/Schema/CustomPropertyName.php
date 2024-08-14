@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Orgs\Org\Properties\Schema;
 
 use ApiClients\Client\GitHub\Schema\BasicError;
-use ApiClients\Client\GitHub\Schema\OrgCustomProperty;
+use ApiClients\Client\GitHub\Schema\CustomProperty;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems;
@@ -39,13 +39,13 @@ class CustomPropertyName implements ObjectMapper
     public function hydrateObject(string $className, array $payload): object
     {
         return match ($className) {
-            'ApiClients\Client\GitHub\Schema\OrgCustomProperty' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrgCustomProperty($payload),
+            'ApiClients\Client\GitHub\Schema\CustomProperty' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CustomProperty($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrgCustomProperty(array $payload): OrgCustomProperty
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CustomProperty(array $payload): CustomProperty
     {
         $properties    = [];
         $missingFields = [];
@@ -60,6 +60,17 @@ class CustomPropertyName implements ObjectMapper
             $properties['propertyName'] = $value;
 
             after_propertyName:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
 
             $value = $payload['value_type'] ?? null;
 
@@ -127,17 +138,17 @@ class CustomPropertyName implements ObjectMapper
 
             after_valuesEditableBy:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrgCustomProperty', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CustomProperty', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(OrgCustomProperty::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(CustomProperty::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new OrgCustomProperty(...$properties);
+            return new CustomProperty(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrgCustomProperty', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CustomProperty', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -235,7 +246,7 @@ class CustomPropertyName implements ObjectMapper
                 'DateTime' => $this->serializeValueDateTime($object),
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
-                'ApiClients\Client\GitHub\Schema\OrgCustomProperty' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrgCustomProperty($object),
+                'ApiClients\Client\GitHub\Schema\CustomProperty' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CustomProperty($object),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new LogicException('No serialization defined for $className'),
             };
@@ -299,13 +310,21 @@ class CustomPropertyName implements ObjectMapper
         return $serializer->serialize($value, $this);
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrgCustomProperty(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CustomProperty(mixed $object): mixed
     {
-        assert($object instanceof OrgCustomProperty);
+        assert($object instanceof CustomProperty);
         $result = [];
 
         $propertyName                                       = $object->propertyName;
         after_propertyName:        $result['property_name'] = $propertyName;
+
+        $url = $object->url;
+
+        if ($url === null) {
+            goto after_url;
+        }
+
+        after_url:        $result['url'] = $url;
 
         $valueType                                    = $object->valueType;
         after_valueType:        $result['value_type'] = $valueType;

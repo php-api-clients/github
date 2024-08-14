@@ -6,13 +6,13 @@ namespace ApiClients\Client\GitHub\Operation;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\CustomProperty;
 use ApiClients\Client\GitHub\Schema\HookDelivery;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\Delete\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAttestations\Response\ApplicationJson\Ok;
 use ApiClients\Client\GitHub\Schema\OrganizationFull;
 use ApiClients\Client\GitHub\Schema\OrganizationInvitation;
 use ApiClients\Client\GitHub\Schema\OrganizationRole;
-use ApiClients\Client\GitHub\Schema\OrgCustomProperty;
 use ApiClients\Client\GitHub\Schema\OrgHook;
 use ApiClients\Client\GitHub\Schema\OrgMembership;
 use ApiClients\Client\GitHub\Schema\WebhookConfig;
@@ -420,26 +420,24 @@ final class Orgs
         return $this->operators->orgs👷ListPatGrantRepositoriesListing()->call($org, $patId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\OrgCustomProperty> */
+    /** @return iterable<int,Schema\CustomProperty> */
     public function getAllCustomProperties(string $org): iterable
     {
         return $this->operators->orgs👷GetAllCustomProperties()->call($org);
     }
 
-    /** @return Observable<Schema\OrgCustomProperty> */
+    /** @return iterable<int,Schema\CustomProperty> */
     public function createOrUpdateCustomProperties(string $org, array $params): iterable
     {
         return $this->operators->orgs👷CreateOrUpdateCustomProperties()->call($org, $params);
     }
 
-    /** @return */
-    public function getCustomProperty(string $org, string $customPropertyName): OrgCustomProperty
+    public function getCustomProperty(string $org, string $customPropertyName): CustomProperty
     {
         return $this->operators->orgs👷GetCustomProperty()->call($org, $customPropertyName);
     }
 
-    /** @return */
-    public function createOrUpdateCustomProperty(string $org, string $customPropertyName, array $params): OrgCustomProperty
+    public function createOrUpdateCustomProperty(string $org, string $customPropertyName, array $params): CustomProperty
     {
         return $this->operators->orgs👷CreateOrUpdateCustomProperty()->call($org, $customPropertyName, $params);
     }

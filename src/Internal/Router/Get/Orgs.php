@@ -6,11 +6,11 @@ namespace ApiClients\Client\GitHub\Internal\Router\Get;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
+use ApiClients\Client\GitHub\Schema\CustomProperty;
 use ApiClients\Client\GitHub\Schema\HookDelivery;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAppInstallations\Response\ApplicationJson\Ok;
 use ApiClients\Client\GitHub\Schema\OrganizationFull;
 use ApiClients\Client\GitHub\Schema\OrganizationRole;
-use ApiClients\Client\GitHub\Schema\OrgCustomProperty;
 use ApiClients\Client\GitHub\Schema\OrgHook;
 use ApiClients\Client\GitHub\Schema\OrgMembership;
 use ApiClients\Client\GitHub\Schema\WebhookConfig;
@@ -697,7 +697,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['role_id']);
     }
 
-    /** @return Observable<Schema\OrgCustomProperty> */
+    /** @return iterable<int,Schema\CustomProperty> */
     public function getAllCustomProperties(array $params): iterable
     {
         $arguments = [];
@@ -1006,8 +1006,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['pat_id'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
-    public function getCustomProperty(array $params): OrgCustomProperty
+    public function getCustomProperty(array $params): CustomProperty
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Orgs\Org\CodeSecu
 
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration;
+use ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\DependencyGraphAutosubmitActionOptions;
 use ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -44,6 +45,7 @@ class Defaults implements ObjectMapper
         return match ($className) {
             'ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️CodeSecurity⚡️SetConfigurationAsDefault⚡️Response⚡️ApplicationJson⚡️Ok($payload),
                 'ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration($payload),
+                'ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\DependencyGraphAutosubmitActionOptions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️DependencyGraphAutosubmitActionOptions($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -169,6 +171,37 @@ class Defaults implements ObjectMapper
             $properties['dependencyGraph'] = $value;
 
             after_dependencyGraph:
+
+            $value = $payload['dependency_graph_autosubmit_action'] ?? null;
+
+            if ($value === null) {
+                $properties['dependencyGraphAutosubmitAction'] = null;
+                goto after_dependencyGraphAutosubmitAction;
+            }
+
+            $properties['dependencyGraphAutosubmitAction'] = $value;
+
+            after_dependencyGraphAutosubmitAction:
+
+            $value = $payload['dependency_graph_autosubmit_action_options'] ?? null;
+
+            if ($value === null) {
+                $properties['dependencyGraphAutosubmitActionOptions'] = null;
+                goto after_dependencyGraphAutosubmitActionOptions;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'dependencyGraphAutosubmitActionOptions';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️DependencyGraphAutosubmitActionOptions($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['dependencyGraphAutosubmitActionOptions'] = $value;
+
+            after_dependencyGraphAutosubmitActionOptions:
 
             $value = $payload['dependabot_alerts'] ?? null;
 
@@ -316,6 +349,36 @@ class Defaults implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️DependencyGraphAutosubmitActionOptions(array $payload): DependencyGraphAutosubmitActionOptions
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['labeled_runners'] ?? null;
+
+            if ($value === null) {
+                $properties['labeledRunners'] = null;
+                goto after_labeledRunners;
+            }
+
+            $properties['labeledRunners'] = $value;
+
+            after_labeledRunners:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\DependencyGraphAutosubmitActionOptions', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(DependencyGraphAutosubmitActionOptions::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new DependencyGraphAutosubmitActionOptions(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\DependencyGraphAutosubmitActionOptions', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): BasicError
     {
         $properties    = [];
@@ -412,6 +475,7 @@ class Defaults implements ObjectMapper
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
                 'ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️CodeSecurity⚡️SetConfigurationAsDefault⚡️Response⚡️ApplicationJson⚡️Ok($object),
                 'ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration($object),
+                'ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\DependencyGraphAutosubmitActionOptions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️DependencyGraphAutosubmitActionOptions($object),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new LogicException('No serialization defined for $className'),
             };
@@ -553,6 +617,23 @@ class Defaults implements ObjectMapper
 
         after_dependencyGraph:        $result['dependency_graph'] = $dependencyGraph;
 
+        $dependencyGraphAutosubmitAction = $object->dependencyGraphAutosubmitAction;
+
+        if ($dependencyGraphAutosubmitAction === null) {
+            goto after_dependencyGraphAutosubmitAction;
+        }
+
+        after_dependencyGraphAutosubmitAction:        $result['dependency_graph_autosubmit_action'] = $dependencyGraphAutosubmitAction;
+
+        $dependencyGraphAutosubmitActionOptions = $object->dependencyGraphAutosubmitActionOptions;
+
+        if ($dependencyGraphAutosubmitActionOptions === null) {
+            goto after_dependencyGraphAutosubmitActionOptions;
+        }
+
+        $dependencyGraphAutosubmitActionOptions                                                                    = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️DependencyGraphAutosubmitActionOptions($dependencyGraphAutosubmitActionOptions);
+        after_dependencyGraphAutosubmitActionOptions:        $result['dependency_graph_autosubmit_action_options'] = $dependencyGraphAutosubmitActionOptions;
+
         $dependabotAlerts = $object->dependabotAlerts;
 
         if ($dependabotAlerts === null) {
@@ -648,6 +729,22 @@ class Defaults implements ObjectMapper
         }
 
         after_updatedAt:        $result['updated_at'] = $updatedAt;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️DependencyGraphAutosubmitActionOptions(mixed $object): mixed
+    {
+        assert($object instanceof DependencyGraphAutosubmitActionOptions);
+        $result = [];
+
+        $labeledRunners = $object->labeledRunners;
+
+        if ($labeledRunners === null) {
+            goto after_labeledRunners;
+        }
+
+        after_labeledRunners:        $result['labeled_runners'] = $labeledRunners;
 
         return $result;
     }

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Put;
 
 use ApiClients\Client\GitHub\Internal;
+use ApiClients\Client\GitHub\Schema\CustomProperty;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json;
-use ApiClients\Client\GitHub\Schema\OrgCustomProperty;
 use ApiClients\Client\GitHub\Schema\OrgMembership;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
@@ -160,8 +160,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username'], $arguments['role_id']);
     }
 
-    /** @return */
-    public function createOrUpdateCustomProperty(array $params): OrgCustomProperty
+    public function createOrUpdateCustomProperty(array $params): CustomProperty
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

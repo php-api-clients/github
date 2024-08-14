@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Put;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema\CustomProperty;
 use ApiClients\Client\GitHub\Schema\EmptyObject;
 use ApiClients\Client\GitHub\Schema\Environment;
 use ApiClients\Client\GitHub\Schema\FileCommit;
-use ApiClients\Client\GitHub\Schema\OrgCustomProperty;
 use ApiClients\Client\GitHub\Schema\RepositoryInvitation;
 use ApiClients\Client\GitHub\Schema\RepositoryRuleset;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
@@ -20,7 +20,8 @@ final class Six
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): WithoutBody|EmptyObject|OrgCustomProperty|RepositoryInvitation|FileCommit|Environment|RepositoryRuleset
+    /** @return |Schema\CustomProperty */
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|EmptyObject|CustomProperty|RepositoryInvitation|FileCommit|Environment|RepositoryRuleset
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {

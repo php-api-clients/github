@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema;
 
+use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
 final readonly class CodeSecurityConfiguration
@@ -47,6 +48,25 @@ final readonly class CodeSecurityConfiguration
             ],
             "type": "string",
             "description": "The enablement status of Dependency Graph"
+        },
+        "dependency_graph_autosubmit_action": {
+            "enum": [
+                "enabled",
+                "disabled",
+                "not_set"
+            ],
+            "type": "string",
+            "description": "The enablement status of Automatic dependency submission"
+        },
+        "dependency_graph_autosubmit_action_options": {
+            "type": "object",
+            "properties": {
+                "labeled_runners": {
+                    "type": "boolean",
+                    "description": "Whether to use runners labeled with \'dependency-submission\' or standard GitHub runners."
+                }
+            },
+            "description": "Feature options for Automatic dependency submission"
         },
         "dependabot_alerts": {
             "enum": [
@@ -149,6 +169,10 @@ final readonly class CodeSecurityConfiguration
     "description": "generated",
     "advanced_security": "enabled",
     "dependency_graph": "not_set",
+    "dependency_graph_autosubmit_action": "not_set",
+    "dependency_graph_autosubmit_action_options": {
+        "labeled_runners": false
+    },
     "dependabot_alerts": "enabled",
     "dependabot_security_updates": "enabled",
     "code_scanning_default_setup": "enabled",
@@ -170,6 +194,8 @@ final readonly class CodeSecurityConfiguration
      * description: A description of the code security configuration
      * advancedSecurity: The enablement status of GitHub Advanced Security
      * dependencyGraph: The enablement status of Dependency Graph
+     * dependencyGraphAutosubmitAction: The enablement status of Automatic dependency submission
+     * dependencyGraphAutosubmitActionOptions: Feature options for Automatic dependency submission
      * dependabotAlerts: The enablement status of Dependabot alerts
      * dependabotSecurityUpdates: The enablement status of Dependabot security updates
      * codeScanningDefaultSetup: The enablement status of code scanning default setup
@@ -184,7 +210,9 @@ final readonly class CodeSecurityConfiguration
     public function __construct(public int|null $id, public string|null $name, #[MapFrom('target_type')]
     public string|null $targetType, public string|null $description, #[MapFrom('advanced_security')]
     public string|null $advancedSecurity, #[MapFrom('dependency_graph')]
-    public string|null $dependencyGraph, #[MapFrom('dependabot_alerts')]
+    public string|null $dependencyGraph, #[MapFrom('dependency_graph_autosubmit_action')]
+    public string|null $dependencyGraphAutosubmitAction, #[MapFrom('dependency_graph_autosubmit_action_options')]
+    public Schema\CodeSecurityConfiguration\DependencyGraphAutosubmitActionOptions|null $dependencyGraphAutosubmitActionOptions, #[MapFrom('dependabot_alerts')]
     public string|null $dependabotAlerts, #[MapFrom('dependabot_security_updates')]
     public string|null $dependabotSecurityUpdates, #[MapFrom('code_scanning_default_setup')]
     public string|null $codeScanningDefaultSetup, #[MapFrom('secret_scanning')]
