@@ -13503,6 +13503,28 @@ $client->operations()->codeScanning()->getSarif(        owner: 'generated',
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-scanning/code-scanning#get-information-about-a-sarif-upload).
 
 
+### code-security/get-configuration-for-repository
+
+Get the code security configuration associated with a repository
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/code-security-configuration', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->getConfigurationForRepository(        owner: 'generated',
+        repo: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#get-the-code-security-configuration-associated-with-a-repository).
+
+
 ### repos/codeowners-errors
 
 List CODEOWNERS errors

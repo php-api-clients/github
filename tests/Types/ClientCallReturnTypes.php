@@ -312,10 +312,10 @@ assertType('Observable<Schema\\MinimalRepository>', $client->call('LIST /orgs/{o
 assertType('Observable<Schema\\Project>', $client->call('GET /orgs/{org}/projects'));
 assertType('Observable<Schema\\Project>', $client->call('LIST /orgs/{org}/projects'));
 assertType('', $client->call('POST /orgs/{org}/projects'));
-assertType('iterable<int,Schema\\CustomProperty>', $client->call('GET /orgs/{org}/properties/schema'));
-assertType('iterable<int,Schema\\CustomProperty>', $client->call('PATCH /orgs/{org}/properties/schema'));
-assertType('Schema\\CustomProperty', $client->call('GET /orgs/{org}/properties/schema/{custom_property_name}'));
-assertType('Schema\\CustomProperty', $client->call('PUT /orgs/{org}/properties/schema/{custom_property_name}'));
+assertType('Observable<Schema\\CustomProperty>', $client->call('GET /orgs/{org}/properties/schema'));
+assertType('Observable<Schema\\CustomProperty>', $client->call('PATCH /orgs/{org}/properties/schema'));
+assertType('', $client->call('GET /orgs/{org}/properties/schema/{custom_property_name}'));
+assertType('', $client->call('PUT /orgs/{org}/properties/schema/{custom_property_name}'));
 assertType('', $client->call('DELETE /orgs/{org}/properties/schema/{custom_property_name}'));
 assertType('Observable<Schema\\OrgRepoCustomPropertyValues>', $client->call('GET /orgs/{org}/properties/values'));
 assertType('Observable<Schema\\OrgRepoCustomPropertyValues>', $client->call('LIST /orgs/{org}/properties/values'));
@@ -346,8 +346,8 @@ assertType('', $client->call('DELETE /orgs/{org}/security-managers/teams/{team_s
 assertType('', $client->call('GET /orgs/{org}/settings/billing/actions'));
 assertType('', $client->call('GET /orgs/{org}/settings/billing/packages'));
 assertType('', $client->call('GET /orgs/{org}/settings/billing/shared-storage'));
-assertType('iterable<int,Schema\\CopilotUsageMetrics>', $client->call('GET /orgs/{org}/team/{team_slug}/copilot/usage'));
-assertType('iterable<int,Schema\\CopilotUsageMetrics>', $client->call('LIST /orgs/{org}/team/{team_slug}/copilot/usage'));
+assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('GET /orgs/{org}/team/{team_slug}/copilot/usage'));
+assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('LIST /orgs/{org}/team/{team_slug}/copilot/usage'));
 assertType('Observable<Schema\\Team>', $client->call('GET /orgs/{org}/teams'));
 assertType('Observable<Schema\\Team>', $client->call('LIST /orgs/{org}/teams'));
 assertType('', $client->call('POST /orgs/{org}/teams'));
@@ -576,6 +576,7 @@ assertType('', $client->call('GET /repos/{owner}/{repo}/code-scanning/default-se
 assertType('', $client->call('PATCH /repos/{owner}/{repo}/code-scanning/default-setup'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/code-scanning/sarifs'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}'));
+assertType('Schema\\CodeSecurityConfigurationForRepository|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /repos/{owner}/{repo}/code-security-configuration'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/codeowners/errors'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/codespaces'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/codespaces'));
@@ -842,7 +843,7 @@ assertType('Observable<Schema\\ReviewComment>', $client->call('LIST /repos/{owne
 assertType('', $client->call('PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch'));
-assertType('', $client->call('GET /repos/{owner}/{repo}/readme'));
+assertType('Schema\\ContentFile|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /repos/{owner}/{repo}/readme'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/readme/{dir}'));
 assertType('Observable<Schema\\Release>', $client->call('GET /repos/{owner}/{repo}/releases'));
 assertType('Observable<Schema\\Release>', $client->call('LIST /repos/{owner}/{repo}/releases'));
@@ -880,7 +881,7 @@ assertType('', $client->call('GET /repos/{owner}/{repo}/secret-scanning/alerts/{
 assertType('', $client->call('PATCH /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}'));
 assertType('Observable<Schema\\SecretScanningLocation>|WithoutBody', $client->call('GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations'));
 assertType('Observable<Schema\\SecretScanningLocation>|WithoutBody', $client->call('LIST /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}/locations'));
-assertType('Schema\\SecretScanningPushProtectionBypass|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('POST /repos/{owner}/{repo}/secret-scanning/push-protection-bypasses'));
+assertType('', $client->call('POST /repos/{owner}/{repo}/secret-scanning/push-protection-bypasses'));
 assertType('Observable<Schema\\RepositoryAdvisory>', $client->call('GET /repos/{owner}/{repo}/security-advisories'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/security-advisories'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/security-advisories/reports'));

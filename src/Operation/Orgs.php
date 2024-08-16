@@ -420,23 +420,25 @@ final class Orgs
         return $this->operators->orgs👷ListPatGrantRepositoriesListing()->call($org, $patId, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\CustomProperty> */
+    /** @return Observable<Schema\CustomProperty> */
     public function getAllCustomProperties(string $org): iterable
     {
         return $this->operators->orgs👷GetAllCustomProperties()->call($org);
     }
 
-    /** @return iterable<int,Schema\CustomProperty> */
+    /** @return Observable<Schema\CustomProperty> */
     public function createOrUpdateCustomProperties(string $org, array $params): iterable
     {
         return $this->operators->orgs👷CreateOrUpdateCustomProperties()->call($org, $params);
     }
 
+    /** @return */
     public function getCustomProperty(string $org, string $customPropertyName): CustomProperty
     {
         return $this->operators->orgs👷GetCustomProperty()->call($org, $customPropertyName);
     }
 
+    /** @return */
     public function createOrUpdateCustomProperty(string $org, string $customPropertyName, array $params): CustomProperty
     {
         return $this->operators->orgs👷CreateOrUpdateCustomProperty()->call($org, $customPropertyName, $params);

@@ -103,13 +103,13 @@ final class Copilot
         return $this->operators->copilot👷GetCopilotSeatDetailsForUser()->call($org, $username);
     }
 
-    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    /** @return Observable<Schema\CopilotUsageMetrics> */
     public function usageMetricsForTeam(string $org, string $teamSlug, string $since, string $until, int $page, int $perPage): iterable
     {
         return $this->operators->copilot👷UsageMetricsForTeam()->call($org, $teamSlug, $since, $until, $page, $perPage);
     }
 
-    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    /** @return Observable<Schema\CopilotUsageMetrics> */
     public function usageMetricsForTeamListing(string $org, string $teamSlug, string $since, string $until, int $page, int $perPage): iterable
     {
         return $this->operators->copilot👷UsageMetricsForTeamListing()->call($org, $teamSlug, $since, $until, $page, $perPage);

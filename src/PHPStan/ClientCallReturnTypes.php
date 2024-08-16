@@ -1224,19 +1224,19 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/properties/schema') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CustomProperty>');
+            return $this->typeResolver->resolve('Observable<Schema\\CustomProperty>');
         }
 
         if ($call === 'PATCH /orgs/{org}/properties/schema') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CustomProperty>');
+            return $this->typeResolver->resolve('Observable<Schema\\CustomProperty>');
         }
 
         if ($call === 'GET /orgs/{org}/properties/schema/{custom_property_name}') {
-            return $this->typeResolver->resolve('Schema\\CustomProperty');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PUT /orgs/{org}/properties/schema/{custom_property_name}') {
-            return $this->typeResolver->resolve('Schema\\CustomProperty');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/properties/schema/{custom_property_name}') {
@@ -1360,11 +1360,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/team/{team_slug}/copilot/usage') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
         }
 
         if ($call === 'LIST /orgs/{org}/team/{team_slug}/copilot/usage') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CopilotUsageMetrics>');
+            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
         }
 
         if ($call === 'GET /orgs/{org}/teams') {
@@ -2277,6 +2277,10 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}') {
             return $this->typeResolver->resolve('');
+        }
+
+        if ($call === 'GET /repos/{owner}/{repo}/code-security-configuration') {
+            return $this->typeResolver->resolve('Schema\\CodeSecurityConfigurationForRepository|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/codeowners/errors') {
@@ -3344,7 +3348,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/readme') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\ContentFile|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/readme/{dir}') {
@@ -3496,7 +3500,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/secret-scanning/push-protection-bypasses') {
-            return $this->typeResolver->resolve('Schema\\SecretScanningPushProtectionBypass|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/security-advisories') {

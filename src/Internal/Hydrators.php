@@ -330,6 +330,7 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Repos\Owner\Repo\CodeScanning\DefaultSetup|null $operation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀DefaultSetup                                                                                                                       = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Sarifs|null $operation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Sarifs                                                                                                                                   = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Sarifs\SarifId|null $operation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Sarifs🌀SarifId                                                                                                                   = null;
+    private Internal\Hydrator\Operation\Repos\Owner\Repo\CodeSecurityConfiguration|null $operation🌀Repos🌀Owner🌀Repo🌀CodeSecurityConfiguration                                                                                                                       = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\Codeowners\Errors|null $operation🌀Repos🌀Owner🌀Repo🌀Codeowners🌀Errors                                                                                                                                       = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces|null $operation🌀Repos🌀Owner🌀Repo🌀Codespaces                                                                                                                                                     = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\Codespaces\Devcontainers|null $operation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Devcontainers                                                                                                                         = null;
@@ -870,6 +871,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\CodeScanningDefaultSetup', '\\ApiClients\\Client\\GitHub\\Schema\\CodeScanningDefaultSetupUpdateResponse' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀DefaultSetup()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\CodeScanningSarifsReceipt' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Sarifs()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\CodeScanningSarifsStatus' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Sarifs🌀SarifId()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\CodeSecurityConfigurationForRepository' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeSecurityConfiguration()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\CodeownersErrors' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codeowners🌀Errors()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\ListInRepositoryForAuthenticatedUser\\Response\\ApplicationJson\\Ok\\Application\\Json' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\ListDevcontainersInRepositoryForAuthenticatedUser\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Devcontainers()->hydrateObject($className, $payload),
@@ -1223,6 +1225,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\CodeScanningDefaultSetup', '\\ApiClients\\Client\\GitHub\\Schema\\CodeScanningDefaultSetupUpdateResponse' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀DefaultSetup()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\CodeScanningSarifsReceipt' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Sarifs()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\CodeScanningSarifsStatus' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Sarifs🌀SarifId()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\CodeSecurityConfigurationForRepository' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeSecurityConfiguration()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\CodeownersErrors' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codeowners🌀Errors()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\ListInRepositoryForAuthenticatedUser\\Response\\ApplicationJson\\Ok\\Application\\Json' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Codespaces\\ListDevcontainersInRepositoryForAuthenticatedUser\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codespaces🌀Devcontainers()->serializeObject($object),
@@ -4285,6 +4288,15 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Sarifs🌀SarifId;
+    }
+
+    public function getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeSecurityConfiguration(): Internal\Hydrator\Operation\Repos\Owner\Repo\CodeSecurityConfiguration
+    {
+        if ($this->operation🌀Repos🌀Owner🌀Repo🌀CodeSecurityConfiguration instanceof Internal\Hydrator\Operation\Repos\Owner\Repo\CodeSecurityConfiguration === false) {
+            $this->operation🌀Repos🌀Owner🌀Repo🌀CodeSecurityConfiguration = new Internal\Hydrator\Operation\Repos\Owner\Repo\CodeSecurityConfiguration();
+        }
+
+        return $this->operation🌀Repos🌀Owner🌀Repo🌀CodeSecurityConfiguration;
     }
 
     public function getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Codeowners🌀Errors(): Internal\Hydrator\Operation\Repos\Owner\Repo\Codeowners\Errors

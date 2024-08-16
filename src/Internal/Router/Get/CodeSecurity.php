@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Get;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration;
+use ApiClients\Client\GitHub\Schema\CodeSecurityConfigurationForRepository;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
@@ -58,6 +59,26 @@ final class CodeSecurity
         $operator = new Internal\Operator\CodeSecurity\GetConfigurationsForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations());
 
         return $operator->call($arguments['org'], $arguments['before'], $arguments['after'], $arguments['target_type'], $arguments['per_page']);
+    }
+
+    public function getConfigurationForRepository(array $params): CodeSecurityConfigurationForRepository|WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        $operator = new Internal\Operator\CodeSecurity\GetConfigurationForRepository($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeSecurityConfiguration());
+
+        return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
     /** @return Observable<Schema\CodeSecurityDefaultConfigurations>|WithoutBody */

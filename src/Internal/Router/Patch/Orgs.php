@@ -60,7 +60,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['hook_id'], $params);
     }
 
-    /** @return iterable<int,Schema\CustomProperty> */
+    /** @return Observable<Schema\CustomProperty> */
     public function createOrUpdateCustomProperties(array $params): iterable
     {
         $arguments = [];

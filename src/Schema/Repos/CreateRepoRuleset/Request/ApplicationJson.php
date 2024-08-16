@@ -27,7 +27,8 @@ final readonly class ApplicationJson
                 "push"
             ],
             "type": "string",
-            "description": "The target of the ruleset\\n\\n> [!NOTE]\\n> The `push` target is in beta and is subject to change."
+            "description": "The target of the ruleset\\n\\n> [!NOTE]\\n> The `push` target is in beta and is subject to change.",
+            "default": "branch"
         },
         "enforcement": {
             "enum": [

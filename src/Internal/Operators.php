@@ -570,6 +570,7 @@ final class Operators
     private Internal\Operator\CodeScanning\UpdateDefaultSetup|null $codeScanning👷UpdateDefaultSetup                                                                                 = null;
     private Internal\Operator\CodeScanning\UploadSarif|null $codeScanning👷UploadSarif                                                                                               = null;
     private Internal\Operator\CodeScanning\GetSarif|null $codeScanning👷GetSarif                                                                                                     = null;
+    private Internal\Operator\CodeSecurity\GetConfigurationForRepository|null $codeSecurity👷GetConfigurationForRepository                                                           = null;
     private Internal\Operator\Repos\CodeownersErrors|null $repos👷CodeownersErrors                                                                                                   = null;
     private Internal\Operator\Codespaces\ListInRepositoryForAuthenticatedUser|null $codespaces👷ListInRepositoryForAuthenticatedUser                                                 = null;
     private Internal\Operator\Codespaces\CreateWithRepoForAuthenticatedUser|null $codespaces👷CreateWithRepoForAuthenticatedUser                                                     = null;
@@ -6172,6 +6173,15 @@ final class Operators
         }
 
         return $this->codeScanning👷GetSarif;
+    }
+
+    public function codeSecurity👷GetConfigurationForRepository(): Internal\Operator\CodeSecurity\GetConfigurationForRepository
+    {
+        if ($this->codeSecurity👷GetConfigurationForRepository instanceof Internal\Operator\CodeSecurity\GetConfigurationForRepository === false) {
+            $this->codeSecurity👷GetConfigurationForRepository = new Internal\Operator\CodeSecurity\GetConfigurationForRepository($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeSecurityConfiguration());
+        }
+
+        return $this->codeSecurity👷GetConfigurationForRepository;
     }
 
     public function repos👷CodeownersErrors(): Internal\Operator\Repos\CodeownersErrors

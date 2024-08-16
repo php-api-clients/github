@@ -20,6 +20,7 @@ final class SecretScanning
     {
     }
 
+    /** @return */
     public function createPushProtectionBypass(array $params): SecretScanningPushProtectionBypass|WithoutBody
     {
         $arguments = [];

@@ -1049,8 +1049,7 @@ final class Repos
         return $this->operators->repos👷CreateOrUpdateCustomPropertiesValues()->call($owner, $repo, $params);
     }
 
-    /** @return */
-    public function getReadme(string $owner, string $repo, string $ref): ContentFile
+    public function getReadme(string $owner, string $repo, string $ref): ContentFile|WithoutBody
     {
         return $this->operators->repos👷GetReadme()->call($owner, $repo, $ref);
     }

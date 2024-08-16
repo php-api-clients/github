@@ -1008,8 +1008,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return */
-    public function getReadme(array $params): ContentFile
+    public function getReadme(array $params): ContentFile|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('owner', $params) === false) {

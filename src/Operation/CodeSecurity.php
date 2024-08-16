@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Operation;
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration;
+use ApiClients\Client\GitHub\Schema\CodeSecurityConfigurationForRepository;
 use ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\AttachConfiguration\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
@@ -75,5 +76,10 @@ final class CodeSecurity
     public function getRepositoriesForConfiguration(string $org, int $configurationId, string $before, string $after, int $perPage, string $status): iterable
     {
         return $this->operators->codeSecurity👷GetRepositoriesForConfiguration()->call($org, $configurationId, $before, $after, $perPage, $status);
+    }
+
+    public function getConfigurationForRepository(string $owner, string $repo): CodeSecurityConfigurationForRepository|WithoutBody
+    {
+        return $this->operators->codeSecurity👷GetConfigurationForRepository()->call($owner, $repo);
     }
 }

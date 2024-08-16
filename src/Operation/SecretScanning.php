@@ -70,6 +70,7 @@ final class SecretScanning
         return $this->operators->secretScanning👷ListLocationsForAlertListing()->call($owner, $repo, $alertNumber, $page, $perPage);
     }
 
+    /** @return */
     public function createPushProtectionBypass(string $owner, string $repo, array $params): SecretScanningPushProtectionBypass|WithoutBody
     {
         return $this->operators->secretScanning👷CreatePushProtectionBypass()->call($owner, $repo, $params);

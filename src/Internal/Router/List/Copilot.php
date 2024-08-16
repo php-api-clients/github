@@ -161,7 +161,7 @@ final class Copilot
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\CopilotUsageMetrics> */
+    /** @return Observable<Schema\CopilotUsageMetrics> */
     public function usageMetricsForTeamListing(array $params): iterable
     {
         $arguments = [];
