@@ -5382,7 +5382,7 @@ class Installation implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookInstallationNewPermissionsAccepted' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationNewPermissionsAccepted($object),
                 'ApiClients\Client\GitHub\Schema\WebhookInstallationSuspend' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationSuspend($object),
                 'ApiClients\Client\GitHub\Schema\WebhookInstallationUnsuspend' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookInstallationUnsuspend($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

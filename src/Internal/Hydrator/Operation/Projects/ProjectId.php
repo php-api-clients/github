@@ -753,7 +753,7 @@ class ProjectId implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\Operations\Projects\Delete\Response\ApplicationJson\Forbidden\Application\Json' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️Delete⚡️Response⚡️ApplicationJson⚡️Forbidden⚡️Application⚡️Json($object),
                 'ApiClients\Client\GitHub\Schema\Operations\Projects\Update\Response\ApplicationJson\Forbidden\Application\Json' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Projects⚡️Update⚡️Response⚡️ApplicationJson⚡️Forbidden⚡️Application⚡️Json($object),
                 'ApiClients\Client\GitHub\Schema\ValidationErrorSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationErrorSimple($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

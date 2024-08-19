@@ -12639,7 +12639,7 @@ class WorkflowRun implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\WorkflowRun\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️WorkflowRun⚡️Repository($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\WorkflowRun\Repository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️WorkflowRun⚡️Repository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowRunRequested\WorkflowRun\TriggeringActor' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowRunRequested⚡️WorkflowRun⚡️TriggeringActor($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

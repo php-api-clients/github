@@ -28726,7 +28726,7 @@ class PullRequestReview implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone($object),
                 'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️Milestone⚡️Creator($object),
                 'ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPullRequestReviewSubmitted⚡️PullRequest⚡️User($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

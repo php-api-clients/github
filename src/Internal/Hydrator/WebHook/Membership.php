@@ -4778,7 +4778,7 @@ class Membership implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhooksTeam\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam⚡️Parent_($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMembershipRemoved' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipRemoved($object),
                 'ApiClients\Client\GitHub\Schema\WebhookMembershipRemoved\Sender' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookMembershipRemoved⚡️Sender($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

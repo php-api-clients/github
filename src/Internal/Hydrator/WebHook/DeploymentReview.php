@@ -12423,7 +12423,7 @@ class DeploymentReview implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowRun\Repository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️WorkflowRun⚡️Repository($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowRun\Repository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️WorkflowRun⚡️Repository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRequested\WorkflowRun\TriggeringActor' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDeploymentReviewRequested⚡️WorkflowRun⚡️TriggeringActor($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

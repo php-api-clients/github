@@ -576,7 +576,7 @@ assertType('', $client->call('GET /repos/{owner}/{repo}/code-scanning/default-se
 assertType('', $client->call('PATCH /repos/{owner}/{repo}/code-scanning/default-setup'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/code-scanning/sarifs'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/code-scanning/sarifs/{sarif_id}'));
-assertType('Schema\\CodeSecurityConfigurationForRepository|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /repos/{owner}/{repo}/code-security-configuration'));
+assertType('', $client->call('GET /repos/{owner}/{repo}/code-security-configuration'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/codeowners/errors'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/codespaces'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/codespaces'));
@@ -843,7 +843,7 @@ assertType('Observable<Schema\\ReviewComment>', $client->call('LIST /repos/{owne
 assertType('', $client->call('PUT /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/dismissals'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}/events'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/pulls/{pull_number}/update-branch'));
-assertType('Schema\\ContentFile|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /repos/{owner}/{repo}/readme'));
+assertType('', $client->call('GET /repos/{owner}/{repo}/readme'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/readme/{dir}'));
 assertType('Observable<Schema\\Release>', $client->call('GET /repos/{owner}/{repo}/releases'));
 assertType('Observable<Schema\\Release>', $client->call('LIST /repos/{owner}/{repo}/releases'));

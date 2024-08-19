@@ -25,6 +25,7 @@ final readonly class GetReadme
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $ref): ContentFile|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetReadme($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $ref);

@@ -78,6 +78,7 @@ final class CodeSecurity
         return $this->operators->codeSecurity👷GetRepositoriesForConfiguration()->call($org, $configurationId, $before, $after, $perPage, $status);
     }
 
+    /** @return */
     public function getConfigurationForRepository(string $owner, string $repo): CodeSecurityConfigurationForRepository|WithoutBody
     {
         return $this->operators->codeSecurity👷GetConfigurationForRepository()->call($owner, $repo);

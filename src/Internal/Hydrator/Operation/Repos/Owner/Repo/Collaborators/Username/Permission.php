@@ -554,7 +554,7 @@ class Permission implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\Collaborator' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Collaborator($object),
                 'ApiClients\Client\GitHub\Schema\Collaborator\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Collaborator⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

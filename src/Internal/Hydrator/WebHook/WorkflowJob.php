@@ -5910,7 +5910,7 @@ class WorkflowJob implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowJobQueued\WorkflowJob' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobQueued⚡️WorkflowJob($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowJobWaiting' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobWaiting($object),
                 'ApiClients\Client\GitHub\Schema\WebhookWorkflowJobWaiting\WorkflowJob' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookWorkflowJobWaiting⚡️WorkflowJob($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

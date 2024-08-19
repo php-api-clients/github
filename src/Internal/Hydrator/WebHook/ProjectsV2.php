@@ -1843,7 +1843,7 @@ class ProjectsV2 implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ProjectEdited\Changes\ShortDescription' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ProjectEdited⚡️Changes⚡️ShortDescription($object),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ProjectEdited\Changes\Title' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ProjectEdited⚡️Changes⚡️Title($object),
                 'ApiClients\Client\GitHub\Schema\WebhookProjectsV2ProjectReopened' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookProjectsV2ProjectReopened($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

@@ -468,7 +468,7 @@ class Rulesets implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Self_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links⚡️Self_($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryRuleset\Links\Html' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryRuleset⚡️Links⚡️Html($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

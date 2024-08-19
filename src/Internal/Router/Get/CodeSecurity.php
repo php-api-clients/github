@@ -61,6 +61,7 @@ final class CodeSecurity
         return $operator->call($arguments['org'], $arguments['before'], $arguments['after'], $arguments['target_type'], $arguments['per_page']);
     }
 
+    /** @return */
     public function getConfigurationForRepository(array $params): CodeSecurityConfigurationForRepository|WithoutBody
     {
         $arguments = [];

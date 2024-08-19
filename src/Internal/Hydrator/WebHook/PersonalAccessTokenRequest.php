@@ -2069,7 +2069,7 @@ class PersonalAccessTokenRequest implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCancelled' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestCancelled($object),
                 'ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestCreated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestCreated($object),
                 'ApiClients\Client\GitHub\Schema\WebhookPersonalAccessTokenRequestDenied' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPersonalAccessTokenRequestDenied($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

@@ -1198,7 +1198,7 @@ class CustomProperty implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyDeleted($object),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted\Definition' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyDeleted⚡️Definition($object),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyUpdated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyUpdated($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

@@ -1008,6 +1008,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
+    /** @return */
     public function getReadme(array $params): ContentFile|WithoutBody
     {
         $arguments = [];

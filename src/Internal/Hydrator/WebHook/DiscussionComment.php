@@ -5827,7 +5827,7 @@ class DiscussionComment implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookDiscussionCommentEdited' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionCommentEdited($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDiscussionCommentEdited\Changes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionCommentEdited⚡️Changes($object),
                 'ApiClients\Client\GitHub\Schema\WebhookDiscussionCommentEdited\Changes\Body' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookDiscussionCommentEdited⚡️Changes⚡️Body($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

@@ -259,7 +259,7 @@ class DeploymentProtectionRules implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\Operations\Repos\GetAllDeploymentProtectionRules\Response\ApplicationJson\Ok' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️Repos⚡️GetAllDeploymentProtectionRules⚡️Response⚡️ApplicationJson⚡️Ok($object),
                 'ApiClients\Client\GitHub\Schema\DeploymentProtectionRule' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DeploymentProtectionRule($object),
                 'ApiClients\Client\GitHub\Schema\CustomDeploymentRuleApp' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CustomDeploymentRuleApp($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

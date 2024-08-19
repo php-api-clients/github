@@ -5827,7 +5827,7 @@ class Sponsorship implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhooksChanges8\Tier' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksChanges8⚡️Tier($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksChanges8\Tier\From' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksChanges8⚡️Tier⚡️From($object),
                 'ApiClients\Client\GitHub\Schema\WebhookSponsorshipTierChanged' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSponsorshipTierChanged($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

@@ -4649,7 +4649,7 @@ class RepositoryRuleset implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookRepositoryRulesetEdited\Changes\Enforcement' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookRepositoryRulesetEdited⚡️Changes⚡️Enforcement($object),
                 'ApiClients\Client\GitHub\Schema\WebhookRepositoryRulesetEdited\Changes\Conditions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookRepositoryRulesetEdited⚡️Changes⚡️Conditions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookRepositoryRulesetEdited\Changes\Rules' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookRepositoryRulesetEdited⚡️Changes⚡️Rules($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

@@ -2572,7 +2572,7 @@ class CodespaceName implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\Codespace\GitStatus' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️GitStatus($object),
                 'ApiClients\Client\GitHub\Schema\Codespace\RuntimeConstraints' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Codespace⚡️RuntimeConstraints($object),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

@@ -4437,7 +4437,7 @@ class SecurityAdvisory implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryWithdrawn' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryWithdrawn($object),
                 'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryWithdrawn\SecurityAdvisory' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryWithdrawn⚡️SecurityAdvisory($object),
                 'ApiClients\Client\GitHub\Schema\WebhookSecurityAdvisoryWithdrawn\SecurityAdvisory\Cvss' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecurityAdvisoryWithdrawn⚡️SecurityAdvisory⚡️Cvss($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

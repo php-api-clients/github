@@ -5454,7 +5454,7 @@ class Organization implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookOrganizationRenamed' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationRenamed($object),
                 'ApiClients\Client\GitHub\Schema\WebhookOrganizationRenamed\Changes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationRenamed⚡️Changes($object),
                 'ApiClients\Client\GitHub\Schema\WebhookOrganizationRenamed\Changes\Login' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookOrganizationRenamed⚡️Changes⚡️Login($object),
-                default => throw new LogicException('No serialization defined for $className'),
+                default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
             throw UnableToSerializeObject::dueToError($className, $exception);

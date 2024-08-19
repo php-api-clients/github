@@ -25,6 +25,7 @@ final readonly class GetConfigurationForRepository
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo): CodeSecurityConfigurationForRepository|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\GetConfigurationForRepository($this->responseSchemaValidator, $this->hydrator, $owner, $repo);
