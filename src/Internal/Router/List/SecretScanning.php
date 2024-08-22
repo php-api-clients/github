@@ -21,7 +21,7 @@ final class SecretScanning
     {
     }
 
-    /** @return Observable<Schema\OrganizationSecretScanningAlert> */
+    /** @return iterable<int,Schema\OrganizationSecretScanningAlert> */
     public function listAlertsForOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -102,7 +102,7 @@ final class SecretScanning
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\SecretScanningAlert>|WithoutBody */
+    /** @return iterable<int,Schema\SecretScanningAlert>|WithoutBody */
     public function listAlertsForRepoListing(array $params): iterable|WithoutBody
     {
         $arguments = [];

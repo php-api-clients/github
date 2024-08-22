@@ -131,6 +131,9 @@ final readonly class Apps
         "name": {
             "type": "string"
         },
+        "client_id": {
+            "type": "string"
+        },
         "description": {
             "type": "string"
         },
@@ -203,6 +206,7 @@ final readonly class Apps
         "site_admin": false
     },
     "name": "generated",
+    "client_id": "generated",
     "description": "generated",
     "external_url": "generated",
     "html_url": "generated",
@@ -221,7 +225,8 @@ final readonly class Apps
 }';
 
     public function __construct(public int|null $id, public string|null $slug, #[MapFrom('node_id')]
-    public string|null $nodeId, public Schema\BranchRestrictionPolicy\Apps\Owner|null $owner, public string|null $name, public string|null $description, #[MapFrom('external_url')]
+    public string|null $nodeId, public Schema\BranchRestrictionPolicy\Apps\Owner|null $owner, public string|null $name, #[MapFrom('client_id')]
+    public string|null $clientId, public string|null $description, #[MapFrom('external_url')]
     public string|null $externalUrl, #[MapFrom('html_url')]
     public string|null $htmlUrl, #[MapFrom('created_at')]
     public string|null $createdAt, #[MapFrom('updated_at')]

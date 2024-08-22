@@ -117,6 +117,13 @@ final readonly class App
             ],
             "description": "Unique identifier of the GitHub app"
         },
+        "client_id": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Client ID of the GitHub app"
+        },
         "name": {
             "type": "string",
             "description": "The name of the GitHub app"
@@ -499,6 +506,7 @@ final readonly class App
     "external_url": "https:\\/\\/example.com\\/",
     "html_url": "https:\\/\\/example.com\\/",
     "id": 2,
+    "client_id": "generated",
     "name": "generated",
     "node_id": "generated",
     "owner": {
@@ -568,6 +576,7 @@ final readonly class App
     /**
      * events: The list of events for the GitHub app
      * id: Unique identifier of the GitHub app
+     * clientId: Client ID of the GitHub app
      * name: The name of the GitHub app
      * permissions: The set of permissions for the GitHub app
      * slug: The slug name of the GitHub app
@@ -575,7 +584,8 @@ final readonly class App
     public function __construct(#[MapFrom('created_at')]
     public string|null $createdAt, public string|null $description, public array|null $events, #[MapFrom('external_url')]
     public string|null $externalUrl, #[MapFrom('html_url')]
-    public string $htmlUrl, public int|null $id, public string $name, #[MapFrom('node_id')]
+    public string $htmlUrl, public int|null $id, #[MapFrom('client_id')]
+    public string|null $clientId, public string $name, #[MapFrom('node_id')]
     public string $nodeId, public Schema\WebhookCheckSuiteRequested\CheckSuite\App\Owner|null $owner, public Schema\WebhookCheckSuiteRequested\CheckSuite\App\Permissions|null $permissions, public string|null $slug, #[MapFrom('updated_at')]
     public string|null $updatedAt,)
     {

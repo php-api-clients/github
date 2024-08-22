@@ -13,6 +13,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -81,13 +82,30 @@ final class CreateBlob
 
                         throw new ErrorSchemas\BasicError(403, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
                     /**
-                     * Validation failed, or the endpoint has been spammed.
+                     * Validation failed
                      **/
 
                     case 422:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $error = new RuntimeException();
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\ValidationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                        throw new ErrorSchemas\ValidationError(422, $this->hydrator->hydrateObject(Schema\ValidationError::class, $body));
+                            return $this->hydrator->hydrateObject(Schema\ValidationError::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_four_hundred_twenty_two_aaaaa;
+                        }
+
+                        items_application_json_four_hundred_twenty_two_aaaaa:
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleViolationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\RepositoryRuleViolationError::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_four_hundred_twenty_two_aaaab;
+                        }
+
+                        items_application_json_four_hundred_twenty_two_aaaab:
+                        throw $error;
                 }
 
                 break;

@@ -14,10 +14,10 @@ final readonly class SecretScanningNonProviderPatterns
             "description": "Can be `enabled` or `disabled`."
         }
     },
-    "description": "Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see \\"[Secret scanning supported secrets](\\/code-security\\/secret-scanning\\/secret-scanning-patterns#supported-secrets).\\""
+    "description": "Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see \\"[Supported secret scanning patterns](\\/code-security\\/secret-scanning\\/introduction\\/supported-secret-scanning-patterns#supported-secrets).\\""
 }';
     public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = 'Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Secret scanning supported secrets](/code-security/secret-scanning/secret-scanning-patterns#supported-secrets)."';
+    public const SCHEMA_DESCRIPTION  = 'Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Supported secret scanning patterns](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."';
     public const SCHEMA_EXAMPLE_DATA = '{
     "status": "generated"
 }';

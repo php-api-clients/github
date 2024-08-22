@@ -172,6 +172,7 @@ final readonly class WorkflowRun
                 "stale",
                 "success",
                 "timed_out",
+                "startup_failure",
                 null
             ],
             "type": [
@@ -1273,7 +1274,7 @@ final readonly class WorkflowRun
     "check_suite_id": 14,
     "check_suite_node_id": "generated",
     "check_suite_url": "https:\\/\\/example.com\\/",
-    "conclusion": "timed_out",
+    "conclusion": "startup_failure",
     "created_at": "1970-01-01T00:00:00+00:00",
     "event": "generated",
     "head_branch": "generated",

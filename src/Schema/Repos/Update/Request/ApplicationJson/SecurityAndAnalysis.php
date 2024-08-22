@@ -53,7 +53,7 @@ final readonly class SecurityAndAnalysis
                     "description": "Can be `enabled` or `disabled`."
                 }
             },
-            "description": "Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see \\"[Secret scanning supported secrets](\\/code-security\\/secret-scanning\\/secret-scanning-patterns#supported-secrets).\\""
+            "description": "Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see \\"[Supported secret scanning patterns](\\/code-security\\/secret-scanning\\/introduction\\/supported-secret-scanning-patterns#supported-secrets).\\""
         }
     },
     "description": "Specify which security and analysis features to enable or disable for the repository.\\n\\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \\"[Managing security managers in your organization](https:\\/\\/docs.github.com\\/organizations\\/managing-peoples-access-to-your-organization-with-roles\\/managing-security-managers-in-your-organization).\\"\\n\\nFor example, to enable GitHub Advanced Security, use this data in the body of the `PATCH` request:\\n`{ \\"security_and_analysis\\": {\\"advanced_security\\": { \\"status\\": \\"enabled\\" } } }`.\\n\\nYou can check which security and analysis features are currently enabled by using a `GET \\/repos\\/{owner}\\/{repo}` request."
@@ -86,7 +86,7 @@ You can check which security and analysis features are currently enabled by usin
      * advancedSecurity: Use the `status` property to enable or disable GitHub Advanced Security for this repository. For more information, see "[About GitHub Advanced Security](/github/getting-started-with-github/learning-about-github/about-github-advanced-security)."
      * secretScanning: Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."
      * secretScanningPushProtection: Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
-     * secretScanningNonProviderPatterns: Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Secret scanning supported secrets](/code-security/secret-scanning/secret-scanning-patterns#supported-secrets)."
+     * secretScanningNonProviderPatterns: Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Supported secret scanning patterns](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
      */
     public function __construct(#[MapFrom('advanced_security')]
     public Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis\AdvancedSecurity|null $advancedSecurity, #[MapFrom('secret_scanning')]

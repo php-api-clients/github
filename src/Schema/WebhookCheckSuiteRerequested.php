@@ -155,6 +155,13 @@ final readonly class WebhookCheckSuiteRerequested
                             ],
                             "description": "Unique identifier of the GitHub app"
                         },
+                        "client_id": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "The Client ID for the GitHub app"
+                        },
                         "name": {
                             "type": "string",
                             "description": "The name of the GitHub app"
@@ -2663,6 +2670,7 @@ final readonly class WebhookCheckSuiteRerequested
             "external_url": "https:\\/\\/example.com\\/",
             "html_url": "https:\\/\\/example.com\\/",
             "id": 2,
+            "client_id": "generated",
             "name": "generated",
             "node_id": "generated",
             "owner": {

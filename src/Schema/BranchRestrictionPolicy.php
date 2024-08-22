@@ -277,6 +277,9 @@ final readonly class BranchRestrictionPolicy
                     "name": {
                         "type": "string"
                     },
+                    "client_id": {
+                        "type": "string"
+                    },
                     "description": {
                         "type": "string"
                     },
@@ -433,6 +436,7 @@ final readonly class BranchRestrictionPolicy
                 "site_admin": false
             },
             "name": "generated",
+            "client_id": "generated",
             "description": "generated",
             "external_url": "generated",
             "html_url": "generated",
@@ -479,6 +483,7 @@ final readonly class BranchRestrictionPolicy
                 "site_admin": false
             },
             "name": "generated",
+            "client_id": "generated",
             "description": "generated",
             "external_url": "generated",
             "html_url": "generated",

@@ -25,7 +25,7 @@ final readonly class ListAlertsForRepo
     {
     }
 
-    /** @return Observable<Schema\SecretScanningAlert>|WithoutBody */
+    /** @return iterable<int,Schema\SecretScanningAlert>|WithoutBody */
     public function call(string $owner, string $repo, string $state, string $secretType, string $resolution, string $before, string $after, string $validity, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30): iterable|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecretScanning\ListAlertsForRepo($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $state, $secretType, $resolution, $before, $after, $validity, $sort, $direction, $page, $perPage);

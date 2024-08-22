@@ -144,6 +144,13 @@ final readonly class CheckSuite
                     ],
                     "description": "Unique identifier of the GitHub app"
                 },
+                "client_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "Client ID of the GitHub app"
+                },
                 "name": {
                     "type": "string",
                     "description": "The name of the GitHub app"
@@ -797,6 +804,7 @@ final readonly class CheckSuite
         "external_url": "https:\\/\\/example.com\\/",
         "html_url": "https:\\/\\/example.com\\/",
         "id": 2,
+        "client_id": "generated",
         "name": "generated",
         "node_id": "generated",
         "owner": {

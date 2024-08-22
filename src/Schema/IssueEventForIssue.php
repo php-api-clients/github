@@ -259,6 +259,12 @@ final readonly class IssueEventForIssue
                                         "MDExOkludGVncmF0aW9uMQ=="
                                     ]
                                 },
+                                "client_id": {
+                                    "type": "string",
+                                    "examples": [
+                                        "\\"Iv1.25b5d1e65ffc4022\\""
+                                    ]
+                                },
                                 "owner": {
                                     "anyOf": [
                                         {
@@ -516,12 +522,6 @@ final readonly class IssueEventForIssue
                                     "description": "The number of installations associated with the GitHub app",
                                     "examples": [
                                         5
-                                    ]
-                                },
-                                "client_id": {
-                                    "type": "string",
-                                    "examples": [
-                                        "\\"Iv1.25b5d1e65ffc4022\\""
                                     ]
                                 },
                                 "client_secret": {
@@ -818,6 +818,12 @@ final readonly class IssueEventForIssue
                                         "MDExOkludGVncmF0aW9uMQ=="
                                     ]
                                 },
+                                "client_id": {
+                                    "type": "string",
+                                    "examples": [
+                                        "\\"Iv1.25b5d1e65ffc4022\\""
+                                    ]
+                                },
                                 "owner": {
                                     "anyOf": [
                                         {
@@ -1075,12 +1081,6 @@ final readonly class IssueEventForIssue
                                     "description": "The number of installations associated with the GitHub app",
                                     "examples": [
                                         5
-                                    ]
-                                },
-                                "client_id": {
-                                    "type": "string",
-                                    "examples": [
-                                        "\\"Iv1.25b5d1e65ffc4022\\""
                                     ]
                                 },
                                 "client_secret": {
@@ -1373,6 +1373,12 @@ final readonly class IssueEventForIssue
                                 "MDExOkludGVncmF0aW9uMQ=="
                             ]
                         },
+                        "client_id": {
+                            "type": "string",
+                            "examples": [
+                                "\\"Iv1.25b5d1e65ffc4022\\""
+                            ]
+                        },
                         "owner": {
                             "anyOf": [
                                 {
@@ -1630,12 +1636,6 @@ final readonly class IssueEventForIssue
                             "description": "The number of installations associated with the GitHub app",
                             "examples": [
                                 5
-                            ]
-                        },
-                        "client_id": {
-                            "type": "string",
-                            "examples": [
-                                "\\"Iv1.25b5d1e65ffc4022\\""
                             ]
                         },
                         "client_secret": {
@@ -2240,6 +2240,12 @@ final readonly class IssueEventForIssue
                                         "MDExOkludGVncmF0aW9uMQ=="
                                     ]
                                 },
+                                "client_id": {
+                                    "type": "string",
+                                    "examples": [
+                                        "\\"Iv1.25b5d1e65ffc4022\\""
+                                    ]
+                                },
                                 "owner": {
                                     "anyOf": [
                                         {
@@ -2497,12 +2503,6 @@ final readonly class IssueEventForIssue
                                     "description": "The number of installations associated with the GitHub app",
                                     "examples": [
                                         5
-                                    ]
-                                },
-                                "client_id": {
-                                    "type": "string",
-                                    "examples": [
-                                        "\\"Iv1.25b5d1e65ffc4022\\""
                                     ]
                                 },
                                 "client_secret": {
@@ -3108,6 +3108,12 @@ final readonly class IssueEventForIssue
                                         "MDExOkludGVncmF0aW9uMQ=="
                                     ]
                                 },
+                                "client_id": {
+                                    "type": "string",
+                                    "examples": [
+                                        "\\"Iv1.25b5d1e65ffc4022\\""
+                                    ]
+                                },
                                 "owner": {
                                     "anyOf": [
                                         {
@@ -3365,12 +3371,6 @@ final readonly class IssueEventForIssue
                                     "description": "The number of installations associated with the GitHub app",
                                     "examples": [
                                         5
-                                    ]
-                                },
-                                "client_id": {
-                                    "type": "string",
-                                    "examples": [
-                                        "\\"Iv1.25b5d1e65ffc4022\\""
                                     ]
                                 },
                                 "client_secret": {
@@ -3663,6 +3663,12 @@ final readonly class IssueEventForIssue
                                         "MDExOkludGVncmF0aW9uMQ=="
                                     ]
                                 },
+                                "client_id": {
+                                    "type": "string",
+                                    "examples": [
+                                        "\\"Iv1.25b5d1e65ffc4022\\""
+                                    ]
+                                },
                                 "owner": {
                                     "anyOf": [
                                         {
@@ -3920,12 +3926,6 @@ final readonly class IssueEventForIssue
                                     "description": "The number of installations associated with the GitHub app",
                                     "examples": [
                                         5
-                                    ]
-                                },
-                                "client_id": {
-                                    "type": "string",
-                                    "examples": [
-                                        "\\"Iv1.25b5d1e65ffc4022\\""
                                     ]
                                 },
                                 "client_secret": {
@@ -4218,6 +4218,12 @@ final readonly class IssueEventForIssue
                                         "MDExOkludGVncmF0aW9uMQ=="
                                     ]
                                 },
+                                "client_id": {
+                                    "type": "string",
+                                    "examples": [
+                                        "\\"Iv1.25b5d1e65ffc4022\\""
+                                    ]
+                                },
                                 "owner": {
                                     "anyOf": [
                                         {
@@ -4475,12 +4481,6 @@ final readonly class IssueEventForIssue
                                     "description": "The number of installations associated with the GitHub app",
                                     "examples": [
                                         5
-                                    ]
-                                },
-                                "client_id": {
-                                    "type": "string",
-                                    "examples": [
-                                        "\\"Iv1.25b5d1e65ffc4022\\""
                                     ]
                                 },
                                 "client_secret": {
@@ -4777,6 +4777,12 @@ final readonly class IssueEventForIssue
                                         "MDExOkludGVncmF0aW9uMQ=="
                                     ]
                                 },
+                                "client_id": {
+                                    "type": "string",
+                                    "examples": [
+                                        "\\"Iv1.25b5d1e65ffc4022\\""
+                                    ]
+                                },
                                 "owner": {
                                     "anyOf": [
                                         {
@@ -5034,12 +5040,6 @@ final readonly class IssueEventForIssue
                                     "description": "The number of installations associated with the GitHub app",
                                     "examples": [
                                         5
-                                    ]
-                                },
-                                "client_id": {
-                                    "type": "string",
-                                    "examples": [
-                                        "\\"Iv1.25b5d1e65ffc4022\\""
                                     ]
                                 },
                                 "client_secret": {
@@ -5855,6 +5855,12 @@ final readonly class IssueEventForIssue
                                         "MDExOkludGVncmF0aW9uMQ=="
                                     ]
                                 },
+                                "client_id": {
+                                    "type": "string",
+                                    "examples": [
+                                        "\\"Iv1.25b5d1e65ffc4022\\""
+                                    ]
+                                },
                                 "owner": {
                                     "anyOf": [
                                         {
@@ -6112,12 +6118,6 @@ final readonly class IssueEventForIssue
                                     "description": "The number of installations associated with the GitHub app",
                                     "examples": [
                                         5
-                                    ]
-                                },
-                                "client_id": {
-                                    "type": "string",
-                                    "examples": [
-                                        "\\"Iv1.25b5d1e65ffc4022\\""
                                     ]
                                 },
                                 "client_secret": {
@@ -6933,6 +6933,12 @@ final readonly class IssueEventForIssue
                                         "MDExOkludGVncmF0aW9uMQ=="
                                     ]
                                 },
+                                "client_id": {
+                                    "type": "string",
+                                    "examples": [
+                                        "\\"Iv1.25b5d1e65ffc4022\\""
+                                    ]
+                                },
                                 "owner": {
                                     "anyOf": [
                                         {
@@ -7190,12 +7196,6 @@ final readonly class IssueEventForIssue
                                     "description": "The number of installations associated with the GitHub app",
                                     "examples": [
                                         5
-                                    ]
-                                },
-                                "client_id": {
-                                    "type": "string",
-                                    "examples": [
-                                        "\\"Iv1.25b5d1e65ffc4022\\""
                                     ]
                                 },
                                 "client_secret": {
@@ -7502,6 +7502,12 @@ final readonly class IssueEventForIssue
                                         "MDExOkludGVncmF0aW9uMQ=="
                                     ]
                                 },
+                                "client_id": {
+                                    "type": "string",
+                                    "examples": [
+                                        "\\"Iv1.25b5d1e65ffc4022\\""
+                                    ]
+                                },
                                 "owner": {
                                     "anyOf": [
                                         {
@@ -7759,12 +7765,6 @@ final readonly class IssueEventForIssue
                                     "description": "The number of installations associated with the GitHub app",
                                     "examples": [
                                         5
-                                    ]
-                                },
-                                "client_id": {
-                                    "type": "string",
-                                    "examples": [
-                                        "\\"Iv1.25b5d1e65ffc4022\\""
                                     ]
                                 },
                                 "client_secret": {
@@ -8054,6 +8054,12 @@ final readonly class IssueEventForIssue
                                         "MDExOkludGVncmF0aW9uMQ=="
                                     ]
                                 },
+                                "client_id": {
+                                    "type": "string",
+                                    "examples": [
+                                        "\\"Iv1.25b5d1e65ffc4022\\""
+                                    ]
+                                },
                                 "owner": {
                                     "anyOf": [
                                         {
@@ -8311,12 +8317,6 @@ final readonly class IssueEventForIssue
                                     "description": "The number of installations associated with the GitHub app",
                                     "examples": [
                                         5
-                                    ]
-                                },
-                                "client_id": {
-                                    "type": "string",
-                                    "examples": [
-                                        "\\"Iv1.25b5d1e65ffc4022\\""
                                     ]
                                 },
                                 "client_secret": {
@@ -8629,6 +8629,12 @@ final readonly class IssueEventForIssue
                                         "MDExOkludGVncmF0aW9uMQ=="
                                     ]
                                 },
+                                "client_id": {
+                                    "type": "string",
+                                    "examples": [
+                                        "\\"Iv1.25b5d1e65ffc4022\\""
+                                    ]
+                                },
                                 "owner": {
                                     "anyOf": [
                                         {
@@ -8886,12 +8892,6 @@ final readonly class IssueEventForIssue
                                     "description": "The number of installations associated with the GitHub app",
                                     "examples": [
                                         5
-                                    ]
-                                },
-                                "client_id": {
-                                    "type": "string",
-                                    "examples": [
-                                        "\\"Iv1.25b5d1e65ffc4022\\""
                                     ]
                                 },
                                 "client_secret": {
@@ -9204,6 +9204,12 @@ final readonly class IssueEventForIssue
                                         "MDExOkludGVncmF0aW9uMQ=="
                                     ]
                                 },
+                                "client_id": {
+                                    "type": "string",
+                                    "examples": [
+                                        "\\"Iv1.25b5d1e65ffc4022\\""
+                                    ]
+                                },
                                 "owner": {
                                     "anyOf": [
                                         {
@@ -9461,12 +9467,6 @@ final readonly class IssueEventForIssue
                                     "description": "The number of installations associated with the GitHub app",
                                     "examples": [
                                         5
-                                    ]
-                                },
-                                "client_id": {
-                                    "type": "string",
-                                    "examples": [
-                                        "\\"Iv1.25b5d1e65ffc4022\\""
                                     ]
                                 },
                                 "client_secret": {
@@ -9774,6 +9774,12 @@ final readonly class IssueEventForIssue
                                 "MDExOkludGVncmF0aW9uMQ=="
                             ]
                         },
+                        "client_id": {
+                            "type": "string",
+                            "examples": [
+                                "\\"Iv1.25b5d1e65ffc4022\\""
+                            ]
+                        },
                         "owner": {
                             "anyOf": [
                                 {
@@ -10031,12 +10037,6 @@ final readonly class IssueEventForIssue
                             "description": "The number of installations associated with the GitHub app",
                             "examples": [
                                 5
-                            ]
-                        },
-                        "client_id": {
-                            "type": "string",
-                            "examples": [
-                                "\\"Iv1.25b5d1e65ffc4022\\""
                             ]
                         },
                         "client_secret": {

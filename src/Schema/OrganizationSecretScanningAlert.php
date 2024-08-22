@@ -258,7 +258,7 @@ final readonly class OrganizationSecretScanningAlert
         },
         "secret_type_display_name": {
             "type": "string",
-            "description": "User-friendly name for the detected secret, matching the `secret_type`.\\nFor a list of built-in patterns, see \\"[Secret scanning patterns](https:\\/\\/docs.github.com\\/code-security\\/secret-scanning\\/secret-scanning-patterns#supported-secrets-for-advanced-security).\\""
+            "description": "User-friendly name for the detected secret, matching the `secret_type`.\\nFor a list of built-in patterns, see \\"[Supported secret scanning patterns](https:\\/\\/docs.github.com\\/code-security\\/secret-scanning\\/introduction\\/supported-secret-scanning-patterns#supported-secrets).\\""
         },
         "secret": {
             "type": "string",
@@ -1159,7 +1159,7 @@ final readonly class OrganizationSecretScanningAlert
      * resolvedAt: The time that the alert was resolved in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      * secretType: The type of secret that secret scanning detected.
      * secretTypeDisplayName: User-friendly name for the detected secret, matching the `secret_type`.
-    For a list of built-in patterns, see "[Secret scanning patterns](https://docs.github.com/code-security/secret-scanning/secret-scanning-patterns#supported-secrets-for-advanced-security)."
+    For a list of built-in patterns, see "[Supported secret scanning patterns](https://docs.github.com/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
      * secret: The secret that was detected.
      * repository: A GitHub repository.
      * pushProtectionBypassed: Whether push protection was bypassed for the detected secret.

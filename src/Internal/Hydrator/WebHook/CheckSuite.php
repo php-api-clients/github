@@ -553,6 +553,17 @@ class CheckSuite implements ObjectMapper
 
             after_id:
 
+            $value = $payload['client_id'] ?? null;
+
+            if ($value === null) {
+                $properties['clientId'] = null;
+                goto after_clientId;
+            }
+
+            $properties['clientId'] = $value;
+
+            after_clientId:
+
             $value = $payload['name'] ?? null;
 
             if ($value === null) {
@@ -5428,6 +5439,17 @@ class CheckSuite implements ObjectMapper
 
             after_id:
 
+            $value = $payload['client_id'] ?? null;
+
+            if ($value === null) {
+                $properties['clientId'] = null;
+                goto after_clientId;
+            }
+
+            $properties['clientId'] = $value;
+
+            after_clientId:
+
             $value = $payload['name'] ?? null;
 
             if ($value === null) {
@@ -6865,6 +6887,17 @@ class CheckSuite implements ObjectMapper
 
             after_id:
 
+            $value = $payload['client_id'] ?? null;
+
+            if ($value === null) {
+                $properties['clientId'] = null;
+                goto after_clientId;
+            }
+
+            $properties['clientId'] = $value;
+
+            after_clientId:
+
             $value = $payload['name'] ?? null;
 
             if ($value === null) {
@@ -8204,6 +8237,14 @@ class CheckSuite implements ObjectMapper
         }
 
         after_id:        $result['id'] = $id;
+
+        $clientId = $object->clientId;
+
+        if ($clientId === null) {
+            goto after_clientId;
+        }
+
+        after_clientId:        $result['client_id'] = $clientId;
 
         $name                              = $object->name;
         after_name:        $result['name'] = $name;
@@ -10797,6 +10838,14 @@ class CheckSuite implements ObjectMapper
 
         after_id:        $result['id'] = $id;
 
+        $clientId = $object->clientId;
+
+        if ($clientId === null) {
+            goto after_clientId;
+        }
+
+        after_clientId:        $result['client_id'] = $clientId;
+
         $name                              = $object->name;
         after_name:        $result['name'] = $name;
 
@@ -11602,6 +11651,14 @@ class CheckSuite implements ObjectMapper
         }
 
         after_id:        $result['id'] = $id;
+
+        $clientId = $object->clientId;
+
+        if ($clientId === null) {
+            goto after_clientId;
+        }
+
+        after_clientId:        $result['client_id'] = $clientId;
 
         $name                              = $object->name;
         after_name:        $result['name'] = $name;

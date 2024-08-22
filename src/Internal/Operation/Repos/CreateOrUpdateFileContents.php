@@ -13,6 +13,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use RingCentral\Psr7\Request;
 use RuntimeException;
+use Throwable;
 
 use function explode;
 use function json_decode;
@@ -88,9 +89,26 @@ final class CreateOrUpdateFileContents
                      **/
 
                     case 409:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $error = new RuntimeException();
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\BasicError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                        throw new ErrorSchemas\BasicError(409, $this->hydrator->hydrateObject(Schema\BasicError::class, $body));
+                            return $this->hydrator->hydrateObject(Schema\BasicError::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_four_hundred_nine_aaaaa;
+                        }
+
+                        items_application_json_four_hundred_nine_aaaaa:
+                        try {
+                            $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\RepositoryRuleViolationError::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                            return $this->hydrator->hydrateObject(Schema\RepositoryRuleViolationError::class, $body);
+                        } catch (Throwable) {
+                            goto items_application_json_four_hundred_nine_aaaab;
+                        }
+
+                        items_application_json_four_hundred_nine_aaaab:
+                        throw $error;
                 }
 
                 break;
