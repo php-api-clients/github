@@ -207,6 +207,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['username'], $params);
     }
 
+    /** @return */
     public function createOrUpdateFileContents(array $params): FileCommit
     {
         $arguments = [];

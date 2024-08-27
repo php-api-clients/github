@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation;
 
 use ApiClients\Client\GitHub\Schema\ApiOverview;
 use ApiClients\Client\GitHub\Schema\ApiOverview\Domains;
+use ApiClients\Client\GitHub\Schema\ApiOverview\Domains\ArtifactAttestations;
 use ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -45,6 +46,7 @@ class Meta implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\ApiOverview' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview($payload),
                 'ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($payload),
                 'ApiClients\Client\GitHub\Schema\ApiOverview\Domains' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️Domains($payload),
+                'ApiClients\Client\GitHub\Schema\ApiOverview\Domains\ArtifactAttestations' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️Domains⚡️ArtifactAttestations($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -384,6 +386,26 @@ class Meta implements ObjectMapper
             $properties['actions'] = $value;
 
             after_actions:
+
+            $value = $payload['artifact_attestations'] ?? null;
+
+            if ($value === null) {
+                $properties['artifactAttestations'] = null;
+                goto after_artifactAttestations;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'artifactAttestations';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️Domains⚡️ArtifactAttestations($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['artifactAttestations'] = $value;
+
+            after_artifactAttestations:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview\Domains', $exception, stack: $this->hydrationStack);
         }
@@ -396,6 +418,47 @@ class Meta implements ObjectMapper
             return new Domains(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview\Domains', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️Domains⚡️ArtifactAttestations(array $payload): ArtifactAttestations
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['trust_domain'] ?? null;
+
+            if ($value === null) {
+                $properties['trustDomain'] = null;
+                goto after_trustDomain;
+            }
+
+            $properties['trustDomain'] = $value;
+
+            after_trustDomain:
+
+            $value = $payload['services'] ?? null;
+
+            if ($value === null) {
+                $properties['services'] = null;
+                goto after_services;
+            }
+
+            $properties['services'] = $value;
+
+            after_services:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview\Domains\ArtifactAttestations', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(ArtifactAttestations::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new ArtifactAttestations(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ApiOverview\Domains\ArtifactAttestations', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -433,6 +496,7 @@ class Meta implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\ApiOverview' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview($object),
                 'ApiClients\Client\GitHub\Schema\ApiOverview\SshKeyFingerprints' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️SshKeyFingerprints($object),
                 'ApiClients\Client\GitHub\Schema\ApiOverview\Domains' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️Domains($object),
+                'ApiClients\Client\GitHub\Schema\ApiOverview\Domains\ArtifactAttestations' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️Domains⚡️ArtifactAttestations($object),
                 default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
@@ -838,6 +902,46 @@ class Meta implements ObjectMapper
 
         $actions                                 = $actionsSerializer0->serialize($actions, $this);
         after_actions:        $result['actions'] = $actions;
+
+        $artifactAttestations = $object->artifactAttestations;
+
+        if ($artifactAttestations === null) {
+            goto after_artifactAttestations;
+        }
+
+        $artifactAttestations                                               = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️Domains⚡️ArtifactAttestations($artifactAttestations);
+        after_artifactAttestations:        $result['artifact_attestations'] = $artifactAttestations;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ApiOverview⚡️Domains⚡️ArtifactAttestations(mixed $object): mixed
+    {
+        assert($object instanceof ArtifactAttestations);
+        $result = [];
+
+        $trustDomain = $object->trustDomain;
+
+        if ($trustDomain === null) {
+            goto after_trustDomain;
+        }
+
+        after_trustDomain:        $result['trust_domain'] = $trustDomain;
+
+        $services = $object->services;
+
+        if ($services === null) {
+            goto after_services;
+        }
+
+        static $servicesSerializer0;
+
+        if ($servicesSerializer0 === null) {
+            $servicesSerializer0 = new SerializeArrayItems(...[]);
+        }
+
+        $services                                  = $servicesSerializer0->serialize($services, $this);
+        after_services:        $result['services'] = $services;
 
         return $result;
     }

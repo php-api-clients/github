@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\ApiOverview;
 
+use ApiClients\Client\GitHub\Schema;
+use EventSauce\ObjectHydrator\MapFrom;
+
 final readonly class Domains
 {
     public const SCHEMA_JSON         = '{
@@ -53,6 +56,26 @@ final readonly class Domains
                     "example.com"
                 ]
             }
+        },
+        "artifact_attestations": {
+            "type": "object",
+            "properties": {
+                "trust_domain": {
+                    "type": "string",
+                    "examples": [
+                        "example"
+                    ]
+                },
+                "services": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "examples": [
+                            "example.com"
+                        ]
+                    }
+                }
+            }
         }
     }
 }';
@@ -78,10 +101,18 @@ final readonly class Domains
     "actions": [
         "generated",
         "generated"
-    ]
+    ],
+    "artifact_attestations": {
+        "trust_domain": "example",
+        "services": [
+            "generated",
+            "generated"
+        ]
+    }
 }';
 
-    public function __construct(public array|null $website, public array|null $codespaces, public array|null $copilot, public array|null $packages, public array|null $actions)
+    public function __construct(public array|null $website, public array|null $codespaces, public array|null $copilot, public array|null $packages, public array|null $actions, #[MapFrom('artifact_attestations')]
+    public Schema\ApiOverview\Domains\ArtifactAttestations|null $artifactAttestations,)
     {
     }
 }

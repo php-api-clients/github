@@ -7,6 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Advisories;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\GlobalAdvisory;
 use ApiClients\Client\GitHub\Schema\GlobalAdvisory\Cvss;
+use ApiClients\Client\GitHub\Schema\GlobalAdvisory\Epss;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
 use EventSauce\ObjectHydrator\PropertySerializers\SerializeArrayItems;
@@ -44,6 +45,7 @@ class GhsaId implements ObjectMapper
         return match ($className) {
             'ApiClients\Client\GitHub\Schema\GlobalAdvisory' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GlobalAdvisory($payload),
                 'ApiClients\Client\GitHub\Schema\GlobalAdvisory\Cvss' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GlobalAdvisory⚡️Cvss($payload),
+                'ApiClients\Client\GitHub\Schema\GlobalAdvisory\Epss' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GlobalAdvisory⚡️Epss($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -283,6 +285,26 @@ class GhsaId implements ObjectMapper
 
             after_cwes:
 
+            $value = $payload['epss'] ?? null;
+
+            if ($value === null) {
+                $properties['epss'] = null;
+                goto after_epss;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'epss';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GlobalAdvisory⚡️Epss($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['epss'] = $value;
+
+            after_epss:
+
             $value = $payload['credits'] ?? null;
 
             if ($value === null) {
@@ -346,6 +368,47 @@ class GhsaId implements ObjectMapper
             return new Cvss(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GlobalAdvisory\Cvss', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GlobalAdvisory⚡️Epss(array $payload): Epss
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['percentage'] ?? null;
+
+            if ($value === null) {
+                $properties['percentage'] = null;
+                goto after_percentage;
+            }
+
+            $properties['percentage'] = $value;
+
+            after_percentage:
+
+            $value = $payload['percentile'] ?? null;
+
+            if ($value === null) {
+                $properties['percentile'] = null;
+                goto after_percentile;
+            }
+
+            $properties['percentile'] = $value;
+
+            after_percentile:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GlobalAdvisory\Epss', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(Epss::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new Epss(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GlobalAdvisory\Epss', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -445,6 +508,7 @@ class GhsaId implements ObjectMapper
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
                 'ApiClients\Client\GitHub\Schema\GlobalAdvisory' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GlobalAdvisory($object),
                 'ApiClients\Client\GitHub\Schema\GlobalAdvisory\Cvss' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GlobalAdvisory⚡️Cvss($object),
+                'ApiClients\Client\GitHub\Schema\GlobalAdvisory\Epss' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GlobalAdvisory⚡️Epss($object),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new LogicException("No serialization defined for $className"),
             };
@@ -662,6 +726,15 @@ class GhsaId implements ObjectMapper
         $cwes                              = $cwesSerializer0->serialize($cwes, $this);
         after_cwes:        $result['cwes'] = $cwes;
 
+        $epss = $object->epss;
+
+        if ($epss === null) {
+            goto after_epss;
+        }
+
+        $epss                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GlobalAdvisory⚡️Epss($epss);
+        after_epss:        $result['epss'] = $epss;
+
         $credits = $object->credits;
 
         if ($credits === null) {
@@ -700,6 +773,30 @@ class GhsaId implements ObjectMapper
         }
 
         after_score:        $result['score'] = $score;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️GlobalAdvisory⚡️Epss(mixed $object): mixed
+    {
+        assert($object instanceof Epss);
+        $result = [];
+
+        $percentage = $object->percentage;
+
+        if ($percentage === null) {
+            goto after_percentage;
+        }
+
+        after_percentage:        $result['percentage'] = $percentage;
+
+        $percentile = $object->percentile;
+
+        if ($percentile === null) {
+            goto after_percentile;
+        }
+
+        after_percentile:        $result['percentile'] = $percentile;
 
         return $result;
     }

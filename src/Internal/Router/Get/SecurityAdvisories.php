@@ -21,7 +21,7 @@ final class SecurityAdvisories
     {
     }
 
-    /** @return Observable<Schema\GlobalAdvisory> */
+    /** @return iterable<int,Schema\GlobalAdvisory> */
     public function listGlobalAdvisories(array $params): iterable
     {
         $arguments = [];
@@ -85,6 +85,18 @@ final class SecurityAdvisories
 
         $arguments['modified'] = $params['modified'];
         unset($params['modified']);
+        if (array_key_exists('epss_percentage', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: epss_percentage');
+        }
+
+        $arguments['epss_percentage'] = $params['epss_percentage'];
+        unset($params['epss_percentage']);
+        if (array_key_exists('epss_percentile', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: epss_percentile');
+        }
+
+        $arguments['epss_percentile'] = $params['epss_percentile'];
+        unset($params['epss_percentile']);
         if (array_key_exists('before', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: before');
         }
@@ -123,7 +135,7 @@ final class SecurityAdvisories
         unset($params['sort']);
         $operator = new Internal\Operator\SecurityAdvisories\ListGlobalAdvisories($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Advisories());
 
-        return $operator->call($arguments['ghsa_id'], $arguments['cve_id'], $arguments['ecosystem'], $arguments['severity'], $arguments['cwes'], $arguments['is_withdrawn'], $arguments['affects'], $arguments['published'], $arguments['updated'], $arguments['modified'], $arguments['before'], $arguments['after'], $arguments['type'], $arguments['direction'], $arguments['per_page'], $arguments['sort']);
+        return $operator->call($arguments['ghsa_id'], $arguments['cve_id'], $arguments['ecosystem'], $arguments['severity'], $arguments['cwes'], $arguments['is_withdrawn'], $arguments['affects'], $arguments['published'], $arguments['updated'], $arguments['modified'], $arguments['epss_percentage'], $arguments['epss_percentile'], $arguments['before'], $arguments['after'], $arguments['type'], $arguments['direction'], $arguments['per_page'], $arguments['sort']);
     }
 
     /** @return */

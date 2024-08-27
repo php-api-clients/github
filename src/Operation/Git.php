@@ -20,6 +20,7 @@ final class Git
     {
     }
 
+    /** @return */
     public function createBlob(string $owner, string $repo, array $params): ShortBlob
     {
         return $this->operators->git👷CreateBlob()->call($owner, $repo, $params);

@@ -605,6 +605,7 @@ final class Repos
         return $this->operators->repos👷GetContent()->call($owner, $repo, $path, $ref);
     }
 
+    /** @return */
     public function createOrUpdateFileContents(string $owner, string $repo, string $path, array $params): FileCommit
     {
         return $this->operators->repos👷CreateOrUpdateFileContents()->call($owner, $repo, $path, $params);

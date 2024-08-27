@@ -23,6 +23,7 @@ final class Git
     {
     }
 
+    /** @return */
     public function createBlob(array $params): ShortBlob
     {
         $arguments = [];

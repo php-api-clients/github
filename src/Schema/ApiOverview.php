@@ -203,6 +203,26 @@ final readonly class ApiOverview
                             "example.com"
                         ]
                     }
+                },
+                "artifact_attestations": {
+                    "type": "object",
+                    "properties": {
+                        "trust_domain": {
+                            "type": "string",
+                            "examples": [
+                                "example"
+                            ]
+                        },
+                        "services": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "examples": [
+                                    "example.com"
+                                ]
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -291,7 +311,14 @@ final readonly class ApiOverview
         "actions": [
             "generated",
             "generated"
-        ]
+        ],
+        "artifact_attestations": {
+            "trust_domain": "example",
+            "services": [
+                "generated",
+                "generated"
+            ]
+        }
     }
 }';
 

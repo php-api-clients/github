@@ -323,6 +323,20 @@ final readonly class GlobalAdvisory
                 }
             }
         },
+        "epss": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "percentage": {
+                    "type": "number"
+                },
+                "percentile": {
+                    "type": "number"
+                }
+            }
+        },
         "credits": {
             "type": [
                 "array",
@@ -548,6 +562,10 @@ final readonly class GlobalAdvisory
         "score": 0.5
     },
     "cwes": null,
+    "epss": {
+        "percentage": 1,
+        "percentile": 1
+    },
     "credits": null
 }';
 
@@ -581,7 +599,7 @@ final readonly class GlobalAdvisory
     public string $updatedAt, #[MapFrom('github_reviewed_at')]
     public string|null $githubReviewedAt, #[MapFrom('nvd_published_at')]
     public string|null $nvdPublishedAt, #[MapFrom('withdrawn_at')]
-    public string|null $withdrawnAt, public array|null $vulnerabilities, public Schema\GlobalAdvisory\Cvss|null $cvss, public array|null $cwes, public array|null $credits,)
+    public string|null $withdrawnAt, public array|null $vulnerabilities, public Schema\GlobalAdvisory\Cvss|null $cvss, public array|null $cwes, public Schema\GlobalAdvisory\Epss|null $epss, public array|null $credits,)
     {
     }
 }

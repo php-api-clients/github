@@ -56,6 +56,12 @@ final class ListGlobalAdvisories
 
     For more information on the syntax of the date range, see "[Understanding the search syntax](https://docs.github.com/search-github/getting-started-with-searching-on-github/understanding-the-search-syntax#query-for-dates)." **/
     private string $modified;
+    /**If specified, only return advisories that have an EPSS percentage score that matches the provided value.
+    The EPSS percentage represents the likelihood of a CVE being exploited. **/
+    private string $epssPercentage;
+    /**If specified, only return advisories that have an EPSS percentile score that matches the provided value.
+    The EPSS percentile represents the relative rank of the CVE's likelihood of being exploited compared to other CVEs. **/
+    private string $epssPercentile;
     /**A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private string $before;
     /**A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
@@ -69,29 +75,31 @@ final class ListGlobalAdvisories
     /**The property to sort the results by. **/
     private string $sort;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Advisories $hydrator, string $ghsaId, string $cveId, string $ecosystem, string $severity, $cwes, bool $isWithdrawn, $affects, string $published, string $updated, string $modified, string $before, string $after, string $type = 'reviewed', string $direction = 'desc', int $perPage = 30, string $sort = 'published')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Advisories $hydrator, string $ghsaId, string $cveId, string $ecosystem, string $severity, $cwes, bool $isWithdrawn, $affects, string $published, string $updated, string $modified, string $epssPercentage, string $epssPercentile, string $before, string $after, string $type = 'reviewed', string $direction = 'desc', int $perPage = 30, string $sort = 'published')
     {
-        $this->ghsaId      = $ghsaId;
-        $this->cveId       = $cveId;
-        $this->ecosystem   = $ecosystem;
-        $this->severity    = $severity;
-        $this->cwes        = $cwes;
-        $this->isWithdrawn = $isWithdrawn;
-        $this->affects     = $affects;
-        $this->published   = $published;
-        $this->updated     = $updated;
-        $this->modified    = $modified;
-        $this->before      = $before;
-        $this->after       = $after;
-        $this->type        = $type;
-        $this->direction   = $direction;
-        $this->perPage     = $perPage;
-        $this->sort        = $sort;
+        $this->ghsaId         = $ghsaId;
+        $this->cveId          = $cveId;
+        $this->ecosystem      = $ecosystem;
+        $this->severity       = $severity;
+        $this->cwes           = $cwes;
+        $this->isWithdrawn    = $isWithdrawn;
+        $this->affects        = $affects;
+        $this->published      = $published;
+        $this->updated        = $updated;
+        $this->modified       = $modified;
+        $this->epssPercentage = $epssPercentage;
+        $this->epssPercentile = $epssPercentile;
+        $this->before         = $before;
+        $this->after          = $after;
+        $this->type           = $type;
+        $this->direction      = $direction;
+        $this->perPage        = $perPage;
+        $this->sort           = $sort;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{ghsa_id}', '{cve_id}', '{ecosystem}', '{severity}', '{cwes}', '{is_withdrawn}', '{affects}', '{published}', '{updated}', '{modified}', '{before}', '{after}', '{type}', '{direction}', '{per_page}', '{sort}'], [$this->ghsaId, $this->cveId, $this->ecosystem, $this->severity, $this->cwes, $this->isWithdrawn, $this->affects, $this->published, $this->updated, $this->modified, $this->before, $this->after, $this->type, $this->direction, $this->perPage, $this->sort], '/advisories' . '?ghsa_id={ghsa_id}&cve_id={cve_id}&ecosystem={ecosystem}&severity={severity}&cwes={cwes}&is_withdrawn={is_withdrawn}&affects={affects}&published={published}&updated={updated}&modified={modified}&before={before}&after={after}&type={type}&direction={direction}&per_page={per_page}&sort={sort}'));
+        return new Request('GET', str_replace(['{ghsa_id}', '{cve_id}', '{ecosystem}', '{severity}', '{cwes}', '{is_withdrawn}', '{affects}', '{published}', '{updated}', '{modified}', '{epss_percentage}', '{epss_percentile}', '{before}', '{after}', '{type}', '{direction}', '{per_page}', '{sort}'], [$this->ghsaId, $this->cveId, $this->ecosystem, $this->severity, $this->cwes, $this->isWithdrawn, $this->affects, $this->published, $this->updated, $this->modified, $this->epssPercentage, $this->epssPercentile, $this->before, $this->after, $this->type, $this->direction, $this->perPage, $this->sort], '/advisories' . '?ghsa_id={ghsa_id}&cve_id={cve_id}&ecosystem={ecosystem}&severity={severity}&cwes={cwes}&is_withdrawn={is_withdrawn}&affects={affects}&published={published}&updated={updated}&modified={modified}&epss_percentage={epss_percentage}&epss_percentile={epss_percentile}&before={before}&after={after}&type={type}&direction={direction}&per_page={per_page}&sort={sort}'));
     }
 
     /** @return Observable<Schema\GlobalAdvisory> */

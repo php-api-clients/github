@@ -31,25 +31,27 @@ final class ListGlobalAdvisoriesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/advisories?ghsa_id=generated&cve_id=generated&ecosystem=generated&severity=generated&cwes=&is_withdrawn=&affects=&published=generated&updated=generated&modified=generated&before=generated&after=generated&type=generated&direction=generated&per_page=8&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/advisories?ghsa_id=generated&cve_id=generated&ecosystem=generated&severity=generated&cwes=&is_withdrawn=&affects=&published=generated&updated=generated&modified=generated&epss_percentage=generated&epss_percentile=generated&before=generated&after=generated&type=generated&direction=generated&per_page=8&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\SecurityAdvisories\ListGlobalAdvisories::OPERATION_MATCH, (static function (array $data): array {
-            $data['ghsa_id']      = 'generated';
-            $data['cve_id']       = 'generated';
-            $data['ecosystem']    = 'generated';
-            $data['severity']     = 'generated';
-            $data['cwes']         = null;
-            $data['is_withdrawn'] = false;
-            $data['affects']      = null;
-            $data['published']    = 'generated';
-            $data['updated']      = 'generated';
-            $data['modified']     = 'generated';
-            $data['before']       = 'generated';
-            $data['after']        = 'generated';
-            $data['type']         = 'generated';
-            $data['direction']    = 'generated';
-            $data['per_page']     = 8;
-            $data['sort']         = 'generated';
+            $data['ghsa_id']         = 'generated';
+            $data['cve_id']          = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['severity']        = 'generated';
+            $data['cwes']            = null;
+            $data['is_withdrawn']    = false;
+            $data['affects']         = null;
+            $data['published']       = 'generated';
+            $data['updated']         = 'generated';
+            $data['modified']        = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['epss_percentile'] = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['type']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['per_page']        = 8;
+            $data['sort']            = 'generated';
 
             return $data;
         })([]));
@@ -65,9 +67,9 @@ final class ListGlobalAdvisoriesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/advisories?ghsa_id=generated&cve_id=generated&ecosystem=generated&severity=generated&cwes=&is_withdrawn=&affects=&published=generated&updated=generated&modified=generated&before=generated&after=generated&type=generated&direction=generated&per_page=8&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/advisories?ghsa_id=generated&cve_id=generated&ecosystem=generated&severity=generated&cwes=&is_withdrawn=&affects=&published=generated&updated=generated&modified=generated&epss_percentage=generated&epss_percentile=generated&before=generated&after=generated&type=generated&direction=generated&per_page=8&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->securityAdvisories()->listGlobalAdvisories('generated', 'generated', 'generated', 'generated', null, false, null, 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 8, 'generated');
+        $result = $client->operations()->securityAdvisories()->listGlobalAdvisories('generated', 'generated', 'generated', 'generated', null, false, null, 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 8, 'generated');
     }
 
     /** @test */
@@ -80,25 +82,27 @@ final class ListGlobalAdvisoriesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/advisories?ghsa_id=generated&cve_id=generated&ecosystem=generated&severity=generated&cwes=&is_withdrawn=&affects=&published=generated&updated=generated&modified=generated&before=generated&after=generated&type=generated&direction=generated&per_page=8&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/advisories?ghsa_id=generated&cve_id=generated&ecosystem=generated&severity=generated&cwes=&is_withdrawn=&affects=&published=generated&updated=generated&modified=generated&epss_percentage=generated&epss_percentile=generated&before=generated&after=generated&type=generated&direction=generated&per_page=8&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\SecurityAdvisories\ListGlobalAdvisories::OPERATION_MATCH, (static function (array $data): array {
-            $data['ghsa_id']      = 'generated';
-            $data['cve_id']       = 'generated';
-            $data['ecosystem']    = 'generated';
-            $data['severity']     = 'generated';
-            $data['cwes']         = null;
-            $data['is_withdrawn'] = false;
-            $data['affects']      = null;
-            $data['published']    = 'generated';
-            $data['updated']      = 'generated';
-            $data['modified']     = 'generated';
-            $data['before']       = 'generated';
-            $data['after']        = 'generated';
-            $data['type']         = 'generated';
-            $data['direction']    = 'generated';
-            $data['per_page']     = 8;
-            $data['sort']         = 'generated';
+            $data['ghsa_id']         = 'generated';
+            $data['cve_id']          = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['severity']        = 'generated';
+            $data['cwes']            = null;
+            $data['is_withdrawn']    = false;
+            $data['affects']         = null;
+            $data['published']       = 'generated';
+            $data['updated']         = 'generated';
+            $data['modified']        = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['epss_percentile'] = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['type']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['per_page']        = 8;
+            $data['sort']            = 'generated';
 
             return $data;
         })([]));
@@ -114,8 +118,8 @@ final class ListGlobalAdvisoriesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/advisories?ghsa_id=generated&cve_id=generated&ecosystem=generated&severity=generated&cwes=&is_withdrawn=&affects=&published=generated&updated=generated&modified=generated&before=generated&after=generated&type=generated&direction=generated&per_page=8&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/advisories?ghsa_id=generated&cve_id=generated&ecosystem=generated&severity=generated&cwes=&is_withdrawn=&affects=&published=generated&updated=generated&modified=generated&epss_percentage=generated&epss_percentile=generated&before=generated&after=generated&type=generated&direction=generated&per_page=8&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->securityAdvisories()->listGlobalAdvisories('generated', 'generated', 'generated', 'generated', null, false, null, 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 8, 'generated');
+        $result = $client->operations()->securityAdvisories()->listGlobalAdvisories('generated', 'generated', 'generated', 'generated', null, false, null, 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 8, 'generated');
     }
 }
