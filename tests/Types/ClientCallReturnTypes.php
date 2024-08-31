@@ -18,7 +18,7 @@ $client = new Client(new class implements AuthenticationInterface
     }
 }, new Browser());
 assertType('', $client->call('GET /'));
-assertType('iterable<int,Schema\\GlobalAdvisory>', $client->call('GET /advisories'));
+assertType('Observable<Schema\\GlobalAdvisory>', $client->call('GET /advisories'));
 assertType('', $client->call('GET /advisories/{ghsa_id}'));
 assertType('', $client->call('GET /app'));
 assertType('', $client->call('POST /app-manifests/{code}/conversions'));

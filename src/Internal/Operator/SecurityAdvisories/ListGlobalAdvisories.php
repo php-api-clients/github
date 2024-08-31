@@ -24,7 +24,7 @@ final readonly class ListGlobalAdvisories
     {
     }
 
-    /** @return iterable<int,Schema\GlobalAdvisory> */
+    /** @return Observable<Schema\GlobalAdvisory> */
     public function call(string $ghsaId, string $cveId, string $ecosystem, string $severity, $cwes, bool $isWithdrawn, $affects, string $published, string $updated, string $modified, string $epssPercentage, string $epssPercentile, string $before, string $after, string $type = 'reviewed', string $direction = 'desc', int $perPage = 30, string $sort = 'published'): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecurityAdvisories\ListGlobalAdvisories($this->responseSchemaValidator, $this->hydrator, $ghsaId, $cveId, $ecosystem, $severity, $cwes, $isWithdrawn, $affects, $published, $updated, $modified, $epssPercentage, $epssPercentile, $before, $after, $type, $direction, $perPage, $sort);

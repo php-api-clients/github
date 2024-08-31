@@ -48,7 +48,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /advisories') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\GlobalAdvisory>');
+            return $this->typeResolver->resolve('Observable<Schema\\GlobalAdvisory>');
         }
 
         if ($call === 'GET /advisories/{ghsa_id}') {

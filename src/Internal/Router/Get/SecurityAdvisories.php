@@ -21,7 +21,7 @@ final class SecurityAdvisories
     {
     }
 
-    /** @return iterable<int,Schema\GlobalAdvisory> */
+    /** @return Observable<Schema\GlobalAdvisory> */
     public function listGlobalAdvisories(array $params): iterable
     {
         $arguments = [];

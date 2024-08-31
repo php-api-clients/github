@@ -1786,8 +1786,7 @@ final readonly class WebhookRepositoryRulesetCreated
                                     "OrganizationAdmin",
                                     "RepositoryRole",
                                     "Team",
-                                    "DeployKey",
-                                    "EnterpriseTeam"
+                                    "DeployKey"
                                 ],
                                 "type": "string",
                                 "description": "The type of actor that can bypass a ruleset.\\n"
@@ -3426,12 +3425,12 @@ final readonly class WebhookRepositoryRulesetCreated
         "bypass_actors": [
             {
                 "actor_id": 8,
-                "actor_type": "EnterpriseTeam",
+                "actor_type": "DeployKey",
                 "bypass_mode": "always"
             },
             {
                 "actor_id": 8,
-                "actor_type": "EnterpriseTeam",
+                "actor_type": "DeployKey",
                 "bypass_mode": "always"
             }
         ],
