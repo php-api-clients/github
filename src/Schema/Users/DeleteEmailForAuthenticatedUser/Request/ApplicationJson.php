@@ -15,9 +15,9 @@ final readonly class ApplicationJson
             "type": "object",
             "properties": {
                 "emails": {
+                    "minItems": 1,
                     "type": "array",
                     "items": {
-                        "minItems": 1,
                         "type": "string",
                         "examples": [
                             "username@example.com"
@@ -35,9 +35,9 @@ final readonly class ApplicationJson
             }
         },
         {
+            "minItems": 1,
             "type": "array",
             "items": {
-                "minItems": 1,
                 "type": "string",
                 "examples": [
                     "username@example.com"
