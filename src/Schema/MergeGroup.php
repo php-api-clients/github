@@ -134,11 +134,10 @@ final readonly class MergeGroup
             "description": "A commit."
         }
     },
-    "description": "A group of pull requests that the merge queue has grouped together to be merged.\\n"
+    "description": "A group of pull requests that the merge queue has grouped together to be merged."
 }';
     public const SCHEMA_TITLE        = 'Merge Group';
-    public const SCHEMA_DESCRIPTION  = 'A group of pull requests that the merge queue has grouped together to be merged.
-';
+    public const SCHEMA_DESCRIPTION  = 'A group of pull requests that the merge queue has grouped together to be merged.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "head_sha": "generated",
     "head_ref": "generated",

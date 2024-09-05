@@ -29,8 +29,7 @@ final class GetRepoRuleSuitesListing
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
-    /**The name of the ref. Cannot contain wildcard characters. Optionally prefix with `refs/heads/` to limit to branches or `refs/tags/` to limit to tags. Omit the prefix to search across all refs. When specified, only rule evaluations triggered for this ref will be returned.
-     **/
+    /**The name of the ref. Cannot contain wildcard characters. Optionally prefix with `refs/heads/` to limit to branches or `refs/tags/` to limit to tags. Omit the prefix to search across all refs. When specified, only rule evaluations triggered for this ref will be returned. **/
     private string $ref;
     /**The handle for the GitHub user account to filter on. When specified, only rule evaluations triggered by this actor will be returned. **/
     private string $actorName;

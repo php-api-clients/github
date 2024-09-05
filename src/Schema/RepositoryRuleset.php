@@ -73,7 +73,7 @@ final readonly class RepositoryRuleset
                             "integer",
                             "null"
                         ],
-                        "description": "The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories.\\n"
+                        "description": "The ID of the actor that can bypass a ruleset. If `actor_type` is `OrganizationAdmin`, this should be `1`. If `actor_type` is `DeployKey`, this should be null. `OrganizationAdmin` is not applicable for personal repositories."
                     },
                     "actor_type": {
                         "enum": [
@@ -84,7 +84,7 @@ final readonly class RepositoryRuleset
                             "DeployKey"
                         ],
                         "type": "string",
-                        "description": "The type of actor that can bypass a ruleset.\\n"
+                        "description": "The type of actor that can bypass a ruleset."
                     },
                     "bypass_mode": {
                         "enum": [
@@ -92,7 +92,7 @@ final readonly class RepositoryRuleset
                             "pull_request"
                         ],
                         "type": "string",
-                        "description": "When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type.\\n"
+                        "description": "When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type."
                     }
                 },
                 "description": "An actor that can bypass rules in a ruleset"
@@ -408,7 +408,7 @@ final readonly class RepositoryRuleset
                             "description": "Conditions to target repositories by property and refs by name"
                         }
                     ],
-                    "description": "Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.\\n"
+                    "description": "Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties."
                 }
             ]
         },

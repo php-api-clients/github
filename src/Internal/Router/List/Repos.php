@@ -253,7 +253,7 @@ final class Repos
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\RuleSuites> */
+    /** @return iterable<int,Schema\RuleSuites> */
     public function getOrgRuleSuitesListing(array $params): iterable
     {
         $arguments = [];
@@ -1267,7 +1267,7 @@ final class Repos
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\RuleSuites> */
+    /** @return iterable<int,Schema\RuleSuites> */
     public function getRepoRuleSuitesListing(array $params): iterable
     {
         $arguments = [];

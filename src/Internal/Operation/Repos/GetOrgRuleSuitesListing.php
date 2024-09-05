@@ -27,8 +27,7 @@ final class GetOrgRuleSuitesListing
     public const OPERATION_MATCH = 'LIST /orgs/{org}/rulesets/rule-suites';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
-    /**The name of the ref. Cannot contain wildcard characters. Optionally prefix with `refs/heads/` to limit to branches or `refs/tags/` to limit to tags. Omit the prefix to search across all refs. When specified, only rule evaluations triggered for this ref will be returned.
-     **/
+    /**The name of the ref. Cannot contain wildcard characters. Optionally prefix with `refs/heads/` to limit to branches or `refs/tags/` to limit to tags. Omit the prefix to search across all refs. When specified, only rule evaluations triggered for this ref will be returned. **/
     private string $ref;
     /**The name of the repository to filter on. When specified, only rule evaluations from this repository will be returned. **/
     private int $repositoryName;

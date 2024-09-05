@@ -25,7 +25,7 @@ final readonly class RequiredStatusChecks
             "items": {
                 "type": "string"
             },
-            "description": "**Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.\\n",
+            "description": "**Deprecated**: The list of status checks to require in order to merge into this branch. If any of these checks have recently been set by a particular GitHub App, they will be required to come from that app in future for the branch to merge. Use `checks` instead of `contexts` for more fine-grained control.",
             "deprecated": true
         },
         "checks": {

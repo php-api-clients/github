@@ -303,7 +303,7 @@ final class Repos
         return $operator->call($arguments['username'], $arguments['direction'], $arguments['type'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\RuleSuites> */
+    /** @return iterable<int,Schema\RuleSuites> */
     public function getOrgRuleSuites(array $params): iterable
     {
         $arguments = [];
@@ -1824,7 +1824,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id']);
     }
 
-    /** @return Observable<Schema\RuleSuites> */
+    /** @return iterable<int,Schema\RuleSuites> */
     public function getRepoRuleSuites(array $params): iterable
     {
         $arguments = [];
