@@ -135,6 +135,15 @@ final readonly class Ok
                     "type": "string",
                     "description": "The enablement status of secret scanning validity checks"
                 },
+                "secret_scanning_non_provider_patterns": {
+                    "enum": [
+                        "enabled",
+                        "disabled",
+                        "not_set"
+                    ],
+                    "type": "string",
+                    "description": "The enablement status of secret scanning non-provider patterns"
+                },
                 "private_vulnerability_reporting": {
                     "enum": [
                         "enabled",
@@ -196,6 +205,7 @@ final readonly class Ok
         "secret_scanning": "enabled",
         "secret_scanning_push_protection": "enabled",
         "secret_scanning_validity_checks": "enabled",
+        "secret_scanning_non_provider_patterns": "enabled",
         "private_vulnerability_reporting": "enabled",
         "enforcement": "enforced",
         "url": "https:\\/\\/example.com\\/",

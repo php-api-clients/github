@@ -325,6 +325,10 @@ final readonly class CodeScanningOrganizationAlertItems
                     "type": "string",
                     "description": "A short description of the rule used to detect the alert."
                 },
+                "full_description": {
+                    "type": "string",
+                    "description": "A description of the rule used to detect the alert."
+                },
                 "tags": {
                     "type": [
                         "array",
@@ -334,6 +338,20 @@ final readonly class CodeScanningOrganizationAlertItems
                         "type": "string"
                     },
                     "description": "A set of tags applicable for the rule."
+                },
+                "help": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "Detailed documentation for the rule as GitHub Flavored Markdown."
+                },
+                "help_uri": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "A link to the documentation for the rule used to detect the alert."
                 }
             }
         },
@@ -1033,7 +1051,10 @@ final readonly class CodeScanningOrganizationAlertItems
         "severity": "error",
         "security_severity_level": "low",
         "description": "generated",
-        "tags": null
+        "full_description": "generated",
+        "tags": null,
+        "help": "generated",
+        "help_uri": "generated"
     },
     "tool": {
         "name": "generated",

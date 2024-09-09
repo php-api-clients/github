@@ -111,6 +111,15 @@ final readonly class ApplicationJson
             "type": "string",
             "description": "The enablement status of secret scanning validity checks"
         },
+        "secret_scanning_non_provider_patterns": {
+            "enum": [
+                "enabled",
+                "disabled",
+                "not_set"
+            ],
+            "type": "string",
+            "description": "The enablement status of secret scanning non-provider patterns"
+        },
         "private_vulnerability_reporting": {
             "enum": [
                 "enabled",
@@ -148,6 +157,7 @@ final readonly class ApplicationJson
     "secret_scanning": "enabled",
     "secret_scanning_push_protection": "enabled",
     "secret_scanning_validity_checks": "enabled",
+    "secret_scanning_non_provider_patterns": "enabled",
     "private_vulnerability_reporting": "enabled",
     "enforcement": "enforced"
 }';
@@ -165,6 +175,7 @@ final readonly class ApplicationJson
      * secretScanning: The enablement status of secret scanning
      * secretScanningPushProtection: The enablement status of secret scanning push protection
      * secretScanningValidityChecks: The enablement status of secret scanning validity checks
+     * secretScanningNonProviderPatterns: The enablement status of secret scanning non-provider patterns
      * privateVulnerabilityReporting: The enablement status of private vulnerability reporting
      * enforcement: The enforcement status for a security configuration
      */
@@ -178,7 +189,8 @@ final readonly class ApplicationJson
     public string|null $codeScanningDefaultSetup, #[MapFrom('secret_scanning')]
     public string|null $secretScanning, #[MapFrom('secret_scanning_push_protection')]
     public string|null $secretScanningPushProtection, #[MapFrom('secret_scanning_validity_checks')]
-    public string|null $secretScanningValidityChecks, #[MapFrom('private_vulnerability_reporting')]
+    public string|null $secretScanningValidityChecks, #[MapFrom('secret_scanning_non_provider_patterns')]
+    public string|null $secretScanningNonProviderPatterns, #[MapFrom('private_vulnerability_reporting')]
     public string|null $privateVulnerabilityReporting, public string|null $enforcement,)
     {
     }

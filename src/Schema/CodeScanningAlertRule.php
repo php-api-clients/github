@@ -56,7 +56,7 @@ final readonly class CodeScanningAlertRule
         },
         "full_description": {
             "type": "string",
-            "description": "description of the rule used to detect the alert."
+            "description": "A description of the rule used to detect the alert."
         },
         "tags": {
             "type": [
@@ -104,7 +104,7 @@ final readonly class CodeScanningAlertRule
      * severity: The severity of the alert.
      * securitySeverityLevel: The security severity of the alert.
      * description: A short description of the rule used to detect the alert.
-     * fullDescription: description of the rule used to detect the alert.
+     * fullDescription: A description of the rule used to detect the alert.
      * tags: A set of tags applicable for the rule.
      * help: Detailed documentation for the rule as GitHub Flavored Markdown.
      * helpUri: A link to the documentation for the rule used to detect the alert.

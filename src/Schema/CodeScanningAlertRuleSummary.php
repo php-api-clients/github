@@ -54,6 +54,10 @@ final readonly class CodeScanningAlertRuleSummary
             "type": "string",
             "description": "A short description of the rule used to detect the alert."
         },
+        "full_description": {
+            "type": "string",
+            "description": "A description of the rule used to detect the alert."
+        },
         "tags": {
             "type": [
                 "array",
@@ -63,6 +67,20 @@ final readonly class CodeScanningAlertRuleSummary
                 "type": "string"
             },
             "description": "A set of tags applicable for the rule."
+        },
+        "help": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Detailed documentation for the rule as GitHub Flavored Markdown."
+        },
+        "help_uri": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "A link to the documentation for the rule used to detect the alert."
         }
     }
 }';
@@ -74,7 +92,10 @@ final readonly class CodeScanningAlertRuleSummary
     "severity": "error",
     "security_severity_level": "low",
     "description": "generated",
-    "tags": null
+    "full_description": "generated",
+    "tags": null,
+    "help": "generated",
+    "help_uri": "generated"
 }';
 
     /**
@@ -83,10 +104,15 @@ final readonly class CodeScanningAlertRuleSummary
      * severity: The severity of the alert.
      * securitySeverityLevel: The security severity of the alert.
      * description: A short description of the rule used to detect the alert.
+     * fullDescription: A description of the rule used to detect the alert.
      * tags: A set of tags applicable for the rule.
+     * help: Detailed documentation for the rule as GitHub Flavored Markdown.
+     * helpUri: A link to the documentation for the rule used to detect the alert.
      */
     public function __construct(public string|null $id, public string|null $name, public string|null $severity, #[MapFrom('security_severity_level')]
-    public string|null $securitySeverityLevel, public string|null $description, public array|null $tags,)
+    public string|null $securitySeverityLevel, public string|null $description, #[MapFrom('full_description')]
+    public string|null $fullDescription, public array|null $tags, public string|null $help, #[MapFrom('help_uri')]
+    public string|null $helpUri,)
     {
     }
 }

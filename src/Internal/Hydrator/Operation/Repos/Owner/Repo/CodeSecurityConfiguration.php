@@ -268,6 +268,17 @@ class CodeSecurityConfiguration implements ObjectMapper
 
             after_secretScanningValidityChecks:
 
+            $value = $payload['secret_scanning_non_provider_patterns'] ?? null;
+
+            if ($value === null) {
+                $properties['secretScanningNonProviderPatterns'] = null;
+                goto after_secretScanningNonProviderPatterns;
+            }
+
+            $properties['secretScanningNonProviderPatterns'] = $value;
+
+            after_secretScanningNonProviderPatterns:
+
             $value = $payload['private_vulnerability_reporting'] ?? null;
 
             if ($value === null) {
@@ -680,6 +691,14 @@ class CodeSecurityConfiguration implements ObjectMapper
         }
 
         after_secretScanningValidityChecks:        $result['secret_scanning_validity_checks'] = $secretScanningValidityChecks;
+
+        $secretScanningNonProviderPatterns = $object->secretScanningNonProviderPatterns;
+
+        if ($secretScanningNonProviderPatterns === null) {
+            goto after_secretScanningNonProviderPatterns;
+        }
+
+        after_secretScanningNonProviderPatterns:        $result['secret_scanning_non_provider_patterns'] = $secretScanningNonProviderPatterns;
 
         $privateVulnerabilityReporting = $object->privateVulnerabilityReporting;
 

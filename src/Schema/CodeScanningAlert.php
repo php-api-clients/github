@@ -326,7 +326,7 @@ final readonly class CodeScanningAlert
                 },
                 "full_description": {
                     "type": "string",
-                    "description": "description of the rule used to detect the alert."
+                    "description": "A description of the rule used to detect the alert."
                 },
                 "tags": {
                     "type": [
