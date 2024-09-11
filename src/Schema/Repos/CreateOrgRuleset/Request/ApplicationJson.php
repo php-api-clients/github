@@ -28,7 +28,7 @@ final readonly class ApplicationJson
                 "push"
             ],
             "type": "string",
-            "description": "The target of the ruleset\\n\\n> [!NOTE]\\n> The `push` target is in beta and is subject to change.",
+            "description": "The target of the ruleset",
             "default": "branch"
         },
         "enforcement": {
@@ -916,7 +916,7 @@ final readonly class ApplicationJson
                                 }
                             }
                         },
-                        "description": "> [!NOTE]\\n> `file_path_restriction` is in beta and subject to change.\\n\\nPrevent commits that include changes in specified file paths from being pushed to the commit graph."
+                        "description": "Prevent commits that include changes in specified file paths from being pushed to the commit graph."
                     },
                     {
                         "title": "max_file_path_length",
@@ -946,7 +946,7 @@ final readonly class ApplicationJson
                                 }
                             }
                         },
-                        "description": "> [!NOTE]\\n> `max_file_path_length` is in beta and subject to change.\\n\\nPrevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+                        "description": "Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
                     },
                     {
                         "title": "file_extension_restriction",
@@ -977,7 +977,7 @@ final readonly class ApplicationJson
                                 }
                             }
                         },
-                        "description": "> [!NOTE]\\n> `file_extension_restriction` is in beta and subject to change.\\n\\nPrevent commits that include files with specified file extensions from being pushed to the commit graph."
+                        "description": "Prevent commits that include files with specified file extensions from being pushed to the commit graph."
                     },
                     {
                         "title": "max_file_size",
@@ -1007,7 +1007,7 @@ final readonly class ApplicationJson
                                 }
                             }
                         },
-                        "description": "> [!NOTE]\\n> `max_file_size` is in beta and subject to change.\\n\\nPrevent commits that exceed a specified file size limit from being pushed to the commit."
+                        "description": "Prevent commits that exceed a specified file size limit from being pushed to the commit."
                     },
                     {
                         "title": "workflows",
@@ -1168,9 +1168,6 @@ final readonly class ApplicationJson
     /**
      * name: The name of the ruleset.
      * target: The target of the ruleset
-
-    > [!NOTE]
-    > The `push` target is in beta and is subject to change.
      * enforcement: The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
      * bypassActors: The actors that can bypass the rules in this ruleset
      * conditions: Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.

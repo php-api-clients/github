@@ -36,13 +36,10 @@ final readonly class Eighteen
             }
         }
     },
-    "description": "> [!NOTE]\\n> `max_file_size` is in beta and subject to change.\\n\\nPrevent commits that exceed a specified file size limit from being pushed to the commit."
+    "description": "Prevent commits that exceed a specified file size limit from being pushed to the commit."
 }';
     public const SCHEMA_TITLE        = 'max_file_size';
-    public const SCHEMA_DESCRIPTION  = '> [!NOTE]
-> `max_file_size` is in beta and subject to change.
-
-Prevent commits that exceed a specified file size limit from being pushed to the commit.';
+    public const SCHEMA_DESCRIPTION  = 'Prevent commits that exceed a specified file size limit from being pushed to the commit.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "type": "max_file_size",
     "parameters": {

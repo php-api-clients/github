@@ -37,13 +37,10 @@ final readonly class Fifteen
             }
         }
     },
-    "description": "> [!NOTE]\\n> `file_path_restriction` is in beta and subject to change.\\n\\nPrevent commits that include changes in specified file paths from being pushed to the commit graph."
+    "description": "Prevent commits that include changes in specified file paths from being pushed to the commit graph."
 }';
     public const SCHEMA_TITLE        = 'file_path_restriction';
-    public const SCHEMA_DESCRIPTION  = '> [!NOTE]
-> `file_path_restriction` is in beta and subject to change.
-
-Prevent commits that include changes in specified file paths from being pushed to the commit graph.';
+    public const SCHEMA_DESCRIPTION  = 'Prevent commits that include changes in specified file paths from being pushed to the commit graph.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "type": "file_path_restriction",
     "parameters": {

@@ -36,13 +36,10 @@ final readonly class Sixteen
             }
         }
     },
-    "description": "> [!NOTE]\\n> `max_file_path_length` is in beta and subject to change.\\n\\nPrevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+    "description": "Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
 }';
     public const SCHEMA_TITLE        = 'max_file_path_length';
-    public const SCHEMA_DESCRIPTION  = '> [!NOTE]
-> `max_file_path_length` is in beta and subject to change.
-
-Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph.';
+    public const SCHEMA_DESCRIPTION  = 'Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "type": "max_file_path_length",
     "parameters": {

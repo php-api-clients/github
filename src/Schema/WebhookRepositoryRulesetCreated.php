@@ -1740,7 +1740,7 @@ final readonly class WebhookRepositoryRulesetCreated
                         "push"
                     ],
                     "type": "string",
-                    "description": "The target of the ruleset\\n\\n> [!NOTE]\\n> The `push` target is in beta and is subject to change."
+                    "description": "The target of the ruleset"
                 },
                 "source_type": {
                     "enum": [
@@ -2708,7 +2708,7 @@ final readonly class WebhookRepositoryRulesetCreated
                                         }
                                     }
                                 },
-                                "description": "> [!NOTE]\\n> `file_path_restriction` is in beta and subject to change.\\n\\nPrevent commits that include changes in specified file paths from being pushed to the commit graph."
+                                "description": "Prevent commits that include changes in specified file paths from being pushed to the commit graph."
                             },
                             {
                                 "title": "max_file_path_length",
@@ -2738,7 +2738,7 @@ final readonly class WebhookRepositoryRulesetCreated
                                         }
                                     }
                                 },
-                                "description": "> [!NOTE]\\n> `max_file_path_length` is in beta and subject to change.\\n\\nPrevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+                                "description": "Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
                             },
                             {
                                 "title": "file_extension_restriction",
@@ -2769,7 +2769,7 @@ final readonly class WebhookRepositoryRulesetCreated
                                         }
                                     }
                                 },
-                                "description": "> [!NOTE]\\n> `file_extension_restriction` is in beta and subject to change.\\n\\nPrevent commits that include files with specified file extensions from being pushed to the commit graph."
+                                "description": "Prevent commits that include files with specified file extensions from being pushed to the commit graph."
                             },
                             {
                                 "title": "max_file_size",
@@ -2799,7 +2799,7 @@ final readonly class WebhookRepositoryRulesetCreated
                                         }
                                     }
                                 },
-                                "description": "> [!NOTE]\\n> `max_file_size` is in beta and subject to change.\\n\\nPrevent commits that exceed a specified file size limit from being pushed to the commit."
+                                "description": "Prevent commits that exceed a specified file size limit from being pushed to the commit."
                             },
                             {
                                 "title": "workflows",
