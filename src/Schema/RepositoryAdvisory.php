@@ -642,6 +642,72 @@ final readonly class RepositoryAdvisory
                 }
             }
         },
+        "cvss_severities": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "cvss_v3": {
+                    "required": [
+                        "vector_string",
+                        "score"
+                    ],
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "vector_string": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "The CVSS 3 vector string."
+                        },
+                        "score": {
+                            "maximum": 10,
+                            "minimum": 0,
+                            "type": [
+                                "number",
+                                "null"
+                            ],
+                            "description": "The CVSS 3 score.",
+                            "readOnly": true
+                        }
+                    }
+                },
+                "cvss_v4": {
+                    "required": [
+                        "vector_string",
+                        "score"
+                    ],
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "vector_string": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "The CVSS 4 vector string."
+                        },
+                        "score": {
+                            "maximum": 10,
+                            "minimum": 0,
+                            "type": [
+                                "number",
+                                "null"
+                            ],
+                            "description": "The CVSS 4 score.",
+                            "readOnly": true
+                        }
+                    }
+                }
+            }
+        },
         "cwes": {
             "type": [
                 "array",
@@ -1938,6 +2004,16 @@ final readonly class RepositoryAdvisory
         "vector_string": "generated",
         "score": 0.5
     },
+    "cvss_severities": {
+        "cvss_v3": {
+            "vector_string": "generated",
+            "score": 0.5
+        },
+        "cvss_v4": {
+            "vector_string": "generated",
+            "score": 0.5
+        }
+    },
     "cwes": null,
     "cwe_ids": null,
     "credits": null,
@@ -2045,7 +2121,8 @@ final readonly class RepositoryAdvisory
     public string|null $updatedAt, #[MapFrom('published_at')]
     public string|null $publishedAt, #[MapFrom('closed_at')]
     public string|null $closedAt, #[MapFrom('withdrawn_at')]
-    public string|null $withdrawnAt, public Schema\RepositoryAdvisory\Submission|null $submission, public array|null $vulnerabilities, public Schema\RepositoryAdvisory\Cvss|null $cvss, public array|null $cwes, #[MapFrom('cwe_ids')]
+    public string|null $withdrawnAt, public Schema\RepositoryAdvisory\Submission|null $submission, public array|null $vulnerabilities, public Schema\RepositoryAdvisory\Cvss|null $cvss, #[MapFrom('cvss_severities')]
+    public Schema\CvssSeverities|null $cvssSeverities, public array|null $cwes, #[MapFrom('cwe_ids')]
     public array|null $cweIds, public array|null $credits, #[MapFrom('credits_detailed')]
     public array|null $creditsDetailed, #[MapFrom('collaborating_users')]
     public array|null $collaboratingUsers, #[MapFrom('collaborating_teams')]

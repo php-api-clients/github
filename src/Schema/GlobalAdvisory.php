@@ -299,6 +299,72 @@ final readonly class GlobalAdvisory
                 }
             }
         },
+        "cvss_severities": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "cvss_v3": {
+                    "required": [
+                        "vector_string",
+                        "score"
+                    ],
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "vector_string": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "The CVSS 3 vector string."
+                        },
+                        "score": {
+                            "maximum": 10,
+                            "minimum": 0,
+                            "type": [
+                                "number",
+                                "null"
+                            ],
+                            "description": "The CVSS 3 score.",
+                            "readOnly": true
+                        }
+                    }
+                },
+                "cvss_v4": {
+                    "required": [
+                        "vector_string",
+                        "score"
+                    ],
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "vector_string": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "The CVSS 4 vector string."
+                        },
+                        "score": {
+                            "maximum": 10,
+                            "minimum": 0,
+                            "type": [
+                                "number",
+                                "null"
+                            ],
+                            "description": "The CVSS 4 score.",
+                            "readOnly": true
+                        }
+                    }
+                }
+            }
+        },
         "cwes": {
             "type": [
                 "array",
@@ -561,6 +627,16 @@ final readonly class GlobalAdvisory
         "vector_string": "generated",
         "score": 0.5
     },
+    "cvss_severities": {
+        "cvss_v3": {
+            "vector_string": "generated",
+            "score": 0.5
+        },
+        "cvss_v4": {
+            "vector_string": "generated",
+            "score": 0.5
+        }
+    },
     "cwes": null,
     "epss": {
         "percentage": 1,
@@ -599,7 +675,8 @@ final readonly class GlobalAdvisory
     public string $updatedAt, #[MapFrom('github_reviewed_at')]
     public string|null $githubReviewedAt, #[MapFrom('nvd_published_at')]
     public string|null $nvdPublishedAt, #[MapFrom('withdrawn_at')]
-    public string|null $withdrawnAt, public array|null $vulnerabilities, public Schema\GlobalAdvisory\Cvss|null $cvss, public array|null $cwes, public Schema\GlobalAdvisory\Epss|null $epss, public array|null $credits,)
+    public string|null $withdrawnAt, public array|null $vulnerabilities, public Schema\GlobalAdvisory\Cvss|null $cvss, #[MapFrom('cvss_severities')]
+    public Schema\CvssSeverities|null $cvssSeverities, public array|null $cwes, public Schema\GlobalAdvisory\Epss|null $epss, public array|null $credits,)
     {
     }
 }

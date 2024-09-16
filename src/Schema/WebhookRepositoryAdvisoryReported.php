@@ -2348,6 +2348,72 @@ final readonly class WebhookRepositoryAdvisoryReported
                         }
                     }
                 },
+                "cvss_severities": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "cvss_v3": {
+                            "required": [
+                                "vector_string",
+                                "score"
+                            ],
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "vector_string": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "description": "The CVSS 3 vector string."
+                                },
+                                "score": {
+                                    "maximum": 10,
+                                    "minimum": 0,
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ],
+                                    "description": "The CVSS 3 score.",
+                                    "readOnly": true
+                                }
+                            }
+                        },
+                        "cvss_v4": {
+                            "required": [
+                                "vector_string",
+                                "score"
+                            ],
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "vector_string": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "description": "The CVSS 4 vector string."
+                                },
+                                "score": {
+                                    "maximum": 10,
+                                    "minimum": 0,
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ],
+                                    "description": "The CVSS 4 score.",
+                                    "readOnly": true
+                                }
+                            }
+                        }
+                    }
+                },
                 "cwes": {
                     "type": [
                         "array",
@@ -4116,6 +4182,16 @@ final readonly class WebhookRepositoryAdvisoryReported
         "cvss": {
             "vector_string": "generated",
             "score": 0.5
+        },
+        "cvss_severities": {
+            "cvss_v3": {
+                "vector_string": "generated",
+                "score": 0.5
+            },
+            "cvss_v4": {
+                "vector_string": "generated",
+                "score": 0.5
+            }
         },
         "cwes": null,
         "cwe_ids": null,

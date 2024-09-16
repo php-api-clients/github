@@ -44,6 +44,72 @@ final readonly class WebhooksSecurityAdvisory
                 }
             }
         },
+        "cvss_severities": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "cvss_v3": {
+                    "required": [
+                        "vector_string",
+                        "score"
+                    ],
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "vector_string": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "The CVSS 3 vector string."
+                        },
+                        "score": {
+                            "maximum": 10,
+                            "minimum": 0,
+                            "type": [
+                                "number",
+                                "null"
+                            ],
+                            "description": "The CVSS 3 score.",
+                            "readOnly": true
+                        }
+                    }
+                },
+                "cvss_v4": {
+                    "required": [
+                        "vector_string",
+                        "score"
+                    ],
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "vector_string": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "The CVSS 4 vector string."
+                        },
+                        "score": {
+                            "maximum": 10,
+                            "minimum": 0,
+                            "type": [
+                                "number",
+                                "null"
+                            ],
+                            "description": "The CVSS 4 score.",
+                            "readOnly": true
+                        }
+                    }
+                }
+            }
+        },
         "cwes": {
             "type": "array",
             "items": {
@@ -178,6 +244,16 @@ final readonly class WebhooksSecurityAdvisory
         "score": 0.5,
         "vector_string": "generated"
     },
+    "cvss_severities": {
+        "cvss_v3": {
+            "vector_string": "generated",
+            "score": 0.5
+        },
+        "cvss_v4": {
+            "vector_string": "generated",
+            "score": 0.5
+        }
+    },
     "cwes": [
         {
             "cwe_id": "generated",
@@ -239,7 +315,8 @@ final readonly class WebhooksSecurityAdvisory
     "withdrawn_at": "generated"
 }';
 
-    public function __construct(public Schema\WebhooksSecurityAdvisory\Cvss $cvss, public array $cwes, public string $description, #[MapFrom('ghsa_id')]
+    public function __construct(public Schema\WebhooksSecurityAdvisory\Cvss $cvss, #[MapFrom('cvss_severities')]
+    public Schema\CvssSeverities|null $cvssSeverities, public array $cwes, public string $description, #[MapFrom('ghsa_id')]
     public string $ghsaId, public array $identifiers, #[MapFrom('published_at')]
     public string $publishedAt, public array $references, public string $severity, public string $summary, #[MapFrom('updated_at')]
     public string $updatedAt, public array $vulnerabilities, #[MapFrom('withdrawn_at')]

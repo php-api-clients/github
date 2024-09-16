@@ -248,6 +248,72 @@ final readonly class DependabotAlertWithRepository
                     "readOnly": true,
                     "additionalProperties": false
                 },
+                "cvss_severities": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "cvss_v3": {
+                            "required": [
+                                "vector_string",
+                                "score"
+                            ],
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "vector_string": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "description": "The CVSS 3 vector string."
+                                },
+                                "score": {
+                                    "maximum": 10,
+                                    "minimum": 0,
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ],
+                                    "description": "The CVSS 3 score.",
+                                    "readOnly": true
+                                }
+                            }
+                        },
+                        "cvss_v4": {
+                            "required": [
+                                "vector_string",
+                                "score"
+                            ],
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "vector_string": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ],
+                                    "description": "The CVSS 4 vector string."
+                                },
+                                "score": {
+                                    "maximum": 10,
+                                    "minimum": 0,
+                                    "type": [
+                                        "number",
+                                        "null"
+                                    ],
+                                    "description": "The CVSS 4 score.",
+                                    "readOnly": true
+                                }
+                            }
+                        }
+                    }
+                },
                 "cwes": {
                     "type": "array",
                     "items": {
@@ -1263,6 +1329,16 @@ final readonly class DependabotAlertWithRepository
         "cvss": {
             "score": 0.5,
             "vector_string": "generated"
+        },
+        "cvss_severities": {
+            "cvss_v3": {
+                "vector_string": "generated",
+                "score": 0.5
+            },
+            "cvss_v4": {
+                "vector_string": "generated",
+                "score": 0.5
+            }
         },
         "cwes": [
             {

@@ -5,6 +5,9 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Repos\Owner\Repo;
 
 use ApiClients\Client\GitHub\Schema\BasicError;
+use ApiClients\Client\GitHub\Schema\CvssSeverities;
+use ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVFour;
+use ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVThree;
 use ApiClients\Client\GitHub\Schema\RepositoryAdvisory;
 use ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cvss;
 use ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Submission;
@@ -53,6 +56,9 @@ class SecurityAdvisories implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Submission' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Submission($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cvss' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cvss($payload),
+                'ApiClients\Client\GitHub\Schema\CvssSeverities' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities($payload),
+                'ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVThree' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVThree($payload),
+                'ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVFour' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVFour($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleRepository($payload),
                 'ApiClients\Client\GitHub\Schema\ValidationError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
@@ -456,6 +462,26 @@ class SecurityAdvisories implements ObjectMapper
             $properties['cvss'] = $value;
 
             after_cvss:
+
+            $value = $payload['cvss_severities'] ?? null;
+
+            if ($value === null) {
+                $properties['cvssSeverities'] = null;
+                goto after_cvssSeverities;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'cvssSeverities';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['cvssSeverities'] = $value;
+
+            after_cvssSeverities:
 
             $value = $payload['cwes'] ?? null;
 
@@ -875,6 +901,147 @@ class SecurityAdvisories implements ObjectMapper
             return new Cvss(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cvss', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities(array $payload): CvssSeverities
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['cvss_v3'] ?? null;
+
+            if ($value === null) {
+                $properties['cvssVThree'] = null;
+                goto after_cvssVThree;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'cvssVThree';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVThree($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['cvssVThree'] = $value;
+
+            after_cvssVThree:
+
+            $value = $payload['cvss_v4'] ?? null;
+
+            if ($value === null) {
+                $properties['cvssVFour'] = null;
+                goto after_cvssVFour;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'cvssVFour';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVFour($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['cvssVFour'] = $value;
+
+            after_cvssVFour:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CvssSeverities', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(CvssSeverities::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new CvssSeverities(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CvssSeverities', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVThree(array $payload): CvssVThree
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['vector_string'] ?? null;
+
+            if ($value === null) {
+                $properties['vectorString'] = null;
+                goto after_vectorString;
+            }
+
+            $properties['vectorString'] = $value;
+
+            after_vectorString:
+
+            $value = $payload['score'] ?? null;
+
+            if ($value === null) {
+                $properties['score'] = null;
+                goto after_score;
+            }
+
+            $properties['score'] = $value;
+
+            after_score:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVThree', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(CvssVThree::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new CvssVThree(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVThree', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVFour(array $payload): CvssVFour
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['vector_string'] ?? null;
+
+            if ($value === null) {
+                $properties['vectorString'] = null;
+                goto after_vectorString;
+            }
+
+            $properties['vectorString'] = $value;
+
+            after_vectorString:
+
+            $value = $payload['score'] ?? null;
+
+            if ($value === null) {
+                $properties['score'] = null;
+                goto after_score;
+            }
+
+            $properties['score'] = $value;
+
+            after_score:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVFour', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(CvssVFour::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new CvssVFour(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVFour', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -1501,6 +1668,9 @@ class SecurityAdvisories implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Submission' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Submission($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryAdvisory\Cvss' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cvss($object),
+                'ApiClients\Client\GitHub\Schema\CvssSeverities' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities($object),
+                'ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVThree' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVThree($object),
+                'ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVFour' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVFour($object),
                 'ApiClients\Client\GitHub\Schema\SimpleRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleRepository($object),
                 'ApiClients\Client\GitHub\Schema\ValidationError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ValidationError($object),
                 default => throw new LogicException("No serialization defined for $className"),
@@ -1803,6 +1973,15 @@ class SecurityAdvisories implements ObjectMapper
         $cvss                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cvss($cvss);
         after_cvss:        $result['cvss'] = $cvss;
 
+        $cvssSeverities = $object->cvssSeverities;
+
+        if ($cvssSeverities === null) {
+            goto after_cvssSeverities;
+        }
+
+        $cvssSeverities                                         = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities($cvssSeverities);
+        after_cvssSeverities:        $result['cvss_severities'] = $cvssSeverities;
+
         $cwes = $object->cwes;
 
         if ($cwes === null) {
@@ -2005,6 +2184,80 @@ class SecurityAdvisories implements ObjectMapper
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryAdvisory⚡️Cvss(mixed $object): mixed
     {
         assert($object instanceof Cvss);
+        $result = [];
+
+        $vectorString = $object->vectorString;
+
+        if ($vectorString === null) {
+            goto after_vectorString;
+        }
+
+        after_vectorString:        $result['vector_string'] = $vectorString;
+
+        $score = $object->score;
+
+        if ($score === null) {
+            goto after_score;
+        }
+
+        after_score:        $result['score'] = $score;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities(mixed $object): mixed
+    {
+        assert($object instanceof CvssSeverities);
+        $result = [];
+
+        $cvssVThree = $object->cvssVThree;
+
+        if ($cvssVThree === null) {
+            goto after_cvssVThree;
+        }
+
+        $cvssVThree                                 = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVThree($cvssVThree);
+        after_cvssVThree:        $result['cvss_v3'] = $cvssVThree;
+
+        $cvssVFour = $object->cvssVFour;
+
+        if ($cvssVFour === null) {
+            goto after_cvssVFour;
+        }
+
+        $cvssVFour                                 = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVFour($cvssVFour);
+        after_cvssVFour:        $result['cvss_v4'] = $cvssVFour;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVThree(mixed $object): mixed
+    {
+        assert($object instanceof CvssVThree);
+        $result = [];
+
+        $vectorString = $object->vectorString;
+
+        if ($vectorString === null) {
+            goto after_vectorString;
+        }
+
+        after_vectorString:        $result['vector_string'] = $vectorString;
+
+        $score = $object->score;
+
+        if ($score === null) {
+            goto after_score;
+        }
+
+        after_score:        $result['score'] = $score;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVFour(mixed $object): mixed
+    {
+        assert($object instanceof CvssVFour);
         $result = [];
 
         $vectorString = $object->vectorString;

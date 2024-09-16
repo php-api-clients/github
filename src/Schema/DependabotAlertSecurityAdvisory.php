@@ -165,6 +165,72 @@ final readonly class DependabotAlertSecurityAdvisory
             "readOnly": true,
             "additionalProperties": false
         },
+        "cvss_severities": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "cvss_v3": {
+                    "required": [
+                        "vector_string",
+                        "score"
+                    ],
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "vector_string": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "The CVSS 3 vector string."
+                        },
+                        "score": {
+                            "maximum": 10,
+                            "minimum": 0,
+                            "type": [
+                                "number",
+                                "null"
+                            ],
+                            "description": "The CVSS 3 score.",
+                            "readOnly": true
+                        }
+                    }
+                },
+                "cvss_v4": {
+                    "required": [
+                        "vector_string",
+                        "score"
+                    ],
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "vector_string": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "The CVSS 4 vector string."
+                        },
+                        "score": {
+                            "maximum": 10,
+                            "minimum": 0,
+                            "type": [
+                                "number",
+                                "null"
+                            ],
+                            "description": "The CVSS 4 score.",
+                            "readOnly": true
+                        }
+                    }
+                }
+            }
+        },
         "cwes": {
             "type": "array",
             "items": {
@@ -307,6 +373,16 @@ final readonly class DependabotAlertSecurityAdvisory
         "score": 0.5,
         "vector_string": "generated"
     },
+    "cvss_severities": {
+        "cvss_v3": {
+            "vector_string": "generated",
+            "score": 0.5
+        },
+        "cvss_v4": {
+            "vector_string": "generated",
+            "score": 0.5
+        }
+    },
     "cwes": [
         {
             "cwe_id": "generated",
@@ -357,7 +433,8 @@ final readonly class DependabotAlertSecurityAdvisory
      */
     public function __construct(#[MapFrom('ghsa_id')]
     public string $ghsaId, #[MapFrom('cve_id')]
-    public string|null $cveId, public string $summary, public string $description, public array $vulnerabilities, public string $severity, public Schema\DependabotAlertSecurityAdvisory\Cvss $cvss, public array $cwes, public array $identifiers, public array $references, #[MapFrom('published_at')]
+    public string|null $cveId, public string $summary, public string $description, public array $vulnerabilities, public string $severity, public Schema\DependabotAlertSecurityAdvisory\Cvss $cvss, #[MapFrom('cvss_severities')]
+    public Schema\CvssSeverities|null $cvssSeverities, public array $cwes, public array $identifiers, public array $references, #[MapFrom('published_at')]
     public string $publishedAt, #[MapFrom('updated_at')]
     public string $updatedAt, #[MapFrom('withdrawn_at')]
     public string|null $withdrawnAt,)
