@@ -138,6 +138,15 @@ final readonly class ApiOverview
                 "192.0.2.1"
             ]
         },
+        "codespaces": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "examples": [
+                "192.0.2.1"
+            ]
+        },
         "dependabot": {
             "type": "array",
             "items": {
@@ -283,6 +292,10 @@ final readonly class ApiOverview
         "192.0.2.1",
         "192.0.2.1"
     ],
+    "codespaces": [
+        "192.0.2.1",
+        "192.0.2.1"
+    ],
     "dependabot": [
         "192.0.2.1",
         "192.0.2.1"
@@ -327,7 +340,7 @@ final readonly class ApiOverview
     public Schema\ApiOverview\SshKeyFingerprints|null $sshKeyFingerprints, #[MapFrom('ssh_keys')]
     public array|null $sshKeys, public array|null $hooks, #[MapFrom('github_enterprise_importer')]
     public array|null $githubEnterpriseImporter, public array|null $web, public array|null $api, public array|null $git, public array|null $packages, public array|null $pages, public array|null $importer, public array|null $actions, #[MapFrom('actions_macos')]
-    public array|null $actionsMacos, public array|null $dependabot, public array|null $copilot, public Schema\ApiOverview\Domains|null $domains,)
+    public array|null $actionsMacos, public array|null $codespaces, public array|null $dependabot, public array|null $copilot, public Schema\ApiOverview\Domains|null $domains,)
     {
     }
 }

@@ -69,10 +69,15 @@ final readonly class RuleSuite
         "evaluation_result": {
             "enum": [
                 "pass",
-                "fail"
+                "fail",
+                "bypass",
+                null
             ],
-            "type": "string",
-            "description": "The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`."
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run."
         },
         "rule_evaluations": {
             "type": "array",
@@ -124,8 +129,11 @@ final readonly class RuleSuite
                         "description": "The type of rule."
                     },
                     "details": {
-                        "type": "string",
-                        "description": "Any associated details with the rule evaluation."
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The detailed failure message for the rule. Null if the rule passed."
                     }
                 }
             },
@@ -184,7 +192,7 @@ final readonly class RuleSuite
      * repositoryId: The ID of the repository associated with the rule evaluation.
      * repositoryName: The name of the repository without the `.git` extension.
      * result: The result of the rule evaluations for rules with the `active` enforcement status.
-     * evaluationResult: The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`.
+     * evaluationResult: The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`. Null if no rules with `evaluate` enforcement status were run.
      * ruleEvaluations: Details on the evaluated rules.
      */
     public function __construct(public int|null $id, #[MapFrom('actor_id')]

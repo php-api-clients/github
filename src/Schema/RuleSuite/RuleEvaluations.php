@@ -57,8 +57,11 @@ final readonly class RuleEvaluations
             "description": "The type of rule."
         },
         "details": {
-            "type": "string",
-            "description": "Any associated details with the rule evaluation."
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The detailed failure message for the rule. Null if the rule passed."
         }
     }
 }';
@@ -80,7 +83,7 @@ final readonly class RuleEvaluations
      * enforcement: The enforcement level of this rule source.
      * result: The result of the evaluation of the individual rule.
      * ruleType: The type of rule.
-     * details: Any associated details with the rule evaluation.
+     * details: The detailed failure message for the rule. Null if the rule passed.
      */
     public function __construct(#[MapFrom('rule_source')]
     public Schema\RuleSuite\RuleEvaluations\RuleSource|null $ruleSource, public string|null $enforcement, public string|null $result, #[MapFrom('rule_type')]

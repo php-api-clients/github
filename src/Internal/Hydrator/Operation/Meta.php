@@ -208,6 +208,17 @@ class Meta implements ObjectMapper
 
             after_actionsMacos:
 
+            $value = $payload['codespaces'] ?? null;
+
+            if ($value === null) {
+                $properties['codespaces'] = null;
+                goto after_codespaces;
+            }
+
+            $properties['codespaces'] = $value;
+
+            after_codespaces:
+
             $value = $payload['dependabot'] ?? null;
 
             if ($value === null) {
@@ -740,6 +751,21 @@ class Meta implements ObjectMapper
 
         $actionsMacos                                       = $actionsMacosSerializer0->serialize($actionsMacos, $this);
         after_actionsMacos:        $result['actions_macos'] = $actionsMacos;
+
+        $codespaces = $object->codespaces;
+
+        if ($codespaces === null) {
+            goto after_codespaces;
+        }
+
+        static $codespacesSerializer0;
+
+        if ($codespacesSerializer0 === null) {
+            $codespacesSerializer0 = new SerializeArrayItems(...[]);
+        }
+
+        $codespaces                                    = $codespacesSerializer0->serialize($codespaces, $this);
+        after_codespaces:        $result['codespaces'] = $codespaces;
 
         $dependabot = $object->dependabot;
 

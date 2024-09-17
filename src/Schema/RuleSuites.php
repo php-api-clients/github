@@ -62,7 +62,8 @@ final readonly class RuleSuites
         "evaluation_result": {
             "enum": [
                 "pass",
-                "fail"
+                "fail",
+                "bypass"
             ],
             "type": "string",
             "description": "The result of the rule evaluations for rules with the `active` and `evaluate` enforcement statuses, demonstrating whether rules would pass or fail if all rules in the rule suite were `active`."
