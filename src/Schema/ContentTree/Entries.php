@@ -36,9 +36,6 @@ final readonly class Entries
         "path": {
             "type": "string"
         },
-        "content": {
-            "type": "string"
-        },
         "sha": {
             "type": "string"
         },
@@ -104,7 +101,6 @@ final readonly class Entries
     "size": 4,
     "name": "generated",
     "path": "generated",
-    "content": "generated",
     "sha": "generated",
     "url": "https:\\/\\/example.com\\/",
     "git_url": "https:\\/\\/example.com\\/",
@@ -117,7 +113,7 @@ final readonly class Entries
     }
 }';
 
-    public function __construct(public string $type, public int $size, public string $name, public string $path, public string|null $content, public string $sha, public string $url, #[MapFrom('git_url')]
+    public function __construct(public string $type, public int $size, public string $name, public string $path, public string $sha, public string $url, #[MapFrom('git_url')]
     public string|null $gitUrl, #[MapFrom('html_url')]
     public string|null $htmlUrl, #[MapFrom('download_url')]
     public string|null $downloadUrl, #[MapFrom('_links')]

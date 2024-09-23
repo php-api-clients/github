@@ -10,7 +10,7 @@ use EventSauce\ObjectHydrator\MapFrom;
 final readonly class CopilotOrganizationDetails
 {
     public const SCHEMA_JSON         = '{
-    "title": "Copilot Business Organization Details",
+    "title": "Copilot Organization Details",
     "required": [
         "seat_breakdown",
         "public_code_suggestions",
@@ -97,11 +97,11 @@ final readonly class CopilotOrganizationDetails
             "description": "The mode of assigning new seats."
         }
     },
-    "description": "Information about the seat breakdown and policies set for an organization with a Copilot Business subscription.",
+    "description": "Information about the seat breakdown and policies set for an organization with a Copilot Business or Copilot Enterprise subscription.",
     "additionalProperties": true
 }';
-    public const SCHEMA_TITLE        = 'Copilot Business Organization Details';
-    public const SCHEMA_DESCRIPTION  = 'Information about the seat breakdown and policies set for an organization with a Copilot Business subscription.';
+    public const SCHEMA_TITLE        = 'Copilot Organization Details';
+    public const SCHEMA_DESCRIPTION  = 'Information about the seat breakdown and policies set for an organization with a Copilot Business or Copilot Enterprise subscription.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "seat_breakdown": {
         "total": 5,

@@ -21,9 +21,7 @@ final readonly class ContentTree
         "sha",
         "size",
         "type",
-        "url",
-        "content",
-        "encoding"
+        "url"
     ],
     "type": "object",
     "properties": {
@@ -40,6 +38,9 @@ final readonly class ContentTree
             "type": "string"
         },
         "sha": {
+            "type": "string"
+        },
+        "content": {
             "type": "string"
         },
         "url": {
@@ -94,9 +95,6 @@ final readonly class ContentTree
                         "type": "string"
                     },
                     "path": {
-                        "type": "string"
-                    },
-                    "content": {
                         "type": "string"
                     },
                     "sha": {
@@ -197,6 +195,7 @@ final readonly class ContentTree
     "name": "generated",
     "path": "generated",
     "sha": "generated",
+    "content": "generated",
     "url": "https:\\/\\/example.com\\/",
     "git_url": "https:\\/\\/example.com\\/",
     "html_url": "https:\\/\\/example.com\\/",
@@ -207,7 +206,6 @@ final readonly class ContentTree
             "size": 4,
             "name": "generated",
             "path": "generated",
-            "content": "generated",
             "sha": "generated",
             "url": "https:\\/\\/example.com\\/",
             "git_url": "https:\\/\\/example.com\\/",
@@ -224,7 +222,6 @@ final readonly class ContentTree
             "size": 4,
             "name": "generated",
             "path": "generated",
-            "content": "generated",
             "sha": "generated",
             "url": "https:\\/\\/example.com\\/",
             "git_url": "https:\\/\\/example.com\\/",
@@ -244,7 +241,7 @@ final readonly class ContentTree
     }
 }';
 
-    public function __construct(public string $type, public int $size, public string $name, public string $path, public string $sha, public string $url, #[MapFrom('git_url')]
+    public function __construct(public string $type, public int $size, public string $name, public string $path, public string $sha, public string|null $content, public string $url, #[MapFrom('git_url')]
     public string|null $gitUrl, #[MapFrom('html_url')]
     public string|null $htmlUrl, #[MapFrom('download_url')]
     public string|null $downloadUrl, public array|null $entries, #[MapFrom('_links')]

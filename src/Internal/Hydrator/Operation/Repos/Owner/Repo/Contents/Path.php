@@ -128,6 +128,17 @@ class Path implements ObjectMapper
 
             after_sha:
 
+            $value = $payload['content'] ?? null;
+
+            if ($value === null) {
+                $properties['content'] = null;
+                goto after_content;
+            }
+
+            $properties['content'] = $value;
+
+            after_content:
+
             $value = $payload['url'] ?? null;
 
             if ($value === null) {
@@ -1183,6 +1194,14 @@ class Path implements ObjectMapper
 
         $sha                             = $object->sha;
         after_sha:        $result['sha'] = $sha;
+
+        $content = $object->content;
+
+        if ($content === null) {
+            goto after_content;
+        }
+
+        after_content:        $result['content'] = $content;
 
         $url                             = $object->url;
         after_url:        $result['url'] = $url;
