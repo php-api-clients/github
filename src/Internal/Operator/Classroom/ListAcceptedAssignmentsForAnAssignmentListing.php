@@ -15,19 +15,19 @@ use Rx\Observable;
 use function React\Async\await;
 use function WyriHaximus\React\awaitObservable;
 
-final readonly class ListAcceptedAssigmentsForAnAssignment
+final readonly class ListAcceptedAssignmentsForAnAssignmentListing
 {
-    public const OPERATION_ID    = 'classroom/list-accepted-assigments-for-an-assignment';
-    public const OPERATION_MATCH = 'GET /assignments/{assignment_id}/accepted_assignments';
+    public const OPERATION_ID    = 'classroom/list-accepted-assignments-for-an-assignment';
+    public const OPERATION_MATCH = 'LIST /assignments/{assignment_id}/accepted_assignments';
 
     public function __construct(private Browser $browser, private AuthenticationInterface $authentication, private SchemaValidator $responseSchemaValidator, private Internal\Hydrator\Operation\Assignments\AssignmentId\AcceptedAssignments $hydrator)
     {
     }
 
-    /** @return Observable<Schema\ClassroomAcceptedAssignment> */
+    /** @return iterable<int,Schema\ClassroomAcceptedAssignment> */
     public function call(int $assignmentId, int $page = 1, int $perPage = 30): iterable
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Classroom\ListAcceptedAssigmentsForAnAssignment($this->responseSchemaValidator, $this->hydrator, $assignmentId, $page, $perPage);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Classroom\ListAcceptedAssignmentsForAnAssignmentListing($this->responseSchemaValidator, $this->hydrator, $assignmentId, $page, $perPage);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);

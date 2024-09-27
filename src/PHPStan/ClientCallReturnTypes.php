@@ -148,11 +148,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /assignments/{assignment_id}/accepted_assignments') {
-            return $this->typeResolver->resolve('Observable<Schema\\ClassroomAcceptedAssignment>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\ClassroomAcceptedAssignment>');
         }
 
         if ($call === 'LIST /assignments/{assignment_id}/accepted_assignments') {
-            return $this->typeResolver->resolve('Observable<Schema\\ClassroomAcceptedAssignment>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\ClassroomAcceptedAssignment>');
         }
 
         if ($call === 'GET /assignments/{assignment_id}/grades') {

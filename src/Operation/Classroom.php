@@ -20,16 +20,16 @@ final class Classroom
         return $this->operators->classroom👷GetAnAssignment()->call($assignmentId);
     }
 
-    /** @return Observable<Schema\ClassroomAcceptedAssignment> */
-    public function listAcceptedAssigmentsForAnAssignment(int $assignmentId, int $page, int $perPage): iterable
+    /** @return iterable<int,Schema\ClassroomAcceptedAssignment> */
+    public function listAcceptedAssignmentsForAnAssignment(int $assignmentId, int $page, int $perPage): iterable
     {
-        return $this->operators->classroom👷ListAcceptedAssigmentsForAnAssignment()->call($assignmentId, $page, $perPage);
+        return $this->operators->classroom👷ListAcceptedAssignmentsForAnAssignment()->call($assignmentId, $page, $perPage);
     }
 
-    /** @return Observable<Schema\ClassroomAcceptedAssignment> */
-    public function listAcceptedAssigmentsForAnAssignmentListing(int $assignmentId, int $page, int $perPage): iterable
+    /** @return iterable<int,Schema\ClassroomAcceptedAssignment> */
+    public function listAcceptedAssignmentsForAnAssignmentListing(int $assignmentId, int $page, int $perPage): iterable
     {
-        return $this->operators->classroom👷ListAcceptedAssigmentsForAnAssignmentListing()->call($assignmentId, $page, $perPage);
+        return $this->operators->classroom👷ListAcceptedAssignmentsForAnAssignmentListing()->call($assignmentId, $page, $perPage);
     }
 
     /** @return Observable<Schema\ClassroomAssignmentGrade> */

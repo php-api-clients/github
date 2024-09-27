@@ -20,10 +20,10 @@ use function explode;
 use function json_decode;
 use function str_replace;
 
-final class ListAcceptedAssigmentsForAnAssignment
+final class ListAcceptedAssignmentsForAnAssignmentListing
 {
-    public const OPERATION_ID    = 'classroom/list-accepted-assigments-for-an-assignment';
-    public const OPERATION_MATCH = 'GET /assignments/{assignment_id}/accepted_assignments';
+    public const OPERATION_ID    = 'classroom/list-accepted-assignments-for-an-assignment';
+    public const OPERATION_MATCH = 'LIST /assignments/{assignment_id}/accepted_assignments';
     /**The unique identifier of the classroom assignment. **/
     private int $assignmentId;
     /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/

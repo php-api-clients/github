@@ -3277,6 +3277,20 @@ final readonly class WebhookPullRequestDequeued
             }
         },
         "reason": {
+            "enum": [
+                "UNKNOWN_REMOVAL_REASON",
+                "MANUAL",
+                "MERGE",
+                "MERGE_CONFLICT",
+                "CI_FAILURE",
+                "CI_TIMEOUT",
+                "ALREADY_MERGED",
+                "QUEUE_CLEARED",
+                "ROLL_BACK",
+                "BRANCH_PROTECTIONS",
+                "GIT_TREE_INVALID",
+                "INVALID_MERGE_COMMIT"
+            ],
             "type": "string"
         },
         "repository": {
@@ -5609,7 +5623,7 @@ final readonly class WebhookPullRequestDequeued
             "url": "https:\\/\\/example.com\\/"
         }
     },
-    "reason": "generated",
+    "reason": "INVALID_MERGE_COMMIT",
     "repository": {
         "id": 42,
         "node_id": "MDEwOlJlcG9zaXRvcnkxMjk2MjY5",

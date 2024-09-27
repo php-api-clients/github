@@ -15,7 +15,7 @@ final class Four
     {
     }
 
-    /** @return Observable<Schema\ClassroomAcceptedAssignment>|Observable<Schema\SimpleClassroomAssignment>|Observable<Schema\GistComment>|WithoutBody|Observable<Schema\GistCommit>|Observable<Schema\GistSimple>|Observable<Schema\MarketplaceListingPlan>|Observable<Schema\SimpleUser>|Observable<Schema\Event>|Observable<Schema\OrganizationInvitation>|Observable<Schema\OrgHook>|Observable<Schema\Issue>|Observable<Schema\Migration>|Observable<Schema\Package>|Observable<Schema\OrganizationProgrammaticAccessGrantRequest>|Observable<Schema\OrganizationProgrammaticAccessGrant>|Observable<Schema\Project>|Observable<Schema\MinimalRepository>|Observable<Schema\RepositoryRuleset>|Observable<Schema\Team>|Observable<Schema\ProjectColumn>|Observable<Schema\TeamDiscussion>|Observable<Schema\TeamProject>|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\OrgMembership>|Observable<Schema\BaseGist>|Observable<Schema\GpgKey>|Observable<Schema\KeySimple>|Observable<Schema\OrganizationSimple>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey> */
+    /** @return iterable<int,Schema\ClassroomAcceptedAssignment>|Observable<Schema\SimpleClassroomAssignment>|Observable<Schema\GistComment>|WithoutBody|Observable<Schema\GistCommit>|Observable<Schema\GistSimple>|Observable<Schema\MarketplaceListingPlan>|Observable<Schema\SimpleUser>|Observable<Schema\Event>|Observable<Schema\OrganizationInvitation>|Observable<Schema\OrgHook>|Observable<Schema\Issue>|Observable<Schema\Migration>|Observable<Schema\Package>|Observable<Schema\OrganizationProgrammaticAccessGrantRequest>|Observable<Schema\OrganizationProgrammaticAccessGrant>|Observable<Schema\Project>|Observable<Schema\MinimalRepository>|Observable<Schema\RepositoryRuleset>|Observable<Schema\Team>|Observable<Schema\ProjectColumn>|Observable<Schema\TeamDiscussion>|Observable<Schema\TeamProject>|Observable<Schema\UserMarketplacePurchase>|Observable<Schema\OrgMembership>|Observable<Schema\BaseGist>|Observable<Schema\GpgKey>|Observable<Schema\KeySimple>|Observable<Schema\OrganizationSimple>|Observable<Schema\SocialAccount>|Observable<Schema\SshSigningKey> */
     public function call(string $call, array $params, array $pathChunks): iterable|WithoutBody
     {
         if ($pathChunks[0] === '') {
@@ -23,7 +23,7 @@ final class Four
                 if ($pathChunks[2] === '{assignment_id}') {
                     if ($pathChunks[3] === 'accepted_assignments') {
                         if ($call === 'LIST /assignments/{assignment_id}/accepted_assignments') {
-                            return $this->routers->internal🔀Router🔀List🔀Classroom()->listAcceptedAssigmentsForAnAssignmentListing($params);
+                            return $this->routers->internal🔀Router🔀List🔀Classroom()->listAcceptedAssignmentsForAnAssignmentListing($params);
                         }
                     }
                 }

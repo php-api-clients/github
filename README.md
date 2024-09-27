@@ -598,7 +598,7 @@ $client->operations()->classroom()->getAnAssignment(        assignment_id: 13,
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/classroom/classroom#get-an-assignment).
 
 
-### classroom/list-accepted-assigments-for-an-assignment
+### classroom/list-accepted-assignments-for-an-assignment
 
 List accepted assignments for an assignment
 
@@ -613,7 +613,7 @@ $client->call('GET /assignments/{assignment_id}/accepted_assignments', [
 
 Operations method:
 ```php
-$client->operations()->classroom()->listAcceptedAssigmentsForAnAssignment(        assignment_id: 13,
+$client->operations()->classroom()->listAcceptedAssignmentsForAnAssignment(        assignment_id: 13,
         page: 1,
         per_page: 8,
 );
@@ -622,7 +622,7 @@ $client->operations()->classroom()->listAcceptedAssigmentsForAnAssignment(      
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/classroom/classroom#list-accepted-assignments-for-an-assignment).
 
 
-### classroom/list-accepted-assigments-for-an-assignment
+### classroom/list-accepted-assignments-for-an-assignment
 
 List accepted assignments for an assignment
 
@@ -637,7 +637,7 @@ $client->call('LIST /assignments/{assignment_id}/accepted_assignments', [
 
 Operations method:
 ```php
-$client->operations()->classroom()->listAcceptedAssigmentsForAnAssignmentListing(        assignment_id: 13,
+$client->operations()->classroom()->listAcceptedAssignmentsForAnAssignmentListing(        assignment_id: 13,
         page: 1,
         per_page: 8,
 );

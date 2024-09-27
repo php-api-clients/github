@@ -71,8 +71,8 @@ final class Classroom
         return $operator->call($arguments['classroom_id']);
     }
 
-    /** @return Observable<Schema\ClassroomAcceptedAssignment> */
-    public function listAcceptedAssigmentsForAnAssignment(array $params): iterable
+    /** @return iterable<int,Schema\ClassroomAcceptedAssignment> */
+    public function listAcceptedAssignmentsForAnAssignment(array $params): iterable
     {
         $arguments = [];
         if (array_key_exists('assignment_id', $params) === false) {
@@ -93,7 +93,7 @@ final class Classroom
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
-        $operator = new Internal\Operator\Classroom\ListAcceptedAssigmentsForAnAssignment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Assignments🌀AssignmentId🌀AcceptedAssignments());
+        $operator = new Internal\Operator\Classroom\ListAcceptedAssignmentsForAnAssignment($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Assignments🌀AssignmentId🌀AcceptedAssignments());
 
         return $operator->call($arguments['assignment_id'], $arguments['page'], $arguments['per_page']);
     }
