@@ -7,7 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Hydrator\WebHook;
 use ApiClients\Client\GitHub\Schema\EnterpriseWebhooks;
 use ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks;
 use ApiClients\Client\GitHub\Schema\SimpleInstallation;
-use ApiClients\Client\GitHub\Schema\SimpleUserWebhooks;
+use ApiClients\Client\GitHub\Schema\SimpleUser;
 use ApiClients\Client\GitHub\Schema\WebhooksTeam1;
 use ApiClients\Client\GitHub\Schema\WebhooksTeam1\Parent_;
 use ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository;
@@ -69,7 +69,7 @@ class Team implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Repository⚡️License($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Repository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Repository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($payload),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksTeam1' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksTeam1\Parent_' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1⚡️Parent_($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamCreated' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated($payload),
@@ -211,7 +211,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -2019,7 +2019,7 @@ class Team implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks(array $payload): SimpleUserWebhooks
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(array $payload): SimpleUser
     {
         $properties    = [];
         $missingFields = [];
@@ -2255,17 +2255,17 @@ class Team implements ObjectMapper
 
             after_starredAt:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUserWebhooks', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(SimpleUserWebhooks::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(SimpleUser::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new SimpleUserWebhooks(...$properties);
+            return new SimpleUser(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUserWebhooks', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -2708,7 +2708,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -4301,7 +4301,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -5914,7 +5914,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -7876,7 +7876,7 @@ class Team implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -9422,7 +9422,7 @@ class Team implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Repository⚡️License($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Repository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamAddedToRepository\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamAddedToRepository⚡️Repository⚡️Permissions($object),
-                'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($object),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksTeam1' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksTeam1\Parent_' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksTeam1⚡️Parent_($object),
                 'ApiClients\Client\GitHub\Schema\WebhookTeamCreated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookTeamCreated($object),
@@ -9560,7 +9560,7 @@ class Team implements ObjectMapper
             goto after_sender;
         }
 
-        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
+        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         $team                              = $object->team;
@@ -10317,9 +10317,9 @@ class Team implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
     {
-        assert($object instanceof SimpleUserWebhooks);
+        assert($object instanceof SimpleUser);
         $result = [];
 
         $name = $object->name;
@@ -10608,7 +10608,7 @@ class Team implements ObjectMapper
         after_repository:        $result['repository'] = $repository;
 
         $sender                                = $object->sender;
-        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
+        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         $team                              = $object->team;
@@ -11289,7 +11289,7 @@ class Team implements ObjectMapper
             goto after_sender;
         }
 
-        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
+        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         $team                              = $object->team;
@@ -11969,7 +11969,7 @@ class Team implements ObjectMapper
         after_repository:        $result['repository'] = $repository;
 
         $sender                                = $object->sender;
-        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
+        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         $team                              = $object->team;
@@ -12798,7 +12798,7 @@ class Team implements ObjectMapper
         after_repository:        $result['repository'] = $repository;
 
         $sender                                = $object->sender;
-        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
+        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         $team                              = $object->team;

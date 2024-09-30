@@ -2650,6 +2650,7 @@ final readonly class WebhookPackagePublished
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -2765,7 +2766,7 @@ final readonly class WebhookPackagePublished
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         }
     }
 }';
@@ -3386,9 +3387,9 @@ final readonly class WebhookPackagePublished
      * package: Information about the package.
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\WebhookPackagePublished\Package $package, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks $sender)
+    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\WebhookPackagePublished\Package $package, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUser $sender)
     {
     }
 }

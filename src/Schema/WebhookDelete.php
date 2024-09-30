@@ -1771,6 +1771,7 @@ final readonly class WebhookDelete
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -1886,7 +1887,7 @@ final readonly class WebhookDelete
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         }
     }
 }';
@@ -2243,11 +2244,11 @@ final readonly class WebhookDelete
      * refType: The type of Git ref object deleted in the repository.
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      */
     public function __construct(public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, #[MapFrom('pusher_type')]
     public string $pusherType, public string $ref, #[MapFrom('ref_type')]
-    public string $refType, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender,)
+    public string $refType, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUser $sender,)
     {
     }
 }

@@ -5552,6 +5552,7 @@ final readonly class WebhookDeploymentProtectionRuleRequested
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -5667,7 +5668,7 @@ final readonly class WebhookDeploymentProtectionRuleRequested
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         }
     }
 }';
@@ -7138,11 +7139,11 @@ final readonly class WebhookDeploymentProtectionRuleRequested
      * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
     for and sent to a GitHub App. For more information,
     see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      */
     public function __construct(public string|null $action, public string|null $environment, public string|null $event, #[MapFrom('deployment_callback_url')]
     public string|null $deploymentCallbackUrl, public Schema\Deployment|null $deployment, #[MapFrom('pull_requests')]
-    public array|null $pullRequests, public Schema\RepositoryWebhooks|null $repository, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\SimpleInstallation|null $installation, public Schema\SimpleUserWebhooks|null $sender,)
+    public array|null $pullRequests, public Schema\RepositoryWebhooks|null $repository, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\SimpleInstallation|null $installation, public Schema\SimpleUser|null $sender,)
     {
     }
 }

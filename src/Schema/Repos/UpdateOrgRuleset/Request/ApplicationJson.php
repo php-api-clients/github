@@ -40,8 +40,7 @@ final readonly class ApplicationJson
             "items": {
                 "title": "Repository Ruleset Bypass Actor",
                 "required": [
-                    "actor_type",
-                    "bypass_mode"
+                    "actor_type"
                 ],
                 "type": "object",
                 "properties": {
@@ -69,7 +68,8 @@ final readonly class ApplicationJson
                             "pull_request"
                         ],
                         "type": "string",
-                        "description": "When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type."
+                        "description": "When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets.",
+                        "default": "always"
                     }
                 },
                 "description": "An actor that can bypass rules in a ruleset"
@@ -318,7 +318,7 @@ final readonly class ApplicationJson
                     "description": "Conditions to target repositories by property and refs by name"
                 }
             ],
-            "description": "Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties."
+            "description": "Conditions for an organization ruleset.\\nThe branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.\\nThe push rulesets conditions object does not require the `ref_name` property."
         },
         "rules": {
             "type": "array",
@@ -1165,7 +1165,9 @@ final readonly class ApplicationJson
      * target: The target of the ruleset
      * enforcement: The enforcement level of the ruleset. `evaluate` allows admins to test rules before enforcing them. Admins can view insights on the Rule Insights page (`evaluate` is only available with GitHub Enterprise).
      * bypassActors: The actors that can bypass the rules in this ruleset
-     * conditions: Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.
+     * conditions: Conditions for an organization ruleset.
+    The branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.
+    The push rulesets conditions object does not require the `ref_name` property.
      * rules: An array of rules within the ruleset.
      */
     public function __construct(public string|null $name, public string|null $target, public string|null $enforcement, #[MapFrom('bypass_actors')]

@@ -37,16 +37,16 @@ final class CodeScanning
         return $this->operators->codeScanning👷ListAlertsForOrgListing()->call($org, $toolName, $toolGuid, $before, $after, $state, $severity, $page, $perPage, $direction, $sort);
     }
 
-    /** @return Observable<Schema\CodeScanningAlertItems>|WithoutBody */
-    public function listAlertsForRepo(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $state, string $severity, int $page, int $perPage, string $direction, string $sort): iterable|WithoutBody
+    /** @return iterable<int,Schema\CodeScanningAlertItems>|WithoutBody */
+    public function listAlertsForRepo(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, int $pr, string $state, string $severity, int $page, int $perPage, string $direction, string $sort): iterable|WithoutBody
     {
-        return $this->operators->codeScanning👷ListAlertsForRepo()->call($owner, $repo, $toolName, $toolGuid, $ref, $state, $severity, $page, $perPage, $direction, $sort);
+        return $this->operators->codeScanning👷ListAlertsForRepo()->call($owner, $repo, $toolName, $toolGuid, $ref, $pr, $state, $severity, $page, $perPage, $direction, $sort);
     }
 
-    /** @return Observable<Schema\CodeScanningAlertItems>|WithoutBody */
-    public function listAlertsForRepoListing(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $state, string $severity, int $page, int $perPage, string $direction, string $sort): iterable|WithoutBody
+    /** @return iterable<int,Schema\CodeScanningAlertItems>|WithoutBody */
+    public function listAlertsForRepoListing(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, int $pr, string $state, string $severity, int $page, int $perPage, string $direction, string $sort): iterable|WithoutBody
     {
-        return $this->operators->codeScanning👷ListAlertsForRepoListing()->call($owner, $repo, $toolName, $toolGuid, $ref, $state, $severity, $page, $perPage, $direction, $sort);
+        return $this->operators->codeScanning👷ListAlertsForRepoListing()->call($owner, $repo, $toolName, $toolGuid, $ref, $pr, $state, $severity, $page, $perPage, $direction, $sort);
     }
 
     /** @return */
@@ -61,28 +61,28 @@ final class CodeScanning
         return $this->operators->codeScanning👷UpdateAlert()->call($owner, $repo, $alertNumber, $params);
     }
 
-    /** @return Observable<Schema\CodeScanningAlertInstance> */
-    public function listAlertInstances(string $owner, string $repo, int $alertNumber, string $ref, int $page, int $perPage): iterable
+    /** @return iterable<int,Schema\CodeScanningAlertInstance> */
+    public function listAlertInstances(string $owner, string $repo, int $alertNumber, string $ref, int $pr, int $page, int $perPage): iterable
     {
-        return $this->operators->codeScanning👷ListAlertInstances()->call($owner, $repo, $alertNumber, $ref, $page, $perPage);
+        return $this->operators->codeScanning👷ListAlertInstances()->call($owner, $repo, $alertNumber, $ref, $pr, $page, $perPage);
     }
 
-    /** @return Observable<Schema\CodeScanningAlertInstance> */
-    public function listAlertInstancesListing(string $owner, string $repo, int $alertNumber, string $ref, int $page, int $perPage): iterable
+    /** @return iterable<int,Schema\CodeScanningAlertInstance> */
+    public function listAlertInstancesListing(string $owner, string $repo, int $alertNumber, string $ref, int $pr, int $page, int $perPage): iterable
     {
-        return $this->operators->codeScanning👷ListAlertInstancesListing()->call($owner, $repo, $alertNumber, $ref, $page, $perPage);
+        return $this->operators->codeScanning👷ListAlertInstancesListing()->call($owner, $repo, $alertNumber, $ref, $pr, $page, $perPage);
     }
 
-    /** @return Observable<Schema\CodeScanningAnalysis> */
-    public function listRecentAnalyses(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $sarifId, int $page, int $perPage, string $direction, string $sort): iterable
+    /** @return iterable<int,Schema\CodeScanningAnalysis> */
+    public function listRecentAnalyses(string $owner, string $repo, string $toolName, string|null $toolGuid, int $pr, string $ref, string $sarifId, int $page, int $perPage, string $direction, string $sort): iterable
     {
-        return $this->operators->codeScanning👷ListRecentAnalyses()->call($owner, $repo, $toolName, $toolGuid, $ref, $sarifId, $page, $perPage, $direction, $sort);
+        return $this->operators->codeScanning👷ListRecentAnalyses()->call($owner, $repo, $toolName, $toolGuid, $pr, $ref, $sarifId, $page, $perPage, $direction, $sort);
     }
 
-    /** @return Observable<Schema\CodeScanningAnalysis> */
-    public function listRecentAnalysesListing(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $sarifId, int $page, int $perPage, string $direction, string $sort): iterable
+    /** @return iterable<int,Schema\CodeScanningAnalysis> */
+    public function listRecentAnalysesListing(string $owner, string $repo, string $toolName, string|null $toolGuid, int $pr, string $ref, string $sarifId, int $page, int $perPage, string $direction, string $sort): iterable
     {
-        return $this->operators->codeScanning👷ListRecentAnalysesListing()->call($owner, $repo, $toolName, $toolGuid, $ref, $sarifId, $page, $perPage, $direction, $sort);
+        return $this->operators->codeScanning👷ListRecentAnalysesListing()->call($owner, $repo, $toolName, $toolGuid, $pr, $ref, $sarifId, $page, $perPage, $direction, $sort);
     }
 
     /** @return */

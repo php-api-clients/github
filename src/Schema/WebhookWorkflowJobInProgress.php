@@ -1760,6 +1760,7 @@ final readonly class WebhookWorkflowJobInProgress
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -1875,7 +1876,7 @@ final readonly class WebhookWorkflowJobInProgress
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         },
         "workflow_job": {
             "allOf": [
@@ -3378,10 +3379,10 @@ final readonly class WebhookWorkflowJobInProgress
     organization, or when the event occurs from activity in a repository owned by an organization.
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      * deployment: A request for a specific ref(branch,sha,tag) to be deployed
      */
-    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, #[MapFrom('workflow_job')]
+    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUser $sender, #[MapFrom('workflow_job')]
     public Schema\WebhookWorkflowJobInProgress\WorkflowJob $workflowJob, public Schema\Deployment|null $deployment,)
     {
     }

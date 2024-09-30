@@ -39,8 +39,7 @@ final readonly class ApplicationJson
             "items": {
                 "title": "Repository Ruleset Bypass Actor",
                 "required": [
-                    "actor_type",
-                    "bypass_mode"
+                    "actor_type"
                 ],
                 "type": "object",
                 "properties": {
@@ -68,7 +67,8 @@ final readonly class ApplicationJson
                             "pull_request"
                         ],
                         "type": "string",
-                        "description": "When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type."
+                        "description": "When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets.",
+                        "default": "always"
                     }
                 },
                 "description": "An actor that can bypass rules in a ruleset"

@@ -66,6 +66,7 @@ final readonly class WebhookGithubAppAuthorizationRevoked
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -181,7 +182,7 @@ final readonly class WebhookGithubAppAuthorizationRevoked
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         }
     }
 }';
@@ -215,9 +216,9 @@ final readonly class WebhookGithubAppAuthorizationRevoked
 }';
 
     /**
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\SimpleUserWebhooks $sender)
+    public function __construct(public string $action, public Schema\SimpleUser $sender)
     {
     }
 }

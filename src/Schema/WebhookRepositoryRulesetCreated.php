@@ -1768,8 +1768,7 @@ final readonly class WebhookRepositoryRulesetCreated
                     "items": {
                         "title": "Repository Ruleset Bypass Actor",
                         "required": [
-                            "actor_type",
-                            "bypass_mode"
+                            "actor_type"
                         ],
                         "type": "object",
                         "properties": {
@@ -1797,7 +1796,8 @@ final readonly class WebhookRepositoryRulesetCreated
                                     "pull_request"
                                 ],
                                 "type": "string",
-                                "description": "When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type."
+                                "description": "When the specified actor can bypass the ruleset. `pull_request` means that an actor can only bypass rules on pull requests. `pull_request` is not applicable for the `DeployKey` actor type. Also, `pull_request` is only applicable to branch rulesets.",
+                                "default": "always"
                             }
                         },
                         "description": "An actor that can bypass rules in a ruleset"
@@ -2113,7 +2113,7 @@ final readonly class WebhookRepositoryRulesetCreated
                                     "description": "Conditions to target repositories by property and refs by name"
                                 }
                             ],
-                            "description": "Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties."
+                            "description": "Conditions for an organization ruleset.\\nThe branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.\\nThe push rulesets conditions object does not require the `ref_name` property."
                         }
                     ]
                 },
@@ -2984,6 +2984,7 @@ final readonly class WebhookRepositoryRulesetCreated
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -3099,7 +3100,7 @@ final readonly class WebhookRepositoryRulesetCreated
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         }
     }
 }';
@@ -3489,10 +3490,10 @@ final readonly class WebhookRepositoryRulesetCreated
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
      * repositoryRuleset: A set of rules to apply when specified conditions are met.
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      */
     public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks|null $repository, #[MapFrom('repository_ruleset')]
-    public Schema\RepositoryRuleset $repositoryRuleset, public Schema\SimpleUserWebhooks $sender,)
+    public Schema\RepositoryRuleset $repositoryRuleset, public Schema\SimpleUser $sender,)
     {
     }
 }

@@ -2260,6 +2260,7 @@ final readonly class WebhookStatus
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -2375,7 +2376,7 @@ final readonly class WebhookStatus
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         },
         "sha": {
             "type": "string",
@@ -2873,14 +2874,14 @@ final readonly class WebhookStatus
     organization, or when the event occurs from activity in a repository owned by an organization.
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      * sha: The Commit SHA.
      * state: The new state. Can be `pending`, `success`, `failure`, or `error`.
      * targetUrl: The optional link added to the status.
      */
     public function __construct(#[MapFrom('avatar_url')]
     public string|null $avatarUrl, public array $branches, public Schema\WebhookStatus\Commit $commit, public string $context, #[MapFrom('created_at')]
-    public string $createdAt, public string|null $description, public Schema\EnterpriseWebhooks|null $enterprise, public int $id, public Schema\SimpleInstallation|null $installation, public string $name, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, public string $sha, public string $state, #[MapFrom('target_url')]
+    public string $createdAt, public string|null $description, public Schema\EnterpriseWebhooks|null $enterprise, public int $id, public Schema\SimpleInstallation|null $installation, public string $name, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUser $sender, public string $sha, public string $state, #[MapFrom('target_url')]
     public string|null $targetUrl, #[MapFrom('updated_at')]
     public string $updatedAt,)
     {

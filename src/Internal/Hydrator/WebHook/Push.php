@@ -7,7 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Hydrator\WebHook;
 use ApiClients\Client\GitHub\Schema\EnterpriseWebhooks;
 use ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks;
 use ApiClients\Client\GitHub\Schema\SimpleInstallation;
-use ApiClients\Client\GitHub\Schema\SimpleUserWebhooks;
+use ApiClients\Client\GitHub\Schema\SimpleUser;
 use ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewRepository\CustomProperties;
 use ApiClients\Client\GitHub\Schema\WebhookPush;
 use ApiClients\Client\GitHub\Schema\WebhookPush\HeadCommit;
@@ -65,7 +65,7 @@ class Push implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookPush\Repository\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPush⚡️Repository⚡️License($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookPush\Repository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPush⚡️Repository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookPush\Repository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPush⚡️Repository⚡️Permissions($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($payload),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewRepository\CustomProperties' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewRepository⚡️CustomProperties($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewRepository\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewRepository⚡️License($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewRepository⚡️Owner($payload),
@@ -308,7 +308,7 @@ class Push implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -2465,7 +2465,7 @@ class Push implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks(array $payload): SimpleUserWebhooks
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(array $payload): SimpleUser
     {
         $properties    = [];
         $missingFields = [];
@@ -2701,17 +2701,17 @@ class Push implements ObjectMapper
 
             after_starredAt:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUserWebhooks', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(SimpleUserWebhooks::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(SimpleUser::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new SimpleUserWebhooks(...$properties);
+            return new SimpleUser(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUserWebhooks', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -3176,7 +3176,7 @@ class Push implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookPush\Repository\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPush⚡️Repository⚡️License($object),
                 'ApiClients\Client\GitHub\Schema\WebhookPush\Repository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPush⚡️Repository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\WebhookPush\Repository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookPush⚡️Repository⚡️Permissions($object),
-                'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($object),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
@@ -3333,7 +3333,7 @@ class Push implements ObjectMapper
             goto after_sender;
         }
 
-        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
+        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         return $result;
@@ -4281,9 +4281,9 @@ class Push implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
     {
-        assert($object instanceof SimpleUserWebhooks);
+        assert($object instanceof SimpleUser);
         $result = [];
 
         $name = $object->name;

@@ -1983,6 +1983,7 @@ final readonly class WebhookSecurityAdvisoryWithdrawn
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -2098,7 +2099,7 @@ final readonly class WebhookSecurityAdvisoryWithdrawn
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         }
     }
 }';
@@ -2526,10 +2527,10 @@ final readonly class WebhookSecurityAdvisoryWithdrawn
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
      * securityAdvisory: The details of the security advisory, including summary, description, and severity.
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      */
     public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks|null $repository, #[MapFrom('security_advisory')]
-    public Schema\WebhookSecurityAdvisoryWithdrawn\SecurityAdvisory $securityAdvisory, public Schema\SimpleUserWebhooks|null $sender,)
+    public Schema\WebhookSecurityAdvisoryWithdrawn\SecurityAdvisory $securityAdvisory, public Schema\SimpleUser|null $sender,)
     {
     }
 }

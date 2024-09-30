@@ -593,6 +593,7 @@ final readonly class WebhookPersonalAccessTokenRequestDenied
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -708,7 +709,7 @@ final readonly class WebhookPersonalAccessTokenRequestDenied
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         },
         "installation": {
             "title": "Simple Installation",
@@ -851,13 +852,13 @@ final readonly class WebhookPersonalAccessTokenRequestDenied
      * enterprise: An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
     on an enterprise account or an organization that's part of an enterprise account. For more information,
     see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      * installation: The GitHub App installation. Webhook payloads contain the `installation` property when the event is configured
     for and sent to a GitHub App. For more information,
     see "[Using webhooks with GitHub Apps](https://docs.github.com/apps/creating-github-apps/registering-a-github-app/using-webhooks-with-github-apps)."
      */
     public function __construct(public string $action, #[MapFrom('personal_access_token_request')]
-    public Schema\PersonalAccessTokenRequest $personalAccessTokenRequest, public Schema\OrganizationSimpleWebhooks $organization, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleUserWebhooks $sender, public Schema\SimpleInstallation $installation,)
+    public Schema\PersonalAccessTokenRequest $personalAccessTokenRequest, public Schema\OrganizationSimpleWebhooks $organization, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleUser $sender, public Schema\SimpleInstallation $installation,)
     {
     }
 }

@@ -20,7 +20,7 @@ final class Classroom
     {
     }
 
-    /** @return iterable<int,Schema\ClassroomAcceptedAssignment> */
+    /** @return Observable<Schema\ClassroomAcceptedAssignment> */
     public function listAcceptedAssignmentsForAnAssignmentListing(array $params): iterable
     {
         $arguments = [];

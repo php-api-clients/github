@@ -240,10 +240,10 @@ final readonly class Comment
             }
         }
     },
-    "description": "The [commit comment](https:\\/\\/docs.github.com\\/rest\\/commits\\/comments#get-a-commit-comment) resource."
+    "description": "The [commit comment](${externalDocsUpapp\\/api\\/description\\/components\\/schemas\\/webhooks\\/issue-comment-created.yamlrl}\\/rest\\/commits\\/comments#get-a-commit-comment) resource."
 }';
     public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = 'The [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment) resource.';
+    public const SCHEMA_DESCRIPTION  = 'The [commit comment](${externalDocsUpapp/api/description/components/schemas/webhooks/issue-comment-created.yamlrl}/rest/commits/comments#get-a-commit-comment) resource.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "author_association": "OWNER",
     "body": "generated",

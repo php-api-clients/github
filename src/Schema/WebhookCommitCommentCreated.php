@@ -256,7 +256,7 @@ final readonly class WebhookCommitCommentCreated
                     }
                 }
             },
-            "description": "The [commit comment](https:\\/\\/docs.github.com\\/rest\\/commits\\/comments#get-a-commit-comment) resource."
+            "description": "The [commit comment](${externalDocsUpapp\\/api\\/description\\/components\\/schemas\\/webhooks\\/issue-comment-created.yamlrl}\\/rest\\/commits\\/comments#get-a-commit-comment) resource."
         },
         "enterprise": {
             "title": "Enterprise",
@@ -1993,6 +1993,7 @@ final readonly class WebhookCommitCommentCreated
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -2108,7 +2109,7 @@ final readonly class WebhookCommitCommentCreated
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         }
     }
 }';
@@ -2500,7 +2501,7 @@ final readonly class WebhookCommitCommentCreated
 
     /**
      * action: The action performed. Can be `created`.
-     * comment: The [commit comment](https://docs.github.com/rest/commits/comments#get-a-commit-comment) resource.
+     * comment: The [commit comment](${externalDocsUpapp/api/description/components/schemas/webhooks/issue-comment-created.yamlrl}/rest/commits/comments#get-a-commit-comment) resource.
      * enterprise: An enterprise on GitHub. Webhook payloads contain the `enterprise` property when the webhook is configured
     on an enterprise account or an organization that's part of an enterprise account. For more information,
     see "[About enterprise accounts](https://docs.github.com/admin/overview/about-enterprise-accounts)."
@@ -2511,9 +2512,9 @@ final readonly class WebhookCommitCommentCreated
     organization, or when the event occurs from activity in a repository owned by an organization.
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\WebhookCommitCommentCreated\Comment $comment, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender)
+    public function __construct(public string $action, public Schema\WebhookCommitCommentCreated\Comment $comment, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUser $sender)
     {
     }
 }

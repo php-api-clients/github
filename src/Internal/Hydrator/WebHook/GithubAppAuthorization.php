@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Internal\Hydrator\WebHook;
 
-use ApiClients\Client\GitHub\Schema\SimpleUserWebhooks;
+use ApiClients\Client\GitHub\Schema\SimpleUser;
 use ApiClients\Client\GitHub\Schema\WebhookGithubAppAuthorizationRevoked;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -42,7 +42,7 @@ class GithubAppAuthorization implements ObjectMapper
     {
         return match ($className) {
             'ApiClients\Client\GitHub\Schema\WebhookGithubAppAuthorizationRevoked' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookGithubAppAuthorizationRevoked($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($payload),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -73,7 +73,7 @@ class GithubAppAuthorization implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -97,7 +97,7 @@ class GithubAppAuthorization implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks(array $payload): SimpleUserWebhooks
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(array $payload): SimpleUser
     {
         $properties    = [];
         $missingFields = [];
@@ -333,17 +333,17 @@ class GithubAppAuthorization implements ObjectMapper
 
             after_starredAt:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUserWebhooks', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(SimpleUserWebhooks::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(SimpleUser::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new SimpleUserWebhooks(...$properties);
+            return new SimpleUser(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUserWebhooks', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -379,7 +379,7 @@ class GithubAppAuthorization implements ObjectMapper
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
                 'ApiClients\Client\GitHub\Schema\WebhookGithubAppAuthorizationRevoked' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookGithubAppAuthorizationRevoked($object),
-                'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($object),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
@@ -451,15 +451,15 @@ class GithubAppAuthorization implements ObjectMapper
         after_action:        $result['action'] = $action;
 
         $sender                                = $object->sender;
-        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
+        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
     {
-        assert($object instanceof SimpleUserWebhooks);
+        assert($object instanceof SimpleUser);
         $result = [];
 
         $name = $object->name;

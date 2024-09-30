@@ -4909,6 +4909,7 @@ final readonly class WebhookPullRequestReviewRequestRemoved
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -5024,7 +5025,7 @@ final readonly class WebhookPullRequestReviewRequestRemoved
                             ]
                         }
                     },
-                    "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+                    "description": "A GitHub user."
                 }
             }
         },
@@ -9976,6 +9977,7 @@ final readonly class WebhookPullRequestReviewRequestRemoved
                         },
                         "id": {
                             "type": "integer",
+                            "format": "int64",
                             "examples": [
                                 1
                             ]
@@ -10091,7 +10093,7 @@ final readonly class WebhookPullRequestReviewRequestRemoved
                             ]
                         }
                     },
-                    "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+                    "description": "A GitHub user."
                 }
             }
         }

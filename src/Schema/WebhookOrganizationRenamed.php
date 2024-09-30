@@ -1896,6 +1896,7 @@ final readonly class WebhookOrganizationRenamed
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -2011,7 +2012,7 @@ final readonly class WebhookOrganizationRenamed
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         }
     }
 }';
@@ -2398,9 +2399,9 @@ final readonly class WebhookOrganizationRenamed
     organization, or when the event occurs from activity in a repository owned by an organization.
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\WebhookOrganizationRenamed\Changes|null $changes, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\WebhooksMembership|null $membership, public Schema\OrganizationSimpleWebhooks $organization, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks $sender)
+    public function __construct(public string $action, public Schema\WebhookOrganizationRenamed\Changes|null $changes, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\WebhooksMembership|null $membership, public Schema\OrganizationSimpleWebhooks $organization, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUser $sender)
     {
     }
 }

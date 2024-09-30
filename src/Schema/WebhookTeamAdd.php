@@ -1752,6 +1752,7 @@ final readonly class WebhookTeamAdd
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -1867,7 +1868,7 @@ final readonly class WebhookTeamAdd
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         },
         "team": {
             "title": "Team",
@@ -2399,10 +2400,10 @@ final readonly class WebhookTeamAdd
     organization, or when the event occurs from activity in a repository owned by an organization.
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      * team: Groups of organization members that gives permissions on specified repositories.
      */
-    public function __construct(public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUserWebhooks $sender, public Schema\WebhooksTeam1 $team)
+    public function __construct(public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, public Schema\SimpleUser $sender, public Schema\WebhooksTeam1 $team)
     {
     }
 }

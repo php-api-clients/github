@@ -31,13 +31,14 @@ final class ListRecentAnalysesListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/code-scanning/analyses?tool_name=generated&tool_guid=&ref=generated&sarif_id=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/code-scanning/analyses?tool_name=generated&tool_guid=&pr=2&ref=generated&sarif_id=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\CodeScanning\ListRecentAnalysesListing::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
             $data['repo']      = 'generated';
             $data['tool_name'] = 'generated';
             $data['tool_guid'] = null;
+            $data['pr']        = 2;
             $data['ref']       = 'generated';
             $data['sarif_id']  = 'generated';
             $data['page']      = 1;
@@ -61,9 +62,9 @@ final class ListRecentAnalysesListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/code-scanning/analyses?tool_name=generated&tool_guid=&ref=generated&sarif_id=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/code-scanning/analyses?tool_name=generated&tool_guid=&pr=2&ref=generated&sarif_id=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->codeScanning()->listRecentAnalysesListing('generated', 'generated', 'generated', null, 'generated', 'generated', 1, 8, 'generated', 'generated');
+        $result = $client->operations()->codeScanning()->listRecentAnalysesListing('generated', 'generated', 'generated', null, 2, 'generated', 'generated', 1, 8, 'generated', 'generated');
         foreach ($result as $item) {
         }
     }
@@ -78,13 +79,14 @@ final class ListRecentAnalysesListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/code-scanning/analyses?tool_name=generated&tool_guid=&ref=generated&sarif_id=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/code-scanning/analyses?tool_name=generated&tool_guid=&pr=2&ref=generated&sarif_id=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\CodeScanning\ListRecentAnalysesListing::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
             $data['repo']      = 'generated';
             $data['tool_name'] = 'generated';
             $data['tool_guid'] = null;
+            $data['pr']        = 2;
             $data['ref']       = 'generated';
             $data['sarif_id']  = 'generated';
             $data['page']      = 1;
@@ -108,9 +110,9 @@ final class ListRecentAnalysesListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/code-scanning/analyses?tool_name=generated&tool_guid=&ref=generated&sarif_id=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/code-scanning/analyses?tool_name=generated&tool_guid=&pr=2&ref=generated&sarif_id=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->codeScanning()->listRecentAnalysesListing('generated', 'generated', 'generated', null, 'generated', 'generated', 1, 8, 'generated', 'generated');
+        $result = $client->operations()->codeScanning()->listRecentAnalysesListing('generated', 'generated', 'generated', null, 2, 'generated', 'generated', 1, 8, 'generated', 'generated');
         foreach ($result as $item) {
         }
     }
@@ -125,13 +127,14 @@ final class ListRecentAnalysesListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/code-scanning/analyses?tool_name=generated&tool_guid=&ref=generated&sarif_id=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/code-scanning/analyses?tool_name=generated&tool_guid=&pr=2&ref=generated&sarif_id=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\CodeScanning\ListRecentAnalysesListing::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
             $data['repo']      = 'generated';
             $data['tool_name'] = 'generated';
             $data['tool_guid'] = null;
+            $data['pr']        = 2;
             $data['ref']       = 'generated';
             $data['sarif_id']  = 'generated';
             $data['page']      = 1;
@@ -155,9 +158,9 @@ final class ListRecentAnalysesListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/code-scanning/analyses?tool_name=generated&tool_guid=&ref=generated&sarif_id=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/code-scanning/analyses?tool_name=generated&tool_guid=&pr=2&ref=generated&sarif_id=generated&page=1&per_page=8&direction=generated&sort=generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->codeScanning()->listRecentAnalysesListing('generated', 'generated', 'generated', null, 'generated', 'generated', 1, 8, 'generated', 'generated');
+        $result = $client->operations()->codeScanning()->listRecentAnalysesListing('generated', 'generated', 'generated', null, 2, 'generated', 'generated', 1, 8, 'generated', 'generated');
         foreach ($result as $item) {
         }
     }

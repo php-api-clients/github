@@ -1218,6 +1218,7 @@ final readonly class WebhookPush
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -1333,7 +1334,7 @@ final readonly class WebhookPush
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         }
     }
 }';
@@ -1657,11 +1658,11 @@ final readonly class WebhookPush
      * pusher: Metaproperties for Git author/committer information.
      * ref: The full git ref that was pushed. Example: `refs/heads/main` or `refs/tags/v3.14.1`.
      * repository: A git repository
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      */
     public function __construct(public string $after, #[MapFrom('base_ref')]
     public string|null $baseRef, public string $before, public array $commits, public string $compare, public bool $created, public bool $deleted, public Schema\EnterpriseWebhooks|null $enterprise, public bool $forced, #[MapFrom('head_commit')]
-    public Schema\WebhookPush\HeadCommit|null $headCommit, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\WebhookPush\Pusher $pusher, public string $ref, public Schema\WebhookPush\Repository $repository, public Schema\SimpleUserWebhooks|null $sender,)
+    public Schema\WebhookPush\HeadCommit|null $headCommit, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\WebhookPush\Pusher $pusher, public string $ref, public Schema\WebhookPush\Repository $repository, public Schema\SimpleUser|null $sender,)
     {
     }
 }

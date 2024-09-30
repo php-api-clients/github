@@ -4071,6 +4071,7 @@ final readonly class WebhookCheckRunRequestedAction
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -4186,7 +4187,7 @@ final readonly class WebhookCheckRunRequestedAction
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         }
     }
 }';
@@ -4971,11 +4972,11 @@ final readonly class WebhookCheckRunRequestedAction
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
      * requestedAction: The action requested by the user.
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      */
     public function __construct(public string $action, #[MapFrom('check_run')]
     public Schema\CheckRunWithSimpleCheckSuite $checkRun, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks $repository, #[MapFrom('requested_action')]
-    public Schema\WebhookCheckRunRequestedAction\RequestedAction|null $requestedAction, public Schema\SimpleUserWebhooks $sender,)
+    public Schema\WebhookCheckRunRequestedAction\RequestedAction|null $requestedAction, public Schema\SimpleUser $sender,)
     {
     }
 }

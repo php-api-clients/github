@@ -248,10 +248,12 @@ final readonly class OrgRulesetConditions
             "description": "Conditions to target repositories by property and refs by name"
         }
     ],
-    "description": "Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties."
+    "description": "Conditions for an organization ruleset.\\nThe branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.\\nThe push rulesets conditions object does not require the `ref_name` property."
 }';
     public const SCHEMA_TITLE        = 'Organization ruleset conditions';
-    public const SCHEMA_DESCRIPTION  = 'Conditions for an organization ruleset. The conditions object should contain both `repository_name` and `ref_name` properties or both `repository_id` and `ref_name` properties.';
+    public const SCHEMA_DESCRIPTION  = 'Conditions for an organization ruleset.
+The branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.
+The push rulesets conditions object does not require the `ref_name` property.';
     public const SCHEMA_EXAMPLE_DATA = '[]';
 
     public function __construct()

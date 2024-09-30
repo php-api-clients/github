@@ -36,6 +36,8 @@ final class ListAlertsForRepoListing
     private string|null $toolGuid;
     /**The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`. **/
     private string $ref;
+    /**The number of the pull request for the results you want to list. **/
+    private int $pr;
     /**If specified, only code scanning alerts with this state will be returned. **/
     private string $state;
     /**If specified, only code scanning alerts with this severity will be returned. **/
@@ -49,13 +51,14 @@ final class ListAlertsForRepoListing
     /**The property by which to sort the results. **/
     private string $sort;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Alerts $hydrator, string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, string $state, string $severity, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Alerts $hydrator, string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, int $pr, string $state, string $severity, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
     {
         $this->owner     = $owner;
         $this->repo      = $repo;
         $this->toolName  = $toolName;
         $this->toolGuid  = $toolGuid;
         $this->ref       = $ref;
+        $this->pr        = $pr;
         $this->state     = $state;
         $this->severity  = $severity;
         $this->page      = $page;
@@ -66,7 +69,7 @@ final class ListAlertsForRepoListing
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{ref}', '{state}', '{severity}', '{page}', '{per_page}', '{direction}', '{sort}'], [$this->owner, $this->repo, $this->toolName, $this->toolGuid, $this->ref, $this->state, $this->severity, $this->page, $this->perPage, $this->direction, $this->sort], '/repos/{owner}/{repo}/code-scanning/alerts' . '?tool_name={tool_name}&tool_guid={tool_guid}&ref={ref}&state={state}&severity={severity}&page={page}&per_page={per_page}&direction={direction}&sort={sort}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{ref}', '{pr}', '{state}', '{severity}', '{page}', '{per_page}', '{direction}', '{sort}'], [$this->owner, $this->repo, $this->toolName, $this->toolGuid, $this->ref, $this->pr, $this->state, $this->severity, $this->page, $this->perPage, $this->direction, $this->sort], '/repos/{owner}/{repo}/code-scanning/alerts' . '?tool_name={tool_name}&tool_guid={tool_guid}&ref={ref}&pr={pr}&state={state}&severity={severity}&page={page}&per_page={per_page}&direction={direction}&sort={sort}'));
     }
 
     /** @return Observable<Schema\CodeScanningAlertItems>|WithoutBody */

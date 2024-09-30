@@ -1933,6 +1933,7 @@ final readonly class WebhookDeploymentReviewApproved
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -2048,7 +2049,7 @@ final readonly class WebhookDeploymentReviewApproved
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         },
         "since": {
             "type": "string"
@@ -3724,9 +3725,9 @@ final readonly class WebhookDeploymentReviewApproved
     organization, or when the event occurs from activity in a repository owned by an organization.
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      */
-    public function __construct(public string $action, public Schema\WebhooksApprover|null $approver, public string|null $comment, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks $organization, public Schema\RepositoryWebhooks $repository, public array|null $reviewers, public Schema\SimpleUserWebhooks $sender, public string $since, #[MapFrom('workflow_job_run')]
+    public function __construct(public string $action, public Schema\WebhooksApprover|null $approver, public string|null $comment, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks $organization, public Schema\RepositoryWebhooks $repository, public array|null $reviewers, public Schema\SimpleUser $sender, public string $since, #[MapFrom('workflow_job_run')]
     public Schema\WebhooksWorkflowJobRun|null $workflowJobRun, #[MapFrom('workflow_job_runs')]
     public array|null $workflowJobRuns, #[MapFrom('workflow_run')]
     public Schema\WebhookDeploymentReviewApproved\WorkflowRun|null $workflowRun,)

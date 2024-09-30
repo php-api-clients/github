@@ -770,6 +770,7 @@ final readonly class WebhookProjectsV2ProjectReopened
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -885,7 +886,7 @@ final readonly class WebhookProjectsV2ProjectReopened
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         }
     }
 }';
@@ -1025,10 +1026,10 @@ final readonly class WebhookProjectsV2ProjectReopened
      * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
     organization, or when the event occurs from activity in a repository owned by an organization.
      * projectsVTwo: A projects v2 project
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      */
     public function __construct(public string $action, public Schema\SimpleInstallation|null $installation, public Schema\OrganizationSimpleWebhooks $organization, #[MapFrom('projects_v2')]
-    public Schema\ProjectsV2 $projectsVTwo, public Schema\SimpleUserWebhooks $sender,)
+    public Schema\ProjectsV2 $projectsVTwo, public Schema\SimpleUser $sender,)
     {
     }
 }

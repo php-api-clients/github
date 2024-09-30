@@ -1803,6 +1803,7 @@ final readonly class WebhookMergeGroupDestroyed
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -1918,7 +1919,7 @@ final readonly class WebhookMergeGroupDestroyed
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         }
     }
 }';
@@ -2278,10 +2279,10 @@ final readonly class WebhookMergeGroupDestroyed
     organization, or when the event occurs from activity in a repository owned by an organization.
      * repository: The repository on GitHub where the event occurred. Webhook payloads contain the `repository` property
     when the event occurs from activity in a repository.
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      */
     public function __construct(public string $action, public string|null $reason, public Schema\SimpleInstallation|null $installation, #[MapFrom('merge_group')]
-    public Schema\MergeGroup $mergeGroup, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUserWebhooks|null $sender,)
+    public Schema\MergeGroup $mergeGroup, public Schema\OrganizationSimpleWebhooks|null $organization, public Schema\RepositoryWebhooks|null $repository, public Schema\SimpleUser|null $sender,)
     {
     }
 }

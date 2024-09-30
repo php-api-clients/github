@@ -7,7 +7,7 @@ namespace ApiClients\Client\GitHub\Internal\Hydrator\WebHook;
 use ApiClients\Client\GitHub\Schema\EnterpriseWebhooks;
 use ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks;
 use ApiClients\Client\GitHub\Schema\SimpleInstallation;
-use ApiClients\Client\GitHub\Schema\SimpleUserWebhooks;
+use ApiClients\Client\GitHub\Schema\SimpleUser;
 use ApiClients\Client\GitHub\Schema\WebhookCustomPropertyCreated;
 use ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted;
 use ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted\Definition;
@@ -52,7 +52,7 @@ class CustomProperty implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\EnterpriseWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($payload),
-                'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($payload),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyDeleted($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted\Definition' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyDeleted⚡️Definition($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyUpdated' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyUpdated($payload),
@@ -166,7 +166,7 @@ class CustomProperty implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -618,7 +618,7 @@ class CustomProperty implements ObjectMapper
         }
     }
 
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks(array $payload): SimpleUserWebhooks
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(array $payload): SimpleUser
     {
         $properties    = [];
         $missingFields = [];
@@ -854,17 +854,17 @@ class CustomProperty implements ObjectMapper
 
             after_starredAt:
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUserWebhooks', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
 
         if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(SimpleUserWebhooks::class, $missingFields, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToMissingFields(SimpleUser::class, $missingFields, stack: $this->hydrationStack);
         }
 
         try {
-            return new SimpleUserWebhooks(...$properties);
+            return new SimpleUser(...$properties);
         } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUserWebhooks', $exception, stack: $this->hydrationStack);
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -974,7 +974,7 @@ class CustomProperty implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1134,7 +1134,7 @@ class CustomProperty implements ObjectMapper
             if (is_array($value)) {
                 try {
                     $this->hydrationStack[] = 'sender';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($value);
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
                 } finally {
                     array_pop($this->hydrationStack);
                 }
@@ -1194,7 +1194,7 @@ class CustomProperty implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\EnterpriseWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\SimpleInstallation' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($object),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($object),
-                'ApiClients\Client\GitHub\Schema\SimpleUserWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($object),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyDeleted($object),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted\Definition' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyDeleted⚡️Definition($object),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyUpdated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyUpdated($object),
@@ -1305,7 +1305,7 @@ class CustomProperty implements ObjectMapper
             goto after_sender;
         }
 
-        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
+        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         return $result;
@@ -1508,9 +1508,9 @@ class CustomProperty implements ObjectMapper
         return $result;
     }
 
-    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks(mixed $object): mixed
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
     {
-        assert($object instanceof SimpleUserWebhooks);
+        assert($object instanceof SimpleUser);
         $result = [];
 
         $name = $object->name;
@@ -1644,7 +1644,7 @@ class CustomProperty implements ObjectMapper
             goto after_sender;
         }
 
-        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
+        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         return $result;
@@ -1706,7 +1706,7 @@ class CustomProperty implements ObjectMapper
             goto after_sender;
         }
 
-        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUserWebhooks($sender);
+        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
         after_sender:        $result['sender'] = $sender;
 
         return $result;

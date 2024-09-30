@@ -33,24 +33,27 @@ final class ListAlertInstances
     private int $alertNumber;
     /**The Git reference for the results you want to list. The `ref` for a branch can be formatted either as `refs/heads/<branch name>` or simply `<branch name>`. To reference a pull request use `refs/pull/<number>/merge`. **/
     private string $ref;
+    /**The number of the pull request for the results you want to list. **/
+    private int $pr;
     /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Alerts\AlertNumber\Instances $hydrator, string $owner, string $repo, int $alertNumber, string $ref, int $page = 1, int $perPage = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Alerts\AlertNumber\Instances $hydrator, string $owner, string $repo, int $alertNumber, string $ref, int $pr, int $page = 1, int $perPage = 30)
     {
         $this->owner       = $owner;
         $this->repo        = $repo;
         $this->alertNumber = $alertNumber;
         $this->ref         = $ref;
+        $this->pr          = $pr;
         $this->page        = $page;
         $this->perPage     = $perPage;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{owner}', '{repo}', '{alert_number}', '{ref}', '{page}', '{per_page}'], [$this->owner, $this->repo, $this->alertNumber, $this->ref, $this->page, $this->perPage], '/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances' . '?ref={ref}&page={page}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{alert_number}', '{ref}', '{pr}', '{page}', '{per_page}'], [$this->owner, $this->repo, $this->alertNumber, $this->ref, $this->pr, $this->page, $this->perPage], '/repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances' . '?ref={ref}&pr={pr}&page={page}&per_page={per_page}'));
     }
 
     /** @return Observable<Schema\CodeScanningAlertInstance> */

@@ -148,11 +148,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /assignments/{assignment_id}/accepted_assignments') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ClassroomAcceptedAssignment>');
+            return $this->typeResolver->resolve('Observable<Schema\\ClassroomAcceptedAssignment>');
         }
 
         if ($call === 'LIST /assignments/{assignment_id}/accepted_assignments') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ClassroomAcceptedAssignment>');
+            return $this->typeResolver->resolve('Observable<Schema\\ClassroomAcceptedAssignment>');
         }
 
         if ($call === 'GET /assignments/{assignment_id}/grades') {
@@ -2204,11 +2204,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAlertItems>|WithoutBody');
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAlertItems>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/code-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAlertItems>|WithoutBody');
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAlertItems>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}') {
@@ -2220,19 +2220,19 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances') {
-            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAlertInstance>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAlertInstance>');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances') {
-            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAlertInstance>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAlertInstance>');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/analyses') {
-            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAnalysis>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAnalysis>');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/code-scanning/analyses') {
-            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAnalysis>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAnalysis>');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}') {

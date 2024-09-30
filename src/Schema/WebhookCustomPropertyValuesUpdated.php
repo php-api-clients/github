@@ -1761,6 +1761,7 @@ final readonly class WebhookCustomPropertyValuesUpdated
                 },
                 "id": {
                     "type": "integer",
+                    "format": "int64",
                     "examples": [
                         1
                     ]
@@ -1876,7 +1877,7 @@ final readonly class WebhookCustomPropertyValuesUpdated
                     ]
                 }
             },
-            "description": "The GitHub user that triggered the event. This property is included in every webhook payload."
+            "description": "A GitHub user."
         },
         "new_property_values": {
             "type": "array",
@@ -2324,11 +2325,11 @@ final readonly class WebhookCustomPropertyValuesUpdated
     when the event occurs from activity in a repository.
      * organization: A GitHub organization. Webhook payloads contain the `organization` property when the webhook is configured for an
     organization, or when the event occurs from activity in a repository owned by an organization.
-     * sender: The GitHub user that triggered the event. This property is included in every webhook payload.
+     * sender: A GitHub user.
      * newPropertyValues: The new custom property values for the repository.
      * oldPropertyValues: The old custom property values for the repository.
      */
-    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\RepositoryWebhooks $repository, public Schema\OrganizationSimpleWebhooks $organization, public Schema\SimpleUserWebhooks|null $sender, #[MapFrom('new_property_values')]
+    public function __construct(public string $action, public Schema\EnterpriseWebhooks|null $enterprise, public Schema\SimpleInstallation|null $installation, public Schema\RepositoryWebhooks $repository, public Schema\OrganizationSimpleWebhooks $organization, public Schema\SimpleUser|null $sender, #[MapFrom('new_property_values')]
     public array $newPropertyValues, #[MapFrom('old_property_values')]
     public array $oldPropertyValues,)
     {

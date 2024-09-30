@@ -24,10 +24,10 @@ final readonly class ListAlertInstances
     {
     }
 
-    /** @return Observable<Schema\CodeScanningAlertInstance> */
-    public function call(string $owner, string $repo, int $alertNumber, string $ref, int $page = 1, int $perPage = 30): iterable
+    /** @return iterable<int,Schema\CodeScanningAlertInstance> */
+    public function call(string $owner, string $repo, int $alertNumber, string $ref, int $pr, int $page = 1, int $perPage = 30): iterable
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\ListAlertInstances($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $alertNumber, $ref, $page, $perPage);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\ListAlertInstances($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $alertNumber, $ref, $pr, $page, $perPage);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);

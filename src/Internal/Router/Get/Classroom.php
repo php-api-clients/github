@@ -71,7 +71,7 @@ final class Classroom
         return $operator->call($arguments['classroom_id']);
     }
 
-    /** @return iterable<int,Schema\ClassroomAcceptedAssignment> */
+    /** @return Observable<Schema\ClassroomAcceptedAssignment> */
     public function listAcceptedAssignmentsForAnAssignment(array $params): iterable
     {
         $arguments = [];
