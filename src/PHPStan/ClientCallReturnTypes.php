@@ -2204,11 +2204,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAlertItems>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAlertItems>|WithoutBody');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/code-scanning/alerts') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAlertItems>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAlertItems>|WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}') {
@@ -2220,19 +2220,19 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAlertInstance>');
+            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAlertInstance>');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAlertInstance>');
+            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAlertInstance>');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/analyses') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAnalysis>');
+            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAnalysis>');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/code-scanning/analyses') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAnalysis>');
+            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAnalysis>');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/analyses/{analysis_id}') {

@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Orgs\Org\Members\Username;
 
-use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\Assignee;
 use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\AssigningTeam;
-use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\Organization;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\CopilotSeatDetails;
 use ApiClients\Client\GitHub\Schema\OrganizationSimple;
@@ -48,9 +46,9 @@ class Copilot implements ObjectMapper
     {
         return match ($className) {
             'ApiClients\Client\GitHub\Schema\CopilotSeatDetails' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CopilotSeatDetails($payload),
-                'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($payload),
+                'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
     }
@@ -64,19 +62,6 @@ class Copilot implements ObjectMapper
 
             if ($value === null) {
                 $missingFields[] = 'assignee';
-                goto after_assignee;
-            }
-
-            static $assigneeCaster1;
-
-            if ($assigneeCaster1 === null) {
-                $assigneeCaster1 = new Assignee(...[]);
-            }
-
-            $value = $assigneeCaster1->cast($value, $this);
-
-            if ($value === null) {
-                                $missingFields[] = 'assignee';
                 goto after_assignee;
             }
 
@@ -97,19 +82,6 @@ class Copilot implements ObjectMapper
 
             if ($value === null) {
                 $properties['organization'] = null;
-                goto after_organization;
-            }
-
-            static $organizationCaster1;
-
-            if ($organizationCaster1 === null) {
-                $organizationCaster1 = new Organization(...[]);
-            }
-
-            $value = $organizationCaster1->cast($value, $this);
-
-            if ($value === null) {
-                                $properties['organization'] = null;
                 goto after_organization;
             }
 
@@ -216,69 +188,6 @@ class Copilot implements ObjectMapper
             return new CopilotSeatDetails(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CopilotSeatDetails', $exception, stack: $this->hydrationStack);
-        }
-    }
-
-    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): BasicError
-    {
-        $properties    = [];
-        $missingFields = [];
-        try {
-            $value = $payload['message'] ?? null;
-
-            if ($value === null) {
-                $properties['message'] = null;
-                goto after_message;
-            }
-
-            $properties['message'] = $value;
-
-            after_message:
-
-            $value = $payload['documentation_url'] ?? null;
-
-            if ($value === null) {
-                $properties['documentationUrl'] = null;
-                goto after_documentationUrl;
-            }
-
-            $properties['documentationUrl'] = $value;
-
-            after_documentationUrl:
-
-            $value = $payload['url'] ?? null;
-
-            if ($value === null) {
-                $properties['url'] = null;
-                goto after_url;
-            }
-
-            $properties['url'] = $value;
-
-            after_url:
-
-            $value = $payload['status'] ?? null;
-
-            if ($value === null) {
-                $properties['status'] = null;
-                goto after_status;
-            }
-
-            $properties['status'] = $value;
-
-            after_status:
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
-        }
-
-        if (count($missingFields) > 0) {
-            throw UnableToHydrateObject::dueToMissingFields(BasicError::class, $missingFields, stack: $this->hydrationStack);
-        }
-
-        try {
-            return new BasicError(...$properties);
-        } catch (Throwable $exception) {
-            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -683,6 +592,69 @@ class Copilot implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError(array $payload): BasicError
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['message'] ?? null;
+
+            if ($value === null) {
+                $properties['message'] = null;
+                goto after_message;
+            }
+
+            $properties['message'] = $value;
+
+            after_message:
+
+            $value = $payload['documentation_url'] ?? null;
+
+            if ($value === null) {
+                $properties['documentationUrl'] = null;
+                goto after_documentationUrl;
+            }
+
+            $properties['documentationUrl'] = $value;
+
+            after_documentationUrl:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $properties['status'] = null;
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(BasicError::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new BasicError(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\BasicError', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function serializeViaTypeMap(string $accessor, object $object, array $payloadToTypeMap): array
     {
         foreach ($payloadToTypeMap as $payloadType => [$valueType, $method]) {
@@ -715,6 +687,8 @@ class Copilot implements ObjectMapper
                 'DateTimeImmutable' => $this->serializeValueDateTimeImmutable($object),
                 'DateTimeInterface' => $this->serializeValueDateTimeInterface($object),
                 'ApiClients\Client\GitHub\Schema\CopilotSeatDetails' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CopilotSeatDetails($object),
+                'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
+                'ApiClients\Client\GitHub\Schema\OrganizationSimple' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple($object),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new LogicException("No serialization defined for $className"),
             };
@@ -842,6 +816,146 @@ class Copilot implements ObjectMapper
         }
 
         after_updatedAt:        $result['updated_at'] = $updatedAt;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser(mixed $object): mixed
+    {
+        assert($object instanceof SimpleUser);
+        $result = [];
+
+        $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
+
+        after_name:        $result['name'] = $name;
+
+        $email = $object->email;
+
+        if ($email === null) {
+            goto after_email;
+        }
+
+        after_email:        $result['email'] = $email;
+
+        $login                               = $object->login;
+        after_login:        $result['login'] = $login;
+
+        $id                            = $object->id;
+        after_id:        $result['id'] = $id;
+
+        $nodeId                                 = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
+
+        $avatarUrl                                    = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
+
+        $gravatarId = $object->gravatarId;
+
+        if ($gravatarId === null) {
+            goto after_gravatarId;
+        }
+
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
+
+        $url                             = $object->url;
+        after_url:        $result['url'] = $url;
+
+        $htmlUrl                                  = $object->htmlUrl;
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
+
+        $followersUrl                                       = $object->followersUrl;
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
+
+        $followingUrl                                       = $object->followingUrl;
+        after_followingUrl:        $result['following_url'] = $followingUrl;
+
+        $gistsUrl                                   = $object->gistsUrl;
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
+
+        $starredUrl                                     = $object->starredUrl;
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
+
+        $subscriptionsUrl                                           = $object->subscriptionsUrl;
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
+
+        $organizationsUrl                                           = $object->organizationsUrl;
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
+
+        $reposUrl                                   = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
+
+        $eventsUrl                                    = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
+
+        $receivedEventsUrl                                             = $object->receivedEventsUrl;
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
+
+        $type                              = $object->type;
+        after_type:        $result['type'] = $type;
+
+        $siteAdmin                                    = $object->siteAdmin;
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
+
+        $starredAt = $object->starredAt;
+
+        if ($starredAt === null) {
+            goto after_starredAt;
+        }
+
+        after_starredAt:        $result['starred_at'] = $starredAt;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimple(mixed $object): mixed
+    {
+        assert($object instanceof OrganizationSimple);
+        $result = [];
+
+        $login                               = $object->login;
+        after_login:        $result['login'] = $login;
+
+        $id                            = $object->id;
+        after_id:        $result['id'] = $id;
+
+        $nodeId                                 = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
+
+        $url                             = $object->url;
+        after_url:        $result['url'] = $url;
+
+        $reposUrl                                   = $object->reposUrl;
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
+
+        $eventsUrl                                    = $object->eventsUrl;
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
+
+        $hooksUrl                                   = $object->hooksUrl;
+        after_hooksUrl:        $result['hooks_url'] = $hooksUrl;
+
+        $issuesUrl                                    = $object->issuesUrl;
+        after_issuesUrl:        $result['issues_url'] = $issuesUrl;
+
+        $membersUrl                                     = $object->membersUrl;
+        after_membersUrl:        $result['members_url'] = $membersUrl;
+
+        $publicMembersUrl                                            = $object->publicMembersUrl;
+        after_publicMembersUrl:        $result['public_members_url'] = $publicMembersUrl;
+
+        $avatarUrl                                    = $object->avatarUrl;
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
+
+        $description = $object->description;
+
+        if ($description === null) {
+            goto after_description;
+        }
+
+        after_description:        $result['description'] = $description;
 
         return $result;
     }

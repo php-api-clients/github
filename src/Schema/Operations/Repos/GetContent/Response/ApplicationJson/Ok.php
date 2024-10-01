@@ -406,7 +406,16 @@ final readonly class Ok
             },
             "description": "An object describing a submodule"
         }
-    ]
+    ],
+    "discriminator": {
+        "propertyName": "type",
+        "mapping": {
+            "array": "#\\/components\\/schemas\\/content-directory",
+            "file": "#\\/components\\/schemas\\/content-file",
+            "symlink": "#\\/components\\/schemas\\/content-symlink",
+            "submodule": "#\\/components\\/schemas\\/content-submodule"
+        }
+    }
 }';
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';

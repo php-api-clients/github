@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema;
 
-use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\Assignee;
 use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\AssigningTeam;
-use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\CopilotSeatDetails\Organization;
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
@@ -21,180 +19,172 @@ final readonly class CopilotSeatDetails
     "type": "object",
     "properties": {
         "assignee": {
-            "type": "object",
-            "oneOf": [
-                {
-                    "title": "Simple User",
-                    "required": [
-                        "avatar_url",
-                        "events_url",
-                        "followers_url",
-                        "following_url",
-                        "gists_url",
-                        "gravatar_id",
-                        "html_url",
-                        "id",
-                        "node_id",
-                        "login",
-                        "organizations_url",
-                        "received_events_url",
-                        "repos_url",
-                        "site_admin",
-                        "starred_url",
-                        "subscriptions_url",
-                        "type",
-                        "url"
-                    ],
-                    "type": "object",
-                    "properties": {
-                        "name": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "email": {
-                            "type": [
-                                "string",
-                                "null"
-                            ]
-                        },
-                        "login": {
-                            "type": "string",
-                            "examples": [
-                                "octocat"
-                            ]
-                        },
-                        "id": {
-                            "type": "integer",
-                            "format": "int64",
-                            "examples": [
-                                1
-                            ]
-                        },
-                        "node_id": {
-                            "type": "string",
-                            "examples": [
-                                "MDQ6VXNlcjE="
-                            ]
-                        },
-                        "avatar_url": {
-                            "type": "string",
-                            "format": "uri",
-                            "examples": [
-                                "https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif"
-                            ]
-                        },
-                        "gravatar_id": {
-                            "type": [
-                                "string",
-                                "null"
-                            ],
-                            "examples": [
-                                "41d064eb2195891e12d0413f63227ea7"
-                            ]
-                        },
-                        "url": {
-                            "type": "string",
-                            "format": "uri",
-                            "examples": [
-                                "https:\\/\\/api.github.com\\/users\\/octocat"
-                            ]
-                        },
-                        "html_url": {
-                            "type": "string",
-                            "format": "uri",
-                            "examples": [
-                                "https:\\/\\/github.com\\/octocat"
-                            ]
-                        },
-                        "followers_url": {
-                            "type": "string",
-                            "format": "uri",
-                            "examples": [
-                                "https:\\/\\/api.github.com\\/users\\/octocat\\/followers"
-                            ]
-                        },
-                        "following_url": {
-                            "type": "string",
-                            "examples": [
-                                "https:\\/\\/api.github.com\\/users\\/octocat\\/following{\\/other_user}"
-                            ]
-                        },
-                        "gists_url": {
-                            "type": "string",
-                            "examples": [
-                                "https:\\/\\/api.github.com\\/users\\/octocat\\/gists{\\/gist_id}"
-                            ]
-                        },
-                        "starred_url": {
-                            "type": "string",
-                            "examples": [
-                                "https:\\/\\/api.github.com\\/users\\/octocat\\/starred{\\/owner}{\\/repo}"
-                            ]
-                        },
-                        "subscriptions_url": {
-                            "type": "string",
-                            "format": "uri",
-                            "examples": [
-                                "https:\\/\\/api.github.com\\/users\\/octocat\\/subscriptions"
-                            ]
-                        },
-                        "organizations_url": {
-                            "type": "string",
-                            "format": "uri",
-                            "examples": [
-                                "https:\\/\\/api.github.com\\/users\\/octocat\\/orgs"
-                            ]
-                        },
-                        "repos_url": {
-                            "type": "string",
-                            "format": "uri",
-                            "examples": [
-                                "https:\\/\\/api.github.com\\/users\\/octocat\\/repos"
-                            ]
-                        },
-                        "events_url": {
-                            "type": "string",
-                            "examples": [
-                                "https:\\/\\/api.github.com\\/users\\/octocat\\/events{\\/privacy}"
-                            ]
-                        },
-                        "received_events_url": {
-                            "type": "string",
-                            "format": "uri",
-                            "examples": [
-                                "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events"
-                            ]
-                        },
-                        "type": {
-                            "type": "string",
-                            "examples": [
-                                "User"
-                            ]
-                        },
-                        "site_admin": {
-                            "type": "boolean"
-                        },
-                        "starred_at": {
-                            "type": "string",
-                            "examples": [
-                                "\\"2020-07-09T00:17:55Z\\""
-                            ]
-                        }
-                    },
-                    "description": "A GitHub user."
-                }
+            "title": "Simple User",
+            "required": [
+                "avatar_url",
+                "events_url",
+                "followers_url",
+                "following_url",
+                "gists_url",
+                "gravatar_id",
+                "html_url",
+                "id",
+                "node_id",
+                "login",
+                "organizations_url",
+                "received_events_url",
+                "repos_url",
+                "site_admin",
+                "starred_url",
+                "subscriptions_url",
+                "type",
+                "url"
             ],
-            "description": "The assignee that has been granted access to GitHub Copilot.",
-            "additionalProperties": true
+            "type": "object",
+            "properties": {
+                "name": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "email": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
+                },
+                "login": {
+                    "type": "string",
+                    "examples": [
+                        "octocat"
+                    ]
+                },
+                "id": {
+                    "type": "integer",
+                    "format": "int64",
+                    "examples": [
+                        1
+                    ]
+                },
+                "node_id": {
+                    "type": "string",
+                    "examples": [
+                        "MDQ6VXNlcjE="
+                    ]
+                },
+                "avatar_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": [
+                        "https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif"
+                    ]
+                },
+                "gravatar_id": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "examples": [
+                        "41d064eb2195891e12d0413f63227ea7"
+                    ]
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": [
+                        "https:\\/\\/api.github.com\\/users\\/octocat"
+                    ]
+                },
+                "html_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": [
+                        "https:\\/\\/github.com\\/octocat"
+                    ]
+                },
+                "followers_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": [
+                        "https:\\/\\/api.github.com\\/users\\/octocat\\/followers"
+                    ]
+                },
+                "following_url": {
+                    "type": "string",
+                    "examples": [
+                        "https:\\/\\/api.github.com\\/users\\/octocat\\/following{\\/other_user}"
+                    ]
+                },
+                "gists_url": {
+                    "type": "string",
+                    "examples": [
+                        "https:\\/\\/api.github.com\\/users\\/octocat\\/gists{\\/gist_id}"
+                    ]
+                },
+                "starred_url": {
+                    "type": "string",
+                    "examples": [
+                        "https:\\/\\/api.github.com\\/users\\/octocat\\/starred{\\/owner}{\\/repo}"
+                    ]
+                },
+                "subscriptions_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": [
+                        "https:\\/\\/api.github.com\\/users\\/octocat\\/subscriptions"
+                    ]
+                },
+                "organizations_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": [
+                        "https:\\/\\/api.github.com\\/users\\/octocat\\/orgs"
+                    ]
+                },
+                "repos_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": [
+                        "https:\\/\\/api.github.com\\/users\\/octocat\\/repos"
+                    ]
+                },
+                "events_url": {
+                    "type": "string",
+                    "examples": [
+                        "https:\\/\\/api.github.com\\/users\\/octocat\\/events{\\/privacy}"
+                    ]
+                },
+                "received_events_url": {
+                    "type": "string",
+                    "format": "uri",
+                    "examples": [
+                        "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events"
+                    ]
+                },
+                "type": {
+                    "type": "string",
+                    "examples": [
+                        "User"
+                    ]
+                },
+                "site_admin": {
+                    "type": "boolean"
+                },
+                "starred_at": {
+                    "type": "string",
+                    "examples": [
+                        "\\"2020-07-09T00:17:55Z\\""
+                    ]
+                }
+            },
+            "description": "A GitHub user."
         },
         "organization": {
-            "type": [
-                "object",
-                "null"
-            ],
-            "oneOf": [
+            "anyOf": [
+                {
+                    "type": "null"
+                },
                 {
                     "title": "Organization Simple",
                     "required": [
@@ -294,8 +284,7 @@ final readonly class CopilotSeatDetails
                     },
                     "description": "A GitHub organization."
                 }
-            ],
-            "description": "The organization to which this seat belongs."
+            ]
         },
         "assigning_team": {
             "type": [
@@ -621,8 +610,43 @@ final readonly class CopilotSeatDetails
     public const SCHEMA_TITLE        = 'Copilot Business Seat Detail';
     public const SCHEMA_DESCRIPTION  = 'Information about a Copilot Business seat assignment for a user, team, or organization.';
     public const SCHEMA_EXAMPLE_DATA = '{
-    "assignee": null,
-    "organization": null,
+    "assignee": {
+        "name": "generated",
+        "email": "generated",
+        "login": "octocat",
+        "id": 1,
+        "node_id": "MDQ6VXNlcjE=",
+        "avatar_url": "https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif",
+        "gravatar_id": "41d064eb2195891e12d0413f63227ea7",
+        "url": "https:\\/\\/api.github.com\\/users\\/octocat",
+        "html_url": "https:\\/\\/github.com\\/octocat",
+        "followers_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/followers",
+        "following_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/following{\\/other_user}",
+        "gists_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/gists{\\/gist_id}",
+        "starred_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/starred{\\/owner}{\\/repo}",
+        "subscriptions_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/subscriptions",
+        "organizations_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/orgs",
+        "repos_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/repos",
+        "events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/events{\\/privacy}",
+        "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
+        "type": "User",
+        "site_admin": false,
+        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+    },
+    "organization": {
+        "login": "github",
+        "id": 1,
+        "node_id": "MDEyOk9yZ2FuaXphdGlvbjE=",
+        "url": "https:\\/\\/api.github.com\\/orgs\\/github",
+        "repos_url": "https:\\/\\/api.github.com\\/orgs\\/github\\/repos",
+        "events_url": "https:\\/\\/api.github.com\\/orgs\\/github\\/events",
+        "hooks_url": "https:\\/\\/api.github.com\\/orgs\\/github\\/hooks",
+        "issues_url": "https:\\/\\/api.github.com\\/orgs\\/github\\/issues",
+        "members_url": "https:\\/\\/api.github.com\\/orgs\\/github\\/members{\\/member}",
+        "public_members_url": "https:\\/\\/api.github.com\\/orgs\\/github\\/public_members{\\/member}",
+        "avatar_url": "https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif",
+        "description": "A great organization"
+    },
     "assigning_team": null,
     "pending_cancellation_date": "generated",
     "last_activity_at": "1970-01-01T00:00:00+00:00",
@@ -632,8 +656,7 @@ final readonly class CopilotSeatDetails
 }';
 
     /**
-     * assignee: The assignee that has been granted access to GitHub Copilot.
-     * organization: The organization to which this seat belongs.
+     * assignee: A GitHub user.
      * assigningTeam: The team through which the assignee is granted access to GitHub Copilot, if applicable.
      * pendingCancellationDate: The pending cancellation date for the seat, in `YYYY-MM-DD` format. This will be null unless the assignee's Copilot access has been canceled during the current billing cycle. If the seat has been cancelled, this corresponds to the start of the organization's next billing cycle.
      * lastActivityAt: Timestamp of user's last GitHub Copilot activity, in ISO 8601 format.
@@ -641,9 +664,7 @@ final readonly class CopilotSeatDetails
      * createdAt: Timestamp of when the assignee was last granted access to GitHub Copilot, in ISO 8601 format.
      * updatedAt: Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
      */
-    public function __construct(#[Assignee]
-    public Schema\SimpleUser $assignee, #[Organization]
-    public Schema\OrganizationSimple|null $organization, #[MapFrom('assigning_team')]
+    public function __construct(public Schema\SimpleUser $assignee, public Schema\OrganizationSimple|null $organization, #[MapFrom('assigning_team')]
     #[AssigningTeam]
     public Schema\Team|Schema\EnterpriseTeam|null $assigningTeam, #[MapFrom('pending_cancellation_date')]
     public string|null $pendingCancellationDate, #[MapFrom('last_activity_at')]
