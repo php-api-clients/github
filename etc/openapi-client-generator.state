@@ -1,5 +1,5 @@
 {
-    "specHash": "846e79a967c97fff1f751d713e16fc13",
+    "specHash": "e288c500d4a08bc38358e1b96cec2090",
     "generatedFiles": {
         "files": [
             {
@@ -5588,7 +5588,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/CodeScanning.php",
-                "hash": "895c90a8f6c68e8a7a75869125ef85ba"
+                "hash": "2c7c15d8ddde2bd3c6faa18ee78ce4ae"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Codespaces.php",
