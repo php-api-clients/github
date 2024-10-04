@@ -1,5 +1,5 @@
 {
-    "specHash": "e288c500d4a08bc38358e1b96cec2090",
+    "specHash": "24f4c3ebacf1ca5821698e28d77d32d1",
     "generatedFiles": {
         "files": [
             {
@@ -5576,7 +5576,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Orgs.php",
-                "hash": "5779931bdcabc12f26dbc4d46b041ffe"
+                "hash": "a471065365c30c5de2e67c9b59762318"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Actions.php",
@@ -24452,7 +24452,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Orgs.php",
-                "hash": "7aa1e49892497be27649dd82f16073ed"
+                "hash": "7625cb2f748a25f73eb436379d487943"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/RateLimit.php",
@@ -24812,7 +24812,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Orgs.php",
-                "hash": "fc2e156a854552a3e4ab12a89471a39c"
+                "hash": "f75d53cf3c1a759efc2dcff811581dfb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Teams.php",
@@ -24872,7 +24872,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Orgs.php",
-                "hash": "f216337da6ea505b2938bd94df3bda5c"
+                "hash": "b7064f19fd6b2132fea4c2076dc726d0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Codespaces.php",
@@ -24956,7 +24956,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
-                "hash": "b2a28a4c2a159a5554c4694f89317cfd"
+                "hash": "343c2b760b84ced96a51118cca0661bb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Seven.php",
@@ -25096,7 +25096,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Six.php",
-                "hash": "ca355d92539b542ef91be76d2fb5450d"
+                "hash": "08ccaed3cd1c6bf14a3562ee889d0655"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Eight.php",
@@ -25128,7 +25128,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Six.php",
-                "hash": "9f3dc75023548d3071b5b9a37ecfcf6b"
+                "hash": "005f520b7747dbc03aca2290b99d7037"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Eight.php",
@@ -27524,11 +27524,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Orgs\/GetCustomProperty.php",
-                "hash": "895732084941c7c8b5b4fdd8f03c29f4"
+                "hash": "2d561c7c6975555ef051cebc7b650bbc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/GetCustomProperty.php",
-                "hash": "6043440685746e826184b7017c073581"
+                "hash": "8dc202d2f5dfc5935acd69ac1bbdb0dd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/GetCustomPropertyTest.php",
@@ -27536,11 +27536,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Orgs\/CreateOrUpdateCustomProperty.php",
-                "hash": "1a8ee9ce06c5ceb5d78a40cf65760cc3"
+                "hash": "583dccbefcca7c09176c13b3e5b9ac4c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/CreateOrUpdateCustomProperty.php",
-                "hash": "0014f81ebf2c18215cdff0f91368e995"
+                "hash": "e503ca6aa384e7f5366d52af6a340c75"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/CreateOrUpdateCustomPropertyTest.php",
@@ -27548,11 +27548,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Orgs\/RemoveCustomProperty.php",
-                "hash": "453007b4a549e3d906ee3a0845d430d1"
+                "hash": "fc27c2a1ad7684bffcda1c6a3f4be693"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/RemoveCustomProperty.php",
-                "hash": "8c1f0450066b826bd733d51dc3270205"
+                "hash": "b6f73478344e10109c8163f03d3ed6c5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/RemoveCustomPropertyTest.php",
@@ -27736,11 +27736,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "b279bfe420072ca3881b316b41cde25a"
+                "hash": "e10489bd6c2a67db47e1033c7dbcc6f4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "a3cd037b10acacb7fbfa8165f0c08dac"
+                "hash": "61d8619e191abe5c0c8fd6bf572ad7cc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",

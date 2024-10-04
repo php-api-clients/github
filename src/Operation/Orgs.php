@@ -432,19 +432,16 @@ final class Orgs
         return $this->operators->orgs👷CreateOrUpdateCustomProperties()->call($org, $params);
     }
 
-    /** @return */
     public function getCustomProperty(string $org, string $customPropertyName): CustomProperty
     {
         return $this->operators->orgs👷GetCustomProperty()->call($org, $customPropertyName);
     }
 
-    /** @return */
     public function createOrUpdateCustomProperty(string $org, string $customPropertyName, array $params): CustomProperty
     {
         return $this->operators->orgs👷CreateOrUpdateCustomProperty()->call($org, $customPropertyName, $params);
     }
 
-    /** @return */
     public function removeCustomProperty(string $org, string $customPropertyName): WithoutBody
     {
         return $this->operators->orgs👷RemoveCustomProperty()->call($org, $customPropertyName);

@@ -18,6 +18,7 @@ final class Six
     {
     }
 
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|Ok|Json|ActionsCacheList|FileCommit
     {
         if ($pathChunks[0] === '') {

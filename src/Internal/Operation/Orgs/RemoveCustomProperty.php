@@ -25,7 +25,7 @@ final class RemoveCustomProperty
     public const OPERATION_MATCH = 'DELETE /orgs/{org}/properties/schema/{custom_property_name}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
-    /**The custom property name. The name is case sensitive. **/
+    /**The custom property name **/
     private string $customPropertyName;
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Properties\Schema\CustomPropertyName $hydrator, string $org, string $customPropertyName)

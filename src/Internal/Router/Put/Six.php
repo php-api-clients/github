@@ -20,6 +20,7 @@ final class Six
     {
     }
 
+    /** @return |Schema\CustomProperty */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|EmptyObject|CustomProperty|RepositoryInvitation|FileCommit|Environment|RepositoryRuleset
     {
         if ($pathChunks[0] === '') {

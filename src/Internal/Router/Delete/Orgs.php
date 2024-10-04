@@ -278,7 +278,6 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
-    /** @return */
     public function removeCustomProperty(array $params): WithoutBody
     {
         $arguments = [];
