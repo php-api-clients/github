@@ -95,6 +95,15 @@ final readonly class CopilotOrganizationDetails
             ],
             "type": "string",
             "description": "The mode of assigning new seats."
+        },
+        "plan_type": {
+            "enum": [
+                "business",
+                "enterprise",
+                "unknown"
+            ],
+            "type": "string",
+            "description": "The Copilot plan of the organization, or the parent enterprise, when applicable."
         }
     },
     "description": "Information about the seat breakdown and policies set for an organization with a Copilot Business or Copilot Enterprise subscription.",
@@ -115,7 +124,8 @@ final readonly class CopilotOrganizationDetails
     "ide_chat": "unconfigured",
     "platform_chat": "enabled",
     "cli": "enabled",
-    "seat_management_setting": "assign_all"
+    "seat_management_setting": "assign_all",
+    "plan_type": "business"
 }';
 
     /**
@@ -125,13 +135,15 @@ final readonly class CopilotOrganizationDetails
      * platformChat: The organization policy for allowing or disallowing organization members to use Copilot features within github.com.
      * cli: The organization policy for allowing or disallowing organization members to use Copilot within their CLI.
      * seatManagementSetting: The mode of assigning new seats.
+     * planType: The Copilot plan of the organization, or the parent enterprise, when applicable.
      */
     public function __construct(#[MapFrom('seat_breakdown')]
     public Schema\CopilotSeatBreakdown $seatBreakdown, #[MapFrom('public_code_suggestions')]
     public string $publicCodeSuggestions, #[MapFrom('ide_chat')]
     public string|null $ideChat, #[MapFrom('platform_chat')]
     public string|null $platformChat, public string|null $cli, #[MapFrom('seat_management_setting')]
-    public string $seatManagementSetting,)
+    public string $seatManagementSetting, #[MapFrom('plan_type')]
+    public string|null $planType,)
     {
     }
 }

@@ -128,6 +128,17 @@ class Billing implements ObjectMapper
             $properties['seatManagementSetting'] = $value;
 
             after_seatManagementSetting:
+
+            $value = $payload['plan_type'] ?? null;
+
+            if ($value === null) {
+                $properties['planType'] = null;
+                goto after_planType;
+            }
+
+            $properties['planType'] = $value;
+
+            after_planType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CopilotOrganizationDetails', $exception, stack: $this->hydrationStack);
         }
@@ -425,6 +436,14 @@ class Billing implements ObjectMapper
 
         $seatManagementSetting                                                 = $object->seatManagementSetting;
         after_seatManagementSetting:        $result['seat_management_setting'] = $seatManagementSetting;
+
+        $planType = $object->planType;
+
+        if ($planType === null) {
+            goto after_planType;
+        }
+
+        after_planType:        $result['plan_type'] = $planType;
 
         return $result;
     }

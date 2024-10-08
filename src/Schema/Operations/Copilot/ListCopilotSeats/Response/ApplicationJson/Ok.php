@@ -609,6 +609,15 @@ final readonly class Ok
                         "type": "string",
                         "description": "Timestamp of when the assignee\'s GitHub Copilot access was last updated, in ISO 8601 format.",
                         "format": "date-time"
+                    },
+                    "plan_type": {
+                        "enum": [
+                            "business",
+                            "enterprise",
+                            "unknown"
+                        ],
+                        "type": "string",
+                        "description": "The Copilot plan of the organization, or the parent enterprise, when applicable."
                     }
                 },
                 "description": "Information about a Copilot Business seat assignment for a user, team, or organization.",
@@ -665,7 +674,8 @@ final readonly class Ok
             "last_activity_at": "1970-01-01T00:00:00+00:00",
             "last_activity_editor": "generated",
             "created_at": "1970-01-01T00:00:00+00:00",
-            "updated_at": "1970-01-01T00:00:00+00:00"
+            "updated_at": "1970-01-01T00:00:00+00:00",
+            "plan_type": "business"
         },
         {
             "assignee": {
@@ -710,7 +720,8 @@ final readonly class Ok
             "last_activity_at": "1970-01-01T00:00:00+00:00",
             "last_activity_editor": "generated",
             "created_at": "1970-01-01T00:00:00+00:00",
-            "updated_at": "1970-01-01T00:00:00+00:00"
+            "updated_at": "1970-01-01T00:00:00+00:00",
+            "plan_type": "business"
         }
     ]
 }';

@@ -24,6 +24,7 @@ final readonly class RemoveCustomProperty
     {
     }
 
+    /** @return */
     public function call(string $org, string $customPropertyName): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\RemoveCustomProperty($this->responseSchemaValidator, $this->hydrator, $org, $customPropertyName);

@@ -176,6 +176,17 @@ class Copilot implements ObjectMapper
             $properties['updatedAt'] = $value;
 
             after_updatedAt:
+
+            $value = $payload['plan_type'] ?? null;
+
+            if ($value === null) {
+                $properties['planType'] = null;
+                goto after_planType;
+            }
+
+            $properties['planType'] = $value;
+
+            after_planType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CopilotSeatDetails', $exception, stack: $this->hydrationStack);
         }
@@ -816,6 +827,14 @@ class Copilot implements ObjectMapper
         }
 
         after_updatedAt:        $result['updated_at'] = $updatedAt;
+
+        $planType = $object->planType;
+
+        if ($planType === null) {
+            goto after_planType;
+        }
+
+        after_planType:        $result['plan_type'] = $planType;
 
         return $result;
     }

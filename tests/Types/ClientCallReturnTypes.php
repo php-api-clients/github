@@ -314,9 +314,9 @@ assertType('Observable<Schema\\Project>', $client->call('LIST /orgs/{org}/projec
 assertType('', $client->call('POST /orgs/{org}/projects'));
 assertType('Observable<Schema\\CustomProperty>', $client->call('GET /orgs/{org}/properties/schema'));
 assertType('Observable<Schema\\CustomProperty>', $client->call('PATCH /orgs/{org}/properties/schema'));
-assertType('Schema\\CustomProperty', $client->call('GET /orgs/{org}/properties/schema/{custom_property_name}'));
-assertType('Schema\\CustomProperty', $client->call('PUT /orgs/{org}/properties/schema/{custom_property_name}'));
-assertType('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('DELETE /orgs/{org}/properties/schema/{custom_property_name}'));
+assertType('', $client->call('GET /orgs/{org}/properties/schema/{custom_property_name}'));
+assertType('', $client->call('PUT /orgs/{org}/properties/schema/{custom_property_name}'));
+assertType('', $client->call('DELETE /orgs/{org}/properties/schema/{custom_property_name}'));
 assertType('Observable<Schema\\OrgRepoCustomPropertyValues>', $client->call('GET /orgs/{org}/properties/values'));
 assertType('Observable<Schema\\OrgRepoCustomPropertyValues>', $client->call('LIST /orgs/{org}/properties/values'));
 assertType('', $client->call('PATCH /orgs/{org}/properties/values'));

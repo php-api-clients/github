@@ -1232,15 +1232,15 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/properties/schema/{custom_property_name}') {
-            return $this->typeResolver->resolve('Schema\\CustomProperty');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PUT /orgs/{org}/properties/schema/{custom_property_name}') {
-            return $this->typeResolver->resolve('Schema\\CustomProperty');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/properties/schema/{custom_property_name}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/properties/values') {

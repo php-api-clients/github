@@ -1,5 +1,5 @@
 {
-    "specHash": "24f4c3ebacf1ca5821698e28d77d32d1",
+    "specHash": "c6249831ad99957f8d160f21b8d426dd",
     "generatedFiles": {
         "files": [
             {
@@ -5576,7 +5576,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Orgs.php",
-                "hash": "a471065365c30c5de2e67c9b59762318"
+                "hash": "969f2d59467f854edc18a940b109cab4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Actions.php",
@@ -11668,15 +11668,15 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotOrganizationDetails.php",
-                "hash": "c7942b67efff87e3886a31a79eb0df76"
+                "hash": "2050773bcb76af8cf988458a3bfd22a1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotSeatDetails.php",
-                "hash": "71f4354ce2e2195c0502b1c58685d270"
+                "hash": "a8ecbaf9a8ebe5dae05d80caf63adb7a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Copilot\/ListCopilotSeats\/Response\/ApplicationJson\/Ok.php",
-                "hash": "1c08d3802ed3f5f09d489c90519b80ed"
+                "hash": "e44a3e6b789fe93c25429d29881b391a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietF5944C0A\/TietAA99D7D8\/Tiet9AE1F544\/TietA28F869C.php",
@@ -24452,7 +24452,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Orgs.php",
-                "hash": "7625cb2f748a25f73eb436379d487943"
+                "hash": "7aa1e49892497be27649dd82f16073ed"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/RateLimit.php",
@@ -24812,7 +24812,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Orgs.php",
-                "hash": "f75d53cf3c1a759efc2dcff811581dfb"
+                "hash": "fc2e156a854552a3e4ab12a89471a39c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Teams.php",
@@ -24872,7 +24872,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Orgs.php",
-                "hash": "b7064f19fd6b2132fea4c2076dc726d0"
+                "hash": "f216337da6ea505b2938bd94df3bda5c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Codespaces.php",
@@ -24956,7 +24956,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
-                "hash": "343c2b760b84ced96a51118cca0661bb"
+                "hash": "b2a28a4c2a159a5554c4694f89317cfd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Seven.php",
@@ -25096,7 +25096,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Six.php",
-                "hash": "08ccaed3cd1c6bf14a3562ee889d0655"
+                "hash": "ca355d92539b542ef91be76d2fb5450d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Eight.php",
@@ -25128,7 +25128,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Six.php",
-                "hash": "005f520b7747dbc03aca2290b99d7037"
+                "hash": "9f3dc75023548d3071b5b9a37ecfcf6b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Put\/Eight.php",
@@ -25484,7 +25484,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Copilot\/Billing.php",
-                "hash": "2ee6e77d51da0181357404f7a6366cfd"
+                "hash": "ba0ebdf9ed5de7f8bbfe345861748d2c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Copilot\/Billing\/Seats.php",
@@ -25604,7 +25604,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Members\/Username\/Copilot.php",
-                "hash": "79a20fd637d2fecbf00f10bd42cb3147"
+                "hash": "c06f25e050a7238628e4d0f336795349"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Memberships\/Username.php",
@@ -27528,7 +27528,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/GetCustomProperty.php",
-                "hash": "8dc202d2f5dfc5935acd69ac1bbdb0dd"
+                "hash": "6043440685746e826184b7017c073581"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/GetCustomPropertyTest.php",
@@ -27540,7 +27540,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/CreateOrUpdateCustomProperty.php",
-                "hash": "e503ca6aa384e7f5366d52af6a340c75"
+                "hash": "0014f81ebf2c18215cdff0f91368e995"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/CreateOrUpdateCustomPropertyTest.php",
@@ -27552,7 +27552,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Orgs\/RemoveCustomProperty.php",
-                "hash": "b6f73478344e10109c8163f03d3ed6c5"
+                "hash": "8c1f0450066b826bd733d51dc3270205"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Orgs\/RemoveCustomPropertyTest.php",
@@ -27736,11 +27736,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "e10489bd6c2a67db47e1033c7dbcc6f4"
+                "hash": "b279bfe420072ca3881b316b41cde25a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "61d8619e191abe5c0c8fd6bf572ad7cc"
+                "hash": "a3cd037b10acacb7fbfa8165f0c08dac"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -29576,7 +29576,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Copilot\/ListCopilotSeatsForEnterprise\/Response\/ApplicationJson\/Ok.php",
-                "hash": "9186b42a601359e27cb165753f1d9100"
+                "hash": "cb30e7a32b89dfe82a76b606ff934eb5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Enterprises\/Enterprise\/Copilot\/Billing\/Seats.php",
