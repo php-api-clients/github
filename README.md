@@ -7334,6 +7334,7 @@ Using the `call` method:
 ```php
 $client->call('GET /orgs/{org}/rulesets', [
         'org' => 'generated',
+        'targets' => 'generated',
         'per_page' => 8,
         'page' => 1,
 ]);
@@ -7342,6 +7343,7 @@ $client->call('GET /orgs/{org}/rulesets', [
 Operations method:
 ```php
 $client->operations()->repos()->getOrgRulesets(        org: 'generated',
+        targets: 'generated',
         per_page: 8,
         page: 1,
 );
@@ -7358,6 +7360,7 @@ Using the `call` method:
 ```php
 $client->call('LIST /orgs/{org}/rulesets', [
         'org' => 'generated',
+        'targets' => 'generated',
         'per_page' => 8,
         'page' => 1,
 ]);
@@ -7366,6 +7369,7 @@ $client->call('LIST /orgs/{org}/rulesets', [
 Operations method:
 ```php
 $client->operations()->repos()->getOrgRulesetsListing(        org: 'generated',
+        targets: 'generated',
         per_page: 8,
         page: 1,
 );
@@ -21034,6 +21038,7 @@ Using the `call` method:
 $client->call('GET /repos/{owner}/{repo}/rulesets', [
         'owner' => 'generated',
         'repo' => 'generated',
+        'targets' => 'generated',
         'per_page' => 8,
         'page' => 1,
         'includes_parents' => ,
@@ -21044,6 +21049,7 @@ Operations method:
 ```php
 $client->operations()->repos()->getRepoRulesets(        owner: 'generated',
         repo: 'generated',
+        targets: 'generated',
         per_page: 8,
         page: 1,
         includes_parents: ,
@@ -21062,6 +21068,7 @@ Using the `call` method:
 $client->call('LIST /repos/{owner}/{repo}/rulesets', [
         'owner' => 'generated',
         'repo' => 'generated',
+        'targets' => 'generated',
         'per_page' => 8,
         'page' => 1,
         'includes_parents' => ,
@@ -21072,6 +21079,7 @@ Operations method:
 ```php
 $client->operations()->repos()->getRepoRulesetsListing(        owner: 'generated',
         repo: 'generated',
+        targets: 'generated',
         per_page: 8,
         page: 1,
         includes_parents: ,

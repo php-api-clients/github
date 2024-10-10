@@ -242,15 +242,6 @@ final readonly class OrganizationFull
                 10000
             ]
         },
-        "collaborators": {
-            "type": [
-                "integer",
-                "null"
-            ],
-            "examples": [
-                8
-            ]
-        },
         "billing_email": {
             "type": [
                 "string",
@@ -487,7 +478,6 @@ final readonly class OrganizationFull
     "owned_private_repos": 100,
     "private_gists": 81,
     "disk_usage": 10000,
-    "collaborators": 8,
     "billing_email": "org@example.com",
     "plan": {
         "name": "generated",
@@ -574,7 +564,7 @@ final readonly class OrganizationFull
     public int|null $totalPrivateRepos, #[MapFrom('owned_private_repos')]
     public int|null $ownedPrivateRepos, #[MapFrom('private_gists')]
     public int|null $privateGists, #[MapFrom('disk_usage')]
-    public int|null $diskUsage, public int|null $collaborators, #[MapFrom('billing_email')]
+    public int|null $diskUsage, #[MapFrom('billing_email')]
     public string|null $billingEmail, public Schema\OrganizationFull\Plan|null $plan, #[MapFrom('default_repository_permission')]
     public string|null $defaultRepositoryPermission, #[MapFrom('members_can_create_repositories')]
     public bool|null $membersCanCreateRepositories, #[MapFrom('two_factor_requirement_enabled')]

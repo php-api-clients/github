@@ -89,16 +89,16 @@ final class Repos
         return $this->operators->repos👷CreateInOrg()->call($org, $params);
     }
 
-    /** @return Observable<Schema\RepositoryRuleset> */
-    public function getOrgRulesets(string $org, int $perPage, int $page): iterable
+    /** @return iterable<int,Schema\RepositoryRuleset> */
+    public function getOrgRulesets(string $org, string $targets, int $perPage, int $page): iterable
     {
-        return $this->operators->repos👷GetOrgRulesets()->call($org, $perPage, $page);
+        return $this->operators->repos👷GetOrgRulesets()->call($org, $targets, $perPage, $page);
     }
 
-    /** @return Observable<Schema\RepositoryRuleset> */
-    public function getOrgRulesetsListing(string $org, int $perPage, int $page): iterable
+    /** @return iterable<int,Schema\RepositoryRuleset> */
+    public function getOrgRulesetsListing(string $org, string $targets, int $perPage, int $page): iterable
     {
-        return $this->operators->repos👷GetOrgRulesetsListing()->call($org, $perPage, $page);
+        return $this->operators->repos👷GetOrgRulesetsListing()->call($org, $targets, $perPage, $page);
     }
 
     /** @return */
@@ -1163,16 +1163,16 @@ final class Repos
         return $this->operators->repos👷GetBranchRulesListing()->call($owner, $repo, $branch, $perPage, $page);
     }
 
-    /** @return Observable<Schema\RepositoryRuleset> */
-    public function getRepoRulesets(string $owner, string $repo, int $perPage, int $page, bool $includesParents): iterable
+    /** @return iterable<int,Schema\RepositoryRuleset> */
+    public function getRepoRulesets(string $owner, string $repo, string $targets, int $perPage, int $page, bool $includesParents): iterable
     {
-        return $this->operators->repos👷GetRepoRulesets()->call($owner, $repo, $perPage, $page, $includesParents);
+        return $this->operators->repos👷GetRepoRulesets()->call($owner, $repo, $targets, $perPage, $page, $includesParents);
     }
 
-    /** @return Observable<Schema\RepositoryRuleset> */
-    public function getRepoRulesetsListing(string $owner, string $repo, int $perPage, int $page, bool $includesParents): iterable
+    /** @return iterable<int,Schema\RepositoryRuleset> */
+    public function getRepoRulesetsListing(string $owner, string $repo, string $targets, int $perPage, int $page, bool $includesParents): iterable
     {
-        return $this->operators->repos👷GetRepoRulesetsListing()->call($owner, $repo, $perPage, $page, $includesParents);
+        return $this->operators->repos👷GetRepoRulesetsListing()->call($owner, $repo, $targets, $perPage, $page, $includesParents);
     }
 
     /** @return */

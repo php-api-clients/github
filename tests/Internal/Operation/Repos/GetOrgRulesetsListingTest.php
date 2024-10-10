@@ -31,10 +31,11 @@ final class GetOrgRulesetsListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/rulesets?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/rulesets?targets=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Repos\GetOrgRulesetsListing::OPERATION_MATCH, (static function (array $data): array {
             $data['org']      = 'generated';
+            $data['targets']  = 'generated';
             $data['per_page'] = 8;
             $data['page']     = 1;
 
@@ -54,9 +55,9 @@ final class GetOrgRulesetsListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/rulesets?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/rulesets?targets=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->getOrgRulesetsListing('generated', 8, 1);
+        $result = $client->operations()->repos()->getOrgRulesetsListing('generated', 'generated', 8, 1);
         foreach ($result as $item) {
         }
     }
@@ -71,10 +72,11 @@ final class GetOrgRulesetsListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/rulesets?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/rulesets?targets=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Repos\GetOrgRulesetsListing::OPERATION_MATCH, (static function (array $data): array {
             $data['org']      = 'generated';
+            $data['targets']  = 'generated';
             $data['per_page'] = 8;
             $data['page']     = 1;
 
@@ -94,9 +96,9 @@ final class GetOrgRulesetsListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/rulesets?per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/rulesets?targets=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->repos()->getOrgRulesetsListing('generated', 8, 1);
+        $result = $client->operations()->repos()->getOrgRulesetsListing('generated', 'generated', 8, 1);
         foreach ($result as $item) {
         }
     }

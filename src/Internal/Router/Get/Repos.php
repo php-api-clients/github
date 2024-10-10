@@ -210,7 +210,7 @@ final class Repos
         return $operator->call($arguments['org'], $arguments['direction'], $arguments['type'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\RepositoryRuleset> */
+    /** @return iterable<int,Schema\RepositoryRuleset> */
     public function getOrgRulesets(array $params): iterable
     {
         $arguments = [];
@@ -220,6 +220,12 @@ final class Repos
 
         $arguments['org'] = $params['org'];
         unset($params['org']);
+        if (array_key_exists('targets', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: targets');
+        }
+
+        $arguments['targets'] = $params['targets'];
+        unset($params['targets']);
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
         }
@@ -234,7 +240,7 @@ final class Repos
         unset($params['page']);
         $operator = new Internal\Operator\Repos\GetOrgRulesets($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets());
 
-        return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
+        return $operator->call($arguments['org'], $arguments['targets'], $arguments['per_page'], $arguments['page']);
     }
 
     /** @return */
@@ -1068,7 +1074,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\RepositoryRuleset> */
+    /** @return iterable<int,Schema\RepositoryRuleset> */
     public function getRepoRulesets(array $params): iterable
     {
         $arguments = [];
@@ -1084,6 +1090,12 @@ final class Repos
 
         $arguments['repo'] = $params['repo'];
         unset($params['repo']);
+        if (array_key_exists('targets', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: targets');
+        }
+
+        $arguments['targets'] = $params['targets'];
+        unset($params['targets']);
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
         }
@@ -1104,7 +1116,7 @@ final class Repos
         unset($params['includes_parents']);
         $operator = new Internal\Operator\Repos\GetRepoRulesets($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets());
 
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page'], $arguments['includes_parents']);
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['targets'], $arguments['per_page'], $arguments['page'], $arguments['includes_parents']);
     }
 
     /** @return Observable<Schema\Tag> */

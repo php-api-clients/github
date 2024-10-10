@@ -1,5 +1,5 @@
 {
-    "specHash": "c6249831ad99957f8d160f21b8d426dd",
+    "specHash": "f0ef821141c0585bc8759f53f482f086",
     "generatedFiles": {
         "files": [
             {
@@ -288,7 +288,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrganizationFull.php",
-                "hash": "3a018ac7ea2387bbc8405cb2b90dfd3f"
+                "hash": "407d381923a1ad0d6ed16069bc371c77"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ActionsCacheUsageOrgEnterprise.php",
@@ -5576,7 +5576,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Orgs.php",
-                "hash": "969f2d59467f854edc18a940b109cab4"
+                "hash": "5779931bdcabc12f26dbc4d46b041ffe"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Actions.php",
@@ -5612,7 +5612,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "af3d3a3094434c46deb56bfd146053fc"
+                "hash": "051cd6393628919848d5bab73f4446bb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -15116,27 +15116,27 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Repos\/GetOrgRulesets.php",
-                "hash": "f186bcef71e86804eca024d292b3f811"
+                "hash": "8a06356935685c3befad838f68cf6849"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/GetOrgRulesets.php",
-                "hash": "26eea37b783100bfda2c29351adc1cb6"
+                "hash": "c1b9491afbbfeb0c1780da092ed219dd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/GetOrgRulesetsTest.php",
-                "hash": "0900e8f755084825ae335e59da5c1017"
+                "hash": "1fae6216bc3e0072feba73cf1a75431e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Repos\/GetOrgRulesetsListing.php",
-                "hash": "67f8d50e1626a28e8db866bfdc095513"
+                "hash": "afb9dd110759316873c1e25291edfd0f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/GetOrgRulesetsListing.php",
-                "hash": "f6664c53f15770ed2bbab743c4bafdb5"
+                "hash": "48dbf3810af9d5cfda666701a04716a4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/GetOrgRulesetsListingTest.php",
-                "hash": "3e3696aafc3fe4dcf9243303476b31ce"
+                "hash": "4c4546290cd5fa5d6d41f9d6af966889"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Repos\/CreateOrgRuleset.php",
@@ -21012,27 +21012,27 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Repos\/GetRepoRulesets.php",
-                "hash": "248c27baa5290c79dd31cf4e3b2879a9"
+                "hash": "b0791c7385174babd0fd9c9294c2ead3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/GetRepoRulesets.php",
-                "hash": "3714305a7f4eb1977ac508836a2c734a"
+                "hash": "63f54855c1abc54938d3e76f0022b157"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/GetRepoRulesetsTest.php",
-                "hash": "e8a1b6d538839ad4447ee0aa5e423f96"
+                "hash": "6a1625f17e937caa40926301788c0161"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Repos\/GetRepoRulesetsListing.php",
-                "hash": "084e7d414e7f4cde5b5dd3bafe2fe1df"
+                "hash": "a18f754a9185a5a17c89dde8a620a89d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/GetRepoRulesetsListing.php",
-                "hash": "615441c1ad2844708d22ed1267360cf9"
+                "hash": "1c0658faa66ba7e8e843ccd03c453b03"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/GetRepoRulesetsListingTest.php",
-                "hash": "01ecefa538da9b0f5a71064fe9001a19"
+                "hash": "3a8838ca28a9c779716466668566efa8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Repos\/CreateRepoRuleset.php",
@@ -24460,7 +24460,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Repos.php",
-                "hash": "15b6c3b26b0222befe543a77d1d425dc"
+                "hash": "f6fc5c47a25e0c7aa3830069f5c6b15b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Users.php",
@@ -24736,7 +24736,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Repos.php",
-                "hash": "58feacbb3f5aceff6543f0db3e7d382f"
+                "hash": "8ac3762840b7518082ff0791571013ac"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Activity.php",
@@ -24948,11 +24948,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Four.php",
-                "hash": "f248e13197b434832a0cbb6e3c9f1df4"
+                "hash": "47b25cd3d28cc3944541a5100a44428b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Five.php",
-                "hash": "0846a936eb0a3e31a24ddb21a9bf9124"
+                "hash": "75ae89c5b320acc265942e34810063d8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
@@ -25052,11 +25052,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Four.php",
-                "hash": "0bd1bbcad8e6f0a66a2ee13388a836ac"
+                "hash": "d884362f660768c44ec3cb877273ea4f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Five.php",
-                "hash": "847f3fb360c2b185cfe50d6fb2ad225b"
+                "hash": "089c23b82d3036be6791c77247892fa4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Six.php",
@@ -25356,7 +25356,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org.php",
-                "hash": "961e57d26030b87464ac3a800d853129"
+                "hash": "7669d3f60474dfb61465e812ecc0d630"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Actions\/Cache\/Usage.php",
@@ -27736,11 +27736,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "b279bfe420072ca3881b316b41cde25a"
+                "hash": "f5c81d72072dc36f546288473c6cef6a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "a3cd037b10acacb7fbfa8165f0c08dac"
+                "hash": "09d3f81ea6b7302920dbb397f2c52bd5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",

@@ -1288,11 +1288,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/rulesets') {
-            return $this->typeResolver->resolve('Observable<Schema\\RepositoryRuleset>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\RepositoryRuleset>');
         }
 
         if ($call === 'LIST /orgs/{org}/rulesets') {
-            return $this->typeResolver->resolve('Observable<Schema\\RepositoryRuleset>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\RepositoryRuleset>');
         }
 
         if ($call === 'POST /orgs/{org}/rulesets') {
@@ -3440,11 +3440,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/rulesets') {
-            return $this->typeResolver->resolve('Observable<Schema\\RepositoryRuleset>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\RepositoryRuleset>');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/rulesets') {
-            return $this->typeResolver->resolve('Observable<Schema\\RepositoryRuleset>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\RepositoryRuleset>');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/rulesets') {

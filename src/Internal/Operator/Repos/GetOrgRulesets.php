@@ -24,10 +24,10 @@ final readonly class GetOrgRulesets
     {
     }
 
-    /** @return Observable<Schema\RepositoryRuleset> */
-    public function call(string $org, int $perPage = 30, int $page = 1): iterable
+    /** @return iterable<int,Schema\RepositoryRuleset> */
+    public function call(string $org, string $targets, int $perPage = 30, int $page = 1): iterable
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetOrgRulesets($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetOrgRulesets($this->responseSchemaValidator, $this->hydrator, $org, $targets, $perPage, $page);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);

@@ -395,17 +395,6 @@ class Org implements ObjectMapper
 
             after_diskUsage:
 
-            $value = $payload['collaborators'] ?? null;
-
-            if ($value === null) {
-                $properties['collaborators'] = null;
-                goto after_collaborators;
-            }
-
-            $properties['collaborators'] = $value;
-
-            after_collaborators:
-
             $value = $payload['billing_email'] ?? null;
 
             if ($value === null) {
@@ -1094,14 +1083,6 @@ class Org implements ObjectMapper
         }
 
         after_diskUsage:        $result['disk_usage'] = $diskUsage;
-
-        $collaborators = $object->collaborators;
-
-        if ($collaborators === null) {
-            goto after_collaborators;
-        }
-
-        after_collaborators:        $result['collaborators'] = $collaborators;
 
         $billingEmail = $object->billingEmail;
 

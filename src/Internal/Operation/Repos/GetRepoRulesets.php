@@ -29,6 +29,11 @@ final class GetRepoRulesets
     private string $owner;
     /**The name of the repository without the `.git` extension. The name is not case sensitive. **/
     private string $repo;
+    /**A comma-separated list of rule targets to filter by.
+    If provided, only rulesets that apply to the specified targets will be returned.
+    For example, `branch,tag,push`.
+     **/
+    private string $targets;
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
     /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
@@ -36,10 +41,11 @@ final class GetRepoRulesets
     /**Include rulesets configured at higher levels that apply to this repository **/
     private bool $includesParents;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Rulesets $hydrator, string $owner, string $repo, int $perPage = 30, int $page = 1, bool $includesParents = true)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Rulesets $hydrator, string $owner, string $repo, string $targets, int $perPage = 30, int $page = 1, bool $includesParents = true)
     {
         $this->owner           = $owner;
         $this->repo            = $repo;
+        $this->targets         = $targets;
         $this->perPage         = $perPage;
         $this->page            = $page;
         $this->includesParents = $includesParents;
@@ -47,7 +53,7 @@ final class GetRepoRulesets
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{owner}', '{repo}', '{per_page}', '{page}', '{includes_parents}'], [$this->owner, $this->repo, $this->perPage, $this->page, $this->includesParents], '/repos/{owner}/{repo}/rulesets' . '?per_page={per_page}&page={page}&includes_parents={includes_parents}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{targets}', '{per_page}', '{page}', '{includes_parents}'], [$this->owner, $this->repo, $this->targets, $this->perPage, $this->page, $this->includesParents], '/repos/{owner}/{repo}/rulesets' . '?targets={targets}&per_page={per_page}&page={page}&includes_parents={includes_parents}'));
     }
 
     /** @return Observable<Schema\RepositoryRuleset> */
