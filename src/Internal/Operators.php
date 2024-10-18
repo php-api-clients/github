@@ -135,6 +135,19 @@ final class Operators
     private Internal\Operator\Actions\SetAllowedActionsOrganization|null $actions👷SetAllowedActionsOrganization                                                                     = null;
     private Internal\Operator\Actions\GetGithubActionsDefaultWorkflowPermissionsOrganization|null $actions👷GetGithubActionsDefaultWorkflowPermissionsOrganization                   = null;
     private Internal\Operator\Actions\SetGithubActionsDefaultWorkflowPermissionsOrganization|null $actions👷SetGithubActionsDefaultWorkflowPermissionsOrganization                   = null;
+    private Internal\Operator\Actions\ListSelfHostedRunnerGroupsForOrg|null $actions👷ListSelfHostedRunnerGroupsForOrg                                                               = null;
+    private Internal\Operator\Actions\CreateSelfHostedRunnerGroupForOrg|null $actions👷CreateSelfHostedRunnerGroupForOrg                                                             = null;
+    private Internal\Operator\Actions\GetSelfHostedRunnerGroupForOrg|null $actions👷GetSelfHostedRunnerGroupForOrg                                                                   = null;
+    private Internal\Operator\Actions\DeleteSelfHostedRunnerGroupFromOrg|null $actions👷DeleteSelfHostedRunnerGroupFromOrg                                                           = null;
+    private Internal\Operator\Actions\UpdateSelfHostedRunnerGroupForOrg|null $actions👷UpdateSelfHostedRunnerGroupForOrg                                                             = null;
+    private Internal\Operator\Actions\ListRepoAccessToSelfHostedRunnerGroupInOrg|null $actions👷ListRepoAccessToSelfHostedRunnerGroupInOrg                                           = null;
+    private Internal\Operator\Actions\SetRepoAccessToSelfHostedRunnerGroupInOrg|null $actions👷SetRepoAccessToSelfHostedRunnerGroupInOrg                                             = null;
+    private Internal\Operator\Actions\AddRepoAccessToSelfHostedRunnerGroupInOrg|null $actions👷AddRepoAccessToSelfHostedRunnerGroupInOrg                                             = null;
+    private Internal\Operator\Actions\RemoveRepoAccessToSelfHostedRunnerGroupInOrg|null $actions👷RemoveRepoAccessToSelfHostedRunnerGroupInOrg                                       = null;
+    private Internal\Operator\Actions\ListSelfHostedRunnersInGroupForOrg|null $actions👷ListSelfHostedRunnersInGroupForOrg                                                           = null;
+    private Internal\Operator\Actions\SetSelfHostedRunnersInGroupForOrg|null $actions👷SetSelfHostedRunnersInGroupForOrg                                                             = null;
+    private Internal\Operator\Actions\AddSelfHostedRunnerToGroupForOrg|null $actions👷AddSelfHostedRunnerToGroupForOrg                                                               = null;
+    private Internal\Operator\Actions\RemoveSelfHostedRunnerFromGroupForOrg|null $actions👷RemoveSelfHostedRunnerFromGroupForOrg                                                     = null;
     private Internal\Operator\Actions\ListSelfHostedRunnersForOrg|null $actions👷ListSelfHostedRunnersForOrg                                                                         = null;
     private Internal\Operator\Actions\ListRunnerApplicationsForOrg|null $actions👷ListRunnerApplicationsForOrg                                                                       = null;
     private Internal\Operator\Actions\GenerateRunnerJitconfigForOrg|null $actions👷GenerateRunnerJitconfigForOrg                                                                     = null;
@@ -2258,6 +2271,123 @@ final class Operators
         }
 
         return $this->actions👷SetGithubActionsDefaultWorkflowPermissionsOrganization;
+    }
+
+    public function actions👷ListSelfHostedRunnerGroupsForOrg(): Internal\Operator\Actions\ListSelfHostedRunnerGroupsForOrg
+    {
+        if ($this->actions👷ListSelfHostedRunnerGroupsForOrg instanceof Internal\Operator\Actions\ListSelfHostedRunnerGroupsForOrg === false) {
+            $this->actions👷ListSelfHostedRunnerGroupsForOrg = new Internal\Operator\Actions\ListSelfHostedRunnerGroupsForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups());
+        }
+
+        return $this->actions👷ListSelfHostedRunnerGroupsForOrg;
+    }
+
+    public function actions👷CreateSelfHostedRunnerGroupForOrg(): Internal\Operator\Actions\CreateSelfHostedRunnerGroupForOrg
+    {
+        if ($this->actions👷CreateSelfHostedRunnerGroupForOrg instanceof Internal\Operator\Actions\CreateSelfHostedRunnerGroupForOrg === false) {
+            $this->actions👷CreateSelfHostedRunnerGroupForOrg = new Internal\Operator\Actions\CreateSelfHostedRunnerGroupForOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups());
+        }
+
+        return $this->actions👷CreateSelfHostedRunnerGroupForOrg;
+    }
+
+    public function actions👷GetSelfHostedRunnerGroupForOrg(): Internal\Operator\Actions\GetSelfHostedRunnerGroupForOrg
+    {
+        if ($this->actions👷GetSelfHostedRunnerGroupForOrg instanceof Internal\Operator\Actions\GetSelfHostedRunnerGroupForOrg === false) {
+            $this->actions👷GetSelfHostedRunnerGroupForOrg = new Internal\Operator\Actions\GetSelfHostedRunnerGroupForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId());
+        }
+
+        return $this->actions👷GetSelfHostedRunnerGroupForOrg;
+    }
+
+    public function actions👷DeleteSelfHostedRunnerGroupFromOrg(): Internal\Operator\Actions\DeleteSelfHostedRunnerGroupFromOrg
+    {
+        if ($this->actions👷DeleteSelfHostedRunnerGroupFromOrg instanceof Internal\Operator\Actions\DeleteSelfHostedRunnerGroupFromOrg === false) {
+            $this->actions👷DeleteSelfHostedRunnerGroupFromOrg = new Internal\Operator\Actions\DeleteSelfHostedRunnerGroupFromOrg($this->browser, $this->authentication);
+        }
+
+        return $this->actions👷DeleteSelfHostedRunnerGroupFromOrg;
+    }
+
+    public function actions👷UpdateSelfHostedRunnerGroupForOrg(): Internal\Operator\Actions\UpdateSelfHostedRunnerGroupForOrg
+    {
+        if ($this->actions👷UpdateSelfHostedRunnerGroupForOrg instanceof Internal\Operator\Actions\UpdateSelfHostedRunnerGroupForOrg === false) {
+            $this->actions👷UpdateSelfHostedRunnerGroupForOrg = new Internal\Operator\Actions\UpdateSelfHostedRunnerGroupForOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId());
+        }
+
+        return $this->actions👷UpdateSelfHostedRunnerGroupForOrg;
+    }
+
+    public function actions👷ListRepoAccessToSelfHostedRunnerGroupInOrg(): Internal\Operator\Actions\ListRepoAccessToSelfHostedRunnerGroupInOrg
+    {
+        if ($this->actions👷ListRepoAccessToSelfHostedRunnerGroupInOrg instanceof Internal\Operator\Actions\ListRepoAccessToSelfHostedRunnerGroupInOrg === false) {
+            $this->actions👷ListRepoAccessToSelfHostedRunnerGroupInOrg = new Internal\Operator\Actions\ListRepoAccessToSelfHostedRunnerGroupInOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Repositories());
+        }
+
+        return $this->actions👷ListRepoAccessToSelfHostedRunnerGroupInOrg;
+    }
+
+    public function actions👷SetRepoAccessToSelfHostedRunnerGroupInOrg(): Internal\Operator\Actions\SetRepoAccessToSelfHostedRunnerGroupInOrg
+    {
+        if ($this->actions👷SetRepoAccessToSelfHostedRunnerGroupInOrg instanceof Internal\Operator\Actions\SetRepoAccessToSelfHostedRunnerGroupInOrg === false) {
+            $this->actions👷SetRepoAccessToSelfHostedRunnerGroupInOrg = new Internal\Operator\Actions\SetRepoAccessToSelfHostedRunnerGroupInOrg($this->browser, $this->authentication, $this->requestSchemaValidator);
+        }
+
+        return $this->actions👷SetRepoAccessToSelfHostedRunnerGroupInOrg;
+    }
+
+    public function actions👷AddRepoAccessToSelfHostedRunnerGroupInOrg(): Internal\Operator\Actions\AddRepoAccessToSelfHostedRunnerGroupInOrg
+    {
+        if ($this->actions👷AddRepoAccessToSelfHostedRunnerGroupInOrg instanceof Internal\Operator\Actions\AddRepoAccessToSelfHostedRunnerGroupInOrg === false) {
+            $this->actions👷AddRepoAccessToSelfHostedRunnerGroupInOrg = new Internal\Operator\Actions\AddRepoAccessToSelfHostedRunnerGroupInOrg($this->browser, $this->authentication);
+        }
+
+        return $this->actions👷AddRepoAccessToSelfHostedRunnerGroupInOrg;
+    }
+
+    public function actions👷RemoveRepoAccessToSelfHostedRunnerGroupInOrg(): Internal\Operator\Actions\RemoveRepoAccessToSelfHostedRunnerGroupInOrg
+    {
+        if ($this->actions👷RemoveRepoAccessToSelfHostedRunnerGroupInOrg instanceof Internal\Operator\Actions\RemoveRepoAccessToSelfHostedRunnerGroupInOrg === false) {
+            $this->actions👷RemoveRepoAccessToSelfHostedRunnerGroupInOrg = new Internal\Operator\Actions\RemoveRepoAccessToSelfHostedRunnerGroupInOrg($this->browser, $this->authentication);
+        }
+
+        return $this->actions👷RemoveRepoAccessToSelfHostedRunnerGroupInOrg;
+    }
+
+    public function actions👷ListSelfHostedRunnersInGroupForOrg(): Internal\Operator\Actions\ListSelfHostedRunnersInGroupForOrg
+    {
+        if ($this->actions👷ListSelfHostedRunnersInGroupForOrg instanceof Internal\Operator\Actions\ListSelfHostedRunnersInGroupForOrg === false) {
+            $this->actions👷ListSelfHostedRunnersInGroupForOrg = new Internal\Operator\Actions\ListSelfHostedRunnersInGroupForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Runners());
+        }
+
+        return $this->actions👷ListSelfHostedRunnersInGroupForOrg;
+    }
+
+    public function actions👷SetSelfHostedRunnersInGroupForOrg(): Internal\Operator\Actions\SetSelfHostedRunnersInGroupForOrg
+    {
+        if ($this->actions👷SetSelfHostedRunnersInGroupForOrg instanceof Internal\Operator\Actions\SetSelfHostedRunnersInGroupForOrg === false) {
+            $this->actions👷SetSelfHostedRunnersInGroupForOrg = new Internal\Operator\Actions\SetSelfHostedRunnersInGroupForOrg($this->browser, $this->authentication, $this->requestSchemaValidator);
+        }
+
+        return $this->actions👷SetSelfHostedRunnersInGroupForOrg;
+    }
+
+    public function actions👷AddSelfHostedRunnerToGroupForOrg(): Internal\Operator\Actions\AddSelfHostedRunnerToGroupForOrg
+    {
+        if ($this->actions👷AddSelfHostedRunnerToGroupForOrg instanceof Internal\Operator\Actions\AddSelfHostedRunnerToGroupForOrg === false) {
+            $this->actions👷AddSelfHostedRunnerToGroupForOrg = new Internal\Operator\Actions\AddSelfHostedRunnerToGroupForOrg($this->browser, $this->authentication);
+        }
+
+        return $this->actions👷AddSelfHostedRunnerToGroupForOrg;
+    }
+
+    public function actions👷RemoveSelfHostedRunnerFromGroupForOrg(): Internal\Operator\Actions\RemoveSelfHostedRunnerFromGroupForOrg
+    {
+        if ($this->actions👷RemoveSelfHostedRunnerFromGroupForOrg instanceof Internal\Operator\Actions\RemoveSelfHostedRunnerFromGroupForOrg === false) {
+            $this->actions👷RemoveSelfHostedRunnerFromGroupForOrg = new Internal\Operator\Actions\RemoveSelfHostedRunnerFromGroupForOrg($this->browser, $this->authentication);
+        }
+
+        return $this->actions👷RemoveSelfHostedRunnerFromGroupForOrg;
     }
 
     public function actions👷ListSelfHostedRunnersForOrg(): Internal\Operator\Actions\ListSelfHostedRunnersForOrg

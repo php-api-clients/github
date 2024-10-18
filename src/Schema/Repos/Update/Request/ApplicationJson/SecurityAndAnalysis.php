@@ -45,6 +45,16 @@ final readonly class SecurityAndAnalysis
             },
             "description": "Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see \\"[Protecting pushes with secret scanning](\\/code-security\\/secret-scanning\\/protecting-pushes-with-secret-scanning).\\""
         },
+        "secret_scanning_ai_detection": {
+            "type": "object",
+            "properties": {
+                "status": {
+                    "type": "string",
+                    "description": "Can be `enabled` or `disabled`."
+                }
+            },
+            "description": "Use the `status` property to enable or disable secret scanning AI detection for this repository. For more information, see \\"[Responsible detection of generic secrets with AI](https:\\/\\/docs.github.com\\/code-security\\/secret-scanning\\/using-advanced-secret-scanning-and-push-protection-features\\/generic-secret-detection\\/responsible-ai-generic-secrets).\\""
+        },
         "secret_scanning_non_provider_patterns": {
             "type": "object",
             "properties": {
@@ -77,6 +87,9 @@ You can check which security and analysis features are currently enabled by usin
     "secret_scanning_push_protection": {
         "status": "generated"
     },
+    "secret_scanning_ai_detection": {
+        "status": "generated"
+    },
     "secret_scanning_non_provider_patterns": {
         "status": "generated"
     }
@@ -86,12 +99,14 @@ You can check which security and analysis features are currently enabled by usin
      * advancedSecurity: Use the `status` property to enable or disable GitHub Advanced Security for this repository. For more information, see "[About GitHub Advanced Security](/github/getting-started-with-github/learning-about-github/about-github-advanced-security)."
      * secretScanning: Use the `status` property to enable or disable secret scanning for this repository. For more information, see "[About secret scanning](/code-security/secret-security/about-secret-scanning)."
      * secretScanningPushProtection: Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see "[Protecting pushes with secret scanning](/code-security/secret-scanning/protecting-pushes-with-secret-scanning)."
+     * secretScanningAiDetection: Use the `status` property to enable or disable secret scanning AI detection for this repository. For more information, see "[Responsible detection of generic secrets with AI](https://docs.github.com/code-security/secret-scanning/using-advanced-secret-scanning-and-push-protection-features/generic-secret-detection/responsible-ai-generic-secrets)."
      * secretScanningNonProviderPatterns: Use the `status` property to enable or disable secret scanning non-provider patterns for this repository. For more information, see "[Supported secret scanning patterns](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns#supported-secrets)."
      */
     public function __construct(#[MapFrom('advanced_security')]
     public Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis\AdvancedSecurity|null $advancedSecurity, #[MapFrom('secret_scanning')]
     public Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis\SecretScanning|null $secretScanning, #[MapFrom('secret_scanning_push_protection')]
-    public Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis\SecretScanningPushProtection|null $secretScanningPushProtection, #[MapFrom('secret_scanning_non_provider_patterns')]
+    public Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis\SecretScanningPushProtection|null $secretScanningPushProtection, #[MapFrom('secret_scanning_ai_detection')]
+    public Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis\SecretScanningAiDetection|null $secretScanningAiDetection, #[MapFrom('secret_scanning_non_provider_patterns')]
     public Schema\Repos\Update\Request\ApplicationJson\SecurityAndAnalysis\SecretScanningNonProviderPatterns|null $secretScanningNonProviderPatterns,)
     {
     }

@@ -34,6 +34,7 @@ use ApiClients\Client\GitHub\Schema\PullRequest;
 use ApiClients\Client\GitHub\Schema\Release;
 use ApiClients\Client\GitHub\Schema\RepositoryAdvisory;
 use ApiClients\Client\GitHub\Schema\RepositoryRuleset;
+use ApiClients\Client\GitHub\Schema\RunnerGroupsOrg;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
 
@@ -43,7 +44,8 @@ final class Five
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|EmptyObject|CodeSecurityConfiguration|WithoutBody|ProjectCard|Json|Created|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|CodespaceExportDetails|CodespaceWithFullRepository
+    /** @return |Schema\RunnerGroupsOrg */
+    public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|RunnerGroupsOrg|EmptyObject|CodeSecurityConfiguration|WithoutBody|ProjectCard|Json|Created|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|CodespaceExportDetails|CodespaceWithFullRepository
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {
@@ -69,7 +71,11 @@ final class Five
             } elseif ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {
-                        if ($pathChunks[4] === 'variables') {
+                        if ($pathChunks[4] === 'runner-groups') {
+                            if ($call === 'POST /orgs/{org}/actions/runner-groups') {
+                                return $this->routers->internal🔀Router🔀Post🔀Actions()->createSelfHostedRunnerGroupForOrg($params);
+                            }
+                        } elseif ($pathChunks[4] === 'variables') {
                             if ($call === 'POST /orgs/{org}/actions/variables') {
                                 return $this->routers->internal🔀Router🔀Post🔀Actions()->createOrgVariable($params);
                             }

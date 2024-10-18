@@ -86,6 +86,12 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Orgs\Org\Actions\Permissions\Repositories\RepositoryId|null $operation🌀Orgs🌀Org🌀Actions🌀Permissions🌀Repositories🌀RepositoryId                                                                                               = null;
     private Internal\Hydrator\Operation\Orgs\Org\Actions\Permissions\SelectedActions|null $operation🌀Orgs🌀Org🌀Actions🌀Permissions🌀SelectedActions                                                                                                                   = null;
     private Internal\Hydrator\Operation\Orgs\Org\Actions\Permissions\Workflow|null $operation🌀Orgs🌀Org🌀Actions🌀Permissions🌀Workflow                                                                                                                                 = null;
+    private Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups|null $operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups                                                                                                                                                 = null;
+    private Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId|null $operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId                                                                                                                     = null;
+    private Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Repositories|null $operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Repositories                                                                                           = null;
+    private Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Repositories\RepositoryId|null $operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Repositories🌀RepositoryId                                                                 = null;
+    private Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Runners|null $operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Runners                                                                                                     = null;
+    private Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Runners\RunnerId|null $operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Runners🌀RunnerId                                                                                   = null;
     private Internal\Hydrator\Operation\Orgs\Org\Actions\Runners|null $operation🌀Orgs🌀Org🌀Actions🌀Runners                                                                                                                                                           = null;
     private Internal\Hydrator\Operation\Orgs\Org\Actions\Runners\Downloads|null $operation🌀Orgs🌀Org🌀Actions🌀Runners🌀Downloads                                                                                                                                       = null;
     private Internal\Hydrator\Operation\Orgs\Org\Actions\Runners\GenerateJitconfig|null $operation🌀Orgs🌀Org🌀Actions🌀Runners🌀GenerateJitconfig                                                                                                                       = null;
@@ -748,7 +754,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\MarketplacePurchase', '\\ApiClients\\Client\\GitHub\\Schema\\MarketplacePurchase\\MarketplacePendingChange', '\\ApiClients\\Client\\GitHub\\Schema\\MarketplaceListingPlan', '\\ApiClients\\Client\\GitHub\\Schema\\MarketplacePurchase\\MarketplacePurchase' => $this->getObjectMapperOperation🌀MarketplaceListing🌀Accounts🌀AccountId()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\ApiOverview', '\\ApiClients\\Client\\GitHub\\Schema\\ApiOverview\\SshKeyFingerprints', '\\ApiClients\\Client\\GitHub\\Schema\\ApiOverview\\Domains', '\\ApiClients\\Client\\GitHub\\Schema\\ApiOverview\\Domains\\ArtifactAttestations' => $this->getObjectMapperOperation🌀Meta()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Activity\\MarkNotificationsAsRead\\Response\\ApplicationJson\\Accepted' => $this->getObjectMapperOperation🌀Notifications()->hydrateObject($className, $payload),
-            '\\ApiClients\\Client\\GitHub\\Schema\\Thread', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository\\License', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\AdvancedSecurity', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\DependabotSecurityUpdates', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanning', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningPushProtection', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningNonProviderPatterns', '\\ApiClients\\Client\\GitHub\\Schema\\Thread\\Subject' => $this->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Thread', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository\\License', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\AdvancedSecurity', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\DependabotSecurityUpdates', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanning', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningPushProtection', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningNonProviderPatterns', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningAiDetection', '\\ApiClients\\Client\\GitHub\\Schema\\Thread\\Subject' => $this->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\ThreadSubscription' => $this->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId🌀Subscription()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationFull', '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationFull\\Plan', '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\Delete\\Response\\ApplicationJson\\Accepted\\Application\\Json' => $this->getObjectMapperOperation🌀Orgs🌀Org()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\ActionsCacheUsageOrgEnterprise' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Cache🌀Usage()->hydrateObject($className, $payload),
@@ -758,6 +764,9 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\ListSelectedRepositoriesEnabledGithubActionsOrganization\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Permissions🌀Repositories()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\SelectedActions' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Permissions🌀SelectedActions()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\ActionsGetDefaultWorkflowPermissions' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Permissions🌀Workflow()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\ListSelfHostedRunnerGroupsForOrg\\Response\\ApplicationJson\\Ok', '\\ApiClients\\Client\\GitHub\\Schema\\RunnerGroupsOrg' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\ListRepoAccessToSelfHostedRunnerGroupInOrg\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Repositories()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\ListSelfHostedRunnersInGroupForOrg\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Runners()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\ListSelfHostedRunnersForOrg\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Runners()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\GenerateRunnerJitconfigForOrg\\Response\\ApplicationJson\\Created', '\\ApiClients\\Client\\GitHub\\Schema\\Runner' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Runners🌀GenerateJitconfig()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\AuthenticationToken', '\\ApiClients\\Client\\GitHub\\Schema\\AuthenticationToken\\Permissions' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Runners🌀RegistrationToken()->hydrateObject($className, $payload),
@@ -1103,7 +1112,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\MarketplacePurchase', '\\ApiClients\\Client\\GitHub\\Schema\\MarketplacePurchase\\MarketplacePendingChange', '\\ApiClients\\Client\\GitHub\\Schema\\MarketplaceListingPlan', '\\ApiClients\\Client\\GitHub\\Schema\\MarketplacePurchase\\MarketplacePurchase' => $this->getObjectMapperOperation🌀MarketplaceListing🌀Accounts🌀AccountId()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\ApiOverview', '\\ApiClients\\Client\\GitHub\\Schema\\ApiOverview\\SshKeyFingerprints', '\\ApiClients\\Client\\GitHub\\Schema\\ApiOverview\\Domains', '\\ApiClients\\Client\\GitHub\\Schema\\ApiOverview\\Domains\\ArtifactAttestations' => $this->getObjectMapperOperation🌀Meta()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Activity\\MarkNotificationsAsRead\\Response\\ApplicationJson\\Accepted' => $this->getObjectMapperOperation🌀Notifications()->serializeObject($object),
-            '\\ApiClients\\Client\\GitHub\\Schema\\Thread', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository\\License', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\AdvancedSecurity', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\DependabotSecurityUpdates', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanning', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningPushProtection', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningNonProviderPatterns', '\\ApiClients\\Client\\GitHub\\Schema\\Thread\\Subject' => $this->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Thread', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository\\License', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\AdvancedSecurity', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\DependabotSecurityUpdates', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanning', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningPushProtection', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningNonProviderPatterns', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningAiDetection', '\\ApiClients\\Client\\GitHub\\Schema\\Thread\\Subject' => $this->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\ThreadSubscription' => $this->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId🌀Subscription()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationFull', '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationFull\\Plan', '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\Delete\\Response\\ApplicationJson\\Accepted\\Application\\Json' => $this->getObjectMapperOperation🌀Orgs🌀Org()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\ActionsCacheUsageOrgEnterprise' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Cache🌀Usage()->serializeObject($object),
@@ -1113,6 +1122,9 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\ListSelectedRepositoriesEnabledGithubActionsOrganization\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Permissions🌀Repositories()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\SelectedActions' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Permissions🌀SelectedActions()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\ActionsGetDefaultWorkflowPermissions' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Permissions🌀Workflow()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\ListSelfHostedRunnerGroupsForOrg\\Response\\ApplicationJson\\Ok', '\\ApiClients\\Client\\GitHub\\Schema\\RunnerGroupsOrg' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\ListRepoAccessToSelfHostedRunnerGroupInOrg\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Repositories()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\ListSelfHostedRunnersInGroupForOrg\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Runners()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\ListSelfHostedRunnersForOrg\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Runners()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\GenerateRunnerJitconfigForOrg\\Response\\ApplicationJson\\Created', '\\ApiClients\\Client\\GitHub\\Schema\\Runner' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Runners🌀GenerateJitconfig()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\AuthenticationToken', '\\ApiClients\\Client\\GitHub\\Schema\\AuthenticationToken\\Permissions' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Runners🌀RegistrationToken()->serializeObject($object),
@@ -2095,6 +2107,60 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Orgs🌀Org🌀Actions🌀Permissions🌀Workflow;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups(): Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups
+    {
+        if ($this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups instanceof Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups === false) {
+            $this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups = new Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId(): Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId
+    {
+        if ($this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId instanceof Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId === false) {
+            $this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId = new Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Repositories(): Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Repositories
+    {
+        if ($this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Repositories instanceof Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Repositories === false) {
+            $this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Repositories = new Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Repositories();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Repositories;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Repositories🌀RepositoryId(): Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Repositories\RepositoryId
+    {
+        if ($this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Repositories🌀RepositoryId instanceof Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Repositories\RepositoryId === false) {
+            $this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Repositories🌀RepositoryId = new Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Repositories\RepositoryId();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Repositories🌀RepositoryId;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Runners(): Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Runners
+    {
+        if ($this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Runners instanceof Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Runners === false) {
+            $this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Runners = new Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Runners();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Runners;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Runners🌀RunnerId(): Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Runners\RunnerId
+    {
+        if ($this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Runners🌀RunnerId instanceof Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Runners\RunnerId === false) {
+            $this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Runners🌀RunnerId = new Internal\Hydrator\Operation\Orgs\Org\Actions\RunnerGroups\RunnerGroupId\Runners\RunnerId();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀Runners🌀RunnerId;
     }
 
     public function getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Runners(): Internal\Hydrator\Operation\Orgs\Org\Actions\Runners

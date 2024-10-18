@@ -24,7 +24,7 @@ final readonly class GetOrgRulesetsListing
     {
     }
 
-    /** @return iterable<int,Schema\RepositoryRuleset> */
+    /** @return Observable<Schema\RepositoryRuleset> */
     public function call(string $org, string $targets, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetOrgRulesetsListing($this->responseSchemaValidator, $this->hydrator, $org, $targets, $perPage, $page);

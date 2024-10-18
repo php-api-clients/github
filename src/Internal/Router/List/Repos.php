@@ -169,7 +169,7 @@ final class Repos
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\RepositoryRuleset> */
+    /** @return Observable<Schema\RepositoryRuleset> */
     public function getOrgRulesetsListing(array $params): iterable
     {
         $arguments = [];
@@ -841,7 +841,7 @@ final class Repos
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\RepositoryRuleset> */
+    /** @return Observable<Schema\RepositoryRuleset> */
     public function getRepoRulesetsListing(array $params): iterable
     {
         $arguments = [];

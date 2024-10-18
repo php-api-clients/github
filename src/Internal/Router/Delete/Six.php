@@ -18,13 +18,20 @@ final class Six
     {
     }
 
+    /** @return \ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody| */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|Ok|Json|ActionsCacheList|FileCommit
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {
-                        if ($pathChunks[4] === 'runners') {
+                        if ($pathChunks[4] === 'runner-groups') {
+                            if ($pathChunks[5] === '{runner_group_id}') {
+                                if ($call === 'DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}') {
+                                    return $this->routers->internal🔀Router🔀Delete🔀Actions()->deleteSelfHostedRunnerGroupFromOrg($params);
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'runners') {
                             if ($pathChunks[5] === '{runner_id}') {
                                 if ($call === 'DELETE /orgs/{org}/actions/runners/{runner_id}') {
                                     return $this->routers->internal🔀Router🔀Delete🔀Actions()->deleteSelfHostedRunnerFromOrg($params);

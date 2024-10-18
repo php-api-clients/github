@@ -38,6 +38,10 @@ final class ListAlertsForRepo
     private string $ref;
     /**The number of the pull request for the results you want to list. **/
     private int $pr;
+    /**A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
+    private string $before;
+    /**A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results after this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
+    private string $after;
     /**If specified, only code scanning alerts with this state will be returned. **/
     private string $state;
     /**If specified, only code scanning alerts with this severity will be returned. **/
@@ -51,7 +55,7 @@ final class ListAlertsForRepo
     /**The property by which to sort the results. **/
     private string $sort;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Alerts $hydrator, string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, int $pr, string $state, string $severity, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\CodeScanning\Alerts $hydrator, string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, int $pr, string $before, string $after, string $state, string $severity, int $page = 1, int $perPage = 30, string $direction = 'desc', string $sort = 'created')
     {
         $this->owner     = $owner;
         $this->repo      = $repo;
@@ -59,6 +63,8 @@ final class ListAlertsForRepo
         $this->toolGuid  = $toolGuid;
         $this->ref       = $ref;
         $this->pr        = $pr;
+        $this->before    = $before;
+        $this->after     = $after;
         $this->state     = $state;
         $this->severity  = $severity;
         $this->page      = $page;
@@ -69,7 +75,7 @@ final class ListAlertsForRepo
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{ref}', '{pr}', '{state}', '{severity}', '{page}', '{per_page}', '{direction}', '{sort}'], [$this->owner, $this->repo, $this->toolName, $this->toolGuid, $this->ref, $this->pr, $this->state, $this->severity, $this->page, $this->perPage, $this->direction, $this->sort], '/repos/{owner}/{repo}/code-scanning/alerts' . '?tool_name={tool_name}&tool_guid={tool_guid}&ref={ref}&pr={pr}&state={state}&severity={severity}&page={page}&per_page={per_page}&direction={direction}&sort={sort}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{tool_name}', '{tool_guid}', '{ref}', '{pr}', '{before}', '{after}', '{state}', '{severity}', '{page}', '{per_page}', '{direction}', '{sort}'], [$this->owner, $this->repo, $this->toolName, $this->toolGuid, $this->ref, $this->pr, $this->before, $this->after, $this->state, $this->severity, $this->page, $this->perPage, $this->direction, $this->sort], '/repos/{owner}/{repo}/code-scanning/alerts' . '?tool_name={tool_name}&tool_guid={tool_guid}&ref={ref}&pr={pr}&before={before}&after={after}&state={state}&severity={severity}&page={page}&per_page={per_page}&direction={direction}&sort={sort}'));
     }
 
     /** @return Observable<Schema\CodeScanningAlertItems>|WithoutBody */

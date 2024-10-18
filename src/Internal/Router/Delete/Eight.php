@@ -18,14 +18,30 @@ final class Eight
     {
     }
 
-    /** @return |Observable<Schema\Label>|Schema\BasicError */
-    public function call(string $call, array $params, array $pathChunks): Ok|WithoutBody|Json|iterable|BasicError|PullRequestReview
+    /** @return \ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody||Observable<Schema\Label>|Schema\BasicError */
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|Ok|Json|iterable|BasicError|PullRequestReview
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {
-                        if ($pathChunks[4] === 'runners') {
+                        if ($pathChunks[4] === 'runner-groups') {
+                            if ($pathChunks[5] === '{runner_group_id}') {
+                                if ($pathChunks[6] === 'repositories') {
+                                    if ($pathChunks[7] === '{repository_id}') {
+                                        if ($call === 'DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}') {
+                                            return $this->routers->internal🔀Router🔀Delete🔀Actions()->removeRepoAccessToSelfHostedRunnerGroupInOrg($params);
+                                        }
+                                    }
+                                } elseif ($pathChunks[6] === 'runners') {
+                                    if ($pathChunks[7] === '{runner_id}') {
+                                        if ($call === 'DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}') {
+                                            return $this->routers->internal🔀Router🔀Delete🔀Actions()->removeSelfHostedRunnerFromGroupForOrg($params);
+                                        }
+                                    }
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'runners') {
                             if ($pathChunks[5] === '{runner_id}') {
                                 if ($pathChunks[6] === 'labels') {
                                     if ($pathChunks[7] === '{name}') {

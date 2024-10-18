@@ -21,7 +21,10 @@ final readonly class Links
             }
         },
         "html": {
-            "type": "object",
+            "type": [
+                "object",
+                "null"
+            ],
             "properties": {
                 "href": {
                     "type": "string",

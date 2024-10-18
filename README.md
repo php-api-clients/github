@@ -2830,6 +2830,310 @@ $client->operations()->actions()->setGithubActionsDefaultWorkflowPermissionsOrga
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/permissions#set-default-workflow-permissions-for-an-organization).
 
 
+### actions/list-self-hosted-runner-groups-for-org
+
+List self-hosted runner groups for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/actions/runner-groups', [
+        'org' => 'generated',
+        'visible_to_repository' => 'generated',
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->listSelfHostedRunnerGroupsForOrg(        org: 'generated',
+        visible_to_repository: 'generated',
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#list-self-hosted-runner-groups-for-an-organization).
+
+
+### actions/create-self-hosted-runner-group-for-org
+
+Create a self-hosted runner group for an organization
+
+Using the `call` method:
+```php
+$client->call('POST /orgs/{org}/actions/runner-groups', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->createSelfHostedRunnerGroupForOrg(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#create-a-self-hosted-runner-group-for-an-organization).
+
+
+### actions/get-self-hosted-runner-group-for-org
+
+Get a self-hosted runner group for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/actions/runner-groups/{runner_group_id}', [
+        'org' => 'generated',
+        'runner_group_id' => 15,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->getSelfHostedRunnerGroupForOrg(        org: 'generated',
+        runner_group_id: 15,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#get-a-self-hosted-runner-group-for-an-organization).
+
+
+### actions/delete-self-hosted-runner-group-from-org
+
+Delete a self-hosted runner group from an organization
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}', [
+        'org' => 'generated',
+        'runner_group_id' => 15,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->deleteSelfHostedRunnerGroupFromOrg(        org: 'generated',
+        runner_group_id: 15,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#delete-a-self-hosted-runner-group-from-an-organization).
+
+
+### actions/update-self-hosted-runner-group-for-org
+
+Update a self-hosted runner group for an organization
+
+Using the `call` method:
+```php
+$client->call('PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}', [
+        'org' => 'generated',
+        'runner_group_id' => 15,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->updateSelfHostedRunnerGroupForOrg(        org: 'generated',
+        runner_group_id: 15,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization).
+
+
+### actions/list-repo-access-to-self-hosted-runner-group-in-org
+
+List repository access to a self-hosted runner group in an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories', [
+        'org' => 'generated',
+        'runner_group_id' => 15,
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->listRepoAccessToSelfHostedRunnerGroupInOrg(        org: 'generated',
+        runner_group_id: 15,
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#list-repository-access-to-a-self-hosted-runner-group-in-an-organization).
+
+
+### actions/set-repo-access-to-self-hosted-runner-group-in-org
+
+Set repository access for a self-hosted runner group in an organization
+
+Using the `call` method:
+```php
+$client->call('PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories', [
+        'org' => 'generated',
+        'runner_group_id' => 15,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->setRepoAccessToSelfHostedRunnerGroupInOrg(        org: 'generated',
+        runner_group_id: 15,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#set-repository-access-for-a-self-hosted-runner-group-in-an-organization).
+
+
+### actions/add-repo-access-to-self-hosted-runner-group-in-org
+
+Add repository access to a self-hosted runner group in an organization
+
+Using the `call` method:
+```php
+$client->call('PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}', [
+        'org' => 'generated',
+        'runner_group_id' => 15,
+        'repository_id' => 13,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->addRepoAccessToSelfHostedRunnerGroupInOrg(        org: 'generated',
+        runner_group_id: 15,
+        repository_id: 13,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#add-repository-access-to-a-self-hosted-runner-group-in-an-organization).
+
+
+### actions/remove-repo-access-to-self-hosted-runner-group-in-org
+
+Remove repository access to a self-hosted runner group in an organization
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}', [
+        'org' => 'generated',
+        'runner_group_id' => 15,
+        'repository_id' => 13,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->removeRepoAccessToSelfHostedRunnerGroupInOrg(        org: 'generated',
+        runner_group_id: 15,
+        repository_id: 13,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#remove-repository-access-to-a-self-hosted-runner-group-in-an-organization).
+
+
+### actions/list-self-hosted-runners-in-group-for-org
+
+List self-hosted runners in a group for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/actions/runner-groups/{runner_group_id}/runners', [
+        'org' => 'generated',
+        'runner_group_id' => 15,
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->listSelfHostedRunnersInGroupForOrg(        org: 'generated',
+        runner_group_id: 15,
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#list-self-hosted-runners-in-a-group-for-an-organization).
+
+
+### actions/set-self-hosted-runners-in-group-for-org
+
+Set self-hosted runners in a group for an organization
+
+Using the `call` method:
+```php
+$client->call('PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners', [
+        'org' => 'generated',
+        'runner_group_id' => 15,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->setSelfHostedRunnersInGroupForOrg(        org: 'generated',
+        runner_group_id: 15,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#set-self-hosted-runners-in-a-group-for-an-organization).
+
+
+### actions/add-self-hosted-runner-to-group-for-org
+
+Add a self-hosted runner to a group for an organization
+
+Using the `call` method:
+```php
+$client->call('PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}', [
+        'org' => 'generated',
+        'runner_group_id' => 15,
+        'runner_id' => 9,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->addSelfHostedRunnerToGroupForOrg(        org: 'generated',
+        runner_group_id: 15,
+        runner_id: 9,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#add-a-self-hosted-runner-to-a-group-for-an-organization).
+
+
+### actions/remove-self-hosted-runner-from-group-for-org
+
+Remove a self-hosted runner from a group for an organization
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}', [
+        'org' => 'generated',
+        'runner_group_id' => 15,
+        'runner_id' => 9,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->removeSelfHostedRunnerFromGroupForOrg(        org: 'generated',
+        runner_group_id: 15,
+        runner_id: 9,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#remove-a-self-hosted-runner-from-a-group-for-an-organization).
+
+
 ### actions/list-self-hosted-runners-for-org
 
 List self-hosted runners for an organization
@@ -13000,6 +13304,8 @@ $client->call('GET /repos/{owner}/{repo}/code-scanning/alerts', [
         'tool_guid' => ,
         'ref' => 'generated',
         'pr' => 2,
+        'before' => 'generated',
+        'after' => 'generated',
         'state' => 'generated',
         'severity' => 'generated',
         'page' => 1,
@@ -13017,6 +13323,8 @@ $client->operations()->codeScanning()->listAlertsForRepo(        owner: 'generat
         tool_guid: ,
         ref: 'generated',
         pr: 2,
+        before: 'generated',
+        after: 'generated',
         state: 'generated',
         severity: 'generated',
         page: 1,
@@ -13042,6 +13350,8 @@ $client->call('LIST /repos/{owner}/{repo}/code-scanning/alerts', [
         'tool_guid' => ,
         'ref' => 'generated',
         'pr' => 2,
+        'before' => 'generated',
+        'after' => 'generated',
         'state' => 'generated',
         'severity' => 'generated',
         'page' => 1,
@@ -13059,6 +13369,8 @@ $client->operations()->codeScanning()->listAlertsForRepoListing(        owner: '
         tool_guid: ,
         ref: 'generated',
         pr: 2,
+        before: 'generated',
+        after: 'generated',
         state: 'generated',
         severity: 'generated',
         page: 1,

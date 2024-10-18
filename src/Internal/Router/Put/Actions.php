@@ -57,6 +57,46 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['repository_id']);
     }
 
+    public function setRepoAccessToSelfHostedRunnerGroupInOrg(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('runner_group_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: runner_group_id');
+        }
+
+        $arguments['runner_group_id'] = $params['runner_group_id'];
+        unset($params['runner_group_id']);
+        $operator = new Internal\Operator\Actions\SetRepoAccessToSelfHostedRunnerGroupInOrg($this->browser, $this->authentication, $this->requestSchemaValidator);
+
+        return $operator->call($arguments['org'], $arguments['runner_group_id'], $params);
+    }
+
+    public function setSelfHostedRunnersInGroupForOrg(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('runner_group_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: runner_group_id');
+        }
+
+        $arguments['runner_group_id'] = $params['runner_group_id'];
+        unset($params['runner_group_id']);
+        $operator = new Internal\Operator\Actions\SetSelfHostedRunnersInGroupForOrg($this->browser, $this->authentication, $this->requestSchemaValidator);
+
+        return $operator->call($arguments['org'], $arguments['runner_group_id'], $params);
+    }
+
     /** @return */
     public function setCustomLabelsForSelfHostedRunnerForOrg(array $params): Ok
     {
@@ -295,6 +335,58 @@ final class Actions
         $operator = new Internal\Operator\Actions\SetGithubActionsPermissionsRepository($this->browser, $this->authentication, $this->requestSchemaValidator);
 
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
+    }
+
+    public function addRepoAccessToSelfHostedRunnerGroupInOrg(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('runner_group_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: runner_group_id');
+        }
+
+        $arguments['runner_group_id'] = $params['runner_group_id'];
+        unset($params['runner_group_id']);
+        if (array_key_exists('repository_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repository_id');
+        }
+
+        $arguments['repository_id'] = $params['repository_id'];
+        unset($params['repository_id']);
+        $operator = new Internal\Operator\Actions\AddRepoAccessToSelfHostedRunnerGroupInOrg($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['runner_group_id'], $arguments['repository_id']);
+    }
+
+    public function addSelfHostedRunnerToGroupForOrg(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('runner_group_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: runner_group_id');
+        }
+
+        $arguments['runner_group_id'] = $params['runner_group_id'];
+        unset($params['runner_group_id']);
+        if (array_key_exists('runner_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: runner_id');
+        }
+
+        $arguments['runner_id'] = $params['runner_id'];
+        unset($params['runner_id']);
+        $operator = new Internal\Operator\Actions\AddSelfHostedRunnerToGroupForOrg($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['runner_group_id'], $arguments['runner_id']);
     }
 
     /** @return */

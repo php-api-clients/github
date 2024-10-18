@@ -37,16 +37,16 @@ final class CodeScanning
         return $this->operators->codeScanning👷ListAlertsForOrgListing()->call($org, $toolName, $toolGuid, $before, $after, $state, $severity, $page, $perPage, $direction, $sort);
     }
 
-    /** @return Observable<Schema\CodeScanningAlertItems>|WithoutBody */
-    public function listAlertsForRepo(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, int $pr, string $state, string $severity, int $page, int $perPage, string $direction, string $sort): iterable|WithoutBody
+    /** @return iterable<int,Schema\CodeScanningAlertItems>|WithoutBody */
+    public function listAlertsForRepo(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, int $pr, string $before, string $after, string $state, string $severity, int $page, int $perPage, string $direction, string $sort): iterable|WithoutBody
     {
-        return $this->operators->codeScanning👷ListAlertsForRepo()->call($owner, $repo, $toolName, $toolGuid, $ref, $pr, $state, $severity, $page, $perPage, $direction, $sort);
+        return $this->operators->codeScanning👷ListAlertsForRepo()->call($owner, $repo, $toolName, $toolGuid, $ref, $pr, $before, $after, $state, $severity, $page, $perPage, $direction, $sort);
     }
 
-    /** @return Observable<Schema\CodeScanningAlertItems>|WithoutBody */
-    public function listAlertsForRepoListing(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, int $pr, string $state, string $severity, int $page, int $perPage, string $direction, string $sort): iterable|WithoutBody
+    /** @return iterable<int,Schema\CodeScanningAlertItems>|WithoutBody */
+    public function listAlertsForRepoListing(string $owner, string $repo, string $toolName, string|null $toolGuid, string $ref, int $pr, string $before, string $after, string $state, string $severity, int $page, int $perPage, string $direction, string $sort): iterable|WithoutBody
     {
-        return $this->operators->codeScanning👷ListAlertsForRepoListing()->call($owner, $repo, $toolName, $toolGuid, $ref, $pr, $state, $severity, $page, $perPage, $direction, $sort);
+        return $this->operators->codeScanning👷ListAlertsForRepoListing()->call($owner, $repo, $toolName, $toolGuid, $ref, $pr, $before, $after, $state, $severity, $page, $perPage, $direction, $sort);
     }
 
     /** @return */

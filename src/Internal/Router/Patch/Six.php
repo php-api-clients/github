@@ -21,6 +21,7 @@ use ApiClients\Client\GitHub\Schema\PullRequest;
 use ApiClients\Client\GitHub\Schema\Release;
 use ApiClients\Client\GitHub\Schema\RepositoryAdvisory;
 use ApiClients\Client\GitHub\Schema\RepositoryInvitation;
+use ApiClients\Client\GitHub\Schema\RunnerGroupsOrg;
 use ApiClients\Client\GitHub\Schema\WebhookConfig;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
@@ -31,13 +32,20 @@ final class Six
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): WithoutBody|CodeSecurityConfiguration|WebhookConfig|CheckRun|CheckSuitePreference|EmptyObject|CodeScanningDefaultSetupUpdateResponse|CommitComment|Hook|Import|RepositoryInvitation|Issue|BasicError|Label|Milestone|PullRequest|Release|RepositoryAdvisory
+    /** @return Schema\RunnerGroupsOrg| */
+    public function call(string $call, array $params, array $pathChunks): RunnerGroupsOrg|WithoutBody|CodeSecurityConfiguration|WebhookConfig|CheckRun|CheckSuitePreference|EmptyObject|CodeScanningDefaultSetupUpdateResponse|CommitComment|Hook|Import|RepositoryInvitation|Issue|BasicError|Label|Milestone|PullRequest|Release|RepositoryAdvisory
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {
-                        if ($pathChunks[4] === 'variables') {
+                        if ($pathChunks[4] === 'runner-groups') {
+                            if ($pathChunks[5] === '{runner_group_id}') {
+                                if ($call === 'PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}') {
+                                    return $this->routers->internal🔀Router🔀Patch🔀Actions()->updateSelfHostedRunnerGroupForOrg($params);
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'variables') {
                             if ($pathChunks[5] === '{name}') {
                                 if ($call === 'PATCH /orgs/{org}/actions/variables/{name}') {
                                     return $this->routers->internal🔀Router🔀Patch🔀Actions()->updateOrgVariable($params);

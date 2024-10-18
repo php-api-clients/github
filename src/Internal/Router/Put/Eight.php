@@ -18,13 +18,30 @@ final class Eight
     {
     }
 
+    /** @return \ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody| */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|EmptyObject|Ok|DeploymentBranchPolicy|PullRequestReview
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {
-                        if ($pathChunks[4] === 'secrets') {
+                        if ($pathChunks[4] === 'runner-groups') {
+                            if ($pathChunks[5] === '{runner_group_id}') {
+                                if ($pathChunks[6] === 'repositories') {
+                                    if ($pathChunks[7] === '{repository_id}') {
+                                        if ($call === 'PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}') {
+                                            return $this->routers->internal🔀Router🔀Put🔀Actions()->addRepoAccessToSelfHostedRunnerGroupInOrg($params);
+                                        }
+                                    }
+                                } elseif ($pathChunks[6] === 'runners') {
+                                    if ($pathChunks[7] === '{runner_id}') {
+                                        if ($call === 'PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}') {
+                                            return $this->routers->internal🔀Router🔀Put🔀Actions()->addSelfHostedRunnerToGroupForOrg($params);
+                                        }
+                                    }
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'secrets') {
                             if ($pathChunks[5] === '{secret_name}') {
                                 if ($pathChunks[6] === 'repositories') {
                                     if ($pathChunks[7] === '{repository_id}') {

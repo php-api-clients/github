@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal;
+use ApiClients\Client\GitHub\Schema\RunnerGroupsOrg;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
@@ -17,6 +18,26 @@ final class Actions
 {
     public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Internal\Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
+    }
+
+    public function updateSelfHostedRunnerGroupForOrg(array $params): RunnerGroupsOrg
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('runner_group_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: runner_group_id');
+        }
+
+        $arguments['runner_group_id'] = $params['runner_group_id'];
+        unset($params['runner_group_id']);
+        $operator = new Internal\Operator\Actions\UpdateSelfHostedRunnerGroupForOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId());
+
+        return $operator->call($arguments['org'], $arguments['runner_group_id'], $params);
     }
 
     /** @return */

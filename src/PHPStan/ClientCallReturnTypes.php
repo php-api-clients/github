@@ -539,6 +539,58 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('');
         }
 
+        if ($call === 'GET /orgs/{org}/actions/runner-groups') {
+            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\ListSelfHostedRunnerGroupsForOrg\\Response\\ApplicationJson\\Ok');
+        }
+
+        if ($call === 'POST /orgs/{org}/actions/runner-groups') {
+            return $this->typeResolver->resolve('Schema\\RunnerGroupsOrg');
+        }
+
+        if ($call === 'GET /orgs/{org}/actions/runner-groups/{runner_group_id}') {
+            return $this->typeResolver->resolve('Schema\\RunnerGroupsOrg');
+        }
+
+        if ($call === 'DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}') {
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}') {
+            return $this->typeResolver->resolve('Schema\\RunnerGroupsOrg');
+        }
+
+        if ($call === 'GET /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories') {
+            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\ListRepoAccessToSelfHostedRunnerGroupInOrg\\Response\\ApplicationJson\\Ok');
+        }
+
+        if ($call === 'PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories') {
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}') {
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}') {
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'GET /orgs/{org}/actions/runner-groups/{runner_group_id}/runners') {
+            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\ListSelfHostedRunnersInGroupForOrg\\Response\\ApplicationJson\\Ok');
+        }
+
+        if ($call === 'PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners') {
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}') {
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}') {
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
         if ($call === 'GET /orgs/{org}/actions/runners') {
             return $this->typeResolver->resolve('');
         }
@@ -1288,11 +1340,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/rulesets') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\RepositoryRuleset>');
+            return $this->typeResolver->resolve('Observable<Schema\\RepositoryRuleset>');
         }
 
         if ($call === 'LIST /orgs/{org}/rulesets') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\RepositoryRuleset>');
+            return $this->typeResolver->resolve('Observable<Schema\\RepositoryRuleset>');
         }
 
         if ($call === 'POST /orgs/{org}/rulesets') {
@@ -2204,11 +2256,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAlertItems>|WithoutBody');
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAlertItems>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/code-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAlertItems>|WithoutBody');
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAlertItems>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}') {
@@ -3440,11 +3492,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/rulesets') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\RepositoryRuleset>');
+            return $this->typeResolver->resolve('Observable<Schema\\RepositoryRuleset>');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/rulesets') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\RepositoryRuleset>');
+            return $this->typeResolver->resolve('Observable<Schema\\RepositoryRuleset>');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/rulesets') {

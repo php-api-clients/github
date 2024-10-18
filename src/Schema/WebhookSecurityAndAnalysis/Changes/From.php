@@ -79,6 +79,18 @@ final readonly class From
                             "type": "string"
                         }
                     }
+                },
+                "secret_scanning_ai_detection": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "enum": [
+                                "enabled",
+                                "disabled"
+                            ],
+                            "type": "string"
+                        }
+                    }
                 }
             }
         }
@@ -101,6 +113,9 @@ final readonly class From
             "status": "disabled"
         },
         "secret_scanning_non_provider_patterns": {
+            "status": "disabled"
+        },
+        "secret_scanning_ai_detection": {
             "status": "disabled"
         }
     }

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietA5593530\TietD4C63CAD\Tiet95D73CC3;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet38F0B967\Tiet31DB077C\Tiet105F7589;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class TietF1B17EC4
+abstract readonly class TietF9914834
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -1610,6 +1610,18 @@ abstract readonly class TietF1B17EC4
                                                 "type": "string"
                                             }
                                         }
+                                    },
+                                    "secret_scanning_ai_detection": {
+                                        "type": "object",
+                                        "properties": {
+                                            "status": {
+                                                "enum": [
+                                                    "enabled",
+                                                    "disabled"
+                                                ],
+                                                "type": "string"
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -2428,6 +2440,18 @@ abstract readonly class TietF1B17EC4
                                                 "type": "string"
                                             }
                                         }
+                                    },
+                                    "secret_scanning_ai_detection": {
+                                        "type": "object",
+                                        "properties": {
+                                            "status": {
+                                                "enum": [
+                                                    "enabled",
+                                                    "disabled"
+                                                ],
+                                                "type": "string"
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -2693,6 +2717,9 @@ abstract readonly class TietF1B17EC4
                     },
                     "secret_scanning_non_provider_patterns": {
                         "status": "disabled"
+                    },
+                    "secret_scanning_ai_detection": {
+                        "status": "disabled"
                     }
                 }
             },
@@ -2840,6 +2867,9 @@ abstract readonly class TietF1B17EC4
                         "status": "disabled"
                     },
                     "secret_scanning_non_provider_patterns": {
+                        "status": "disabled"
+                    },
+                    "secret_scanning_ai_detection": {
                         "status": "disabled"
                     }
                 }
@@ -3082,6 +3112,9 @@ abstract readonly class TietF1B17EC4
                     },
                     "secret_scanning_non_provider_patterns": {
                         "status": "disabled"
+                    },
+                    "secret_scanning_ai_detection": {
+                        "status": "disabled"
                     }
                 }
             },
@@ -3229,6 +3262,9 @@ abstract readonly class TietF1B17EC4
                         "status": "disabled"
                     },
                     "secret_scanning_non_provider_patterns": {
+                        "status": "disabled"
+                    },
+                    "secret_scanning_ai_detection": {
                         "status": "disabled"
                     }
                 }

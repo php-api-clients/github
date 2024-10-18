@@ -226,6 +226,26 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name']);
     }
 
+    public function deleteSelfHostedRunnerGroupFromOrg(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('runner_group_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: runner_group_id');
+        }
+
+        $arguments['runner_group_id'] = $params['runner_group_id'];
+        unset($params['runner_group_id']);
+        $operator = new Internal\Operator\Actions\DeleteSelfHostedRunnerGroupFromOrg($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['runner_group_id']);
+    }
+
     /** @return */
     public function deleteSelfHostedRunnerFromOrg(array $params): WithoutBody
     {
@@ -320,6 +340,58 @@ final class Actions
         $operator = new Internal\Operator\Actions\DeleteActionsCacheByKey($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Actions🌀Caches());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['key'], $arguments['ref']);
+    }
+
+    public function removeRepoAccessToSelfHostedRunnerGroupInOrg(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('runner_group_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: runner_group_id');
+        }
+
+        $arguments['runner_group_id'] = $params['runner_group_id'];
+        unset($params['runner_group_id']);
+        if (array_key_exists('repository_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repository_id');
+        }
+
+        $arguments['repository_id'] = $params['repository_id'];
+        unset($params['repository_id']);
+        $operator = new Internal\Operator\Actions\RemoveRepoAccessToSelfHostedRunnerGroupInOrg($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['runner_group_id'], $arguments['repository_id']);
+    }
+
+    public function removeSelfHostedRunnerFromGroupForOrg(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('runner_group_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: runner_group_id');
+        }
+
+        $arguments['runner_group_id'] = $params['runner_group_id'];
+        unset($params['runner_group_id']);
+        if (array_key_exists('runner_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: runner_id');
+        }
+
+        $arguments['runner_id'] = $params['runner_id'];
+        unset($params['runner_id']);
+        $operator = new Internal\Operator\Actions\RemoveSelfHostedRunnerFromGroupForOrg($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['runner_group_id'], $arguments['runner_id']);
     }
 
     /** @return */

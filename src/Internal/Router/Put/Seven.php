@@ -21,7 +21,7 @@ final class Seven
     {
     }
 
-    /** @return |Observable<Schema\Label>|Schema\BasicError */
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody|Observable<Schema\Label>|Schema\BasicError */
     public function call(string $call, array $params, array $pathChunks): EmptyObject|WithoutBody|Ok|\ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok|TeamMembership|ProtectedBranch|iterable|BasicError|PullRequestMergeResult|Json
     {
         if ($pathChunks[0] === '') {
@@ -41,6 +41,18 @@ final class Seven
                                 if ($pathChunks[6] === '{repository_id}') {
                                     if ($call === 'PUT /orgs/{org}/actions/permissions/repositories/{repository_id}') {
                                         return $this->routers->internal🔀Router🔀Put🔀Actions()->enableSelectedRepositoryGithubActionsOrganization($params);
+                                    }
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'runner-groups') {
+                            if ($pathChunks[5] === '{runner_group_id}') {
+                                if ($pathChunks[6] === 'repositories') {
+                                    if ($call === 'PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories') {
+                                        return $this->routers->internal🔀Router🔀Put🔀Actions()->setRepoAccessToSelfHostedRunnerGroupInOrg($params);
+                                    }
+                                } elseif ($pathChunks[6] === 'runners') {
+                                    if ($call === 'PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners') {
+                                        return $this->routers->internal🔀Router🔀Put🔀Actions()->setSelfHostedRunnersInGroupForOrg($params);
                                     }
                                 }
                             }

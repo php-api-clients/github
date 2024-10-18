@@ -73,6 +73,16 @@ final readonly class ApplicationJson
                     },
                     "description": "Use the `status` property to enable or disable secret scanning push protection for this repository. For more information, see \\"[Protecting pushes with secret scanning](\\/code-security\\/secret-scanning\\/protecting-pushes-with-secret-scanning).\\""
                 },
+                "secret_scanning_ai_detection": {
+                    "type": "object",
+                    "properties": {
+                        "status": {
+                            "type": "string",
+                            "description": "Can be `enabled` or `disabled`."
+                        }
+                    },
+                    "description": "Use the `status` property to enable or disable secret scanning AI detection for this repository. For more information, see \\"[Responsible detection of generic secrets with AI](https:\\/\\/docs.github.com\\/code-security\\/secret-scanning\\/using-advanced-secret-scanning-and-push-protection-features\\/generic-secret-detection\\/responsible-ai-generic-secrets).\\""
+                },
                 "secret_scanning_non_provider_patterns": {
                     "type": "object",
                     "properties": {
@@ -213,6 +223,9 @@ final readonly class ApplicationJson
             "status": "generated"
         },
         "secret_scanning_push_protection": {
+            "status": "generated"
+        },
+        "secret_scanning_ai_detection": {
             "status": "generated"
         },
         "secret_scanning_non_provider_patterns": {

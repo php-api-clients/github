@@ -210,7 +210,7 @@ final class Repos
         return $operator->call($arguments['org'], $arguments['direction'], $arguments['type'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\RepositoryRuleset> */
+    /** @return Observable<Schema\RepositoryRuleset> */
     public function getOrgRulesets(array $params): iterable
     {
         $arguments = [];
@@ -1074,7 +1074,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\RepositoryRuleset> */
+    /** @return Observable<Schema\RepositoryRuleset> */
     public function getRepoRulesets(array $params): iterable
     {
         $arguments = [];

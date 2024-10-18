@@ -14,6 +14,7 @@ use ApiClients\Client\GitHub\Schema\SecurityAndAnalysis;
 use ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\AdvancedSecurity;
 use ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\DependabotSecurityUpdates;
 use ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning;
+use ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningAiDetection;
 use ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningNonProviderPatterns;
 use ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection;
 use ApiClients\Client\GitHub\Schema\SimpleUser;
@@ -65,6 +66,7 @@ class Generate implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanning($payload),
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningPushProtection($payload),
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningNonProviderPatterns' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningNonProviderPatterns($payload),
+                'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningAiDetection' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningAiDetection($payload),
                 'ApiClients\Client\GitHub\Schema\FullRepository\CustomProperties' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FullRepository⚡️CustomProperties($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -3053,6 +3055,26 @@ class Generate implements ObjectMapper
             $properties['secretScanningNonProviderPatterns'] = $value;
 
             after_secretScanningNonProviderPatterns:
+
+            $value = $payload['secret_scanning_ai_detection'] ?? null;
+
+            if ($value === null) {
+                $properties['secretScanningAiDetection'] = null;
+                goto after_secretScanningAiDetection;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'secretScanningAiDetection';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningAiDetection($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['secretScanningAiDetection'] = $value;
+
+            after_secretScanningAiDetection:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecurityAndAnalysis', $exception, stack: $this->hydrationStack);
         }
@@ -3218,6 +3240,36 @@ class Generate implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningAiDetection(array $payload): SecretScanningAiDetection
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['status'] ?? null;
+
+            if ($value === null) {
+                $properties['status'] = null;
+                goto after_status;
+            }
+
+            $properties['status'] = $value;
+
+            after_status:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningAiDetection', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(SecretScanningAiDetection::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new SecretScanningAiDetection(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningAiDetection', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️FullRepository⚡️CustomProperties(array $payload): CustomProperties
     {
         $properties    = [];
@@ -3282,6 +3334,7 @@ class Generate implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanning' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanning($object),
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningPushProtection' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningPushProtection($object),
                 'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningNonProviderPatterns' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningNonProviderPatterns($object),
+                'ApiClients\Client\GitHub\Schema\SecurityAndAnalysis\SecretScanningAiDetection' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningAiDetection($object),
                 default => throw new LogicException("No serialization defined for $className"),
             };
         } catch (Throwable $exception) {
@@ -4569,6 +4622,15 @@ class Generate implements ObjectMapper
         $secretScanningNonProviderPatterns                                                               = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningNonProviderPatterns($secretScanningNonProviderPatterns);
         after_secretScanningNonProviderPatterns:        $result['secret_scanning_non_provider_patterns'] = $secretScanningNonProviderPatterns;
 
+        $secretScanningAiDetection = $object->secretScanningAiDetection;
+
+        if ($secretScanningAiDetection === null) {
+            goto after_secretScanningAiDetection;
+        }
+
+        $secretScanningAiDetection                                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningAiDetection($secretScanningAiDetection);
+        after_secretScanningAiDetection:        $result['secret_scanning_ai_detection'] = $secretScanningAiDetection;
+
         return $result;
     }
 
@@ -4639,6 +4701,22 @@ class Generate implements ObjectMapper
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningNonProviderPatterns(mixed $object): mixed
     {
         assert($object instanceof SecretScanningNonProviderPatterns);
+        $result = [];
+
+        $status = $object->status;
+
+        if ($status === null) {
+            goto after_status;
+        }
+
+        after_status:        $result['status'] = $status;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAndAnalysis⚡️SecretScanningAiDetection(mixed $object): mixed
+    {
+        assert($object instanceof SecretScanningAiDetection);
         $result = [];
 
         $status = $object->status;

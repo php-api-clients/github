@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietF07AF25E\TietD2A72B52\Tiet57F3E90D;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietAA7C777F\Tiet51DAFE76\Tiet776DBC1D;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class TietF0079343
+abstract readonly class Tiet418CCB6F
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -1218,6 +1218,18 @@ abstract readonly class TietF0079343
                                                 "type": "string"
                                             }
                                         }
+                                    },
+                                    "secret_scanning_ai_detection": {
+                                        "type": "object",
+                                        "properties": {
+                                            "status": {
+                                                "enum": [
+                                                    "enabled",
+                                                    "disabled"
+                                                ],
+                                                "type": "string"
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -1752,6 +1764,9 @@ abstract readonly class TietF0079343
                     },
                     "secret_scanning_non_provider_patterns": {
                         "status": "disabled"
+                    },
+                    "secret_scanning_ai_detection": {
+                        "status": "disabled"
                     }
                 }
             },
@@ -1995,6 +2010,9 @@ abstract readonly class TietF0079343
                         "status": "disabled"
                     },
                     "secret_scanning_non_provider_patterns": {
+                        "status": "disabled"
+                    },
+                    "secret_scanning_ai_detection": {
                         "status": "disabled"
                     }
                 }
