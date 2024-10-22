@@ -72,6 +72,9 @@ final readonly class GistSimple
                                 "type": "integer",
                                 "format": "int64"
                             },
+                            "user_view_type": {
+                                "type": "string"
+                            },
                             "node_id": {
                                 "type": "string"
                             },
@@ -229,13 +232,6 @@ final readonly class GistSimple
                                         "type": "integer"
                                     }
                                 }
-                            },
-                            "suspended_at": {
-                                "type": [
-                                    "string",
-                                    "null"
-                                ],
-                                "format": "date-time"
                             },
                             "private_gists": {
                                 "type": "integer",
@@ -454,6 +450,12 @@ final readonly class GistSimple
                                         "type": "string",
                                         "examples": [
                                             "\\"2020-07-09T00:17:55Z\\""
+                                        ]
+                                    },
+                                    "user_view_type": {
+                                        "type": "string",
+                                        "examples": [
+                                            "public"
                                         ]
                                     }
                                 },
@@ -752,6 +754,12 @@ final readonly class GistSimple
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
                                     ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
+                                    ]
                                 }
                             },
                             "description": "A GitHub user."
@@ -924,6 +932,12 @@ final readonly class GistSimple
                                     "type": "string",
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
+                                    ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
                                     ]
                                 }
                             },
@@ -1186,6 +1200,12 @@ final readonly class GistSimple
                     "examples": [
                         "\\"2020-07-09T00:17:55Z\\""
                     ]
+                },
+                "user_view_type": {
+                    "type": "string",
+                    "examples": [
+                        "public"
+                    ]
                 }
             },
             "description": "A GitHub user."
@@ -1237,7 +1257,8 @@ final readonly class GistSimple
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "comments_url": "https:\\/\\/example.com\\/",
         "owner": {
@@ -1261,7 +1282,8 @@ final readonly class GistSimple
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "truncated": false,
         "forks": [
@@ -1310,7 +1332,8 @@ final readonly class GistSimple
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "truncated": false
 }';

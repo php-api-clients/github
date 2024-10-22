@@ -102,7 +102,7 @@ final class CodeScanning
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\CodeScanningAlertItems>|WithoutBody */
+    /** @return Observable<Schema\CodeScanningAlertItems>|WithoutBody */
     public function listAlertsForRepoListing(array $params): iterable|WithoutBody
     {
         $arguments = [];

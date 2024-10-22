@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\PullRequest\Base\Repo;
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Owner extends Schema\AliasAbstract\TietABBE4B49\Tiet95080E7A\Tiet912BEDC6\TietEC5CA654
+final readonly class Owner extends Schema\AliasAbstract\Tiet51848752\TietF5AFF89A\Tiet1BF2E786\Tiet3454ABD5
 {
 }

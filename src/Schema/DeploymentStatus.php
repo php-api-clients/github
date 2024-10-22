@@ -225,6 +225,12 @@ final readonly class DeploymentStatus
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -250,7 +256,7 @@ final readonly class DeploymentStatus
         },
         "target_url": {
             "type": "string",
-            "description": "Deprecated: the URL to associate with this status.",
+            "description": "Closing down notice: the URL to associate with this status.",
             "format": "uri",
             "default": "",
             "examples": [
@@ -517,6 +523,12 @@ final readonly class DeploymentStatus
                                             "examples": [
                                                 "\\"2020-07-09T00:17:55Z\\""
                                             ]
+                                        },
+                                        "user_view_type": {
+                                            "type": "string",
+                                            "examples": [
+                                                "public"
+                                            ]
                                         }
                                     },
                                     "description": "A GitHub user."
@@ -670,7 +682,8 @@ final readonly class DeploymentStatus
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "description": "Deployment finished successfully.",
     "environment": "production",
@@ -707,7 +720,8 @@ final readonly class DeploymentStatus
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "name": "Probot Owners",
         "description": "The description of the app.",
@@ -737,7 +751,7 @@ final readonly class DeploymentStatus
      * state: The state of the status.
      * description: A short description of the status.
      * environment: The environment of the deployment that the status is for.
-     * targetUrl: Deprecated: the URL to associate with this status.
+     * targetUrl: Closing down notice: the URL to associate with this status.
      * environmentUrl: The URL for accessing your environment.
      * logUrl: The URL to associate with this status.
      */

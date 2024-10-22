@@ -973,6 +973,8 @@ $client->call('GET /enterprises/{enterprise}/secret-scanning/alerts', [
         'sort' => 'generated',
         'direction' => 'generated',
         'per_page' => 8,
+        'is_publicly_leaked' => ,
+        'is_multi_repo' => ,
 ]);
 ```
 
@@ -988,6 +990,8 @@ $client->operations()->secretScanning()->listAlertsForEnterprise(        enterpr
         sort: 'generated',
         direction: 'generated',
         per_page: 8,
+        is_publicly_leaked: ,
+        is_multi_repo: ,
 );
 ```
 
@@ -7876,6 +7880,8 @@ $client->call('GET /orgs/{org}/secret-scanning/alerts', [
         'direction' => 'generated',
         'page' => 1,
         'per_page' => 8,
+        'is_publicly_leaked' => ,
+        'is_multi_repo' => ,
 ]);
 ```
 
@@ -7892,6 +7898,8 @@ $client->operations()->secretScanning()->listAlertsForOrg(        org: 'generate
         direction: 'generated',
         page: 1,
         per_page: 8,
+        is_publicly_leaked: ,
+        is_multi_repo: ,
 );
 ```
 
@@ -7916,6 +7924,8 @@ $client->call('LIST /orgs/{org}/secret-scanning/alerts', [
         'direction' => 'generated',
         'page' => 1,
         'per_page' => 8,
+        'is_publicly_leaked' => ,
+        'is_multi_repo' => ,
 ]);
 ```
 
@@ -7932,6 +7942,8 @@ $client->operations()->secretScanning()->listAlertsForOrgListing(        org: 'g
         direction: 'generated',
         page: 1,
         per_page: 8,
+        is_publicly_leaked: ,
+        is_multi_repo: ,
 );
 ```
 
@@ -21608,6 +21620,8 @@ $client->call('GET /repos/{owner}/{repo}/secret-scanning/alerts', [
         'direction' => 'generated',
         'page' => 1,
         'per_page' => 8,
+        'is_publicly_leaked' => ,
+        'is_multi_repo' => ,
 ]);
 ```
 
@@ -21625,6 +21639,8 @@ $client->operations()->secretScanning()->listAlertsForRepo(        owner: 'gener
         direction: 'generated',
         page: 1,
         per_page: 8,
+        is_publicly_leaked: ,
+        is_multi_repo: ,
 );
 ```
 
@@ -21650,6 +21666,8 @@ $client->call('LIST /repos/{owner}/{repo}/secret-scanning/alerts', [
         'direction' => 'generated',
         'page' => 1,
         'per_page' => 8,
+        'is_publicly_leaked' => ,
+        'is_multi_repo' => ,
 ]);
 ```
 
@@ -21667,6 +21685,8 @@ $client->operations()->secretScanning()->listAlertsForRepoListing(        owner:
         direction: 'generated',
         page: 1,
         per_page: 8,
+        is_publicly_leaked: ,
+        is_multi_repo: ,
 );
 ```
 
@@ -22305,7 +22325,7 @@ You can find more about this operation over at the [API method documentation](ht
 
 ### repos/list-tag-protection
 
-Deprecated - List tag protection states for a repository
+Closing down - List tag protection states for a repository
 
 Using the `call` method:
 ```php
@@ -22322,12 +22342,12 @@ $client->operations()->repos()->listTagProtection(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#deprecated---list-tag-protection-states-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#closing-down---list-tag-protection-states-for-a-repository).
 
 
 ### repos/create-tag-protection
 
-Deprecated - Create a tag protection state for a repository
+Closing down - Create a tag protection state for a repository
 
 Using the `call` method:
 ```php
@@ -22344,12 +22364,12 @@ $client->operations()->repos()->createTagProtection(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#deprecated---create-a-tag-protection-state-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#closing-down---create-a-tag-protection-state-for-a-repository).
 
 
 ### repos/delete-tag-protection
 
-Deprecated - Delete a tag protection state for a repository
+Closing down - Delete a tag protection state for a repository
 
 Using the `call` method:
 ```php
@@ -22368,7 +22388,7 @@ $client->operations()->repos()->deleteTagProtection(        owner: 'generated',
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#deprecated---delete-a-tag-protection-state-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/tags#closing-down---delete-a-tag-protection-state-for-a-repository).
 
 
 ### repos/download-tarball-archive

@@ -102,7 +102,7 @@ final class CodeScanning
         return $operator->call($arguments['org'], $arguments['tool_name'], $arguments['tool_guid'], $arguments['before'], $arguments['after'], $arguments['state'], $arguments['severity'], $arguments['page'], $arguments['per_page'], $arguments['direction'], $arguments['sort']);
     }
 
-    /** @return iterable<int,Schema\CodeScanningAlertItems>|WithoutBody */
+    /** @return Observable<Schema\CodeScanningAlertItems>|WithoutBody */
     public function listAlertsForRepo(array $params): iterable|WithoutBody
     {
         $arguments = [];

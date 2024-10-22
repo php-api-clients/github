@@ -65,6 +65,9 @@ final readonly class Users
         },
         "site_admin": {
             "type": "boolean"
+        },
+        "user_view_type": {
+            "type": "string"
         }
     }
 }';
@@ -88,7 +91,8 @@ final readonly class Users
     "events_url": "generated",
     "received_events_url": "generated",
     "type": "generated",
-    "site_admin": false
+    "site_admin": false,
+    "user_view_type": "generated"
 }';
 
     public function __construct(public string|null $login, public int|null $id, #[MapFrom('node_id')]
@@ -105,7 +109,8 @@ final readonly class Users
     public string|null $reposUrl, #[MapFrom('events_url')]
     public string|null $eventsUrl, #[MapFrom('received_events_url')]
     public string|null $receivedEventsUrl, public string|null $type, #[MapFrom('site_admin')]
-    public bool|null $siteAdmin,)
+    public bool|null $siteAdmin, #[MapFrom('user_view_type')]
+    public string|null $userViewType,)
     {
     }
 }

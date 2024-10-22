@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewThreadResolved
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Milestone extends Schema\AliasAbstract\TietF5C8F2ED\Tiet1E2DC2E3\Tiet6CD07639\Tiet33A0DD5A
+final readonly class Milestone extends Schema\AliasAbstract\Tiet49F6DF3C\TietF3BF0898\Tiet3FB49BCC\TietCFC7D5E0
 {
 }

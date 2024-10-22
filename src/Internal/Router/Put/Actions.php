@@ -57,6 +57,7 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['repository_id']);
     }
 
+    /** @return */
     public function setRepoAccessToSelfHostedRunnerGroupInOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -77,6 +78,7 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['runner_group_id'], $params);
     }
 
+    /** @return */
     public function setSelfHostedRunnersInGroupForOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -337,6 +339,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function addRepoAccessToSelfHostedRunnerGroupInOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -363,6 +366,7 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['runner_group_id'], $arguments['repository_id']);
     }
 
+    /** @return */
     public function addSelfHostedRunnerToGroupForOrg(array $params): WithoutBody
     {
         $arguments = [];

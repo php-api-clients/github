@@ -192,6 +192,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -427,6 +433,12 @@ final readonly class IssueEventForIssue
                                                     "type": "string",
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
+                                                    ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
                                                     ]
                                                 }
                                             },
@@ -751,6 +763,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -986,6 +1004,12 @@ final readonly class IssueEventForIssue
                                                     "type": "string",
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
+                                                    ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
                                                     ]
                                                 }
                                             },
@@ -1311,6 +1335,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -1541,6 +1571,12 @@ final readonly class IssueEventForIssue
                                             "type": "string",
                                             "examples": [
                                                 "\\"2020-07-09T00:17:55Z\\""
+                                            ]
+                                        },
+                                        "user_view_type": {
+                                            "type": "string",
+                                            "examples": [
+                                                "public"
                                             ]
                                         }
                                     },
@@ -1820,6 +1856,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -1981,6 +2023,12 @@ final readonly class IssueEventForIssue
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -2172,6 +2220,12 @@ final readonly class IssueEventForIssue
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -2408,6 +2462,12 @@ final readonly class IssueEventForIssue
                                                     "type": "string",
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
+                                                    ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
                                                     ]
                                                 }
                                             },
@@ -2689,6 +2749,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -2850,6 +2916,12 @@ final readonly class IssueEventForIssue
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -3040,6 +3112,12 @@ final readonly class IssueEventForIssue
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -3276,6 +3354,12 @@ final readonly class IssueEventForIssue
                                                     "type": "string",
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
+                                                    ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
                                                     ]
                                                 }
                                             },
@@ -3596,6 +3680,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -3831,6 +3921,12 @@ final readonly class IssueEventForIssue
                                                     "type": "string",
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
+                                                    ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
                                                     ]
                                                 }
                                             },
@@ -4151,6 +4247,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -4386,6 +4488,12 @@ final readonly class IssueEventForIssue
                                                     "type": "string",
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
+                                                    ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
                                                     ]
                                                 }
                                             },
@@ -4710,6 +4818,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -4945,6 +5059,12 @@ final readonly class IssueEventForIssue
                                                     "type": "string",
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
+                                                    ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
                                                     ]
                                                 }
                                             },
@@ -5225,6 +5345,12 @@ final readonly class IssueEventForIssue
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -5597,6 +5723,12 @@ final readonly class IssueEventForIssue
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -5788,6 +5920,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -6023,6 +6161,12 @@ final readonly class IssueEventForIssue
                                                     "type": "string",
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
+                                                    ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
                                                     ]
                                                 }
                                             },
@@ -6303,6 +6447,12 @@ final readonly class IssueEventForIssue
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -6676,6 +6826,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -6865,6 +7021,12 @@ final readonly class IssueEventForIssue
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -7101,6 +7263,12 @@ final readonly class IssueEventForIssue
                                                     "type": "string",
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
+                                                    ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
                                                     ]
                                                 }
                                             },
@@ -7435,6 +7603,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -7670,6 +7844,12 @@ final readonly class IssueEventForIssue
                                                     "type": "string",
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
+                                                    ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
                                                     ]
                                                 }
                                             },
@@ -7987,6 +8167,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -8222,6 +8408,12 @@ final readonly class IssueEventForIssue
                                                     "type": "string",
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
+                                                    ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
                                                     ]
                                                 }
                                             },
@@ -8562,6 +8754,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -8797,6 +8995,12 @@ final readonly class IssueEventForIssue
                                                     "type": "string",
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
+                                                    ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
                                                     ]
                                                 }
                                             },
@@ -9137,6 +9341,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -9372,6 +9582,12 @@ final readonly class IssueEventForIssue
                                                     "type": "string",
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
+                                                    ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
                                                     ]
                                                 }
                                             },
@@ -9712,6 +9928,12 @@ final readonly class IssueEventForIssue
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -9942,6 +10164,12 @@ final readonly class IssueEventForIssue
                                             "type": "string",
                                             "examples": [
                                                 "\\"2020-07-09T00:17:55Z\\""
+                                            ]
+                                        },
+                                        "user_view_type": {
+                                            "type": "string",
+                                            "examples": [
+                                                "public"
                                             ]
                                         }
                                     },

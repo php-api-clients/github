@@ -208,7 +208,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /enterprises/{enterprise}/secret-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\OrganizationSecretScanningAlert>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\OrganizationSecretScanningAlert>');
         }
 
         if ($call === 'GET /enterprises/{enterprise}/team/{team_slug}/copilot/usage') {
@@ -540,55 +540,55 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/actions/runner-groups') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\ListSelfHostedRunnerGroupsForOrg\\Response\\ApplicationJson\\Ok');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'POST /orgs/{org}/actions/runner-groups') {
-            return $this->typeResolver->resolve('Schema\\RunnerGroupsOrg');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/actions/runner-groups/{runner_group_id}') {
-            return $this->typeResolver->resolve('Schema\\RunnerGroupsOrg');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}') {
-            return $this->typeResolver->resolve('Schema\\RunnerGroupsOrg');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\ListRepoAccessToSelfHostedRunnerGroupInOrg\\Response\\ApplicationJson\\Ok');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/repositories/{repository_id}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/actions/runner-groups/{runner_group_id}/runners') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\ListSelfHostedRunnersInGroupForOrg\\Response\\ApplicationJson\\Ok');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PUT /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/actions/runners') {
@@ -1376,11 +1376,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/secret-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\OrganizationSecretScanningAlert>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\OrganizationSecretScanningAlert>');
         }
 
         if ($call === 'LIST /orgs/{org}/secret-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\OrganizationSecretScanningAlert>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\OrganizationSecretScanningAlert>');
         }
 
         if ($call === 'GET /orgs/{org}/security-advisories') {
@@ -2256,11 +2256,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAlertItems>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAlertItems>|WithoutBody');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/code-scanning/alerts') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\CodeScanningAlertItems>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('Observable<Schema\\CodeScanningAlertItems>|WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}') {
@@ -2528,11 +2528,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/dependabot/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\DependabotAlert>|WithoutBody');
+            return $this->typeResolver->resolve('iterable<int,Schema\\DependabotAlert>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/dependabot/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\DependabotAlert>|WithoutBody');
+            return $this->typeResolver->resolve('iterable<int,Schema\\DependabotAlert>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/dependabot/alerts/{alert_number}') {
@@ -3528,11 +3528,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/secret-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\SecretScanningAlert>|WithoutBody');
+            return $this->typeResolver->resolve('iterable<int,Schema\\SecretScanningAlert>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/secret-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\SecretScanningAlert>|WithoutBody');
+            return $this->typeResolver->resolve('iterable<int,Schema\\SecretScanningAlert>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}') {
@@ -3724,7 +3724,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /search/code') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\Search\\Code\\Response\\ApplicationJson\\Ok|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /search/commits') {

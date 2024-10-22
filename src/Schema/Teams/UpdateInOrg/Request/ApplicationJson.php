@@ -42,7 +42,7 @@ final readonly class ApplicationJson
                 "admin"
             ],
             "type": "string",
-            "description": "**Deprecated**. The permission that new repositories will be added to the team with when none is specified.",
+            "description": "**Closing down notice**. The permission that new repositories will be added to the team with when none is specified.",
             "default": "pull"
         },
         "parent_team_id": {
@@ -77,7 +77,7 @@ final readonly class ApplicationJson
      * notificationSetting: The notification setting the team has chosen. Editing teams without specifying this parameter leaves `notification_setting` intact. The options are:
      * `notifications_enabled` - team members receive notifications when the team is @mentioned.
      * `notifications_disabled` - no one receives notifications.
-     * permission: **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
+     * permission: **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
      * parentTeamId: The ID of a team to set as the parent team.
      */
     public function __construct(public string|null $name, public string|null $description, public string|null $privacy, #[MapFrom('notification_setting')]

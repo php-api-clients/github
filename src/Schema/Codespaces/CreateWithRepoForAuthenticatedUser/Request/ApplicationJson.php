@@ -30,7 +30,7 @@ final readonly class ApplicationJson
                 "UsWest"
             ],
             "type": "string",
-            "description": "The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated."
+            "description": "The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down."
         },
         "client_ip": {
             "type": "string",
@@ -85,7 +85,7 @@ final readonly class ApplicationJson
     /**
      * ref: Git ref (typically a branch name) for this codespace
      * location: The requested location for a new codespace. Best efforts are made to respect this upon creation. Assigned by IP if not provided.
-     * geo: The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated.
+     * geo: The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down.
      * clientIp: IP for location auto-detection when proxying a request
      * machine: Machine type to use for this codespace
      * devcontainerPath: Path to devcontainer.json config to use for this codespace

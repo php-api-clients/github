@@ -24,6 +24,7 @@ final readonly class UpdateSelfHostedRunnerGroupForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, int $runnerGroupId, array $params): RunnerGroupsOrg
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\UpdateSelfHostedRunnerGroupForOrg($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $runnerGroupId);

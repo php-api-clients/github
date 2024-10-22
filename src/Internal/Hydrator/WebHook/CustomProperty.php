@@ -853,6 +853,17 @@ class CustomProperty implements ObjectMapper
             $properties['starredAt'] = $value;
 
             after_starredAt:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
@@ -1595,6 +1606,14 @@ class CustomProperty implements ObjectMapper
         }
 
         after_starredAt:        $result['starred_at'] = $starredAt;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }

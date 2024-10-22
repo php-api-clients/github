@@ -21,7 +21,7 @@ final class SecretScanning
     {
     }
 
-    /** @return Observable<Schema\OrganizationSecretScanningAlert> */
+    /** @return iterable<int,Schema\OrganizationSecretScanningAlert> */
     public function listAlertsForOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -91,10 +91,22 @@ final class SecretScanning
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
+        if (array_key_exists('is_publicly_leaked', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: is_publicly_leaked');
+        }
+
+        $arguments['is_publicly_leaked'] = $params['is_publicly_leaked'];
+        unset($params['is_publicly_leaked']);
+        if (array_key_exists('is_multi_repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: is_multi_repo');
+        }
+
+        $arguments['is_multi_repo'] = $params['is_multi_repo'];
+        unset($params['is_multi_repo']);
         $arguments['page'] = 1;
         do {
             $operator = new Internal\Operator\SecretScanning\ListAlertsForOrgListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀SecretScanning🌀Alerts());
-            $items    = [...$operator->call($arguments['org'], $arguments['state'], $arguments['secret_type'], $arguments['resolution'], $arguments['before'], $arguments['after'], $arguments['validity'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page'])];
+            $items    = [...$operator->call($arguments['org'], $arguments['state'], $arguments['secret_type'], $arguments['resolution'], $arguments['before'], $arguments['after'], $arguments['validity'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page'], $arguments['is_publicly_leaked'], $arguments['is_multi_repo'])];
 
             yield from $items;
 
@@ -102,7 +114,7 @@ final class SecretScanning
         } while (count($items) > 0);
     }
 
-    /** @return Observable<Schema\SecretScanningAlert>|WithoutBody */
+    /** @return iterable<int,Schema\SecretScanningAlert>|WithoutBody */
     public function listAlertsForRepoListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -178,10 +190,22 @@ final class SecretScanning
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
+        if (array_key_exists('is_publicly_leaked', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: is_publicly_leaked');
+        }
+
+        $arguments['is_publicly_leaked'] = $params['is_publicly_leaked'];
+        unset($params['is_publicly_leaked']);
+        if (array_key_exists('is_multi_repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: is_multi_repo');
+        }
+
+        $arguments['is_multi_repo'] = $params['is_multi_repo'];
+        unset($params['is_multi_repo']);
         $arguments['page'] = 1;
         do {
             $operator = new Internal\Operator\SecretScanning\ListAlertsForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecretScanning🌀Alerts());
-            $items    = [...$operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['secret_type'], $arguments['resolution'], $arguments['before'], $arguments['after'], $arguments['validity'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page'])];
+            $items    = [...$operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['secret_type'], $arguments['resolution'], $arguments['before'], $arguments['after'], $arguments['validity'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page'], $arguments['is_publicly_leaked'], $arguments['is_multi_repo'])];
 
             yield from $items;
 

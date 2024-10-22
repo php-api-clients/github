@@ -193,6 +193,12 @@ final readonly class Collaborator
             "examples": [
                 "admin"
             ]
+        },
+        "user_view_type": {
+            "type": "string",
+            "examples": [
+                "public"
+            ]
         }
     },
     "description": "Collaborator"
@@ -227,7 +233,8 @@ final readonly class Collaborator
         "maintain": false,
         "admin": false
     },
-    "role_name": "admin"
+    "role_name": "admin",
+    "user_view_type": "public"
 }';
 
     public function __construct(public string $login, public int $id, public string|null $email, public string|null $name, #[MapFrom('node_id')]
@@ -245,7 +252,8 @@ final readonly class Collaborator
     public string $eventsUrl, #[MapFrom('received_events_url')]
     public string $receivedEventsUrl, public string $type, #[MapFrom('site_admin')]
     public bool $siteAdmin, public Schema\Collaborator\Permissions|null $permissions, #[MapFrom('role_name')]
-    public string $roleName,)
+    public string $roleName, #[MapFrom('user_view_type')]
+    public string|null $userViewType,)
     {
     }
 }

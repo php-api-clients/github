@@ -328,6 +328,12 @@ final readonly class PullRequest
                     "examples": [
                         "\\"2020-07-09T00:17:55Z\\""
                     ]
+                },
+                "user_view_type": {
+                    "type": "string",
+                    "examples": [
+                        "public"
+                    ]
                 }
             },
             "description": "A GitHub user."
@@ -641,6 +647,12 @@ final readonly class PullRequest
                                             "examples": [
                                                 "\\"2020-07-09T00:17:55Z\\""
                                             ]
+                                        },
+                                        "user_view_type": {
+                                            "type": "string",
+                                            "examples": [
+                                                "public"
+                                            ]
                                         }
                                     },
                                     "description": "A GitHub user."
@@ -913,6 +925,12 @@ final readonly class PullRequest
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -1082,6 +1100,12 @@ final readonly class PullRequest
                         "examples": [
                             "\\"2020-07-09T00:17:55Z\\""
                         ]
+                    },
+                    "user_view_type": {
+                        "type": "string",
+                        "examples": [
+                            "public"
+                        ]
                     }
                 },
                 "description": "A GitHub user."
@@ -1249,6 +1273,12 @@ final readonly class PullRequest
                         "type": "string",
                         "examples": [
                             "\\"2020-07-09T00:17:55Z\\""
+                        ]
+                    },
+                    "user_view_type": {
+                        "type": "string",
+                        "examples": [
+                            "public"
                         ]
                     }
                 },
@@ -1671,6 +1701,9 @@ final readonly class PullRequest
                                 "url": {
                                     "type": "string",
                                     "format": "uri"
+                                },
+                                "user_view_type": {
+                                    "type": "string"
                                 }
                             }
                         },
@@ -1998,6 +2031,9 @@ final readonly class PullRequest
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 }
@@ -2302,6 +2338,9 @@ final readonly class PullRequest
                                 "url": {
                                     "type": "string",
                                     "format": "uri"
+                                },
+                                "user_view_type": {
+                                    "type": "string"
                                 }
                             }
                         },
@@ -2651,6 +2690,9 @@ final readonly class PullRequest
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 }
@@ -2964,6 +3006,12 @@ final readonly class PullRequest
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -3185,6 +3233,12 @@ final readonly class PullRequest
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -3277,7 +3331,8 @@ final readonly class PullRequest
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "body": "Please pull these awesome changes",
     "labels": [
@@ -3331,7 +3386,8 @@ final readonly class PullRequest
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "open_issues": 4,
         "closed_issues": 8,
@@ -3367,7 +3423,8 @@ final readonly class PullRequest
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "assignees": null,
     "requested_reviewers": null,
@@ -3428,7 +3485,8 @@ final readonly class PullRequest
                 "starred_url": "generated",
                 "subscriptions_url": "https:\\/\\/example.com\\/",
                 "type": "generated",
-                "url": "https:\\/\\/example.com\\/"
+                "url": "https:\\/\\/example.com\\/",
+                "user_view_type": "generated"
             },
             "private": false,
             "pulls_url": "generated",
@@ -3515,7 +3573,8 @@ final readonly class PullRequest
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "generated",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         }
     },
     "base": {
@@ -3575,7 +3634,8 @@ final readonly class PullRequest
                 "starred_url": "generated",
                 "subscriptions_url": "https:\\/\\/example.com\\/",
                 "type": "generated",
-                "url": "https:\\/\\/example.com\\/"
+                "url": "https:\\/\\/example.com\\/",
+                "user_view_type": "generated"
             },
             "private": false,
             "pulls_url": "generated",
@@ -3662,7 +3722,8 @@ final readonly class PullRequest
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "generated",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         }
     },
     "_links": {
@@ -3714,7 +3775,8 @@ final readonly class PullRequest
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "merge_method": "rebase",
         "commit_title": "generated",
@@ -3746,7 +3808,8 @@ final readonly class PullRequest
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "comments": 10,
     "review_comments": 0,

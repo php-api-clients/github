@@ -301,6 +301,9 @@ final readonly class Release
                 "url": {
                     "type": "string",
                     "format": "uri"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         },
@@ -538,7 +541,8 @@ final readonly class Release
         "starred_url": "generated",
         "subscriptions_url": "https:\\/\\/example.com\\/",
         "type": "Organization",
-        "url": "https:\\/\\/example.com\\/"
+        "url": "https:\\/\\/example.com\\/",
+        "user_view_type": "generated"
     },
     "body": "generated",
     "created_at": "1970-01-01T00:00:00+00:00",

@@ -204,6 +204,12 @@ final readonly class Installation
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -579,7 +585,7 @@ final readonly class Installation
                         "write"
                     ],
                     "type": "string",
-                    "description": "The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change."
+                    "description": "The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change."
                 },
                 "organization_announcement_banners": {
                     "enum": [
@@ -634,7 +640,7 @@ final readonly class Installation
                         "admin"
                     ],
                     "type": "string",
-                    "description": "The level of permission to grant the access token to manage organization projects and projects beta (where available)."
+                    "description": "The level of permission to grant the access token to manage organization projects and projects public preview (where available)."
                 },
                 "organization_packages": {
                     "enum": [
@@ -948,6 +954,12 @@ final readonly class Installation
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -1069,7 +1081,8 @@ final readonly class Installation
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "suspended_at": "1970-01-01T00:00:00+00:00",
     "contact_email": "\\"test_13f1e99741e3e004@d7e1eb0bc0a1ba12.com\\""

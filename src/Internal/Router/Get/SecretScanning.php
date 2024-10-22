@@ -21,7 +21,7 @@ final class SecretScanning
     {
     }
 
-    /** @return Observable<Schema\OrganizationSecretScanningAlert> */
+    /** @return iterable<int,Schema\OrganizationSecretScanningAlert> */
     public function listAlertsForEnterprise(array $params): iterable
     {
         $arguments = [];
@@ -85,12 +85,24 @@ final class SecretScanning
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
+        if (array_key_exists('is_publicly_leaked', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: is_publicly_leaked');
+        }
+
+        $arguments['is_publicly_leaked'] = $params['is_publicly_leaked'];
+        unset($params['is_publicly_leaked']);
+        if (array_key_exists('is_multi_repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: is_multi_repo');
+        }
+
+        $arguments['is_multi_repo'] = $params['is_multi_repo'];
+        unset($params['is_multi_repo']);
         $operator = new Internal\Operator\SecretScanning\ListAlertsForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀SecretScanning🌀Alerts());
 
-        return $operator->call($arguments['enterprise'], $arguments['state'], $arguments['secret_type'], $arguments['resolution'], $arguments['before'], $arguments['after'], $arguments['validity'], $arguments['sort'], $arguments['direction'], $arguments['per_page']);
+        return $operator->call($arguments['enterprise'], $arguments['state'], $arguments['secret_type'], $arguments['resolution'], $arguments['before'], $arguments['after'], $arguments['validity'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['is_publicly_leaked'], $arguments['is_multi_repo']);
     }
 
-    /** @return Observable<Schema\OrganizationSecretScanningAlert> */
+    /** @return iterable<int,Schema\OrganizationSecretScanningAlert> */
     public function listAlertsForOrg(array $params): iterable
     {
         $arguments = [];
@@ -160,12 +172,24 @@ final class SecretScanning
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
+        if (array_key_exists('is_publicly_leaked', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: is_publicly_leaked');
+        }
+
+        $arguments['is_publicly_leaked'] = $params['is_publicly_leaked'];
+        unset($params['is_publicly_leaked']);
+        if (array_key_exists('is_multi_repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: is_multi_repo');
+        }
+
+        $arguments['is_multi_repo'] = $params['is_multi_repo'];
+        unset($params['is_multi_repo']);
         $operator = new Internal\Operator\SecretScanning\ListAlertsForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀SecretScanning🌀Alerts());
 
-        return $operator->call($arguments['org'], $arguments['state'], $arguments['secret_type'], $arguments['resolution'], $arguments['before'], $arguments['after'], $arguments['validity'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page']);
+        return $operator->call($arguments['org'], $arguments['state'], $arguments['secret_type'], $arguments['resolution'], $arguments['before'], $arguments['after'], $arguments['validity'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page'], $arguments['is_publicly_leaked'], $arguments['is_multi_repo']);
     }
 
-    /** @return Observable<Schema\SecretScanningAlert>|WithoutBody */
+    /** @return iterable<int,Schema\SecretScanningAlert>|WithoutBody */
     public function listAlertsForRepo(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -241,9 +265,21 @@ final class SecretScanning
 
         $arguments['per_page'] = $params['per_page'];
         unset($params['per_page']);
+        if (array_key_exists('is_publicly_leaked', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: is_publicly_leaked');
+        }
+
+        $arguments['is_publicly_leaked'] = $params['is_publicly_leaked'];
+        unset($params['is_publicly_leaked']);
+        if (array_key_exists('is_multi_repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: is_multi_repo');
+        }
+
+        $arguments['is_multi_repo'] = $params['is_multi_repo'];
+        unset($params['is_multi_repo']);
         $operator = new Internal\Operator\SecretScanning\ListAlertsForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecretScanning🌀Alerts());
 
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['secret_type'], $arguments['resolution'], $arguments['before'], $arguments['after'], $arguments['validity'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page']);
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['secret_type'], $arguments['resolution'], $arguments['before'], $arguments['after'], $arguments['validity'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page'], $arguments['is_publicly_leaked'], $arguments['is_multi_repo']);
     }
 
     /** @return */

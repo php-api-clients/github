@@ -125,6 +125,12 @@ final readonly class Apps
                     "examples": [
                         false
                     ]
+                },
+                "user_view_type": {
+                    "type": "string",
+                    "examples": [
+                        "public"
+                    ]
                 }
             }
         },
@@ -203,7 +209,8 @@ final readonly class Apps
         "organizations_url": "\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/orgs\\"",
         "received_events_url": "\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/received_events\\"",
         "type": "\\"Organization\\"",
-        "site_admin": false
+        "site_admin": false,
+        "user_view_type": "public"
     },
     "name": "generated",
     "client_id": "generated",

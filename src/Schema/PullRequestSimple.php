@@ -315,6 +315,12 @@ final readonly class PullRequestSimple
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -627,6 +633,12 @@ final readonly class PullRequestSimple
                                             "examples": [
                                                 "\\"2020-07-09T00:17:55Z\\""
                                             ]
+                                        },
+                                        "user_view_type": {
+                                            "type": "string",
+                                            "examples": [
+                                                "public"
+                                            ]
                                         }
                                     },
                                     "description": "A GitHub user."
@@ -899,6 +911,12 @@ final readonly class PullRequestSimple
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -1068,6 +1086,12 @@ final readonly class PullRequestSimple
                         "examples": [
                             "\\"2020-07-09T00:17:55Z\\""
                         ]
+                    },
+                    "user_view_type": {
+                        "type": "string",
+                        "examples": [
+                            "public"
+                        ]
                     }
                 },
                 "description": "A GitHub user."
@@ -1235,6 +1259,12 @@ final readonly class PullRequestSimple
                         "type": "string",
                         "examples": [
                             "\\"2020-07-09T00:17:55Z\\""
+                        ]
+                    },
+                    "user_view_type": {
+                        "type": "string",
+                        "examples": [
+                            "public"
                         ]
                     }
                 },
@@ -1827,6 +1857,12 @@ final readonly class PullRequestSimple
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
                                     ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
+                                    ]
                                 }
                             },
                             "description": "A GitHub user."
@@ -2327,7 +2363,7 @@ final readonly class PullRequestSimple
                         },
                         "use_squash_pr_title_as_default": {
                             "type": "boolean",
-                            "description": "Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
+                            "description": "Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.",
                             "default": false,
                             "deprecated": true
                         },
@@ -2569,6 +2605,12 @@ final readonly class PullRequestSimple
                                     "type": "string",
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
+                                    ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
                                     ]
                                 }
                             },
@@ -2948,6 +2990,12 @@ final readonly class PullRequestSimple
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
                                     ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
+                                    ]
                                 }
                             },
                             "description": "A GitHub user."
@@ -3448,7 +3496,7 @@ final readonly class PullRequestSimple
                         },
                         "use_squash_pr_title_as_default": {
                             "type": "boolean",
-                            "description": "Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
+                            "description": "Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.",
                             "default": false,
                             "deprecated": true
                         },
@@ -3690,6 +3738,12 @@ final readonly class PullRequestSimple
                                     "type": "string",
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
+                                    ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
                                     ]
                                 }
                             },
@@ -4007,6 +4061,12 @@ final readonly class PullRequestSimple
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -4081,7 +4141,8 @@ final readonly class PullRequestSimple
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "body": "Please pull these awesome changes",
     "labels": [
@@ -4135,7 +4196,8 @@ final readonly class PullRequestSimple
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "open_issues": 4,
         "closed_issues": 8,
@@ -4171,7 +4233,8 @@ final readonly class PullRequestSimple
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "assignees": null,
     "requested_reviewers": null,
@@ -4221,7 +4284,8 @@ final readonly class PullRequestSimple
                 "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
                 "type": "User",
                 "site_admin": false,
-                "starred_at": "\\"2020-07-09T00:17:55Z\\""
+                "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+                "user_view_type": "public"
             },
             "private": false,
             "html_url": "https:\\/\\/github.com\\/octocat\\/Hello-World",
@@ -4336,7 +4400,8 @@ final readonly class PullRequestSimple
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         }
     },
     "base": {
@@ -4384,7 +4449,8 @@ final readonly class PullRequestSimple
                 "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
                 "type": "User",
                 "site_admin": false,
-                "starred_at": "\\"2020-07-09T00:17:55Z\\""
+                "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+                "user_view_type": "public"
             },
             "private": false,
             "html_url": "https:\\/\\/github.com\\/octocat\\/Hello-World",
@@ -4499,7 +4565,8 @@ final readonly class PullRequestSimple
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         }
     },
     "_links": {
@@ -4551,7 +4618,8 @@ final readonly class PullRequestSimple
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "merge_method": "rebase",
         "commit_title": "generated",

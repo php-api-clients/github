@@ -143,6 +143,9 @@ final readonly class Issue
                 "url": {
                     "type": "string",
                     "format": "uri"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         },
@@ -241,6 +244,9 @@ final readonly class Issue
                     "url": {
                         "type": "string",
                         "format": "uri"
+                    },
+                    "user_view_type": {
+                        "type": "string"
                     }
                 }
             }
@@ -491,6 +497,9 @@ final readonly class Issue
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 },
@@ -760,6 +769,9 @@ final readonly class Issue
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 },
@@ -1234,6 +1246,9 @@ final readonly class Issue
                 "url": {
                     "type": "string",
                     "format": "uri"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         }
@@ -1265,7 +1280,8 @@ final readonly class Issue
         "starred_url": "generated",
         "subscriptions_url": "https:\\/\\/example.com\\/",
         "type": "Organization",
-        "url": "https:\\/\\/example.com\\/"
+        "url": "https:\\/\\/example.com\\/",
+        "user_view_type": "generated"
     },
     "assignees": [
         {
@@ -1289,7 +1305,8 @@ final readonly class Issue
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Organization",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         },
         {
             "avatar_url": "https:\\/\\/example.com\\/",
@@ -1312,7 +1329,8 @@ final readonly class Issue
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Organization",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         }
     ],
     "author_association": "OWNER",
@@ -1372,7 +1390,8 @@ final readonly class Issue
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Organization",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         },
         "description": "generated",
         "due_on": "1970-01-01T00:00:00+00:00",
@@ -1422,7 +1441,8 @@ final readonly class Issue
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Organization",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         },
         "permissions": {
             "actions": "read",
@@ -1511,7 +1531,8 @@ final readonly class Issue
         "starred_url": "generated",
         "subscriptions_url": "https:\\/\\/example.com\\/",
         "type": "Organization",
-        "url": "https:\\/\\/example.com\\/"
+        "url": "https:\\/\\/example.com\\/",
+        "user_view_type": "generated"
     }
 }';
 

@@ -941,6 +941,17 @@ class IssueComment implements ObjectMapper
             $properties['starredAt'] = $value;
 
             after_starredAt:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
@@ -1394,6 +1405,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Comment\User', $exception, stack: $this->hydrationStack);
         }
@@ -2217,6 +2239,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\Assignee', $exception, stack: $this->hydrationStack);
         }
@@ -2671,6 +2704,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
@@ -3090,6 +3134,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\PerformedViaGithubApp\Owner', $exception, stack: $this->hydrationStack);
         }
@@ -3947,6 +4002,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\User', $exception, stack: $this->hydrationStack);
         }
@@ -7442,6 +7508,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssueComment\User', $exception, stack: $this->hydrationStack);
         }
@@ -8095,6 +8172,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\Assignee', $exception, stack: $this->hydrationStack);
         }
@@ -8549,6 +8637,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
@@ -8968,6 +9067,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\PerformedViaGithubApp\Owner', $exception, stack: $this->hydrationStack);
         }
@@ -9825,6 +9935,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\User', $exception, stack: $this->hydrationStack);
         }
@@ -10737,6 +10858,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\Assignee', $exception, stack: $this->hydrationStack);
         }
@@ -11191,6 +11323,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
@@ -11610,6 +11753,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\PerformedViaGithubApp\Owner', $exception, stack: $this->hydrationStack);
         }
@@ -12467,6 +12621,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\User', $exception, stack: $this->hydrationStack);
         }
@@ -12717,6 +12882,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
@@ -12987,6 +13163,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue2\PerformedViaGithubApp\Owner', $exception, stack: $this->hydrationStack);
         }
@@ -13641,6 +13828,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue\Assignee', $exception, stack: $this->hydrationStack);
         }
@@ -14467,6 +14665,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue\User', $exception, stack: $this->hydrationStack);
         }
@@ -14717,6 +14926,17 @@ class IssueComment implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue\PerformedViaGithubApp\Owner', $exception, stack: $this->hydrationStack);
         }
@@ -15589,6 +15809,14 @@ class IssueComment implements ObjectMapper
 
         after_starredAt:        $result['starred_at'] = $starredAt;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -15840,6 +16068,14 @@ class IssueComment implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -16267,6 +16503,14 @@ class IssueComment implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -16509,6 +16753,14 @@ class IssueComment implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -16773,6 +17025,14 @@ class IssueComment implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -17313,6 +17573,14 @@ class IssueComment implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -19161,6 +19429,14 @@ class IssueComment implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -19515,6 +19791,14 @@ class IssueComment implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -19757,6 +20041,14 @@ class IssueComment implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -20021,6 +20313,14 @@ class IssueComment implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -20562,6 +20862,14 @@ class IssueComment implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -21002,6 +21310,14 @@ class IssueComment implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -21244,6 +21560,14 @@ class IssueComment implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -21508,6 +21832,14 @@ class IssueComment implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -22048,6 +22380,14 @@ class IssueComment implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }

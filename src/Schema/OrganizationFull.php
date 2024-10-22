@@ -242,6 +242,16 @@ final readonly class OrganizationFull
                 10000
             ]
         },
+        "collaborators": {
+            "type": [
+                "integer",
+                "null"
+            ],
+            "description": "The number of collaborators on private repositories.\\n\\nThis field may be null if the number of private repositories is over 50,000.",
+            "examples": [
+                8
+            ]
+        },
         "billing_email": {
             "type": [
                 "string",
@@ -360,7 +370,7 @@ final readonly class OrganizationFull
         },
         "advanced_security_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "description": "**Endpoint closing down notice.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
             "deprecated": true,
             "examples": [
                 false
@@ -368,7 +378,7 @@ final readonly class OrganizationFull
         },
         "dependabot_alerts_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "description": "**Endpoint closing down notice.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
             "deprecated": true,
             "examples": [
                 false
@@ -376,7 +386,7 @@ final readonly class OrganizationFull
         },
         "dependabot_security_updates_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "description": "**Endpoint closing down notice.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
             "deprecated": true,
             "examples": [
                 false
@@ -384,7 +394,7 @@ final readonly class OrganizationFull
         },
         "dependency_graph_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "description": "**Endpoint closing down notice.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
             "deprecated": true,
             "examples": [
                 false
@@ -392,7 +402,7 @@ final readonly class OrganizationFull
         },
         "secret_scanning_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "description": "**Endpoint closing down notice.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
             "deprecated": true,
             "examples": [
                 false
@@ -400,7 +410,7 @@ final readonly class OrganizationFull
         },
         "secret_scanning_push_protection_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
+            "description": "**Endpoint closing down notice.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nThis field is only visible to organization owners or members of a team with the security manager role.",
             "deprecated": true,
             "examples": [
                 false
@@ -478,6 +488,7 @@ final readonly class OrganizationFull
     "owned_private_repos": 100,
     "private_gists": 81,
     "disk_usage": 10000,
+    "collaborators": 8,
     "billing_email": "org@example.com",
     "plan": {
         "name": "generated",
@@ -512,32 +523,35 @@ final readonly class OrganizationFull
 }';
 
     /**
-     * advancedSecurityEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+     * collaborators: The number of collaborators on private repositories.
+
+    This field may be null if the number of private repositories is over 50,000.
+     * advancedSecurityEnabledForNewRepositories: **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
 
     Whether GitHub Advanced Security is enabled for new repositories and repositories transferred to this organization.
 
     This field is only visible to organization owners or members of a team with the security manager role.
-     * dependabotAlertsEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+     * dependabotAlertsEnabledForNewRepositories: **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
 
     Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.
 
     This field is only visible to organization owners or members of a team with the security manager role.
-     * dependabotSecurityUpdatesEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+     * dependabotSecurityUpdatesEnabledForNewRepositories: **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
 
     Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.
 
     This field is only visible to organization owners or members of a team with the security manager role.
-     * dependencyGraphEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+     * dependencyGraphEnabledForNewRepositories: **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
 
     Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.
 
     This field is only visible to organization owners or members of a team with the security manager role.
-     * secretScanningEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+     * secretScanningEnabledForNewRepositories: **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
 
     Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.
 
     This field is only visible to organization owners or members of a team with the security manager role.
-     * secretScanningPushProtectionEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+     * secretScanningPushProtectionEnabledForNewRepositories: **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
 
     Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.
 
@@ -564,7 +578,7 @@ final readonly class OrganizationFull
     public int|null $totalPrivateRepos, #[MapFrom('owned_private_repos')]
     public int|null $ownedPrivateRepos, #[MapFrom('private_gists')]
     public int|null $privateGists, #[MapFrom('disk_usage')]
-    public int|null $diskUsage, #[MapFrom('billing_email')]
+    public int|null $diskUsage, public int|null $collaborators, #[MapFrom('billing_email')]
     public string|null $billingEmail, public Schema\OrganizationFull\Plan|null $plan, #[MapFrom('default_repository_permission')]
     public string|null $defaultRepositoryPermission, #[MapFrom('members_can_create_repositories')]
     public bool|null $membersCanCreateRepositories, #[MapFrom('two_factor_requirement_enabled')]

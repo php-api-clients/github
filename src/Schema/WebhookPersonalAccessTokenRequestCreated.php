@@ -205,6 +205,12 @@ final readonly class WebhookPersonalAccessTokenRequestCreated
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -706,6 +712,12 @@ final readonly class WebhookPersonalAccessTokenRequestCreated
                     "examples": [
                         "\\"2020-07-09T00:17:55Z\\""
                     ]
+                },
+                "user_view_type": {
+                    "type": "string",
+                    "examples": [
+                        "public"
+                    ]
                 }
             },
             "description": "A GitHub user."
@@ -764,7 +776,8 @@ final readonly class WebhookPersonalAccessTokenRequestCreated
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "permissions_added": {
             "organization": [],
@@ -836,7 +849,8 @@ final readonly class WebhookPersonalAccessTokenRequestCreated
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "installation": {
         "id": 1,

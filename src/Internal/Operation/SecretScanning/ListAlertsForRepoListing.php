@@ -52,26 +52,32 @@ final class ListAlertsForRepoListing
     private int $page;
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
+    /**A boolean value representing whether or not to filter alerts by the publicly-leaked tag being present. **/
+    private bool $isPubliclyLeaked;
+    /**A boolean value representing whether or not to filter alerts by the multi-repo tag being present. **/
+    private bool $isMultiRepo;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\SecretScanning\Alerts $hydrator, string $owner, string $repo, string $state, string $secretType, string $resolution, string $before, string $after, string $validity, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\SecretScanning\Alerts $hydrator, string $owner, string $repo, string $state, string $secretType, string $resolution, string $before, string $after, string $validity, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30, bool $isPubliclyLeaked = false, bool $isMultiRepo = false)
     {
-        $this->owner      = $owner;
-        $this->repo       = $repo;
-        $this->state      = $state;
-        $this->secretType = $secretType;
-        $this->resolution = $resolution;
-        $this->before     = $before;
-        $this->after      = $after;
-        $this->validity   = $validity;
-        $this->sort       = $sort;
-        $this->direction  = $direction;
-        $this->page       = $page;
-        $this->perPage    = $perPage;
+        $this->owner            = $owner;
+        $this->repo             = $repo;
+        $this->state            = $state;
+        $this->secretType       = $secretType;
+        $this->resolution       = $resolution;
+        $this->before           = $before;
+        $this->after            = $after;
+        $this->validity         = $validity;
+        $this->sort             = $sort;
+        $this->direction        = $direction;
+        $this->page             = $page;
+        $this->perPage          = $perPage;
+        $this->isPubliclyLeaked = $isPubliclyLeaked;
+        $this->isMultiRepo      = $isMultiRepo;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{owner}', '{repo}', '{state}', '{secret_type}', '{resolution}', '{before}', '{after}', '{validity}', '{sort}', '{direction}', '{page}', '{per_page}'], [$this->owner, $this->repo, $this->state, $this->secretType, $this->resolution, $this->before, $this->after, $this->validity, $this->sort, $this->direction, $this->page, $this->perPage], '/repos/{owner}/{repo}/secret-scanning/alerts' . '?state={state}&secret_type={secret_type}&resolution={resolution}&before={before}&after={after}&validity={validity}&sort={sort}&direction={direction}&page={page}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{state}', '{secret_type}', '{resolution}', '{before}', '{after}', '{validity}', '{sort}', '{direction}', '{page}', '{per_page}', '{is_publicly_leaked}', '{is_multi_repo}'], [$this->owner, $this->repo, $this->state, $this->secretType, $this->resolution, $this->before, $this->after, $this->validity, $this->sort, $this->direction, $this->page, $this->perPage, $this->isPubliclyLeaked, $this->isMultiRepo], '/repos/{owner}/{repo}/secret-scanning/alerts' . '?state={state}&secret_type={secret_type}&resolution={resolution}&before={before}&after={after}&validity={validity}&sort={sort}&direction={direction}&page={page}&per_page={per_page}&is_publicly_leaked={is_publicly_leaked}&is_multi_repo={is_multi_repo}'));
     }
 
     /** @return Observable<Schema\SecretScanningAlert>|WithoutBody */

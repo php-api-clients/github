@@ -155,6 +155,9 @@ final readonly class WebhookDiscussionDeleted
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 },
@@ -435,6 +438,9 @@ final readonly class WebhookDiscussionDeleted
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 },
@@ -1058,6 +1064,12 @@ final readonly class WebhookDiscussionDeleted
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
                                     ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
+                                    ]
                                 }
                             },
                             "description": "A GitHub user."
@@ -1249,6 +1261,12 @@ final readonly class WebhookDiscussionDeleted
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -2121,7 +2139,7 @@ final readonly class WebhookDiscussionDeleted
                 },
                 "use_squash_pr_title_as_default": {
                     "type": "boolean",
-                    "description": "Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
+                    "description": "Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.",
                     "default": false,
                     "deprecated": true
                 },
@@ -2362,6 +2380,12 @@ final readonly class WebhookDiscussionDeleted
                     "examples": [
                         "\\"2020-07-09T00:17:55Z\\""
                     ]
+                },
+                "user_view_type": {
+                    "type": "string",
+                    "examples": [
+                        "public"
+                    ]
                 }
             },
             "description": "A GitHub user."
@@ -2396,7 +2420,8 @@ final readonly class WebhookDiscussionDeleted
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Organization",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         },
         "answer_html_url": "generated",
         "author_association": "OWNER",
@@ -2459,7 +2484,8 @@ final readonly class WebhookDiscussionDeleted
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Organization",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         },
         "labels": [
             {
@@ -2546,7 +2572,8 @@ final readonly class WebhookDiscussionDeleted
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "forks": 5,
         "permissions": {
@@ -2577,7 +2604,8 @@ final readonly class WebhookDiscussionDeleted
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "private": false,
         "html_url": "https:\\/\\/github.com\\/octocat\\/Hello-World",
@@ -2811,7 +2839,8 @@ final readonly class WebhookDiscussionDeleted
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     }
 }';
 

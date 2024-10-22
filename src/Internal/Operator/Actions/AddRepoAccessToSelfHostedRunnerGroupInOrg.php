@@ -22,6 +22,7 @@ final readonly class AddRepoAccessToSelfHostedRunnerGroupInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, int $runnerGroupId, int $repositoryId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\AddRepoAccessToSelfHostedRunnerGroupInOrg($org, $runnerGroupId, $repositoryId);

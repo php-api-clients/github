@@ -195,6 +195,12 @@ final readonly class TeamDiscussion
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -386,7 +392,8 @@ final readonly class TeamDiscussion
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "body": "Please suggest improvements to our workflow in comments.",
     "body_html": "<p>Hi! This is an area for us to collaborate as a team<\\/p>",

@@ -82,6 +82,9 @@ final readonly class WebhookDeploymentReviewApproved
                 },
                 "url": {
                     "type": "string"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         },
@@ -633,6 +636,12 @@ final readonly class WebhookDeploymentReviewApproved
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
                                     ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
+                                    ]
                                 }
                             },
                             "description": "A GitHub user."
@@ -824,6 +833,12 @@ final readonly class WebhookDeploymentReviewApproved
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -1696,7 +1711,7 @@ final readonly class WebhookDeploymentReviewApproved
                 },
                 "use_squash_pr_title_as_default": {
                     "type": "boolean",
-                    "description": "Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
+                    "description": "Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.",
                     "default": false,
                     "deprecated": true
                 },
@@ -2047,6 +2062,12 @@ final readonly class WebhookDeploymentReviewApproved
                     "examples": [
                         "\\"2020-07-09T00:17:55Z\\""
                     ]
+                },
+                "user_view_type": {
+                    "type": "string",
+                    "examples": [
+                        "public"
+                    ]
                 }
             },
             "description": "A GitHub user."
@@ -2259,6 +2280,9 @@ final readonly class WebhookDeploymentReviewApproved
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 },
@@ -2475,6 +2499,9 @@ final readonly class WebhookDeploymentReviewApproved
                                     "type": "string"
                                 },
                                 "url": {
+                                    "type": "string"
+                                },
+                                "user_view_type": {
                                     "type": "string"
                                 }
                             }
@@ -2833,6 +2860,9 @@ final readonly class WebhookDeploymentReviewApproved
                                 },
                                 "url": {
                                     "type": "string"
+                                },
+                                "user_view_type": {
+                                    "type": "string"
                                 }
                             }
                         },
@@ -2988,6 +3018,9 @@ final readonly class WebhookDeploymentReviewApproved
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 },
@@ -3031,7 +3064,8 @@ final readonly class WebhookDeploymentReviewApproved
         "starred_url": "generated",
         "subscriptions_url": "generated",
         "type": "generated",
-        "url": "generated"
+        "url": "generated",
+        "user_view_type": "generated"
     },
     "comment": "generated",
     "enterprise": {
@@ -3098,7 +3132,8 @@ final readonly class WebhookDeploymentReviewApproved
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "forks": 5,
         "permissions": {
@@ -3129,7 +3164,8 @@ final readonly class WebhookDeploymentReviewApproved
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "private": false,
         "html_url": "https:\\/\\/github.com\\/octocat\\/Hello-World",
@@ -3417,7 +3453,8 @@ final readonly class WebhookDeploymentReviewApproved
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "since": "generated",
     "workflow_job_run": {
@@ -3474,7 +3511,8 @@ final readonly class WebhookDeploymentReviewApproved
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Organization",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         },
         "artifacts_url": "generated",
         "cancel_url": "generated",
@@ -3540,7 +3578,8 @@ final readonly class WebhookDeploymentReviewApproved
                 "starred_url": "generated",
                 "subscriptions_url": "generated",
                 "type": "generated",
-                "url": "generated"
+                "url": "generated",
+                "user_view_type": "generated"
             },
             "private": false,
             "pulls_url": "generated",
@@ -3665,7 +3704,8 @@ final readonly class WebhookDeploymentReviewApproved
                 "starred_url": "generated",
                 "subscriptions_url": "generated",
                 "type": "generated",
-                "url": "generated"
+                "url": "generated",
+                "user_view_type": "generated"
             },
             "private": false,
             "pulls_url": "generated",
@@ -3705,7 +3745,8 @@ final readonly class WebhookDeploymentReviewApproved
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Organization",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         },
         "updated_at": "1970-01-01T00:00:00+00:00",
         "url": "https:\\/\\/example.com\\/",

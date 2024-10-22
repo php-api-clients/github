@@ -363,6 +363,12 @@ final readonly class Repository
                     "examples": [
                         "\\"2020-07-09T00:17:55Z\\""
                     ]
+                },
+                "user_view_type": {
+                    "type": "string",
+                    "examples": [
+                        "public"
+                    ]
                 }
             },
             "description": "A GitHub user."
@@ -863,7 +869,7 @@ final readonly class Repository
         },
         "use_squash_pr_title_as_default": {
             "type": "boolean",
-            "description": "Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
+            "description": "Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.",
             "default": false,
             "deprecated": true
         },
@@ -984,7 +990,8 @@ final readonly class Repository
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "private": false,
     "html_url": "https:\\/\\/github.com\\/octocat\\/Hello-World",
@@ -1099,7 +1106,7 @@ final readonly class Repository
      * allowAutoMerge: Whether to allow Auto-merge to be used on pull requests.
      * deleteBranchOnMerge: Whether to delete head branches when pull requests are merged
      * allowUpdateBranch: Whether or not a pull request head branch that is behind its base branch can always be updated even if it is not required to be up to date before merging.
-     * useSquashPrTitleAsDefault: Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+     * useSquashPrTitleAsDefault: Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.
      * squashMergeCommitTitle: The default value for a squash merge commit title:
 
     - `PR_TITLE` - default to the pull request's title.

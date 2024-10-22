@@ -290,7 +290,7 @@ final readonly class ApplicationJson
                         "write"
                     ],
                     "type": "string",
-                    "description": "The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change."
+                    "description": "The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change."
                 },
                 "organization_announcement_banners": {
                     "enum": [
@@ -345,7 +345,7 @@ final readonly class ApplicationJson
                         "admin"
                     ],
                     "type": "string",
-                    "description": "The level of permission to grant the access token to manage organization projects and projects beta (where available)."
+                    "description": "The level of permission to grant the access token to manage organization projects and projects public preview (where available)."
                 },
                 "organization_packages": {
                     "enum": [

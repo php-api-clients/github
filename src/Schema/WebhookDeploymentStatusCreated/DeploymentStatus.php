@@ -122,6 +122,9 @@ final readonly class DeploymentStatus
                 "url": {
                     "type": "string",
                     "format": "uri"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         },
@@ -358,6 +361,9 @@ final readonly class DeploymentStatus
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 },
@@ -673,7 +679,8 @@ final readonly class DeploymentStatus
         "starred_url": "generated",
         "subscriptions_url": "https:\\/\\/example.com\\/",
         "type": "Organization",
-        "url": "https:\\/\\/example.com\\/"
+        "url": "https:\\/\\/example.com\\/",
+        "user_view_type": "generated"
     },
     "deployment_url": "https:\\/\\/example.com\\/",
     "description": "generated",
@@ -715,7 +722,8 @@ final readonly class DeploymentStatus
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Organization",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         },
         "permissions": {
             "actions": "read",

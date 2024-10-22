@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookRegistryPackageUpdated\Registry
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Author extends Schema\AliasAbstract\Tiet34BD5242\Tiet2F7181A6\Tiet56F048A6\Tiet9E26E9C8
+final readonly class Author extends Schema\AliasAbstract\TietE1F3188F\TietB5552136\Tiet2A39D2D7\Tiet623FADA2
 {
 }

@@ -131,6 +131,9 @@ final readonly class Account
             "type": [
                 "null"
             ]
+        },
+        "user_view_type": {
+            "type": "string"
         }
     }
 }';
@@ -172,7 +175,8 @@ final readonly class Account
     "type": "generated",
     "updated_at": "generated",
     "url": "generated",
-    "website_url": "generated"
+    "website_url": "generated",
+    "user_view_type": "generated"
 }';
 
     public function __construct(#[MapFrom('archived_at')]
@@ -202,7 +206,8 @@ final readonly class Account
     public string|null $starredUrl, #[MapFrom('subscriptions_url')]
     public string|null $subscriptionsUrl, public string|null $type, #[MapFrom('updated_at')]
     public string|null $updatedAt, public string|null $url, #[MapFrom('website_url')]
-    public string $websiteUrl,)
+    public string $websiteUrl, #[MapFrom('user_view_type')]
+    public string|null $userViewType,)
     {
     }
 }

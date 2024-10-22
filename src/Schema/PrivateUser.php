@@ -65,6 +65,9 @@ final readonly class PrivateUser
                 1
             ]
         },
+        "user_view_type": {
+            "type": "string"
+        },
         "node_id": {
             "type": "string",
             "examples": [
@@ -346,13 +349,6 @@ final readonly class PrivateUser
                 }
             }
         },
-        "suspended_at": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "format": "date-time"
-        },
         "business_plus": {
             "type": "boolean"
         },
@@ -367,6 +363,7 @@ final readonly class PrivateUser
     public const SCHEMA_EXAMPLE_DATA = '{
     "login": "octocat",
     "id": 1,
+    "user_view_type": "generated",
     "node_id": "MDQ6VXNlcjE=",
     "avatar_url": "https:\\/\\/github.com\\/images\\/error\\/octocat_happy.gif",
     "gravatar_id": "41d064eb2195891e12d0413f63227ea7",
@@ -410,12 +407,12 @@ final readonly class PrivateUser
         "space": 5,
         "private_repos": 13
     },
-    "suspended_at": "1970-01-01T00:00:00+00:00",
     "business_plus": false,
     "ldap_dn": "generated"
 }';
 
-    public function __construct(public string $login, public int $id, #[MapFrom('node_id')]
+    public function __construct(public string $login, public int $id, #[MapFrom('user_view_type')]
+    public string|null $userViewType, #[MapFrom('node_id')]
     public string $nodeId, #[MapFrom('avatar_url')]
     public string $avatarUrl, #[MapFrom('gravatar_id')]
     public string|null $gravatarId, public string $url, #[MapFrom('html_url')]
@@ -440,8 +437,7 @@ final readonly class PrivateUser
     public int $totalPrivateRepos, #[MapFrom('owned_private_repos')]
     public int $ownedPrivateRepos, #[MapFrom('disk_usage')]
     public int $diskUsage, public int $collaborators, #[MapFrom('two_factor_authentication')]
-    public bool $twoFactorAuthentication, public Schema\PrivateUser\Plan|null $plan, #[MapFrom('suspended_at')]
-    public string|null $suspendedAt, #[MapFrom('business_plus')]
+    public bool $twoFactorAuthentication, public Schema\PrivateUser\Plan|null $plan, #[MapFrom('business_plus')]
     public bool|null $businessPlus, #[MapFrom('ldap_dn')]
     public string|null $ldapDn,)
     {

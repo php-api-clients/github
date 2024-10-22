@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhooksIssue;
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class PerformedViaGithubApp extends Schema\AliasAbstract\Tiet1720054D\Tiet9210BBC6\Tiet3FB12666\TietB2827ADE
+final readonly class PerformedViaGithubApp extends Schema\AliasAbstract\TietD1416622\Tiet1BB5CFF5\Tiet2C5338B3\TietBE7D38EA
 {
 }

@@ -570,6 +570,12 @@ final readonly class WebhookWorkflowJobInProgress
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
                                     ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
+                                    ]
                                 }
                             },
                             "description": "A GitHub user."
@@ -761,6 +767,12 @@ final readonly class WebhookWorkflowJobInProgress
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -1633,7 +1645,7 @@ final readonly class WebhookWorkflowJobInProgress
                 },
                 "use_squash_pr_title_as_default": {
                     "type": "boolean",
-                    "description": "Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
+                    "description": "Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.",
                     "default": false,
                     "deprecated": true
                 },
@@ -1873,6 +1885,12 @@ final readonly class WebhookWorkflowJobInProgress
                     "type": "string",
                     "examples": [
                         "\\"2020-07-09T00:17:55Z\\""
+                    ]
+                },
+                "user_view_type": {
+                    "type": "string",
+                    "examples": [
+                        "public"
                     ]
                 }
             },
@@ -2506,6 +2524,12 @@ final readonly class WebhookWorkflowJobInProgress
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
                                     ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
+                                    ]
                                 }
                             },
                             "description": "A GitHub user."
@@ -2768,6 +2792,12 @@ final readonly class WebhookWorkflowJobInProgress
                                                     "examples": [
                                                         "\\"2020-07-09T00:17:55Z\\""
                                                     ]
+                                                },
+                                                "user_view_type": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "public"
+                                                    ]
                                                 }
                                             },
                                             "description": "A GitHub user."
@@ -2963,7 +2993,8 @@ final readonly class WebhookWorkflowJobInProgress
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "forks": 5,
         "permissions": {
@@ -2994,7 +3025,8 @@ final readonly class WebhookWorkflowJobInProgress
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "private": false,
         "html_url": "https:\\/\\/github.com\\/octocat\\/Hello-World",
@@ -3228,7 +3260,8 @@ final readonly class WebhookWorkflowJobInProgress
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "workflow_job": {
         "check_run_url": "https:\\/\\/example.com\\/",
@@ -3307,7 +3340,8 @@ final readonly class WebhookWorkflowJobInProgress
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "created_at": "2012-07-20T01:19:13Z",
         "updated_at": "2012-07-20T01:19:13Z",
@@ -3341,7 +3375,8 @@ final readonly class WebhookWorkflowJobInProgress
                 "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
                 "type": "User",
                 "site_admin": false,
-                "starred_at": "\\"2020-07-09T00:17:55Z\\""
+                "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+                "user_view_type": "public"
             },
             "name": "Probot Owners",
             "description": "The description of the app.",

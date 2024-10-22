@@ -130,6 +130,9 @@ final readonly class Alert
                 "url": {
                     "type": "string",
                     "format": "uri"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         },
@@ -326,7 +329,8 @@ final readonly class Alert
         "starred_url": "generated",
         "subscriptions_url": "https:\\/\\/example.com\\/",
         "type": "Organization",
-        "url": "https:\\/\\/example.com\\/"
+        "url": "https:\\/\\/example.com\\/",
+        "user_view_type": "generated"
     },
     "dismissed_reason": "used in tests",
     "html_url": "https:\\/\\/example.com\\/",

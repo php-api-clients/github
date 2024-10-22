@@ -22,6 +22,7 @@ final readonly class AddSelfHostedRunnerToGroupForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, int $runnerGroupId, int $runnerId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\AddSelfHostedRunnerToGroupForOrg($org, $runnerGroupId, $runnerId);

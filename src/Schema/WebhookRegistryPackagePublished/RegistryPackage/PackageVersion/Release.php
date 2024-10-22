@@ -68,6 +68,9 @@ final readonly class Release
                 },
                 "url": {
                     "type": "string"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         },
@@ -127,7 +130,8 @@ final readonly class Release
         "starred_url": "generated",
         "subscriptions_url": "generated",
         "type": "generated",
-        "url": "generated"
+        "url": "generated",
+        "user_view_type": "generated"
     },
     "created_at": "generated",
     "draft": false,

@@ -1836,6 +1836,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
         }
@@ -2158,6 +2169,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
         }
@@ -3676,6 +3698,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
@@ -4000,6 +4033,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
         }
@@ -5518,6 +5562,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
@@ -5842,6 +5897,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
@@ -6296,6 +6362,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
@@ -6546,6 +6623,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\PullRequest\User', $exception, stack: $this->hydrationStack);
         }
@@ -8054,6 +8142,17 @@ class PullRequestReview implements ObjectMapper
             $properties['starredAt'] = $value;
 
             after_starredAt:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
@@ -9940,6 +10039,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewDismissed\Review\User', $exception, stack: $this->hydrationStack);
         }
@@ -11346,6 +11456,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
         }
@@ -11668,6 +11789,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
         }
@@ -13109,6 +13241,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
@@ -13433,6 +13576,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
         }
@@ -14874,6 +15028,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
@@ -15198,6 +15363,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
@@ -15652,6 +15828,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
@@ -15902,6 +16089,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewEdited\PullRequest\User', $exception, stack: $this->hydrationStack);
         }
@@ -16429,6 +16627,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksReview\User', $exception, stack: $this->hydrationStack);
         }
@@ -17746,6 +17955,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Assignee', $exception, stack: $this->hydrationStack);
         }
@@ -18068,6 +18288,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
         }
@@ -19586,6 +19817,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
@@ -19910,6 +20152,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
         }
@@ -21428,6 +21681,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
@@ -21752,6 +22016,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
@@ -22206,6 +22481,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
@@ -22456,6 +22742,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\PullRequest\User', $exception, stack: $this->hydrationStack);
         }
@@ -22946,6 +23243,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksPullRequest5\AutoMerge\EnabledBy', $exception, stack: $this->hydrationStack);
         }
@@ -24298,6 +24606,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\User', $exception, stack: $this->hydrationStack);
         }
@@ -24622,6 +24941,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Base\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
@@ -26048,6 +26378,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewCommentDeleted\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
@@ -26372,6 +26713,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\Repo\Owner', $exception, stack: $this->hydrationStack);
         }
@@ -26696,6 +27048,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue2\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
@@ -26966,6 +27329,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue\Milestone\Creator', $exception, stack: $this->hydrationStack);
         }
@@ -28318,6 +28692,17 @@ class PullRequestReview implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookPullRequestAssigned\PullRequest\Head\User', $exception, stack: $this->hydrationStack);
         }
@@ -29197,6 +29582,14 @@ class PullRequestReview implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -29398,6 +29791,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -30064,6 +30465,14 @@ class PullRequestReview implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -30262,6 +30671,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -30933,6 +31350,14 @@ class PullRequestReview implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -31131,6 +31556,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -31375,6 +31808,14 @@ class PullRequestReview implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -31540,6 +31981,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -32168,6 +32617,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_starredAt:        $result['starred_at'] = $starredAt;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -33372,6 +33829,14 @@ class PullRequestReview implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -33948,6 +34413,14 @@ class PullRequestReview implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -34149,6 +34622,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -34764,6 +35245,14 @@ class PullRequestReview implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -34962,6 +35451,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -35582,6 +36079,14 @@ class PullRequestReview implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -35780,6 +36285,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -36024,6 +36537,14 @@ class PullRequestReview implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -36189,6 +36710,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -36451,6 +36980,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -36996,6 +37533,14 @@ class PullRequestReview implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -37197,6 +37742,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -37863,6 +38416,14 @@ class PullRequestReview implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -38061,6 +38622,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -38737,6 +39306,14 @@ class PullRequestReview implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -38935,6 +39512,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -39179,6 +39764,14 @@ class PullRequestReview implements ObjectMapper
 
         after_url:        $result['url'] = $url;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         return $result;
     }
 
@@ -39344,6 +39937,14 @@ class PullRequestReview implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }

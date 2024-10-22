@@ -125,6 +125,9 @@ final readonly class RegistryPackage
                 },
                 "url": {
                     "type": "string"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         },
@@ -228,6 +231,9 @@ final readonly class RegistryPackage
                             "type": "string"
                         },
                         "url": {
+                            "type": "string"
+                        },
+                        "user_view_type": {
                             "type": "string"
                         }
                     }
@@ -431,6 +437,9 @@ final readonly class RegistryPackage
                                 },
                                 "url": {
                                     "type": "string"
+                                },
+                                "user_view_type": {
+                                    "type": "string"
                                 }
                             }
                         },
@@ -578,7 +587,8 @@ final readonly class RegistryPackage
         "starred_url": "generated",
         "subscriptions_url": "generated",
         "type": "generated",
-        "url": "generated"
+        "url": "generated",
+        "user_view_type": "generated"
     },
     "package_type": "generated",
     "package_version": {
@@ -600,7 +610,8 @@ final readonly class RegistryPackage
             "starred_url": "generated",
             "subscriptions_url": "generated",
             "type": "generated",
-            "url": "generated"
+            "url": "generated",
+            "user_view_type": "generated"
         },
         "body": "generated",
         "body_html": "generated",
@@ -679,7 +690,8 @@ final readonly class RegistryPackage
                 "starred_url": "generated",
                 "subscriptions_url": "generated",
                 "type": "generated",
-                "url": "generated"
+                "url": "generated",
+                "user_view_type": "generated"
             },
             "created_at": "generated",
             "draft": false,

@@ -79,6 +79,9 @@ final readonly class WebhooksSponsorship
                 },
                 "url": {
                     "type": "string"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         },
@@ -181,6 +184,9 @@ final readonly class WebhooksSponsorship
                 "url": {
                     "type": "string",
                     "format": "uri"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         },
@@ -277,6 +283,9 @@ final readonly class WebhooksSponsorship
                 "url": {
                     "type": "string",
                     "format": "uri"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         },
@@ -347,7 +356,8 @@ final readonly class WebhooksSponsorship
         "starred_url": "generated",
         "subscriptions_url": "generated",
         "type": "generated",
-        "url": "generated"
+        "url": "generated",
+        "user_view_type": "generated"
     },
     "node_id": "generated",
     "privacy_level": "generated",
@@ -372,7 +382,8 @@ final readonly class WebhooksSponsorship
         "starred_url": "generated",
         "subscriptions_url": "https:\\/\\/example.com\\/",
         "type": "Organization",
-        "url": "https:\\/\\/example.com\\/"
+        "url": "https:\\/\\/example.com\\/",
+        "user_view_type": "generated"
     },
     "sponsorable": {
         "avatar_url": "https:\\/\\/example.com\\/",
@@ -395,7 +406,8 @@ final readonly class WebhooksSponsorship
         "starred_url": "generated",
         "subscriptions_url": "https:\\/\\/example.com\\/",
         "type": "Organization",
-        "url": "https:\\/\\/example.com\\/"
+        "url": "https:\\/\\/example.com\\/",
+        "user_view_type": "generated"
     },
     "tier": {
         "created_at": "generated",

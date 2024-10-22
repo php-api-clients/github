@@ -573,6 +573,12 @@ final readonly class GlobalAdvisory
                                 "examples": [
                                     "\\"2020-07-09T00:17:55Z\\""
                                 ]
+                            },
+                            "user_view_type": {
+                                "type": "string",
+                                "examples": [
+                                    "public"
+                                ]
                             }
                         },
                         "description": "A GitHub user."

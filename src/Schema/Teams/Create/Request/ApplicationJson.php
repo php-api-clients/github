@@ -58,7 +58,7 @@ final readonly class ApplicationJson
                 "push"
             ],
             "type": "string",
-            "description": "**Deprecated**. The permission that new repositories will be added to the team with when none is specified.",
+            "description": "**Closing down notice**. The permission that new repositories will be added to the team with when none is specified.",
             "default": "pull"
         },
         "parent_team_id": {
@@ -103,7 +103,7 @@ final readonly class ApplicationJson
      * `notifications_enabled` - team members receive notifications when the team is @mentioned.
      * `notifications_disabled` - no one receives notifications.
     Default: `notifications_enabled`
-     * permission: **Deprecated**. The permission that new repositories will be added to the team with when none is specified.
+     * permission: **Closing down notice**. The permission that new repositories will be added to the team with when none is specified.
      * parentTeamId: The ID of a team to set as the parent team.
      */
     public function __construct(public string $name, public string|null $description, public array|null $maintainers, #[MapFrom('repo_names')]

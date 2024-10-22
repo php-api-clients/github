@@ -269,6 +269,28 @@ class AlertNumber implements ObjectMapper
             $properties['validity'] = $value;
 
             after_validity:
+
+            $value = $payload['publicly_leaked'] ?? null;
+
+            if ($value === null) {
+                $properties['publiclyLeaked'] = null;
+                goto after_publiclyLeaked;
+            }
+
+            $properties['publiclyLeaked'] = $value;
+
+            after_publiclyLeaked:
+
+            $value = $payload['multi_repo'] ?? null;
+
+            if ($value === null) {
+                $properties['multiRepo'] = null;
+                goto after_multiRepo;
+            }
+
+            $properties['multiRepo'] = $value;
+
+            after_multiRepo:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningAlert', $exception, stack: $this->hydrationStack);
         }
@@ -519,6 +541,17 @@ class AlertNumber implements ObjectMapper
             $properties['starredAt'] = $value;
 
             after_starredAt:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
@@ -833,6 +866,22 @@ class AlertNumber implements ObjectMapper
 
         after_validity:        $result['validity'] = $validity;
 
+        $publiclyLeaked = $object->publiclyLeaked;
+
+        if ($publiclyLeaked === null) {
+            goto after_publiclyLeaked;
+        }
+
+        after_publiclyLeaked:        $result['publicly_leaked'] = $publiclyLeaked;
+
+        $multiRepo = $object->multiRepo;
+
+        if ($multiRepo === null) {
+            goto after_multiRepo;
+        }
+
+        after_multiRepo:        $result['multi_repo'] = $multiRepo;
+
         return $result;
     }
 
@@ -923,6 +972,14 @@ class AlertNumber implements ObjectMapper
         }
 
         after_starredAt:        $result['starred_at'] = $starredAt;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }

@@ -212,6 +212,9 @@ final readonly class UserSearchResultItem
                 "null"
             ],
             "format": "date-time"
+        },
+        "user_view_type": {
+            "type": "string"
         }
     },
     "description": "User Search Result Item"
@@ -297,7 +300,8 @@ final readonly class UserSearchResultItem
     ],
     "blog": "generated",
     "company": "generated",
-    "suspended_at": "1970-01-01T00:00:00+00:00"
+    "suspended_at": "1970-01-01T00:00:00+00:00",
+    "user_view_type": "generated"
 }';
 
     public function __construct(public string $login, public int $id, #[MapFrom('node_id')]
@@ -320,7 +324,8 @@ final readonly class UserSearchResultItem
     public string|null $updatedAt, public string|null $name, public string|null $bio, public string|null $email, public string|null $location, #[MapFrom('site_admin')]
     public bool $siteAdmin, public bool|null $hireable, #[MapFrom('text_matches')]
     public array|null $textMatches, public string|null $blog, public string|null $company, #[MapFrom('suspended_at')]
-    public string|null $suspendedAt,)
+    public string|null $suspendedAt, #[MapFrom('user_view_type')]
+    public string|null $userViewType,)
     {
     }
 }

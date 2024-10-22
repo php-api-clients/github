@@ -39,7 +39,8 @@ final readonly class CodeSecurityConfigurationForRepository
                 "target_type": {
                     "enum": [
                         "global",
-                        "organization"
+                        "organization",
+                        "enterprise"
                     ],
                     "type": "string",
                     "description": "The type of the code security configuration."

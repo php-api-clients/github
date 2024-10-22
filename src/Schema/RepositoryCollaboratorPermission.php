@@ -216,6 +216,12 @@ final readonly class RepositoryCollaboratorPermission
                             "examples": [
                                 "admin"
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "Collaborator"
@@ -258,7 +264,8 @@ final readonly class RepositoryCollaboratorPermission
             "maintain": false,
             "admin": false
         },
-        "role_name": "admin"
+        "role_name": "admin",
+        "user_view_type": "public"
     }
 }';
 

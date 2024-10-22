@@ -89,6 +89,9 @@ final readonly class Contributor
         },
         "name": {
             "type": "string"
+        },
+        "user_view_type": {
+            "type": "string"
         }
     },
     "description": "Contributor"
@@ -116,7 +119,8 @@ final readonly class Contributor
     "site_admin": false,
     "contributions": 13,
     "email": "generated",
-    "name": "generated"
+    "name": "generated",
+    "user_view_type": "generated"
 }';
 
     public function __construct(public string|null $login, public int|null $id, #[MapFrom('node_id')]
@@ -133,7 +137,8 @@ final readonly class Contributor
     public string|null $reposUrl, #[MapFrom('events_url')]
     public string|null $eventsUrl, #[MapFrom('received_events_url')]
     public string|null $receivedEventsUrl, public string $type, #[MapFrom('site_admin')]
-    public bool|null $siteAdmin, public int $contributions, public string|null $email, public string|null $name,)
+    public bool|null $siteAdmin, public int $contributions, public string|null $email, public string|null $name, #[MapFrom('user_view_type')]
+    public string|null $userViewType,)
     {
     }
 }

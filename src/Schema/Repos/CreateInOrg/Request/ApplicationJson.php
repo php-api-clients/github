@@ -112,7 +112,7 @@ final readonly class ApplicationJson
         },
         "use_squash_pr_title_as_default": {
             "type": "boolean",
-            "description": "Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
+            "description": "Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.",
             "default": false,
             "deprecated": true
         },
@@ -207,7 +207,7 @@ final readonly class ApplicationJson
      * allowRebaseMerge: Either `true` to allow rebase-merging pull requests, or `false` to prevent rebase-merging.
      * allowAutoMerge: Either `true` to allow auto-merge on pull requests, or `false` to disallow auto-merge.
      * deleteBranchOnMerge: Either `true` to allow automatically deleting head branches when pull requests are merged, or `false` to prevent automatic deletion. **The authenticated user must be an organization owner to set this property to `true`.**
-     * useSquashPrTitleAsDefault: Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+     * useSquashPrTitleAsDefault: Either `true` to allow squash-merge commits to use pull request title, or `false` to use commit message. **This property is closing down. Please use `squash_merge_commit_title` instead.
      * squashMergeCommitTitle: Required when using `squash_merge_commit_message`.
 
     The default value for a squash merge commit title:

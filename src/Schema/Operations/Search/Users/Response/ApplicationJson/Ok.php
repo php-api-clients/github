@@ -228,6 +228,9 @@ final readonly class Ok
                             "null"
                         ],
                         "format": "date-time"
+                    },
+                    "user_view_type": {
+                        "type": "string"
                     }
                 },
                 "description": "User Search Result Item"
@@ -320,7 +323,8 @@ final readonly class Ok
             ],
             "blog": "generated",
             "company": "generated",
-            "suspended_at": "1970-01-01T00:00:00+00:00"
+            "suspended_at": "1970-01-01T00:00:00+00:00",
+            "user_view_type": "generated"
         },
         {
             "login": "generated",
@@ -401,7 +405,8 @@ final readonly class Ok
             ],
             "blog": "generated",
             "company": "generated",
-            "suspended_at": "1970-01-01T00:00:00+00:00"
+            "suspended_at": "1970-01-01T00:00:00+00:00",
+            "user_view_type": "generated"
         }
     ]
 }';

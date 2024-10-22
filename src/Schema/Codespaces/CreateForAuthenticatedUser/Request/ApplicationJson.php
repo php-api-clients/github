@@ -34,7 +34,7 @@ final readonly class ApplicationJson
                         "UsWest"
                     ],
                     "type": "string",
-                    "description": "The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated."
+                    "description": "The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down."
                 },
                 "client_ip": {
                     "type": "string",
@@ -106,7 +106,7 @@ final readonly class ApplicationJson
                         "UsWest"
                     ],
                     "type": "string",
-                    "description": "The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is being deprecated."
+                    "description": "The geographic area for this codespace. If not specified, the value is assigned by IP. This property replaces `location`, which is closing down."
                 },
                 "machine": {
                     "type": "string",

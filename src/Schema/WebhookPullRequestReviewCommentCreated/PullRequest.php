@@ -274,6 +274,9 @@ final readonly class PullRequest
                 "url": {
                     "type": "string",
                     "format": "uri"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         },
@@ -512,6 +515,9 @@ final readonly class PullRequest
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 },
@@ -1037,6 +1043,9 @@ final readonly class PullRequest
                                 "url": {
                                     "type": "string",
                                     "format": "uri"
+                                },
+                                "user_view_type": {
+                                    "type": "string"
                                 }
                             }
                         },
@@ -1179,7 +1188,7 @@ final readonly class PullRequest
                         },
                         "use_squash_pr_title_as_default": {
                             "type": "boolean",
-                            "description": "Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
+                            "description": "Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.",
                             "default": false
                         },
                         "visibility": {
@@ -1300,6 +1309,9 @@ final readonly class PullRequest
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 }
@@ -1847,6 +1859,9 @@ final readonly class PullRequest
                                 "url": {
                                     "type": "string",
                                     "format": "uri"
+                                },
+                                "user_view_type": {
+                                    "type": "string"
                                 }
                             }
                         },
@@ -1989,7 +2004,7 @@ final readonly class PullRequest
                         },
                         "use_squash_pr_title_as_default": {
                             "type": "boolean",
-                            "description": "Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
+                            "description": "Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.",
                             "default": false
                         },
                         "visibility": {
@@ -2110,6 +2125,9 @@ final readonly class PullRequest
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 }
@@ -2320,6 +2338,9 @@ final readonly class PullRequest
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 },
@@ -2488,6 +2509,9 @@ final readonly class PullRequest
                             "url": {
                                 "type": "string",
                                 "format": "uri"
+                            },
+                            "user_view_type": {
+                                "type": "string"
                             }
                         }
                     },
@@ -2900,6 +2924,9 @@ final readonly class PullRequest
                 "url": {
                     "type": "string",
                     "format": "uri"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         }
@@ -2956,7 +2983,8 @@ final readonly class PullRequest
         "starred_url": "generated",
         "subscriptions_url": "https:\\/\\/example.com\\/",
         "type": "Mannequin",
-        "url": "https:\\/\\/example.com\\/"
+        "url": "https:\\/\\/example.com\\/",
+        "user_view_type": "generated"
     },
     "assignees": [
         {
@@ -3031,7 +3059,8 @@ final readonly class PullRequest
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Organization",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         },
         "merge_method": "rebase"
     },
@@ -3132,7 +3161,8 @@ final readonly class PullRequest
                 "starred_url": "generated",
                 "subscriptions_url": "https:\\/\\/example.com\\/",
                 "type": "Organization",
-                "url": "https:\\/\\/example.com\\/"
+                "url": "https:\\/\\/example.com\\/",
+                "user_view_type": "generated"
             },
             "permissions": {
                 "admin": false,
@@ -3195,7 +3225,8 @@ final readonly class PullRequest
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Organization",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         }
     },
     "body": "generated",
@@ -3302,7 +3333,8 @@ final readonly class PullRequest
                 "starred_url": "generated",
                 "subscriptions_url": "https:\\/\\/example.com\\/",
                 "type": "Organization",
-                "url": "https:\\/\\/example.com\\/"
+                "url": "https:\\/\\/example.com\\/",
+                "user_view_type": "generated"
             },
             "permissions": {
                 "admin": false,
@@ -3365,7 +3397,8 @@ final readonly class PullRequest
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Organization",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         }
     },
     "html_url": "https:\\/\\/example.com\\/",
@@ -3419,7 +3452,8 @@ final readonly class PullRequest
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Mannequin",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         },
         "description": "generated",
         "due_on": "1970-01-01T00:00:00+00:00",
@@ -3525,7 +3559,8 @@ final readonly class PullRequest
         "starred_url": "generated",
         "subscriptions_url": "https:\\/\\/example.com\\/",
         "type": "Mannequin",
-        "url": "https:\\/\\/example.com\\/"
+        "url": "https:\\/\\/example.com\\/",
+        "user_view_type": "generated"
     }
 }';
 

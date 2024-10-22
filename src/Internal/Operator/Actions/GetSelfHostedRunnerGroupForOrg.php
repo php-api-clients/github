@@ -24,6 +24,7 @@ final readonly class GetSelfHostedRunnerGroupForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, int $runnerGroupId): RunnerGroupsOrg
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetSelfHostedRunnerGroupForOrg($this->responseSchemaValidator, $this->hydrator, $org, $runnerGroupId);

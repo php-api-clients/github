@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\Workfl
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class HeadRepository extends Schema\AliasAbstract\TietB576B1C1\TietDDB53428\Tiet95045CA1\Tiet3A2EAD15
+final readonly class HeadRepository extends Schema\AliasAbstract\TietFDE83215\TietEA1A52A0\Tiet86059ED1\TietDBD86DB5
 {
 }

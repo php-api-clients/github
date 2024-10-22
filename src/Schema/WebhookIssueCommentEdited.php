@@ -310,6 +310,12 @@ final readonly class WebhookIssueCommentEdited
                                             "examples": [
                                                 "\\"2020-07-09T00:17:55Z\\""
                                             ]
+                                        },
+                                        "user_view_type": {
+                                            "type": "string",
+                                            "examples": [
+                                                "public"
+                                            ]
                                         }
                                     },
                                     "description": "A GitHub user."
@@ -583,6 +589,9 @@ final readonly class WebhookIssueCommentEdited
                         "url": {
                             "type": "string",
                             "format": "uri"
+                        },
+                        "user_view_type": {
+                            "type": "string"
                         }
                     }
                 }
@@ -840,6 +849,9 @@ final readonly class WebhookIssueCommentEdited
                                 "url": {
                                     "type": "string",
                                     "format": "uri"
+                                },
+                                "user_view_type": {
+                                    "type": "string"
                                 }
                             }
                         },
@@ -939,6 +951,9 @@ final readonly class WebhookIssueCommentEdited
                                     "url": {
                                         "type": "string",
                                         "format": "uri"
+                                    },
+                                    "user_view_type": {
+                                        "type": "string"
                                     }
                                 }
                             }
@@ -1184,6 +1199,9 @@ final readonly class WebhookIssueCommentEdited
                                         "url": {
                                             "type": "string",
                                             "format": "uri"
+                                        },
+                                        "user_view_type": {
+                                            "type": "string"
                                         }
                                     }
                                 },
@@ -1455,6 +1473,9 @@ final readonly class WebhookIssueCommentEdited
                                         "url": {
                                             "type": "string",
                                             "format": "uri"
+                                        },
+                                        "user_view_type": {
+                                            "type": "string"
                                         }
                                     }
                                 },
@@ -1931,6 +1952,9 @@ final readonly class WebhookIssueCommentEdited
                                 "url": {
                                     "type": "string",
                                     "format": "uri"
+                                },
+                                "user_view_type": {
+                                    "type": "string"
                                 }
                             }
                         }
@@ -2046,6 +2070,9 @@ final readonly class WebhookIssueCommentEdited
                                 "url": {
                                     "type": "string",
                                     "format": "uri"
+                                },
+                                "user_view_type": {
+                                    "type": "string"
                                 }
                             }
                         },
@@ -2714,6 +2741,12 @@ final readonly class WebhookIssueCommentEdited
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
                                     ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
+                                    ]
                                 }
                             },
                             "description": "A GitHub user."
@@ -2905,6 +2938,12 @@ final readonly class WebhookIssueCommentEdited
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -3777,7 +3816,7 @@ final readonly class WebhookIssueCommentEdited
                 },
                 "use_squash_pr_title_as_default": {
                     "type": "boolean",
-                    "description": "Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
+                    "description": "Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.",
                     "default": false,
                     "deprecated": true
                 },
@@ -4018,6 +4057,12 @@ final readonly class WebhookIssueCommentEdited
                     "examples": [
                         "\\"2020-07-09T00:17:55Z\\""
                     ]
+                },
+                "user_view_type": {
+                    "type": "string",
+                    "examples": [
+                        "public"
+                    ]
                 }
             },
             "description": "A GitHub user."
@@ -4067,7 +4112,8 @@ final readonly class WebhookIssueCommentEdited
                 "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
                 "type": "User",
                 "site_admin": false,
-                "starred_at": "\\"2020-07-09T00:17:55Z\\""
+                "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+                "user_view_type": "public"
             },
             "name": "Probot Owners",
             "description": "The description of the app.",
@@ -4126,7 +4172,8 @@ final readonly class WebhookIssueCommentEdited
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Mannequin",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         }
     },
     "enterprise": {
@@ -4168,7 +4215,8 @@ final readonly class WebhookIssueCommentEdited
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Mannequin",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         },
         "assignees": [
             {
@@ -4192,7 +4240,8 @@ final readonly class WebhookIssueCommentEdited
                 "starred_url": "generated",
                 "subscriptions_url": "https:\\/\\/example.com\\/",
                 "type": "Mannequin",
-                "url": "https:\\/\\/example.com\\/"
+                "url": "https:\\/\\/example.com\\/",
+                "user_view_type": "generated"
             },
             {
                 "avatar_url": "https:\\/\\/example.com\\/",
@@ -4215,7 +4264,8 @@ final readonly class WebhookIssueCommentEdited
                 "starred_url": "generated",
                 "subscriptions_url": "https:\\/\\/example.com\\/",
                 "type": "Mannequin",
-                "url": "https:\\/\\/example.com\\/"
+                "url": "https:\\/\\/example.com\\/",
+                "user_view_type": "generated"
             }
         ],
         "author_association": "OWNER",
@@ -4275,7 +4325,8 @@ final readonly class WebhookIssueCommentEdited
                 "starred_url": "generated",
                 "subscriptions_url": "https:\\/\\/example.com\\/",
                 "type": "Mannequin",
-                "url": "https:\\/\\/example.com\\/"
+                "url": "https:\\/\\/example.com\\/",
+                "user_view_type": "generated"
             },
             "description": "generated",
             "due_on": "1970-01-01T00:00:00+00:00",
@@ -4325,7 +4376,8 @@ final readonly class WebhookIssueCommentEdited
                 "starred_url": "generated",
                 "subscriptions_url": "https:\\/\\/example.com\\/",
                 "type": "Organization",
-                "url": "https:\\/\\/example.com\\/"
+                "url": "https:\\/\\/example.com\\/",
+                "user_view_type": "generated"
             },
             "permissions": {
                 "actions": "read",
@@ -4414,7 +4466,8 @@ final readonly class WebhookIssueCommentEdited
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
             "type": "Mannequin",
-            "url": "https:\\/\\/example.com\\/"
+            "url": "https:\\/\\/example.com\\/",
+            "user_view_type": "generated"
         }
     },
     "organization": {
@@ -4465,7 +4518,8 @@ final readonly class WebhookIssueCommentEdited
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "forks": 5,
         "permissions": {
@@ -4496,7 +4550,8 @@ final readonly class WebhookIssueCommentEdited
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "private": false,
         "html_url": "https:\\/\\/github.com\\/octocat\\/Hello-World",
@@ -4730,7 +4785,8 @@ final readonly class WebhookIssueCommentEdited
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     }
 }';
 

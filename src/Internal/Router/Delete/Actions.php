@@ -226,6 +226,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name']);
     }
 
+    /** @return */
     public function deleteSelfHostedRunnerGroupFromOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -342,6 +343,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['key'], $arguments['ref']);
     }
 
+    /** @return */
     public function removeRepoAccessToSelfHostedRunnerGroupInOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -368,6 +370,7 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['runner_group_id'], $arguments['repository_id']);
     }
 
+    /** @return */
     public function removeSelfHostedRunnerFromGroupForOrg(array $params): WithoutBody
     {
         $arguments = [];

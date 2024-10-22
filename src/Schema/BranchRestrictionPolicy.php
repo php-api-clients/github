@@ -96,6 +96,9 @@ final readonly class BranchRestrictionPolicy
                     },
                     "site_admin": {
                         "type": "boolean"
+                    },
+                    "user_view_type": {
+                        "type": "string"
                     }
                 }
             }
@@ -271,6 +274,12 @@ final readonly class BranchRestrictionPolicy
                                 "examples": [
                                     false
                                 ]
+                            },
+                            "user_view_type": {
+                                "type": "string",
+                                "examples": [
+                                    "public"
+                                ]
                             }
                         }
                     },
@@ -350,7 +359,8 @@ final readonly class BranchRestrictionPolicy
             "events_url": "generated",
             "received_events_url": "generated",
             "type": "generated",
-            "site_admin": false
+            "site_admin": false,
+            "user_view_type": "generated"
         },
         {
             "login": "generated",
@@ -370,7 +380,8 @@ final readonly class BranchRestrictionPolicy
             "events_url": "generated",
             "received_events_url": "generated",
             "type": "generated",
-            "site_admin": false
+            "site_admin": false,
+            "user_view_type": "generated"
         }
     ],
     "teams": [
@@ -433,7 +444,8 @@ final readonly class BranchRestrictionPolicy
                 "organizations_url": "\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/orgs\\"",
                 "received_events_url": "\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/received_events\\"",
                 "type": "\\"Organization\\"",
-                "site_admin": false
+                "site_admin": false,
+                "user_view_type": "public"
             },
             "name": "generated",
             "client_id": "generated",
@@ -480,7 +492,8 @@ final readonly class BranchRestrictionPolicy
                 "organizations_url": "\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/orgs\\"",
                 "received_events_url": "\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/received_events\\"",
                 "type": "\\"Organization\\"",
-                "site_admin": false
+                "site_admin": false,
+                "user_view_type": "public"
             },
             "name": "generated",
             "client_id": "generated",

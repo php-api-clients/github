@@ -53,6 +53,9 @@ final readonly class PublicUser
             "type": "integer",
             "format": "int64"
         },
+        "user_view_type": {
+            "type": "string"
+        },
         "node_id": {
             "type": "string"
         },
@@ -211,13 +214,6 @@ final readonly class PublicUser
                 }
             }
         },
-        "suspended_at": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "format": "date-time"
-        },
         "private_gists": {
             "type": "integer",
             "examples": [
@@ -257,6 +253,7 @@ final readonly class PublicUser
     public const SCHEMA_EXAMPLE_DATA = '{
     "login": "generated",
     "id": 2,
+    "user_view_type": "generated",
     "node_id": "generated",
     "avatar_url": "https:\\/\\/example.com\\/",
     "gravatar_id": "generated",
@@ -294,7 +291,6 @@ final readonly class PublicUser
         "space": 5,
         "private_repos": 13
     },
-    "suspended_at": "1970-01-01T00:00:00+00:00",
     "private_gists": 1,
     "total_private_repos": 2,
     "owned_private_repos": 2,
@@ -302,7 +298,8 @@ final readonly class PublicUser
     "collaborators": 3
 }';
 
-    public function __construct(public string $login, public int $id, #[MapFrom('node_id')]
+    public function __construct(public string $login, public int $id, #[MapFrom('user_view_type')]
+    public string|null $userViewType, #[MapFrom('node_id')]
     public string $nodeId, #[MapFrom('avatar_url')]
     public string $avatarUrl, #[MapFrom('gravatar_id')]
     public string|null $gravatarId, public string $url, #[MapFrom('html_url')]
@@ -322,8 +319,7 @@ final readonly class PublicUser
     public int $publicRepos, #[MapFrom('public_gists')]
     public int $publicGists, public int $followers, public int $following, #[MapFrom('created_at')]
     public string $createdAt, #[MapFrom('updated_at')]
-    public string $updatedAt, public Schema\PublicUser\Plan|null $plan, #[MapFrom('suspended_at')]
-    public string|null $suspendedAt, #[MapFrom('private_gists')]
+    public string $updatedAt, public Schema\PublicUser\Plan|null $plan, #[MapFrom('private_gists')]
     public int|null $privateGists, #[MapFrom('total_private_repos')]
     public int|null $totalPrivateRepos, #[MapFrom('owned_private_repos')]
     public int|null $ownedPrivateRepos, #[MapFrom('disk_usage')]

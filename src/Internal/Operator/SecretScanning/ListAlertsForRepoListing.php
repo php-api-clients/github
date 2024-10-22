@@ -25,10 +25,10 @@ final readonly class ListAlertsForRepoListing
     {
     }
 
-    /** @return Observable<Schema\SecretScanningAlert>|WithoutBody */
-    public function call(string $owner, string $repo, string $state, string $secretType, string $resolution, string $before, string $after, string $validity, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30): iterable|WithoutBody
+    /** @return iterable<int,Schema\SecretScanningAlert>|WithoutBody */
+    public function call(string $owner, string $repo, string $state, string $secretType, string $resolution, string $before, string $after, string $validity, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30, bool $isPubliclyLeaked = false, bool $isMultiRepo = false): iterable|WithoutBody
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecretScanning\ListAlertsForRepoListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $state, $secretType, $resolution, $before, $after, $validity, $sort, $direction, $page, $perPage);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\SecretScanning\ListAlertsForRepoListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $state, $secretType, $resolution, $before, $after, $validity, $sort, $direction, $page, $perPage, $isPubliclyLeaked, $isMultiRepo);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|WithoutBody {
             return $operation->createResponse($response);

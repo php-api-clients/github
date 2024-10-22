@@ -246,6 +246,12 @@ final readonly class OrganizationSecretScanningAlert
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -502,6 +508,12 @@ final readonly class OrganizationSecretScanningAlert
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -979,6 +991,12 @@ final readonly class OrganizationSecretScanningAlert
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -1008,6 +1026,20 @@ final readonly class OrganizationSecretScanningAlert
             ],
             "type": "string",
             "description": "The token status as of the latest validity check."
+        },
+        "publicly_leaked": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "description": "Whether the secret was publicly leaked."
+        },
+        "multi_repo": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "description": "Whether the detected secret was found in multiple repositories in the same organization or enterprise."
         }
     }
 }';
@@ -1044,7 +1076,8 @@ final readonly class OrganizationSecretScanningAlert
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "secret_type": "generated",
     "secret_type_display_name": "generated",
@@ -1075,7 +1108,8 @@ final readonly class OrganizationSecretScanningAlert
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "private": false,
         "html_url": "https:\\/\\/github.com\\/octocat\\/Hello-World",
@@ -1141,11 +1175,14 @@ final readonly class OrganizationSecretScanningAlert
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "push_protection_bypassed_at": "1970-01-01T00:00:00+00:00",
     "resolution_comment": "generated",
-    "validity": "unknown"
+    "validity": "unknown",
+    "publicly_leaked": false,
+    "multi_repo": false
 }';
 
     /**
@@ -1166,6 +1203,8 @@ final readonly class OrganizationSecretScanningAlert
      * pushProtectionBypassedAt: The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      * resolutionComment: The comment that was optionally added when this alert was closed
      * validity: The token status as of the latest validity check.
+     * publiclyLeaked: Whether the secret was publicly leaked.
+     * multiRepo: Whether the detected secret was found in multiple repositories in the same organization or enterprise.
      */
     public function __construct(public int|null $number, #[MapFrom('created_at')]
     public string|null $createdAt, #[MapFrom('updated_at')]
@@ -1179,7 +1218,9 @@ final readonly class OrganizationSecretScanningAlert
     public bool|null $pushProtectionBypassed, #[MapFrom('push_protection_bypassed_by')]
     public Schema\SimpleUser|null $pushProtectionBypassedBy, #[MapFrom('push_protection_bypassed_at')]
     public string|null $pushProtectionBypassedAt, #[MapFrom('resolution_comment')]
-    public string|null $resolutionComment, public string|null $validity,)
+    public string|null $resolutionComment, public string|null $validity, #[MapFrom('publicly_leaked')]
+    public bool|null $publiclyLeaked, #[MapFrom('multi_repo')]
+    public bool|null $multiRepo,)
     {
     }
 }

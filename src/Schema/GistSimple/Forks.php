@@ -63,6 +63,9 @@ final readonly class Forks
                     "type": "integer",
                     "format": "int64"
                 },
+                "user_view_type": {
+                    "type": "string"
+                },
                 "node_id": {
                     "type": "string"
                 },
@@ -221,13 +224,6 @@ final readonly class Forks
                         }
                     }
                 },
-                "suspended_at": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "format": "date-time"
-                },
                 "private_gists": {
                     "type": "integer",
                     "examples": [
@@ -280,6 +276,7 @@ final readonly class Forks
     "user": {
         "login": "generated",
         "id": 2,
+        "user_view_type": "generated",
         "node_id": "generated",
         "avatar_url": "https:\\/\\/example.com\\/",
         "gravatar_id": "generated",
@@ -317,7 +314,6 @@ final readonly class Forks
             "space": 5,
             "private_repos": 13
         },
-        "suspended_at": "1970-01-01T00:00:00+00:00",
         "private_gists": 1,
         "total_private_repos": 2,
         "owned_private_repos": 2,

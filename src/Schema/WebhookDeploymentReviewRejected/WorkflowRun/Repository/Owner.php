@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookDeploymentReviewRejected\Workfl
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Owner extends Schema\AliasAbstract\TietF9F083E1\Tiet067C6DCB\Tiet2FB6AC3D\TietDB318BE9
+final readonly class Owner extends Schema\AliasAbstract\Tiet310D1FDB\Tiet6CF4DD07\TietB84F9F0D\Tiet2C37CA68
 {
 }

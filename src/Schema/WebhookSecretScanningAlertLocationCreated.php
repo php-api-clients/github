@@ -255,6 +255,12 @@ final readonly class WebhookSecretScanningAlertLocationCreated
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
                                     ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
+                                    ]
                                 }
                             },
                             "description": "A GitHub user."
@@ -455,6 +461,12 @@ final readonly class WebhookSecretScanningAlertLocationCreated
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
                                     ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
+                                    ]
                                 }
                             },
                             "description": "A GitHub user."
@@ -468,6 +480,20 @@ final readonly class WebhookSecretScanningAlertLocationCreated
                     ],
                     "description": "The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.",
                     "format": "date-time"
+                },
+                "publicly_leaked": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "description": "Whether the detected secret was publicly leaked."
+                },
+                "multi_repo": {
+                    "type": [
+                        "boolean",
+                        "null"
+                    ],
+                    "description": "Whether the detected secret was found in multiple repositories in the same organization or business."
                 }
             }
         },
@@ -1274,6 +1300,12 @@ final readonly class WebhookSecretScanningAlertLocationCreated
                                     "examples": [
                                         "\\"2020-07-09T00:17:55Z\\""
                                     ]
+                                },
+                                "user_view_type": {
+                                    "type": "string",
+                                    "examples": [
+                                        "public"
+                                    ]
                                 }
                             },
                             "description": "A GitHub user."
@@ -1465,6 +1497,12 @@ final readonly class WebhookSecretScanningAlertLocationCreated
                             "type": "string",
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
+                            ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
                             ]
                         }
                     },
@@ -2337,7 +2375,7 @@ final readonly class WebhookSecretScanningAlertLocationCreated
                 },
                 "use_squash_pr_title_as_default": {
                     "type": "boolean",
-                    "description": "Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
+                    "description": "Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.",
                     "default": false,
                     "deprecated": true
                 },
@@ -2578,6 +2616,12 @@ final readonly class WebhookSecretScanningAlertLocationCreated
                     "examples": [
                         "\\"2020-07-09T00:17:55Z\\""
                     ]
+                },
+                "user_view_type": {
+                    "type": "string",
+                    "examples": [
+                        "public"
+                    ]
                 }
             },
             "description": "A GitHub user."
@@ -2618,7 +2662,8 @@ final readonly class WebhookSecretScanningAlertLocationCreated
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "resolution_comment": "generated",
         "secret_type": "generated",
@@ -2646,9 +2691,12 @@ final readonly class WebhookSecretScanningAlertLocationCreated
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
-        "push_protection_bypassed_at": "1970-01-01T00:00:00+00:00"
+        "push_protection_bypassed_at": "1970-01-01T00:00:00+00:00",
+        "publicly_leaked": false,
+        "multi_repo": false
     },
     "installation": {
         "id": 1,
@@ -2706,7 +2754,8 @@ final readonly class WebhookSecretScanningAlertLocationCreated
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "forks": 5,
         "permissions": {
@@ -2737,7 +2786,8 @@ final readonly class WebhookSecretScanningAlertLocationCreated
             "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
             "type": "User",
             "site_admin": false,
-            "starred_at": "\\"2020-07-09T00:17:55Z\\""
+            "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+            "user_view_type": "public"
         },
         "private": false,
         "html_url": "https:\\/\\/github.com\\/octocat\\/Hello-World",
@@ -2971,7 +3021,8 @@ final readonly class WebhookSecretScanningAlertLocationCreated
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     }
 }';
 

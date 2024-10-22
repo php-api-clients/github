@@ -141,6 +141,17 @@ class User implements ObjectMapper
 
             after_id:
 
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
+
             $value = $payload['node_id'] ?? null;
 
             if ($value === null) {
@@ -568,17 +579,6 @@ class User implements ObjectMapper
 
             after_plan:
 
-            $value = $payload['suspended_at'] ?? null;
-
-            if ($value === null) {
-                $properties['suspendedAt'] = null;
-                goto after_suspendedAt;
-            }
-
-            $properties['suspendedAt'] = $value;
-
-            after_suspendedAt:
-
             $value = $payload['business_plus'] ?? null;
 
             if ($value === null) {
@@ -878,6 +878,14 @@ class User implements ObjectMapper
         $id                            = $object->id;
         after_id:        $result['id'] = $id;
 
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
         $nodeId                                 = $object->nodeId;
         after_nodeId:        $result['node_id'] = $nodeId;
 
@@ -1047,14 +1055,6 @@ class User implements ObjectMapper
 
         $plan                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️PrivateUser⚡️Plan($plan);
         after_plan:        $result['plan'] = $plan;
-
-        $suspendedAt = $object->suspendedAt;
-
-        if ($suspendedAt === null) {
-            goto after_suspendedAt;
-        }
-
-        after_suspendedAt:        $result['suspended_at'] = $suspendedAt;
 
         $businessPlus = $object->businessPlus;
 

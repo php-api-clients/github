@@ -91,14 +91,14 @@ final readonly class TimelineLineCommentedEvent
                     },
                     "position": {
                         "type": "integer",
-                        "description": "The line index in the diff to which the comment applies. This field is deprecated; use `line` instead.",
+                        "description": "The line index in the diff to which the comment applies. This field is closing down; use `line` instead.",
                         "examples": [
                             1
                         ]
                     },
                     "original_position": {
                         "type": "integer",
-                        "description": "The index of the original line in the diff to which the comment applies. This field is deprecated; use `original_line` instead.",
+                        "description": "The index of the original line in the diff to which the comment applies. This field is closing down; use `original_line` instead.",
                         "examples": [
                             4
                         ]
@@ -281,6 +281,12 @@ final readonly class TimelineLineCommentedEvent
                                 "type": "string",
                                 "examples": [
                                     "\\"2020-07-09T00:17:55Z\\""
+                                ]
+                            },
+                            "user_view_type": {
+                                "type": "string",
+                                "examples": [
+                                    "public"
                                 ]
                             }
                         },
@@ -567,7 +573,8 @@ final readonly class TimelineLineCommentedEvent
                 "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
                 "type": "User",
                 "site_admin": false,
-                "starred_at": "\\"2020-07-09T00:17:55Z\\""
+                "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+                "user_view_type": "public"
             },
             "body": "We should probably include a check for null values here.",
             "created_at": "2011-04-14T16:00:49Z",
@@ -641,7 +648,8 @@ final readonly class TimelineLineCommentedEvent
                 "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
                 "type": "User",
                 "site_admin": false,
-                "starred_at": "\\"2020-07-09T00:17:55Z\\""
+                "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+                "user_view_type": "public"
             },
             "body": "We should probably include a check for null values here.",
             "created_at": "2011-04-14T16:00:49Z",

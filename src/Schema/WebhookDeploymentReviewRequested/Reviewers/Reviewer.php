@@ -100,6 +100,9 @@ final readonly class Reviewer
         "url": {
             "type": "string",
             "format": "uri"
+        },
+        "user_view_type": {
+            "type": "string"
         }
     }
 }';
@@ -126,7 +129,8 @@ final readonly class Reviewer
     "starred_url": "generated",
     "subscriptions_url": "https:\\/\\/example.com\\/",
     "type": "Organization",
-    "url": "https:\\/\\/example.com\\/"
+    "url": "https:\\/\\/example.com\\/",
+    "user_view_type": "generated"
 }';
 
     public function __construct(#[MapFrom('avatar_url')]
@@ -143,7 +147,8 @@ final readonly class Reviewer
     public string|null $reposUrl, #[MapFrom('site_admin')]
     public bool|null $siteAdmin, #[MapFrom('starred_url')]
     public string|null $starredUrl, #[MapFrom('subscriptions_url')]
-    public string|null $subscriptionsUrl, public string|null $type, public string|null $url,)
+    public string|null $subscriptionsUrl, public string|null $type, public string|null $url, #[MapFrom('user_view_type')]
+    public string|null $userViewType,)
     {
     }
 }

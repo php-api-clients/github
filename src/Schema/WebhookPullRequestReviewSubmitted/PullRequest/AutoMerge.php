@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookPullRequestReviewSubmitted\Pull
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class AutoMerge extends Schema\AliasAbstract\Tiet454E9788\Tiet6D6E977B\Tiet013CDAB3\TietC3D76EBB
+final readonly class AutoMerge extends Schema\AliasAbstract\Tiet3711D3C5\Tiet0F63F0A7\TietF2088179\TietD7AB4A38
 {
 }

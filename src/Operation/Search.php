@@ -14,7 +14,6 @@ final class Search
     {
     }
 
-    /** @return */
     public function code(string $q, string $sort, string $order, int $perPage, int $page): Ok|WithoutBody
     {
         return $this->operators->search👷Code()->call($q, $sort, $order, $perPage, $page);

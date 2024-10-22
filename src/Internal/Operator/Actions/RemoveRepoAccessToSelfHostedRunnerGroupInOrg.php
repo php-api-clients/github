@@ -22,6 +22,7 @@ final readonly class RemoveRepoAccessToSelfHostedRunnerGroupInOrg
     {
     }
 
+    /** @return */
     public function call(string $org, int $runnerGroupId, int $repositoryId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\RemoveRepoAccessToSelfHostedRunnerGroupInOrg($org, $runnerGroupId, $repositoryId);

@@ -112,6 +112,12 @@ final readonly class Owner
             "examples": [
                 false
             ]
+        },
+        "user_view_type": {
+            "type": "string",
+            "examples": [
+                "public"
+            ]
         }
     }
 }';
@@ -140,7 +146,8 @@ final readonly class Owner
     "organizations_url": "\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/orgs\\"",
     "received_events_url": "\\"https:\\/\\/api.github.com\\/users\\/testorg-ea8ec76d71c3af4b\\/received_events\\"",
     "type": "\\"Organization\\"",
-    "site_admin": false
+    "site_admin": false,
+    "user_view_type": "public"
 }';
 
     public function __construct(public string|null $login, public int|null $id, #[MapFrom('node_id')]
@@ -161,7 +168,8 @@ final readonly class Owner
     public string|null $subscriptionsUrl, #[MapFrom('organizations_url')]
     public string|null $organizationsUrl, #[MapFrom('received_events_url')]
     public string|null $receivedEventsUrl, public string|null $type, #[MapFrom('site_admin')]
-    public bool|null $siteAdmin,)
+    public bool|null $siteAdmin, #[MapFrom('user_view_type')]
+    public string|null $userViewType,)
     {
     }
 }

@@ -16,6 +16,7 @@ use ApiClients\Client\GitHub\Schema\SecretScanningAlertWebhook;
 use ApiClients\Client\GitHub\Schema\SimpleInstallation;
 use ApiClients\Client\GitHub\Schema\SimpleUser;
 use ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertCreated;
+use ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertPubliclyLeaked;
 use ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertReopened;
 use ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertResolved;
 use ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertValidated;
@@ -66,6 +67,7 @@ class SecretScanningAlert implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertPubliclyLeaked' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecretScanningAlertPubliclyLeaked($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertReopened' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecretScanningAlertReopened($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertResolved' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecretScanningAlertResolved($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertValidated' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecretScanningAlertValidated($payload),
@@ -422,6 +424,28 @@ class SecretScanningAlert implements ObjectMapper
             $properties['pushProtectionBypassedAt'] = $value;
 
             after_pushProtectionBypassedAt:
+
+            $value = $payload['publicly_leaked'] ?? null;
+
+            if ($value === null) {
+                $properties['publiclyLeaked'] = null;
+                goto after_publiclyLeaked;
+            }
+
+            $properties['publiclyLeaked'] = $value;
+
+            after_publiclyLeaked:
+
+            $value = $payload['multi_repo'] ?? null;
+
+            if ($value === null) {
+                $properties['multiRepo'] = null;
+                goto after_multiRepo;
+            }
+
+            $properties['multiRepo'] = $value;
+
+            after_multiRepo:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningAlertWebhook', $exception, stack: $this->hydrationStack);
         }
@@ -672,6 +696,17 @@ class SecretScanningAlert implements ObjectMapper
             $properties['starredAt'] = $value;
 
             after_starredAt:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SimpleUser', $exception, stack: $this->hydrationStack);
         }
@@ -3625,6 +3660,156 @@ class SecretScanningAlert implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecretScanningAlertPubliclyLeaked(array $payload): WebhookSecretScanningAlertPubliclyLeaked
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['action'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'action';
+                goto after_action;
+            }
+
+            $properties['action'] = $value;
+
+            after_action:
+
+            $value = $payload['alert'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'alert';
+                goto after_alert;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'alert';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningAlertWebhook($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['alert'] = $value;
+
+            after_alert:
+
+            $value = $payload['enterprise'] ?? null;
+
+            if ($value === null) {
+                $properties['enterprise'] = null;
+                goto after_enterprise;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'enterprise';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['enterprise'] = $value;
+
+            after_enterprise:
+
+            $value = $payload['installation'] ?? null;
+
+            if ($value === null) {
+                $properties['installation'] = null;
+                goto after_installation;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'installation';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['installation'] = $value;
+
+            after_installation:
+
+            $value = $payload['organization'] ?? null;
+
+            if ($value === null) {
+                $properties['organization'] = null;
+                goto after_organization;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'organization';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['organization'] = $value;
+
+            after_organization:
+
+            $value = $payload['repository'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'repository';
+                goto after_repository;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'repository';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['repository'] = $value;
+
+            after_repository:
+
+            $value = $payload['sender'] ?? null;
+
+            if ($value === null) {
+                $properties['sender'] = null;
+                goto after_sender;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'sender';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['sender'] = $value;
+
+            after_sender:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertPubliclyLeaked', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(WebhookSecretScanningAlertPubliclyLeaked::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new WebhookSecretScanningAlertPubliclyLeaked(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertPubliclyLeaked', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecretScanningAlertReopened(array $payload): WebhookSecretScanningAlertReopened
     {
         $properties    = [];
@@ -4138,6 +4323,7 @@ class SecretScanningAlert implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Owner' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Owner($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️TemplateRepository⚡️Permissions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertPubliclyLeaked' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecretScanningAlertPubliclyLeaked($object),
                 'ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertReopened' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecretScanningAlertReopened($object),
                 'ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertResolved' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecretScanningAlertResolved($object),
                 'ApiClients\Client\GitHub\Schema\WebhookSecretScanningAlertValidated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecretScanningAlertValidated($object),
@@ -4393,6 +4579,22 @@ class SecretScanningAlert implements ObjectMapper
 
         after_pushProtectionBypassedAt:        $result['push_protection_bypassed_at'] = $pushProtectionBypassedAt;
 
+        $publiclyLeaked = $object->publiclyLeaked;
+
+        if ($publiclyLeaked === null) {
+            goto after_publiclyLeaked;
+        }
+
+        after_publiclyLeaked:        $result['publicly_leaked'] = $publiclyLeaked;
+
+        $multiRepo = $object->multiRepo;
+
+        if ($multiRepo === null) {
+            goto after_multiRepo;
+        }
+
+        after_multiRepo:        $result['multi_repo'] = $multiRepo;
+
         return $result;
     }
 
@@ -4483,6 +4685,14 @@ class SecretScanningAlert implements ObjectMapper
         }
 
         after_starredAt:        $result['starred_at'] = $starredAt;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
 
         return $result;
     }
@@ -6087,6 +6297,61 @@ class SecretScanningAlert implements ObjectMapper
         }
 
         after_pull:        $result['pull'] = $pull;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookSecretScanningAlertPubliclyLeaked(mixed $object): mixed
+    {
+        assert($object instanceof WebhookSecretScanningAlertPubliclyLeaked);
+        $result = [];
+
+        $action                                = $object->action;
+        after_action:        $result['action'] = $action;
+
+        $alert                               = $object->alert;
+        $alert                               = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecretScanningAlertWebhook($alert);
+        after_alert:        $result['alert'] = $alert;
+
+        $enterprise = $object->enterprise;
+
+        if ($enterprise === null) {
+            goto after_enterprise;
+        }
+
+        $enterprise                                    = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        $installation = $object->installation;
+
+        if ($installation === null) {
+            goto after_installation;
+        }
+
+        $installation                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        $organization = $object->organization;
+
+        if ($organization === null) {
+            goto after_organization;
+        }
+
+        $organization                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        $repository                                    = $object->repository;
+        $repository                                    = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($repository);
+        after_repository:        $result['repository'] = $repository;
+
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+
+        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
 
         return $result;
     }

@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited;
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Issue extends Schema\AliasAbstract\Tiet0D538F96\Tiet4A7F392D\Tiet9191A5B7\Tiet7B6C26BB
+final readonly class Issue extends Schema\AliasAbstract\Tiet868EAB0B\Tiet2FD1C368\Tiet9B7A081D\TietA036CC78
 {
 }

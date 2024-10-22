@@ -32,7 +32,6 @@ final class Six
     {
     }
 
-    /** @return Schema\RunnerGroupsOrg| */
     public function call(string $call, array $params, array $pathChunks): RunnerGroupsOrg|WithoutBody|CodeSecurityConfiguration|WebhookConfig|CheckRun|CheckSuitePreference|EmptyObject|CodeScanningDefaultSetupUpdateResponse|CommitComment|Hook|Import|RepositoryInvitation|Issue|BasicError|Label|Milestone|PullRequest|Release|RepositoryAdvisory
     {
         if ($pathChunks[0] === '') {

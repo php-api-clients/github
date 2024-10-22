@@ -242,7 +242,7 @@ final readonly class AppPermissions
                 "write"
             ],
             "type": "string",
-            "description": "The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change."
+            "description": "The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change."
         },
         "organization_announcement_banners": {
             "enum": [
@@ -297,7 +297,7 @@ final readonly class AppPermissions
                 "admin"
             ],
             "type": "string",
-            "description": "The level of permission to grant the access token to manage organization projects and projects beta (where available)."
+            "description": "The level of permission to grant the access token to manage organization projects and projects public preview (where available)."
         },
         "organization_packages": {
             "enum": [
@@ -485,14 +485,14 @@ final readonly class AppPermissions
      * organizationCustomRoles: The level of permission to grant the access token for custom repository roles management.
      * organizationCustomOrgRoles: The level of permission to grant the access token for custom organization roles management.
      * organizationCustomProperties: The level of permission to grant the access token for custom property management.
-     * organizationCopilotSeatManagement: The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in beta and is subject to change.
+     * organizationCopilotSeatManagement: The level of permission to grant the access token for managing access to GitHub Copilot for members of an organization with a Copilot Business subscription. This property is in public preview and is subject to change.
      * organizationAnnouncementBanners: The level of permission to grant the access token to view and manage announcement banners for an organization.
      * organizationEvents: The level of permission to grant the access token to view events triggered by an activity in an organization.
      * organizationHooks: The level of permission to grant the access token to manage the post-receive hooks for an organization.
      * organizationPersonalAccessTokens: The level of permission to grant the access token for viewing and managing fine-grained personal access token requests to an organization.
      * organizationPersonalAccessTokenRequests: The level of permission to grant the access token for viewing and managing fine-grained personal access tokens that have been approved by an organization.
      * organizationPlan: The level of permission to grant the access token for viewing an organization's plan.
-     * organizationProjects: The level of permission to grant the access token to manage organization projects and projects beta (where available).
+     * organizationProjects: The level of permission to grant the access token to manage organization projects and projects public preview (where available).
      * organizationPackages: The level of permission to grant the access token for organization packages published to GitHub Packages.
      * organizationSecrets: The level of permission to grant the access token to manage organization secrets.
      * organizationSelfHostedRunners: The level of permission to grant the access token to view and manage GitHub Actions self-hosted runners available to an organization.

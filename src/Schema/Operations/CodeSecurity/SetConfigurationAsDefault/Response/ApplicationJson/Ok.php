@@ -36,7 +36,8 @@ final readonly class Ok
                 "target_type": {
                     "enum": [
                         "global",
-                        "organization"
+                        "organization",
+                        "enterprise"
                     ],
                     "type": "string",
                     "description": "The type of the code security configuration."

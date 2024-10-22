@@ -240,6 +240,12 @@ final readonly class SecretScanningAlertWebhook
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -440,6 +446,12 @@ final readonly class SecretScanningAlertWebhook
                             "examples": [
                                 "\\"2020-07-09T00:17:55Z\\""
                             ]
+                        },
+                        "user_view_type": {
+                            "type": "string",
+                            "examples": [
+                                "public"
+                            ]
                         }
                     },
                     "description": "A GitHub user."
@@ -453,6 +465,20 @@ final readonly class SecretScanningAlertWebhook
             ],
             "description": "The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.",
             "format": "date-time"
+        },
+        "publicly_leaked": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "description": "Whether the detected secret was publicly leaked."
+        },
+        "multi_repo": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "description": "Whether the detected secret was found in multiple repositories in the same organization or business."
         }
     }
 }';
@@ -488,7 +514,8 @@ final readonly class SecretScanningAlertWebhook
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
     "resolution_comment": "generated",
     "secret_type": "generated",
@@ -516,9 +543,12 @@ final readonly class SecretScanningAlertWebhook
         "received_events_url": "https:\\/\\/api.github.com\\/users\\/octocat\\/received_events",
         "type": "User",
         "site_admin": false,
-        "starred_at": "\\"2020-07-09T00:17:55Z\\""
+        "starred_at": "\\"2020-07-09T00:17:55Z\\"",
+        "user_view_type": "public"
     },
-    "push_protection_bypassed_at": "1970-01-01T00:00:00+00:00"
+    "push_protection_bypassed_at": "1970-01-01T00:00:00+00:00",
+    "publicly_leaked": false,
+    "multi_repo": false
 }';
 
     /**
@@ -536,6 +566,8 @@ final readonly class SecretScanningAlertWebhook
      * validity: The token status as of the latest validity check.
      * pushProtectionBypassed: Whether push protection was bypassed for the detected secret.
      * pushProtectionBypassedAt: The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     * publiclyLeaked: Whether the detected secret was publicly leaked.
+     * multiRepo: Whether the detected secret was found in multiple repositories in the same organization or business.
      */
     public function __construct(public int|null $number, #[MapFrom('created_at')]
     public string|null $createdAt, #[MapFrom('updated_at')]
@@ -549,7 +581,9 @@ final readonly class SecretScanningAlertWebhook
     public string|null $secretTypeDisplayName, public string|null $validity, #[MapFrom('push_protection_bypassed')]
     public bool|null $pushProtectionBypassed, #[MapFrom('push_protection_bypassed_by')]
     public Schema\SimpleUser|null $pushProtectionBypassedBy, #[MapFrom('push_protection_bypassed_at')]
-    public string|null $pushProtectionBypassedAt,)
+    public string|null $pushProtectionBypassedAt, #[MapFrom('publicly_leaked')]
+    public bool|null $publiclyLeaked, #[MapFrom('multi_repo')]
+    public bool|null $multiRepo,)
     {
     }
 }

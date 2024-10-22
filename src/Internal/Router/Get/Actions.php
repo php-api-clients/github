@@ -59,6 +59,7 @@ final class Actions
         return $operator->call($arguments['org']);
     }
 
+    /** @return */
     public function listSelfHostedRunnerGroupsForOrg(array $params): Ok
     {
         $arguments = [];
@@ -277,6 +278,7 @@ final class Actions
         return $operator->call($arguments['org']);
     }
 
+    /** @return */
     public function getSelfHostedRunnerGroupForOrg(array $params): RunnerGroupsOrg
     {
         $arguments = [];
@@ -792,6 +794,7 @@ final class Actions
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function listRepoAccessToSelfHostedRunnerGroupInOrg(array $params): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListRepoAccessToSelfHostedRunnerGroupInOrg\Response\ApplicationJson\Ok
     {
         $arguments = [];
@@ -824,6 +827,7 @@ final class Actions
         return $operator->call($arguments['org'], $arguments['runner_group_id'], $arguments['page'], $arguments['per_page']);
     }
 
+    /** @return */
     public function listSelfHostedRunnersInGroupForOrg(array $params): \ApiClients\Client\GitHub\Schema\Operations\Actions\ListSelfHostedRunnersInGroupForOrg\Response\ApplicationJson\Ok
     {
         $arguments = [];

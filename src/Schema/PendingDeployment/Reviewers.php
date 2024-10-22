@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\PendingDeployment;
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Reviewers extends Schema\AliasAbstract\Tiet97141A0A\Tiet7F036F5C\TietE5EDAF51\Tiet1E00A18F
+final readonly class Reviewers extends Schema\AliasAbstract\Tiet840A0FDF\Tiet2788886F\Tiet3E288C76\Tiet836AAE9A
 {
 }

@@ -82,7 +82,7 @@ final readonly class ApplicationJson
                 "none"
             ],
             "type": "string",
-            "description": "Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud. \\n**Note:** This parameter is deprecated and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details."
+            "description": "Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud. \\n**Note:** This parameter is closing down and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details."
         },
         "members_can_create_pages": {
             "type": "boolean",
@@ -117,32 +117,32 @@ final readonly class ApplicationJson
         },
         "advanced_security_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \\"[Managing security managers in your organization](https:\\/\\/docs.github.com\\/organizations\\/managing-peoples-access-to-your-organization-with-roles\\/managing-security-managers-in-your-organization).\\"\\n\\nYou can check which security and analysis features are currently enabled by using a `GET \\/orgs\\/{org}` request.",
+            "description": "**Endpoint closing down notice.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \\"[Managing security managers in your organization](https:\\/\\/docs.github.com\\/organizations\\/managing-peoples-access-to-your-organization-with-roles\\/managing-security-managers-in-your-organization).\\"\\n\\nYou can check which security and analysis features are currently enabled by using a `GET \\/orgs\\/{org}` request.",
             "deprecated": true
         },
         "dependabot_alerts_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.\\n\\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \\"[Managing security managers in your organization](https:\\/\\/docs.github.com\\/organizations\\/managing-peoples-access-to-your-organization-with-roles\\/managing-security-managers-in-your-organization).\\"\\n\\nYou can check which security and analysis features are currently enabled by using a `GET \\/orgs\\/{org}` request.",
+            "description": "**Endpoint closing down notice.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.\\n\\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \\"[Managing security managers in your organization](https:\\/\\/docs.github.com\\/organizations\\/managing-peoples-access-to-your-organization-with-roles\\/managing-security-managers-in-your-organization).\\"\\n\\nYou can check which security and analysis features are currently enabled by using a `GET \\/orgs\\/{org}` request.",
             "deprecated": true
         },
         "dependabot_security_updates_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.\\n\\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \\"[Managing security managers in your organization](https:\\/\\/docs.github.com\\/organizations\\/managing-peoples-access-to-your-organization-with-roles\\/managing-security-managers-in-your-organization).\\"\\n\\nYou can check which security and analysis features are currently enabled by using a `GET \\/orgs\\/{org}` request.",
+            "description": "**Endpoint closing down notice.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.\\n\\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \\"[Managing security managers in your organization](https:\\/\\/docs.github.com\\/organizations\\/managing-peoples-access-to-your-organization-with-roles\\/managing-security-managers-in-your-organization).\\"\\n\\nYou can check which security and analysis features are currently enabled by using a `GET \\/orgs\\/{org}` request.",
             "deprecated": true
         },
         "dependency_graph_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \\"[Managing security managers in your organization](https:\\/\\/docs.github.com\\/organizations\\/managing-peoples-access-to-your-organization-with-roles\\/managing-security-managers-in-your-organization).\\"\\n\\nYou can check which security and analysis features are currently enabled by using a `GET \\/orgs\\/{org}` request.",
+            "description": "**Endpoint closing down notice.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \\"[Managing security managers in your organization](https:\\/\\/docs.github.com\\/organizations\\/managing-peoples-access-to-your-organization-with-roles\\/managing-security-managers-in-your-organization).\\"\\n\\nYou can check which security and analysis features are currently enabled by using a `GET \\/orgs\\/{org}` request.",
             "deprecated": true
         },
         "secret_scanning_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \\"[Managing security managers in your organization](https:\\/\\/docs.github.com\\/organizations\\/managing-peoples-access-to-your-organization-with-roles\\/managing-security-managers-in-your-organization).\\"\\n\\nYou can check which security and analysis features are currently enabled by using a `GET \\/orgs\\/{org}` request.",
+            "description": "**Endpoint closing down notice.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \\"[Managing security managers in your organization](https:\\/\\/docs.github.com\\/organizations\\/managing-peoples-access-to-your-organization-with-roles\\/managing-security-managers-in-your-organization).\\"\\n\\nYou can check which security and analysis features are currently enabled by using a `GET \\/orgs\\/{org}` request.",
             "deprecated": true
         },
         "secret_scanning_push_protection_enabled_for_new_repositories": {
             "type": "boolean",
-            "description": "**Deprecated.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \\"[Managing security managers in your organization](https:\\/\\/docs.github.com\\/organizations\\/managing-peoples-access-to-your-organization-with-roles\\/managing-security-managers-in-your-organization).\\"\\n\\nYou can check which security and analysis features are currently enabled by using a `GET \\/orgs\\/{org}` request.",
+            "description": "**Endpoint closing down notice.** Please use [code security configurations](https:\\/\\/docs.github.com\\/rest\\/code-security\\/configurations) instead.\\n\\nWhether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.\\n\\nTo use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see \\"[Managing security managers in your organization](https:\\/\\/docs.github.com\\/organizations\\/managing-peoples-access-to-your-organization-with-roles\\/managing-security-managers-in-your-organization).\\"\\n\\nYou can check which security and analysis features are currently enabled by using a `GET \\/orgs\\/{org}` request.",
             "deprecated": true
         },
         "secret_scanning_push_protection_custom_link_enabled": {
@@ -205,48 +205,48 @@ final readonly class ApplicationJson
      * membersCanCreatePrivateRepositories: Whether organization members can create private repositories, which are visible to organization members with permission. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)" in the GitHub Help documentation.
      * membersCanCreatePublicRepositories: Whether organization members can create public repositories, which are visible to anyone. For more information, see "[Restricting repository creation in your organization](https://docs.github.com/github/setting-up-and-managing-organizations-and-teams/restricting-repository-creation-in-your-organization)" in the GitHub Help documentation.
      * membersAllowedRepositoryCreationType: Specifies which types of repositories non-admin organization members can create. `private` is only available to repositories that are part of an organization on GitHub Enterprise Cloud.
-     * *Note:** This parameter is deprecated and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
+     * *Note:** This parameter is closing down and will be removed in the future. Its return value ignores internal repositories. Using this parameter overrides values set in `members_can_create_repositories`. See the parameter deprecation notice in the operation description for details.
      * membersCanCreatePages: Whether organization members can create GitHub Pages sites. Existing published sites will not be impacted.
      * membersCanCreatePublicPages: Whether organization members can create public GitHub Pages sites. Existing published sites will not be impacted.
      * membersCanCreatePrivatePages: Whether organization members can create private GitHub Pages sites. Existing published sites will not be impacted.
      * membersCanForkPrivateRepositories: Whether organization members can fork private organization repositories.
      * webCommitSignoffRequired: Whether contributors to organization repositories are required to sign off on commits they make through GitHub's web interface.
-     * advancedSecurityEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+     * advancedSecurityEnabledForNewRepositories: **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
 
     Whether GitHub Advanced Security is automatically enabled for new repositories and repositories transferred to this organization.
 
     To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 
     You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
-     * dependabotAlertsEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+     * dependabotAlertsEnabledForNewRepositories: **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
 
     Whether Dependabot alerts are automatically enabled for new repositories and repositories transferred to this organization.
 
     To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 
     You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
-     * dependabotSecurityUpdatesEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+     * dependabotSecurityUpdatesEnabledForNewRepositories: **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
 
     Whether Dependabot security updates are automatically enabled for new repositories and repositories transferred to this organization.
 
     To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 
     You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
-     * dependencyGraphEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+     * dependencyGraphEnabledForNewRepositories: **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
 
     Whether dependency graph is automatically enabled for new repositories and repositories transferred to this organization.
 
     To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 
     You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
-     * secretScanningEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+     * secretScanningEnabledForNewRepositories: **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
 
     Whether secret scanning is automatically enabled for new repositories and repositories transferred to this organization.
 
     To use this parameter, you must have admin permissions for the repository or be an owner or security manager for the organization that owns the repository. For more information, see "[Managing security managers in your organization](https://docs.github.com/organizations/managing-peoples-access-to-your-organization-with-roles/managing-security-managers-in-your-organization)."
 
     You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
-     * secretScanningPushProtectionEnabledForNewRepositories: **Deprecated.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
+     * secretScanningPushProtectionEnabledForNewRepositories: **Endpoint closing down notice.** Please use [code security configurations](https://docs.github.com/rest/code-security/configurations) instead.
 
     Whether secret scanning push protection is automatically enabled for new repositories and repositories transferred to this organization.
 

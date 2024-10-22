@@ -503,6 +503,9 @@ final readonly class Repo
                 "url": {
                     "type": "string",
                     "format": "uri"
+                },
+                "user_view_type": {
+                    "type": "string"
                 }
             }
         },
@@ -645,7 +648,7 @@ final readonly class Repo
         },
         "use_squash_pr_title_as_default": {
             "type": "boolean",
-            "description": "Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.",
+            "description": "Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.",
             "default": false
         },
         "visibility": {
@@ -765,7 +768,8 @@ final readonly class Repo
         "starred_url": "generated",
         "subscriptions_url": "https:\\/\\/example.com\\/",
         "type": "Organization",
-        "url": "https:\\/\\/example.com\\/"
+        "url": "https:\\/\\/example.com\\/",
+        "user_view_type": "generated"
     },
     "permissions": {
         "admin": false,
@@ -843,7 +847,7 @@ final readonly class Repo
 
     - `PR_TITLE` - default to the pull request's title.
     - `COMMIT_OR_PR_TITLE` - default to the commit's title (if only one commit) or the pull request's title (when more than one commit).
-     * useSquashPrTitleAsDefault: Whether a squash merge commit can use the pull request title as default. **This property has been deprecated. Please use `squash_merge_commit_title` instead.
+     * useSquashPrTitleAsDefault: Whether a squash merge commit can use the pull request title as default. **This property is closing down. Please use `squash_merge_commit_title` instead.
      * webCommitSignoffRequired: Whether to require contributors to sign off on web-based commits
      */
     public function __construct(#[MapFrom('allow_auto_merge')]

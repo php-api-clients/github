@@ -62,7 +62,7 @@ final class ListAlertsForRepo
     private string $sort;
     /**The direction to sort the results by. **/
     private string $direction;
-    /****Deprecated**. Page number of the results to fetch. Use cursor-based pagination with `before` or `after` instead. **/
+    /****Closing down notice**. Page number of the results to fetch. Use cursor-based pagination with `before` or `after` instead. **/
     private int $page;
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;

@@ -31,19 +31,21 @@ final class ListAlertsForEnterpriseTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/enterprises/generated/secret-scanning/alerts?state=generated&secret_type=generated&resolution=generated&before=generated&after=generated&validity=generated&sort=generated&direction=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/secret-scanning/alerts?state=generated&secret_type=generated&resolution=generated&before=generated&after=generated&validity=generated&sort=generated&direction=generated&per_page=8&is_publicly_leaked=&is_multi_repo=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\SecretScanning\ListAlertsForEnterprise::OPERATION_MATCH, (static function (array $data): array {
-            $data['enterprise']  = 'generated';
-            $data['state']       = 'generated';
-            $data['secret_type'] = 'generated';
-            $data['resolution']  = 'generated';
-            $data['before']      = 'generated';
-            $data['after']       = 'generated';
-            $data['validity']    = 'generated';
-            $data['sort']        = 'generated';
-            $data['direction']   = 'generated';
-            $data['per_page']    = 8;
+            $data['enterprise']         = 'generated';
+            $data['state']              = 'generated';
+            $data['secret_type']        = 'generated';
+            $data['resolution']         = 'generated';
+            $data['before']             = 'generated';
+            $data['after']              = 'generated';
+            $data['validity']           = 'generated';
+            $data['sort']               = 'generated';
+            $data['direction']          = 'generated';
+            $data['per_page']           = 8;
+            $data['is_publicly_leaked'] = false;
+            $data['is_multi_repo']      = false;
 
             return $data;
         })([]));
@@ -59,9 +61,9 @@ final class ListAlertsForEnterpriseTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/enterprises/generated/secret-scanning/alerts?state=generated&secret_type=generated&resolution=generated&before=generated&after=generated&validity=generated&sort=generated&direction=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/secret-scanning/alerts?state=generated&secret_type=generated&resolution=generated&before=generated&after=generated&validity=generated&sort=generated&direction=generated&per_page=8&is_publicly_leaked=&is_multi_repo=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->secretScanning()->listAlertsForEnterprise('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 8);
+        $result = $client->operations()->secretScanning()->listAlertsForEnterprise('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 8, false, false);
     }
 
     /** @test */
@@ -74,19 +76,21 @@ final class ListAlertsForEnterpriseTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/enterprises/generated/secret-scanning/alerts?state=generated&secret_type=generated&resolution=generated&before=generated&after=generated&validity=generated&sort=generated&direction=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/secret-scanning/alerts?state=generated&secret_type=generated&resolution=generated&before=generated&after=generated&validity=generated&sort=generated&direction=generated&per_page=8&is_publicly_leaked=&is_multi_repo=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\SecretScanning\ListAlertsForEnterprise::OPERATION_MATCH, (static function (array $data): array {
-            $data['enterprise']  = 'generated';
-            $data['state']       = 'generated';
-            $data['secret_type'] = 'generated';
-            $data['resolution']  = 'generated';
-            $data['before']      = 'generated';
-            $data['after']       = 'generated';
-            $data['validity']    = 'generated';
-            $data['sort']        = 'generated';
-            $data['direction']   = 'generated';
-            $data['per_page']    = 8;
+            $data['enterprise']         = 'generated';
+            $data['state']              = 'generated';
+            $data['secret_type']        = 'generated';
+            $data['resolution']         = 'generated';
+            $data['before']             = 'generated';
+            $data['after']              = 'generated';
+            $data['validity']           = 'generated';
+            $data['sort']               = 'generated';
+            $data['direction']          = 'generated';
+            $data['per_page']           = 8;
+            $data['is_publicly_leaked'] = false;
+            $data['is_multi_repo']      = false;
 
             return $data;
         })([]));
@@ -102,8 +106,8 @@ final class ListAlertsForEnterpriseTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/enterprises/generated/secret-scanning/alerts?state=generated&secret_type=generated&resolution=generated&before=generated&after=generated&validity=generated&sort=generated&direction=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/enterprises/generated/secret-scanning/alerts?state=generated&secret_type=generated&resolution=generated&before=generated&after=generated&validity=generated&sort=generated&direction=generated&per_page=8&is_publicly_leaked=&is_multi_repo=', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->secretScanning()->listAlertsForEnterprise('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 8);
+        $result = $client->operations()->secretScanning()->listAlertsForEnterprise('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 8, false, false);
     }
 }

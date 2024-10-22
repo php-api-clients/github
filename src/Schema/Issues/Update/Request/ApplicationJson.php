@@ -39,7 +39,7 @@ final readonly class ApplicationJson
                 "string",
                 "null"
             ],
-            "description": "Username to assign to this issue. **This field is deprecated.**"
+            "description": "Username to assign to this issue. **This field is closing down.**"
         },
         "state": {
             "enum": [
@@ -146,7 +146,7 @@ final readonly class ApplicationJson
     /**
      * title: The title of the issue.
      * body: The contents of the issue.
-     * assignee: Username to assign to this issue. **This field is deprecated.**
+     * assignee: Username to assign to this issue. **This field is closing down.**
      * state: The open or closed state of the issue.
      * stateReason: The reason for the state change. Ignored unless `state` is changed.
      * labels: Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped.
