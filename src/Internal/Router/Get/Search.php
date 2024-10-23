@@ -20,6 +20,7 @@ final class Search
     {
     }
 
+    /** @return */
     public function code(array $params): Ok|WithoutBody
     {
         $arguments = [];

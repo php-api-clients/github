@@ -24,7 +24,7 @@ final readonly class ApplicationJson
         "client_payload": {
             "maxProperties": 10,
             "type": "object",
-            "description": "JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.",
+            "description": "JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10. The total size of the JSON payload must be less than 64KB.",
             "additionalProperties": true
         }
     }
@@ -38,7 +38,7 @@ final readonly class ApplicationJson
 
     /**
      * eventType: A custom webhook event name. Must be 100 characters or fewer.
-     * clientPayload: JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10.
+     * clientPayload: JSON payload with extra information about the webhook event that your action or workflow may use. The maximum number of top-level properties is 10. The total size of the JSON payload must be less than 64KB.
      */
     public function __construct(#[MapFrom('event_type')]
     public string $eventType, #[MapFrom('client_payload')]

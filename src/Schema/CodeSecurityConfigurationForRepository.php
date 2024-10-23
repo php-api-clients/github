@@ -130,6 +130,46 @@ final readonly class CodeSecurityConfigurationForRepository
                     "type": "string",
                     "description": "The enablement status of secret scanning push protection"
                 },
+                "secret_scanning_delegated_bypass": {
+                    "enum": [
+                        "enabled",
+                        "disabled",
+                        "not_set"
+                    ],
+                    "type": "string",
+                    "description": "The enablement status of secret scanning delegated bypass"
+                },
+                "secret_scanning_delegated_bypass_options": {
+                    "type": "object",
+                    "properties": {
+                        "reviewers": {
+                            "type": "array",
+                            "items": {
+                                "required": [
+                                    "reviewer_id",
+                                    "reviewer_type"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "reviewer_id": {
+                                        "type": "integer",
+                                        "description": "The ID of the team or role selected as a bypass reviewer"
+                                    },
+                                    "reviewer_type": {
+                                        "enum": [
+                                            "TEAM",
+                                            "ROLE"
+                                        ],
+                                        "type": "string",
+                                        "description": "The type of the bypass reviewer"
+                                    }
+                                }
+                            },
+                            "description": "The bypass reviewers for secret scanning delegated bypass"
+                        }
+                    },
+                    "description": "Feature options for secret scanning delegated bypass"
+                },
                 "secret_scanning_validity_checks": {
                     "enum": [
                         "enabled",
@@ -209,6 +249,19 @@ final readonly class CodeSecurityConfigurationForRepository
         "code_scanning_default_setup": "enabled",
         "secret_scanning": "enabled",
         "secret_scanning_push_protection": "enabled",
+        "secret_scanning_delegated_bypass": "not_set",
+        "secret_scanning_delegated_bypass_options": {
+            "reviewers": [
+                {
+                    "reviewer_id": 11,
+                    "reviewer_type": "TEAM"
+                },
+                {
+                    "reviewer_id": 11,
+                    "reviewer_type": "TEAM"
+                }
+            ]
+        },
         "secret_scanning_validity_checks": "enabled",
         "secret_scanning_non_provider_patterns": "enabled",
         "private_vulnerability_reporting": "enabled",

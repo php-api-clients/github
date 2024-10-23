@@ -115,6 +115,47 @@ final readonly class ApplicationJson
             "description": "The enablement status of secret scanning push protection",
             "default": "disabled"
         },
+        "secret_scanning_delegated_bypass": {
+            "enum": [
+                "enabled",
+                "disabled",
+                "not_set"
+            ],
+            "type": "string",
+            "description": "The enablement status of secret scanning delegated bypass",
+            "default": "disabled"
+        },
+        "secret_scanning_delegated_bypass_options": {
+            "type": "object",
+            "properties": {
+                "reviewers": {
+                    "type": "array",
+                    "items": {
+                        "required": [
+                            "reviewer_id",
+                            "reviewer_type"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "reviewer_id": {
+                                "type": "integer",
+                                "description": "The ID of the team or role selected as a bypass reviewer"
+                            },
+                            "reviewer_type": {
+                                "enum": [
+                                    "TEAM",
+                                    "ROLE"
+                                ],
+                                "type": "string",
+                                "description": "The type of the bypass reviewer"
+                            }
+                        }
+                    },
+                    "description": "The bypass reviewers for secret scanning delegated bypass"
+                }
+            },
+            "description": "Feature options for secret scanning delegated bypass"
+        },
         "secret_scanning_validity_checks": {
             "enum": [
                 "enabled",
@@ -173,6 +214,19 @@ final readonly class ApplicationJson
     "code_scanning_default_setup": "enabled",
     "secret_scanning": "enabled",
     "secret_scanning_push_protection": "enabled",
+    "secret_scanning_delegated_bypass": "not_set",
+    "secret_scanning_delegated_bypass_options": {
+        "reviewers": [
+            {
+                "reviewer_id": 11,
+                "reviewer_type": "TEAM"
+            },
+            {
+                "reviewer_id": 11,
+                "reviewer_type": "TEAM"
+            }
+        ]
+    },
     "secret_scanning_validity_checks": "enabled",
     "secret_scanning_non_provider_patterns": "enabled",
     "private_vulnerability_reporting": "enabled",
@@ -191,6 +245,8 @@ final readonly class ApplicationJson
      * codeScanningDefaultSetup: The enablement status of code scanning default setup
      * secretScanning: The enablement status of secret scanning
      * secretScanningPushProtection: The enablement status of secret scanning push protection
+     * secretScanningDelegatedBypass: The enablement status of secret scanning delegated bypass
+     * secretScanningDelegatedBypassOptions: Feature options for secret scanning delegated bypass
      * secretScanningValidityChecks: The enablement status of secret scanning validity checks
      * secretScanningNonProviderPatterns: The enablement status of secret scanning non provider patterns
      * privateVulnerabilityReporting: The enablement status of private vulnerability reporting
@@ -205,7 +261,9 @@ final readonly class ApplicationJson
     public string|null $dependabotSecurityUpdates, #[MapFrom('code_scanning_default_setup')]
     public string|null $codeScanningDefaultSetup, #[MapFrom('secret_scanning')]
     public string|null $secretScanning, #[MapFrom('secret_scanning_push_protection')]
-    public string|null $secretScanningPushProtection, #[MapFrom('secret_scanning_validity_checks')]
+    public string|null $secretScanningPushProtection, #[MapFrom('secret_scanning_delegated_bypass')]
+    public string|null $secretScanningDelegatedBypass, #[MapFrom('secret_scanning_delegated_bypass_options')]
+    public Schema\CodeSecurity\CreateConfiguration\Request\ApplicationJson\SecretScanningDelegatedBypassOptions|null $secretScanningDelegatedBypassOptions, #[MapFrom('secret_scanning_validity_checks')]
     public string|null $secretScanningValidityChecks, #[MapFrom('secret_scanning_non_provider_patterns')]
     public string|null $secretScanningNonProviderPatterns, #[MapFrom('private_vulnerability_reporting')]
     public string|null $privateVulnerabilityReporting, public string|null $enforcement,)
