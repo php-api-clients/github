@@ -214,9 +214,13 @@ final readonly class Alert
         "state": {
             "enum": [
                 "open",
-                "dismissed"
+                "dismissed",
+                null
             ],
-            "type": "string",
+            "type": [
+                "string",
+                "null"
+            ],
             "description": "State of a code scanning alert."
         },
         "tool": {
@@ -333,7 +337,7 @@ final readonly class Alert
     public string $fixedAt, #[MapFrom('html_url')]
     public string $htmlUrl, #[MapFrom('instances_url')]
     public string|null $instancesUrl, #[MapFrom('most_recent_instance')]
-    public Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance|null $mostRecentInstance, public int $number, public Schema\WebhookCodeScanningAlertCreated\Alert\Rule $rule, public string $state, public Schema\WebhookCodeScanningAlertCreated\Alert\Tool|null $tool, #[MapFrom('updated_at')]
+    public Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance|null $mostRecentInstance, public int $number, public Schema\WebhookCodeScanningAlertCreated\Alert\Rule $rule, public string|null $state, public Schema\WebhookCodeScanningAlertCreated\Alert\Tool|null $tool, #[MapFrom('updated_at')]
     public string|null $updatedAt, public string $url,)
     {
     }

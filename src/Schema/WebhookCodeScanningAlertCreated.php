@@ -232,9 +232,13 @@ final readonly class WebhookCodeScanningAlertCreated
                 "state": {
                     "enum": [
                         "open",
-                        "dismissed"
+                        "dismissed",
+                        null
                     ],
-                    "type": "string",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
                     "description": "State of a code scanning alert."
                 },
                 "tool": {

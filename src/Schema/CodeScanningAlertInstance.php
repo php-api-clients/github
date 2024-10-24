@@ -32,9 +32,13 @@ final readonly class CodeScanningAlertInstance
             "enum": [
                 "open",
                 "dismissed",
-                "fixed"
+                "fixed",
+                null
             ],
-            "type": "string",
+            "type": [
+                "string",
+                "null"
+            ],
             "description": "State of a code scanning alert."
         },
         "commit_sha": {

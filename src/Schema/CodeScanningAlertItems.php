@@ -65,9 +65,13 @@ final readonly class CodeScanningAlertItems
             "enum": [
                 "open",
                 "dismissed",
-                "fixed"
+                "fixed",
+                null
             ],
-            "type": "string",
+            "type": [
+                "string",
+                "null"
+            ],
             "description": "State of a code scanning alert."
         },
         "fixed_at": {
@@ -406,9 +410,13 @@ final readonly class CodeScanningAlertItems
                     "enum": [
                         "open",
                         "dismissed",
-                        "fixed"
+                        "fixed",
+                        null
                     ],
-                    "type": "string",
+                    "type": [
+                        "string",
+                        "null"
+                    ],
                     "description": "State of a code scanning alert."
                 },
                 "commit_sha": {
@@ -564,7 +572,7 @@ final readonly class CodeScanningAlertItems
     public string $createdAt, #[MapFrom('updated_at')]
     public string|null $updatedAt, public string $url, #[MapFrom('html_url')]
     public string $htmlUrl, #[MapFrom('instances_url')]
-    public string $instancesUrl, public string $state, #[MapFrom('fixed_at')]
+    public string $instancesUrl, public string|null $state, #[MapFrom('fixed_at')]
     public string|null $fixedAt, #[MapFrom('dismissed_by')]
     public Schema\SimpleUser|null $dismissedBy, #[MapFrom('dismissed_at')]
     public string|null $dismissedAt, #[MapFrom('dismissed_reason')]

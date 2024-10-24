@@ -17,6 +17,7 @@ final readonly class ApplicationJson
         "scope": {
             "enum": [
                 "all",
+                "all_without_configurations",
                 "public",
                 "private_or_internal",
                 "selected"

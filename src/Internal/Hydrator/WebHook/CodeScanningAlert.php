@@ -5591,7 +5591,7 @@ class CodeScanningAlert implements ObjectMapper
             $value = $payload['state'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'state';
+                $properties['state'] = null;
                 goto after_state;
             }
 
@@ -11487,7 +11487,12 @@ class CodeScanningAlert implements ObjectMapper
         $rule                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️Rule($rule);
         after_rule:        $result['rule'] = $rule;
 
-        $state                               = $object->state;
+        $state = $object->state;
+
+        if ($state === null) {
+            goto after_state;
+        }
+
         after_state:        $result['state'] = $state;
 
         $tool = $object->tool;

@@ -10,9 +10,13 @@ final readonly class CodeScanningAlertState
     "enum": [
         "open",
         "dismissed",
-        "fixed"
+        "fixed",
+        null
     ],
-    "type": "string",
+    "type": [
+        "string",
+        "null"
+    ],
     "description": "State of a code scanning alert."
 }';
     public const SCHEMA_TITLE        = '';

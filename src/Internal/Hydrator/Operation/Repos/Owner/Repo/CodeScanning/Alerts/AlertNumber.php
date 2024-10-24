@@ -135,7 +135,7 @@ class AlertNumber implements ObjectMapper
             $value = $payload['state'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'state';
+                $properties['state'] = null;
                 goto after_state;
             }
 
@@ -1208,7 +1208,12 @@ class AlertNumber implements ObjectMapper
         $instancesUrl                                       = $object->instancesUrl;
         after_instancesUrl:        $result['instances_url'] = $instancesUrl;
 
-        $state                               = $object->state;
+        $state = $object->state;
+
+        if ($state === null) {
+            goto after_state;
+        }
+
         after_state:        $result['state'] = $state;
 
         $fixedAt = $object->fixedAt;
