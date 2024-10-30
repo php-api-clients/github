@@ -856,6 +856,62 @@ $client->operations()->copilot()->listCopilotSeatsForEnterprise(        enterpri
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-user-management#list-all-copilot-seat-assignments-for-an-enterprise).
 
 
+### copilot/copilot-metrics-for-enterprise
+
+Get Copilot metrics for an enterprise
+
+Using the `call` method:
+```php
+$client->call('GET /enterprises/{enterprise}/copilot/metrics', [
+        'enterprise' => 'generated',
+        'since' => 'generated',
+        'until' => 'generated',
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->copilotMetricsForEnterprise(        enterprise: 'generated',
+        since: 'generated',
+        until: 'generated',
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-metrics#get-copilot-metrics-for-an-enterprise).
+
+
+### copilot/copilot-metrics-for-enterprise
+
+Get Copilot metrics for an enterprise
+
+Using the `call` method:
+```php
+$client->call('LIST /enterprises/{enterprise}/copilot/metrics', [
+        'enterprise' => 'generated',
+        'since' => 'generated',
+        'until' => 'generated',
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->copilotMetricsForEnterpriseListing(        enterprise: 'generated',
+        since: 'generated',
+        until: 'generated',
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-metrics#get-copilot-metrics-for-an-enterprise).
+
+
 ### copilot/usage-metrics-for-enterprise
 
 Get a summary of Copilot usage for enterprise members
@@ -996,6 +1052,66 @@ $client->operations()->secretScanning()->listAlertsForEnterprise(        enterpr
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/secret-scanning/secret-scanning#list-secret-scanning-alerts-for-an-enterprise).
+
+
+### copilot/copilot-metrics-for-enterprise-team
+
+Get Copilot metrics for an enterprise team
+
+Using the `call` method:
+```php
+$client->call('GET /enterprises/{enterprise}/team/{team_slug}/copilot/metrics', [
+        'enterprise' => 'generated',
+        'team_slug' => 'generated',
+        'since' => 'generated',
+        'until' => 'generated',
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->copilotMetricsForEnterpriseTeam(        enterprise: 'generated',
+        team_slug: 'generated',
+        since: 'generated',
+        until: 'generated',
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-metrics#get-copilot-metrics-for-an-enterprise-team).
+
+
+### copilot/copilot-metrics-for-enterprise-team
+
+Get Copilot metrics for an enterprise team
+
+Using the `call` method:
+```php
+$client->call('LIST /enterprises/{enterprise}/team/{team_slug}/copilot/metrics', [
+        'enterprise' => 'generated',
+        'team_slug' => 'generated',
+        'since' => 'generated',
+        'until' => 'generated',
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->copilotMetricsForEnterpriseTeamListing(        enterprise: 'generated',
+        team_slug: 'generated',
+        since: 'generated',
+        until: 'generated',
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-metrics#get-copilot-metrics-for-an-enterprise-team).
 
 
 ### copilot/usage-metrics-for-enterprise-team
@@ -4676,6 +4792,62 @@ $client->operations()->copilot()->cancelCopilotSeatAssignmentForUsers(        or
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-user-management#remove-users-from-the-copilot-subscription-for-an-organization).
 
 
+### copilot/copilot-metrics-for-organization
+
+Get Copilot metrics for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/copilot/metrics', [
+        'org' => 'generated',
+        'since' => 'generated',
+        'until' => 'generated',
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->copilotMetricsForOrganization(        org: 'generated',
+        since: 'generated',
+        until: 'generated',
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-metrics#get-copilot-metrics-for-an-organization).
+
+
+### copilot/copilot-metrics-for-organization
+
+Get Copilot metrics for an organization
+
+Using the `call` method:
+```php
+$client->call('LIST /orgs/{org}/copilot/metrics', [
+        'org' => 'generated',
+        'since' => 'generated',
+        'until' => 'generated',
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->copilotMetricsForOrganizationListing(        org: 'generated',
+        since: 'generated',
+        until: 'generated',
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-metrics#get-copilot-metrics-for-an-organization).
+
+
 ### copilot/usage-metrics-for-org
 
 Get a summary of Copilot usage for organization members
@@ -8104,6 +8276,66 @@ $client->operations()->billing()->getSharedStorageBillingOrg(        org: 'gener
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/billing/billing#get-shared-storage-billing-for-an-organization).
+
+
+### copilot/copilot-metrics-for-team
+
+Get Copilot metrics for a team
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/team/{team_slug}/copilot/metrics', [
+        'org' => 'generated',
+        'team_slug' => 'generated',
+        'since' => 'generated',
+        'until' => 'generated',
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->copilotMetricsForTeam(        org: 'generated',
+        team_slug: 'generated',
+        since: 'generated',
+        until: 'generated',
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-metrics#get-copilot-metrics-for-a-team).
+
+
+### copilot/copilot-metrics-for-team
+
+Get Copilot metrics for a team
+
+Using the `call` method:
+```php
+$client->call('LIST /orgs/{org}/team/{team_slug}/copilot/metrics', [
+        'org' => 'generated',
+        'team_slug' => 'generated',
+        'since' => 'generated',
+        'until' => 'generated',
+        'page' => 1,
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->copilot()->copilotMetricsForTeamListing(        org: 'generated',
+        team_slug: 'generated',
+        since: 'generated',
+        until: 'generated',
+        page: 1,
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-metrics#get-copilot-metrics-for-a-team).
 
 
 ### copilot/usage-metrics-for-team

@@ -49,10 +49,14 @@ final class Operators
     private Internal\Operator\CodesOfConduct\GetConductCode|null $codesOfConduct👷GetConductCode                                                                                     = null;
     private Internal\Operator\Emojis\Get|null $emojis👷Get                                                                                                                           = null;
     private Internal\Operator\Copilot\ListCopilotSeatsForEnterprise|null $copilot👷ListCopilotSeatsForEnterprise                                                                     = null;
+    private Internal\Operator\Copilot\CopilotMetricsForEnterprise|null $copilot👷CopilotMetricsForEnterprise                                                                         = null;
+    private Internal\Operator\Copilot\CopilotMetricsForEnterpriseListing|null $copilot👷CopilotMetricsForEnterpriseListing                                                           = null;
     private Internal\Operator\Copilot\UsageMetricsForEnterprise|null $copilot👷UsageMetricsForEnterprise                                                                             = null;
     private Internal\Operator\Copilot\UsageMetricsForEnterpriseListing|null $copilot👷UsageMetricsForEnterpriseListing                                                               = null;
     private Internal\Operator\Dependabot\ListAlertsForEnterprise|null $dependabot👷ListAlertsForEnterprise                                                                           = null;
     private Internal\Operator\SecretScanning\ListAlertsForEnterprise|null $secretScanning👷ListAlertsForEnterprise                                                                   = null;
+    private Internal\Operator\Copilot\CopilotMetricsForEnterpriseTeam|null $copilot👷CopilotMetricsForEnterpriseTeam                                                                 = null;
+    private Internal\Operator\Copilot\CopilotMetricsForEnterpriseTeamListing|null $copilot👷CopilotMetricsForEnterpriseTeamListing                                                   = null;
     private Internal\Operator\Copilot\UsageMetricsForEnterpriseTeam|null $copilot👷UsageMetricsForEnterpriseTeam                                                                     = null;
     private Internal\Operator\Copilot\UsageMetricsForEnterpriseTeamListing|null $copilot👷UsageMetricsForEnterpriseTeamListing                                                       = null;
     private Internal\Operator\Activity\ListPublicEvents|null $activity👷ListPublicEvents                                                                                             = null;
@@ -215,6 +219,8 @@ final class Operators
     private Internal\Operator\Copilot\CancelCopilotSeatAssignmentForTeams|null $copilot👷CancelCopilotSeatAssignmentForTeams                                                         = null;
     private Internal\Operator\Copilot\AddCopilotSeatsForUsers|null $copilot👷AddCopilotSeatsForUsers                                                                                 = null;
     private Internal\Operator\Copilot\CancelCopilotSeatAssignmentForUsers|null $copilot👷CancelCopilotSeatAssignmentForUsers                                                         = null;
+    private Internal\Operator\Copilot\CopilotMetricsForOrganization|null $copilot👷CopilotMetricsForOrganization                                                                     = null;
+    private Internal\Operator\Copilot\CopilotMetricsForOrganizationListing|null $copilot👷CopilotMetricsForOrganizationListing                                                       = null;
     private Internal\Operator\Copilot\UsageMetricsForOrg|null $copilot👷UsageMetricsForOrg                                                                                           = null;
     private Internal\Operator\Copilot\UsageMetricsForOrgListing|null $copilot👷UsageMetricsForOrgListing                                                                             = null;
     private Internal\Operator\Dependabot\ListAlertsForOrg|null $dependabot👷ListAlertsForOrg                                                                                         = null;
@@ -353,6 +359,8 @@ final class Operators
     private Internal\Operator\Billing\GetGithubActionsBillingOrg|null $billing👷GetGithubActionsBillingOrg                                                                           = null;
     private Internal\Operator\Billing\GetGithubPackagesBillingOrg|null $billing👷GetGithubPackagesBillingOrg                                                                         = null;
     private Internal\Operator\Billing\GetSharedStorageBillingOrg|null $billing👷GetSharedStorageBillingOrg                                                                           = null;
+    private Internal\Operator\Copilot\CopilotMetricsForTeam|null $copilot👷CopilotMetricsForTeam                                                                                     = null;
+    private Internal\Operator\Copilot\CopilotMetricsForTeamListing|null $copilot👷CopilotMetricsForTeamListing                                                                       = null;
     private Internal\Operator\Copilot\UsageMetricsForTeam|null $copilot👷UsageMetricsForTeam                                                                                         = null;
     private Internal\Operator\Copilot\UsageMetricsForTeamListing|null $copilot👷UsageMetricsForTeamListing                                                                           = null;
     private Internal\Operator\Teams\List_|null $teams👷List_                                                                                                                         = null;
@@ -1499,6 +1507,24 @@ final class Operators
         return $this->copilot👷ListCopilotSeatsForEnterprise;
     }
 
+    public function copilot👷CopilotMetricsForEnterprise(): Internal\Operator\Copilot\CopilotMetricsForEnterprise
+    {
+        if ($this->copilot👷CopilotMetricsForEnterprise instanceof Internal\Operator\Copilot\CopilotMetricsForEnterprise === false) {
+            $this->copilot👷CopilotMetricsForEnterprise = new Internal\Operator\Copilot\CopilotMetricsForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Copilot🌀Metrics());
+        }
+
+        return $this->copilot👷CopilotMetricsForEnterprise;
+    }
+
+    public function copilot👷CopilotMetricsForEnterpriseListing(): Internal\Operator\Copilot\CopilotMetricsForEnterpriseListing
+    {
+        if ($this->copilot👷CopilotMetricsForEnterpriseListing instanceof Internal\Operator\Copilot\CopilotMetricsForEnterpriseListing === false) {
+            $this->copilot👷CopilotMetricsForEnterpriseListing = new Internal\Operator\Copilot\CopilotMetricsForEnterpriseListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Copilot🌀Metrics());
+        }
+
+        return $this->copilot👷CopilotMetricsForEnterpriseListing;
+    }
+
     public function copilot👷UsageMetricsForEnterprise(): Internal\Operator\Copilot\UsageMetricsForEnterprise
     {
         if ($this->copilot👷UsageMetricsForEnterprise instanceof Internal\Operator\Copilot\UsageMetricsForEnterprise === false) {
@@ -1533,6 +1559,24 @@ final class Operators
         }
 
         return $this->secretScanning👷ListAlertsForEnterprise;
+    }
+
+    public function copilot👷CopilotMetricsForEnterpriseTeam(): Internal\Operator\Copilot\CopilotMetricsForEnterpriseTeam
+    {
+        if ($this->copilot👷CopilotMetricsForEnterpriseTeam instanceof Internal\Operator\Copilot\CopilotMetricsForEnterpriseTeam === false) {
+            $this->copilot👷CopilotMetricsForEnterpriseTeam = new Internal\Operator\Copilot\CopilotMetricsForEnterpriseTeam($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Metrics());
+        }
+
+        return $this->copilot👷CopilotMetricsForEnterpriseTeam;
+    }
+
+    public function copilot👷CopilotMetricsForEnterpriseTeamListing(): Internal\Operator\Copilot\CopilotMetricsForEnterpriseTeamListing
+    {
+        if ($this->copilot👷CopilotMetricsForEnterpriseTeamListing instanceof Internal\Operator\Copilot\CopilotMetricsForEnterpriseTeamListing === false) {
+            $this->copilot👷CopilotMetricsForEnterpriseTeamListing = new Internal\Operator\Copilot\CopilotMetricsForEnterpriseTeamListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Metrics());
+        }
+
+        return $this->copilot👷CopilotMetricsForEnterpriseTeamListing;
     }
 
     public function copilot👷UsageMetricsForEnterpriseTeam(): Internal\Operator\Copilot\UsageMetricsForEnterpriseTeam
@@ -2993,6 +3037,24 @@ final class Operators
         return $this->copilot👷CancelCopilotSeatAssignmentForUsers;
     }
 
+    public function copilot👷CopilotMetricsForOrganization(): Internal\Operator\Copilot\CopilotMetricsForOrganization
+    {
+        if ($this->copilot👷CopilotMetricsForOrganization instanceof Internal\Operator\Copilot\CopilotMetricsForOrganization === false) {
+            $this->copilot👷CopilotMetricsForOrganization = new Internal\Operator\Copilot\CopilotMetricsForOrganization($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Metrics());
+        }
+
+        return $this->copilot👷CopilotMetricsForOrganization;
+    }
+
+    public function copilot👷CopilotMetricsForOrganizationListing(): Internal\Operator\Copilot\CopilotMetricsForOrganizationListing
+    {
+        if ($this->copilot👷CopilotMetricsForOrganizationListing instanceof Internal\Operator\Copilot\CopilotMetricsForOrganizationListing === false) {
+            $this->copilot👷CopilotMetricsForOrganizationListing = new Internal\Operator\Copilot\CopilotMetricsForOrganizationListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Copilot🌀Metrics());
+        }
+
+        return $this->copilot👷CopilotMetricsForOrganizationListing;
+    }
+
     public function copilot👷UsageMetricsForOrg(): Internal\Operator\Copilot\UsageMetricsForOrg
     {
         if ($this->copilot👷UsageMetricsForOrg instanceof Internal\Operator\Copilot\UsageMetricsForOrg === false) {
@@ -4233,6 +4295,24 @@ final class Operators
         }
 
         return $this->billing👷GetSharedStorageBillingOrg;
+    }
+
+    public function copilot👷CopilotMetricsForTeam(): Internal\Operator\Copilot\CopilotMetricsForTeam
+    {
+        if ($this->copilot👷CopilotMetricsForTeam instanceof Internal\Operator\Copilot\CopilotMetricsForTeam === false) {
+            $this->copilot👷CopilotMetricsForTeam = new Internal\Operator\Copilot\CopilotMetricsForTeam($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Metrics());
+        }
+
+        return $this->copilot👷CopilotMetricsForTeam;
+    }
+
+    public function copilot👷CopilotMetricsForTeamListing(): Internal\Operator\Copilot\CopilotMetricsForTeamListing
+    {
+        if ($this->copilot👷CopilotMetricsForTeamListing instanceof Internal\Operator\Copilot\CopilotMetricsForTeamListing === false) {
+            $this->copilot👷CopilotMetricsForTeamListing = new Internal\Operator\Copilot\CopilotMetricsForTeamListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Metrics());
+        }
+
+        return $this->copilot👷CopilotMetricsForTeamListing;
     }
 
     public function copilot👷UsageMetricsForTeam(): Internal\Operator\Copilot\UsageMetricsForTeam
