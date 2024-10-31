@@ -20,7 +20,7 @@ final class Copilot
     {
     }
 
-    /** @return iterable<int,Schema\CopilotUsageMetricsDay> */
+    /** @return Observable<Schema\CopilotUsageMetricsDay> */
     public function copilotMetricsForEnterpriseListing(array $params): iterable
     {
         $arguments = [];
@@ -110,7 +110,7 @@ final class Copilot
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\CopilotUsageMetricsDay> */
+    /** @return Observable<Schema\CopilotUsageMetricsDay> */
     public function copilotMetricsForOrganizationListing(array $params): iterable
     {
         $arguments = [];
@@ -200,7 +200,7 @@ final class Copilot
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\CopilotUsageMetricsDay> */
+    /** @return Observable<Schema\CopilotUsageMetricsDay> */
     public function copilotMetricsForEnterpriseTeamListing(array $params): iterable
     {
         $arguments = [];
@@ -302,7 +302,7 @@ final class Copilot
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\CopilotUsageMetricsDay> */
+    /** @return Observable<Schema\CopilotUsageMetricsDay> */
     public function copilotMetricsForTeamListing(array $params): iterable
     {
         $arguments = [];

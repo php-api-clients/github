@@ -13915,6 +13915,30 @@ $client->operations()->codeScanning()->getCodeqlDatabase(        owner: 'generat
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-scanning/code-scanning#get-a-codeql-database-for-a-repository).
 
 
+### code-scanning/delete-codeql-database
+
+Delete a CodeQL database
+
+Using the `call` method:
+```php
+$client->call('DELETE /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'language' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeScanning()->deleteCodeqlDatabase(        owner: 'generated',
+        repo: 'generated',
+        language: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-scanning/code-scanning#delete-a-codeql-database).
+
+
 ### code-scanning/create-variant-analysis
 
 Create a CodeQL variant analysis

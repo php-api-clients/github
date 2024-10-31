@@ -24,7 +24,7 @@ final readonly class CopilotMetricsForOrganizationListing
     {
     }
 
-    /** @return iterable<int,Schema\CopilotUsageMetricsDay> */
+    /** @return Observable<Schema\CopilotUsageMetricsDay> */
     public function call(string $org, string $since, string $until, int $page = 1, int $perPage = 28): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Copilot\CopilotMetricsForOrganizationListing($this->responseSchemaValidator, $this->hydrator, $org, $since, $until, $page, $perPage);

@@ -18,7 +18,7 @@ final class Eight
     {
     }
 
-    /** @return |Observable<Schema\Label>|Schema\BasicError */
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody|Observable<Schema\Label>|Schema\BasicError */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|Ok|Json|iterable|BasicError|PullRequestReview
     {
         if ($pathChunks[0] === '') {
@@ -177,6 +177,16 @@ final class Eight
                                     } elseif ($pathChunks[7] === 'restrictions') {
                                         if ($call === 'DELETE /repos/{owner}/{repo}/branches/{branch}/protection/restrictions') {
                                             return $this->routers->internal🔀Router🔀Delete🔀Repos()->deleteAccessRestrictions($params);
+                                        }
+                                    }
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'code-scanning') {
+                            if ($pathChunks[5] === 'codeql') {
+                                if ($pathChunks[6] === 'databases') {
+                                    if ($pathChunks[7] === '{language}') {
+                                        if ($call === 'DELETE /repos/{owner}/{repo}/code-scanning/codeql/databases/{language}') {
+                                            return $this->routers->internal🔀Router🔀Delete🔀CodeScanning()->deleteCodeqlDatabase($params);
                                         }
                                     }
                                 }

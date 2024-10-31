@@ -584,6 +584,7 @@ final class Operators
     private Internal\Operator\CodeScanning\DeleteAnalysis|null $codeScanning👷DeleteAnalysis                                                                                         = null;
     private Internal\Operator\CodeScanning\ListCodeqlDatabases|null $codeScanning👷ListCodeqlDatabases                                                                               = null;
     private Internal\Operator\CodeScanning\GetCodeqlDatabase|null $codeScanning👷GetCodeqlDatabase                                                                                   = null;
+    private Internal\Operator\CodeScanning\DeleteCodeqlDatabase|null $codeScanning👷DeleteCodeqlDatabase                                                                             = null;
     private Internal\Operator\CodeScanning\CreateVariantAnalysis|null $codeScanning👷CreateVariantAnalysis                                                                           = null;
     private Internal\Operator\CodeScanning\GetVariantAnalysis|null $codeScanning👷GetVariantAnalysis                                                                                 = null;
     private Internal\Operator\CodeScanning\GetVariantAnalysisRepoTask|null $codeScanning👷GetVariantAnalysisRepoTask                                                                 = null;
@@ -6320,6 +6321,15 @@ final class Operators
         }
 
         return $this->codeScanning👷GetCodeqlDatabase;
+    }
+
+    public function codeScanning👷DeleteCodeqlDatabase(): Internal\Operator\CodeScanning\DeleteCodeqlDatabase
+    {
+        if ($this->codeScanning👷DeleteCodeqlDatabase instanceof Internal\Operator\CodeScanning\DeleteCodeqlDatabase === false) {
+            $this->codeScanning👷DeleteCodeqlDatabase = new Internal\Operator\CodeScanning\DeleteCodeqlDatabase($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Codeql🌀Databases🌀Language());
+        }
+
+        return $this->codeScanning👷DeleteCodeqlDatabase;
     }
 
     public function codeScanning👷CreateVariantAnalysis(): Internal\Operator\CodeScanning\CreateVariantAnalysis

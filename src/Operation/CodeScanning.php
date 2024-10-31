@@ -109,6 +109,11 @@ final class CodeScanning
         return $this->operators->codeScanning👷GetCodeqlDatabase()->call($owner, $repo, $language);
     }
 
+    public function deleteCodeqlDatabase(string $owner, string $repo, string $language): WithoutBody
+    {
+        return $this->operators->codeScanning👷DeleteCodeqlDatabase()->call($owner, $repo, $language);
+    }
+
     /** @return */
     public function createVariantAnalysis(string $owner, string $repo, array $params): CodeScanningVariantAnalysis
     {
