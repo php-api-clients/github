@@ -37,6 +37,7 @@ final readonly class WebhookPersonalAccessTokenRequestCreated
                 "repository_count",
                 "repositories",
                 "created_at",
+                "token_id",
                 "token_expired",
                 "token_expires_at",
                 "token_last_used_at"
@@ -343,6 +344,10 @@ final readonly class WebhookPersonalAccessTokenRequestCreated
                 "created_at": {
                     "type": "string",
                     "description": "Date and time when the request for access was created."
+                },
+                "token_id": {
+                    "type": "integer",
+                    "description": "Unique identifier of the user\'s token. This field can also be found in audit log events and the organization\'s settings for their PAT grants."
                 },
                 "token_expired": {
                     "type": "boolean",
@@ -798,6 +803,7 @@ final readonly class WebhookPersonalAccessTokenRequestCreated
         "repository_count": 16,
         "repositories": null,
         "created_at": "generated",
+        "token_id": 8,
         "token_expired": false,
         "token_expires_at": "generated",
         "token_last_used_at": "generated"

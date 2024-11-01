@@ -34,7 +34,7 @@ final class ListWebhookDeliveries
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Hooks\HookId\Deliveries $hydrator, string $org, int $hookId, string $cursor, private bool $redelivery, int $perPage = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Hooks\HookId\Deliveries $hydrator, string $org, int $hookId, string $cursor, int $perPage = 30)
     {
         $this->org     = $org;
         $this->hookId  = $hookId;
@@ -44,7 +44,7 @@ final class ListWebhookDeliveries
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{org}', '{hook_id}', '{cursor}', '{redelivery}', '{per_page}'], [$this->org, $this->hookId, $this->cursor, $this->redelivery, $this->perPage], '/orgs/{org}/hooks/{hook_id}/deliveries' . '?cursor={cursor}&redelivery={redelivery}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{org}', '{hook_id}', '{cursor}', '{per_page}'], [$this->org, $this->hookId, $this->cursor, $this->perPage], '/orgs/{org}/hooks/{hook_id}/deliveries' . '?cursor={cursor}&per_page={per_page}'));
     }
 
     /** @return Observable<Schema\HookDeliveryItem> */

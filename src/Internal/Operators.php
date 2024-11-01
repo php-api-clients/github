@@ -250,6 +250,18 @@ final class Operators
     private Internal\Operator\Orgs\GetWebhookDelivery|null $orgs👷GetWebhookDelivery                                                                                                 = null;
     private Internal\Operator\Orgs\RedeliverWebhookDelivery|null $orgs👷RedeliverWebhookDelivery                                                                                     = null;
     private Internal\Operator\Orgs\PingWebhook|null $orgs👷PingWebhook                                                                                                               = null;
+    private Internal\Operator\ApiInsights\GetRouteStatsByActor|null $apiInsights👷GetRouteStatsByActor                                                                               = null;
+    private Internal\Operator\ApiInsights\GetRouteStatsByActorListing|null $apiInsights👷GetRouteStatsByActorListing                                                                 = null;
+    private Internal\Operator\ApiInsights\GetSubjectStats|null $apiInsights👷GetSubjectStats                                                                                         = null;
+    private Internal\Operator\ApiInsights\GetSubjectStatsListing|null $apiInsights👷GetSubjectStatsListing                                                                           = null;
+    private Internal\Operator\ApiInsights\GetSummaryStats|null $apiInsights👷GetSummaryStats                                                                                         = null;
+    private Internal\Operator\ApiInsights\GetSummaryStatsByUser|null $apiInsights👷GetSummaryStatsByUser                                                                             = null;
+    private Internal\Operator\ApiInsights\GetSummaryStatsByActor|null $apiInsights👷GetSummaryStatsByActor                                                                           = null;
+    private Internal\Operator\ApiInsights\GetTimeStats|null $apiInsights👷GetTimeStats                                                                                               = null;
+    private Internal\Operator\ApiInsights\GetTimeStatsByUser|null $apiInsights👷GetTimeStatsByUser                                                                                   = null;
+    private Internal\Operator\ApiInsights\GetTimeStatsByActor|null $apiInsights👷GetTimeStatsByActor                                                                                 = null;
+    private Internal\Operator\ApiInsights\GetUserStats|null $apiInsights👷GetUserStats                                                                                               = null;
+    private Internal\Operator\ApiInsights\GetUserStatsListing|null $apiInsights👷GetUserStatsListing                                                                                 = null;
     private Internal\Operator\Apps\GetOrgInstallation|null $apps👷GetOrgInstallation                                                                                                 = null;
     private Internal\Operator\Orgs\ListAppInstallations|null $orgs👷ListAppInstallations                                                                                             = null;
     private Internal\Operator\Interactions\GetRestrictionsForOrg|null $interactions👷GetRestrictionsForOrg                                                                           = null;
@@ -3315,6 +3327,114 @@ final class Operators
         }
 
         return $this->orgs👷PingWebhook;
+    }
+
+    public function apiInsights👷GetRouteStatsByActor(): Internal\Operator\ApiInsights\GetRouteStatsByActor
+    {
+        if ($this->apiInsights👷GetRouteStatsByActor instanceof Internal\Operator\ApiInsights\GetRouteStatsByActor === false) {
+            $this->apiInsights👷GetRouteStatsByActor = new Internal\Operator\ApiInsights\GetRouteStatsByActor($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀RouteStats🌀ActorType🌀ActorId());
+        }
+
+        return $this->apiInsights👷GetRouteStatsByActor;
+    }
+
+    public function apiInsights👷GetRouteStatsByActorListing(): Internal\Operator\ApiInsights\GetRouteStatsByActorListing
+    {
+        if ($this->apiInsights👷GetRouteStatsByActorListing instanceof Internal\Operator\ApiInsights\GetRouteStatsByActorListing === false) {
+            $this->apiInsights👷GetRouteStatsByActorListing = new Internal\Operator\ApiInsights\GetRouteStatsByActorListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀RouteStats🌀ActorType🌀ActorId());
+        }
+
+        return $this->apiInsights👷GetRouteStatsByActorListing;
+    }
+
+    public function apiInsights👷GetSubjectStats(): Internal\Operator\ApiInsights\GetSubjectStats
+    {
+        if ($this->apiInsights👷GetSubjectStats instanceof Internal\Operator\ApiInsights\GetSubjectStats === false) {
+            $this->apiInsights👷GetSubjectStats = new Internal\Operator\ApiInsights\GetSubjectStats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀SubjectStats());
+        }
+
+        return $this->apiInsights👷GetSubjectStats;
+    }
+
+    public function apiInsights👷GetSubjectStatsListing(): Internal\Operator\ApiInsights\GetSubjectStatsListing
+    {
+        if ($this->apiInsights👷GetSubjectStatsListing instanceof Internal\Operator\ApiInsights\GetSubjectStatsListing === false) {
+            $this->apiInsights👷GetSubjectStatsListing = new Internal\Operator\ApiInsights\GetSubjectStatsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀SubjectStats());
+        }
+
+        return $this->apiInsights👷GetSubjectStatsListing;
+    }
+
+    public function apiInsights👷GetSummaryStats(): Internal\Operator\ApiInsights\GetSummaryStats
+    {
+        if ($this->apiInsights👷GetSummaryStats instanceof Internal\Operator\ApiInsights\GetSummaryStats === false) {
+            $this->apiInsights👷GetSummaryStats = new Internal\Operator\ApiInsights\GetSummaryStats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀SummaryStats());
+        }
+
+        return $this->apiInsights👷GetSummaryStats;
+    }
+
+    public function apiInsights👷GetSummaryStatsByUser(): Internal\Operator\ApiInsights\GetSummaryStatsByUser
+    {
+        if ($this->apiInsights👷GetSummaryStatsByUser instanceof Internal\Operator\ApiInsights\GetSummaryStatsByUser === false) {
+            $this->apiInsights👷GetSummaryStatsByUser = new Internal\Operator\ApiInsights\GetSummaryStatsByUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀SummaryStats🌀Users🌀UserId());
+        }
+
+        return $this->apiInsights👷GetSummaryStatsByUser;
+    }
+
+    public function apiInsights👷GetSummaryStatsByActor(): Internal\Operator\ApiInsights\GetSummaryStatsByActor
+    {
+        if ($this->apiInsights👷GetSummaryStatsByActor instanceof Internal\Operator\ApiInsights\GetSummaryStatsByActor === false) {
+            $this->apiInsights👷GetSummaryStatsByActor = new Internal\Operator\ApiInsights\GetSummaryStatsByActor($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀SummaryStats🌀ActorType🌀ActorId());
+        }
+
+        return $this->apiInsights👷GetSummaryStatsByActor;
+    }
+
+    public function apiInsights👷GetTimeStats(): Internal\Operator\ApiInsights\GetTimeStats
+    {
+        if ($this->apiInsights👷GetTimeStats instanceof Internal\Operator\ApiInsights\GetTimeStats === false) {
+            $this->apiInsights👷GetTimeStats = new Internal\Operator\ApiInsights\GetTimeStats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀TimeStats());
+        }
+
+        return $this->apiInsights👷GetTimeStats;
+    }
+
+    public function apiInsights👷GetTimeStatsByUser(): Internal\Operator\ApiInsights\GetTimeStatsByUser
+    {
+        if ($this->apiInsights👷GetTimeStatsByUser instanceof Internal\Operator\ApiInsights\GetTimeStatsByUser === false) {
+            $this->apiInsights👷GetTimeStatsByUser = new Internal\Operator\ApiInsights\GetTimeStatsByUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀TimeStats🌀Users🌀UserId());
+        }
+
+        return $this->apiInsights👷GetTimeStatsByUser;
+    }
+
+    public function apiInsights👷GetTimeStatsByActor(): Internal\Operator\ApiInsights\GetTimeStatsByActor
+    {
+        if ($this->apiInsights👷GetTimeStatsByActor instanceof Internal\Operator\ApiInsights\GetTimeStatsByActor === false) {
+            $this->apiInsights👷GetTimeStatsByActor = new Internal\Operator\ApiInsights\GetTimeStatsByActor($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀TimeStats🌀ActorType🌀ActorId());
+        }
+
+        return $this->apiInsights👷GetTimeStatsByActor;
+    }
+
+    public function apiInsights👷GetUserStats(): Internal\Operator\ApiInsights\GetUserStats
+    {
+        if ($this->apiInsights👷GetUserStats instanceof Internal\Operator\ApiInsights\GetUserStats === false) {
+            $this->apiInsights👷GetUserStats = new Internal\Operator\ApiInsights\GetUserStats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀UserStats🌀UserId());
+        }
+
+        return $this->apiInsights👷GetUserStats;
+    }
+
+    public function apiInsights👷GetUserStatsListing(): Internal\Operator\ApiInsights\GetUserStatsListing
+    {
+        if ($this->apiInsights👷GetUserStatsListing instanceof Internal\Operator\ApiInsights\GetUserStatsListing === false) {
+            $this->apiInsights👷GetUserStatsListing = new Internal\Operator\ApiInsights\GetUserStatsListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀UserStats🌀UserId());
+        }
+
+        return $this->apiInsights👷GetUserStatsListing;
     }
 
     public function apps👷GetOrgInstallation(): Internal\Operator\Apps\GetOrgInstallation

@@ -802,7 +802,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['hook_id']);
     }
 
-    /** @return Observable<Schema\HookDeliveryItem> */
+    /** @return iterable<int,Schema\HookDeliveryItem> */
     public function listWebhookDeliveries(array $params): iterable
     {
         $arguments = [];
@@ -824,12 +824,6 @@ final class Orgs
 
         $arguments['cursor'] = $params['cursor'];
         unset($params['cursor']);
-        if (array_key_exists('redelivery', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: redelivery');
-        }
-
-        $arguments['redelivery'] = $params['redelivery'];
-        unset($params['redelivery']);
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
         }
@@ -838,7 +832,7 @@ final class Orgs
         unset($params['per_page']);
         $operator = new Internal\Operator\Orgs\ListWebhookDeliveries($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Hooks🌀HookId🌀Deliveries());
 
-        return $operator->call($arguments['org'], $arguments['hook_id'], $arguments['cursor'], $arguments['redelivery'], $arguments['per_page']);
+        return $operator->call($arguments['org'], $arguments['hook_id'], $arguments['cursor'], $arguments['per_page']);
     }
 
     /** @return Observable<Schema\Team> */

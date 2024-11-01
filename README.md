@@ -206,7 +206,6 @@ Using the `call` method:
 ```php
 $client->call('GET /app/hook/deliveries', [
         'cursor' => 'generated',
-        'redelivery' => ,
         'per_page' => 8,
 ]);
 ```
@@ -214,7 +213,6 @@ $client->call('GET /app/hook/deliveries', [
 Operations method:
 ```php
 $client->operations()->apps()->listWebhookDeliveries(        cursor: 'generated',
-        redelivery: ,
         per_page: 8,
 );
 ```
@@ -5458,7 +5456,6 @@ $client->call('GET /orgs/{org}/hooks/{hook_id}/deliveries', [
         'org' => 'generated',
         'hook_id' => 7,
         'cursor' => 'generated',
-        'redelivery' => ,
         'per_page' => 8,
 ]);
 ```
@@ -5468,7 +5465,6 @@ Operations method:
 $client->operations()->orgs()->listWebhookDeliveries(        org: 'generated',
         hook_id: 7,
         cursor: 'generated',
-        redelivery: ,
         per_page: 8,
 );
 ```
@@ -5544,6 +5540,372 @@ $client->operations()->orgs()->pingWebhook(        org: 'generated',
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/webhooks#ping-an-organization-webhook).
+
+
+### api-insights/get-route-stats-by-actor
+
+Get route stats by actor
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}', [
+        'org' => 'generated',
+        'actor_type' => 'generated',
+        'actor_id' => 8,
+        'min_timestamp' => 'generated',
+        'max_timestamp' => 'generated',
+        'sort' => ,
+        'page' => 1,
+        'per_page' => 8,
+        'direction' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->apiInsights()->getRouteStatsByActor(        org: 'generated',
+        actor_type: 'generated',
+        actor_id: 8,
+        min_timestamp: 'generated',
+        max_timestamp: 'generated',
+        sort: ,
+        page: 1,
+        per_page: 8,
+        direction: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/api-insights#get-route-stats-by-actor).
+
+
+### api-insights/get-route-stats-by-actor
+
+Get route stats by actor
+
+Using the `call` method:
+```php
+$client->call('LIST /orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}', [
+        'org' => 'generated',
+        'actor_type' => 'generated',
+        'actor_id' => 8,
+        'min_timestamp' => 'generated',
+        'max_timestamp' => 'generated',
+        'sort' => ,
+        'page' => 1,
+        'per_page' => 8,
+        'direction' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->apiInsights()->getRouteStatsByActorListing(        org: 'generated',
+        actor_type: 'generated',
+        actor_id: 8,
+        min_timestamp: 'generated',
+        max_timestamp: 'generated',
+        sort: ,
+        page: 1,
+        per_page: 8,
+        direction: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/api-insights#get-route-stats-by-actor).
+
+
+### api-insights/get-subject-stats
+
+Get subject stats
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/insights/api/subject-stats', [
+        'org' => 'generated',
+        'min_timestamp' => 'generated',
+        'max_timestamp' => 'generated',
+        'sort' => ,
+        'page' => 1,
+        'per_page' => 8,
+        'direction' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->apiInsights()->getSubjectStats(        org: 'generated',
+        min_timestamp: 'generated',
+        max_timestamp: 'generated',
+        sort: ,
+        page: 1,
+        per_page: 8,
+        direction: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/api-insights#get-subject-stats).
+
+
+### api-insights/get-subject-stats
+
+Get subject stats
+
+Using the `call` method:
+```php
+$client->call('LIST /orgs/{org}/insights/api/subject-stats', [
+        'org' => 'generated',
+        'min_timestamp' => 'generated',
+        'max_timestamp' => 'generated',
+        'sort' => ,
+        'page' => 1,
+        'per_page' => 8,
+        'direction' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->apiInsights()->getSubjectStatsListing(        org: 'generated',
+        min_timestamp: 'generated',
+        max_timestamp: 'generated',
+        sort: ,
+        page: 1,
+        per_page: 8,
+        direction: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/api-insights#get-subject-stats).
+
+
+### api-insights/get-summary-stats
+
+Get summary stats
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/insights/api/summary-stats', [
+        'org' => 'generated',
+        'min_timestamp' => 'generated',
+        'max_timestamp' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->apiInsights()->getSummaryStats(        org: 'generated',
+        min_timestamp: 'generated',
+        max_timestamp: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/api-insights#get-summary-stats).
+
+
+### api-insights/get-summary-stats-by-user
+
+Get summary stats by user
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/insights/api/summary-stats/users/{user_id}', [
+        'org' => 'generated',
+        'user_id' => 'generated',
+        'min_timestamp' => 'generated',
+        'max_timestamp' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->apiInsights()->getSummaryStatsByUser(        org: 'generated',
+        user_id: 'generated',
+        min_timestamp: 'generated',
+        max_timestamp: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/api-insights#get-summary-stats-by-user).
+
+
+### api-insights/get-summary-stats-by-actor
+
+Get summary stats by actor
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/insights/api/summary-stats/{actor_type}/{actor_id}', [
+        'org' => 'generated',
+        'min_timestamp' => 'generated',
+        'max_timestamp' => 'generated',
+        'actor_type' => 'generated',
+        'actor_id' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->apiInsights()->getSummaryStatsByActor(        org: 'generated',
+        min_timestamp: 'generated',
+        max_timestamp: 'generated',
+        actor_type: 'generated',
+        actor_id: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/api-insights#get-summary-stats-by-actor).
+
+
+### api-insights/get-time-stats
+
+Get time stats
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/insights/api/time-stats', [
+        'org' => 'generated',
+        'min_timestamp' => 'generated',
+        'max_timestamp' => 'generated',
+        'timestamp_increment' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->apiInsights()->getTimeStats(        org: 'generated',
+        min_timestamp: 'generated',
+        max_timestamp: 'generated',
+        timestamp_increment: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/api-insights#get-time-stats).
+
+
+### api-insights/get-time-stats-by-user
+
+Get time stats by user
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/insights/api/time-stats/users/{user_id}', [
+        'org' => 'generated',
+        'user_id' => 'generated',
+        'min_timestamp' => 'generated',
+        'max_timestamp' => 'generated',
+        'timestamp_increment' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->apiInsights()->getTimeStatsByUser(        org: 'generated',
+        user_id: 'generated',
+        min_timestamp: 'generated',
+        max_timestamp: 'generated',
+        timestamp_increment: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/api-insights#get-time-stats-by-user).
+
+
+### api-insights/get-time-stats-by-actor
+
+Get time stats by actor
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/insights/api/time-stats/{actor_type}/{actor_id}', [
+        'org' => 'generated',
+        'actor_type' => 'generated',
+        'actor_id' => 8,
+        'min_timestamp' => 'generated',
+        'max_timestamp' => 'generated',
+        'timestamp_increment' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->apiInsights()->getTimeStatsByActor(        org: 'generated',
+        actor_type: 'generated',
+        actor_id: 8,
+        min_timestamp: 'generated',
+        max_timestamp: 'generated',
+        timestamp_increment: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/api-insights#get-time-stats-by-actor).
+
+
+### api-insights/get-user-stats
+
+Get user stats
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/insights/api/user-stats/{user_id}', [
+        'org' => 'generated',
+        'user_id' => 'generated',
+        'min_timestamp' => 'generated',
+        'max_timestamp' => 'generated',
+        'sort' => ,
+        'page' => 1,
+        'per_page' => 8,
+        'direction' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->apiInsights()->getUserStats(        org: 'generated',
+        user_id: 'generated',
+        min_timestamp: 'generated',
+        max_timestamp: 'generated',
+        sort: ,
+        page: 1,
+        per_page: 8,
+        direction: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/api-insights#get-user-stats).
+
+
+### api-insights/get-user-stats
+
+Get user stats
+
+Using the `call` method:
+```php
+$client->call('LIST /orgs/{org}/insights/api/user-stats/{user_id}', [
+        'org' => 'generated',
+        'user_id' => 'generated',
+        'min_timestamp' => 'generated',
+        'max_timestamp' => 'generated',
+        'sort' => ,
+        'page' => 1,
+        'per_page' => 8,
+        'direction' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->apiInsights()->getUserStatsListing(        org: 'generated',
+        user_id: 'generated',
+        min_timestamp: 'generated',
+        max_timestamp: 'generated',
+        sort: ,
+        page: 1,
+        per_page: 8,
+        direction: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/api-insights#get-user-stats).
 
 
 ### apps/get-org-installation
@@ -17268,7 +17630,6 @@ $client->call('GET /repos/{owner}/{repo}/hooks/{hook_id}/deliveries', [
         'repo' => 'generated',
         'hook_id' => 7,
         'cursor' => 'generated',
-        'redelivery' => ,
         'per_page' => 8,
 ]);
 ```
@@ -17279,7 +17640,6 @@ $client->operations()->repos()->listWebhookDeliveries(        owner: 'generated'
         repo: 'generated',
         hook_id: 7,
         cursor: 'generated',
-        redelivery: ,
         per_page: 8,
 );
 ```

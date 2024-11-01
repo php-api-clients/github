@@ -839,10 +839,10 @@ final class Repos
         return $this->operators->repos👷UpdateWebhookConfigForRepo()->call($owner, $repo, $hookId, $params);
     }
 
-    /** @return Observable<Schema\HookDeliveryItem> */
-    public function listWebhookDeliveries(string $owner, string $repo, int $hookId, string $cursor, bool $redelivery, int $perPage): iterable
+    /** @return iterable<int,Schema\HookDeliveryItem> */
+    public function listWebhookDeliveries(string $owner, string $repo, int $hookId, string $cursor, int $perPage): iterable
     {
-        return $this->operators->repos👷ListWebhookDeliveries()->call($owner, $repo, $hookId, $cursor, $redelivery, $perPage);
+        return $this->operators->repos👷ListWebhookDeliveries()->call($owner, $repo, $hookId, $cursor, $perPage);
     }
 
     /** @return */

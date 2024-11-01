@@ -45,6 +45,7 @@ final readonly class Ok
                 "properties": {
                     "id": {
                         "type": "integer",
+                        "format": "int64",
                         "examples": [
                             5
                         ]

@@ -31,12 +31,11 @@ final class ListWebhookDeliveriesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/app/hook/deliveries?cursor=generated&redelivery=&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/app/hook/deliveries?cursor=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Apps\ListWebhookDeliveries::OPERATION_MATCH, (static function (array $data): array {
-            $data['cursor']     = 'generated';
-            $data['redelivery'] = false;
-            $data['per_page']   = 8;
+            $data['cursor']   = 'generated';
+            $data['per_page'] = 8;
 
             return $data;
         })([]));
@@ -52,9 +51,9 @@ final class ListWebhookDeliveriesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/app/hook/deliveries?cursor=generated&redelivery=&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/app/hook/deliveries?cursor=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->apps()->listWebhookDeliveries('generated', false, 8);
+        $result = $client->operations()->apps()->listWebhookDeliveries('generated', 8);
     }
 
     /** @test */
@@ -67,12 +66,11 @@ final class ListWebhookDeliveriesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/app/hook/deliveries?cursor=generated&redelivery=&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/app/hook/deliveries?cursor=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Apps\ListWebhookDeliveries::OPERATION_MATCH, (static function (array $data): array {
-            $data['cursor']     = 'generated';
-            $data['redelivery'] = false;
-            $data['per_page']   = 8;
+            $data['cursor']   = 'generated';
+            $data['per_page'] = 8;
 
             return $data;
         })([]));
@@ -88,9 +86,9 @@ final class ListWebhookDeliveriesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/app/hook/deliveries?cursor=generated&redelivery=&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/app/hook/deliveries?cursor=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->apps()->listWebhookDeliveries('generated', false, 8);
+        $result = $client->operations()->apps()->listWebhookDeliveries('generated', 8);
     }
 
     /** @test */
@@ -103,12 +101,11 @@ final class ListWebhookDeliveriesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/app/hook/deliveries?cursor=generated&redelivery=&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/app/hook/deliveries?cursor=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Apps\ListWebhookDeliveries::OPERATION_MATCH, (static function (array $data): array {
-            $data['cursor']     = 'generated';
-            $data['redelivery'] = false;
-            $data['per_page']   = 8;
+            $data['cursor']   = 'generated';
+            $data['per_page'] = 8;
 
             return $data;
         })([]));
@@ -124,8 +121,8 @@ final class ListWebhookDeliveriesTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/app/hook/deliveries?cursor=generated&redelivery=&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/app/hook/deliveries?cursor=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->apps()->listWebhookDeliveries('generated', false, 8);
+        $result = $client->operations()->apps()->listWebhookDeliveries('generated', 8);
     }
 }

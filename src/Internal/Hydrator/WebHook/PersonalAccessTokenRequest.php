@@ -348,6 +348,17 @@ class PersonalAccessTokenRequest implements ObjectMapper
 
             after_createdAt:
 
+            $value = $payload['token_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'token_id';
+                goto after_tokenId;
+            }
+
+            $properties['tokenId'] = $value;
+
+            after_tokenId:
+
             $value = $payload['token_expired'] ?? null;
 
             if ($value === null) {
@@ -1977,6 +1988,9 @@ class PersonalAccessTokenRequest implements ObjectMapper
 
         $createdAt                                    = $object->createdAt;
         after_createdAt:        $result['created_at'] = $createdAt;
+
+        $tokenId                                  = $object->tokenId;
+        after_tokenId:        $result['token_id'] = $tokenId;
 
         $tokenExpired                                       = $object->tokenExpired;
         after_tokenExpired:        $result['token_expired'] = $tokenExpired;

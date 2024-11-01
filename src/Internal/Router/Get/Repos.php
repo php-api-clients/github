@@ -2529,7 +2529,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id']);
     }
 
-    /** @return Observable<Schema\HookDeliveryItem> */
+    /** @return iterable<int,Schema\HookDeliveryItem> */
     public function listWebhookDeliveries(array $params): iterable
     {
         $arguments = [];
@@ -2557,12 +2557,6 @@ final class Repos
 
         $arguments['cursor'] = $params['cursor'];
         unset($params['cursor']);
-        if (array_key_exists('redelivery', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: redelivery');
-        }
-
-        $arguments['redelivery'] = $params['redelivery'];
-        unset($params['redelivery']);
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
         }
@@ -2571,7 +2565,7 @@ final class Repos
         unset($params['per_page']);
         $operator = new Internal\Operator\Repos\ListWebhookDeliveries($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks🌀HookId🌀Deliveries());
 
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id'], $arguments['cursor'], $arguments['redelivery'], $arguments['per_page']);
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id'], $arguments['cursor'], $arguments['per_page']);
     }
 
     /** @return */

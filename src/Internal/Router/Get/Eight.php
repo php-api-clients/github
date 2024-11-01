@@ -8,6 +8,7 @@ use ApiClients\Client\GitHub\Internal\Routers;
 use ApiClients\Client\GitHub\Schema\ActionsPublicKey;
 use ApiClients\Client\GitHub\Schema\ActionsSecret;
 use ApiClients\Client\GitHub\Schema\ActionsVariable;
+use ApiClients\Client\GitHub\Schema\ApiInsightsSummaryStats;
 use ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy;
 use ApiClients\Client\GitHub\Schema\CodeScanningCodeqlDatabase;
 use ApiClients\Client\GitHub\Schema\CodeScanningVariantAnalysis;
@@ -35,13 +36,53 @@ final class Eight
     {
     }
 
-    /** @return |Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\EnvironmentApprovals>|Observable<Schema\PendingDeployment>|Observable<Schema\CodeScanningAlertInstance>|Observable<Schema\SecretScanningLocation>|WithoutBody */
-    public function call(string $call, array $params, array $pathChunks): PackageVersion|iterable|TeamRepository|WithoutBody|OidcCustomSubRepo|Ok|Json|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|WorkflowRunUsage|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|WorkflowUsage|ProtectedBranchAdminEnforced|ProtectedBranchPullRequestReview|StatusCheckPolicy|BranchRestrictionPolicy|CodeScanningCodeqlDatabase|CodeScanningVariantAnalysis|DeploymentStatus|DeploymentBranchPolicy|\ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|DeploymentProtectionRule|ActionsPublicKey|ActionsSecret|ActionsVariable|HookDelivery|PullRequestReview
+    /** @return iterable<int,Schema\ApiInsightsRouteStats>|Schema\ApiInsightsSummaryStats|iterable<int,Schema\ApiInsightsTimeStats>||Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\EnvironmentApprovals>|Observable<Schema\PendingDeployment>|Observable<Schema\CodeScanningAlertInstance>|Observable<Schema\SecretScanningLocation>|WithoutBody */
+    public function call(string $call, array $params, array $pathChunks): iterable|ApiInsightsSummaryStats|PackageVersion|TeamRepository|WithoutBody|OidcCustomSubRepo|Ok|Json|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|WorkflowRunUsage|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|WorkflowUsage|ProtectedBranchAdminEnforced|ProtectedBranchPullRequestReview|StatusCheckPolicy|BranchRestrictionPolicy|CodeScanningCodeqlDatabase|CodeScanningVariantAnalysis|DeploymentStatus|DeploymentBranchPolicy|\ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|DeploymentProtectionRule|ActionsPublicKey|ActionsSecret|ActionsVariable|HookDelivery|PullRequestReview
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
-                    if ($pathChunks[3] === 'packages') {
+                    if ($pathChunks[3] === 'insights') {
+                        if ($pathChunks[4] === 'api') {
+                            if ($pathChunks[5] === 'route-stats') {
+                                if ($pathChunks[6] === '{actor_type}') {
+                                    if ($pathChunks[7] === '{actor_id}') {
+                                        if ($call === 'GET /orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}') {
+                                            return $this->routers->internal🔀Router🔀Get🔀ApiInsights()->getRouteStatsByActor($params);
+                                        }
+                                    }
+                                }
+                            } elseif ($pathChunks[5] === 'summary-stats') {
+                                if ($pathChunks[6] === 'users') {
+                                    if ($pathChunks[7] === '{user_id}') {
+                                        if ($call === 'GET /orgs/{org}/insights/api/summary-stats/users/{user_id}') {
+                                            return $this->routers->internal🔀Router🔀Get🔀ApiInsights()->getSummaryStatsByUser($params);
+                                        }
+                                    }
+                                } elseif ($pathChunks[6] === '{actor_type}') {
+                                    if ($pathChunks[7] === '{actor_id}') {
+                                        if ($call === 'GET /orgs/{org}/insights/api/summary-stats/{actor_type}/{actor_id}') {
+                                            return $this->routers->internal🔀Router🔀Get🔀ApiInsights()->getSummaryStatsByActor($params);
+                                        }
+                                    }
+                                }
+                            } elseif ($pathChunks[5] === 'time-stats') {
+                                if ($pathChunks[6] === 'users') {
+                                    if ($pathChunks[7] === '{user_id}') {
+                                        if ($call === 'GET /orgs/{org}/insights/api/time-stats/users/{user_id}') {
+                                            return $this->routers->internal🔀Router🔀Get🔀ApiInsights()->getTimeStatsByUser($params);
+                                        }
+                                    }
+                                } elseif ($pathChunks[6] === '{actor_type}') {
+                                    if ($pathChunks[7] === '{actor_id}') {
+                                        if ($call === 'GET /orgs/{org}/insights/api/time-stats/{actor_type}/{actor_id}') {
+                                            return $this->routers->internal🔀Router🔀Get🔀ApiInsights()->getTimeStatsByActor($params);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'packages') {
                         if ($pathChunks[4] === '{package_type}') {
                             if ($pathChunks[5] === '{package_name}') {
                                 if ($pathChunks[6] === 'versions') {

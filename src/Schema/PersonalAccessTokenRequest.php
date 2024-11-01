@@ -21,6 +21,7 @@ final readonly class PersonalAccessTokenRequest
         "repository_count",
         "repositories",
         "created_at",
+        "token_id",
         "token_expired",
         "token_expires_at",
         "token_last_used_at"
@@ -328,6 +329,10 @@ final readonly class PersonalAccessTokenRequest
             "type": "string",
             "description": "Date and time when the request for access was created."
         },
+        "token_id": {
+            "type": "integer",
+            "description": "Unique identifier of the user\'s token. This field can also be found in audit log events and the organization\'s settings for their PAT grants."
+        },
         "token_expired": {
             "type": "boolean",
             "description": "Whether the associated fine-grained personal access token has expired."
@@ -396,6 +401,7 @@ final readonly class PersonalAccessTokenRequest
     "repository_count": 16,
     "repositories": null,
     "created_at": "generated",
+    "token_id": 8,
     "token_expired": false,
     "token_expires_at": "generated",
     "token_last_used_at": "generated"
@@ -411,6 +417,7 @@ final readonly class PersonalAccessTokenRequest
      * repositoryCount: The number of repositories the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
      * repositories: An array of repository objects the token is requesting access to. This field is only populated when `repository_selection` is `subset`.
      * createdAt: Date and time when the request for access was created.
+     * tokenId: Unique identifier of the user's token. This field can also be found in audit log events and the organization's settings for their PAT grants.
      * tokenExpired: Whether the associated fine-grained personal access token has expired.
      * tokenExpiresAt: Date and time when the associated fine-grained personal access token expires.
      * tokenLastUsedAt: Date and time when the associated fine-grained personal access token was last used for authentication.
@@ -421,7 +428,8 @@ final readonly class PersonalAccessTokenRequest
     public Schema\PersonalAccessTokenRequest\PermissionsResult $permissionsResult, #[MapFrom('repository_selection')]
     public string $repositorySelection, #[MapFrom('repository_count')]
     public int|null $repositoryCount, public array|null $repositories, #[MapFrom('created_at')]
-    public string $createdAt, #[MapFrom('token_expired')]
+    public string $createdAt, #[MapFrom('token_id')]
+    public int $tokenId, #[MapFrom('token_expired')]
     public bool $tokenExpired, #[MapFrom('token_expires_at')]
     public string|null $tokenExpiresAt, #[MapFrom('token_last_used_at')]
     public string|null $tokenLastUsedAt,)

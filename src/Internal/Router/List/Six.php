@@ -15,7 +15,7 @@ final class Six
     {
     }
 
-    /** @return Observable<Schema\MarketplacePurchase>|Observable<Schema\Team>|Observable<Schema\MinimalRepository>|Observable<Schema\TeamRoleAssignment>|WithoutBody|Observable<Schema\UserRoleAssignment>|Observable<Schema\TeamDiscussion>|Observable<Schema\OrganizationInvitation>|Observable<Schema\SimpleUser>|Observable<Schema\TeamProject>|Observable<Schema\CodeScanningAlertItems>|Observable<Schema\CodeScanningAnalysis>|Observable<Schema\DependabotAlert>|Observable<Schema\IssueComment>|Observable<Schema\IssueEvent>|Observable<Schema\PageBuild>|Observable<Schema\PullRequestReviewComment>|Observable<Schema\RuleSuites>|Observable<Schema\SecretScanningAlert>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\PackageVersion>|Observable<Schema\Event> */
+    /** @return Observable<Schema\MarketplacePurchase>|iterable<int,Schema\ApiInsightsSubjectStats>|Observable<Schema\Team>|Observable<Schema\MinimalRepository>|Observable<Schema\TeamRoleAssignment>|WithoutBody|Observable<Schema\UserRoleAssignment>|Observable<Schema\TeamDiscussion>|Observable<Schema\OrganizationInvitation>|Observable<Schema\SimpleUser>|Observable<Schema\TeamProject>|Observable<Schema\CodeScanningAlertItems>|Observable<Schema\CodeScanningAnalysis>|Observable<Schema\DependabotAlert>|Observable<Schema\IssueComment>|Observable<Schema\IssueEvent>|Observable<Schema\PageBuild>|Observable<Schema\PullRequestReviewComment>|Observable<Schema\RuleSuites>|Observable<Schema\SecretScanningAlert>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\PackageVersion>|Observable<Schema\Event> */
     public function call(string $call, array $params, array $pathChunks): iterable|WithoutBody
     {
         if ($pathChunks[0] === '') {
@@ -33,7 +33,15 @@ final class Six
                 }
             } elseif ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
-                    if ($pathChunks[3] === 'invitations') {
+                    if ($pathChunks[3] === 'insights') {
+                        if ($pathChunks[4] === 'api') {
+                            if ($pathChunks[5] === 'subject-stats') {
+                                if ($call === 'LIST /orgs/{org}/insights/api/subject-stats') {
+                                    return $this->routers->internal🔀Router🔀List🔀ApiInsights()->getSubjectStatsListing($params);
+                                }
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'invitations') {
                         if ($pathChunks[4] === '{invitation_id}') {
                             if ($pathChunks[5] === 'teams') {
                                 if ($call === 'LIST /orgs/{org}/invitations/{invitation_id}/teams') {

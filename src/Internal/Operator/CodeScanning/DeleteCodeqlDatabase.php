@@ -24,6 +24,7 @@ final readonly class DeleteCodeqlDatabase
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, string $language): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\DeleteCodeqlDatabase($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $language);

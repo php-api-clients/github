@@ -53,6 +53,7 @@ final class CodeScanning
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['analysis_id'], $arguments['confirm_delete']);
     }
 
+    /** @return */
     public function deleteCodeqlDatabase(array $params): WithoutBody
     {
         $arguments = [];

@@ -15,13 +15,25 @@ final class Eight
     {
     }
 
-    /** @return Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\CodeScanningAlertInstance>|Observable<Schema\SecretScanningLocation>|WithoutBody */
+    /** @return iterable<int,Schema\ApiInsightsRouteStats>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\CodeScanningAlertInstance>|Observable<Schema\SecretScanningLocation>|WithoutBody */
     public function call(string $call, array $params, array $pathChunks): iterable|WithoutBody
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
-                    if ($pathChunks[3] === 'teams') {
+                    if ($pathChunks[3] === 'insights') {
+                        if ($pathChunks[4] === 'api') {
+                            if ($pathChunks[5] === 'route-stats') {
+                                if ($pathChunks[6] === '{actor_type}') {
+                                    if ($pathChunks[7] === '{actor_id}') {
+                                        if ($call === 'LIST /orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}') {
+                                            return $this->routers->internal🔀Router🔀List🔀ApiInsights()->getRouteStatsByActorListing($params);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'teams') {
                         if ($pathChunks[4] === '{team_slug}') {
                             if ($pathChunks[5] === 'discussions') {
                                 if ($pathChunks[6] === '{discussion_number}') {

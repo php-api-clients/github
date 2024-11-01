@@ -18,6 +18,7 @@ final readonly class OrganizationProgrammaticAccessGrant
         "repositories_url",
         "permissions",
         "access_granted_at",
+        "token_id",
         "token_expired",
         "token_expires_at",
         "token_last_used_at"
@@ -26,7 +27,7 @@ final readonly class OrganizationProgrammaticAccessGrant
     "properties": {
         "id": {
             "type": "integer",
-            "description": "Unique identifier of the fine-grained personal access token. The `pat_id` used to get details about an approved fine-grained personal access token."
+            "description": "Unique identifier of the fine-grained personal access token grant. The `pat_id` used to get details about an approved fine-grained personal access token."
         },
         "owner": {
             "title": "Simple User",
@@ -237,6 +238,10 @@ final readonly class OrganizationProgrammaticAccessGrant
             "type": "string",
             "description": "Date and time when the fine-grained personal access token was approved to access the organization."
         },
+        "token_id": {
+            "type": "integer",
+            "description": "Unique identifier of the user\'s token. This field can also be found in audit log events and the organization\'s settings for their PAT grants."
+        },
         "token_expired": {
             "type": "boolean",
             "description": "Whether the associated fine-grained personal access token has expired."
@@ -294,18 +299,20 @@ final readonly class OrganizationProgrammaticAccessGrant
         "other": []
     },
     "access_granted_at": "generated",
+    "token_id": 8,
     "token_expired": false,
     "token_expires_at": "generated",
     "token_last_used_at": "generated"
 }';
 
     /**
-     * id: Unique identifier of the fine-grained personal access token. The `pat_id` used to get details about an approved fine-grained personal access token.
+     * id: Unique identifier of the fine-grained personal access token grant. The `pat_id` used to get details about an approved fine-grained personal access token.
      * owner: A GitHub user.
      * repositorySelection: Type of repository selection requested.
      * repositoriesUrl: URL to the list of repositories the fine-grained personal access token can access. Only follow when `repository_selection` is `subset`.
      * permissions: Permissions requested, categorized by type of permission.
      * accessGrantedAt: Date and time when the fine-grained personal access token was approved to access the organization.
+     * tokenId: Unique identifier of the user's token. This field can also be found in audit log events and the organization's settings for their PAT grants.
      * tokenExpired: Whether the associated fine-grained personal access token has expired.
      * tokenExpiresAt: Date and time when the associated fine-grained personal access token expires.
      * tokenLastUsedAt: Date and time when the associated fine-grained personal access token was last used for authentication.
@@ -313,7 +320,8 @@ final readonly class OrganizationProgrammaticAccessGrant
     public function __construct(public int $id, public Schema\SimpleUser $owner, #[MapFrom('repository_selection')]
     public string $repositorySelection, #[MapFrom('repositories_url')]
     public string $repositoriesUrl, public Schema\OrganizationProgrammaticAccessGrant\Permissions $permissions, #[MapFrom('access_granted_at')]
-    public string $accessGrantedAt, #[MapFrom('token_expired')]
+    public string $accessGrantedAt, #[MapFrom('token_id')]
+    public int $tokenId, #[MapFrom('token_expired')]
     public bool $tokenExpired, #[MapFrom('token_expires_at')]
     public string|null $tokenExpiresAt, #[MapFrom('token_last_used_at')]
     public string|null $tokenLastUsedAt,)

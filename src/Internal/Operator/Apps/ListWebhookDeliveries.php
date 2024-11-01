@@ -24,10 +24,10 @@ final readonly class ListWebhookDeliveries
     {
     }
 
-    /** @return Observable<Schema\HookDeliveryItem> */
-    public function call(string $cursor, bool $redelivery, int $perPage = 30): iterable
+    /** @return iterable<int,Schema\HookDeliveryItem> */
+    public function call(string $cursor, int $perPage = 30): iterable
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\ListWebhookDeliveries($this->responseSchemaValidator, $this->hydrator, $cursor, $redelivery, $perPage);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Apps\ListWebhookDeliveries($this->responseSchemaValidator, $this->hydrator, $cursor, $perPage);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);

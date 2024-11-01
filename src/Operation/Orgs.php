@@ -144,10 +144,10 @@ final class Orgs
         return $this->operators->orgs👷UpdateWebhookConfigForOrg()->call($org, $hookId, $params);
     }
 
-    /** @return Observable<Schema\HookDeliveryItem> */
-    public function listWebhookDeliveries(string $org, int $hookId, string $cursor, bool $redelivery, int $perPage): iterable
+    /** @return iterable<int,Schema\HookDeliveryItem> */
+    public function listWebhookDeliveries(string $org, int $hookId, string $cursor, int $perPage): iterable
     {
-        return $this->operators->orgs👷ListWebhookDeliveries()->call($org, $hookId, $cursor, $redelivery, $perPage);
+        return $this->operators->orgs👷ListWebhookDeliveries()->call($org, $hookId, $cursor, $perPage);
     }
 
     /** @return */
