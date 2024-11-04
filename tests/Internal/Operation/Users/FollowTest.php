@@ -124,6 +124,40 @@ final class FollowTest extends AsyncTestCase
     }
 
     /** @test */
+    public function call_httpCode_422_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\ValidationError::class);
+        $response = new Response(422, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\ValidationError::SCHEMA_EXAMPLE_DATA, true)));
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('PUT', '/user/following/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->call(Internal\Operation\Users\Follow::OPERATION_MATCH, (static function (array $data): array {
+            $data['username'] = 'generated';
+
+            return $data;
+        })([]));
+    }
+
+    /** @test */
+    public function operations_httpCode_422_responseContentType_application_json_zero(): void
+    {
+        self::expectException(ErrorSchemas\ValidationError::class);
+        $response = new Response(422, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\ValidationError::SCHEMA_EXAMPLE_DATA, true)));
+        $auth     = $this->prophesize(AuthenticationInterface::class);
+        $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
+        $browser = $this->prophesize(Browser::class);
+        $browser->withBase(Argument::any())->willReturn($browser->reveal());
+        $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
+        $browser->request('PUT', '/user/following/generated', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $client = new Client($auth->reveal(), $browser->reveal());
+        $result = $client->operations()->users()->follow('generated');
+    }
+
+    /** @test */
     public function call_httpCode_204_empty(): void
     {
         $response = new Response(204, []);

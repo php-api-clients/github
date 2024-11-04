@@ -34,7 +34,6 @@ final class Users
         return $operator->call($arguments['username']);
     }
 
-    /** @return */
     public function follow(array $params): WithoutBody
     {
         $arguments = [];

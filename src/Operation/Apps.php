@@ -48,7 +48,7 @@ final class Apps
         return $this->operators->apps👷UpdateWebhookConfigForApp()->call($params);
     }
 
-    /** @return iterable<int,Schema\HookDeliveryItem> */
+    /** @return Observable<Schema\HookDeliveryItem> */
     public function listWebhookDeliveries(string $cursor, int $perPage): iterable
     {
         return $this->operators->apps👷ListWebhookDeliveries()->call($cursor, $perPage);

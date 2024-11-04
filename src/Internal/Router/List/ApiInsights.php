@@ -20,7 +20,7 @@ final class ApiInsights
     {
     }
 
-    /** @return iterable<int,Schema\ApiInsightsUserStats> */
+    /** @return Observable<Schema\ApiInsightsUserStats> */
     public function getUserStatsListing(array $params): iterable
     {
         $arguments = [];
@@ -83,7 +83,7 @@ final class ApiInsights
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\ApiInsightsSubjectStats> */
+    /** @return Observable<Schema\ApiInsightsSubjectStats> */
     public function getSubjectStatsListing(array $params): iterable
     {
         $arguments = [];
@@ -140,7 +140,7 @@ final class ApiInsights
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\ApiInsightsRouteStats> */
+    /** @return Observable<Schema\ApiInsightsRouteStats> */
     public function getRouteStatsByActorListing(array $params): iterable
     {
         $arguments = [];

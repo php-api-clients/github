@@ -24,6 +24,7 @@ final readonly class GetSummaryStats
     {
     }
 
+    /** @return */
     public function call(string $org, string $minTimestamp, string $maxTimestamp): ApiInsightsSummaryStats
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\ApiInsights\GetSummaryStats($this->responseSchemaValidator, $this->hydrator, $org, $minTimestamp, $maxTimestamp);
