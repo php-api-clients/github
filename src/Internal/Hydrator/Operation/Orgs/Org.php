@@ -689,6 +689,17 @@ class Org implements ObjectMapper
             $properties['archivedAt'] = $value;
 
             after_archivedAt:
+
+            $value = $payload['deploy_keys_enabled_for_repositories'] ?? null;
+
+            if ($value === null) {
+                $properties['deployKeysEnabledForRepositories'] = null;
+                goto after_deployKeysEnabledForRepositories;
+            }
+
+            $properties['deployKeysEnabledForRepositories'] = $value;
+
+            after_deployKeysEnabledForRepositories:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\OrganizationFull', $exception, stack: $this->hydrationStack);
         }
@@ -1293,6 +1304,14 @@ class Org implements ObjectMapper
         }
 
         after_archivedAt:        $result['archived_at'] = $archivedAt;
+
+        $deployKeysEnabledForRepositories = $object->deployKeysEnabledForRepositories;
+
+        if ($deployKeysEnabledForRepositories === null) {
+            goto after_deployKeysEnabledForRepositories;
+        }
+
+        after_deployKeysEnabledForRepositories:        $result['deploy_keys_enabled_for_repositories'] = $deployKeysEnabledForRepositories;
 
         return $result;
     }

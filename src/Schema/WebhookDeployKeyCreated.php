@@ -184,6 +184,9 @@ final readonly class WebhookDeployKeyCreated
                 },
                 "verified": {
                     "type": "boolean"
+                },
+                "enabled": {
+                    "type": "boolean"
                 }
             },
             "description": "The [`deploy key`](https:\\/\\/docs.github.com\\/rest\\/deploy-keys\\/deploy-keys#get-a-deploy-key) resource."
@@ -1975,7 +1978,8 @@ final readonly class WebhookDeployKeyCreated
         "read_only": false,
         "title": "generated",
         "url": "https:\\/\\/example.com\\/",
-        "verified": false
+        "verified": false,
+        "enabled": false
     },
     "organization": {
         "login": "github",

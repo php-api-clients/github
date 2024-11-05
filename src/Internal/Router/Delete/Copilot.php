@@ -6,7 +6,6 @@ namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForTeams\Response\ApplicationJson\Ok;
-use ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
@@ -36,8 +35,7 @@ final class Copilot
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return */
-    public function cancelCopilotSeatAssignmentForUsers(array $params): Json|WithoutBody
+    public function cancelCopilotSeatAssignmentForUsers(array $params): \ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

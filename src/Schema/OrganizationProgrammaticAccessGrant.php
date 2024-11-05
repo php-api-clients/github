@@ -19,6 +19,7 @@ final readonly class OrganizationProgrammaticAccessGrant
         "permissions",
         "access_granted_at",
         "token_id",
+        "token_name",
         "token_expired",
         "token_expires_at",
         "token_last_used_at"
@@ -242,6 +243,10 @@ final readonly class OrganizationProgrammaticAccessGrant
             "type": "integer",
             "description": "Unique identifier of the user\'s token. This field can also be found in audit log events and the organization\'s settings for their PAT grants."
         },
+        "token_name": {
+            "type": "string",
+            "description": "The name given to the user\'s token. This field can also be found in an organization\'s settings page for Active Tokens."
+        },
         "token_expired": {
             "type": "boolean",
             "description": "Whether the associated fine-grained personal access token has expired."
@@ -300,6 +305,7 @@ final readonly class OrganizationProgrammaticAccessGrant
     },
     "access_granted_at": "generated",
     "token_id": 8,
+    "token_name": "generated",
     "token_expired": false,
     "token_expires_at": "generated",
     "token_last_used_at": "generated"
@@ -313,6 +319,7 @@ final readonly class OrganizationProgrammaticAccessGrant
      * permissions: Permissions requested, categorized by type of permission.
      * accessGrantedAt: Date and time when the fine-grained personal access token was approved to access the organization.
      * tokenId: Unique identifier of the user's token. This field can also be found in audit log events and the organization's settings for their PAT grants.
+     * tokenName: The name given to the user's token. This field can also be found in an organization's settings page for Active Tokens.
      * tokenExpired: Whether the associated fine-grained personal access token has expired.
      * tokenExpiresAt: Date and time when the associated fine-grained personal access token expires.
      * tokenLastUsedAt: Date and time when the associated fine-grained personal access token was last used for authentication.
@@ -321,7 +328,8 @@ final readonly class OrganizationProgrammaticAccessGrant
     public string $repositorySelection, #[MapFrom('repositories_url')]
     public string $repositoriesUrl, public Schema\OrganizationProgrammaticAccessGrant\Permissions $permissions, #[MapFrom('access_granted_at')]
     public string $accessGrantedAt, #[MapFrom('token_id')]
-    public int $tokenId, #[MapFrom('token_expired')]
+    public int $tokenId, #[MapFrom('token_name')]
+    public string $tokenName, #[MapFrom('token_expired')]
     public bool $tokenExpired, #[MapFrom('token_expires_at')]
     public string|null $tokenExpiresAt, #[MapFrom('token_last_used_at')]
     public string|null $tokenLastUsedAt,)

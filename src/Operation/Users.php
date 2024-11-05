@@ -124,6 +124,7 @@ final class Users
         return $this->operators->users👷CheckPersonIsFollowedByAuthenticated()->call($username);
     }
 
+    /** @return */
     public function follow(string $username): WithoutBody
     {
         return $this->operators->users👷Follow()->call($username);

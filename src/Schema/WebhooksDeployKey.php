@@ -53,6 +53,9 @@ final readonly class WebhooksDeployKey
         },
         "verified": {
             "type": "boolean"
+        },
+        "enabled": {
+            "type": "boolean"
         }
     },
     "description": "The [`deploy key`](https:\\/\\/docs.github.com\\/rest\\/deploy-keys\\/deploy-keys#get-a-deploy-key) resource."
@@ -68,14 +71,15 @@ final readonly class WebhooksDeployKey
     "read_only": false,
     "title": "generated",
     "url": "https:\\/\\/example.com\\/",
-    "verified": false
+    "verified": false,
+    "enabled": false
 }';
 
     public function __construct(#[MapFrom('added_by')]
     public string|null $addedBy, #[MapFrom('created_at')]
     public string $createdAt, public int $id, public string $key, #[MapFrom('last_used')]
     public string|null $lastUsed, #[MapFrom('read_only')]
-    public bool $readOnly, public string $title, public string $url, public bool $verified,)
+    public bool $readOnly, public string $title, public string $url, public bool $verified, public bool|null $enabled,)
     {
     }
 }

@@ -39,7 +39,7 @@ final class AddCopilotSeatsForUsers
         return new Request('POST', str_replace(['{org}'], [$this->org], '/orgs/{org}/copilot/billing/selected_users'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json|WithoutBody
+    public function createResponse(ResponseInterface $response): Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -51,9 +51,9 @@ final class AddCopilotSeatsForUsers
                      * OK
                      **/
                     case 201:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created::class, $body);
                     /**
                      * Internal Error
                      **/

@@ -15,7 +15,6 @@ final class Four
     {
     }
 
-    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|InteractionLimitResponse
     {
         if ($pathChunks[0] === '') {

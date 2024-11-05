@@ -148,6 +148,17 @@ class Keys implements ObjectMapper
             $properties['lastUsed'] = $value;
 
             after_lastUsed:
+
+            $value = $payload['enabled'] ?? null;
+
+            if ($value === null) {
+                $properties['enabled'] = null;
+                goto after_enabled;
+            }
+
+            $properties['enabled'] = $value;
+
+            after_enabled:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DeployKey', $exception, stack: $this->hydrationStack);
         }
@@ -351,6 +362,14 @@ class Keys implements ObjectMapper
         }
 
         after_lastUsed:        $result['last_used'] = $lastUsed;
+
+        $enabled = $object->enabled;
+
+        if ($enabled === null) {
+            goto after_enabled;
+        }
+
+        after_enabled:        $result['enabled'] = $enabled;
 
         return $result;
     }

@@ -493,6 +493,17 @@ class DeployKey implements ObjectMapper
             $properties['verified'] = $value;
 
             after_verified:
+
+            $value = $payload['enabled'] ?? null;
+
+            if ($value === null) {
+                $properties['enabled'] = null;
+                goto after_enabled;
+            }
+
+            $properties['enabled'] = $value;
+
+            after_enabled:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksDeployKey', $exception, stack: $this->hydrationStack);
         }
@@ -3976,6 +3987,14 @@ class DeployKey implements ObjectMapper
 
         $verified                                  = $object->verified;
         after_verified:        $result['verified'] = $verified;
+
+        $enabled = $object->enabled;
+
+        if ($enabled === null) {
+            goto after_enabled;
+        }
+
+        after_enabled:        $result['enabled'] = $enabled;
 
         return $result;
     }

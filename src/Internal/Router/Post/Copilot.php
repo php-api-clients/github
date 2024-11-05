@@ -6,7 +6,6 @@ namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForTeams\Response\ApplicationJson\Created;
-use ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use InvalidArgumentException;
@@ -36,8 +35,7 @@ final class Copilot
         return $operator->call($arguments['org'], $params);
     }
 
-    /** @return */
-    public function addCopilotSeatsForUsers(array $params): Json|WithoutBody
+    public function addCopilotSeatsForUsers(array $params): \ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('org', $params) === false) {

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\Copilot;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created\Application\Json;
+use ApiClients\Client\GitHub\Schema\Operations\Copilot\AddCopilotSeatsForUsers\Response\ApplicationJson\Created;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 use League\OpenAPIValidation\Schema\SchemaValidator;
@@ -25,12 +25,11 @@ final readonly class AddCopilotSeatsForUsers
     {
     }
 
-    /** @return */
-    public function call(string $org, array $params): Json|WithoutBody
+    public function call(string $org, array $params): Created|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Copilot\AddCopilotSeatsForUsers($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json|WithoutBody {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Created|WithoutBody {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

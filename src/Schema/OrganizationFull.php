@@ -450,6 +450,13 @@ final readonly class OrganizationFull
                 "null"
             ],
             "format": "date-time"
+        },
+        "deploy_keys_enabled_for_repositories": {
+            "type": "boolean",
+            "description": "Controls whether or not deploy keys may be added and used for repositories in the organization.",
+            "examples": [
+                false
+            ]
         }
     },
     "description": "Organization Full"
@@ -519,7 +526,8 @@ final readonly class OrganizationFull
     "secret_scanning_push_protection_custom_link": "https:\\/\\/github.com\\/test-org\\/test-repo\\/blob\\/main\\/README.md",
     "created_at": "2008-01-14T04:33:35Z",
     "updated_at": "1970-01-01T00:00:00+00:00",
-    "archived_at": "1970-01-01T00:00:00+00:00"
+    "archived_at": "1970-01-01T00:00:00+00:00",
+    "deploy_keys_enabled_for_repositories": false
 }';
 
     /**
@@ -558,6 +566,7 @@ final readonly class OrganizationFull
     This field is only visible to organization owners or members of a team with the security manager role.
      * secretScanningPushProtectionCustomLinkEnabled: Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.
      * secretScanningPushProtectionCustomLink: An optional URL string to display to contributors who are blocked from pushing a secret.
+     * deployKeysEnabledForRepositories: Controls whether or not deploy keys may be added and used for repositories in the organization.
      */
     public function __construct(public string $login, public int $id, #[MapFrom('node_id')]
     public string $nodeId, public string $url, #[MapFrom('repos_url')]
@@ -602,7 +611,8 @@ final readonly class OrganizationFull
     public string|null $secretScanningPushProtectionCustomLink, #[MapFrom('created_at')]
     public string $createdAt, #[MapFrom('updated_at')]
     public string $updatedAt, #[MapFrom('archived_at')]
-    public string|null $archivedAt,)
+    public string|null $archivedAt, #[MapFrom('deploy_keys_enabled_for_repositories')]
+    public bool|null $deployKeysEnabledForRepositories,)
     {
     }
 }

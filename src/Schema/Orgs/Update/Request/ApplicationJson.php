@@ -152,6 +152,10 @@ final readonly class ApplicationJson
         "secret_scanning_push_protection_custom_link": {
             "type": "string",
             "description": "If `secret_scanning_push_protection_custom_link_enabled` is true, the URL that will be displayed to contributors who are blocked from pushing a secret."
+        },
+        "deploy_keys_enabled_for_repositories": {
+            "type": "boolean",
+            "description": "Controls whether or not deploy keys may be added and used for repositories in the organization."
         }
     }
 }';
@@ -186,7 +190,8 @@ final readonly class ApplicationJson
     "secret_scanning_enabled_for_new_repositories": false,
     "secret_scanning_push_protection_enabled_for_new_repositories": false,
     "secret_scanning_push_protection_custom_link_enabled": false,
-    "secret_scanning_push_protection_custom_link": "generated"
+    "secret_scanning_push_protection_custom_link": "generated",
+    "deploy_keys_enabled_for_repositories": false
 }';
 
     /**
@@ -255,6 +260,7 @@ final readonly class ApplicationJson
     You can check which security and analysis features are currently enabled by using a `GET /orgs/{org}` request.
      * secretScanningPushProtectionCustomLinkEnabled: Whether a custom link is shown to contributors who are blocked from pushing a secret by push protection.
      * secretScanningPushProtectionCustomLink: If `secret_scanning_push_protection_custom_link_enabled` is true, the URL that will be displayed to contributors who are blocked from pushing a secret.
+     * deployKeysEnabledForRepositories: Controls whether or not deploy keys may be added and used for repositories in the organization.
      */
     public function __construct(#[MapFrom('billing_email')]
     public string|null $billingEmail, public string|null $company, public string|null $email, #[MapFrom('twitter_username')]
@@ -279,7 +285,8 @@ final readonly class ApplicationJson
     public bool|null $secretScanningEnabledForNewRepositories, #[MapFrom('secret_scanning_push_protection_enabled_for_new_repositories')]
     public bool|null $secretScanningPushProtectionEnabledForNewRepositories, #[MapFrom('secret_scanning_push_protection_custom_link_enabled')]
     public bool|null $secretScanningPushProtectionCustomLinkEnabled, #[MapFrom('secret_scanning_push_protection_custom_link')]
-    public string|null $secretScanningPushProtectionCustomLink,)
+    public string|null $secretScanningPushProtectionCustomLink, #[MapFrom('deploy_keys_enabled_for_repositories')]
+    public bool|null $deployKeysEnabledForRepositories,)
     {
     }
 }
