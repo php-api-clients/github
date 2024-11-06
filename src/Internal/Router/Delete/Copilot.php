@@ -35,6 +35,7 @@ final class Copilot
         return $operator->call($arguments['org'], $params);
     }
 
+    /** @return */
     public function cancelCopilotSeatAssignmentForUsers(array $params): \ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];

@@ -116,6 +116,17 @@ class Sbom implements ObjectMapper
 
             after_spdxVersion:
 
+            $value = $payload['comment'] ?? null;
+
+            if ($value === null) {
+                $properties['comment'] = null;
+                goto after_comment;
+            }
+
+            $properties['comment'] = $value;
+
+            after_comment:
+
             $value = $payload['creation_info'] ?? null;
 
             if ($value === null) {
@@ -158,17 +169,6 @@ class Sbom implements ObjectMapper
 
             after_dataLicense:
 
-            $value = $payload['document_describes'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'document_describes';
-                goto after_documentDescribes;
-            }
-
-            $properties['documentDescribes'] = $value;
-
-            after_documentDescribes:
-
             $value = $payload['document_namespace'] ?? null;
 
             if ($value === null) {
@@ -190,6 +190,17 @@ class Sbom implements ObjectMapper
             $properties['packages'] = $value;
 
             after_packages:
+
+            $value = $payload['relationships'] ?? null;
+
+            if ($value === null) {
+                $properties['relationships'] = null;
+                goto after_relationships;
+            }
+
+            $properties['relationships'] = $value;
+
+            after_relationships:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependencyGraphSpdxSbom\Sbom', $exception, stack: $this->hydrationStack);
         }
@@ -429,6 +440,14 @@ class Sbom implements ObjectMapper
         $spdxVersion                                      = $object->spdxVersion;
         after_spdxVersion:        $result['spdx_version'] = $spdxVersion;
 
+        $comment = $object->comment;
+
+        if ($comment === null) {
+            goto after_comment;
+        }
+
+        after_comment:        $result['comment'] = $comment;
+
         $creationInfo                                       = $object->creationInfo;
         $creationInfo                                       = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependencyGraphSpdxSbom⚡️Sbom⚡️CreationInfo($creationInfo);
         after_creationInfo:        $result['creation_info'] = $creationInfo;
@@ -438,16 +457,6 @@ class Sbom implements ObjectMapper
 
         $dataLicense                                      = $object->dataLicense;
         after_dataLicense:        $result['data_license'] = $dataLicense;
-
-        $documentDescribes = $object->documentDescribes;
-        static $documentDescribesSerializer0;
-
-        if ($documentDescribesSerializer0 === null) {
-            $documentDescribesSerializer0 = new SerializeArrayItems(...[]);
-        }
-
-        $documentDescribes                                            = $documentDescribesSerializer0->serialize($documentDescribes, $this);
-        after_documentDescribes:        $result['document_describes'] = $documentDescribes;
 
         $documentNamespace                                            = $object->documentNamespace;
         after_documentNamespace:        $result['document_namespace'] = $documentNamespace;
@@ -461,6 +470,21 @@ class Sbom implements ObjectMapper
 
         $packages                                  = $packagesSerializer0->serialize($packages, $this);
         after_packages:        $result['packages'] = $packages;
+
+        $relationships = $object->relationships;
+
+        if ($relationships === null) {
+            goto after_relationships;
+        }
+
+        static $relationshipsSerializer0;
+
+        if ($relationshipsSerializer0 === null) {
+            $relationshipsSerializer0 = new SerializeArrayItems(...[]);
+        }
+
+        $relationships                                       = $relationshipsSerializer0->serialize($relationships, $this);
+        after_relationships:        $result['relationships'] = $relationships;
 
         return $result;
     }

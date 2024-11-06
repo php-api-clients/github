@@ -22,7 +22,7 @@ final readonly class Packages
             "type": "string",
             "description": "The name of the package.",
             "examples": [
-                "rubygems:github\\/github"
+                "github\\/github"
             ]
         },
         "versionInfo": {
@@ -114,7 +114,7 @@ final readonly class Packages
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{
     "SPDXID": "SPDXRef-Package",
-    "name": "rubygems:github\\/github",
+    "name": "github\\/github",
     "versionInfo": "1.0.0",
     "downloadLocation": "NOASSERTION",
     "filesAnalyzed": false,

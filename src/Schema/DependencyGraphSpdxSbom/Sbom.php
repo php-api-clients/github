@@ -16,7 +16,6 @@ final readonly class Sbom
         "creationInfo",
         "name",
         "dataLicense",
-        "documentDescribes",
         "documentNamespace",
         "packages"
     ],
@@ -34,6 +33,13 @@ final readonly class Sbom
             "description": "The version of the SPDX specification that this document conforms to.",
             "examples": [
                 "SPDX-2.3"
+            ]
+        },
+        "comment": {
+            "type": "string",
+            "description": "An optional comment about the SPDX document.",
+            "examples": [
+                "Exact versions could not be resolved for some packages. For more information: https:\\/\\/docs.github.com\\/en\\/code-security\\/supply-chain-security\\/understanding-your-software-supply-chain\\/"
             ]
         },
         "creationInfo": {
@@ -76,21 +82,11 @@ final readonly class Sbom
                 "CC0-1.0"
             ]
         },
-        "documentDescribes": {
-            "type": "array",
-            "items": {
-                "type": "string",
-                "examples": [
-                    "github\\/github"
-                ]
-            },
-            "description": "The name of the repository that the SPDX document describes."
-        },
         "documentNamespace": {
             "type": "string",
             "description": "The namespace for the SPDX document.",
             "examples": [
-                "https:\\/\\/github.com\\/example\\/dependency_graph\\/sbom-123"
+                "https:\\/\\/spdx.org\\/spdxdocs\\/protobom\\/15e41dd2-f961-4f4d-b8dc-f8f57ad70d57"
             ]
         },
         "packages": {
@@ -99,8 +95,7 @@ final readonly class Sbom
                 "name",
                 "versionInfo",
                 "downloadLocation",
-                "filesAnalyzed",
-                "supplier"
+                "filesAnalyzed"
             ],
             "type": "array",
             "items": {
@@ -117,7 +112,7 @@ final readonly class Sbom
                         "type": "string",
                         "description": "The name of the package.",
                         "examples": [
-                            "rubygems:github\\/github"
+                            "github\\/github"
                         ]
                     },
                     "versionInfo": {
@@ -205,6 +200,34 @@ final readonly class Sbom
                     }
                 }
             }
+        },
+        "relationships": {
+            "required": [
+                "relationshipType",
+                "spdxElementId",
+                "relatedSpdxElement"
+            ],
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "relationshipType": {
+                        "type": "string",
+                        "description": "The type of relationship between the two SPDX elements.",
+                        "examples": [
+                            "DEPENDS_ON"
+                        ]
+                    },
+                    "spdxElementId": {
+                        "type": "string",
+                        "description": "The SPDX identifier of the package that is the source of the relationship."
+                    },
+                    "relatedSpdxElement": {
+                        "type": "string",
+                        "description": "The SPDX identifier of the package that is the target of the relationship."
+                    }
+                }
+            }
         }
     }
 }';
@@ -213,6 +236,7 @@ final readonly class Sbom
     public const SCHEMA_EXAMPLE_DATA = '{
     "SPDXID": "SPDXRef-DOCUMENT",
     "spdxVersion": "SPDX-2.3",
+    "comment": "Exact versions could not be resolved for some packages. For more information: https:\\/\\/docs.github.com\\/en\\/code-security\\/supply-chain-security\\/understanding-your-software-supply-chain\\/",
     "creationInfo": {
         "created": "2021-11-03T00:00:00Z",
         "creators": [
@@ -222,15 +246,11 @@ final readonly class Sbom
     },
     "name": "github\\/github",
     "dataLicense": "CC0-1.0",
-    "documentDescribes": [
-        "generated",
-        "generated"
-    ],
-    "documentNamespace": "https:\\/\\/github.com\\/example\\/dependency_graph\\/sbom-123",
+    "documentNamespace": "https:\\/\\/spdx.org\\/spdxdocs\\/protobom\\/15e41dd2-f961-4f4d-b8dc-f8f57ad70d57",
     "packages": [
         {
             "SPDXID": "SPDXRef-Package",
-            "name": "rubygems:github\\/github",
+            "name": "github\\/github",
             "versionInfo": "1.0.0",
             "downloadLocation": "NOASSERTION",
             "filesAnalyzed": false,
@@ -253,7 +273,7 @@ final readonly class Sbom
         },
         {
             "SPDXID": "SPDXRef-Package",
-            "name": "rubygems:github\\/github",
+            "name": "github\\/github",
             "versionInfo": "1.0.0",
             "downloadLocation": "NOASSERTION",
             "filesAnalyzed": false,
@@ -274,19 +294,31 @@ final readonly class Sbom
                 }
             ]
         }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "DEPENDS_ON",
+            "spdxElementId": "generated",
+            "relatedSpdxElement": "generated"
+        },
+        {
+            "relationshipType": "DEPENDS_ON",
+            "spdxElementId": "generated",
+            "relatedSpdxElement": "generated"
+        }
     ]
 }';
 
     /**
      * spdxid: The SPDX identifier for the SPDX document.
      * spdxVersion: The version of the SPDX specification that this document conforms to.
+     * comment: An optional comment about the SPDX document.
      * name: The name of the SPDX document.
      * dataLicense: The license under which the SPDX document is licensed.
-     * documentDescribes: The name of the repository that the SPDX document describes.
      * documentNamespace: The namespace for the SPDX document.
      */
     public function __construct(#[MapFrom('SPDXID')]
-    public string $spdxid, public string $spdxVersion, public Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo $creationInfo, public string $name, public string $dataLicense, public array $documentDescribes, public string $documentNamespace, public array $packages,)
+    public string $spdxid, public string $spdxVersion, public string|null $comment, public Schema\DependencyGraphSpdxSbom\Sbom\CreationInfo $creationInfo, public string $name, public string $dataLicense, public string $documentNamespace, public array $packages, public array|null $relationships,)
     {
     }
 }

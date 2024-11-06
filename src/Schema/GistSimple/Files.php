@@ -34,6 +34,11 @@ final readonly class Files
             },
             "content": {
                 "type": "string"
+            },
+            "encoding": {
+                "type": "string",
+                "description": "The encoding used for `content`. Currently, `\\"utf-8\\"` and `\\"base64\\"` are supported.",
+                "default": "utf-8"
             }
         }
     }

@@ -1,5 +1,5 @@
 {
-    "specHash": "b8769452718d6d7793dc313b1b4aae02",
+    "specHash": "0060b499a5d39e935a73965cb74e1cd7",
     "generatedFiles": {
         "files": [
             {
@@ -216,7 +216,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/BaseGist.php",
-                "hash": "fe1743649947d9b6b4f23210365e25d2"
+                "hash": "6a4c0f624e46228684170909267749bb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/PublicUser.php",
@@ -228,7 +228,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GistSimple.php",
-                "hash": "92458eed8789d76fe1ee5ccbed68fd3f"
+                "hash": "830ff132801cff2da8c06596d183f567"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GistComment.php",
@@ -1020,7 +1020,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/DependencyGraphSpdxSbom.php",
-                "hash": "1fac181e9709ac23cd2d148d97cc51e9"
+                "hash": "2b34386e561862bb95a6964f9c133078"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Metadata.php",
@@ -2596,7 +2596,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/BaseGist\/Files.php",
-                "hash": "09f696f9a86b28ae35c7c7c8b3dbfc05"
+                "hash": "fec30dd4158ff37c3882ef0174c17c25"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/PublicUser\/Plan.php",
@@ -2616,7 +2616,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GistSimple\/Files.php",
-                "hash": "1b5693aba03f4ca6bb2a7d92a84b5838"
+                "hash": "6795e635121a0e280bac2ca35033004d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/MarketplacePurchase\/MarketplacePendingChange.php",
@@ -2996,7 +2996,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/DependencyGraphSpdxSbom\/Sbom.php",
-                "hash": "3c4ab5e98dbbe2fe531b0aff28d85829"
+                "hash": "f4bc432910e9f5456cd871f8b2b3076b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/DependencyGraphSpdxSbom\/Sbom\/CreationInfo.php",
@@ -3004,7 +3004,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/DependencyGraphSpdxSbom\/Sbom\/Packages.php",
-                "hash": "e4864ff3b53f3eec3ba6e1a72d590160"
+                "hash": "13058210d032e1cbb0369e9f2d89abe1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/DependencyGraphSpdxSbom\/Sbom\/Packages\/ExternalRefs.php",
@@ -5640,7 +5640,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Users.php",
-                "hash": "eaa240043367d1e6fafea11639d96254"
+                "hash": "3dbce1b405bb6506b17dffb6b89b814f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operations.php",
@@ -5695,12 +5695,8 @@
                 "hash": "465ddf9717992308cfddc9ced502421b"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietD335746C\/Tiet406EDE4F\/TietC95BE99F\/TietC8083F83.php",
-                "hash": "d06ea5555ba1652c9de00d8520bf5c9d"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GistSimple\/ForkOf\/Files.php",
-                "hash": "08ffbf451b13fa401c03e018b9a9ce24"
+                "hash": "f212c91d3002f8eb184dd2fe324833e2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet3D775F5C\/TietC5097624\/TietA99A13A4\/TietE24C2E4A.php",
@@ -11620,7 +11616,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Copilot.php",
-                "hash": "148290dd696a6938081914d1f8d9ba62"
+                "hash": "834bddbca068114bb35b70f3312b0dcd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CheckAutomatedSecurityFixes.php",
@@ -13884,7 +13880,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Copilot\/CancelCopilotSeatAssignmentForUsers.php",
-                "hash": "b6be04c79deb9abb4ac9eda8458c71a2"
+                "hash": "96993b324a7999d1079fed4b0314d5d2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Copilot\/CancelCopilotSeatAssignmentForUsersTest.php",
@@ -24492,7 +24488,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Post\/Copilot.php",
-                "hash": "3a458f57985cc89713873402e32785e9"
+                "hash": "efd3fe533b8f10b9ef76cbe3b49b002e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Post\/CodeScanning.php",
@@ -24760,7 +24756,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Copilot.php",
-                "hash": "bbdb641896ff965babd59937429a1773"
+                "hash": "11b98758d1b541880f815256cb19d433"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Reactions.php",
@@ -24888,7 +24884,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Post\/Six.php",
-                "hash": "43489effb4287a623862afc82213a25c"
+                "hash": "9d52e88c5af6aa5a666a418c7149880a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Post\/Five.php",
@@ -25004,7 +25000,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Six.php",
-                "hash": "73f6df01dba95e873be2598312f65958"
+                "hash": "7e5c39735eb9b1f7917a4749cfbf696c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Eight.php",
@@ -26164,7 +26160,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/DependencyGraph\/Sbom.php",
-                "hash": "ca0a708cde6afd0df3432ab4174d9704"
+                "hash": "2a88b4076668173b6bd5f0b5fc111f57"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/DependencyGraph\/Snapshots.php",
@@ -27644,11 +27640,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "6ae16abaa5e4120437edef7859214188"
+                "hash": "bd81aa4582ee720aa9dada541bc1ff66"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "261160fbab16ac74669744bed6a8ca24"
+                "hash": "a1d23a8f5baa19ef387a0224ea0f427e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -28516,7 +28512,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Copilot\/AddCopilotSeatsForUsers.php",
-                "hash": "7f87225047a2b6ec6ba002bee8689a4b"
+                "hash": "d763d8d501aaa0b8acb4ad4a7819c44b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Copilot\/AddCopilotSeatsForUsersTest.php",
@@ -30997,6 +30993,14 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Insights\/Api\/SummaryStats\/ActorType\/ActorId.php",
                 "hash": "a93ba1f6eb83fc9f8c318615c49ba1d6"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRuleParamsRequiredReviewerConfiguration.php",
+                "hash": "b85aa69ed2efcbdcf2b1154a6cdfa482"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/DependencyGraphSpdxSbom\/Sbom\/Relationships.php",
+                "hash": "f6f24936ee897b9ac1b455b032238224"
             }
         ]
     },

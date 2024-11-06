@@ -22,7 +22,6 @@ final readonly class DependencyGraphSpdxSbom
                 "creationInfo",
                 "name",
                 "dataLicense",
-                "documentDescribes",
                 "documentNamespace",
                 "packages"
             ],
@@ -40,6 +39,13 @@ final readonly class DependencyGraphSpdxSbom
                     "description": "The version of the SPDX specification that this document conforms to.",
                     "examples": [
                         "SPDX-2.3"
+                    ]
+                },
+                "comment": {
+                    "type": "string",
+                    "description": "An optional comment about the SPDX document.",
+                    "examples": [
+                        "Exact versions could not be resolved for some packages. For more information: https:\\/\\/docs.github.com\\/en\\/code-security\\/supply-chain-security\\/understanding-your-software-supply-chain\\/"
                     ]
                 },
                 "creationInfo": {
@@ -82,21 +88,11 @@ final readonly class DependencyGraphSpdxSbom
                         "CC0-1.0"
                     ]
                 },
-                "documentDescribes": {
-                    "type": "array",
-                    "items": {
-                        "type": "string",
-                        "examples": [
-                            "github\\/github"
-                        ]
-                    },
-                    "description": "The name of the repository that the SPDX document describes."
-                },
                 "documentNamespace": {
                     "type": "string",
                     "description": "The namespace for the SPDX document.",
                     "examples": [
-                        "https:\\/\\/github.com\\/example\\/dependency_graph\\/sbom-123"
+                        "https:\\/\\/spdx.org\\/spdxdocs\\/protobom\\/15e41dd2-f961-4f4d-b8dc-f8f57ad70d57"
                     ]
                 },
                 "packages": {
@@ -105,8 +101,7 @@ final readonly class DependencyGraphSpdxSbom
                         "name",
                         "versionInfo",
                         "downloadLocation",
-                        "filesAnalyzed",
-                        "supplier"
+                        "filesAnalyzed"
                     ],
                     "type": "array",
                     "items": {
@@ -123,7 +118,7 @@ final readonly class DependencyGraphSpdxSbom
                                 "type": "string",
                                 "description": "The name of the package.",
                                 "examples": [
-                                    "rubygems:github\\/github"
+                                    "github\\/github"
                                 ]
                             },
                             "versionInfo": {
@@ -211,6 +206,34 @@ final readonly class DependencyGraphSpdxSbom
                             }
                         }
                     }
+                },
+                "relationships": {
+                    "required": [
+                        "relationshipType",
+                        "spdxElementId",
+                        "relatedSpdxElement"
+                    ],
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "relationshipType": {
+                                "type": "string",
+                                "description": "The type of relationship between the two SPDX elements.",
+                                "examples": [
+                                    "DEPENDS_ON"
+                                ]
+                            },
+                            "spdxElementId": {
+                                "type": "string",
+                                "description": "The SPDX identifier of the package that is the source of the relationship."
+                            },
+                            "relatedSpdxElement": {
+                                "type": "string",
+                                "description": "The SPDX identifier of the package that is the target of the relationship."
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -223,6 +246,7 @@ final readonly class DependencyGraphSpdxSbom
     "sbom": {
         "SPDXID": "SPDXRef-DOCUMENT",
         "spdxVersion": "SPDX-2.3",
+        "comment": "Exact versions could not be resolved for some packages. For more information: https:\\/\\/docs.github.com\\/en\\/code-security\\/supply-chain-security\\/understanding-your-software-supply-chain\\/",
         "creationInfo": {
             "created": "2021-11-03T00:00:00Z",
             "creators": [
@@ -232,15 +256,11 @@ final readonly class DependencyGraphSpdxSbom
         },
         "name": "github\\/github",
         "dataLicense": "CC0-1.0",
-        "documentDescribes": [
-            "generated",
-            "generated"
-        ],
-        "documentNamespace": "https:\\/\\/github.com\\/example\\/dependency_graph\\/sbom-123",
+        "documentNamespace": "https:\\/\\/spdx.org\\/spdxdocs\\/protobom\\/15e41dd2-f961-4f4d-b8dc-f8f57ad70d57",
         "packages": [
             {
                 "SPDXID": "SPDXRef-Package",
-                "name": "rubygems:github\\/github",
+                "name": "github\\/github",
                 "versionInfo": "1.0.0",
                 "downloadLocation": "NOASSERTION",
                 "filesAnalyzed": false,
@@ -263,7 +283,7 @@ final readonly class DependencyGraphSpdxSbom
             },
             {
                 "SPDXID": "SPDXRef-Package",
-                "name": "rubygems:github\\/github",
+                "name": "github\\/github",
                 "versionInfo": "1.0.0",
                 "downloadLocation": "NOASSERTION",
                 "filesAnalyzed": false,
@@ -283,6 +303,18 @@ final readonly class DependencyGraphSpdxSbom
                         "referenceType": "purl"
                     }
                 ]
+            }
+        ],
+        "relationships": [
+            {
+                "relationshipType": "DEPENDS_ON",
+                "spdxElementId": "generated",
+                "relatedSpdxElement": "generated"
+            },
+            {
+                "relationshipType": "DEPENDS_ON",
+                "spdxElementId": "generated",
+                "relatedSpdxElement": "generated"
             }
         ]
     }
