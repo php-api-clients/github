@@ -45,11 +45,11 @@ final readonly class EnterpriseTeam
         },
         "group_id": {
             "type": [
-                "integer",
+                "string",
                 "null"
             ],
             "examples": [
-                1
+                "62ab9291-fae2-468e-974b-7e45096d5021"
             ]
         },
         "html_url": {
@@ -81,7 +81,7 @@ final readonly class EnterpriseTeam
     "slug": "generated",
     "url": "https:\\/\\/example.com\\/",
     "sync_to_organizations": "disabled | all",
-    "group_id": 1,
+    "group_id": "62ab9291-fae2-468e-974b-7e45096d5021",
     "html_url": "https:\\/\\/github.com\\/enterprises\\/dc\\/teams\\/justice-league",
     "members_url": "generated",
     "created_at": "1970-01-01T00:00:00+00:00",
@@ -90,7 +90,7 @@ final readonly class EnterpriseTeam
 
     public function __construct(public int $id, public string $name, public string $slug, public string $url, #[MapFrom('sync_to_organizations')]
     public string $syncToOrganizations, #[MapFrom('group_id')]
-    public int|null $groupId, #[MapFrom('html_url')]
+    public string|null $groupId, #[MapFrom('html_url')]
     public string $htmlUrl, #[MapFrom('members_url')]
     public string $membersUrl, #[MapFrom('created_at')]
     public string $createdAt, #[MapFrom('updated_at')]

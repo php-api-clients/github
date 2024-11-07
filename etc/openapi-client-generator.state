@@ -1,5 +1,5 @@
 {
-    "specHash": "0060b499a5d39e935a73965cb74e1cd7",
+    "specHash": "736baa369515112b9bfb0e87033d2fcb",
     "generatedFiles": {
         "files": [
             {
@@ -11592,11 +11592,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotSeatDetails.php",
-                "hash": "9ea6625955627e0ebe10cd24da7f80dc"
+                "hash": "616f4c840be095fb513494506420ddd7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Copilot\/ListCopilotSeats\/Response\/ApplicationJson\/Ok.php",
-                "hash": "a5fc9b21b784444f1965dd87d9776578"
+                "hash": "389f72ea8ff7ba164085e75524ce47f7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Copilot\/CancelCopilotSeatAssignmentForTeams\/Request\/ApplicationJson.php",
@@ -11616,7 +11616,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Copilot.php",
-                "hash": "834bddbca068114bb35b70f3312b0dcd"
+                "hash": "563300a1451865b6fcf3e3dcf679b0e9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CheckAutomatedSecurityFixes.php",
@@ -29428,7 +29428,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/EnterpriseTeam.php",
-                "hash": "7fc1fb4a6b32ed3dbc505149bcfddaa0"
+                "hash": "2ff06468420bec0b828b0d1d7b572714"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/TeamRoleAssignment.php",
@@ -29476,7 +29476,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Copilot\/ListCopilotSeatsForEnterprise\/Response\/ApplicationJson\/Ok.php",
-                "hash": "90ba02f6e5934791cb59a1baf3786e02"
+                "hash": "5115dfe149295f326878c63da4118dda"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Enterprises\/Enterprise\/Copilot\/Billing\/Seats.php",

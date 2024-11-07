@@ -545,11 +545,11 @@ final readonly class CopilotSeatDetails
                         },
                         "group_id": {
                             "type": [
-                                "integer",
+                                "string",
                                 "null"
                             ],
                             "examples": [
-                                1
+                                "62ab9291-fae2-468e-974b-7e45096d5021"
                             ]
                         },
                         "html_url": {
