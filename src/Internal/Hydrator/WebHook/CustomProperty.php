@@ -217,6 +217,17 @@ class CustomProperty implements ObjectMapper
 
             after_url:
 
+            $value = $payload['source_type'] ?? null;
+
+            if ($value === null) {
+                $properties['sourceType'] = null;
+                goto after_sourceType;
+            }
+
+            $properties['sourceType'] = $value;
+
+            after_sourceType:
+
             $value = $payload['value_type'] ?? null;
 
             if ($value === null) {
@@ -1337,6 +1348,14 @@ class CustomProperty implements ObjectMapper
         }
 
         after_url:        $result['url'] = $url;
+
+        $sourceType = $object->sourceType;
+
+        if ($sourceType === null) {
+            goto after_sourceType;
+        }
+
+        after_sourceType:        $result['source_type'] = $sourceType;
 
         $valueType                                    = $object->valueType;
         after_valueType:        $result['value_type'] = $valueType;

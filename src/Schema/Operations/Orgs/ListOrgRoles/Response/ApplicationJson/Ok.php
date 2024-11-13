@@ -45,6 +45,34 @@ final readonly class Ok
                         ],
                         "description": "A short description about who this role is for or what permissions it grants."
                     },
+                    "base_role": {
+                        "enum": [
+                            "read",
+                            "triage",
+                            "write",
+                            "maintain",
+                            "admin",
+                            null
+                        ],
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The system role from which this role inherits permissions."
+                    },
+                    "source": {
+                        "enum": [
+                            "Organization",
+                            "Enterprise",
+                            "Predefined",
+                            null
+                        ],
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Source answers the question, \\"where did this role come from?\\""
+                    },
                     "permissions": {
                         "type": "array",
                         "items": {
@@ -253,6 +281,8 @@ final readonly class Ok
             "id": 2,
             "name": "generated",
             "description": "generated",
+            "base_role": "read",
+            "source": "Predefined",
             "permissions": [
                 "generated",
                 "generated"
@@ -288,6 +318,8 @@ final readonly class Ok
             "id": 2,
             "name": "generated",
             "description": "generated",
+            "base_role": "read",
+            "source": "Predefined",
             "permissions": [
                 "generated",
                 "generated"

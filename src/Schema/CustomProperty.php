@@ -25,6 +25,17 @@ final readonly class CustomProperty
             "description": "The URL that can be used to fetch, update, or delete info about this property via the API.",
             "format": "uri"
         },
+        "source_type": {
+            "enum": [
+                "organization",
+                "enterprise"
+            ],
+            "type": "string",
+            "description": "The source type of the property",
+            "examples": [
+                "organization"
+            ]
+        },
         "value_type": {
             "enum": [
                 "string",
@@ -103,6 +114,7 @@ final readonly class CustomProperty
     public const SCHEMA_EXAMPLE_DATA = '{
     "property_name": "generated",
     "url": "https:\\/\\/example.com\\/",
+    "source_type": "organization",
     "value_type": "single_select",
     "required": false,
     "default_value": null,
@@ -114,6 +126,7 @@ final readonly class CustomProperty
     /**
      * propertyName: The name of the property
      * url: The URL that can be used to fetch, update, or delete info about this property via the API.
+     * sourceType: The source type of the property
      * valueType: The type of the value for the property
      * required: Whether the property is required.
      * defaultValue: Default value of the property
@@ -123,7 +136,8 @@ final readonly class CustomProperty
      * valuesEditableBy: Who can edit the values of the property
      */
     public function __construct(#[MapFrom('property_name')]
-    public string $propertyName, public string|null $url, #[MapFrom('value_type')]
+    public string $propertyName, public string|null $url, #[MapFrom('source_type')]
+    public string|null $sourceType, #[MapFrom('value_type')]
     public string $valueType, public bool|null $required, #[MapFrom('default_value')]
     public string|array|null $defaultValue, public string|null $description, #[MapFrom('allowed_values')]
     public array|null $allowedValues, #[MapFrom('values_editable_by')]

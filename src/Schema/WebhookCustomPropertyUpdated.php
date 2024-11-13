@@ -39,6 +39,17 @@ final readonly class WebhookCustomPropertyUpdated
                     "description": "The URL that can be used to fetch, update, or delete info about this property via the API.",
                     "format": "uri"
                 },
+                "source_type": {
+                    "enum": [
+                        "organization",
+                        "enterprise"
+                    ],
+                    "type": "string",
+                    "description": "The source type of the property",
+                    "examples": [
+                        "organization"
+                    ]
+                },
                 "value_type": {
                     "enum": [
                         "string",
@@ -503,6 +514,7 @@ final readonly class WebhookCustomPropertyUpdated
     "definition": {
         "property_name": "generated",
         "url": "https:\\/\\/example.com\\/",
+        "source_type": "organization",
         "value_type": "single_select",
         "required": false,
         "default_value": null,

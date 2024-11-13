@@ -32,6 +32,133 @@ final readonly class UserRoleAssignment
     ],
     "type": "object",
     "properties": {
+        "assignment": {
+            "enum": [
+                "direct",
+                "indirect",
+                "mixed"
+            ],
+            "type": "string",
+            "description": "Determines if the user has a direct, indirect, or mixed relationship to a role",
+            "examples": [
+                "direct"
+            ]
+        },
+        "inherited_from": {
+            "type": "array",
+            "items": {
+                "title": "Team Simple",
+                "required": [
+                    "id",
+                    "node_id",
+                    "url",
+                    "members_url",
+                    "name",
+                    "description",
+                    "permission",
+                    "html_url",
+                    "repositories_url",
+                    "slug"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "Unique identifier of the team",
+                        "examples": [
+                            1
+                        ]
+                    },
+                    "node_id": {
+                        "type": "string",
+                        "examples": [
+                            "MDQ6VGVhbTE="
+                        ]
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "URL for the team",
+                        "format": "uri",
+                        "examples": [
+                            "https:\\/\\/api.github.com\\/organizations\\/1\\/team\\/1"
+                        ]
+                    },
+                    "members_url": {
+                        "type": "string",
+                        "examples": [
+                            "https:\\/\\/api.github.com\\/organizations\\/1\\/team\\/1\\/members{\\/member}"
+                        ]
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name of the team",
+                        "examples": [
+                            "Justice League"
+                        ]
+                    },
+                    "description": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "Description of the team",
+                        "examples": [
+                            "A great team."
+                        ]
+                    },
+                    "permission": {
+                        "type": "string",
+                        "description": "Permission that the team will have for its repositories",
+                        "examples": [
+                            "admin"
+                        ]
+                    },
+                    "privacy": {
+                        "type": "string",
+                        "description": "The level of privacy this team should have",
+                        "examples": [
+                            "closed"
+                        ]
+                    },
+                    "notification_setting": {
+                        "type": "string",
+                        "description": "The notification setting the team has set",
+                        "examples": [
+                            "notifications_enabled"
+                        ]
+                    },
+                    "html_url": {
+                        "type": "string",
+                        "format": "uri",
+                        "examples": [
+                            "https:\\/\\/github.com\\/orgs\\/rails\\/teams\\/core"
+                        ]
+                    },
+                    "repositories_url": {
+                        "type": "string",
+                        "format": "uri",
+                        "examples": [
+                            "https:\\/\\/api.github.com\\/organizations\\/1\\/team\\/1\\/repos"
+                        ]
+                    },
+                    "slug": {
+                        "type": "string",
+                        "examples": [
+                            "justice-league"
+                        ]
+                    },
+                    "ldap_dn": {
+                        "type": "string",
+                        "description": "Distinguished Name (DN) that team maps to within LDAP environment",
+                        "examples": [
+                            "uid=example,ou=users,dc=github,dc=com"
+                        ]
+                    }
+                },
+                "description": "Groups of organization members that gives permissions on specified repositories."
+            },
+            "description": "Team the user has gotten the role through"
+        },
         "name": {
             "type": [
                 "string",
@@ -178,6 +305,39 @@ final readonly class UserRoleAssignment
     public const SCHEMA_TITLE        = 'A Role Assignment for a User';
     public const SCHEMA_DESCRIPTION  = 'The Relationship a User has with a role.';
     public const SCHEMA_EXAMPLE_DATA = '{
+    "assignment": "direct",
+    "inherited_from": [
+        {
+            "id": 1,
+            "node_id": "MDQ6VGVhbTE=",
+            "url": "https:\\/\\/api.github.com\\/organizations\\/1\\/team\\/1",
+            "members_url": "https:\\/\\/api.github.com\\/organizations\\/1\\/team\\/1\\/members{\\/member}",
+            "name": "Justice League",
+            "description": "A great team.",
+            "permission": "admin",
+            "privacy": "closed",
+            "notification_setting": "notifications_enabled",
+            "html_url": "https:\\/\\/github.com\\/orgs\\/rails\\/teams\\/core",
+            "repositories_url": "https:\\/\\/api.github.com\\/organizations\\/1\\/team\\/1\\/repos",
+            "slug": "justice-league",
+            "ldap_dn": "uid=example,ou=users,dc=github,dc=com"
+        },
+        {
+            "id": 1,
+            "node_id": "MDQ6VGVhbTE=",
+            "url": "https:\\/\\/api.github.com\\/organizations\\/1\\/team\\/1",
+            "members_url": "https:\\/\\/api.github.com\\/organizations\\/1\\/team\\/1\\/members{\\/member}",
+            "name": "Justice League",
+            "description": "A great team.",
+            "permission": "admin",
+            "privacy": "closed",
+            "notification_setting": "notifications_enabled",
+            "html_url": "https:\\/\\/github.com\\/orgs\\/rails\\/teams\\/core",
+            "repositories_url": "https:\\/\\/api.github.com\\/organizations\\/1\\/team\\/1\\/repos",
+            "slug": "justice-league",
+            "ldap_dn": "uid=example,ou=users,dc=github,dc=com"
+        }
+    ],
     "name": "generated",
     "email": "generated",
     "login": "octocat",
@@ -202,7 +362,12 @@ final readonly class UserRoleAssignment
     "user_view_type": "public"
 }';
 
-    public function __construct(public string|null $name, public string|null $email, public string $login, public int $id, #[MapFrom('node_id')]
+    /**
+     * assignment: Determines if the user has a direct, indirect, or mixed relationship to a role
+     * inheritedFrom: Team the user has gotten the role through
+     */
+    public function __construct(public string|null $assignment, #[MapFrom('inherited_from')]
+    public array|null $inheritedFrom, public string|null $name, public string|null $email, public string $login, public int $id, #[MapFrom('node_id')]
     public string $nodeId, #[MapFrom('avatar_url')]
     public string $avatarUrl, #[MapFrom('gravatar_id')]
     public string|null $gravatarId, public string $url, #[MapFrom('html_url')]

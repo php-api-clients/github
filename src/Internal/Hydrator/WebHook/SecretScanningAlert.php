@@ -425,6 +425,48 @@ class SecretScanningAlert implements ObjectMapper
 
             after_pushProtectionBypassedAt:
 
+            $value = $payload['push_protection_bypass_request_reviewer'] ?? null;
+
+            if ($value === null) {
+                $properties['pushProtectionBypassRequestReviewer'] = null;
+                goto after_pushProtectionBypassRequestReviewer;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'pushProtectionBypassRequestReviewer';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['pushProtectionBypassRequestReviewer'] = $value;
+
+            after_pushProtectionBypassRequestReviewer:
+
+            $value = $payload['push_protection_bypass_request_comment'] ?? null;
+
+            if ($value === null) {
+                $properties['pushProtectionBypassRequestComment'] = null;
+                goto after_pushProtectionBypassRequestComment;
+            }
+
+            $properties['pushProtectionBypassRequestComment'] = $value;
+
+            after_pushProtectionBypassRequestComment:
+
+            $value = $payload['push_protection_bypass_request_html_url'] ?? null;
+
+            if ($value === null) {
+                $properties['pushProtectionBypassRequestHtmlUrl'] = null;
+                goto after_pushProtectionBypassRequestHtmlUrl;
+            }
+
+            $properties['pushProtectionBypassRequestHtmlUrl'] = $value;
+
+            after_pushProtectionBypassRequestHtmlUrl:
+
             $value = $payload['publicly_leaked'] ?? null;
 
             if ($value === null) {
@@ -4578,6 +4620,31 @@ class SecretScanningAlert implements ObjectMapper
         }
 
         after_pushProtectionBypassedAt:        $result['push_protection_bypassed_at'] = $pushProtectionBypassedAt;
+
+        $pushProtectionBypassRequestReviewer = $object->pushProtectionBypassRequestReviewer;
+
+        if ($pushProtectionBypassRequestReviewer === null) {
+            goto after_pushProtectionBypassRequestReviewer;
+        }
+
+        $pushProtectionBypassRequestReviewer                                                                 = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($pushProtectionBypassRequestReviewer);
+        after_pushProtectionBypassRequestReviewer:        $result['push_protection_bypass_request_reviewer'] = $pushProtectionBypassRequestReviewer;
+
+        $pushProtectionBypassRequestComment = $object->pushProtectionBypassRequestComment;
+
+        if ($pushProtectionBypassRequestComment === null) {
+            goto after_pushProtectionBypassRequestComment;
+        }
+
+        after_pushProtectionBypassRequestComment:        $result['push_protection_bypass_request_comment'] = $pushProtectionBypassRequestComment;
+
+        $pushProtectionBypassRequestHtmlUrl = $object->pushProtectionBypassRequestHtmlUrl;
+
+        if ($pushProtectionBypassRequestHtmlUrl === null) {
+            goto after_pushProtectionBypassRequestHtmlUrl;
+        }
+
+        after_pushProtectionBypassRequestHtmlUrl:        $result['push_protection_bypass_request_html_url'] = $pushProtectionBypassRequestHtmlUrl;
 
         $publiclyLeaked = $object->publiclyLeaked;
 

@@ -37,6 +37,34 @@ final readonly class OrganizationRole
             ],
             "description": "A short description about who this role is for or what permissions it grants."
         },
+        "base_role": {
+            "enum": [
+                "read",
+                "triage",
+                "write",
+                "maintain",
+                "admin",
+                null
+            ],
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The system role from which this role inherits permissions."
+        },
+        "source": {
+            "enum": [
+                "Organization",
+                "Enterprise",
+                "Predefined",
+                null
+            ],
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Source answers the question, \\"where did this role come from?\\""
+        },
         "permissions": {
             "type": "array",
             "items": {
@@ -238,6 +266,8 @@ final readonly class OrganizationRole
     "id": 2,
     "name": "generated",
     "description": "generated",
+    "base_role": "read",
+    "source": "Predefined",
     "permissions": [
         "generated",
         "generated"
@@ -274,11 +304,14 @@ final readonly class OrganizationRole
      * id: The unique identifier of the role.
      * name: The name of the role.
      * description: A short description about who this role is for or what permissions it grants.
+     * baseRole: The system role from which this role inherits permissions.
+     * source: Source answers the question, "where did this role come from?"
      * permissions: A list of permissions included in this role.
      * createdAt: The date and time the role was created.
      * updatedAt: The date and time the role was last updated.
      */
-    public function __construct(public int $id, public string $name, public string|null $description, public array $permissions, public Schema\SimpleUser|null $organization, #[MapFrom('created_at')]
+    public function __construct(public int $id, public string $name, public string|null $description, #[MapFrom('base_role')]
+    public string|null $baseRole, public string|null $source, public array $permissions, public Schema\SimpleUser|null $organization, #[MapFrom('created_at')]
     public string $createdAt, #[MapFrom('updated_at')]
     public string $updatedAt,)
     {

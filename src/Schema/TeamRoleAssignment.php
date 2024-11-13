@@ -26,6 +26,18 @@ final readonly class TeamRoleAssignment
     ],
     "type": "object",
     "properties": {
+        "assignment": {
+            "enum": [
+                "direct",
+                "indirect",
+                "mixed"
+            ],
+            "type": "string",
+            "description": "Determines if the team has a direct, indirect, or mixed relationship to a role",
+            "examples": [
+                "direct"
+            ]
+        },
         "id": {
             "type": "integer"
         },
@@ -222,6 +234,7 @@ final readonly class TeamRoleAssignment
     public const SCHEMA_TITLE        = 'A Role Assignment for a Team';
     public const SCHEMA_DESCRIPTION  = 'The Relationship a Team has with a role.';
     public const SCHEMA_EXAMPLE_DATA = '{
+    "assignment": "direct",
     "id": 2,
     "node_id": "generated",
     "name": "generated",
@@ -258,7 +271,10 @@ final readonly class TeamRoleAssignment
     }
 }';
 
-    public function __construct(public int $id, #[MapFrom('node_id')]
+    /**
+     * assignment: Determines if the team has a direct, indirect, or mixed relationship to a role
+     */
+    public function __construct(public string|null $assignment, public int $id, #[MapFrom('node_id')]
     public string $nodeId, public string $name, public string $slug, public string|null $description, public string|null $privacy, #[MapFrom('notification_setting')]
     public string|null $notificationSetting, public string $permission, public Schema\TeamRoleAssignment\Permissions|null $permissions, public string $url, #[MapFrom('html_url')]
     public string $htmlUrl, #[MapFrom('members_url')]
