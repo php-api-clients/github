@@ -982,7 +982,7 @@ final readonly class WebhookSecretScanningAlertLocationCreated
                                     "description": "The API URL to get the pull request where the secret was detected.",
                                     "format": "uri",
                                     "examples": [
-                                        "https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/pull\\/2846"
+                                        "https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/pulls\\/2846"
                                     ]
                                 }
                             },
@@ -999,7 +999,7 @@ final readonly class WebhookSecretScanningAlertLocationCreated
                                     "description": "The API URL to get the pull request where the secret was detected.",
                                     "format": "uri",
                                     "examples": [
-                                        "https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/pull\\/2846"
+                                        "https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/pulls\\/2846"
                                     ]
                                 }
                             },

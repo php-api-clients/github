@@ -24,7 +24,7 @@ final readonly class GetTimeStatsByActor
     {
     }
 
-    /** @return Observable<Schema\ApiInsightsTimeStats> */
+    /** @return iterable<int,Schema\ApiInsightsTimeStats> */
     public function call(string $org, string $actorType, int $actorId, string $minTimestamp, string $maxTimestamp, string $timestampIncrement): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\ApiInsights\GetTimeStatsByActor($this->responseSchemaValidator, $this->hydrator, $org, $actorType, $actorId, $minTimestamp, $maxTimestamp, $timestampIncrement);

@@ -19,7 +19,7 @@ final readonly class SecretScanningLocationPullRequestBody
             "description": "The API URL to get the pull request where the secret was detected.",
             "format": "uri",
             "examples": [
-                "https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/pull\\/2846"
+                "https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/pulls\\/2846"
             ]
         }
     },
@@ -28,7 +28,7 @@ final readonly class SecretScanningLocationPullRequestBody
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = 'Represents a \'pull_request_body\' secret scanning location type. This location type shows that a secret was detected in the body of a pull request.';
     public const SCHEMA_EXAMPLE_DATA = '{
-    "pull_request_body_url": "https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/pull\\/2846"
+    "pull_request_body_url": "https:\\/\\/api.github.com\\/repos\\/octocat\\/Hello-World\\/pulls\\/2846"
 }';
 
     /**

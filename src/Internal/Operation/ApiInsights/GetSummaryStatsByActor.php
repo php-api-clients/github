@@ -23,9 +23,9 @@ final class GetSummaryStatsByActor
     public const OPERATION_MATCH = 'GET /orgs/{org}/insights/api/summary-stats/{actor_type}/{actor_id}';
     /**The organization name. The name is not case sensitive. **/
     private string $org;
-    /**The minimum timestamp to query for stats **/
+    /**The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
     private string $minTimestamp;
-    /**The maximum timestamp to query for stats **/
+    /**The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
     private string $maxTimestamp;
     /**The type of the actor **/
     private string $actorType;

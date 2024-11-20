@@ -25,9 +25,9 @@ final class GetSummaryStatsByUser
     private string $org;
     /**The ID of the user to query for stats **/
     private string $userId;
-    /**The minimum timestamp to query for stats **/
+    /**The minimum timestamp to query for stats. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
     private string $minTimestamp;
-    /**The maximum timestamp to query for stats **/
+    /**The maximum timestamp to query for stats. Defaults to the time 30 days ago. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
     private string $maxTimestamp;
 
     public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Insights\Api\SummaryStats\Users\UserId $hydrator, string $org, string $userId, string $minTimestamp, string $maxTimestamp)

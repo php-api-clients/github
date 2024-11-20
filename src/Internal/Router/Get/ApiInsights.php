@@ -20,7 +20,7 @@ final class ApiInsights
     {
     }
 
-    /** @return Observable<Schema\ApiInsightsSubjectStats> */
+    /** @return iterable<int,Schema\ApiInsightsSubjectStats> */
     public function getSubjectStats(array $params): iterable
     {
         $arguments = [];
@@ -71,7 +71,6 @@ final class ApiInsights
         return $operator->call($arguments['org'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['sort'], $arguments['page'], $arguments['per_page'], $arguments['direction']);
     }
 
-    /** @return */
     public function getSummaryStats(array $params): ApiInsightsSummaryStats
     {
         $arguments = [];
@@ -98,7 +97,7 @@ final class ApiInsights
         return $operator->call($arguments['org'], $arguments['min_timestamp'], $arguments['max_timestamp']);
     }
 
-    /** @return Observable<Schema\ApiInsightsTimeStats> */
+    /** @return iterable<int,Schema\ApiInsightsTimeStats> */
     public function getTimeStats(array $params): iterable
     {
         $arguments = [];
@@ -131,7 +130,7 @@ final class ApiInsights
         return $operator->call($arguments['org'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['timestamp_increment']);
     }
 
-    /** @return Observable<Schema\ApiInsightsUserStats> */
+    /** @return iterable<int,Schema\ApiInsightsUserStats> */
     public function getUserStats(array $params): iterable
     {
         $arguments = [];
@@ -188,7 +187,7 @@ final class ApiInsights
         return $operator->call($arguments['org'], $arguments['user_id'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['sort'], $arguments['page'], $arguments['per_page'], $arguments['direction']);
     }
 
-    /** @return Observable<Schema\ApiInsightsRouteStats> */
+    /** @return iterable<int,Schema\ApiInsightsRouteStats> */
     public function getRouteStatsByActor(array $params): iterable
     {
         $arguments = [];
@@ -251,7 +250,6 @@ final class ApiInsights
         return $operator->call($arguments['org'], $arguments['actor_type'], $arguments['actor_id'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['sort'], $arguments['page'], $arguments['per_page'], $arguments['direction']);
     }
 
-    /** @return */
     public function getSummaryStatsByUser(array $params): ApiInsightsSummaryStats
     {
         $arguments = [];
@@ -284,7 +282,6 @@ final class ApiInsights
         return $operator->call($arguments['org'], $arguments['user_id'], $arguments['min_timestamp'], $arguments['max_timestamp']);
     }
 
-    /** @return */
     public function getSummaryStatsByActor(array $params): ApiInsightsSummaryStats
     {
         $arguments = [];
@@ -323,7 +320,7 @@ final class ApiInsights
         return $operator->call($arguments['org'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['actor_type'], $arguments['actor_id']);
     }
 
-    /** @return Observable<Schema\ApiInsightsTimeStats> */
+    /** @return iterable<int,Schema\ApiInsightsTimeStats> */
     public function getTimeStatsByUser(array $params): iterable
     {
         $arguments = [];
@@ -362,7 +359,7 @@ final class ApiInsights
         return $operator->call($arguments['org'], $arguments['user_id'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['timestamp_increment']);
     }
 
-    /** @return Observable<Schema\ApiInsightsTimeStats> */
+    /** @return iterable<int,Schema\ApiInsightsTimeStats> */
     public function getTimeStatsByActor(array $params): iterable
     {
         $arguments = [];

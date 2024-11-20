@@ -15,7 +15,7 @@ final class Eight
     {
     }
 
-    /** @return Observable<Schema\ApiInsightsRouteStats>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\CodeScanningAlertInstance>|Observable<Schema\SecretScanningLocation>|WithoutBody */
+    /** @return iterable<int,Schema\ApiInsightsRouteStats>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\CodeScanningAlertInstance>|Observable<Schema\SecretScanningLocation>|WithoutBody */
     public function call(string $call, array $params, array $pathChunks): iterable|WithoutBody
     {
         if ($pathChunks[0] === '') {

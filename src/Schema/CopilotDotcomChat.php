@@ -25,7 +25,7 @@ final readonly class CopilotDotcomChat
                 "properties": {
                     "name": {
                         "type": "string",
-                        "description": "Name of the language used for Copilot code completion suggestions, for the given editor."
+                        "description": "Name of the model used for Copilot code completion suggestions. If the default model is used will appear as \'default\'."
                     },
                     "is_custom_model": {
                         "type": "boolean",
