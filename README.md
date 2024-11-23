@@ -2596,6 +2596,34 @@ $client->operations()->orgs()->list(        since: 5,
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/orgs#list-organizations).
 
 
+### billing/get-github-billing-usage-report-org
+
+Get billing usage report for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /organizations/{org}/settings/billing/usage', [
+        'org' => 'generated',
+        'year' => 4,
+        'month' => 5,
+        'day' => 3,
+        'hour' => 4,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->billing()->getGithubBillingUsageReportOrg(        org: 'generated',
+        year: 4,
+        month: 5,
+        day: 3,
+        hour: 4,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/billing/enhanced-billing#get-billing-usage-report-for-an-organization).
+
+
 ### orgs/get
 
 Get an organization

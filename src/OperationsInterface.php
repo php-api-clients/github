@@ -38,6 +38,8 @@ interface OperationsInterface
 
     public function orgs(): Operation\Orgs;
 
+    public function billing(): Operation\Billing;
+
     public function actions(): Operation\Actions;
 
     public function oidc(): Operation\Oidc;
@@ -59,8 +61,6 @@ interface OperationsInterface
     public function projects(): Operation\Projects;
 
     public function repos(): Operation\Repos;
-
-    public function billing(): Operation\Billing;
 
     public function teams(): Operation\Teams;
 

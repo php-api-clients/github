@@ -40,8 +40,8 @@ final class Routers
     private Internal\Router\Get\CodeScanning|null $internal🔀Router🔀Get🔀CodeScanning                 = null;
     private Internal\Router\Get\CodeSecurity|null $internal🔀Router🔀Get🔀CodeSecurity                 = null;
     private Internal\Router\Get\Pulls|null $internal🔀Router🔀Get🔀Pulls                               = null;
-    private Internal\Router\Get\ApiInsights|null $internal🔀Router🔀Get🔀ApiInsights                   = null;
     private Internal\Router\Get\Billing|null $internal🔀Router🔀Get🔀Billing                           = null;
+    private Internal\Router\Get\ApiInsights|null $internal🔀Router🔀Get🔀ApiInsights                   = null;
     private Internal\Router\Get\Checks|null $internal🔀Router🔀Get🔀Checks                             = null;
     private Internal\Router\Get\DependencyGraph|null $internal🔀Router🔀Get🔀DependencyGraph           = null;
     private Internal\Router\Get\Reactions|null $internal🔀Router🔀Get🔀Reactions                       = null;
@@ -418,15 +418,6 @@ final class Routers
         return $this->internal🔀Router🔀Get🔀Pulls;
     }
 
-    public function internal🔀Router🔀Get🔀ApiInsights(): Internal\Router\Get\ApiInsights
-    {
-        if ($this->internal🔀Router🔀Get🔀ApiInsights instanceof Internal\Router\Get\ApiInsights === false) {
-            $this->internal🔀Router🔀Get🔀ApiInsights = new Internal\Router\Get\ApiInsights(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
-        }
-
-        return $this->internal🔀Router🔀Get🔀ApiInsights;
-    }
-
     public function internal🔀Router🔀Get🔀Billing(): Internal\Router\Get\Billing
     {
         if ($this->internal🔀Router🔀Get🔀Billing instanceof Internal\Router\Get\Billing === false) {
@@ -434,6 +425,15 @@ final class Routers
         }
 
         return $this->internal🔀Router🔀Get🔀Billing;
+    }
+
+    public function internal🔀Router🔀Get🔀ApiInsights(): Internal\Router\Get\ApiInsights
+    {
+        if ($this->internal🔀Router🔀Get🔀ApiInsights instanceof Internal\Router\Get\ApiInsights === false) {
+            $this->internal🔀Router🔀Get🔀ApiInsights = new Internal\Router\Get\ApiInsights(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀Get🔀ApiInsights;
     }
 
     public function internal🔀Router🔀Get🔀Checks(): Internal\Router\Get\Checks

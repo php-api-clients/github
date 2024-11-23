@@ -90,6 +90,11 @@ final readonly class Operations implements OperationsInterface
         return new Operation\Orgs($this->operators);
     }
 
+    public function billing(): Operation\Billing
+    {
+        return new Operation\Billing($this->operators);
+    }
+
     public function actions(): Operation\Actions
     {
         return new Operation\Actions($this->operators);
@@ -143,11 +148,6 @@ final readonly class Operations implements OperationsInterface
     public function repos(): Operation\Repos
     {
         return new Operation\Repos($this->operators);
-    }
-
-    public function billing(): Operation\Billing
-    {
-        return new Operation\Billing($this->operators);
     }
 
     public function teams(): Operation\Teams

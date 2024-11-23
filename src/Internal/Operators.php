@@ -122,6 +122,7 @@ final class Operators
     private Internal\Operator\Activity\DeleteThreadSubscription|null $activity👷DeleteThreadSubscription                                                                             = null;
     private Internal\Operator\Meta\GetOctocat|null $meta👷GetOctocat                                                                                                                 = null;
     private Internal\Operator\Orgs\List_|null $orgs👷List_                                                                                                                           = null;
+    private Internal\Operator\Billing\GetGithubBillingUsageReportOrg|null $billing👷GetGithubBillingUsageReportOrg                                                                   = null;
     private Internal\Operator\Orgs\Get|null $orgs👷Get                                                                                                                               = null;
     private Internal\Operator\Orgs\Delete|null $orgs👷Delete                                                                                                                         = null;
     private Internal\Operator\Orgs\Update|null $orgs👷Update                                                                                                                         = null;
@@ -2175,6 +2176,15 @@ final class Operators
         }
 
         return $this->orgs👷List_;
+    }
+
+    public function billing👷GetGithubBillingUsageReportOrg(): Internal\Operator\Billing\GetGithubBillingUsageReportOrg
+    {
+        if ($this->billing👷GetGithubBillingUsageReportOrg instanceof Internal\Operator\Billing\GetGithubBillingUsageReportOrg === false) {
+            $this->billing👷GetGithubBillingUsageReportOrg = new Internal\Operator\Billing\GetGithubBillingUsageReportOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Organizations🌀Org🌀Settings🌀Billing🌀Usage());
+        }
+
+        return $this->billing👷GetGithubBillingUsageReportOrg;
     }
 
     public function orgs👷Get(): Internal\Operator\Orgs\Get

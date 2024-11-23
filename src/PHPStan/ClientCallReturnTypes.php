@@ -487,6 +487,10 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('Observable<Schema\\OrganizationSimple>|WithoutBody');
         }
 
+        if ($call === 'GET /organizations/{org}/settings/billing/usage') {
+            return $this->typeResolver->resolve('Schema\\BillingUsageReport');
+        }
+
         if ($call === 'GET /orgs/{org}') {
             return $this->typeResolver->resolve('');
         }
@@ -1000,51 +1004,51 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsRouteStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsRouteStats>');
         }
 
         if ($call === 'LIST /orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsRouteStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsRouteStats>');
         }
 
         if ($call === 'GET /orgs/{org}/insights/api/subject-stats') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsSubjectStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsSubjectStats>');
         }
 
         if ($call === 'LIST /orgs/{org}/insights/api/subject-stats') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsSubjectStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsSubjectStats>');
         }
 
         if ($call === 'GET /orgs/{org}/insights/api/summary-stats') {
-            return $this->typeResolver->resolve('Schema\\ApiInsightsSummaryStats');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/insights/api/summary-stats/users/{user_id}') {
-            return $this->typeResolver->resolve('Schema\\ApiInsightsSummaryStats');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/insights/api/summary-stats/{actor_type}/{actor_id}') {
-            return $this->typeResolver->resolve('Schema\\ApiInsightsSummaryStats');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/insights/api/time-stats') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsTimeStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsTimeStats>');
         }
 
         if ($call === 'GET /orgs/{org}/insights/api/time-stats/users/{user_id}') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsTimeStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsTimeStats>');
         }
 
         if ($call === 'GET /orgs/{org}/insights/api/time-stats/{actor_type}/{actor_id}') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsTimeStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsTimeStats>');
         }
 
         if ($call === 'GET /orgs/{org}/insights/api/user-stats/{user_id}') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsUserStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsUserStats>');
         }
 
         if ($call === 'LIST /orgs/{org}/insights/api/user-stats/{user_id}') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsUserStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsUserStats>');
         }
 
         if ($call === 'GET /orgs/{org}/installation') {

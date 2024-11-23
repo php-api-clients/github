@@ -24,6 +24,7 @@ final readonly class GetSummaryStatsByUser
     {
     }
 
+    /** @return */
     public function call(string $org, string $userId, string $minTimestamp, string $maxTimestamp): ApiInsightsSummaryStats
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\ApiInsights\GetSummaryStatsByUser($this->responseSchemaValidator, $this->hydrator, $org, $userId, $minTimestamp, $maxTimestamp);

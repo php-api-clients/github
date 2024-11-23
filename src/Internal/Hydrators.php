@@ -79,6 +79,7 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Notifications\Threads\ThreadId\Subscription|null $operation🌀Notifications🌀Threads🌀ThreadId🌀Subscription                                                                                                                     = null;
     private Internal\Hydrator\Operation\Octocat|null $operation🌀Octocat                                                                                                                                                                                             = null;
     private Internal\Hydrator\Operation\Organizations|null $operation🌀Organizations                                                                                                                                                                                 = null;
+    private Internal\Hydrator\Operation\Organizations\Org\Settings\Billing\Usage|null $operation🌀Organizations🌀Org🌀Settings🌀Billing🌀Usage                                                                                                                           = null;
     private Internal\Hydrator\Operation\Orgs\Org|null $operation🌀Orgs🌀Org                                                                                                                                                                                           = null;
     private Internal\Hydrator\Operation\Orgs\Org\Actions\Cache\Usage|null $operation🌀Orgs🌀Org🌀Actions🌀Cache🌀Usage                                                                                                                                                   = null;
     private Internal\Hydrator\Operation\Orgs\Org\Actions\Cache\UsageByRepository|null $operation🌀Orgs🌀Org🌀Actions🌀Cache🌀UsageByRepository                                                                                                                           = null;
@@ -769,6 +770,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Activity\\MarkNotificationsAsRead\\Response\\ApplicationJson\\Accepted' => $this->getObjectMapperOperation🌀Notifications()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Thread', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository\\License', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\AdvancedSecurity', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\DependabotSecurityUpdates', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanning', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningPushProtection', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningNonProviderPatterns', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningAiDetection', '\\ApiClients\\Client\\GitHub\\Schema\\Thread\\Subject' => $this->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\ThreadSubscription' => $this->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId🌀Subscription()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\BillingUsageReport' => $this->getObjectMapperOperation🌀Organizations🌀Org🌀Settings🌀Billing🌀Usage()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationFull', '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationFull\\Plan', '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\Delete\\Response\\ApplicationJson\\Accepted\\Application\\Json' => $this->getObjectMapperOperation🌀Orgs🌀Org()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\ActionsCacheUsageOrgEnterprise' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Cache🌀Usage()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\GetActionsCacheUsageByRepoForOrg\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Cache🌀UsageByRepository()->hydrateObject($className, $payload),
@@ -1128,6 +1130,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Activity\\MarkNotificationsAsRead\\Response\\ApplicationJson\\Accepted' => $this->getObjectMapperOperation🌀Notifications()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Thread', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\MinimalRepository\\License', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\AdvancedSecurity', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\DependabotSecurityUpdates', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanning', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningPushProtection', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningNonProviderPatterns', '\\ApiClients\\Client\\GitHub\\Schema\\SecurityAndAnalysis\\SecretScanningAiDetection', '\\ApiClients\\Client\\GitHub\\Schema\\Thread\\Subject' => $this->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\ThreadSubscription' => $this->getObjectMapperOperation🌀Notifications🌀Threads🌀ThreadId🌀Subscription()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\BillingUsageReport' => $this->getObjectMapperOperation🌀Organizations🌀Org🌀Settings🌀Billing🌀Usage()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationFull', '\\ApiClients\\Client\\GitHub\\Schema\\OrganizationFull\\Plan', '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\Delete\\Response\\ApplicationJson\\Accepted\\Application\\Json' => $this->getObjectMapperOperation🌀Orgs🌀Org()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\ActionsCacheUsageOrgEnterprise' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Cache🌀Usage()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Actions\\GetActionsCacheUsageByRepoForOrg\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀Cache🌀UsageByRepository()->serializeObject($object),
@@ -2059,6 +2062,15 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Organizations;
+    }
+
+    public function getObjectMapperOperation🌀Organizations🌀Org🌀Settings🌀Billing🌀Usage(): Internal\Hydrator\Operation\Organizations\Org\Settings\Billing\Usage
+    {
+        if ($this->operation🌀Organizations🌀Org🌀Settings🌀Billing🌀Usage instanceof Internal\Hydrator\Operation\Organizations\Org\Settings\Billing\Usage === false) {
+            $this->operation🌀Organizations🌀Org🌀Settings🌀Billing🌀Usage = new Internal\Hydrator\Operation\Organizations\Org\Settings\Billing\Usage();
+        }
+
+        return $this->operation🌀Organizations🌀Org🌀Settings🌀Billing🌀Usage;
     }
 
     public function getObjectMapperOperation🌀Orgs🌀Org(): Internal\Hydrator\Operation\Orgs\Org

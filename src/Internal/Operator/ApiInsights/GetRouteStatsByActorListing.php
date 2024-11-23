@@ -24,7 +24,7 @@ final readonly class GetRouteStatsByActorListing
     {
     }
 
-    /** @return iterable<int,Schema\ApiInsightsRouteStats> */
+    /** @return Observable<Schema\ApiInsightsRouteStats> */
     public function call(string $org, string $actorType, int $actorId, string $minTimestamp, string $maxTimestamp, array $sort, int $page = 1, int $perPage = 30, string $direction = 'desc'): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\ApiInsights\GetRouteStatsByActorListing($this->responseSchemaValidator, $this->hydrator, $org, $actorType, $actorId, $minTimestamp, $maxTimestamp, $sort, $page, $perPage, $direction);

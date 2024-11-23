@@ -24,7 +24,7 @@ final readonly class GetSubjectStatsListing
     {
     }
 
-    /** @return iterable<int,Schema\ApiInsightsSubjectStats> */
+    /** @return Observable<Schema\ApiInsightsSubjectStats> */
     public function call(string $org, string $minTimestamp, string $maxTimestamp, array $sort, int $page = 1, int $perPage = 30, string $direction = 'desc'): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\ApiInsights\GetSubjectStatsListing($this->responseSchemaValidator, $this->hydrator, $org, $minTimestamp, $maxTimestamp, $sort, $page, $perPage, $direction);
