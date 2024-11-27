@@ -190,6 +190,12 @@ final readonly class Commit
                 },
                 "verified": {
                     "type": "boolean"
+                },
+                "verified_at": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             }
         }
@@ -221,7 +227,8 @@ final readonly class Commit
         "payload": "generated",
         "reason": "ocsp_pending",
         "signature": "generated",
-        "verified": false
+        "verified": false,
+        "verified_at": "generated"
     }
 }';
 

@@ -309,7 +309,7 @@ final class Repos
         return $operator->call($arguments['username'], $arguments['direction'], $arguments['type'], $arguments['sort'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\RuleSuites> */
+    /** @return iterable<int,Schema\RuleSuites> */
     public function getOrgRuleSuites(array $params): iterable
     {
         $arguments = [];

@@ -488,7 +488,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /organizations/{org}/settings/billing/usage') {
-            return $this->typeResolver->resolve('Schema\\BillingUsageReport');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}') {
@@ -1428,11 +1428,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/rulesets/rule-suites') {
-            return $this->typeResolver->resolve('Observable<Schema\\RuleSuites>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\RuleSuites>');
         }
 
         if ($call === 'LIST /orgs/{org}/rulesets/rule-suites') {
-            return $this->typeResolver->resolve('Observable<Schema\\RuleSuites>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\RuleSuites>');
         }
 
         if ($call === 'GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}') {
@@ -3641,6 +3641,10 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
 
         if ($call === 'POST /repos/{owner}/{repo}/secret-scanning/push-protection-bypasses') {
             return $this->typeResolver->resolve('');
+        }
+
+        if ($call === 'GET /repos/{owner}/{repo}/secret-scanning/scan-history') {
+            return $this->typeResolver->resolve('Schema\\SecretScanningScanHistory|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/security-advisories') {

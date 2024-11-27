@@ -8277,7 +8277,7 @@ Using the `call` method:
 $client->call('GET /orgs/{org}/rulesets/rule-suites', [
         'org' => 'generated',
         'ref' => 'generated',
-        'repository_name' => 15,
+        'repository_name' => 'generated',
         'actor_name' => 'generated',
         'time_period' => 'generated',
         'rule_suite_result' => 'generated',
@@ -8290,7 +8290,7 @@ Operations method:
 ```php
 $client->operations()->repos()->getOrgRuleSuites(        org: 'generated',
         ref: 'generated',
-        repository_name: 15,
+        repository_name: 'generated',
         actor_name: 'generated',
         time_period: 'generated',
         rule_suite_result: 'generated',
@@ -8311,7 +8311,7 @@ Using the `call` method:
 $client->call('LIST /orgs/{org}/rulesets/rule-suites', [
         'org' => 'generated',
         'ref' => 'generated',
-        'repository_name' => 15,
+        'repository_name' => 'generated',
         'actor_name' => 'generated',
         'time_period' => 'generated',
         'rule_suite_result' => 'generated',
@@ -8324,7 +8324,7 @@ Operations method:
 ```php
 $client->operations()->repos()->getOrgRuleSuitesListing(        org: 'generated',
         ref: 'generated',
-        repository_name: 15,
+        repository_name: 'generated',
         actor_name: 'generated',
         time_period: 'generated',
         rule_suite_result: 'generated',
@@ -22461,6 +22461,28 @@ $client->operations()->secretScanning()->createPushProtectionBypass(        owne
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/secret-scanning/secret-scanning#create-a-push-protection-bypass).
+
+
+### secret-scanning/get-scan-history
+
+Get secret scanning scan history for a repository
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/secret-scanning/scan-history', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->secretScanning()->getScanHistory(        owner: 'generated',
+        repo: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/secret-scanning/secret-scanning#get-secret-scanning-scan-history-for-a-repository).
 
 
 ### security-advisories/list-repository-advisories

@@ -415,6 +415,17 @@ class Commits implements ObjectMapper
             $properties['payload'] = $value;
 
             after_payload:
+
+            $value = $payload['verified_at'] ?? null;
+
+            if ($value === null) {
+                $properties['verifiedAt'] = null;
+                goto after_verifiedAt;
+            }
+
+            $properties['verifiedAt'] = $value;
+
+            after_verifiedAt:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\GitCommit\Verification', $exception, stack: $this->hydrationStack);
         }
@@ -768,6 +779,14 @@ class Commits implements ObjectMapper
         }
 
         after_payload:        $result['payload'] = $payload;
+
+        $verifiedAt = $object->verifiedAt;
+
+        if ($verifiedAt === null) {
+            goto after_verifiedAt;
+        }
+
+        after_verifiedAt:        $result['verified_at'] = $verifiedAt;
 
         return $result;
     }

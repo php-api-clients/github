@@ -22,6 +22,7 @@ final class Billing
     {
     }
 
+    /** @return */
     public function getGithubBillingUsageReportOrg(array $params): BillingUsageReport
     {
         $arguments = [];

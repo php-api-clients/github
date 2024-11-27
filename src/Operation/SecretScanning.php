@@ -8,6 +8,7 @@ use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\SecretScanningAlert;
 use ApiClients\Client\GitHub\Schema\SecretScanningPushProtectionBypass;
+use ApiClients\Client\GitHub\Schema\SecretScanningScanHistory;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 
 final class SecretScanning
@@ -74,5 +75,10 @@ final class SecretScanning
     public function createPushProtectionBypass(string $owner, string $repo, array $params): SecretScanningPushProtectionBypass|WithoutBody
     {
         return $this->operators->secretScanning👷CreatePushProtectionBypass()->call($owner, $repo, $params);
+    }
+
+    public function getScanHistory(string $owner, string $repo): SecretScanningScanHistory|WithoutBody
+    {
+        return $this->operators->secretScanning👷GetScanHistory()->call($owner, $repo);
     }
 }

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema\WebhookStatus\Commit\Commit;
 
+use EventSauce\ObjectHydrator\MapFrom;
+
 final readonly class Verification
 {
     public const SCHEMA_JSON         = '{
@@ -49,6 +51,12 @@ final readonly class Verification
         },
         "verified": {
             "type": "boolean"
+        },
+        "verified_at": {
+            "type": [
+                "string",
+                "null"
+            ]
         }
     }
 }';
@@ -58,10 +66,12 @@ final readonly class Verification
     "payload": "generated",
     "reason": "ocsp_pending",
     "signature": "generated",
-    "verified": false
+    "verified": false,
+    "verified_at": "generated"
 }';
 
-    public function __construct(public string|null $payload, public string $reason, public string|null $signature, public bool $verified)
+    public function __construct(public string|null $payload, public string $reason, public string|null $signature, public bool $verified, #[MapFrom('verified_at')]
+    public string|null $verifiedAt,)
     {
     }
 }

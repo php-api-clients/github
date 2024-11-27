@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema;
 
+use EventSauce\ObjectHydrator\MapFrom;
+
 final readonly class Verification
 {
     public const SCHEMA_JSON         = '{
@@ -33,6 +35,12 @@ final readonly class Verification
                 "string",
                 "null"
             ]
+        },
+        "verified_at": {
+            "type": [
+                "string",
+                "null"
+            ]
         }
     }
 }';
@@ -42,10 +50,12 @@ final readonly class Verification
     "verified": false,
     "reason": "generated",
     "payload": "generated",
-    "signature": "generated"
+    "signature": "generated",
+    "verified_at": "generated"
 }';
 
-    public function __construct(public bool $verified, public string $reason, public string|null $payload, public string|null $signature)
+    public function __construct(public bool $verified, public string $reason, public string|null $payload, public string|null $signature, #[MapFrom('verified_at')]
+    public string|null $verifiedAt,)
     {
     }
 }

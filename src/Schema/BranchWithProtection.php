@@ -215,6 +215,12 @@ final readonly class BranchWithProtection
                                         "string",
                                         "null"
                                     ]
+                                },
+                                "verified_at": {
+                                    "type": [
+                                        "string",
+                                        "null"
+                                    ]
                                 }
                             }
                         }
@@ -2835,7 +2841,8 @@ final readonly class BranchWithProtection
                 "verified": false,
                 "reason": "generated",
                 "payload": "generated",
-                "signature": "generated"
+                "signature": "generated",
+                "verified_at": "generated"
             }
         },
         "author": null,

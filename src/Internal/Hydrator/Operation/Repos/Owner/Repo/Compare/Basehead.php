@@ -699,6 +699,17 @@ class Basehead implements ObjectMapper
             $properties['signature'] = $value;
 
             after_signature:
+
+            $value = $payload['verified_at'] ?? null;
+
+            if ($value === null) {
+                $properties['verifiedAt'] = null;
+                goto after_verifiedAt;
+            }
+
+            $properties['verifiedAt'] = $value;
+
+            after_verifiedAt:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Verification', $exception, stack: $this->hydrationStack);
         }
@@ -1246,6 +1257,14 @@ class Basehead implements ObjectMapper
         }
 
         after_signature:        $result['signature'] = $signature;
+
+        $verifiedAt = $object->verifiedAt;
+
+        if ($verifiedAt === null) {
+            goto after_verifiedAt;
+        }
+
+        after_verifiedAt:        $result['verified_at'] = $verifiedAt;
 
         return $result;
     }

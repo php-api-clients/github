@@ -1081,6 +1081,17 @@ class Status implements ObjectMapper
             $properties['verified'] = $value;
 
             after_verified:
+
+            $value = $payload['verified_at'] ?? null;
+
+            if ($value === null) {
+                $properties['verifiedAt'] = null;
+                goto after_verifiedAt;
+            }
+
+            $properties['verifiedAt'] = $value;
+
+            after_verifiedAt:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookStatus\Commit\Commit\Verification', $exception, stack: $this->hydrationStack);
         }
@@ -5153,6 +5164,14 @@ class Status implements ObjectMapper
 
         $verified                                  = $object->verified;
         after_verified:        $result['verified'] = $verified;
+
+        $verifiedAt = $object->verifiedAt;
+
+        if ($verifiedAt === null) {
+            goto after_verifiedAt;
+        }
+
+        after_verifiedAt:        $result['verified_at'] = $verifiedAt;
 
         return $result;
     }

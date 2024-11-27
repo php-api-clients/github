@@ -186,6 +186,12 @@ final readonly class GitCommit
                         "string",
                         "null"
                     ]
+                },
+                "verified_at": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             }
         },
@@ -233,7 +239,8 @@ final readonly class GitCommit
         "verified": false,
         "reason": "generated",
         "signature": "generated",
-        "payload": "generated"
+        "payload": "generated",
+        "verified_at": "generated"
     },
     "html_url": "https:\\/\\/example.com\\/"
 }';

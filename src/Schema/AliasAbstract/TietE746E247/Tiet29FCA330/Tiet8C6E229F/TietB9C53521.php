@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet015670A0\Tiet1383EE50\Tiet883D61E6;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietE746E247\Tiet29FCA330\Tiet8C6E229F;
 
-abstract readonly class Tiet94035AC2
+use EventSauce\ObjectHydrator\MapFrom;
+
+abstract readonly class TietB9C53521
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -32,6 +34,12 @@ abstract readonly class Tiet94035AC2
                 "string",
                 "null"
             ]
+        },
+        "verified_at": {
+            "type": [
+                "string",
+                "null"
+            ]
         }
     }
 }';
@@ -41,10 +49,12 @@ abstract readonly class Tiet94035AC2
     "verified": false,
     "reason": "generated",
     "signature": "generated",
-    "payload": "generated"
+    "payload": "generated",
+    "verified_at": "generated"
 }';
 
-    public function __construct(public bool $verified, public string $reason, public string|null $signature, public string|null $payload)
+    public function __construct(public bool $verified, public string $reason, public string|null $signature, public string|null $payload, #[MapFrom('verified_at')]
+    public string|null $verifiedAt,)
     {
     }
 }

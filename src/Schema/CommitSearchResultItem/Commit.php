@@ -125,6 +125,12 @@ final readonly class Commit
                         "string",
                         "null"
                     ]
+                },
+                "verified_at": {
+                    "type": [
+                        "string",
+                        "null"
+                    ]
                 }
             }
         }
@@ -154,7 +160,8 @@ final readonly class Commit
         "verified": false,
         "reason": "generated",
         "payload": "generated",
-        "signature": "generated"
+        "signature": "generated",
+        "verified_at": "generated"
     }
 }';
 

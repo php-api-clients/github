@@ -157,6 +157,12 @@ final readonly class CommitSearchResultItem
                                 "string",
                                 "null"
                             ]
+                        },
+                        "verified_at": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
                         }
                     }
                 }
@@ -1301,7 +1307,8 @@ final readonly class CommitSearchResultItem
             "verified": false,
             "reason": "generated",
             "payload": "generated",
-            "signature": "generated"
+            "signature": "generated",
+            "verified_at": "generated"
         }
     },
     "author": {

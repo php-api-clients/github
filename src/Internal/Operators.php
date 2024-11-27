@@ -911,6 +911,7 @@ final class Operators
     private Internal\Operator\SecretScanning\ListLocationsForAlert|null $secretScanning👷ListLocationsForAlert                                                                       = null;
     private Internal\Operator\SecretScanning\ListLocationsForAlertListing|null $secretScanning👷ListLocationsForAlertListing                                                         = null;
     private Internal\Operator\SecretScanning\CreatePushProtectionBypass|null $secretScanning👷CreatePushProtectionBypass                                                             = null;
+    private Internal\Operator\SecretScanning\GetScanHistory|null $secretScanning👷GetScanHistory                                                                                     = null;
     private Internal\Operator\SecurityAdvisories\ListRepositoryAdvisories|null $securityAdvisories👷ListRepositoryAdvisories                                                         = null;
     private Internal\Operator\SecurityAdvisories\CreateRepositoryAdvisory|null $securityAdvisories👷CreateRepositoryAdvisory                                                         = null;
     private Internal\Operator\SecurityAdvisories\CreatePrivateVulnerabilityReport|null $securityAdvisories👷CreatePrivateVulnerabilityReport                                         = null;
@@ -9277,6 +9278,15 @@ final class Operators
         }
 
         return $this->secretScanning👷CreatePushProtectionBypass;
+    }
+
+    public function secretScanning👷GetScanHistory(): Internal\Operator\SecretScanning\GetScanHistory
+    {
+        if ($this->secretScanning👷GetScanHistory instanceof Internal\Operator\SecretScanning\GetScanHistory === false) {
+            $this->secretScanning👷GetScanHistory = new Internal\Operator\SecretScanning\GetScanHistory($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecretScanning🌀ScanHistory());
+        }
+
+        return $this->secretScanning👷GetScanHistory;
     }
 
     public function securityAdvisories👷ListRepositoryAdvisories(): Internal\Operator\SecurityAdvisories\ListRepositoryAdvisories

@@ -12361,6 +12361,12 @@ final readonly class TimelineIssueEvents
                                 "string",
                                 "null"
                             ]
+                        },
+                        "verified_at": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
                         }
                     }
                 },

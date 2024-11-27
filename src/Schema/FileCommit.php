@@ -159,6 +159,12 @@ final readonly class FileCommit
                                 "string",
                                 "null"
                             ]
+                        },
+                        "verified_at": {
+                            "type": [
+                                "string",
+                                "null"
+                            ]
                         }
                     }
                 }
@@ -222,7 +228,8 @@ final readonly class FileCommit
             "verified": false,
             "reason": "generated",
             "signature": "generated",
-            "payload": "generated"
+            "payload": "generated",
+            "verified_at": "generated"
         }
     }
 }';

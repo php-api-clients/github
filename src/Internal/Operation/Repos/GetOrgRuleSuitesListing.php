@@ -29,8 +29,8 @@ final class GetOrgRuleSuitesListing
     private string $org;
     /**The name of the ref. Cannot contain wildcard characters. Optionally prefix with `refs/heads/` to limit to branches or `refs/tags/` to limit to tags. Omit the prefix to search across all refs. When specified, only rule evaluations triggered for this ref will be returned. **/
     private string $ref;
-    /**The name of the repository to filter on. When specified, only rule evaluations from this repository will be returned. **/
-    private int $repositoryName;
+    /**The name of the repository to filter on. **/
+    private string $repositoryName;
     /**The handle for the GitHub user account to filter on. When specified, only rule evaluations triggered by this actor will be returned. **/
     private string $actorName;
     /**The time period to filter by.
@@ -44,7 +44,7 @@ final class GetOrgRuleSuitesListing
     /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Rulesets\RuleSuites $hydrator, string $org, string $ref, int $repositoryName, string $actorName, string $timePeriod = 'day', string $ruleSuiteResult = 'all', int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Rulesets\RuleSuites $hydrator, string $org, string $ref, string $repositoryName, string $actorName, string $timePeriod = 'day', string $ruleSuiteResult = 'all', int $perPage = 30, int $page = 1)
     {
         $this->org             = $org;
         $this->ref             = $ref;
