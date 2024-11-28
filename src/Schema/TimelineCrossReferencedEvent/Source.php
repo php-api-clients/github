@@ -2622,6 +2622,26 @@ final readonly class Source
                             "type": "integer"
                         }
                     }
+                },
+                "sub_issues_summary": {
+                    "title": "Sub-issues Summary",
+                    "required": [
+                        "total",
+                        "completed",
+                        "percent_completed"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "total": {
+                            "type": "integer"
+                        },
+                        "completed": {
+                            "type": "integer"
+                        },
+                        "percent_completed": {
+                            "type": "integer"
+                        }
+                    }
                 }
             },
             "description": "Issues are a great way to keep track of tasks, enhancements, and bugs for your projects."
@@ -2980,6 +3000,11 @@ final readonly class Source
             "hooray": 6,
             "eyes": 4,
             "rocket": 6
+        },
+        "sub_issues_summary": {
+            "total": 5,
+            "completed": 9,
+            "percent_completed": 17
         }
     }
 }';

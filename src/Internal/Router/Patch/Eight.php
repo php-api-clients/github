@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema\Issue;
 use ApiClients\Client\GitHub\Schema\ProtectedBranchPullRequestReview;
 use ApiClients\Client\GitHub\Schema\StatusCheckPolicy;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
@@ -16,7 +17,8 @@ final class Eight
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): ProtectedBranchPullRequestReview|StatusCheckPolicy|WithoutBody
+    /** @return |Schema\Issue */
+    public function call(string $call, array $params, array $pathChunks): ProtectedBranchPullRequestReview|StatusCheckPolicy|WithoutBody|Issue
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'repos') {
@@ -42,6 +44,16 @@ final class Eight
                                     if ($pathChunks[7] === '{name}') {
                                         if ($call === 'PATCH /repos/{owner}/{repo}/environments/{environment_name}/variables/{name}') {
                                             return $this->routers->internal🔀Router🔀Patch🔀Actions()->updateEnvironmentVariable($params);
+                                        }
+                                    }
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'issues') {
+                            if ($pathChunks[5] === '{issue_number}') {
+                                if ($pathChunks[6] === 'sub_issues') {
+                                    if ($pathChunks[7] === 'priority') {
+                                        if ($call === 'PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority') {
+                                            return $this->routers->internal🔀Router🔀Patch🔀Issues()->reprioritizeSubIssue($params);
                                         }
                                     }
                                 }

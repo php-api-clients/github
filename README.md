@@ -19149,6 +19149,134 @@ $client->operations()->reactions()->deleteForIssue(        owner: 'generated',
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/reactions/reactions#delete-an-issue-reaction).
 
 
+### issues/remove-sub-issue
+
+Remove sub-issue
+
+Using the `call` method:
+```php
+$client->call('DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'issue_number' => 12,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->issues()->removeSubIssue(        owner: 'generated',
+        repo: 'generated',
+        issue_number: 12,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/sub-issues#remove-sub-issue).
+
+
+### issues/list-sub-issues
+
+List sub-issues
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'issue_number' => 12,
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->issues()->listSubIssues(        owner: 'generated',
+        repo: 'generated',
+        issue_number: 12,
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/sub-issues#list-sub-issues).
+
+
+### issues/list-sub-issues
+
+List sub-issues
+
+Using the `call` method:
+```php
+$client->call('LIST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'issue_number' => 12,
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->issues()->listSubIssuesListing(        owner: 'generated',
+        repo: 'generated',
+        issue_number: 12,
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/sub-issues#list-sub-issues).
+
+
+### issues/add-sub-issue
+
+Add sub-issue
+
+Using the `call` method:
+```php
+$client->call('POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'issue_number' => 12,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->issues()->addSubIssue(        owner: 'generated',
+        repo: 'generated',
+        issue_number: 12,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/sub-issues#add-sub-issue).
+
+
+### issues/reprioritize-sub-issue
+
+Reprioritize sub-issue
+
+Using the `call` method:
+```php
+$client->call('PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'issue_number' => 12,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->issues()->reprioritizeSubIssue(        owner: 'generated',
+        repo: 'generated',
+        issue_number: 12,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/issues/sub-issues#reprioritize-sub-issue).
+
+
 ### issues/list-events-for-timeline
 
 List timeline events for an issue

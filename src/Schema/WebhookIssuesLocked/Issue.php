@@ -1123,6 +1123,26 @@ final readonly class Issue
             "type": "string",
             "format": "uri"
         },
+        "sub_issues_summary": {
+            "title": "Sub-issues Summary",
+            "required": [
+                "total",
+                "completed",
+                "percent_completed"
+            ],
+            "type": "object",
+            "properties": {
+                "total": {
+                    "type": "integer"
+                },
+                "completed": {
+                    "type": "integer"
+                },
+                "percent_completed": {
+                    "type": "integer"
+                }
+            }
+        },
         "state": {
             "enum": [
                 "open",
@@ -1506,6 +1526,11 @@ final readonly class Issue
         "url": "https:\\/\\/example.com\\/"
     },
     "repository_url": "https:\\/\\/example.com\\/",
+    "sub_issues_summary": {
+        "total": 5,
+        "completed": 9,
+        "percent_completed": 17
+    },
     "state": "open",
     "state_reason": "generated",
     "timeline_url": "https:\\/\\/example.com\\/",
@@ -1559,7 +1584,8 @@ final readonly class Issue
     public string $nodeId, public int $number, #[MapFrom('performed_via_github_app')]
     public Schema\WebhookIssuesLocked\Issue\PerformedViaGithubApp|null $performedViaGithubApp, #[MapFrom('pull_request')]
     public Schema\WebhookIssuesLocked\Issue\PullRequest|null $pullRequest, public Schema\WebhookIssuesLocked\Issue\Reactions $reactions, #[MapFrom('repository_url')]
-    public string $repositoryUrl, public string|null $state, #[MapFrom('state_reason')]
+    public string $repositoryUrl, #[MapFrom('sub_issues_summary')]
+    public Schema\WebhookIssuesLocked\Issue\SubIssuesSummary|null $subIssuesSummary, public string|null $state, #[MapFrom('state_reason')]
     public string|null $stateReason, #[MapFrom('timeline_url')]
     public string|null $timelineUrl, public string $title, #[MapFrom('updated_at')]
     public string $updatedAt, public string $url, public Schema\WebhookIssuesLocked\Issue\User|null $user,)

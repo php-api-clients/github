@@ -800,6 +800,45 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return iterable<int,Schema\Issue> */
+    public function listSubIssues(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('issue_number', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: issue_number');
+        }
+
+        $arguments['issue_number'] = $params['issue_number'];
+        unset($params['issue_number']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $operator = new Internal\Operator\Issues\ListSubIssues($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀IssueNumber🌀SubIssues());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $arguments['per_page'], $arguments['page']);
+    }
+
     /** @return Observable<Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent|Schema\TimelineCommentEvent|Schema\TimelineCrossReferencedEvent|Schema\TimelineCommittedEvent|Schema\TimelineReviewedEvent|Schema\TimelineLineCommentedEvent|Schema\TimelineCommitCommentedEvent|Schema\TimelineAssignedIssueEvent|Schema\TimelineUnassignedIssueEvent|Schema\StateChangeIssueEvent> */
     public function listEventsForTimeline(array $params): iterable
     {

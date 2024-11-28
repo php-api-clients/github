@@ -12172,6 +12172,26 @@ final readonly class TimelineIssueEvents
                                             "type": "integer"
                                         }
                                     }
+                                },
+                                "sub_issues_summary": {
+                                    "title": "Sub-issues Summary",
+                                    "required": [
+                                        "total",
+                                        "completed",
+                                        "percent_completed"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "total": {
+                                            "type": "integer"
+                                        },
+                                        "completed": {
+                                            "type": "integer"
+                                        },
+                                        "percent_completed": {
+                                            "type": "integer"
+                                        }
+                                    }
                                 }
                             },
                             "description": "Issues are a great way to keep track of tasks, enhancements, and bugs for your projects."

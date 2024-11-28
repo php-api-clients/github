@@ -1428,11 +1428,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/rulesets/rule-suites') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\RuleSuites>');
+            return $this->typeResolver->resolve('Observable<Schema\\RuleSuites>');
         }
 
         if ($call === 'LIST /orgs/{org}/rulesets/rule-suites') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\RuleSuites>');
+            return $this->typeResolver->resolve('Observable<Schema\\RuleSuites>');
         }
 
         if ($call === 'GET /orgs/{org}/rulesets/rule-suites/{rule_suite_id}') {
@@ -3135,6 +3135,26 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('');
         }
 
+        if ($call === 'DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue') {
+            return $this->typeResolver->resolve('Schema\\Issue');
+        }
+
+        if ($call === 'GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\Issue>');
+        }
+
+        if ($call === 'LIST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\Issue>');
+        }
+
+        if ($call === 'POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues') {
+            return $this->typeResolver->resolve('Schema\\Issue');
+        }
+
+        if ($call === 'PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority') {
+            return $this->typeResolver->resolve('Schema\\Issue');
+        }
+
         if ($call === 'GET /repos/{owner}/{repo}/issues/{issue_number}/timeline') {
             return $this->typeResolver->resolve('Observable<Schema\\LabeledIssueEvent|Schema\\UnlabeledIssueEvent|Schema\\MilestonedIssueEvent|Schema\\DemilestonedIssueEvent|Schema\\RenamedIssueEvent|Schema\\ReviewRequestedIssueEvent|Schema\\ReviewRequestRemovedIssueEvent|Schema\\ReviewDismissedIssueEvent|Schema\\LockedIssueEvent|Schema\\AddedToProjectIssueEvent|Schema\\MovedColumnInProjectIssueEvent|Schema\\RemovedFromProjectIssueEvent|Schema\\ConvertedNoteToIssueIssueEvent|Schema\\TimelineCommentEvent|Schema\\TimelineCrossReferencedEvent|Schema\\TimelineCommittedEvent|Schema\\TimelineReviewedEvent|Schema\\TimelineLineCommentedEvent|Schema\\TimelineCommitCommentedEvent|Schema\\TimelineAssignedIssueEvent|Schema\\TimelineUnassignedIssueEvent|Schema\\StateChangeIssueEvent>');
         }
@@ -3644,7 +3664,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/secret-scanning/scan-history') {
-            return $this->typeResolver->resolve('Schema\\SecretScanningScanHistory|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/security-advisories') {

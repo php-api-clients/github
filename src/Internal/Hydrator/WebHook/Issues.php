@@ -46,6 +46,7 @@ use ApiClients\Client\GitHub\Schema\WebhooksIssue\PerformedViaGithubApp\Owner;
 use ApiClients\Client\GitHub\Schema\WebhooksIssue\PerformedViaGithubApp\Permissions;
 use ApiClients\Client\GitHub\Schema\WebhooksIssue\PullRequest;
 use ApiClients\Client\GitHub\Schema\WebhooksIssue\Reactions;
+use ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary;
 use ApiClients\Client\GitHub\Schema\WebhooksIssue\User;
 use ApiClients\Client\GitHub\Schema\WebhooksIssue2;
 use ApiClients\Client\GitHub\Schema\WebhooksLabel;
@@ -100,6 +101,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($payload),
@@ -119,6 +121,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue($payload),
@@ -130,6 +133,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue($payload),
@@ -141,6 +145,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksMilestone' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksMilestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone⚡️Creator($payload),
@@ -157,6 +162,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksLabel' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksLabel($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled($payload),
@@ -169,6 +175,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue($payload),
@@ -180,6 +187,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue($payload),
@@ -191,6 +199,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes($payload),
@@ -203,6 +212,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️License($payload),
@@ -217,6 +227,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesPinned' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue2' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2($payload),
@@ -228,6 +239,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue2\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue2\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue2\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksIssue2\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue2\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue($payload),
@@ -239,6 +251,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes($payload),
@@ -251,6 +264,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewIssue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewIssue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewIssue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewIssue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewIssue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewRepository' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewRepository($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewRepository\License' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewRepository⚡️License($payload),
@@ -269,6 +283,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesUnpinned' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnpinned($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\CustomProperties' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️CustomProperties($payload),
@@ -1181,6 +1196,26 @@ class Issues implements ObjectMapper
             $properties['repositoryUrl'] = $value;
 
             after_repositoryUrl:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
 
             $value = $payload['state'] ?? null;
 
@@ -3042,6 +3077,58 @@ class Issues implements ObjectMapper
             return new Reactions(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue\Reactions', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️SubIssuesSummary(array $payload): SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -6788,6 +6875,26 @@ class Issues implements ObjectMapper
 
             after_repositoryUrl:
 
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
+
             $value = $payload['state'] ?? null;
 
             if ($value === null) {
@@ -8651,6 +8758,58 @@ class Issues implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\User
     {
         $properties    = [];
@@ -9364,6 +9523,26 @@ class Issues implements ObjectMapper
             $properties['repositoryUrl'] = $value;
 
             after_repositoryUrl:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
 
             $value = $payload['state'] ?? null;
 
@@ -11228,6 +11407,58 @@ class Issues implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\User
     {
         $properties    = [];
@@ -11961,6 +12192,26 @@ class Issues implements ObjectMapper
             $properties['repositoryUrl'] = $value;
 
             after_repositoryUrl:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
 
             $value = $payload['state'] ?? null;
 
@@ -13814,6 +14065,58 @@ class Issues implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\User
     {
         $properties    = [];
@@ -15151,6 +15454,26 @@ class Issues implements ObjectMapper
             $properties['repositoryUrl'] = $value;
 
             after_repositoryUrl:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
 
             $value = $payload['state'] ?? null;
 
@@ -17015,6 +17338,58 @@ class Issues implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\User
     {
         $properties    = [];
@@ -17844,6 +18219,26 @@ class Issues implements ObjectMapper
             $properties['repositoryUrl'] = $value;
 
             after_repositoryUrl:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
 
             $value = $payload['state'] ?? null;
 
@@ -19708,6 +20103,58 @@ class Issues implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\User
     {
         $properties    = [];
@@ -20421,6 +20868,26 @@ class Issues implements ObjectMapper
             $properties['repositoryUrl'] = $value;
 
             after_repositoryUrl:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
 
             $value = $payload['state'] ?? null;
 
@@ -22285,6 +22752,58 @@ class Issues implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\User
     {
         $properties    = [];
@@ -23018,6 +23537,26 @@ class Issues implements ObjectMapper
             $properties['repositoryUrl'] = $value;
 
             after_repositoryUrl:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
 
             $value = $payload['state'] ?? null;
 
@@ -24871,6 +25410,58 @@ class Issues implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\User
     {
         $properties    = [];
@@ -25663,6 +26254,26 @@ class Issues implements ObjectMapper
             $properties['repositoryUrl'] = $value;
 
             after_repositoryUrl:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
 
             $value = $payload['state'] ?? null;
 
@@ -27524,6 +28135,58 @@ class Issues implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\Reactions(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\Reactions', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -29567,6 +30230,26 @@ class Issues implements ObjectMapper
 
             after_repositoryUrl:
 
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
+
             $value = $payload['state'] ?? null;
 
             if ($value === null) {
@@ -31430,6 +32113,58 @@ class Issues implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\User
     {
         $properties    = [];
@@ -32143,6 +32878,26 @@ class Issues implements ObjectMapper
             $properties['repositoryUrl'] = $value;
 
             after_repositoryUrl:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
 
             $value = $payload['state'] ?? null;
 
@@ -34007,6 +34762,58 @@ class Issues implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhooksIssue2\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue2\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhooksIssue2\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhooksIssue2\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue2\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhooksIssue2\User
     {
         $properties    = [];
@@ -34720,6 +35527,26 @@ class Issues implements ObjectMapper
             $properties['repositoryUrl'] = $value;
 
             after_repositoryUrl:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
 
             $value = $payload['state'] ?? null;
 
@@ -36573,6 +37400,58 @@ class Issues implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\User
     {
         $properties    = [];
@@ -37365,6 +38244,26 @@ class Issues implements ObjectMapper
             $properties['repositoryUrl'] = $value;
 
             after_repositoryUrl:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
 
             $value = $payload['state'] ?? null;
 
@@ -39226,6 +40125,58 @@ class Issues implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\Reactions(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\Reactions', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewIssue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -42020,6 +42971,26 @@ class Issues implements ObjectMapper
 
             after_repositoryUrl:
 
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
+
             $value = $payload['state'] ?? null;
 
             if ($value === null) {
@@ -43883,6 +44854,58 @@ class Issues implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\User
     {
         $properties    = [];
@@ -44398,6 +45421,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($object),
@@ -44417,6 +45441,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue($object),
@@ -44428,6 +45453,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue($object),
@@ -44439,6 +45465,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksMilestone' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksMilestone\Creator' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksMilestone⚡️Creator($object),
@@ -44455,6 +45482,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksLabel' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksLabel($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled($object),
@@ -44467,6 +45495,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue($object),
@@ -44478,6 +45507,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue($object),
@@ -44489,6 +45519,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes($object),
@@ -44501,6 +45532,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldRepository\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldRepository⚡️License($object),
@@ -44515,6 +45547,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesPinned' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesPinned($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue2' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2($object),
@@ -44526,6 +45559,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue2\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue2\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue2\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhooksIssue2\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue2\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue($object),
@@ -44537,6 +45571,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes($object),
@@ -44549,6 +45584,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewIssue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewIssue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewIssue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewIssue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewIssue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewRepository' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewRepository($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewRepository\License' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewRepository⚡️License($object),
@@ -44567,6 +45603,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssuesUnpinned' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnpinned($object),
                 default => throw new LogicException("No serialization defined for $className"),
@@ -45078,6 +46115,15 @@ class Issues implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state = $object->state;
 
@@ -46191,6 +47237,23 @@ class Issues implements ObjectMapper
 
         $url                             = $object->url;
         after_url:        $result['url'] = $url;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
 
         return $result;
     }
@@ -48193,6 +49256,15 @@ class Issues implements ObjectMapper
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
 
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
+
         $state = $object->state;
 
         if ($state === null) {
@@ -49309,6 +50381,23 @@ class Issues implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesClosed⚡️Issue⚡️User(mixed $object): mixed
     {
         assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesClosed\Issue\User);
@@ -49675,6 +50764,15 @@ class Issues implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state = $object->state;
 
@@ -50792,6 +51890,23 @@ class Issues implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDeleted⚡️Issue⚡️User(mixed $object): mixed
     {
         assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesDeleted\Issue\User);
@@ -51167,6 +52282,15 @@ class Issues implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state = $object->state;
 
@@ -52276,6 +53400,23 @@ class Issues implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesDemilestoned⚡️Issue⚡️User(mixed $object): mixed
     {
         assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesDemilestoned\Issue\User);
@@ -52954,6 +54095,15 @@ class Issues implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state = $object->state;
 
@@ -54071,6 +55221,23 @@ class Issues implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesEdited⚡️Issue⚡️User(mixed $object): mixed
     {
         assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesEdited\Issue\User);
@@ -54480,6 +55647,15 @@ class Issues implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state = $object->state;
 
@@ -55597,6 +56773,23 @@ class Issues implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLabeled⚡️Issue⚡️User(mixed $object): mixed
     {
         assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesLabeled\Issue\User);
@@ -55958,6 +57151,15 @@ class Issues implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state = $object->state;
 
@@ -57075,6 +58277,23 @@ class Issues implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesLocked⚡️Issue⚡️User(mixed $object): mixed
     {
         assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesLocked\Issue\User);
@@ -57445,6 +58664,15 @@ class Issues implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state = $object->state;
 
@@ -58554,6 +59782,23 @@ class Issues implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesMilestoned⚡️Issue⚡️User(mixed $object): mixed
     {
         assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesMilestoned\Issue\User);
@@ -58950,6 +60195,15 @@ class Issues implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state = $object->state;
 
@@ -60067,6 +61321,23 @@ class Issues implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Changes⚡️OldIssue⚡️User(mixed $object): mixed
     {
         assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Changes\OldIssue\User);
@@ -61033,6 +62304,15 @@ class Issues implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state = $object->state;
 
@@ -62150,6 +63430,23 @@ class Issues implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesOpened⚡️Issue⚡️User(mixed $object): mixed
     {
         assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesOpened\Issue\User);
@@ -62516,6 +63813,15 @@ class Issues implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state = $object->state;
 
@@ -63633,6 +64939,23 @@ class Issues implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhooksIssue2\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️User(mixed $object): mixed
     {
         assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhooksIssue2\User);
@@ -63999,6 +65322,15 @@ class Issues implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state                               = $object->state;
         after_state:        $result['state'] = $state;
@@ -65103,6 +66435,23 @@ class Issues implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️User(mixed $object): mixed
     {
         assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue\User);
@@ -65489,6 +66838,15 @@ class Issues implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue2⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state = $object->state;
 
@@ -66602,6 +67960,23 @@ class Issues implements ObjectMapper
 
         $url                             = $object->url;
         after_url:        $result['url'] = $url;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesTransferred⚡️Changes⚡️NewIssue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesTransferred\Changes\NewIssue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
 
         return $result;
     }
@@ -67905,6 +69280,15 @@ class Issues implements ObjectMapper
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
 
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
+
         $state = $object->state;
 
         if ($state === null) {
@@ -69017,6 +70401,23 @@ class Issues implements ObjectMapper
 
         $url                             = $object->url;
         after_url:        $result['url'] = $url;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesUnlocked⚡️Issue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssuesUnlocked\Issue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
 
         return $result;
     }

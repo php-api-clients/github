@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet868EAB0B\Tiet2FD1C368\Tiet9B7A081D;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet8C745C5B\Tiet730AD13B\Tiet8EAAD608;
 
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class TietA036CC78
+abstract readonly class Tiet696E0ABB
 {
     public const SCHEMA_JSON         = '{
     "title": "Issue",
@@ -1120,6 +1120,26 @@ abstract readonly class TietA036CC78
             "type": "string",
             "format": "uri"
         },
+        "sub_issues_summary": {
+            "title": "Sub-issues Summary",
+            "required": [
+                "total",
+                "completed",
+                "percent_completed"
+            ],
+            "type": "object",
+            "properties": {
+                "total": {
+                    "type": "integer"
+                },
+                "completed": {
+                    "type": "integer"
+                },
+                "percent_completed": {
+                    "type": "integer"
+                }
+            }
+        },
         "state": {
             "enum": [
                 "open",
@@ -1504,6 +1524,11 @@ abstract readonly class TietA036CC78
         "url": "https:\\/\\/example.com\\/"
     },
     "repository_url": "https:\\/\\/example.com\\/",
+    "sub_issues_summary": {
+        "total": 5,
+        "completed": 9,
+        "percent_completed": 17
+    },
     "state": "open",
     "state_reason": "generated",
     "timeline_url": "https:\\/\\/example.com\\/",
@@ -1557,7 +1582,8 @@ abstract readonly class TietA036CC78
     public string $nodeId, public int $number, #[MapFrom('performed_via_github_app')]
     public Schema\WebhooksIssue\PerformedViaGithubApp|null $performedViaGithubApp, #[MapFrom('pull_request')]
     public Schema\WebhooksIssue\PullRequest|null $pullRequest, public Schema\WebhooksIssue\Reactions $reactions, #[MapFrom('repository_url')]
-    public string $repositoryUrl, public string|null $state, #[MapFrom('state_reason')]
+    public string $repositoryUrl, #[MapFrom('sub_issues_summary')]
+    public Schema\WebhooksIssue\SubIssuesSummary|null $subIssuesSummary, public string|null $state, #[MapFrom('state_reason')]
     public string|null $stateReason, #[MapFrom('timeline_url')]
     public string|null $timelineUrl, public string $title, #[MapFrom('updated_at')]
     public string $updatedAt, public string $url, public Schema\WebhooksIssue\User|null $user,)

@@ -77,6 +77,7 @@ final class SecretScanning
         return $this->operators->secretScanning👷CreatePushProtectionBypass()->call($owner, $repo, $params);
     }
 
+    /** @return */
     public function getScanHistory(string $owner, string $repo): SecretScanningScanHistory|WithoutBody
     {
         return $this->operators->secretScanning👷GetScanHistory()->call($owner, $repo);

@@ -784,6 +784,11 @@ final class Operators
     private Internal\Operator\Reactions\ListForIssueListing|null $reactions👷ListForIssueListing                                                                                     = null;
     private Internal\Operator\Reactions\CreateForIssue|null $reactions👷CreateForIssue                                                                                               = null;
     private Internal\Operator\Reactions\DeleteForIssue|null $reactions👷DeleteForIssue                                                                                               = null;
+    private Internal\Operator\Issues\RemoveSubIssue|null $issues👷RemoveSubIssue                                                                                                     = null;
+    private Internal\Operator\Issues\ListSubIssues|null $issues👷ListSubIssues                                                                                                       = null;
+    private Internal\Operator\Issues\ListSubIssuesListing|null $issues👷ListSubIssuesListing                                                                                         = null;
+    private Internal\Operator\Issues\AddSubIssue|null $issues👷AddSubIssue                                                                                                           = null;
+    private Internal\Operator\Issues\ReprioritizeSubIssue|null $issues👷ReprioritizeSubIssue                                                                                         = null;
     private Internal\Operator\Issues\ListEventsForTimeline|null $issues👷ListEventsForTimeline                                                                                       = null;
     private Internal\Operator\Issues\ListEventsForTimelineListing|null $issues👷ListEventsForTimelineListing                                                                         = null;
     private Internal\Operator\Repos\ListDeployKeys|null $repos👷ListDeployKeys                                                                                                       = null;
@@ -8135,6 +8140,51 @@ final class Operators
         }
 
         return $this->reactions👷DeleteForIssue;
+    }
+
+    public function issues👷RemoveSubIssue(): Internal\Operator\Issues\RemoveSubIssue
+    {
+        if ($this->issues👷RemoveSubIssue instanceof Internal\Operator\Issues\RemoveSubIssue === false) {
+            $this->issues👷RemoveSubIssue = new Internal\Operator\Issues\RemoveSubIssue($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀IssueNumber🌀SubIssue());
+        }
+
+        return $this->issues👷RemoveSubIssue;
+    }
+
+    public function issues👷ListSubIssues(): Internal\Operator\Issues\ListSubIssues
+    {
+        if ($this->issues👷ListSubIssues instanceof Internal\Operator\Issues\ListSubIssues === false) {
+            $this->issues👷ListSubIssues = new Internal\Operator\Issues\ListSubIssues($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀IssueNumber🌀SubIssues());
+        }
+
+        return $this->issues👷ListSubIssues;
+    }
+
+    public function issues👷ListSubIssuesListing(): Internal\Operator\Issues\ListSubIssuesListing
+    {
+        if ($this->issues👷ListSubIssuesListing instanceof Internal\Operator\Issues\ListSubIssuesListing === false) {
+            $this->issues👷ListSubIssuesListing = new Internal\Operator\Issues\ListSubIssuesListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀IssueNumber🌀SubIssues());
+        }
+
+        return $this->issues👷ListSubIssuesListing;
+    }
+
+    public function issues👷AddSubIssue(): Internal\Operator\Issues\AddSubIssue
+    {
+        if ($this->issues👷AddSubIssue instanceof Internal\Operator\Issues\AddSubIssue === false) {
+            $this->issues👷AddSubIssue = new Internal\Operator\Issues\AddSubIssue($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀IssueNumber🌀SubIssues());
+        }
+
+        return $this->issues👷AddSubIssue;
+    }
+
+    public function issues👷ReprioritizeSubIssue(): Internal\Operator\Issues\ReprioritizeSubIssue
+    {
+        if ($this->issues👷ReprioritizeSubIssue instanceof Internal\Operator\Issues\ReprioritizeSubIssue === false) {
+            $this->issues👷ReprioritizeSubIssue = new Internal\Operator\Issues\ReprioritizeSubIssue($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀IssueNumber🌀SubIssues🌀Priority());
+        }
+
+        return $this->issues👷ReprioritizeSubIssue;
     }
 
     public function issues👷ListEventsForTimeline(): Internal\Operator\Issues\ListEventsForTimeline

@@ -464,6 +464,26 @@ final readonly class IssueSearchResultItem
                 }
             }
         },
+        "sub_issues_summary": {
+            "title": "Sub-issues Summary",
+            "required": [
+                "total",
+                "completed",
+                "percent_completed"
+            ],
+            "type": "object",
+            "properties": {
+                "total": {
+                    "type": "integer"
+                },
+                "completed": {
+                    "type": "integer"
+                },
+                "percent_completed": {
+                    "type": "integer"
+                }
+            }
+        },
         "state": {
             "type": "string"
         },
@@ -2502,6 +2522,11 @@ final readonly class IssueSearchResultItem
             "description": "generated"
         }
     ],
+    "sub_issues_summary": {
+        "total": 5,
+        "completed": 9,
+        "percent_completed": 17
+    },
     "state": "generated",
     "state_reason": "generated",
     "assignee": {
@@ -2845,7 +2870,8 @@ final readonly class IssueSearchResultItem
     public string $eventsUrl, #[MapFrom('html_url')]
     public string $htmlUrl, public int $id, #[MapFrom('node_id')]
     public string $nodeId, public int $number, public string $title, public bool $locked, #[MapFrom('active_lock_reason')]
-    public string|null $activeLockReason, public array|null $assignees, public Schema\SimpleUser|null $user, public array $labels, public string $state, #[MapFrom('state_reason')]
+    public string|null $activeLockReason, public array|null $assignees, public Schema\SimpleUser|null $user, public array $labels, #[MapFrom('sub_issues_summary')]
+    public Schema\IssueSearchResultItem\SubIssuesSummary|null $subIssuesSummary, public string $state, #[MapFrom('state_reason')]
     public string|null $stateReason, public Schema\SimpleUser|null $assignee, public Schema\Milestone|null $milestone, public int $comments, #[MapFrom('created_at')]
     public string $createdAt, #[MapFrom('updated_at')]
     public string $updatedAt, #[MapFrom('closed_at')]

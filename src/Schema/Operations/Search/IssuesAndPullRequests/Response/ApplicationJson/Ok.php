@@ -479,6 +479,26 @@ final readonly class Ok
                             }
                         }
                     },
+                    "sub_issues_summary": {
+                        "title": "Sub-issues Summary",
+                        "required": [
+                            "total",
+                            "completed",
+                            "percent_completed"
+                        ],
+                        "type": "object",
+                        "properties": {
+                            "total": {
+                                "type": "integer"
+                            },
+                            "completed": {
+                                "type": "integer"
+                            },
+                            "percent_completed": {
+                                "type": "integer"
+                            }
+                        }
+                    },
                     "state": {
                         "type": "string"
                     },
@@ -2524,6 +2544,11 @@ final readonly class Ok
                     "description": "generated"
                 }
             ],
+            "sub_issues_summary": {
+                "total": 5,
+                "completed": 9,
+                "percent_completed": 17
+            },
             "state": "generated",
             "state_reason": "generated",
             "assignee": {
@@ -2913,6 +2938,11 @@ final readonly class Ok
                     "description": "generated"
                 }
             ],
+            "sub_issues_summary": {
+                "total": 5,
+                "completed": 9,
+                "percent_completed": 17
+            },
             "state": "generated",
             "state_reason": "generated",
             "assignee": {

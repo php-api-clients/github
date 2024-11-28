@@ -107,13 +107,13 @@ final class Repos
         return $this->operators->repos👷CreateOrgRuleset()->call($org, $params);
     }
 
-    /** @return iterable<int,Schema\RuleSuites> */
+    /** @return Observable<Schema\RuleSuites> */
     public function getOrgRuleSuites(string $org, string $ref, string $repositoryName, string $actorName, string $timePeriod, string $ruleSuiteResult, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷GetOrgRuleSuites()->call($org, $ref, $repositoryName, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\RuleSuites> */
+    /** @return Observable<Schema\RuleSuites> */
     public function getOrgRuleSuitesListing(string $org, string $ref, string $repositoryName, string $actorName, string $timePeriod, string $ruleSuiteResult, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷GetOrgRuleSuitesListing()->call($org, $ref, $repositoryName, $actorName, $timePeriod, $ruleSuiteResult, $perPage, $page);

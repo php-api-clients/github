@@ -16,6 +16,7 @@ use ApiClients\Client\GitHub\Schema\Repository;
 use ApiClients\Client\GitHub\Schema\Repository\Permissions;
 use ApiClients\Client\GitHub\Schema\ScimError;
 use ApiClients\Client\GitHub\Schema\SimpleUser;
+use ApiClients\Client\GitHub\Schema\SubIssuesSummary;
 use ApiClients\Client\GitHub\Schema\ValidationError;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -64,6 +65,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\Integration' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration($payload),
                 'ApiClients\Client\GitHub\Schema\Integration\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\ReactionRollup' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ReactionRollup($payload),
+                'ApiClients\Client\GitHub\Schema\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\ScimError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError($payload),
                 'ApiClients\Client\GitHub\Schema\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️ApplicationJson⚡️ServiceUnavailable($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
@@ -635,6 +637,26 @@ class Issues implements ObjectMapper
             $properties['reactions'] = $value;
 
             after_reactions:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Issue', $exception, stack: $this->hydrationStack);
         }
@@ -2866,6 +2888,58 @@ class Issues implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SubIssuesSummary(array $payload): SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError(array $payload): ScimError
     {
         $properties    = [];
@@ -3046,6 +3120,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\Integration' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration($object),
                 'ApiClients\Client\GitHub\Schema\Integration\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Integration⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\ReactionRollup' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ReactionRollup($object),
+                'ApiClients\Client\GitHub\Schema\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\ScimError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ScimError($object),
                 'ApiClients\Client\GitHub\Schema\Operations\SecretScanning\ListAlertsForEnterprise\Response\ApplicationJson\ServiceUnavailable' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️SecretScanning⚡️ListAlertsForEnterprise⚡️Response⚡️ApplicationJson⚡️ServiceUnavailable($object),
                 default => throw new LogicException("No serialization defined for $className"),
@@ -3392,6 +3467,15 @@ class Issues implements ObjectMapper
 
         $reactions                                   = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️ReactionRollup($reactions);
         after_reactions:        $result['reactions'] = $reactions;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         return $result;
     }
@@ -4337,6 +4421,23 @@ class Issues implements ObjectMapper
 
         $rocket                                = $object->rocket;
         after_rocket:        $result['rocket'] = $rocket;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
 
         return $result;
     }

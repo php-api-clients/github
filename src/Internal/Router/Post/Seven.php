@@ -35,7 +35,7 @@ final class Seven
     {
     }
 
-    /** @return |Observable<Schema\Label>|Schema\BasicError */
+    /** @return |Observable<Schema\Label>|Schema\BasicError|Schema\Issue */
     public function call(string $call, array $params, array $pathChunks): Ok|Json|WithoutBody|Created|AuthenticationToken|BranchWithProtection|EmptyObject|CodeScanningVariantAnalysis|Reaction|CommitComment|DeploymentStatus|DeploymentBranchPolicy|DeploymentProtectionRule|Issue|IssueComment|iterable|BasicError|Codespace|PullRequestReviewComment|PullRequestSimple|PullRequestReview|ReleaseAsset|\ApiClients\Client\GitHub\Schema\Operations\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest\Response\ApplicationJson\Accepted\Application\Json|FullRepository
     {
         if ($pathChunks[0] === '') {
@@ -193,6 +193,10 @@ final class Seven
                                 } elseif ($pathChunks[6] === 'reactions') {
                                     if ($call === 'POST /repos/{owner}/{repo}/issues/{issue_number}/reactions') {
                                         return $this->routers->internal🔀Router🔀Post🔀Reactions()->createForIssue($params);
+                                    }
+                                } elseif ($pathChunks[6] === 'sub_issues') {
+                                    if ($call === 'POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues') {
+                                        return $this->routers->internal🔀Router🔀Post🔀Issues()->addSubIssue($params);
                                     }
                                 }
                             }

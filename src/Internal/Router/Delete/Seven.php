@@ -19,6 +19,7 @@ final class Seven
     {
     }
 
+    /** @return |Schema\Issue */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|Json|\ApiClients\Client\GitHub\Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|CodeScanningAnalysisDeletion|Issue|BasicError|PullRequestSimple
     {
         if ($pathChunks[0] === '') {
@@ -194,6 +195,10 @@ final class Seven
                                 } elseif ($pathChunks[6] === 'lock') {
                                     if ($call === 'DELETE /repos/{owner}/{repo}/issues/{issue_number}/lock') {
                                         return $this->routers->internal🔀Router🔀Delete🔀Issues()->unlock($params);
+                                    }
+                                } elseif ($pathChunks[6] === 'sub_issue') {
+                                    if ($call === 'DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue') {
+                                        return $this->routers->internal🔀Router🔀Delete🔀Issues()->removeSubIssue($params);
                                     }
                                 }
                             }

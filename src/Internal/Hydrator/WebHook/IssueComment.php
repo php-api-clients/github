@@ -25,6 +25,7 @@ use ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\Milestone\C
 use ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\PerformedViaGithubApp;
 use ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\PerformedViaGithubApp\Owner;
 use ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\PullRequest;
+use ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\SubIssuesSummary;
 use ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted;
 use ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited;
 use ApiClients\Client\GitHub\Schema\WebhooksChanges;
@@ -83,6 +84,7 @@ class IssueComment implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($payload),
@@ -104,6 +106,7 @@ class IssueComment implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksChanges' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksChanges($payload),
@@ -117,6 +120,7 @@ class IssueComment implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited⚡️Issue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited⚡️Issue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited⚡️Issue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited⚡️Issue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\Milestone\Creator' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️Milestone⚡️Creator($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks\CustomProperties' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks⚡️CustomProperties($payload),
@@ -127,6 +131,7 @@ class IssueComment implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\PerformedViaGithubApp' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️PerformedViaGithubApp($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️Reactions($payload),
+                'ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️SubIssuesSummary($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\PerformedViaGithubApp\Owner' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️PerformedViaGithubApp⚡️Owner($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\PerformedViaGithubApp\Permissions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️PerformedViaGithubApp⚡️Permissions($payload),
@@ -1903,6 +1908,26 @@ class IssueComment implements ObjectMapper
             $properties['repositoryUrl'] = $value;
 
             after_repositoryUrl:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
 
             $value = $payload['state'] ?? null;
 
@@ -3764,6 +3789,58 @@ class IssueComment implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\Reactions(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\Reactions', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️SubIssuesSummary(array $payload): SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -7837,6 +7914,26 @@ class IssueComment implements ObjectMapper
 
             after_repositoryUrl:
 
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
+
             $value = $payload['state'] ?? null;
 
             if ($value === null) {
@@ -9700,6 +9797,58 @@ class IssueComment implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\User
     {
         $properties    = [];
@@ -10522,6 +10671,26 @@ class IssueComment implements ObjectMapper
             $properties['repositoryUrl'] = $value;
 
             after_repositoryUrl:
+
+            $value = $payload['sub_issues_summary'] ?? null;
+
+            if ($value === null) {
+                $properties['subIssuesSummary'] = null;
+                goto after_subIssuesSummary;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'subIssuesSummary';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️SubIssuesSummary($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['subIssuesSummary'] = $value;
+
+            after_subIssuesSummary:
 
             $value = $payload['state'] ?? null;
 
@@ -12383,6 +12552,58 @@ class IssueComment implements ObjectMapper
             return new \ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\Reactions(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\Reactions', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited⚡️Issue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -14430,6 +14651,58 @@ class IssueComment implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️SubIssuesSummary(array $payload): \ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['total'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'total';
+                goto after_total;
+            }
+
+            $properties['total'] = $value;
+
+            after_total:
+
+            $value = $payload['completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'completed';
+                goto after_completed;
+            }
+
+            $properties['completed'] = $value;
+
+            after_completed:
+
+            $value = $payload['percent_completed'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'percent_completed';
+                goto after_percentCompleted;
+            }
+
+            $properties['percentCompleted'] = $value;
+
+            after_percentCompleted:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(\ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new \ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️User(array $payload): \ApiClients\Client\GitHub\Schema\WebhooksIssue\User
     {
         $properties    = [];
@@ -15405,6 +15678,7 @@ class IssueComment implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentCreated\Issue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($object),
@@ -15426,6 +15700,7 @@ class IssueComment implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksChanges' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksChanges($object),
@@ -15439,6 +15714,7 @@ class IssueComment implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\PerformedViaGithubApp\Permissions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited⚡️Issue⚡️PerformedViaGithubApp⚡️Permissions($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited⚡️Issue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited⚡️Issue⚡️Reactions($object),
+                'ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited⚡️Issue⚡️SubIssuesSummary($object),
                 'ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited⚡️Issue⚡️User($object),
                 default => throw new LogicException("No serialization defined for $className"),
             };
@@ -16294,6 +16570,15 @@ class IssueComment implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state = $object->state;
 
@@ -17407,6 +17692,23 @@ class IssueComment implements ObjectMapper
 
         $url                             = $object->url;
         after_url:        $result['url'] = $url;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentCreated⚡️Issue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
 
         return $result;
     }
@@ -19583,6 +19885,15 @@ class IssueComment implements ObjectMapper
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
 
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
+
         $state = $object->state;
 
         if ($state === null) {
@@ -20699,6 +21010,23 @@ class IssueComment implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentDeleted⚡️Issue⚡️User(mixed $object): mixed
     {
         assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssueCommentDeleted\Issue\User);
@@ -21101,6 +21429,15 @@ class IssueComment implements ObjectMapper
 
         $repositoryUrl                                        = $object->repositoryUrl;
         after_repositoryUrl:        $result['repository_url'] = $repositoryUrl;
+
+        $subIssuesSummary = $object->subIssuesSummary;
+
+        if ($subIssuesSummary === null) {
+            goto after_subIssuesSummary;
+        }
+
+        $subIssuesSummary                                            = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️SubIssuesSummary($subIssuesSummary);
+        after_subIssuesSummary:        $result['sub_issues_summary'] = $subIssuesSummary;
 
         $state = $object->state;
 
@@ -22214,6 +22551,23 @@ class IssueComment implements ObjectMapper
 
         $url                             = $object->url;
         after_url:        $result['url'] = $url;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssueCommentEdited⚡️Issue⚡️SubIssuesSummary(mixed $object): mixed
+    {
+        assert($object instanceof \ApiClients\Client\GitHub\Schema\WebhookIssueCommentEdited\Issue\SubIssuesSummary);
+        $result = [];
+
+        $total                               = $object->total;
+        after_total:        $result['total'] = $total;
+
+        $completed                                   = $object->completed;
+        after_completed:        $result['completed'] = $completed;
+
+        $percentCompleted                                           = $object->percentCompleted;
+        after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
 
         return $result;
     }

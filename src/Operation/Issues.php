@@ -236,6 +236,33 @@ final class Issues
         return $this->operators->issues👷Unlock()->call($owner, $repo, $issueNumber);
     }
 
+    public function removeSubIssue(string $owner, string $repo, int $issueNumber, array $params): Issue
+    {
+        return $this->operators->issues👷RemoveSubIssue()->call($owner, $repo, $issueNumber, $params);
+    }
+
+    /** @return iterable<int,Schema\Issue> */
+    public function listSubIssues(string $owner, string $repo, int $issueNumber, int $perPage, int $page): iterable
+    {
+        return $this->operators->issues👷ListSubIssues()->call($owner, $repo, $issueNumber, $perPage, $page);
+    }
+
+    /** @return iterable<int,Schema\Issue> */
+    public function listSubIssuesListing(string $owner, string $repo, int $issueNumber, int $perPage, int $page): iterable
+    {
+        return $this->operators->issues👷ListSubIssuesListing()->call($owner, $repo, $issueNumber, $perPage, $page);
+    }
+
+    public function addSubIssue(string $owner, string $repo, int $issueNumber, array $params): Issue
+    {
+        return $this->operators->issues👷AddSubIssue()->call($owner, $repo, $issueNumber, $params);
+    }
+
+    public function reprioritizeSubIssue(string $owner, string $repo, int $issueNumber, array $params): Issue
+    {
+        return $this->operators->issues👷ReprioritizeSubIssue()->call($owner, $repo, $issueNumber, $params);
+    }
+
     /** @return Observable<Schema\LabeledIssueEvent|Schema\UnlabeledIssueEvent|Schema\MilestonedIssueEvent|Schema\DemilestonedIssueEvent|Schema\RenamedIssueEvent|Schema\ReviewRequestedIssueEvent|Schema\ReviewRequestRemovedIssueEvent|Schema\ReviewDismissedIssueEvent|Schema\LockedIssueEvent|Schema\AddedToProjectIssueEvent|Schema\MovedColumnInProjectIssueEvent|Schema\RemovedFromProjectIssueEvent|Schema\ConvertedNoteToIssueIssueEvent|Schema\TimelineCommentEvent|Schema\TimelineCrossReferencedEvent|Schema\TimelineCommittedEvent|Schema\TimelineReviewedEvent|Schema\TimelineLineCommentedEvent|Schema\TimelineCommitCommentedEvent|Schema\TimelineAssignedIssueEvent|Schema\TimelineUnassignedIssueEvent|Schema\StateChangeIssueEvent> */
     public function listEventsForTimeline(string $owner, string $repo, int $issueNumber, int $perPage, int $page): iterable
     {
