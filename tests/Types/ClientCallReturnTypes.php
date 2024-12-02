@@ -790,11 +790,11 @@ assertType('Observable<Schema\\Reaction>', $client->call('GET /repos/{owner}/{re
 assertType('Observable<Schema\\Reaction>', $client->call('LIST /repos/{owner}/{repo}/issues/{issue_number}/reactions'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/issues/{issue_number}/reactions'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/issues/{issue_number}/reactions/{reaction_id}'));
-assertType('Schema\\Issue', $client->call('DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue'));
-assertType('iterable<int,Schema\\Issue>', $client->call('GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues'));
-assertType('iterable<int,Schema\\Issue>', $client->call('LIST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues'));
-assertType('Schema\\Issue', $client->call('POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues'));
-assertType('Schema\\Issue', $client->call('PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority'));
+assertType('', $client->call('DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue'));
+assertType('Observable<Schema\\Issue>', $client->call('GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues'));
+assertType('Observable<Schema\\Issue>', $client->call('LIST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues'));
+assertType('', $client->call('POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues'));
+assertType('', $client->call('PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority'));
 assertType('Observable<Schema\\LabeledIssueEvent|Schema\\UnlabeledIssueEvent|Schema\\MilestonedIssueEvent|Schema\\DemilestonedIssueEvent|Schema\\RenamedIssueEvent|Schema\\ReviewRequestedIssueEvent|Schema\\ReviewRequestRemovedIssueEvent|Schema\\ReviewDismissedIssueEvent|Schema\\LockedIssueEvent|Schema\\AddedToProjectIssueEvent|Schema\\MovedColumnInProjectIssueEvent|Schema\\RemovedFromProjectIssueEvent|Schema\\ConvertedNoteToIssueIssueEvent|Schema\\TimelineCommentEvent|Schema\\TimelineCrossReferencedEvent|Schema\\TimelineCommittedEvent|Schema\\TimelineReviewedEvent|Schema\\TimelineLineCommentedEvent|Schema\\TimelineCommitCommentedEvent|Schema\\TimelineAssignedIssueEvent|Schema\\TimelineUnassignedIssueEvent|Schema\\StateChangeIssueEvent>', $client->call('GET /repos/{owner}/{repo}/issues/{issue_number}/timeline'));
 assertType('Observable<Schema\\LabeledIssueEvent|Schema\\UnlabeledIssueEvent|Schema\\MilestonedIssueEvent|Schema\\DemilestonedIssueEvent|Schema\\RenamedIssueEvent|Schema\\ReviewRequestedIssueEvent|Schema\\ReviewRequestRemovedIssueEvent|Schema\\ReviewDismissedIssueEvent|Schema\\LockedIssueEvent|Schema\\AddedToProjectIssueEvent|Schema\\MovedColumnInProjectIssueEvent|Schema\\RemovedFromProjectIssueEvent|Schema\\ConvertedNoteToIssueIssueEvent|Schema\\TimelineCommentEvent|Schema\\TimelineCrossReferencedEvent|Schema\\TimelineCommittedEvent|Schema\\TimelineReviewedEvent|Schema\\TimelineLineCommentedEvent|Schema\\TimelineCommitCommentedEvent|Schema\\TimelineAssignedIssueEvent|Schema\\TimelineUnassignedIssueEvent|Schema\\StateChangeIssueEvent>', $client->call('LIST /repos/{owner}/{repo}/issues/{issue_number}/timeline'));
 assertType('Observable<Schema\\DeployKey>', $client->call('GET /repos/{owner}/{repo}/keys'));

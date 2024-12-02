@@ -19,7 +19,6 @@ final class Seven
     {
     }
 
-    /** @return |Schema\Issue */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|Json|\ApiClients\Client\GitHub\Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|CodeScanningAnalysisDeletion|Issue|BasicError|PullRequestSimple
     {
         if ($pathChunks[0] === '') {

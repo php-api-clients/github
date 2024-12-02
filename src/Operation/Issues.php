@@ -236,28 +236,31 @@ final class Issues
         return $this->operators->issues👷Unlock()->call($owner, $repo, $issueNumber);
     }
 
+    /** @return */
     public function removeSubIssue(string $owner, string $repo, int $issueNumber, array $params): Issue
     {
         return $this->operators->issues👷RemoveSubIssue()->call($owner, $repo, $issueNumber, $params);
     }
 
-    /** @return iterable<int,Schema\Issue> */
+    /** @return Observable<Schema\Issue> */
     public function listSubIssues(string $owner, string $repo, int $issueNumber, int $perPage, int $page): iterable
     {
         return $this->operators->issues👷ListSubIssues()->call($owner, $repo, $issueNumber, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\Issue> */
+    /** @return Observable<Schema\Issue> */
     public function listSubIssuesListing(string $owner, string $repo, int $issueNumber, int $perPage, int $page): iterable
     {
         return $this->operators->issues👷ListSubIssuesListing()->call($owner, $repo, $issueNumber, $perPage, $page);
     }
 
+    /** @return */
     public function addSubIssue(string $owner, string $repo, int $issueNumber, array $params): Issue
     {
         return $this->operators->issues👷AddSubIssue()->call($owner, $repo, $issueNumber, $params);
     }
 
+    /** @return */
     public function reprioritizeSubIssue(string $owner, string $repo, int $issueNumber, array $params): Issue
     {
         return $this->operators->issues👷ReprioritizeSubIssue()->call($owner, $repo, $issueNumber, $params);

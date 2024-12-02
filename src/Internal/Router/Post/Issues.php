@@ -168,6 +168,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
     }
 
+    /** @return */
     public function addSubIssue(array $params): Issue
     {
         $arguments = [];

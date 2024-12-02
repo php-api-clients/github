@@ -3136,23 +3136,23 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'DELETE /repos/{owner}/{repo}/issues/{issue_number}/sub_issue') {
-            return $this->typeResolver->resolve('Schema\\Issue');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\Issue>');
+            return $this->typeResolver->resolve('Observable<Schema\\Issue>');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\Issue>');
+            return $this->typeResolver->resolve('Observable<Schema\\Issue>');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/issues/{issue_number}/sub_issues') {
-            return $this->typeResolver->resolve('Schema\\Issue');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PATCH /repos/{owner}/{repo}/issues/{issue_number}/sub_issues/priority') {
-            return $this->typeResolver->resolve('Schema\\Issue');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/issues/{issue_number}/timeline') {

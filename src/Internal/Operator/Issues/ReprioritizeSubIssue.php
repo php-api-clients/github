@@ -24,6 +24,7 @@ final readonly class ReprioritizeSubIssue
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $issueNumber, array $params): Issue
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\ReprioritizeSubIssue($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber);

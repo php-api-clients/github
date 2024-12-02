@@ -17,7 +17,6 @@ final class Eight
     {
     }
 
-    /** @return |Schema\Issue */
     public function call(string $call, array $params, array $pathChunks): ProtectedBranchPullRequestReview|StatusCheckPolicy|WithoutBody|Issue
     {
         if ($pathChunks[0] === '') {

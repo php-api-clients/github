@@ -610,7 +610,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Issue> */
+    /** @return Observable<Schema\Issue> */
     public function listSubIssuesListing(array $params): iterable
     {
         $arguments = [];

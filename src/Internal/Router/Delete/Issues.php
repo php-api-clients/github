@@ -130,6 +130,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number']);
     }
 
+    /** @return */
     public function removeSubIssue(array $params): Issue
     {
         $arguments = [];

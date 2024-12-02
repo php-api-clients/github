@@ -131,6 +131,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['comment_id'], $params);
     }
 
+    /** @return */
     public function reprioritizeSubIssue(array $params): Issue
     {
         $arguments = [];

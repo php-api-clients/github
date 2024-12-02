@@ -1,5 +1,5 @@
 {
-    "specHash": "315e5678f61e5340f76bae356b2788b6",
+    "specHash": "b119f75f25b0d5bbe0f8fa77c66a5d24",
     "generatedFiles": {
         "files": [
             {
@@ -5532,7 +5532,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/SecretScanning.php",
-                "hash": "b253cd61e8874afe2c5394eb970bd8b6"
+                "hash": "9bb033435eaa98d866efe71eb1e4ddbd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Activity.php",
@@ -5548,7 +5548,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Issues.php",
-                "hash": "a564ebaae7c66ed66ba4f270099de3cf"
+                "hash": "3cc0b5981bff1172487d1b0ae853249a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Licenses.php",
@@ -5596,7 +5596,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "e08ac16d8c8ddb3d082c30c06392777c"
+                "hash": "736deb4195c1c2f43079eab132469082"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -24344,7 +24344,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Issues.php",
-                "hash": "6f56da7cc422b24bd72624f99f8d3459"
+                "hash": "3eae340a9f0f93509717648f24474e04"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Licenses.php",
@@ -24516,7 +24516,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Post\/Issues.php",
-                "hash": "b73947ce9fb2650d56d62ddd8db8a1bc"
+                "hash": "ad28b5e75688ddd838df5a6e08945df1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Post\/Pulls.php",
@@ -24584,7 +24584,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/Issues.php",
-                "hash": "bd3cd52db296723ed2645567674d6a24"
+                "hash": "1816d97da53df9c45558c7192147699c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/Pulls.php",
@@ -24620,7 +24620,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Issues.php",
-                "hash": "76fed67d0b37e9644cc2435e63964266"
+                "hash": "aa33b1f8d2fd0f5eee6c0af5120886b8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Migrations.php",
@@ -24744,7 +24744,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Issues.php",
-                "hash": "976b81d4a4693dab65aa5d495ece36b8"
+                "hash": "3cac08976533c6e465ba923340c963da"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Pulls.php",
@@ -24860,7 +24860,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Seven.php",
-                "hash": "515d113bfcaeab39cdb9022aab604a33"
+                "hash": "b1ab36693fa5c4c60f402c9e0349b1fd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Eight.php",
@@ -24896,7 +24896,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Post\/Seven.php",
-                "hash": "d8aa4a7b4957f5e330b4fecec00b97e7"
+                "hash": "b619e491673f6ed980d9896a97638a0a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Post\/Eight.php",
@@ -24936,7 +24936,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/Eight.php",
-                "hash": "e467d3113de1a5cbd8d67398d6184f97"
+                "hash": "7ea13e71eca3e33658e6f765175629a3"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/Two.php",
@@ -24964,7 +24964,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Seven.php",
-                "hash": "df521fa68f2950fed9b9789c3f847041"
+                "hash": "81326c9e0e34933f9df6d7e397ac8782"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Eight.php",
@@ -24992,7 +24992,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Seven.php",
-                "hash": "43168d2c2f251ae741817f0d9e537fe4"
+                "hash": "102fb21cd796a379ef4ea2a84876be10"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Six.php",
@@ -27636,11 +27636,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "37b661017e22bbf5b31534aa9bc4b3da"
+                "hash": "526aac10512dc0d92689f985b41922b4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "3cbfb3883582a25a77f91cadadf8ee4a"
+                "hash": "e92ed3755800eb5eccdcb78430551361"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -31048,7 +31048,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Issues\/RemoveSubIssue.php",
-                "hash": "562b423ebbd7386a533ec6432e89ef57"
+                "hash": "ae0dd2e3831ef830d359a0392d7ec289"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Issues\/RemoveSubIssueTest.php",
@@ -31060,7 +31060,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Issues\/ListSubIssues.php",
-                "hash": "c82ca46e2bbdc84d13cb00af5e2aee29"
+                "hash": "18a3738c19bb2c6f33a12e8a0fc324bd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Issues\/ListSubIssuesTest.php",
@@ -31072,7 +31072,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Issues\/ListSubIssuesListing.php",
-                "hash": "d45c1b4569edb45e2d2b8c21453a4318"
+                "hash": "b005722a6b2608dc0e35512d3f1ae729"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Issues\/ListSubIssuesListingTest.php",
@@ -31084,7 +31084,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Issues\/AddSubIssue.php",
-                "hash": "f9b1f25c76aa81fba345e2d0421dfec6"
+                "hash": "1c1e1db4d1839f82494e8a61886fd223"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Issues\/AddSubIssueTest.php",
@@ -31096,7 +31096,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Issues\/ReprioritizeSubIssue.php",
-                "hash": "41244efd13e59369e569d1d295b9c306"
+                "hash": "987ccc2d51482942020e95f85018d9fc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Issues\/ReprioritizeSubIssueTest.php",

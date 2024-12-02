@@ -24,7 +24,7 @@ final readonly class ListSubIssuesListing
     {
     }
 
-    /** @return iterable<int,Schema\Issue> */
+    /** @return Observable<Schema\Issue> */
     public function call(string $owner, string $repo, int $issueNumber, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Issues\ListSubIssuesListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $issueNumber, $perPage, $page);
