@@ -1,5 +1,5 @@
 {
-    "specHash": "b119f75f25b0d5bbe0f8fa77c66a5d24",
+    "specHash": "c22e4288a9c6ed5c4a6a2c04770f2d22",
     "generatedFiles": {
         "files": [
             {
@@ -5548,7 +5548,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Issues.php",
-                "hash": "3cc0b5981bff1172487d1b0ae853249a"
+                "hash": "0cb6f33663c50fe44bb16e57678fa623"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Licenses.php",
