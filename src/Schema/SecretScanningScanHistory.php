@@ -22,19 +22,22 @@ final readonly class SecretScanningScanHistory
                     },
                     "status": {
                         "type": "string",
-                        "description": "The state of the scan. Either \\"completed\\" or \\"running\\""
+                        "description": "The state of the scan. Either \\"completed\\", \\"running\\", or \\"pending\\""
                     },
                     "completed_at": {
                         "type": [
                             "string",
                             "null"
                         ],
-                        "description": "The time that the scan was completed. Empty if the scan is active",
+                        "description": "The time that the scan was completed. Empty if the scan is running",
                         "format": "date-time"
                     },
                     "started_at": {
-                        "type": "string",
-                        "description": "The time that the scan was started",
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The time that the scan was started. Empty if the scan is pending",
                         "format": "date-time"
                     }
                 },
@@ -52,19 +55,22 @@ final readonly class SecretScanningScanHistory
                     },
                     "status": {
                         "type": "string",
-                        "description": "The state of the scan. Either \\"completed\\" or \\"running\\""
+                        "description": "The state of the scan. Either \\"completed\\", \\"running\\", or \\"pending\\""
                     },
                     "completed_at": {
                         "type": [
                             "string",
                             "null"
                         ],
-                        "description": "The time that the scan was completed. Empty if the scan is active",
+                        "description": "The time that the scan was completed. Empty if the scan is running",
                         "format": "date-time"
                     },
                     "started_at": {
-                        "type": "string",
-                        "description": "The time that the scan was started",
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The time that the scan was started. Empty if the scan is pending",
                         "format": "date-time"
                     }
                 },
@@ -82,19 +88,22 @@ final readonly class SecretScanningScanHistory
                     },
                     "status": {
                         "type": "string",
-                        "description": "The state of the scan. Either \\"completed\\" or \\"running\\""
+                        "description": "The state of the scan. Either \\"completed\\", \\"running\\", or \\"pending\\""
                     },
                     "completed_at": {
                         "type": [
                             "string",
                             "null"
                         ],
-                        "description": "The time that the scan was completed. Empty if the scan is active",
+                        "description": "The time that the scan was completed. Empty if the scan is running",
                         "format": "date-time"
                     },
                     "started_at": {
-                        "type": "string",
-                        "description": "The time that the scan was started",
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The time that the scan was started. Empty if the scan is pending",
                         "format": "date-time"
                     }
                 },
@@ -114,19 +123,22 @@ final readonly class SecretScanningScanHistory
                             },
                             "status": {
                                 "type": "string",
-                                "description": "The state of the scan. Either \\"completed\\" or \\"running\\""
+                                "description": "The state of the scan. Either \\"completed\\", \\"running\\", or \\"pending\\""
                             },
                             "completed_at": {
                                 "type": [
                                     "string",
                                     "null"
                                 ],
-                                "description": "The time that the scan was completed. Empty if the scan is active",
+                                "description": "The time that the scan was completed. Empty if the scan is running",
                                 "format": "date-time"
                             },
                             "started_at": {
-                                "type": "string",
-                                "description": "The time that the scan was started",
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "description": "The time that the scan was started. Empty if the scan is pending",
                                 "format": "date-time"
                             }
                         },

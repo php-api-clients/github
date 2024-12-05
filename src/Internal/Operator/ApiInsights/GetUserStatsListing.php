@@ -24,10 +24,10 @@ final readonly class GetUserStatsListing
     {
     }
 
-    /** @return Observable<Schema\ApiInsightsUserStats> */
-    public function call(string $org, string $userId, string $minTimestamp, string $maxTimestamp, array $sort, int $page = 1, int $perPage = 30, string $direction = 'desc'): iterable
+    /** @return iterable<int,Schema\ApiInsightsUserStats> */
+    public function call(string $org, string $userId, string $minTimestamp, string $maxTimestamp, array $sort, string $actorNameSubstring, int $page = 1, int $perPage = 30, string $direction = 'desc'): iterable
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\ApiInsights\GetUserStatsListing($this->responseSchemaValidator, $this->hydrator, $org, $userId, $minTimestamp, $maxTimestamp, $sort, $page, $perPage, $direction);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\ApiInsights\GetUserStatsListing($this->responseSchemaValidator, $this->hydrator, $org, $userId, $minTimestamp, $maxTimestamp, $sort, $actorNameSubstring, $page, $perPage, $direction);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);

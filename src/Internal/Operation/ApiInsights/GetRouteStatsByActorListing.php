@@ -36,6 +36,8 @@ final class GetRouteStatsByActorListing
     private string $maxTimestamp;
     /**The property to sort the results by. **/
     private array $sort;
+    /**Providing a substring will filter results where the API route contains the substring. This is a case-insensitive search. **/
+    private string $apiRouteSubstring;
     /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
@@ -43,22 +45,23 @@ final class GetRouteStatsByActorListing
     /**The direction to sort the results by. **/
     private string $direction;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Insights\Api\RouteStats\ActorType\ActorId $hydrator, string $org, string $actorType, int $actorId, string $minTimestamp, string $maxTimestamp, array $sort, int $page = 1, int $perPage = 30, string $direction = 'desc')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Insights\Api\RouteStats\ActorType\ActorId $hydrator, string $org, string $actorType, int $actorId, string $minTimestamp, string $maxTimestamp, array $sort, string $apiRouteSubstring, int $page = 1, int $perPage = 30, string $direction = 'desc')
     {
-        $this->org          = $org;
-        $this->actorType    = $actorType;
-        $this->actorId      = $actorId;
-        $this->minTimestamp = $minTimestamp;
-        $this->maxTimestamp = $maxTimestamp;
-        $this->sort         = $sort;
-        $this->page         = $page;
-        $this->perPage      = $perPage;
-        $this->direction    = $direction;
+        $this->org               = $org;
+        $this->actorType         = $actorType;
+        $this->actorId           = $actorId;
+        $this->minTimestamp      = $minTimestamp;
+        $this->maxTimestamp      = $maxTimestamp;
+        $this->sort              = $sort;
+        $this->apiRouteSubstring = $apiRouteSubstring;
+        $this->page              = $page;
+        $this->perPage           = $perPage;
+        $this->direction         = $direction;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{org}', '{actor_type}', '{actor_id}', '{min_timestamp}', '{max_timestamp}', '{sort}', '{page}', '{per_page}', '{direction}'], [$this->org, $this->actorType, $this->actorId, $this->minTimestamp, $this->maxTimestamp, $this->sort, $this->page, $this->perPage, $this->direction], '/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}' . '?min_timestamp={min_timestamp}&max_timestamp={max_timestamp}&sort={sort}&page={page}&per_page={per_page}&direction={direction}'));
+        return new Request('GET', str_replace(['{org}', '{actor_type}', '{actor_id}', '{min_timestamp}', '{max_timestamp}', '{sort}', '{api_route_substring}', '{page}', '{per_page}', '{direction}'], [$this->org, $this->actorType, $this->actorId, $this->minTimestamp, $this->maxTimestamp, $this->sort, $this->apiRouteSubstring, $this->page, $this->perPage, $this->direction], '/orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}' . '?min_timestamp={min_timestamp}&max_timestamp={max_timestamp}&sort={sort}&api_route_substring={api_route_substring}&page={page}&per_page={per_page}&direction={direction}'));
     }
 
     /** @return Observable<Schema\ApiInsightsRouteStats> */

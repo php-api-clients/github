@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Orgs\Org\CodeSecu
 
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration;
+use ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\CodeScanningDefaultSetupOptions;
 use ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\DependencyGraphAutosubmitActionOptions;
 use ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\SecretScanningDelegatedBypassOptions;
 use ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok;
@@ -47,6 +48,7 @@ class Defaults implements ObjectMapper
             'ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️CodeSecurity⚡️SetConfigurationAsDefault⚡️Response⚡️ApplicationJson⚡️Ok($payload),
                 'ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration($payload),
                 'ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\DependencyGraphAutosubmitActionOptions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️DependencyGraphAutosubmitActionOptions($payload),
+                'ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\CodeScanningDefaultSetupOptions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️CodeScanningDefaultSetupOptions($payload),
                 'ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\SecretScanningDelegatedBypassOptions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️SecretScanningDelegatedBypassOptions($payload),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
@@ -238,6 +240,26 @@ class Defaults implements ObjectMapper
 
             after_codeScanningDefaultSetup:
 
+            $value = $payload['code_scanning_default_setup_options'] ?? null;
+
+            if ($value === null) {
+                $properties['codeScanningDefaultSetupOptions'] = null;
+                goto after_codeScanningDefaultSetupOptions;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'codeScanningDefaultSetupOptions';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️CodeScanningDefaultSetupOptions($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['codeScanningDefaultSetupOptions'] = $value;
+
+            after_codeScanningDefaultSetupOptions:
+
             $value = $payload['secret_scanning'] ?? null;
 
             if ($value === null) {
@@ -423,6 +445,47 @@ class Defaults implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️CodeScanningDefaultSetupOptions(array $payload): CodeScanningDefaultSetupOptions
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['runner_type'] ?? null;
+
+            if ($value === null) {
+                $properties['runnerType'] = null;
+                goto after_runnerType;
+            }
+
+            $properties['runnerType'] = $value;
+
+            after_runnerType:
+
+            $value = $payload['runner_label'] ?? null;
+
+            if ($value === null) {
+                $properties['runnerLabel'] = null;
+                goto after_runnerLabel;
+            }
+
+            $properties['runnerLabel'] = $value;
+
+            after_runnerLabel:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\CodeScanningDefaultSetupOptions', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(CodeScanningDefaultSetupOptions::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new CodeScanningDefaultSetupOptions(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\CodeScanningDefaultSetupOptions', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️SecretScanningDelegatedBypassOptions(array $payload): SecretScanningDelegatedBypassOptions
     {
         $properties    = [];
@@ -550,6 +613,7 @@ class Defaults implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Operations⚡️CodeSecurity⚡️SetConfigurationAsDefault⚡️Response⚡️ApplicationJson⚡️Ok($object),
                 'ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration($object),
                 'ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\DependencyGraphAutosubmitActionOptions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️DependencyGraphAutosubmitActionOptions($object),
+                'ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\CodeScanningDefaultSetupOptions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️CodeScanningDefaultSetupOptions($object),
                 'ApiClients\Client\GitHub\Schema\CodeSecurityConfiguration\SecretScanningDelegatedBypassOptions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️SecretScanningDelegatedBypassOptions($object),
                 'ApiClients\Client\GitHub\Schema\BasicError' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️BasicError($object),
                 default => throw new LogicException("No serialization defined for $className"),
@@ -733,6 +797,15 @@ class Defaults implements ObjectMapper
 
         after_codeScanningDefaultSetup:        $result['code_scanning_default_setup'] = $codeScanningDefaultSetup;
 
+        $codeScanningDefaultSetupOptions = $object->codeScanningDefaultSetupOptions;
+
+        if ($codeScanningDefaultSetupOptions === null) {
+            goto after_codeScanningDefaultSetupOptions;
+        }
+
+        $codeScanningDefaultSetupOptions                                                             = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️CodeScanningDefaultSetupOptions($codeScanningDefaultSetupOptions);
+        after_codeScanningDefaultSetupOptions:        $result['code_scanning_default_setup_options'] = $codeScanningDefaultSetupOptions;
+
         $secretScanning = $object->secretScanning;
 
         if ($secretScanning === null) {
@@ -845,6 +918,30 @@ class Defaults implements ObjectMapper
         }
 
         after_labeledRunners:        $result['labeled_runners'] = $labeledRunners;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️CodeScanningDefaultSetupOptions(mixed $object): mixed
+    {
+        assert($object instanceof CodeScanningDefaultSetupOptions);
+        $result = [];
+
+        $runnerType = $object->runnerType;
+
+        if ($runnerType === null) {
+            goto after_runnerType;
+        }
+
+        after_runnerType:        $result['runner_type'] = $runnerType;
+
+        $runnerLabel = $object->runnerLabel;
+
+        if ($runnerLabel === null) {
+            goto after_runnerLabel;
+        }
+
+        after_runnerLabel:        $result['runner_label'] = $runnerLabel;
 
         return $result;
     }

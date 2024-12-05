@@ -95,6 +95,31 @@ final readonly class ApplicationJson
             "description": "The enablement status of code scanning default setup",
             "default": "disabled"
         },
+        "code_scanning_default_setup_options": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "runner_type": {
+                    "enum": [
+                        "standard",
+                        "labeled",
+                        "not_set"
+                    ],
+                    "type": "string",
+                    "description": "Whether to use labeled runners or standard GitHub runners."
+                },
+                "runner_label": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The label of the runner to use for code scanning default setup when runner_type is \'labeled\'."
+                }
+            },
+            "description": "Feature options for code scanning default setup"
+        },
         "secret_scanning": {
             "enum": [
                 "enabled",
@@ -212,6 +237,10 @@ final readonly class ApplicationJson
     "dependabot_alerts": "enabled",
     "dependabot_security_updates": "enabled",
     "code_scanning_default_setup": "enabled",
+    "code_scanning_default_setup_options": {
+        "runner_type": "standard",
+        "runner_label": "generated"
+    },
     "secret_scanning": "enabled",
     "secret_scanning_push_protection": "enabled",
     "secret_scanning_delegated_bypass": "not_set",
@@ -243,6 +272,7 @@ final readonly class ApplicationJson
      * dependabotAlerts: The enablement status of Dependabot alerts
      * dependabotSecurityUpdates: The enablement status of Dependabot security updates
      * codeScanningDefaultSetup: The enablement status of code scanning default setup
+     * codeScanningDefaultSetupOptions: Feature options for code scanning default setup
      * secretScanning: The enablement status of secret scanning
      * secretScanningPushProtection: The enablement status of secret scanning push protection
      * secretScanningDelegatedBypass: The enablement status of secret scanning delegated bypass
@@ -259,7 +289,8 @@ final readonly class ApplicationJson
     public Schema\CodeSecurity\CreateConfiguration\Request\ApplicationJson\DependencyGraphAutosubmitActionOptions|null $dependencyGraphAutosubmitActionOptions, #[MapFrom('dependabot_alerts')]
     public string|null $dependabotAlerts, #[MapFrom('dependabot_security_updates')]
     public string|null $dependabotSecurityUpdates, #[MapFrom('code_scanning_default_setup')]
-    public string|null $codeScanningDefaultSetup, #[MapFrom('secret_scanning')]
+    public string|null $codeScanningDefaultSetup, #[MapFrom('code_scanning_default_setup_options')]
+    public Schema\CodeScanningDefaultSetupOptions|null $codeScanningDefaultSetupOptions, #[MapFrom('secret_scanning')]
     public string|null $secretScanning, #[MapFrom('secret_scanning_push_protection')]
     public string|null $secretScanningPushProtection, #[MapFrom('secret_scanning_delegated_bypass')]
     public string|null $secretScanningDelegatedBypass, #[MapFrom('secret_scanning_delegated_bypass_options')]

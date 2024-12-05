@@ -24,10 +24,10 @@ final readonly class GetRouteStatsByActor
     {
     }
 
-    /** @return Observable<Schema\ApiInsightsRouteStats> */
-    public function call(string $org, string $actorType, int $actorId, string $minTimestamp, string $maxTimestamp, array $sort, int $page = 1, int $perPage = 30, string $direction = 'desc'): iterable
+    /** @return iterable<int,Schema\ApiInsightsRouteStats> */
+    public function call(string $org, string $actorType, int $actorId, string $minTimestamp, string $maxTimestamp, array $sort, string $apiRouteSubstring, int $page = 1, int $perPage = 30, string $direction = 'desc'): iterable
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\ApiInsights\GetRouteStatsByActor($this->responseSchemaValidator, $this->hydrator, $org, $actorType, $actorId, $minTimestamp, $maxTimestamp, $sort, $page, $perPage, $direction);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\ApiInsights\GetRouteStatsByActor($this->responseSchemaValidator, $this->hydrator, $org, $actorType, $actorId, $minTimestamp, $maxTimestamp, $sort, $apiRouteSubstring, $page, $perPage, $direction);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);

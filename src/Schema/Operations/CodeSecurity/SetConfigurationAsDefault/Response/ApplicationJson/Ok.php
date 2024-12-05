@@ -109,6 +109,35 @@ final readonly class Ok
                     "type": "string",
                     "description": "The enablement status of code scanning default setup"
                 },
+                "code_scanning_default_setup_options": {
+                    "type": [
+                        "object",
+                        "null"
+                    ],
+                    "properties": {
+                        "runner_type": {
+                            "enum": [
+                                "standard",
+                                "labeled",
+                                "not_set",
+                                null
+                            ],
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "Whether to use labeled runners or standard GitHub runners."
+                        },
+                        "runner_label": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "The label of the runner to use for code scanning when runner_type is \'labeled\'."
+                        }
+                    },
+                    "description": "Feature options for code scanning default setup"
+                },
                 "secret_scanning": {
                     "enum": [
                         "enabled",
@@ -243,6 +272,10 @@ final readonly class Ok
         "dependabot_alerts": "enabled",
         "dependabot_security_updates": "enabled",
         "code_scanning_default_setup": "enabled",
+        "code_scanning_default_setup_options": {
+            "runner_type": "standard",
+            "runner_label": "generated"
+        },
         "secret_scanning": "enabled",
         "secret_scanning_push_protection": "enabled",
         "secret_scanning_delegated_bypass": "not_set",

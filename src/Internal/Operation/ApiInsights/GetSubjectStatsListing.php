@@ -32,6 +32,8 @@ final class GetSubjectStatsListing
     private string $maxTimestamp;
     /**The property to sort the results by. **/
     private array $sort;
+    /**Providing a substring will filter results where the subject name contains the substring. This is a case-insensitive search. **/
+    private string $subjectNameSubstring;
     /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
@@ -39,20 +41,21 @@ final class GetSubjectStatsListing
     /**The direction to sort the results by. **/
     private string $direction;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Insights\Api\SubjectStats $hydrator, string $org, string $minTimestamp, string $maxTimestamp, array $sort, int $page = 1, int $perPage = 30, string $direction = 'desc')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Insights\Api\SubjectStats $hydrator, string $org, string $minTimestamp, string $maxTimestamp, array $sort, string $subjectNameSubstring, int $page = 1, int $perPage = 30, string $direction = 'desc')
     {
-        $this->org          = $org;
-        $this->minTimestamp = $minTimestamp;
-        $this->maxTimestamp = $maxTimestamp;
-        $this->sort         = $sort;
-        $this->page         = $page;
-        $this->perPage      = $perPage;
-        $this->direction    = $direction;
+        $this->org                  = $org;
+        $this->minTimestamp         = $minTimestamp;
+        $this->maxTimestamp         = $maxTimestamp;
+        $this->sort                 = $sort;
+        $this->subjectNameSubstring = $subjectNameSubstring;
+        $this->page                 = $page;
+        $this->perPage              = $perPage;
+        $this->direction            = $direction;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{org}', '{min_timestamp}', '{max_timestamp}', '{sort}', '{page}', '{per_page}', '{direction}'], [$this->org, $this->minTimestamp, $this->maxTimestamp, $this->sort, $this->page, $this->perPage, $this->direction], '/orgs/{org}/insights/api/subject-stats' . '?min_timestamp={min_timestamp}&max_timestamp={max_timestamp}&sort={sort}&page={page}&per_page={per_page}&direction={direction}'));
+        return new Request('GET', str_replace(['{org}', '{min_timestamp}', '{max_timestamp}', '{sort}', '{subject_name_substring}', '{page}', '{per_page}', '{direction}'], [$this->org, $this->minTimestamp, $this->maxTimestamp, $this->sort, $this->subjectNameSubstring, $this->page, $this->perPage, $this->direction], '/orgs/{org}/insights/api/subject-stats' . '?min_timestamp={min_timestamp}&max_timestamp={max_timestamp}&sort={sort}&subject_name_substring={subject_name_substring}&page={page}&per_page={per_page}&direction={direction}'));
     }
 
     /** @return Observable<Schema\ApiInsightsSubjectStats> */

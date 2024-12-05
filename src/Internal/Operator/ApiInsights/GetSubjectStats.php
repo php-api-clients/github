@@ -24,10 +24,10 @@ final readonly class GetSubjectStats
     {
     }
 
-    /** @return Observable<Schema\ApiInsightsSubjectStats> */
-    public function call(string $org, string $minTimestamp, string $maxTimestamp, array $sort, int $page = 1, int $perPage = 30, string $direction = 'desc'): iterable
+    /** @return iterable<int,Schema\ApiInsightsSubjectStats> */
+    public function call(string $org, string $minTimestamp, string $maxTimestamp, array $sort, string $subjectNameSubstring, int $page = 1, int $perPage = 30, string $direction = 'desc'): iterable
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\ApiInsights\GetSubjectStats($this->responseSchemaValidator, $this->hydrator, $org, $minTimestamp, $maxTimestamp, $sort, $page, $perPage, $direction);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\ApiInsights\GetSubjectStats($this->responseSchemaValidator, $this->hydrator, $org, $minTimestamp, $maxTimestamp, $sort, $subjectNameSubstring, $page, $perPage, $direction);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable {
             return $operation->createResponse($response);

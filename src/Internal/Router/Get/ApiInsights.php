@@ -20,7 +20,7 @@ final class ApiInsights
     {
     }
 
-    /** @return Observable<Schema\ApiInsightsSubjectStats> */
+    /** @return iterable<int,Schema\ApiInsightsSubjectStats> */
     public function getSubjectStats(array $params): iterable
     {
         $arguments = [];
@@ -48,6 +48,12 @@ final class ApiInsights
 
         $arguments['sort'] = $params['sort'];
         unset($params['sort']);
+        if (array_key_exists('subject_name_substring', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: subject_name_substring');
+        }
+
+        $arguments['subject_name_substring'] = $params['subject_name_substring'];
+        unset($params['subject_name_substring']);
         if (array_key_exists('page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: page');
         }
@@ -68,7 +74,7 @@ final class ApiInsights
         unset($params['direction']);
         $operator = new Internal\Operator\ApiInsights\GetSubjectStats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀SubjectStats());
 
-        return $operator->call($arguments['org'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['sort'], $arguments['page'], $arguments['per_page'], $arguments['direction']);
+        return $operator->call($arguments['org'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['sort'], $arguments['subject_name_substring'], $arguments['page'], $arguments['per_page'], $arguments['direction']);
     }
 
     /** @return */
@@ -131,7 +137,7 @@ final class ApiInsights
         return $operator->call($arguments['org'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['timestamp_increment']);
     }
 
-    /** @return Observable<Schema\ApiInsightsUserStats> */
+    /** @return iterable<int,Schema\ApiInsightsUserStats> */
     public function getUserStats(array $params): iterable
     {
         $arguments = [];
@@ -165,6 +171,12 @@ final class ApiInsights
 
         $arguments['sort'] = $params['sort'];
         unset($params['sort']);
+        if (array_key_exists('actor_name_substring', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: actor_name_substring');
+        }
+
+        $arguments['actor_name_substring'] = $params['actor_name_substring'];
+        unset($params['actor_name_substring']);
         if (array_key_exists('page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: page');
         }
@@ -185,10 +197,10 @@ final class ApiInsights
         unset($params['direction']);
         $operator = new Internal\Operator\ApiInsights\GetUserStats($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀UserStats🌀UserId());
 
-        return $operator->call($arguments['org'], $arguments['user_id'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['sort'], $arguments['page'], $arguments['per_page'], $arguments['direction']);
+        return $operator->call($arguments['org'], $arguments['user_id'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['sort'], $arguments['actor_name_substring'], $arguments['page'], $arguments['per_page'], $arguments['direction']);
     }
 
-    /** @return Observable<Schema\ApiInsightsRouteStats> */
+    /** @return iterable<int,Schema\ApiInsightsRouteStats> */
     public function getRouteStatsByActor(array $params): iterable
     {
         $arguments = [];
@@ -228,6 +240,12 @@ final class ApiInsights
 
         $arguments['sort'] = $params['sort'];
         unset($params['sort']);
+        if (array_key_exists('api_route_substring', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: api_route_substring');
+        }
+
+        $arguments['api_route_substring'] = $params['api_route_substring'];
+        unset($params['api_route_substring']);
         if (array_key_exists('page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: page');
         }
@@ -248,7 +266,7 @@ final class ApiInsights
         unset($params['direction']);
         $operator = new Internal\Operator\ApiInsights\GetRouteStatsByActor($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Insights🌀Api🌀RouteStats🌀ActorType🌀ActorId());
 
-        return $operator->call($arguments['org'], $arguments['actor_type'], $arguments['actor_id'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['sort'], $arguments['page'], $arguments['per_page'], $arguments['direction']);
+        return $operator->call($arguments['org'], $arguments['actor_type'], $arguments['actor_id'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['sort'], $arguments['api_route_substring'], $arguments['page'], $arguments['per_page'], $arguments['direction']);
     }
 
     /** @return */
