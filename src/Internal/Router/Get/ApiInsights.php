@@ -20,7 +20,7 @@ final class ApiInsights
     {
     }
 
-    /** @return iterable<int,Schema\ApiInsightsSubjectStats> */
+    /** @return Observable<Schema\ApiInsightsSubjectStats> */
     public function getSubjectStats(array $params): iterable
     {
         $arguments = [];
@@ -137,7 +137,7 @@ final class ApiInsights
         return $operator->call($arguments['org'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['timestamp_increment']);
     }
 
-    /** @return iterable<int,Schema\ApiInsightsUserStats> */
+    /** @return Observable<Schema\ApiInsightsUserStats> */
     public function getUserStats(array $params): iterable
     {
         $arguments = [];
@@ -200,7 +200,7 @@ final class ApiInsights
         return $operator->call($arguments['org'], $arguments['user_id'], $arguments['min_timestamp'], $arguments['max_timestamp'], $arguments['sort'], $arguments['actor_name_substring'], $arguments['page'], $arguments['per_page'], $arguments['direction']);
     }
 
-    /** @return iterable<int,Schema\ApiInsightsRouteStats> */
+    /** @return Observable<Schema\ApiInsightsRouteStats> */
     public function getRouteStatsByActor(array $params): iterable
     {
         $arguments = [];

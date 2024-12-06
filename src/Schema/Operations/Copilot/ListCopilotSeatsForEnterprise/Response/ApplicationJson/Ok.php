@@ -613,8 +613,9 @@ final readonly class Ok
                     },
                     "updated_at": {
                         "type": "string",
-                        "description": "Timestamp of when the assignee\'s GitHub Copilot access was last updated, in ISO 8601 format.",
-                        "format": "date-time"
+                        "description": "**Closing down notice:** This field is no longer relevant and is closing down. Use the `created_at` field to determine when the assignee was last granted access to GitHub Copilot. Timestamp of when the assignee\'s GitHub Copilot access was last updated, in ISO 8601 format.",
+                        "format": "date-time",
+                        "deprecated": true
                     },
                     "plan_type": {
                         "enum": [

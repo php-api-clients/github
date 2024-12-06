@@ -14,25 +14,25 @@ final class ApiInsights
     {
     }
 
-    /** @return iterable<int,Schema\ApiInsightsRouteStats> */
+    /** @return Observable<Schema\ApiInsightsRouteStats> */
     public function getRouteStatsByActor(string $org, string $actorType, int $actorId, string $minTimestamp, string $maxTimestamp, array $sort, string $apiRouteSubstring, int $page, int $perPage, string $direction): iterable
     {
         return $this->operators->apiInsights👷GetRouteStatsByActor()->call($org, $actorType, $actorId, $minTimestamp, $maxTimestamp, $sort, $apiRouteSubstring, $page, $perPage, $direction);
     }
 
-    /** @return iterable<int,Schema\ApiInsightsRouteStats> */
+    /** @return Observable<Schema\ApiInsightsRouteStats> */
     public function getRouteStatsByActorListing(string $org, string $actorType, int $actorId, string $minTimestamp, string $maxTimestamp, array $sort, string $apiRouteSubstring, int $page, int $perPage, string $direction): iterable
     {
         return $this->operators->apiInsights👷GetRouteStatsByActorListing()->call($org, $actorType, $actorId, $minTimestamp, $maxTimestamp, $sort, $apiRouteSubstring, $page, $perPage, $direction);
     }
 
-    /** @return iterable<int,Schema\ApiInsightsSubjectStats> */
+    /** @return Observable<Schema\ApiInsightsSubjectStats> */
     public function getSubjectStats(string $org, string $minTimestamp, string $maxTimestamp, array $sort, string $subjectNameSubstring, int $page, int $perPage, string $direction): iterable
     {
         return $this->operators->apiInsights👷GetSubjectStats()->call($org, $minTimestamp, $maxTimestamp, $sort, $subjectNameSubstring, $page, $perPage, $direction);
     }
 
-    /** @return iterable<int,Schema\ApiInsightsSubjectStats> */
+    /** @return Observable<Schema\ApiInsightsSubjectStats> */
     public function getSubjectStatsListing(string $org, string $minTimestamp, string $maxTimestamp, array $sort, string $subjectNameSubstring, int $page, int $perPage, string $direction): iterable
     {
         return $this->operators->apiInsights👷GetSubjectStatsListing()->call($org, $minTimestamp, $maxTimestamp, $sort, $subjectNameSubstring, $page, $perPage, $direction);
@@ -74,13 +74,13 @@ final class ApiInsights
         return $this->operators->apiInsights👷GetTimeStatsByActor()->call($org, $actorType, $actorId, $minTimestamp, $maxTimestamp, $timestampIncrement);
     }
 
-    /** @return iterable<int,Schema\ApiInsightsUserStats> */
+    /** @return Observable<Schema\ApiInsightsUserStats> */
     public function getUserStats(string $org, string $userId, string $minTimestamp, string $maxTimestamp, array $sort, string $actorNameSubstring, int $page, int $perPage, string $direction): iterable
     {
         return $this->operators->apiInsights👷GetUserStats()->call($org, $userId, $minTimestamp, $maxTimestamp, $sort, $actorNameSubstring, $page, $perPage, $direction);
     }
 
-    /** @return iterable<int,Schema\ApiInsightsUserStats> */
+    /** @return Observable<Schema\ApiInsightsUserStats> */
     public function getUserStatsListing(string $org, string $userId, string $minTimestamp, string $maxTimestamp, array $sort, string $actorNameSubstring, int $page, int $perPage, string $direction): iterable
     {
         return $this->operators->apiInsights👷GetUserStatsListing()->call($org, $userId, $minTimestamp, $maxTimestamp, $sort, $actorNameSubstring, $page, $perPage, $direction);

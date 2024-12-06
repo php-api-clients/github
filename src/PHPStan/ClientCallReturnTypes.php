@@ -1004,19 +1004,19 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsRouteStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsRouteStats>');
         }
 
         if ($call === 'LIST /orgs/{org}/insights/api/route-stats/{actor_type}/{actor_id}') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsRouteStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsRouteStats>');
         }
 
         if ($call === 'GET /orgs/{org}/insights/api/subject-stats') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsSubjectStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsSubjectStats>');
         }
 
         if ($call === 'LIST /orgs/{org}/insights/api/subject-stats') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsSubjectStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsSubjectStats>');
         }
 
         if ($call === 'GET /orgs/{org}/insights/api/summary-stats') {
@@ -1044,11 +1044,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/insights/api/user-stats/{user_id}') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsUserStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsUserStats>');
         }
 
         if ($call === 'LIST /orgs/{org}/insights/api/user-stats/{user_id}') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\ApiInsightsUserStats>');
+            return $this->typeResolver->resolve('Observable<Schema\\ApiInsightsUserStats>');
         }
 
         if ($call === 'GET /orgs/{org}/installation') {

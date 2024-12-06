@@ -606,8 +606,9 @@ final readonly class CopilotSeatDetails
         },
         "updated_at": {
             "type": "string",
-            "description": "Timestamp of when the assignee\'s GitHub Copilot access was last updated, in ISO 8601 format.",
-            "format": "date-time"
+            "description": "**Closing down notice:** This field is no longer relevant and is closing down. Use the `created_at` field to determine when the assignee was last granted access to GitHub Copilot. Timestamp of when the assignee\'s GitHub Copilot access was last updated, in ISO 8601 format.",
+            "format": "date-time",
+            "deprecated": true
         },
         "plan_type": {
             "enum": [
@@ -679,7 +680,7 @@ final readonly class CopilotSeatDetails
      * lastActivityAt: Timestamp of user's last GitHub Copilot activity, in ISO 8601 format.
      * lastActivityEditor: Last editor that was used by the user for a GitHub Copilot completion.
      * createdAt: Timestamp of when the assignee was last granted access to GitHub Copilot, in ISO 8601 format.
-     * updatedAt: Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
+     * updatedAt: **Closing down notice:** This field is no longer relevant and is closing down. Use the `created_at` field to determine when the assignee was last granted access to GitHub Copilot. Timestamp of when the assignee's GitHub Copilot access was last updated, in ISO 8601 format.
      * planType: The Copilot plan of the organization, or the parent enterprise, when applicable.
      */
     public function __construct(public Schema\SimpleUser $assignee, public Schema\OrganizationSimple|null $organization, #[MapFrom('assigning_team')]
