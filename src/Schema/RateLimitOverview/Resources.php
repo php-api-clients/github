@@ -255,6 +255,30 @@ final readonly class Resources
                     "type": "integer"
                 }
             }
+        },
+        "code_scanning_autofix": {
+            "title": "Rate Limit",
+            "required": [
+                "limit",
+                "remaining",
+                "reset",
+                "used"
+            ],
+            "type": "object",
+            "properties": {
+                "limit": {
+                    "type": "integer"
+                },
+                "remaining": {
+                    "type": "integer"
+                },
+                "reset": {
+                    "type": "integer"
+                },
+                "used": {
+                    "type": "integer"
+                }
+            }
         }
     }
 }';
@@ -320,6 +344,12 @@ final readonly class Resources
         "remaining": 9,
         "reset": 5,
         "used": 4
+    },
+    "code_scanning_autofix": {
+        "limit": 5,
+        "remaining": 9,
+        "reset": 5,
+        "used": 4
     }
 }';
 
@@ -329,7 +359,8 @@ final readonly class Resources
     public Schema\RateLimit|null $integrationManifest, #[MapFrom('code_scanning_upload')]
     public Schema\RateLimit|null $codeScanningUpload, #[MapFrom('actions_runner_registration')]
     public Schema\RateLimit|null $actionsRunnerRegistration, public Schema\RateLimit|null $scim, #[MapFrom('dependency_snapshots')]
-    public Schema\RateLimit|null $dependencySnapshots,)
+    public Schema\RateLimit|null $dependencySnapshots, #[MapFrom('code_scanning_autofix')]
+    public Schema\RateLimit|null $codeScanningAutofix,)
     {
     }
 }

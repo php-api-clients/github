@@ -128,6 +128,9 @@ final readonly class Ok
                     },
                     "repository_id": {
                         "type": "integer"
+                    },
+                    "bundle_url": {
+                        "type": "string"
                     }
                 }
             }
@@ -203,7 +206,8 @@ final readonly class Ok
                     ]
                 }
             },
-            "repository_id": 13
+            "repository_id": 13,
+            "bundle_url": "generated"
         },
         {
             "bundle": {
@@ -270,7 +274,8 @@ final readonly class Ok
                     ]
                 }
             },
-            "repository_id": 13
+            "repository_id": 13,
+            "bundle_url": "generated"
         }
     ]
 }';

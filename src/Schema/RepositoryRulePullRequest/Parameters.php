@@ -18,6 +18,13 @@ final readonly class Parameters
     ],
     "type": "object",
     "properties": {
+        "allowed_merge_methods": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled."
+        },
         "dismiss_stale_reviews_on_push": {
             "type": "boolean",
             "description": "New, reviewable commits pushed will dismiss previous pull request review approvals."
@@ -45,6 +52,10 @@ final readonly class Parameters
     public const SCHEMA_TITLE        = '';
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{
+    "allowed_merge_methods": [
+        "generated",
+        "generated"
+    ],
     "dismiss_stale_reviews_on_push": false,
     "require_code_owner_review": false,
     "require_last_push_approval": false,
@@ -53,13 +64,15 @@ final readonly class Parameters
 }';
 
     /**
+     * allowedMergeMethods: When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled.
      * dismissStaleReviewsOnPush: New, reviewable commits pushed will dismiss previous pull request review approvals.
      * requireCodeOwnerReview: Require an approving review in pull requests that modify files that have a designated code owner.
      * requireLastPushApproval: Whether the most recent reviewable push must be approved by someone other than the person who pushed it.
      * requiredApprovingReviewCount: The number of approving reviews that are required before a pull request can be merged.
      * requiredReviewThreadResolution: All conversations on code must be resolved before a pull request can be merged.
      */
-    public function __construct(#[MapFrom('dismiss_stale_reviews_on_push')]
+    public function __construct(#[MapFrom('allowed_merge_methods')]
+    public array|null $allowedMergeMethods, #[MapFrom('dismiss_stale_reviews_on_push')]
     public bool $dismissStaleReviewsOnPush, #[MapFrom('require_code_owner_review')]
     public bool $requireCodeOwnerReview, #[MapFrom('require_last_push_approval')]
     public bool $requireLastPushApproval, #[MapFrom('required_approving_review_count')]

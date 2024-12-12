@@ -2,13 +2,14 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\Orgs\CreateOrUpdateCustomProperty\Request;
+namespace ApiClients\Client\GitHub\Schema;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-final readonly class ApplicationJson
+final readonly class CustomPropertySetPayload
 {
     public const SCHEMA_JSON         = '{
+    "title": "Custom Property Set Payload",
     "required": [
         "value_type"
     ],
@@ -69,10 +70,11 @@ final readonly class ApplicationJson
             },
             "description": "An ordered list of the allowed values of the property.\\nThe property can have up to 200 allowed values."
         }
-    }
+    },
+    "description": "Custom property set payload"
 }';
-    public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = '';
+    public const SCHEMA_TITLE        = 'Custom Property Set Payload';
+    public const SCHEMA_DESCRIPTION  = 'Custom property set payload';
     public const SCHEMA_EXAMPLE_DATA = '{
     "value_type": "single_select",
     "required": false,

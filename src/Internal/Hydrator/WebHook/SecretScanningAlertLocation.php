@@ -441,6 +441,17 @@ class SecretScanningAlertLocation implements ObjectMapper
 
             after_pushProtectionBypassRequestReviewer:
 
+            $value = $payload['push_protection_bypass_request_reviewer_comment'] ?? null;
+
+            if ($value === null) {
+                $properties['pushProtectionBypassRequestReviewerComment'] = null;
+                goto after_pushProtectionBypassRequestReviewerComment;
+            }
+
+            $properties['pushProtectionBypassRequestReviewerComment'] = $value;
+
+            after_pushProtectionBypassRequestReviewerComment:
+
             $value = $payload['push_protection_bypass_request_comment'] ?? null;
 
             if ($value === null) {
@@ -3972,6 +3983,14 @@ class SecretScanningAlertLocation implements ObjectMapper
 
         $pushProtectionBypassRequestReviewer                                                                 = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($pushProtectionBypassRequestReviewer);
         after_pushProtectionBypassRequestReviewer:        $result['push_protection_bypass_request_reviewer'] = $pushProtectionBypassRequestReviewer;
+
+        $pushProtectionBypassRequestReviewerComment = $object->pushProtectionBypassRequestReviewerComment;
+
+        if ($pushProtectionBypassRequestReviewerComment === null) {
+            goto after_pushProtectionBypassRequestReviewerComment;
+        }
+
+        after_pushProtectionBypassRequestReviewerComment:        $result['push_protection_bypass_request_reviewer_comment'] = $pushProtectionBypassRequestReviewerComment;
 
         $pushProtectionBypassRequestComment = $object->pushProtectionBypassRequestComment;
 

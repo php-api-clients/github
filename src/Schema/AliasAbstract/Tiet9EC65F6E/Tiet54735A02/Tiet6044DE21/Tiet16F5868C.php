@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet8EA83230\TietFF947D7F\Tiet4FFBD303;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet9EC65F6E\Tiet54735A02\Tiet6044DE21;
 
-abstract readonly class TietF22B5455
+abstract readonly class Tiet16F5868C
 {
     public const SCHEMA_JSON         = '{
     "type": "object",
@@ -35,6 +35,9 @@ abstract readonly class TietF22B5455
                     },
                     "repository_id": {
                         "type": "integer"
+                    },
+                    "bundle_url": {
+                        "type": "string"
                     }
                 }
             }
@@ -51,7 +54,8 @@ abstract readonly class TietF22B5455
                 "verificationMaterial": [],
                 "dsseEnvelope": []
             },
-            "repository_id": 13
+            "repository_id": 13,
+            "bundle_url": "generated"
         },
         {
             "bundle": {
@@ -59,7 +63,8 @@ abstract readonly class TietF22B5455
                 "verificationMaterial": [],
                 "dsseEnvelope": []
             },
-            "repository_id": 13
+            "repository_id": 13,
+            "bundle_url": "generated"
         }
     ]
 }';

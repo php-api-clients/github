@@ -21,7 +21,8 @@ final readonly class ApplicationJson
             "enum": [
                 "branch",
                 "tag",
-                "push"
+                "push",
+                "repository"
             ],
             "type": "string",
             "description": "The target of the ruleset"
@@ -318,7 +319,7 @@ final readonly class ApplicationJson
                     "description": "Conditions to target repositories by property and refs by name"
                 }
             ],
-            "description": "Conditions for an organization ruleset.\\nThe branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.\\nThe push rulesets conditions object does not require the `ref_name` property."
+            "description": "Conditions for an organization ruleset.\\nThe branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.\\nThe push rulesets conditions object does not require the `ref_name` property.\\nFor repository policy rulesets, the conditions object should only contain the `repository_name`, the `repository_id`, or the `repository_property`."
         },
         "rules": {
             "type": "array",
@@ -549,6 +550,13 @@ final readonly class ApplicationJson
                                 ],
                                 "type": "object",
                                 "properties": {
+                                    "allowed_merge_methods": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "description": "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled."
+                                    },
                                     "dismiss_stale_reviews_on_push": {
                                         "type": "boolean",
                                         "description": "New, reviewable commits pushed will dismiss previous pull request review approvals."
@@ -1139,7 +1147,7 @@ final readonly class ApplicationJson
     public const SCHEMA_DESCRIPTION  = '';
     public const SCHEMA_EXAMPLE_DATA = '{
     "name": "generated",
-    "target": "push",
+    "target": "repository",
     "enforcement": "disabled",
     "bypass_actors": [
         {
@@ -1168,6 +1176,7 @@ final readonly class ApplicationJson
      * conditions: Conditions for an organization ruleset.
     The branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.
     The push rulesets conditions object does not require the `ref_name` property.
+    For repository policy rulesets, the conditions object should only contain the `repository_name`, the `repository_id`, or the `repository_property`.
      * rules: An array of rules within the ruleset.
      */
     public function __construct(public string|null $name, public string|null $target, public string|null $enforcement, #[MapFrom('bypass_actors')]

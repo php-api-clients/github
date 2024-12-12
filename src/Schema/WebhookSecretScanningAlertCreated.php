@@ -655,6 +655,13 @@ final readonly class WebhookSecretScanningAlertCreated
                         }
                     ]
                 },
+                "push_protection_bypass_request_reviewer_comment": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "An optional comment when reviewing a push protection bypass."
+                },
                 "push_protection_bypass_request_comment": {
                     "type": [
                         "string",
@@ -2650,6 +2657,7 @@ final readonly class WebhookSecretScanningAlertCreated
             "starred_at": "\\"2020-07-09T00:17:55Z\\"",
             "user_view_type": "public"
         },
+        "push_protection_bypass_request_reviewer_comment": "generated",
         "push_protection_bypass_request_comment": "generated",
         "push_protection_bypass_request_html_url": "https:\\/\\/example.com\\/",
         "publicly_leaked": false,

@@ -24,7 +24,6 @@ final readonly class CreateOrUpdateCustomProperty
     {
     }
 
-    /** @return */
     public function call(string $org, string $customPropertyName, array $params): CustomProperty
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\CreateOrUpdateCustomProperty($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $customPropertyName);

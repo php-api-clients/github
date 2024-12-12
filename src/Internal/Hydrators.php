@@ -38,13 +38,8 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\CodesOfConduct|null $operation🌀CodesOfConduct                                                                                                                                                                               = null;
     private Internal\Hydrator\Operation\CodesOfConduct\Key|null $operation🌀CodesOfConduct🌀Key                                                                                                                                                                       = null;
     private Internal\Hydrator\Operation\Emojis|null $operation🌀Emojis                                                                                                                                                                                               = null;
-    private Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Billing\Seats|null $operation🌀Enterprises🌀Enterprise🌀Copilot🌀Billing🌀Seats                                                                                                                   = null;
-    private Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Metrics|null $operation🌀Enterprises🌀Enterprise🌀Copilot🌀Metrics                                                                                                                               = null;
-    private Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Usage|null $operation🌀Enterprises🌀Enterprise🌀Copilot🌀Usage                                                                                                                                   = null;
     private Internal\Hydrator\Operation\Enterprises\Enterprise\Dependabot\Alerts|null $operation🌀Enterprises🌀Enterprise🌀Dependabot🌀Alerts                                                                                                                           = null;
     private Internal\Hydrator\Operation\Enterprises\Enterprise\SecretScanning\Alerts|null $operation🌀Enterprises🌀Enterprise🌀SecretScanning🌀Alerts                                                                                                                   = null;
-    private Internal\Hydrator\Operation\Enterprises\Enterprise\Team\TeamSlug\Copilot\Metrics|null $operation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Metrics                                                                                                   = null;
-    private Internal\Hydrator\Operation\Enterprises\Enterprise\Team\TeamSlug\Copilot\Usage|null $operation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Usage                                                                                                       = null;
     private Internal\Hydrator\Operation\Events|null $operation🌀Events                                                                                                                                                                                               = null;
     private Internal\Hydrator\Operation\Feeds|null $operation🌀Feeds                                                                                                                                                                                                 = null;
     private Internal\Hydrator\Operation\Gists|null $operation🌀Gists                                                                                                                                                                                                 = null;
@@ -758,7 +753,6 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\ClassroomAssignment', '\\ApiClients\\Client\\GitHub\\Schema\\SimpleClassroomRepository', '\\ApiClients\\Client\\GitHub\\Schema\\Classroom', '\\ApiClients\\Client\\GitHub\\Schema\\SimpleClassroomOrganization' => $this->getObjectMapperOperation🌀Assignments🌀AssignmentId()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\CodeOfConduct' => $this->getObjectMapperOperation🌀CodesOfConduct🌀Key()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Emojis\\Get\\Response\\ApplicationJson\\Ok\\Application\\Json' => $this->getObjectMapperOperation🌀Emojis()->hydrateObject($className, $payload),
-            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Copilot\\ListCopilotSeatsForEnterprise\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Copilot🌀Billing🌀Seats()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\SecretScanning\\ListAlertsForEnterprise\\Response\\ApplicationJson\\ServiceUnavailable' => $this->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀SecretScanning🌀Alerts()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Feed', '\\ApiClients\\Client\\GitHub\\Schema\\Feed\\Links', '\\ApiClients\\Client\\GitHub\\Schema\\LinkWithType' => $this->getObjectMapperOperation🌀Feeds()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\GistSimple', '\\ApiClients\\Client\\GitHub\\Schema\\GistSimple\\ForkOf', '\\ApiClients\\Client\\GitHub\\Schema\\GistSimple\\ForkOf\\Files', '\\ApiClients\\Client\\GitHub\\Schema\\GistSimple\\Files' => $this->getObjectMapperOperation🌀Gists()->hydrateObject($className, $payload),
@@ -1119,7 +1113,6 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\ClassroomAssignment', '\\ApiClients\\Client\\GitHub\\Schema\\SimpleClassroomRepository', '\\ApiClients\\Client\\GitHub\\Schema\\Classroom', '\\ApiClients\\Client\\GitHub\\Schema\\SimpleClassroomOrganization' => $this->getObjectMapperOperation🌀Assignments🌀AssignmentId()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\CodeOfConduct' => $this->getObjectMapperOperation🌀CodesOfConduct🌀Key()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Emojis\\Get\\Response\\ApplicationJson\\Ok\\Application\\Json' => $this->getObjectMapperOperation🌀Emojis()->serializeObject($object),
-            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Copilot\\ListCopilotSeatsForEnterprise\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Copilot🌀Billing🌀Seats()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\SecretScanning\\ListAlertsForEnterprise\\Response\\ApplicationJson\\ServiceUnavailable' => $this->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀SecretScanning🌀Alerts()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Feed', '\\ApiClients\\Client\\GitHub\\Schema\\Feed\\Links', '\\ApiClients\\Client\\GitHub\\Schema\\LinkWithType' => $this->getObjectMapperOperation🌀Feeds()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\GistSimple', '\\ApiClients\\Client\\GitHub\\Schema\\GistSimple\\ForkOf', '\\ApiClients\\Client\\GitHub\\Schema\\GistSimple\\ForkOf\\Files', '\\ApiClients\\Client\\GitHub\\Schema\\GistSimple\\Files' => $this->getObjectMapperOperation🌀Gists()->serializeObject($object),
@@ -1701,33 +1694,6 @@ final class Hydrators implements ObjectMapper
         return $this->operation🌀Emojis;
     }
 
-    public function getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Copilot🌀Billing🌀Seats(): Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Billing\Seats
-    {
-        if ($this->operation🌀Enterprises🌀Enterprise🌀Copilot🌀Billing🌀Seats instanceof Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Billing\Seats === false) {
-            $this->operation🌀Enterprises🌀Enterprise🌀Copilot🌀Billing🌀Seats = new Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Billing\Seats();
-        }
-
-        return $this->operation🌀Enterprises🌀Enterprise🌀Copilot🌀Billing🌀Seats;
-    }
-
-    public function getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Copilot🌀Metrics(): Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Metrics
-    {
-        if ($this->operation🌀Enterprises🌀Enterprise🌀Copilot🌀Metrics instanceof Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Metrics === false) {
-            $this->operation🌀Enterprises🌀Enterprise🌀Copilot🌀Metrics = new Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Metrics();
-        }
-
-        return $this->operation🌀Enterprises🌀Enterprise🌀Copilot🌀Metrics;
-    }
-
-    public function getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Copilot🌀Usage(): Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Usage
-    {
-        if ($this->operation🌀Enterprises🌀Enterprise🌀Copilot🌀Usage instanceof Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Usage === false) {
-            $this->operation🌀Enterprises🌀Enterprise🌀Copilot🌀Usage = new Internal\Hydrator\Operation\Enterprises\Enterprise\Copilot\Usage();
-        }
-
-        return $this->operation🌀Enterprises🌀Enterprise🌀Copilot🌀Usage;
-    }
-
     public function getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Dependabot🌀Alerts(): Internal\Hydrator\Operation\Enterprises\Enterprise\Dependabot\Alerts
     {
         if ($this->operation🌀Enterprises🌀Enterprise🌀Dependabot🌀Alerts instanceof Internal\Hydrator\Operation\Enterprises\Enterprise\Dependabot\Alerts === false) {
@@ -1744,24 +1710,6 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Enterprises🌀Enterprise🌀SecretScanning🌀Alerts;
-    }
-
-    public function getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Metrics(): Internal\Hydrator\Operation\Enterprises\Enterprise\Team\TeamSlug\Copilot\Metrics
-    {
-        if ($this->operation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Metrics instanceof Internal\Hydrator\Operation\Enterprises\Enterprise\Team\TeamSlug\Copilot\Metrics === false) {
-            $this->operation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Metrics = new Internal\Hydrator\Operation\Enterprises\Enterprise\Team\TeamSlug\Copilot\Metrics();
-        }
-
-        return $this->operation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Metrics;
-    }
-
-    public function getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Usage(): Internal\Hydrator\Operation\Enterprises\Enterprise\Team\TeamSlug\Copilot\Usage
-    {
-        if ($this->operation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Usage instanceof Internal\Hydrator\Operation\Enterprises\Enterprise\Team\TeamSlug\Copilot\Usage === false) {
-            $this->operation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Usage = new Internal\Hydrator\Operation\Enterprises\Enterprise\Team\TeamSlug\Copilot\Usage();
-        }
-
-        return $this->operation🌀Enterprises🌀Enterprise🌀Team🌀TeamSlug🌀Copilot🌀Usage;
     }
 
     public function getObjectMapperOperation🌀Events(): Internal\Hydrator\Operation\Events

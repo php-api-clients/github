@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet78CFC607\Tiet96B6C16A\TietC35E0421;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietE2314769\Tiet2BBD4166\Tiet71BBCC18;
 
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class TietD975B03C
+abstract readonly class TietF732B93A
 {
     public const SCHEMA_JSON         = '{
     "type": "object",
@@ -33,6 +33,9 @@ abstract readonly class TietD975B03C
         },
         "repository_id": {
             "type": "integer"
+        },
+        "bundle_url": {
+            "type": "string"
         }
     }
 }';
@@ -44,7 +47,8 @@ abstract readonly class TietD975B03C
         "verificationMaterial": [],
         "dsseEnvelope": []
     },
-    "repository_id": 13
+    "repository_id": 13,
+    "bundle_url": "generated"
 }';
 
     /**
@@ -52,7 +56,8 @@ abstract readonly class TietD975B03C
     Refer to the [Sigstore Bundle Specification](https://github.com/sigstore/protobuf-specs/blob/main/protos/sigstore_bundle.proto) for more information.
      */
     public function __construct(public Schema\Operations\Orgs\ListAttestations\Response\ApplicationJson\Ok\Attestations\Bundle|null $bundle, #[MapFrom('repository_id')]
-    public int|null $repositoryId,)
+    public int|null $repositoryId, #[MapFrom('bundle_url')]
+    public string|null $bundleUrl,)
     {
     }
 }

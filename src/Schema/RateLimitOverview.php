@@ -262,6 +262,30 @@ final readonly class RateLimitOverview
                             "type": "integer"
                         }
                     }
+                },
+                "code_scanning_autofix": {
+                    "title": "Rate Limit",
+                    "required": [
+                        "limit",
+                        "remaining",
+                        "reset",
+                        "used"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "limit": {
+                            "type": "integer"
+                        },
+                        "remaining": {
+                            "type": "integer"
+                        },
+                        "reset": {
+                            "type": "integer"
+                        },
+                        "used": {
+                            "type": "integer"
+                        }
+                    }
                 }
             }
         },
@@ -351,6 +375,12 @@ final readonly class RateLimitOverview
             "used": 4
         },
         "dependency_snapshots": {
+            "limit": 5,
+            "remaining": 9,
+            "reset": 5,
+            "used": 4
+        },
+        "code_scanning_autofix": {
             "limit": 5,
             "remaining": 9,
             "reset": 5,

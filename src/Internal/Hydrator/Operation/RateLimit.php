@@ -313,6 +313,26 @@ class RateLimit implements ObjectMapper
             $properties['dependencySnapshots'] = $value;
 
             after_dependencySnapshots:
+
+            $value = $payload['code_scanning_autofix'] ?? null;
+
+            if ($value === null) {
+                $properties['codeScanningAutofix'] = null;
+                goto after_codeScanningAutofix;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'codeScanningAutofix';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RateLimit($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['codeScanningAutofix'] = $value;
+
+            after_codeScanningAutofix:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\RateLimitOverview\Resources', $exception, stack: $this->hydrationStack);
         }
@@ -651,6 +671,15 @@ class RateLimit implements ObjectMapper
 
         $dependencySnapshots                                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RateLimit($dependencySnapshots);
         after_dependencySnapshots:        $result['dependency_snapshots'] = $dependencySnapshots;
+
+        $codeScanningAutofix = $object->codeScanningAutofix;
+
+        if ($codeScanningAutofix === null) {
+            goto after_codeScanningAutofix;
+        }
+
+        $codeScanningAutofix                                               = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RateLimit($codeScanningAutofix);
+        after_codeScanningAutofix:        $result['code_scanning_autofix'] = $codeScanningAutofix;
 
         return $result;
     }

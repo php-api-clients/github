@@ -641,6 +641,13 @@ final readonly class SecretScanningAlertWebhook
                 }
             ]
         },
+        "push_protection_bypass_request_reviewer_comment": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "An optional comment when reviewing a push protection bypass."
+        },
         "push_protection_bypass_request_comment": {
             "type": [
                 "string",
@@ -761,6 +768,7 @@ final readonly class SecretScanningAlertWebhook
         "starred_at": "\\"2020-07-09T00:17:55Z\\"",
         "user_view_type": "public"
     },
+    "push_protection_bypass_request_reviewer_comment": "generated",
     "push_protection_bypass_request_comment": "generated",
     "push_protection_bypass_request_html_url": "https:\\/\\/example.com\\/",
     "publicly_leaked": false,
@@ -782,6 +790,7 @@ final readonly class SecretScanningAlertWebhook
      * validity: The token status as of the latest validity check.
      * pushProtectionBypassed: Whether push protection was bypassed for the detected secret.
      * pushProtectionBypassedAt: The time that push protection was bypassed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     * pushProtectionBypassRequestReviewerComment: An optional comment when reviewing a push protection bypass.
      * pushProtectionBypassRequestComment: An optional comment when requesting a push protection bypass.
      * pushProtectionBypassRequestHtmlUrl: The URL to a push protection bypass request.
      * publiclyLeaked: Whether the detected secret was publicly leaked.
@@ -800,7 +809,8 @@ final readonly class SecretScanningAlertWebhook
     public bool|null $pushProtectionBypassed, #[MapFrom('push_protection_bypassed_by')]
     public Schema\SimpleUser|null $pushProtectionBypassedBy, #[MapFrom('push_protection_bypassed_at')]
     public string|null $pushProtectionBypassedAt, #[MapFrom('push_protection_bypass_request_reviewer')]
-    public Schema\SimpleUser|null $pushProtectionBypassRequestReviewer, #[MapFrom('push_protection_bypass_request_comment')]
+    public Schema\SimpleUser|null $pushProtectionBypassRequestReviewer, #[MapFrom('push_protection_bypass_request_reviewer_comment')]
+    public string|null $pushProtectionBypassRequestReviewerComment, #[MapFrom('push_protection_bypass_request_comment')]
     public string|null $pushProtectionBypassRequestComment, #[MapFrom('push_protection_bypass_request_html_url')]
     public string|null $pushProtectionBypassRequestHtmlUrl, #[MapFrom('publicly_leaked')]
     public bool|null $publiclyLeaked, #[MapFrom('multi_repo')]

@@ -36,7 +36,7 @@ final class CreateOrUpdateCustomProperty
 
     public function createRequest(array $data): RequestInterface
     {
-        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\Orgs\CreateOrUpdateCustomProperty\Request\ApplicationJson::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+        $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\CustomPropertySetPayload::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
         return new Request('PUT', str_replace(['{org}', '{custom_property_name}'], [$this->org, $this->customPropertyName], '/orgs/{org}/properties/schema/{custom_property_name}'), ['Content-Type' => 'application/json'], json_encode($data));
     }

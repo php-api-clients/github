@@ -399,6 +399,13 @@ final readonly class Changes
                                         ],
                                         "type": "object",
                                         "properties": {
+                                            "allowed_merge_methods": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "description": "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled."
+                                            },
                                             "dismiss_stale_reviews_on_push": {
                                                 "type": "boolean",
                                                 "description": "New, reviewable commits pushed will dismiss previous pull request review approvals."
@@ -1211,6 +1218,13 @@ final readonly class Changes
                                         ],
                                         "type": "object",
                                         "properties": {
+                                            "allowed_merge_methods": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                },
+                                                "description": "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled."
+                                            },
                                             "dismiss_stale_reviews_on_push": {
                                                 "type": "boolean",
                                                 "description": "New, reviewable commits pushed will dismiss previous pull request review approvals."
@@ -2026,6 +2040,13 @@ final readonly class Changes
                                                 ],
                                                 "type": "object",
                                                 "properties": {
+                                                    "allowed_merge_methods": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "description": "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled."
+                                                    },
                                                     "dismiss_stale_reviews_on_push": {
                                                         "type": "boolean",
                                                         "description": "New, reviewable commits pushed will dismiss previous pull request review approvals."

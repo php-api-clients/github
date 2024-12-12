@@ -32,7 +32,8 @@ final readonly class RepositoryRuleset
             "enum": [
                 "branch",
                 "tag",
-                "push"
+                "push",
+                "repository"
             ],
             "type": "string",
             "description": "The target of the ruleset"
@@ -40,7 +41,8 @@ final readonly class RepositoryRuleset
         "source_type": {
             "enum": [
                 "Repository",
-                "Organization"
+                "Organization",
+                "Enterprise"
             ],
             "type": "string",
             "description": "The type of the source of the ruleset"
@@ -411,7 +413,7 @@ final readonly class RepositoryRuleset
                             "description": "Conditions to target repositories by property and refs by name"
                         }
                     ],
-                    "description": "Conditions for an organization ruleset.\\nThe branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.\\nThe push rulesets conditions object does not require the `ref_name` property."
+                    "description": "Conditions for an organization ruleset.\\nThe branch and tag rulesets conditions object should contain both `repository_name` and `ref_name` properties, or both `repository_id` and `ref_name` properties, or both `repository_property` and `ref_name` properties.\\nThe push rulesets conditions object does not require the `ref_name` property.\\nFor repository policy rulesets, the conditions object should only contain the `repository_name`, the `repository_id`, or the `repository_property`."
                 }
             ]
         },
@@ -644,6 +646,13 @@ final readonly class RepositoryRuleset
                                 ],
                                 "type": "object",
                                 "properties": {
+                                    "allowed_merge_methods": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "description": "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled."
+                                    },
                                     "dismiss_stale_reviews_on_push": {
                                         "type": "boolean",
                                         "description": "New, reviewable commits pushed will dismiss previous pull request review approvals."
@@ -1243,7 +1252,7 @@ final readonly class RepositoryRuleset
     public const SCHEMA_EXAMPLE_DATA = '{
     "id": 2,
     "name": "generated",
-    "target": "push",
+    "target": "repository",
     "source_type": "Repository",
     "source": "generated",
     "enforcement": "disabled",

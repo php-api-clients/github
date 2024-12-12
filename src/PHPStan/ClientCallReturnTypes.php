@@ -191,48 +191,12 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('');
         }
 
-        if ($call === 'GET /enterprises/{enterprise}/copilot/billing/seats') {
-            return $this->typeResolver->resolve('');
-        }
-
-        if ($call === 'GET /enterprises/{enterprise}/copilot/metrics') {
-            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetricsDay>');
-        }
-
-        if ($call === 'LIST /enterprises/{enterprise}/copilot/metrics') {
-            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetricsDay>');
-        }
-
-        if ($call === 'GET /enterprises/{enterprise}/copilot/usage') {
-            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
-        }
-
-        if ($call === 'LIST /enterprises/{enterprise}/copilot/usage') {
-            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
-        }
-
         if ($call === 'GET /enterprises/{enterprise}/dependabot/alerts') {
             return $this->typeResolver->resolve('Observable<Schema\\DependabotAlertWithRepository>|WithoutBody');
         }
 
         if ($call === 'GET /enterprises/{enterprise}/secret-scanning/alerts') {
             return $this->typeResolver->resolve('Observable<Schema\\OrganizationSecretScanningAlert>');
-        }
-
-        if ($call === 'GET /enterprises/{enterprise}/team/{team_slug}/copilot/metrics') {
-            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetricsDay>');
-        }
-
-        if ($call === 'LIST /enterprises/{enterprise}/team/{team_slug}/copilot/metrics') {
-            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetricsDay>');
-        }
-
-        if ($call === 'GET /enterprises/{enterprise}/team/{team_slug}/copilot/usage') {
-            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
-        }
-
-        if ($call === 'LIST /enterprises/{enterprise}/team/{team_slug}/copilot/usage') {
-            return $this->typeResolver->resolve('Observable<Schema\\CopilotUsageMetrics>');
         }
 
         if ($call === 'GET /events') {
@@ -1364,7 +1328,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'PUT /orgs/{org}/properties/schema/{custom_property_name}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\CustomProperty');
         }
 
         if ($call === 'DELETE /orgs/{org}/properties/schema/{custom_property_name}') {

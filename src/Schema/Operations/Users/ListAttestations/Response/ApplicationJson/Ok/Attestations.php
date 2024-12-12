@@ -126,6 +126,9 @@ final readonly class Attestations
         },
         "repository_id": {
             "type": "integer"
+        },
+        "bundle_url": {
+            "type": "string"
         }
     }
 }';
@@ -196,14 +199,16 @@ final readonly class Attestations
             ]
         }
     },
-    "repository_id": 13
+    "repository_id": 13,
+    "bundle_url": "generated"
 }';
 
     /**
      * bundle: Sigstore Bundle v0.1
      */
     public function __construct(public Schema\SigstoreBundle0|null $bundle, #[MapFrom('repository_id')]
-    public int|null $repositoryId,)
+    public int|null $repositoryId, #[MapFrom('bundle_url')]
+    public string|null $bundleUrl,)
     {
     }
 }
