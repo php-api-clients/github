@@ -160,6 +160,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username'], $arguments['role_id']);
     }
 
+    /** @return */
     public function createOrUpdateCustomProperty(array $params): CustomProperty
     {
         $arguments = [];

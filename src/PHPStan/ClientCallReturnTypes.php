@@ -196,7 +196,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /enterprises/{enterprise}/secret-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\OrganizationSecretScanningAlert>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\OrganizationSecretScanningAlert>');
         }
 
         if ($call === 'GET /events') {
@@ -1328,7 +1328,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'PUT /orgs/{org}/properties/schema/{custom_property_name}') {
-            return $this->typeResolver->resolve('Schema\\CustomProperty');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/properties/schema/{custom_property_name}') {
@@ -1416,11 +1416,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/secret-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\OrganizationSecretScanningAlert>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\OrganizationSecretScanningAlert>');
         }
 
         if ($call === 'LIST /orgs/{org}/secret-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\OrganizationSecretScanningAlert>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\OrganizationSecretScanningAlert>');
         }
 
         if ($call === 'GET /orgs/{org}/security-advisories') {
@@ -3600,11 +3600,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/secret-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\SecretScanningAlert>|WithoutBody');
+            return $this->typeResolver->resolve('iterable<int,Schema\\SecretScanningAlert>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/secret-scanning/alerts') {
-            return $this->typeResolver->resolve('Observable<Schema\\SecretScanningAlert>|WithoutBody');
+            return $this->typeResolver->resolve('iterable<int,Schema\\SecretScanningAlert>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}') {

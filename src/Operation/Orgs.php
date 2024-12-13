@@ -438,6 +438,7 @@ final class Orgs
         return $this->operators->orgs👷GetCustomProperty()->call($org, $customPropertyName);
     }
 
+    /** @return */
     public function createOrUpdateCustomProperty(string $org, string $customPropertyName, array $params): CustomProperty
     {
         return $this->operators->orgs👷CreateOrUpdateCustomProperty()->call($org, $customPropertyName, $params);
