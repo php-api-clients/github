@@ -5532,7 +5532,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/SecretScanning.php",
-                "hash": "7f50cc5ea564fc5d7844ba24209d3e63"
+                "hash": "91aebb408135c1eeda46c62b1578a527"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Activity.php",
@@ -5560,7 +5560,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Orgs.php",
-                "hash": "03d877ced99e54e4460a3cb9cbefc83d"
+                "hash": "d50589878cf63e2f0075fcf60232384d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Actions.php",
@@ -12352,7 +12352,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/SecretScanning\/ListAlertsForEnterprise.php",
-                "hash": "41c927430ffa2540ebe7f835cdc98cc1"
+                "hash": "6ff1f101a2fc2ce58e347d095c27a591"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/SecretScanning\/ListAlertsForEnterpriseTest.php",
@@ -15092,7 +15092,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/SecretScanning\/ListAlertsForOrg.php",
-                "hash": "616f754cc16989b17a971e7ece5f94b8"
+                "hash": "5055095bcefa6d8312f2b28a20b22686"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/SecretScanning\/ListAlertsForOrgTest.php",
@@ -15104,7 +15104,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/SecretScanning\/ListAlertsForOrgListing.php",
-                "hash": "5c95a871bce5ad2b98fbf050cf1f528e"
+                "hash": "5d481946b23b0bacfcd8a582de4047cd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/SecretScanning\/ListAlertsForOrgListingTest.php",
@@ -20988,7 +20988,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/SecretScanning\/ListAlertsForRepo.php",
-                "hash": "3aac065ae25320bd3a6bf79d75ee4d36"
+                "hash": "fd02451b5ef91af3c0ae767a378e9c63"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/SecretScanning\/ListAlertsForRepoTest.php",
@@ -21000,7 +21000,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/SecretScanning\/ListAlertsForRepoListing.php",
-                "hash": "a17f9b8afc868944a6a494b8caeaaf3b"
+                "hash": "f2fbe0a1dbdad5a5a36888c369afed43"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/SecretScanning\/ListAlertsForRepoListingTest.php",
@@ -24404,7 +24404,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/SecretScanning.php",
-                "hash": "8e825afdbf25f991a93494a8fa7289ac"
+                "hash": "dffa3ec1289d153acc0a8324215d4ec5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Actions.php",
@@ -24660,7 +24660,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/SecretScanning.php",
-                "hash": "d6748a3281d1140c626e6f4f1858de30"
+                "hash": "972ff5051c257536310f274406ba0ec1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Pulls.php",
@@ -24852,11 +24852,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Five.php",
-                "hash": "c8e917cadb1e7661b7a11c581d808697"
+                "hash": "2ce20ded007385c2c29e4b1324a69efa"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
-                "hash": "1c7c34b9bf24636a4082b73c6e44ae24"
+                "hash": "962ecbf39f794f3b916ab75b7349566f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Seven.php",
@@ -24956,11 +24956,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Five.php",
-                "hash": "c41274c51f0be3c276a995d5583aeceb"
+                "hash": "7516af6b41f8a9d3b475684f306347be"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Six.php",
-                "hash": "d9873974ed59d288468b121deddd4980"
+                "hash": "71625fca086e278619781593e380e8fb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Seven.php",
@@ -27632,11 +27632,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "ddcba91e13599b74dbf8662aba1f62bc"
+                "hash": "e89acad0382b10107b48522e7016a0e7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "91477cc31a21c0535e2f269d5ccd45c7"
+                "hash": "f009931f0e4f071b8ed62a37b54c800f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -31120,7 +31120,7 @@
             },
             {
                 "name": "..\/..\/composer.lock",
-                "hash": "62212c13c50e6b0633b3423bd54d644d"
+                "hash": "9968921f0959a081d8998c22c95e7f44"
             }
         ]
     }
