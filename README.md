@@ -830,6 +830,212 @@ $client->operations()->emojis()->get();
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/emojis/emojis#get-emojis).
 
 
+### code-security/get-configurations-for-enterprise
+
+Get code security configurations for an enterprise
+
+Using the `call` method:
+```php
+$client->call('GET /enterprises/{enterprise}/code-security/configurations', [
+        'enterprise' => 'generated',
+        'before' => 'generated',
+        'after' => 'generated',
+        'per_page' => 8,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->getConfigurationsForEnterprise(        enterprise: 'generated',
+        before: 'generated',
+        after: 'generated',
+        per_page: 8,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#get-code-security-configurations-for-an-enterprise).
+
+
+### code-security/create-configuration-for-enterprise
+
+Create a code security configuration for an enterprise
+
+Using the `call` method:
+```php
+$client->call('POST /enterprises/{enterprise}/code-security/configurations', [
+        'enterprise' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->createConfigurationForEnterprise(        enterprise: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#create-a-code-security-configuration-for-an-enterprise).
+
+
+### code-security/get-default-configurations-for-enterprise
+
+Get default code security configurations for an enterprise
+
+Using the `call` method:
+```php
+$client->call('GET /enterprises/{enterprise}/code-security/configurations/defaults', [
+        'enterprise' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->getDefaultConfigurationsForEnterprise(        enterprise: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#get-default-code-security-configurations-for-an-enterprise).
+
+
+### code-security/get-single-configuration-for-enterprise
+
+Retrieve a code security configuration of an enterprise
+
+Using the `call` method:
+```php
+$client->call('GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}', [
+        'enterprise' => 'generated',
+        'configuration_id' => 16,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->getSingleConfigurationForEnterprise(        enterprise: 'generated',
+        configuration_id: 16,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#retrieve-a-code-security-configuration-of-an-enterprise).
+
+
+### code-security/delete-configuration-for-enterprise
+
+Delete a code security configuration for an enterprise
+
+Using the `call` method:
+```php
+$client->call('DELETE /enterprises/{enterprise}/code-security/configurations/{configuration_id}', [
+        'enterprise' => 'generated',
+        'configuration_id' => 16,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->deleteConfigurationForEnterprise(        enterprise: 'generated',
+        configuration_id: 16,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#delete-a-code-security-configuration-for-an-enterprise).
+
+
+### code-security/update-enterprise-configuration
+
+Update a custom code security configuration for an enterprise
+
+Using the `call` method:
+```php
+$client->call('PATCH /enterprises/{enterprise}/code-security/configurations/{configuration_id}', [
+        'enterprise' => 'generated',
+        'configuration_id' => 16,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->updateEnterpriseConfiguration(        enterprise: 'generated',
+        configuration_id: 16,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#update-a-custom-code-security-configuration-for-an-enterprise).
+
+
+### code-security/attach-enterprise-configuration
+
+Attach an enterprise configuration to repositories
+
+Using the `call` method:
+```php
+$client->call('POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach', [
+        'enterprise' => 'generated',
+        'configuration_id' => 16,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->attachEnterpriseConfiguration(        enterprise: 'generated',
+        configuration_id: 16,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#attach-an-enterprise-configuration-to-repositories).
+
+
+### code-security/set-configuration-as-default-for-enterprise
+
+Set a code security configuration as a default for an enterprise
+
+Using the `call` method:
+```php
+$client->call('PUT /enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults', [
+        'enterprise' => 'generated',
+        'configuration_id' => 16,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->setConfigurationAsDefaultForEnterprise(        enterprise: 'generated',
+        configuration_id: 16,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#set-a-code-security-configuration-as-a-default-for-an-enterprise).
+
+
+### code-security/get-repositories-for-enterprise-configuration
+
+Get repositories associated with an enterprise code security configuration
+
+Using the `call` method:
+```php
+$client->call('GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}/repositories', [
+        'enterprise' => 'generated',
+        'configuration_id' => 16,
+        'before' => 'generated',
+        'after' => 'generated',
+        'per_page' => 8,
+        'status' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeSecurity()->getRepositoriesForEnterpriseConfiguration(        enterprise: 'generated',
+        configuration_id: 16,
+        before: 'generated',
+        after: 'generated',
+        per_page: 8,
+        status: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-security/configurations#get-repositories-associated-with-an-enterprise-code-security-configuration).
+
+
 ### dependabot/list-alerts-for-enterprise
 
 List Dependabot alerts for an enterprise
@@ -13819,6 +14025,78 @@ $client->operations()->codeScanning()->updateAlert(        owner: 'generated',
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-scanning/code-scanning#update-a-code-scanning-alert).
+
+
+### code-scanning/get-autofix
+
+Get the status of an autofix for a code scanning alert
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'alert_number' => 12,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeScanning()->getAutofix(        owner: 'generated',
+        repo: 'generated',
+        alert_number: 12,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-scanning/code-scanning#get-the-status-of-an-autofix-for-a-code-scanning-alert).
+
+
+### code-scanning/create-autofix
+
+Create an autofix for a code scanning alert
+
+Using the `call` method:
+```php
+$client->call('POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'alert_number' => 12,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeScanning()->createAutofix(        owner: 'generated',
+        repo: 'generated',
+        alert_number: 12,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-scanning/code-scanning#create-an-autofix-for-a-code-scanning-alert).
+
+
+### code-scanning/commit-autofix
+
+Commit an autofix for a code scanning alert
+
+Using the `call` method:
+```php
+$client->call('POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix/commits', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'alert_number' => 12,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->codeScanning()->commitAutofix(        owner: 'generated',
+        repo: 'generated',
+        alert_number: 12,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/code-scanning/code-scanning#commit-an-autofix-for-a-code-scanning-alert).
 
 
 ### code-scanning/list-alert-instances

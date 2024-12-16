@@ -20,6 +20,27 @@ final class Dependabot
     }
 
     /** @return */
+    public function deleteOrgSecret(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('secret_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: secret_name');
+        }
+
+        $arguments['secret_name'] = $params['secret_name'];
+        unset($params['secret_name']);
+        $operator = new Internal\Operator\Dependabot\DeleteOrgSecret($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['secret_name']);
+    }
+
+    /** @return */
     public function deleteRepoSecret(array $params): WithoutBody
     {
         $arguments = [];
@@ -44,27 +65,6 @@ final class Dependabot
         $operator = new Internal\Operator\Dependabot\DeleteRepoSecret($this->browser, $this->authentication);
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['secret_name']);
-    }
-
-    /** @return */
-    public function deleteOrgSecret(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('secret_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: secret_name');
-        }
-
-        $arguments['secret_name'] = $params['secret_name'];
-        unset($params['secret_name']);
-        $operator = new Internal\Operator\Dependabot\DeleteOrgSecret($this->browser, $this->authentication);
-
-        return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
     /** @return */

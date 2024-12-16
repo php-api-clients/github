@@ -21,27 +21,6 @@ final class Migrations
     }
 
     /** @return */
-    public function updateImport(array $params): Import
-    {
-        $arguments = [];
-        if (array_key_exists('owner', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: owner');
-        }
-
-        $arguments['owner'] = $params['owner'];
-        unset($params['owner']);
-        if (array_key_exists('repo', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repo');
-        }
-
-        $arguments['repo'] = $params['repo'];
-        unset($params['repo']);
-        $operator = new Internal\Operator\Migrations\UpdateImport($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Import());
-
-        return $operator->call($arguments['owner'], $arguments['repo'], $params);
-    }
-
-    /** @return */
     public function setLfsPreference(array $params): Import
     {
         $arguments = [];
@@ -58,6 +37,27 @@ final class Migrations
         $arguments['repo'] = $params['repo'];
         unset($params['repo']);
         $operator = new Internal\Operator\Migrations\SetLfsPreference($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Import🌀Lfs());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $params);
+    }
+
+    /** @return */
+    public function updateImport(array $params): Import
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        $operator = new Internal\Operator\Migrations\UpdateImport($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Import());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }

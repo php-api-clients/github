@@ -51,6 +51,42 @@ final class Codespaces
     }
 
     /** @return */
+    public function deleteCodespacesAccessUsers(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        $operator = new Internal\Operator\Codespaces\DeleteCodespacesAccessUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers());
+
+        return $operator->call($arguments['org'], $params);
+    }
+
+    /** @return */
+    public function deleteOrgSecret(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('secret_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: secret_name');
+        }
+
+        $arguments['secret_name'] = $params['secret_name'];
+        unset($params['secret_name']);
+        $operator = new Internal\Operator\Codespaces\DeleteOrgSecret($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Secrets🌀SecretName());
+
+        return $operator->call($arguments['org'], $arguments['secret_name']);
+    }
+
+    /** @return */
     public function deleteFromOrganization(array $params): \ApiClients\Client\GitHub\Schema\Operations\Codespaces\DeleteFromOrganization\Response\ApplicationJson\Accepted\Application\Json|WithoutBody
     {
         $arguments = [];
@@ -123,42 +159,6 @@ final class Codespaces
         $operator = new Internal\Operator\Codespaces\RemoveRepositoryForSecretForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces🌀Secrets🌀SecretName🌀Repositories🌀RepositoryId());
 
         return $operator->call($arguments['secret_name'], $arguments['repository_id']);
-    }
-
-    /** @return */
-    public function deleteCodespacesAccessUsers(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        $operator = new Internal\Operator\Codespaces\DeleteCodespacesAccessUsers($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Access🌀SelectedUsers());
-
-        return $operator->call($arguments['org'], $params);
-    }
-
-    /** @return */
-    public function deleteOrgSecret(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('secret_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: secret_name');
-        }
-
-        $arguments['secret_name'] = $params['secret_name'];
-        unset($params['secret_name']);
-        $operator = new Internal\Operator\Codespaces\DeleteOrgSecret($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Codespaces🌀Secrets🌀SecretName());
-
-        return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
     /** @return */

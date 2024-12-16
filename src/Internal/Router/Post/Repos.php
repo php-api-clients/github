@@ -481,14 +481,6 @@ final class Repos
     }
 
     /** @return */
-    public function createForAuthenticatedUser(array $params): FullRepository|WithoutBody
-    {
-        $operator = new Internal\Operator\Repos\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Repos());
-
-        return $operator->call($params);
-    }
-
-    /** @return */
     public function renameBranch(array $params): BranchWithProtection
     {
         $arguments = [];
@@ -714,6 +706,14 @@ final class Repos
         $operator = new Internal\Operator\Repos\UploadReleaseAsset($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Releases🌀ReleaseId🌀Assets());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['release_id'], $arguments['name'], $arguments['label'], $params);
+    }
+
+    /** @return */
+    public function createForAuthenticatedUser(array $params): FullRepository|WithoutBody
+    {
+        $operator = new Internal\Operator\Repos\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Repos());
+
+        return $operator->call($params);
     }
 
     /** @return */

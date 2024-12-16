@@ -119,14 +119,6 @@ final class Codespaces
     }
 
     /** @return */
-    public function createForAuthenticatedUser(array $params): Codespace
-    {
-        $operator = new Internal\Operator\Codespaces\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces());
-
-        return $operator->call($params);
-    }
-
-    /** @return */
     public function createWithPrForAuthenticatedUser(array $params): Codespace
     {
         $arguments = [];
@@ -151,6 +143,14 @@ final class Codespaces
         $operator = new Internal\Operator\Codespaces\CreateWithPrForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Pulls🌀PullNumber🌀Codespaces());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['pull_number'], $params);
+    }
+
+    /** @return */
+    public function createForAuthenticatedUser(array $params): Codespace
+    {
+        $operator = new Internal\Operator\Codespaces\CreateForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Codespaces());
+
+        return $operator->call($params);
     }
 
     /** @return */

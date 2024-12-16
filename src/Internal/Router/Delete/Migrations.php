@@ -56,27 +56,6 @@ final class Migrations
     }
 
     /** @return */
-    public function unlockRepoForAuthenticatedUser(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('migration_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: migration_id');
-        }
-
-        $arguments['migration_id'] = $params['migration_id'];
-        unset($params['migration_id']);
-        if (array_key_exists('repo_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repo_name');
-        }
-
-        $arguments['repo_name'] = $params['repo_name'];
-        unset($params['repo_name']);
-        $operator = new Internal\Operator\Migrations\UnlockRepoForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations🌀MigrationId🌀Repos🌀RepoName🌀Lock());
-
-        return $operator->call($arguments['migration_id'], $arguments['repo_name']);
-    }
-
-    /** @return */
     public function deleteArchiveForOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -95,6 +74,27 @@ final class Migrations
         $operator = new Internal\Operator\Migrations\DeleteArchiveForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Migrations🌀MigrationId🌀Archive());
 
         return $operator->call($arguments['org'], $arguments['migration_id']);
+    }
+
+    /** @return */
+    public function unlockRepoForAuthenticatedUser(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('migration_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: migration_id');
+        }
+
+        $arguments['migration_id'] = $params['migration_id'];
+        unset($params['migration_id']);
+        if (array_key_exists('repo_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo_name');
+        }
+
+        $arguments['repo_name'] = $params['repo_name'];
+        unset($params['repo_name']);
+        $operator = new Internal\Operator\Migrations\UnlockRepoForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Migrations🌀MigrationId🌀Repos🌀RepoName🌀Lock());
+
+        return $operator->call($arguments['migration_id'], $arguments['repo_name']);
     }
 
     /** @return */

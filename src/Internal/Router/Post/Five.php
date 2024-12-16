@@ -44,7 +44,8 @@ final class Five
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|RunnerGroupsOrg|EmptyObject|CodeSecurityConfiguration|WithoutBody|ProjectCard|Json|Created|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|CodespaceExportDetails|CodespaceWithFullRepository
+    /** @return |Schema\CodeSecurityConfiguration */
+    public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|CodeSecurityConfiguration|RunnerGroupsOrg|EmptyObject|WithoutBody|ProjectCard|Json|Created|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|CodespaceExportDetails|CodespaceWithFullRepository
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {
@@ -63,6 +64,16 @@ final class Five
                         if ($pathChunks[4] === 'scoped') {
                             if ($call === 'POST /applications/{client_id}/token/scoped') {
                                 return $this->routers->internal🔀Router🔀Post🔀Apps()->scopeToken($params);
+                            }
+                        }
+                    }
+                }
+            } elseif ($pathChunks[1] === 'enterprises') {
+                if ($pathChunks[2] === '{enterprise}') {
+                    if ($pathChunks[3] === 'code-security') {
+                        if ($pathChunks[4] === 'configurations') {
+                            if ($call === 'POST /enterprises/{enterprise}/code-security/configurations') {
+                                return $this->routers->internal🔀Router🔀Post🔀CodeSecurity()->createConfigurationForEnterprise($params);
                             }
                         }
                     }

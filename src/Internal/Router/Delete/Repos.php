@@ -164,87 +164,6 @@ final class Repos
     }
 
     /** @return */
-    public function deleteBranchProtection(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('owner', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: owner');
-        }
-
-        $arguments['owner'] = $params['owner'];
-        unset($params['owner']);
-        if (array_key_exists('repo', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repo');
-        }
-
-        $arguments['repo'] = $params['repo'];
-        unset($params['repo']);
-        if (array_key_exists('branch', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: branch');
-        }
-
-        $arguments['branch'] = $params['branch'];
-        unset($params['branch']);
-        $operator = new Internal\Operator\Repos\DeleteBranchProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection());
-
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch']);
-    }
-
-    /** @return */
-    public function deleteReleaseAsset(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('owner', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: owner');
-        }
-
-        $arguments['owner'] = $params['owner'];
-        unset($params['owner']);
-        if (array_key_exists('repo', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repo');
-        }
-
-        $arguments['repo'] = $params['repo'];
-        unset($params['repo']);
-        if (array_key_exists('asset_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: asset_id');
-        }
-
-        $arguments['asset_id'] = $params['asset_id'];
-        unset($params['asset_id']);
-        $operator = new Internal\Operator\Repos\DeleteReleaseAsset($this->browser, $this->authentication);
-
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['asset_id']);
-    }
-
-    /** @return */
-    public function deleteTagProtection(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('owner', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: owner');
-        }
-
-        $arguments['owner'] = $params['owner'];
-        unset($params['owner']);
-        if (array_key_exists('repo', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repo');
-        }
-
-        $arguments['repo'] = $params['repo'];
-        unset($params['repo']);
-        if (array_key_exists('tag_protection_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: tag_protection_id');
-        }
-
-        $arguments['tag_protection_id'] = $params['tag_protection_id'];
-        unset($params['tag_protection_id']);
-        $operator = new Internal\Operator\Repos\DeleteTagProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Tags🌀Protection🌀TagProtectionId());
-
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['tag_protection_id']);
-    }
-
-    /** @return */
     public function deleteAutolink(array $params): WithoutBody
     {
         $arguments = [];
@@ -539,6 +458,87 @@ final class Repos
         $operator = new Internal\Operator\Repos\DeleteRepoRuleset($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ruleset_id']);
+    }
+
+    /** @return */
+    public function deleteBranchProtection(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('branch', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: branch');
+        }
+
+        $arguments['branch'] = $params['branch'];
+        unset($params['branch']);
+        $operator = new Internal\Operator\Repos\DeleteBranchProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Branches🌀Branch🌀Protection());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['branch']);
+    }
+
+    /** @return */
+    public function deleteReleaseAsset(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('asset_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: asset_id');
+        }
+
+        $arguments['asset_id'] = $params['asset_id'];
+        unset($params['asset_id']);
+        $operator = new Internal\Operator\Repos\DeleteReleaseAsset($this->browser, $this->authentication);
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['asset_id']);
+    }
+
+    /** @return */
+    public function deleteTagProtection(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('tag_protection_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: tag_protection_id');
+        }
+
+        $arguments['tag_protection_id'] = $params['tag_protection_id'];
+        unset($params['tag_protection_id']);
+        $operator = new Internal\Operator\Repos\DeleteTagProtection($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Tags🌀Protection🌀TagProtectionId());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['tag_protection_id']);
     }
 
     /** @return */

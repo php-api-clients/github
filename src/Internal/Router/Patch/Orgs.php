@@ -25,6 +25,27 @@ final class Orgs
     }
 
     /** @return */
+    public function updateWebhookConfigForOrg(array $params): WebhookConfig
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('hook_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: hook_id');
+        }
+
+        $arguments['hook_id'] = $params['hook_id'];
+        unset($params['hook_id']);
+        $operator = new Internal\Operator\Orgs\UpdateWebhookConfigForOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Hooks🌀HookId🌀Config());
+
+        return $operator->call($arguments['org'], $arguments['hook_id'], $params);
+    }
+
+    /** @return */
     public function update(array $params): OrganizationFull
     {
         $arguments = [];
@@ -103,26 +124,5 @@ final class Orgs
         $operator = new Internal\Operator\Orgs\UpdateMembershipForAuthenticatedUser($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Memberships🌀Orgs🌀Org());
 
         return $operator->call($arguments['org'], $params);
-    }
-
-    /** @return */
-    public function updateWebhookConfigForOrg(array $params): WebhookConfig
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('hook_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: hook_id');
-        }
-
-        $arguments['hook_id'] = $params['hook_id'];
-        unset($params['hook_id']);
-        $operator = new Internal\Operator\Orgs\UpdateWebhookConfigForOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Hooks🌀HookId🌀Config());
-
-        return $operator->call($arguments['org'], $arguments['hook_id'], $params);
     }
 }

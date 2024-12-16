@@ -191,6 +191,42 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('');
         }
 
+        if ($call === 'GET /enterprises/{enterprise}/code-security/configurations') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeSecurityConfiguration>');
+        }
+
+        if ($call === 'POST /enterprises/{enterprise}/code-security/configurations') {
+            return $this->typeResolver->resolve('Schema\\CodeSecurityConfiguration');
+        }
+
+        if ($call === 'GET /enterprises/{enterprise}/code-security/configurations/defaults') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeSecurityDefaultConfigurations>');
+        }
+
+        if ($call === 'GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}') {
+            return $this->typeResolver->resolve('Schema\\CodeSecurityConfiguration|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'DELETE /enterprises/{enterprise}/code-security/configurations/{configuration_id}') {
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'PATCH /enterprises/{enterprise}/code-security/configurations/{configuration_id}') {
+            return $this->typeResolver->resolve('Schema\\CodeSecurityConfiguration|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach') {
+            return $this->typeResolver->resolve('Schema\\Operations\\CodeSecurity\\AttachEnterpriseConfiguration\\Response\\ApplicationJson\\Accepted\\Application\\Json');
+        }
+
+        if ($call === 'PUT /enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults') {
+            return $this->typeResolver->resolve('Schema\\Operations\\CodeSecurity\\SetConfigurationAsDefaultForEnterprise\\Response\\ApplicationJson\\Ok');
+        }
+
+        if ($call === 'GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}/repositories') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\CodeSecurityConfigurationRepositories>');
+        }
+
         if ($call === 'GET /enterprises/{enterprise}/dependabot/alerts') {
             return $this->typeResolver->resolve('Observable<Schema\\DependabotAlertWithRepository>|WithoutBody');
         }
@@ -760,7 +796,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'PUT /orgs/{org}/code-security/configurations/{configuration_id}/defaults') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\CodeSecurity\\SetConfigurationAsDefault\\Response\\ApplicationJson\\Ok\\Application\\Json');
         }
 
         if ($call === 'GET /orgs/{org}/code-security/configurations/{configuration_id}/repositories') {
@@ -2317,6 +2353,18 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
 
         if ($call === 'PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}') {
             return $this->typeResolver->resolve('');
+        }
+
+        if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix') {
+            return $this->typeResolver->resolve('Schema\\CodeScanningAutofix');
+        }
+
+        if ($call === 'POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix') {
+            return $this->typeResolver->resolve('Schema\\CodeScanningAutofix|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
+        if ($call === 'POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix/commits') {
+            return $this->typeResolver->resolve('Schema\\CodeScanningAutofixCommitsResponse|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances') {

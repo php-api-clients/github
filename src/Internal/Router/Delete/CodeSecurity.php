@@ -19,6 +19,26 @@ final class CodeSecurity
     {
     }
 
+    public function deleteConfigurationForEnterprise(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('enterprise', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: enterprise');
+        }
+
+        $arguments['enterprise'] = $params['enterprise'];
+        unset($params['enterprise']);
+        if (array_key_exists('configuration_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: configuration_id');
+        }
+
+        $arguments['configuration_id'] = $params['configuration_id'];
+        unset($params['configuration_id']);
+        $operator = new Internal\Operator\CodeSecurity\DeleteConfigurationForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations🌀ConfigurationId());
+
+        return $operator->call($arguments['enterprise'], $arguments['configuration_id']);
+    }
+
     /** @return */
     public function detachConfiguration(array $params): WithoutBody
     {

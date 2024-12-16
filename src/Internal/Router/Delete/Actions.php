@@ -23,6 +23,123 @@ final class Actions
     }
 
     /** @return */
+    public function deleteSelfHostedRunnerGroupFromOrg(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('runner_group_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: runner_group_id');
+        }
+
+        $arguments['runner_group_id'] = $params['runner_group_id'];
+        unset($params['runner_group_id']);
+        $operator = new Internal\Operator\Actions\DeleteSelfHostedRunnerGroupFromOrg($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['runner_group_id']);
+    }
+
+    /** @return */
+    public function deleteSelfHostedRunnerFromOrg(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('runner_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: runner_id');
+        }
+
+        $arguments['runner_id'] = $params['runner_id'];
+        unset($params['runner_id']);
+        $operator = new Internal\Operator\Actions\DeleteSelfHostedRunnerFromOrg($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['runner_id']);
+    }
+
+    /** @return */
+    public function deleteOrgSecret(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('secret_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: secret_name');
+        }
+
+        $arguments['secret_name'] = $params['secret_name'];
+        unset($params['secret_name']);
+        $operator = new Internal\Operator\Actions\DeleteOrgSecret($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['secret_name']);
+    }
+
+    /** @return */
+    public function deleteOrgVariable(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: name');
+        }
+
+        $arguments['name'] = $params['name'];
+        unset($params['name']);
+        $operator = new Internal\Operator\Actions\DeleteOrgVariable($this->browser, $this->authentication);
+
+        return $operator->call($arguments['org'], $arguments['name']);
+    }
+
+    /** @return */
+    public function deleteActionsCacheByKey(array $params): ActionsCacheList
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('key', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: key');
+        }
+
+        $arguments['key'] = $params['key'];
+        unset($params['key']);
+        if (array_key_exists('ref', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ref');
+        }
+
+        $arguments['ref'] = $params['ref'];
+        unset($params['ref']);
+        $operator = new Internal\Operator\Actions\DeleteActionsCacheByKey($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Actions🌀Caches());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['key'], $arguments['ref']);
+    }
+
+    /** @return */
     public function disableSelectedRepositoryGithubActionsOrganization(array $params): WithoutBody
     {
         $arguments = [];
@@ -224,123 +341,6 @@ final class Actions
         $operator = new Internal\Operator\Actions\DeleteRepoVariable($this->browser, $this->authentication);
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name']);
-    }
-
-    /** @return */
-    public function deleteSelfHostedRunnerGroupFromOrg(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('runner_group_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: runner_group_id');
-        }
-
-        $arguments['runner_group_id'] = $params['runner_group_id'];
-        unset($params['runner_group_id']);
-        $operator = new Internal\Operator\Actions\DeleteSelfHostedRunnerGroupFromOrg($this->browser, $this->authentication);
-
-        return $operator->call($arguments['org'], $arguments['runner_group_id']);
-    }
-
-    /** @return */
-    public function deleteSelfHostedRunnerFromOrg(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('runner_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: runner_id');
-        }
-
-        $arguments['runner_id'] = $params['runner_id'];
-        unset($params['runner_id']);
-        $operator = new Internal\Operator\Actions\DeleteSelfHostedRunnerFromOrg($this->browser, $this->authentication);
-
-        return $operator->call($arguments['org'], $arguments['runner_id']);
-    }
-
-    /** @return */
-    public function deleteOrgSecret(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('secret_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: secret_name');
-        }
-
-        $arguments['secret_name'] = $params['secret_name'];
-        unset($params['secret_name']);
-        $operator = new Internal\Operator\Actions\DeleteOrgSecret($this->browser, $this->authentication);
-
-        return $operator->call($arguments['org'], $arguments['secret_name']);
-    }
-
-    /** @return */
-    public function deleteOrgVariable(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('org', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: org');
-        }
-
-        $arguments['org'] = $params['org'];
-        unset($params['org']);
-        if (array_key_exists('name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: name');
-        }
-
-        $arguments['name'] = $params['name'];
-        unset($params['name']);
-        $operator = new Internal\Operator\Actions\DeleteOrgVariable($this->browser, $this->authentication);
-
-        return $operator->call($arguments['org'], $arguments['name']);
-    }
-
-    /** @return */
-    public function deleteActionsCacheByKey(array $params): ActionsCacheList
-    {
-        $arguments = [];
-        if (array_key_exists('owner', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: owner');
-        }
-
-        $arguments['owner'] = $params['owner'];
-        unset($params['owner']);
-        if (array_key_exists('repo', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repo');
-        }
-
-        $arguments['repo'] = $params['repo'];
-        unset($params['repo']);
-        if (array_key_exists('key', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: key');
-        }
-
-        $arguments['key'] = $params['key'];
-        unset($params['key']);
-        if (array_key_exists('ref', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: ref');
-        }
-
-        $arguments['ref'] = $params['ref'];
-        unset($params['ref']);
-        $operator = new Internal\Operator\Actions\DeleteActionsCacheByKey($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Actions🌀Caches());
-
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['key'], $arguments['ref']);
     }
 
     /** @return */

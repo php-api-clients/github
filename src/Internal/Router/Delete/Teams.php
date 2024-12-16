@@ -125,6 +125,33 @@ final class Teams
     }
 
     /** @return */
+    public function removeRepoLegacy(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('team_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: team_id');
+        }
+
+        $arguments['team_id'] = $params['team_id'];
+        unset($params['team_id']);
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        $operator = new Internal\Operator\Teams\RemoveRepoLegacy($this->browser, $this->authentication);
+
+        return $operator->call($arguments['team_id'], $arguments['owner'], $arguments['repo']);
+    }
+
+    /** @return */
     public function deleteLegacy(array $params): WithoutBody
     {
         $arguments = [];
@@ -245,33 +272,6 @@ final class Teams
         $operator = new Internal\Operator\Teams\DeleteDiscussionCommentLegacy($this->browser, $this->authentication);
 
         return $operator->call($arguments['team_id'], $arguments['discussion_number'], $arguments['comment_number']);
-    }
-
-    /** @return */
-    public function removeRepoLegacy(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('team_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: team_id');
-        }
-
-        $arguments['team_id'] = $params['team_id'];
-        unset($params['team_id']);
-        if (array_key_exists('owner', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: owner');
-        }
-
-        $arguments['owner'] = $params['owner'];
-        unset($params['owner']);
-        if (array_key_exists('repo', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repo');
-        }
-
-        $arguments['repo'] = $params['repo'];
-        unset($params['repo']);
-        $operator = new Internal\Operator\Teams\RemoveRepoLegacy($this->browser, $this->authentication);
-
-        return $operator->call($arguments['team_id'], $arguments['owner'], $arguments['repo']);
     }
 
     /** @return */

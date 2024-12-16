@@ -22,6 +22,39 @@ final class CodeSecurity
     {
     }
 
+    /** @return iterable<int,Schema\CodeSecurityConfiguration> */
+    public function getConfigurationsForEnterprise(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('enterprise', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: enterprise');
+        }
+
+        $arguments['enterprise'] = $params['enterprise'];
+        unset($params['enterprise']);
+        if (array_key_exists('before', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: before');
+        }
+
+        $arguments['before'] = $params['before'];
+        unset($params['before']);
+        if (array_key_exists('after', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: after');
+        }
+
+        $arguments['after'] = $params['after'];
+        unset($params['after']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        $operator = new Internal\Operator\CodeSecurity\GetConfigurationsForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations());
+
+        return $operator->call($arguments['enterprise'], $arguments['before'], $arguments['after'], $arguments['per_page']);
+    }
+
     /** @return Observable<Schema\CodeSecurityConfiguration> */
     public function getConfigurationsForOrg(array $params): iterable
     {
@@ -82,6 +115,41 @@ final class CodeSecurity
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
+    /** @return iterable<int,Schema\CodeSecurityDefaultConfigurations> */
+    public function getDefaultConfigurationsForEnterprise(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('enterprise', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: enterprise');
+        }
+
+        $arguments['enterprise'] = $params['enterprise'];
+        unset($params['enterprise']);
+        $operator = new Internal\Operator\CodeSecurity\GetDefaultConfigurationsForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations🌀Defaults());
+
+        return $operator->call($arguments['enterprise']);
+    }
+
+    public function getSingleConfigurationForEnterprise(array $params): CodeSecurityConfiguration|WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('enterprise', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: enterprise');
+        }
+
+        $arguments['enterprise'] = $params['enterprise'];
+        unset($params['enterprise']);
+        if (array_key_exists('configuration_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: configuration_id');
+        }
+
+        $arguments['configuration_id'] = $params['configuration_id'];
+        unset($params['configuration_id']);
+        $operator = new Internal\Operator\CodeSecurity\GetSingleConfigurationForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations🌀ConfigurationId());
+
+        return $operator->call($arguments['enterprise'], $arguments['configuration_id']);
+    }
+
     /** @return Observable<Schema\CodeSecurityDefaultConfigurations>|WithoutBody */
     public function getDefaultConfigurations(array $params): iterable|WithoutBody
     {
@@ -116,6 +184,51 @@ final class CodeSecurity
         $operator = new Internal\Operator\CodeSecurity\GetConfiguration($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀CodeSecurity🌀Configurations🌀ConfigurationId());
 
         return $operator->call($arguments['org'], $arguments['configuration_id']);
+    }
+
+    /** @return iterable<int,Schema\CodeSecurityConfigurationRepositories> */
+    public function getRepositoriesForEnterpriseConfiguration(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('enterprise', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: enterprise');
+        }
+
+        $arguments['enterprise'] = $params['enterprise'];
+        unset($params['enterprise']);
+        if (array_key_exists('configuration_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: configuration_id');
+        }
+
+        $arguments['configuration_id'] = $params['configuration_id'];
+        unset($params['configuration_id']);
+        if (array_key_exists('before', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: before');
+        }
+
+        $arguments['before'] = $params['before'];
+        unset($params['before']);
+        if (array_key_exists('after', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: after');
+        }
+
+        $arguments['after'] = $params['after'];
+        unset($params['after']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('status', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: status');
+        }
+
+        $arguments['status'] = $params['status'];
+        unset($params['status']);
+        $operator = new Internal\Operator\CodeSecurity\GetRepositoriesForEnterpriseConfiguration($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations🌀ConfigurationId🌀Repositories());
+
+        return $operator->call($arguments['enterprise'], $arguments['configuration_id'], $arguments['before'], $arguments['after'], $arguments['per_page'], $arguments['status']);
     }
 
     /** @return Observable<Schema\CodeSecurityConfigurationRepositories> */

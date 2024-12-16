@@ -10,6 +10,7 @@ use ApiClients\Client\GitHub\Schema\ActionsSecret;
 use ApiClients\Client\GitHub\Schema\ActionsVariable;
 use ApiClients\Client\GitHub\Schema\ApiInsightsSummaryStats;
 use ApiClients\Client\GitHub\Schema\BranchRestrictionPolicy;
+use ApiClients\Client\GitHub\Schema\CodeScanningAutofix;
 use ApiClients\Client\GitHub\Schema\CodeScanningCodeqlDatabase;
 use ApiClients\Client\GitHub\Schema\CodeScanningVariantAnalysis;
 use ApiClients\Client\GitHub\Schema\DeploymentBranchPolicy;
@@ -36,8 +37,8 @@ final class Eight
     {
     }
 
-    /** @return Observable<Schema\ApiInsightsRouteStats>||Observable<Schema\ApiInsightsTimeStats>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\EnvironmentApprovals>|Observable<Schema\PendingDeployment>|Observable<Schema\CodeScanningAlertInstance>|Observable<Schema\SecretScanningLocation>|WithoutBody */
-    public function call(string $call, array $params, array $pathChunks): iterable|ApiInsightsSummaryStats|PackageVersion|TeamRepository|WithoutBody|OidcCustomSubRepo|Ok|Json|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|WorkflowRunUsage|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|WorkflowUsage|ProtectedBranchAdminEnforced|ProtectedBranchPullRequestReview|StatusCheckPolicy|BranchRestrictionPolicy|CodeScanningCodeqlDatabase|CodeScanningVariantAnalysis|DeploymentStatus|DeploymentBranchPolicy|\ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|DeploymentProtectionRule|ActionsPublicKey|ActionsSecret|ActionsVariable|HookDelivery|PullRequestReview
+    /** @return Observable<Schema\ApiInsightsRouteStats>||Observable<Schema\ApiInsightsTimeStats>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\EnvironmentApprovals>|Observable<Schema\PendingDeployment>|Schema\CodeScanningAutofix|Observable<Schema\CodeScanningAlertInstance>|Observable<Schema\SecretScanningLocation>|WithoutBody */
+    public function call(string $call, array $params, array $pathChunks): iterable|ApiInsightsSummaryStats|PackageVersion|TeamRepository|WithoutBody|OidcCustomSubRepo|Ok|Json|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|WorkflowRunUsage|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|WorkflowUsage|ProtectedBranchAdminEnforced|ProtectedBranchPullRequestReview|StatusCheckPolicy|BranchRestrictionPolicy|CodeScanningAutofix|CodeScanningCodeqlDatabase|CodeScanningVariantAnalysis|DeploymentStatus|DeploymentBranchPolicy|\ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|DeploymentProtectionRule|ActionsPublicKey|ActionsSecret|ActionsVariable|HookDelivery|PullRequestReview
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
@@ -226,7 +227,11 @@ final class Eight
                         } elseif ($pathChunks[4] === 'code-scanning') {
                             if ($pathChunks[5] === 'alerts') {
                                 if ($pathChunks[6] === '{alert_number}') {
-                                    if ($pathChunks[7] === 'instances') {
+                                    if ($pathChunks[7] === 'autofix') {
+                                        if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix') {
+                                            return $this->routers->internal🔀Router🔀Get🔀CodeScanning()->getAutofix($params);
+                                        }
+                                    } elseif ($pathChunks[7] === 'instances') {
                                         if ($call === 'GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances') {
                                             return $this->routers->internal🔀Router🔀Get🔀CodeScanning()->listAlertInstances($params);
                                         }

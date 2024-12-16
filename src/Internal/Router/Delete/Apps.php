@@ -80,14 +80,6 @@ final class Apps
     }
 
     /** @return */
-    public function revokeInstallationAccessToken(array $params): WithoutBody
-    {
-        $operator = new Internal\Operator\Apps\RevokeInstallationAccessToken($this->browser, $this->authentication);
-
-        return $operator->call();
-    }
-
-    /** @return */
     public function removeRepoFromInstallationForAuthenticatedUser(array $params): WithoutBody
     {
         $arguments = [];
@@ -106,5 +98,13 @@ final class Apps
         $operator = new Internal\Operator\Apps\RemoveRepoFromInstallationForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Installations🌀InstallationId🌀Repositories🌀RepositoryId());
 
         return $operator->call($arguments['installation_id'], $arguments['repository_id']);
+    }
+
+    /** @return */
+    public function revokeInstallationAccessToken(array $params): WithoutBody
+    {
+        $operator = new Internal\Operator\Apps\RevokeInstallationAccessToken($this->browser, $this->authentication);
+
+        return $operator->call();
     }
 }

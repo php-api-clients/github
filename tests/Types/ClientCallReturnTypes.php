@@ -54,6 +54,15 @@ assertType('Observable<Schema\\SimpleClassroomAssignment>', $client->call('LIST 
 assertType('Observable<Schema\\CodeOfConduct>|WithoutBody', $client->call('GET /codes_of_conduct'));
 assertType('', $client->call('GET /codes_of_conduct/{key}'));
 assertType('', $client->call('GET /emojis'));
+assertType('iterable<int,Schema\\CodeSecurityConfiguration>', $client->call('GET /enterprises/{enterprise}/code-security/configurations'));
+assertType('Schema\\CodeSecurityConfiguration', $client->call('POST /enterprises/{enterprise}/code-security/configurations'));
+assertType('iterable<int,Schema\\CodeSecurityDefaultConfigurations>', $client->call('GET /enterprises/{enterprise}/code-security/configurations/defaults'));
+assertType('Schema\\CodeSecurityConfiguration|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}'));
+assertType('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('DELETE /enterprises/{enterprise}/code-security/configurations/{configuration_id}'));
+assertType('Schema\\CodeSecurityConfiguration|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('PATCH /enterprises/{enterprise}/code-security/configurations/{configuration_id}'));
+assertType('Schema\\Operations\\CodeSecurity\\AttachEnterpriseConfiguration\\Response\\ApplicationJson\\Accepted\\Application\\Json', $client->call('POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach'));
+assertType('Schema\\Operations\\CodeSecurity\\SetConfigurationAsDefaultForEnterprise\\Response\\ApplicationJson\\Ok', $client->call('PUT /enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults'));
+assertType('iterable<int,Schema\\CodeSecurityConfigurationRepositories>', $client->call('GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}/repositories'));
 assertType('Observable<Schema\\DependabotAlertWithRepository>|WithoutBody', $client->call('GET /enterprises/{enterprise}/dependabot/alerts'));
 assertType('Observable<Schema\\OrganizationSecretScanningAlert>', $client->call('GET /enterprises/{enterprise}/secret-scanning/alerts'));
 assertType('Observable<Schema\\Event>|WithoutBody', $client->call('GET /events'));
@@ -196,7 +205,7 @@ assertType('', $client->call('GET /orgs/{org}/code-security/configurations/{conf
 assertType('', $client->call('DELETE /orgs/{org}/code-security/configurations/{configuration_id}'));
 assertType('', $client->call('PATCH /orgs/{org}/code-security/configurations/{configuration_id}'));
 assertType('', $client->call('POST /orgs/{org}/code-security/configurations/{configuration_id}/attach'));
-assertType('', $client->call('PUT /orgs/{org}/code-security/configurations/{configuration_id}/defaults'));
+assertType('Schema\\Operations\\CodeSecurity\\SetConfigurationAsDefault\\Response\\ApplicationJson\\Ok\\Application\\Json', $client->call('PUT /orgs/{org}/code-security/configurations/{configuration_id}/defaults'));
 assertType('Observable<Schema\\CodeSecurityConfigurationRepositories>', $client->call('GET /orgs/{org}/code-security/configurations/{configuration_id}/repositories'));
 assertType('', $client->call('GET /orgs/{org}/codespaces'));
 assertType('', $client->call('PUT /orgs/{org}/codespaces/access'));
@@ -586,6 +595,9 @@ assertType('Observable<Schema\\CodeScanningAlertItems>|WithoutBody', $client->ca
 assertType('Observable<Schema\\CodeScanningAlertItems>|WithoutBody', $client->call('LIST /repos/{owner}/{repo}/code-scanning/alerts'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}'));
 assertType('', $client->call('PATCH /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}'));
+assertType('Schema\\CodeScanningAutofix', $client->call('GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix'));
+assertType('Schema\\CodeScanningAutofix|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix'));
+assertType('Schema\\CodeScanningAutofixCommitsResponse|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix/commits'));
 assertType('Observable<Schema\\CodeScanningAlertInstance>', $client->call('GET /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances'));
 assertType('Observable<Schema\\CodeScanningAlertInstance>', $client->call('LIST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/instances'));
 assertType('Observable<Schema\\CodeScanningAnalysis>', $client->call('GET /repos/{owner}/{repo}/code-scanning/analyses'));

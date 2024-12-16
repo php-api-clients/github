@@ -20,7 +20,7 @@ use ApiClients\Client\GitHub\Schema\Issue;
 use ApiClients\Client\GitHub\Schema\IssueComment;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\GenerateRunnerJitconfigForOrg\Response\ApplicationJson\Created;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok;
-use ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\AttachConfiguration\Response\ApplicationJson\Accepted\Application\Json;
+use ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\AttachEnterpriseConfiguration\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\PullRequestReview;
 use ApiClients\Client\GitHub\Schema\PullRequestReviewComment;
 use ApiClients\Client\GitHub\Schema\PullRequestSimple;
@@ -35,11 +35,25 @@ final class Seven
     {
     }
 
-    /** @return |Observable<Schema\Label>|Schema\BasicError */
-    public function call(string $call, array $params, array $pathChunks): Ok|Json|WithoutBody|Created|AuthenticationToken|BranchWithProtection|EmptyObject|CodeScanningVariantAnalysis|Reaction|CommitComment|DeploymentStatus|DeploymentBranchPolicy|DeploymentProtectionRule|Issue|IssueComment|iterable|BasicError|Codespace|PullRequestReviewComment|PullRequestSimple|PullRequestReview|ReleaseAsset|\ApiClients\Client\GitHub\Schema\Operations\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest\Response\ApplicationJson\Accepted\Application\Json|FullRepository
+    /** @return Schema\Operations\CodeSecurity\AttachEnterpriseConfiguration\Response\ApplicationJson\Accepted\Application\Json||Observable<Schema\Label>|Schema\BasicError */
+    public function call(string $call, array $params, array $pathChunks): Json|Ok|\ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\AttachConfiguration\Response\ApplicationJson\Accepted\Application\Json|WithoutBody|Created|AuthenticationToken|BranchWithProtection|EmptyObject|CodeScanningVariantAnalysis|Reaction|CommitComment|DeploymentStatus|DeploymentBranchPolicy|DeploymentProtectionRule|Issue|IssueComment|iterable|BasicError|Codespace|PullRequestReviewComment|PullRequestSimple|PullRequestReview|ReleaseAsset|\ApiClients\Client\GitHub\Schema\Operations\SecurityAdvisories\CreateRepositoryAdvisoryCveRequest\Response\ApplicationJson\Accepted\Application\Json|FullRepository
     {
         if ($pathChunks[0] === '') {
-            if ($pathChunks[1] === 'orgs') {
+            if ($pathChunks[1] === 'enterprises') {
+                if ($pathChunks[2] === '{enterprise}') {
+                    if ($pathChunks[3] === 'code-security') {
+                        if ($pathChunks[4] === 'configurations') {
+                            if ($pathChunks[5] === '{configuration_id}') {
+                                if ($pathChunks[6] === 'attach') {
+                                    if ($call === 'POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach') {
+                                        return $this->routers->internal🔀Router🔀Post🔀CodeSecurity()->attachEnterpriseConfiguration($params);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } elseif ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {
                         if ($pathChunks[4] === 'runners') {

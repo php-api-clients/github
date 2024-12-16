@@ -41,7 +41,7 @@ final class SetConfigurationAsDefault
         return new Request('PUT', str_replace(['{org}', '{configuration_id}'], [$this->org, $this->configurationId], '/orgs/{org}/code-security/configurations/{configuration_id}/defaults'), ['Content-Type' => 'application/json'], json_encode($data));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok
+    public function createResponse(ResponseInterface $response): Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok\Application\Json
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -53,9 +53,9 @@ final class SetConfigurationAsDefault
                      * Default successfully changed.
                      **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok\Application\Json::class, $body);
                     /**
                      * Forbidden
                      **/

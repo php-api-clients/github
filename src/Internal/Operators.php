@@ -48,6 +48,15 @@ final class Operators
     private Internal\Operator\CodesOfConduct\GetAllCodesOfConduct|null $codesOfConduct👷GetAllCodesOfConduct                                                                         = null;
     private Internal\Operator\CodesOfConduct\GetConductCode|null $codesOfConduct👷GetConductCode                                                                                     = null;
     private Internal\Operator\Emojis\Get|null $emojis👷Get                                                                                                                           = null;
+    private Internal\Operator\CodeSecurity\GetConfigurationsForEnterprise|null $codeSecurity👷GetConfigurationsForEnterprise                                                         = null;
+    private Internal\Operator\CodeSecurity\CreateConfigurationForEnterprise|null $codeSecurity👷CreateConfigurationForEnterprise                                                     = null;
+    private Internal\Operator\CodeSecurity\GetDefaultConfigurationsForEnterprise|null $codeSecurity👷GetDefaultConfigurationsForEnterprise                                           = null;
+    private Internal\Operator\CodeSecurity\GetSingleConfigurationForEnterprise|null $codeSecurity👷GetSingleConfigurationForEnterprise                                               = null;
+    private Internal\Operator\CodeSecurity\DeleteConfigurationForEnterprise|null $codeSecurity👷DeleteConfigurationForEnterprise                                                     = null;
+    private Internal\Operator\CodeSecurity\UpdateEnterpriseConfiguration|null $codeSecurity👷UpdateEnterpriseConfiguration                                                           = null;
+    private Internal\Operator\CodeSecurity\AttachEnterpriseConfiguration|null $codeSecurity👷AttachEnterpriseConfiguration                                                           = null;
+    private Internal\Operator\CodeSecurity\SetConfigurationAsDefaultForEnterprise|null $codeSecurity👷SetConfigurationAsDefaultForEnterprise                                         = null;
+    private Internal\Operator\CodeSecurity\GetRepositoriesForEnterpriseConfiguration|null $codeSecurity👷GetRepositoriesForEnterpriseConfiguration                                   = null;
     private Internal\Operator\Dependabot\ListAlertsForEnterprise|null $dependabot👷ListAlertsForEnterprise                                                                           = null;
     private Internal\Operator\SecretScanning\ListAlertsForEnterprise|null $secretScanning👷ListAlertsForEnterprise                                                                   = null;
     private Internal\Operator\Activity\ListPublicEvents|null $activity👷ListPublicEvents                                                                                             = null;
@@ -580,6 +589,9 @@ final class Operators
     private Internal\Operator\CodeScanning\ListAlertsForRepoListing|null $codeScanning👷ListAlertsForRepoListing                                                                     = null;
     private Internal\Operator\CodeScanning\GetAlert|null $codeScanning👷GetAlert                                                                                                     = null;
     private Internal\Operator\CodeScanning\UpdateAlert|null $codeScanning👷UpdateAlert                                                                                               = null;
+    private Internal\Operator\CodeScanning\GetAutofix|null $codeScanning👷GetAutofix                                                                                                 = null;
+    private Internal\Operator\CodeScanning\CreateAutofix|null $codeScanning👷CreateAutofix                                                                                           = null;
+    private Internal\Operator\CodeScanning\CommitAutofix|null $codeScanning👷CommitAutofix                                                                                           = null;
     private Internal\Operator\CodeScanning\ListAlertInstances|null $codeScanning👷ListAlertInstances                                                                                 = null;
     private Internal\Operator\CodeScanning\ListAlertInstancesListing|null $codeScanning👷ListAlertInstancesListing                                                                   = null;
     private Internal\Operator\CodeScanning\ListRecentAnalyses|null $codeScanning👷ListRecentAnalyses                                                                                 = null;
@@ -1507,6 +1519,87 @@ final class Operators
         }
 
         return $this->emojis👷Get;
+    }
+
+    public function codeSecurity👷GetConfigurationsForEnterprise(): Internal\Operator\CodeSecurity\GetConfigurationsForEnterprise
+    {
+        if ($this->codeSecurity👷GetConfigurationsForEnterprise instanceof Internal\Operator\CodeSecurity\GetConfigurationsForEnterprise === false) {
+            $this->codeSecurity👷GetConfigurationsForEnterprise = new Internal\Operator\CodeSecurity\GetConfigurationsForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations());
+        }
+
+        return $this->codeSecurity👷GetConfigurationsForEnterprise;
+    }
+
+    public function codeSecurity👷CreateConfigurationForEnterprise(): Internal\Operator\CodeSecurity\CreateConfigurationForEnterprise
+    {
+        if ($this->codeSecurity👷CreateConfigurationForEnterprise instanceof Internal\Operator\CodeSecurity\CreateConfigurationForEnterprise === false) {
+            $this->codeSecurity👷CreateConfigurationForEnterprise = new Internal\Operator\CodeSecurity\CreateConfigurationForEnterprise($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations());
+        }
+
+        return $this->codeSecurity👷CreateConfigurationForEnterprise;
+    }
+
+    public function codeSecurity👷GetDefaultConfigurationsForEnterprise(): Internal\Operator\CodeSecurity\GetDefaultConfigurationsForEnterprise
+    {
+        if ($this->codeSecurity👷GetDefaultConfigurationsForEnterprise instanceof Internal\Operator\CodeSecurity\GetDefaultConfigurationsForEnterprise === false) {
+            $this->codeSecurity👷GetDefaultConfigurationsForEnterprise = new Internal\Operator\CodeSecurity\GetDefaultConfigurationsForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations🌀Defaults());
+        }
+
+        return $this->codeSecurity👷GetDefaultConfigurationsForEnterprise;
+    }
+
+    public function codeSecurity👷GetSingleConfigurationForEnterprise(): Internal\Operator\CodeSecurity\GetSingleConfigurationForEnterprise
+    {
+        if ($this->codeSecurity👷GetSingleConfigurationForEnterprise instanceof Internal\Operator\CodeSecurity\GetSingleConfigurationForEnterprise === false) {
+            $this->codeSecurity👷GetSingleConfigurationForEnterprise = new Internal\Operator\CodeSecurity\GetSingleConfigurationForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations🌀ConfigurationId());
+        }
+
+        return $this->codeSecurity👷GetSingleConfigurationForEnterprise;
+    }
+
+    public function codeSecurity👷DeleteConfigurationForEnterprise(): Internal\Operator\CodeSecurity\DeleteConfigurationForEnterprise
+    {
+        if ($this->codeSecurity👷DeleteConfigurationForEnterprise instanceof Internal\Operator\CodeSecurity\DeleteConfigurationForEnterprise === false) {
+            $this->codeSecurity👷DeleteConfigurationForEnterprise = new Internal\Operator\CodeSecurity\DeleteConfigurationForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations🌀ConfigurationId());
+        }
+
+        return $this->codeSecurity👷DeleteConfigurationForEnterprise;
+    }
+
+    public function codeSecurity👷UpdateEnterpriseConfiguration(): Internal\Operator\CodeSecurity\UpdateEnterpriseConfiguration
+    {
+        if ($this->codeSecurity👷UpdateEnterpriseConfiguration instanceof Internal\Operator\CodeSecurity\UpdateEnterpriseConfiguration === false) {
+            $this->codeSecurity👷UpdateEnterpriseConfiguration = new Internal\Operator\CodeSecurity\UpdateEnterpriseConfiguration($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations🌀ConfigurationId());
+        }
+
+        return $this->codeSecurity👷UpdateEnterpriseConfiguration;
+    }
+
+    public function codeSecurity👷AttachEnterpriseConfiguration(): Internal\Operator\CodeSecurity\AttachEnterpriseConfiguration
+    {
+        if ($this->codeSecurity👷AttachEnterpriseConfiguration instanceof Internal\Operator\CodeSecurity\AttachEnterpriseConfiguration === false) {
+            $this->codeSecurity👷AttachEnterpriseConfiguration = new Internal\Operator\CodeSecurity\AttachEnterpriseConfiguration($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations🌀ConfigurationId🌀Attach());
+        }
+
+        return $this->codeSecurity👷AttachEnterpriseConfiguration;
+    }
+
+    public function codeSecurity👷SetConfigurationAsDefaultForEnterprise(): Internal\Operator\CodeSecurity\SetConfigurationAsDefaultForEnterprise
+    {
+        if ($this->codeSecurity👷SetConfigurationAsDefaultForEnterprise instanceof Internal\Operator\CodeSecurity\SetConfigurationAsDefaultForEnterprise === false) {
+            $this->codeSecurity👷SetConfigurationAsDefaultForEnterprise = new Internal\Operator\CodeSecurity\SetConfigurationAsDefaultForEnterprise($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations🌀ConfigurationId🌀Defaults());
+        }
+
+        return $this->codeSecurity👷SetConfigurationAsDefaultForEnterprise;
+    }
+
+    public function codeSecurity👷GetRepositoriesForEnterpriseConfiguration(): Internal\Operator\CodeSecurity\GetRepositoriesForEnterpriseConfiguration
+    {
+        if ($this->codeSecurity👷GetRepositoriesForEnterpriseConfiguration instanceof Internal\Operator\CodeSecurity\GetRepositoriesForEnterpriseConfiguration === false) {
+            $this->codeSecurity👷GetRepositoriesForEnterpriseConfiguration = new Internal\Operator\CodeSecurity\GetRepositoriesForEnterpriseConfiguration($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀CodeSecurity🌀Configurations🌀ConfigurationId🌀Repositories());
+        }
+
+        return $this->codeSecurity👷GetRepositoriesForEnterpriseConfiguration;
     }
 
     public function dependabot👷ListAlertsForEnterprise(): Internal\Operator\Dependabot\ListAlertsForEnterprise
@@ -6295,6 +6388,33 @@ final class Operators
         }
 
         return $this->codeScanning👷UpdateAlert;
+    }
+
+    public function codeScanning👷GetAutofix(): Internal\Operator\CodeScanning\GetAutofix
+    {
+        if ($this->codeScanning👷GetAutofix instanceof Internal\Operator\CodeScanning\GetAutofix === false) {
+            $this->codeScanning👷GetAutofix = new Internal\Operator\CodeScanning\GetAutofix($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Alerts🌀AlertNumber🌀Autofix());
+        }
+
+        return $this->codeScanning👷GetAutofix;
+    }
+
+    public function codeScanning👷CreateAutofix(): Internal\Operator\CodeScanning\CreateAutofix
+    {
+        if ($this->codeScanning👷CreateAutofix instanceof Internal\Operator\CodeScanning\CreateAutofix === false) {
+            $this->codeScanning👷CreateAutofix = new Internal\Operator\CodeScanning\CreateAutofix($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Alerts🌀AlertNumber🌀Autofix());
+        }
+
+        return $this->codeScanning👷CreateAutofix;
+    }
+
+    public function codeScanning👷CommitAutofix(): Internal\Operator\CodeScanning\CommitAutofix
+    {
+        if ($this->codeScanning👷CommitAutofix instanceof Internal\Operator\CodeScanning\CommitAutofix === false) {
+            $this->codeScanning👷CommitAutofix = new Internal\Operator\CodeScanning\CommitAutofix($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Alerts🌀AlertNumber🌀Autofix🌀Commits());
+        }
+
+        return $this->codeScanning👷CommitAutofix;
     }
 
     public function codeScanning👷ListAlertInstances(): Internal\Operator\CodeScanning\ListAlertInstances

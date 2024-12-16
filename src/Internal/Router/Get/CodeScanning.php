@@ -8,6 +8,7 @@ use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CodeScanningAlert;
 use ApiClients\Client\GitHub\Schema\CodeScanningAnalysis;
+use ApiClients\Client\GitHub\Schema\CodeScanningAutofix;
 use ApiClients\Client\GitHub\Schema\CodeScanningCodeqlDatabase;
 use ApiClients\Client\GitHub\Schema\CodeScanningDefaultSetup;
 use ApiClients\Client\GitHub\Schema\CodeScanningSarifsStatus;
@@ -391,6 +392,32 @@ final class CodeScanning
         $operator = new Internal\Operator\CodeScanning\GetSarif($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Sarifs🌀SarifId());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['sarif_id']);
+    }
+
+    public function getAutofix(array $params): CodeScanningAutofix
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('alert_number', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: alert_number');
+        }
+
+        $arguments['alert_number'] = $params['alert_number'];
+        unset($params['alert_number']);
+        $operator = new Internal\Operator\CodeScanning\GetAutofix($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀CodeScanning🌀Alerts🌀AlertNumber🌀Autofix());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['alert_number']);
     }
 
     /** @return Observable<Schema\CodeScanningAlertInstance> */

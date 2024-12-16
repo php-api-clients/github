@@ -40,6 +40,11 @@ final readonly class Operations implements OperationsInterface
         return new Operation\Emojis($this->operators);
     }
 
+    public function codeSecurity(): Operation\CodeSecurity
+    {
+        return new Operation\CodeSecurity($this->operators);
+    }
+
     public function dependabot(): Operation\Dependabot
     {
         return new Operation\Dependabot($this->operators);
@@ -103,11 +108,6 @@ final readonly class Operations implements OperationsInterface
     public function codeScanning(): Operation\CodeScanning
     {
         return new Operation\CodeScanning($this->operators);
-    }
-
-    public function codeSecurity(): Operation\CodeSecurity
-    {
-        return new Operation\CodeSecurity($this->operators);
     }
 
     public function codespaces(): Operation\Codespaces

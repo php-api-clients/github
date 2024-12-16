@@ -213,6 +213,29 @@ final readonly class ApiOverview
                         ]
                     }
                 },
+                "actions_inbound": {
+                    "type": "object",
+                    "properties": {
+                        "full_domains": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "examples": [
+                                    "example.com"
+                                ]
+                            }
+                        },
+                        "wildcard_domains": {
+                            "type": "array",
+                            "items": {
+                                "type": "string",
+                                "examples": [
+                                    "example.com"
+                                ]
+                            }
+                        }
+                    }
+                },
                 "artifact_attestations": {
                     "type": "object",
                     "properties": {
@@ -325,6 +348,16 @@ final readonly class ApiOverview
             "generated",
             "generated"
         ],
+        "actions_inbound": {
+            "full_domains": [
+                "generated",
+                "generated"
+            ],
+            "wildcard_domains": [
+                "generated",
+                "generated"
+            ]
+        },
         "artifact_attestations": {
             "trust_domain": "example",
             "services": [

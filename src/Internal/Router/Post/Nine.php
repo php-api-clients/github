@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema\CodeScanningAutofixCommitsResponse;
 use ApiClients\Client\GitHub\Schema\Operations\Repos\RedeliverWebhookDelivery\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\PullRequestReview;
 use ApiClients\Client\GitHub\Schema\PullRequestReviewComment;
@@ -17,8 +18,8 @@ final class Nine
     {
     }
 
-    /** @return |Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser> */
-    public function call(string $call, array $params, array $pathChunks): WithoutBody|iterable|Json|PullRequestReviewComment|PullRequestReview
+    /** @return |Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser>|Schema\CodeScanningAutofixCommitsResponse|\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|iterable|CodeScanningAutofixCommitsResponse|Json|PullRequestReviewComment|PullRequestReview
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
@@ -63,6 +64,18 @@ final class Nine
                                         } elseif ($pathChunks[8] === 'users') {
                                             if ($call === 'POST /repos/{owner}/{repo}/branches/{branch}/protection/restrictions/users') {
                                                 return $this->routers->internal🔀Router🔀Post🔀Repos()->addUserAccessRestrictions($params);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'code-scanning') {
+                            if ($pathChunks[5] === 'alerts') {
+                                if ($pathChunks[6] === '{alert_number}') {
+                                    if ($pathChunks[7] === 'autofix') {
+                                        if ($pathChunks[8] === 'commits') {
+                                            if ($call === 'POST /repos/{owner}/{repo}/code-scanning/alerts/{alert_number}/autofix/commits') {
+                                                return $this->routers->internal🔀Router🔀Post🔀CodeScanning()->commitAutofix($params);
                                             }
                                         }
                                     }

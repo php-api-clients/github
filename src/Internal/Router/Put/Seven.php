@@ -7,8 +7,8 @@ namespace ApiClients\Client\GitHub\Internal\Router\Put;
 use ApiClients\Client\GitHub\Internal\Routers;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\EmptyObject;
-use ApiClients\Client\GitHub\Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok;
-use ApiClients\Client\GitHub\Schema\Operations\Pulls\UpdateBranch\Response\ApplicationJson\Accepted\Application\Json;
+use ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok\Application\Json;
+use ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefaultForEnterprise\Response\ApplicationJson\Ok;
 use ApiClients\Client\GitHub\Schema\ProtectedBranch;
 use ApiClients\Client\GitHub\Schema\PullRequestMergeResult;
 use ApiClients\Client\GitHub\Schema\TeamMembership;
@@ -21,11 +21,25 @@ final class Seven
     {
     }
 
-    /** @return |Observable<Schema\Label>|Schema\BasicError */
-    public function call(string $call, array $params, array $pathChunks): EmptyObject|WithoutBody|Ok|\ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok|TeamMembership|ProtectedBranch|iterable|BasicError|PullRequestMergeResult|Json
+    /** @return Schema\Operations\CodeSecurity\SetConfigurationAsDefaultForEnterprise\Response\ApplicationJson\Ok||Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok\Application\Json|Observable<Schema\Label>|Schema\BasicError */
+    public function call(string $call, array $params, array $pathChunks): Ok|EmptyObject|WithoutBody|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok|Json|TeamMembership|ProtectedBranch|iterable|BasicError|PullRequestMergeResult|\ApiClients\Client\GitHub\Schema\Operations\Pulls\UpdateBranch\Response\ApplicationJson\Accepted\Application\Json
     {
         if ($pathChunks[0] === '') {
-            if ($pathChunks[1] === 'orgs') {
+            if ($pathChunks[1] === 'enterprises') {
+                if ($pathChunks[2] === '{enterprise}') {
+                    if ($pathChunks[3] === 'code-security') {
+                        if ($pathChunks[4] === 'configurations') {
+                            if ($pathChunks[5] === '{configuration_id}') {
+                                if ($pathChunks[6] === 'defaults') {
+                                    if ($call === 'PUT /enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults') {
+                                        return $this->routers->internal🔀Router🔀Put🔀CodeSecurity()->setConfigurationAsDefaultForEnterprise($params);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } elseif ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {
                         if ($pathChunks[4] === 'oidc') {

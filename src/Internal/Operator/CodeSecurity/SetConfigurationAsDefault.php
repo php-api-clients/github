@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Operator\CodeSecurity;
 
 use ApiClients\Client\GitHub\Internal;
-use ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok;
+use ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use League\OpenAPIValidation\Schema\SchemaValidator;
 use Psr\Http\Message\ResponseInterface;
@@ -24,12 +24,11 @@ final readonly class SetConfigurationAsDefault
     {
     }
 
-    /** @return */
-    public function call(string $org, int $configurationId, array $params): Ok
+    public function call(string $org, int $configurationId, array $params): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\SetConfigurationAsDefault($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org, $configurationId);
         $request   = $operation->createRequest($params);
-        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok {
+        $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Json {
             return $operation->createResponse($response);
         }));
         if ($result instanceof Observable) {

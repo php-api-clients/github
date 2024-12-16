@@ -23,6 +23,60 @@ final class Issues
     }
 
     /** @return */
+    public function deleteLabel(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: name');
+        }
+
+        $arguments['name'] = $params['name'];
+        unset($params['name']);
+        $operator = new Internal\Operator\Issues\DeleteLabel($this->browser, $this->authentication);
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name']);
+    }
+
+    /** @return */
+    public function deleteMilestone(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('milestone_number', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: milestone_number');
+        }
+
+        $arguments['milestone_number'] = $params['milestone_number'];
+        unset($params['milestone_number']);
+        $operator = new Internal\Operator\Issues\DeleteMilestone($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Milestones🌀MilestoneNumber());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone_number']);
+    }
+
+    /** @return */
     public function deleteComment(array $params): WithoutBody
     {
         $arguments = [];
@@ -155,60 +209,6 @@ final class Issues
         $operator = new Internal\Operator\Issues\RemoveSubIssue($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues🌀IssueNumber🌀SubIssue());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['issue_number'], $params);
-    }
-
-    /** @return */
-    public function deleteLabel(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('owner', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: owner');
-        }
-
-        $arguments['owner'] = $params['owner'];
-        unset($params['owner']);
-        if (array_key_exists('repo', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repo');
-        }
-
-        $arguments['repo'] = $params['repo'];
-        unset($params['repo']);
-        if (array_key_exists('name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: name');
-        }
-
-        $arguments['name'] = $params['name'];
-        unset($params['name']);
-        $operator = new Internal\Operator\Issues\DeleteLabel($this->browser, $this->authentication);
-
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['name']);
-    }
-
-    /** @return */
-    public function deleteMilestone(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('owner', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: owner');
-        }
-
-        $arguments['owner'] = $params['owner'];
-        unset($params['owner']);
-        if (array_key_exists('repo', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: repo');
-        }
-
-        $arguments['repo'] = $params['repo'];
-        unset($params['repo']);
-        if (array_key_exists('milestone_number', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: milestone_number');
-        }
-
-        $arguments['milestone_number'] = $params['milestone_number'];
-        unset($params['milestone_number']);
-        $operator = new Internal\Operator\Issues\DeleteMilestone($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Milestones🌀MilestoneNumber());
-
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone_number']);
     }
 
     /** @return Observable<Schema\Label>|Schema\BasicError */

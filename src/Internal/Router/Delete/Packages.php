@@ -41,33 +41,6 @@ final class Packages
     }
 
     /** @return */
-    public function deletePackageVersionForAuthenticatedUser(array $params): WithoutBody
-    {
-        $arguments = [];
-        if (array_key_exists('package_type', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: package_type');
-        }
-
-        $arguments['package_type'] = $params['package_type'];
-        unset($params['package_type']);
-        if (array_key_exists('package_name', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: package_name');
-        }
-
-        $arguments['package_name'] = $params['package_name'];
-        unset($params['package_name']);
-        if (array_key_exists('package_version_id', $params) === false) {
-            throw new InvalidArgumentException('Missing mandatory field: package_version_id');
-        }
-
-        $arguments['package_version_id'] = $params['package_version_id'];
-        unset($params['package_version_id']);
-        $operator = new Internal\Operator\Packages\DeletePackageVersionForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId());
-
-        return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['package_version_id']);
-    }
-
-    /** @return */
     public function deletePackageForOrg(array $params): WithoutBody
     {
         $arguments = [];
@@ -119,6 +92,33 @@ final class Packages
         $operator = new Internal\Operator\Packages\DeletePackageForUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Packages🌀PackageType🌀PackageName());
 
         return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['username']);
+    }
+
+    /** @return */
+    public function deletePackageVersionForAuthenticatedUser(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('package_type', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: package_type');
+        }
+
+        $arguments['package_type'] = $params['package_type'];
+        unset($params['package_type']);
+        if (array_key_exists('package_name', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: package_name');
+        }
+
+        $arguments['package_name'] = $params['package_name'];
+        unset($params['package_name']);
+        if (array_key_exists('package_version_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: package_version_id');
+        }
+
+        $arguments['package_version_id'] = $params['package_version_id'];
+        unset($params['package_version_id']);
+        $operator = new Internal\Operator\Packages\DeletePackageVersionForAuthenticatedUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀User🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId());
+
+        return $operator->call($arguments['package_type'], $arguments['package_name'], $arguments['package_version_id']);
     }
 
     /** @return */
