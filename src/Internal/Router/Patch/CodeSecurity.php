@@ -20,6 +20,7 @@ final class CodeSecurity
     {
     }
 
+    /** @return */
     public function updateEnterpriseConfiguration(array $params): CodeSecurityConfiguration|WithoutBody
     {
         $arguments = [];

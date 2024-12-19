@@ -22,7 +22,7 @@ final class Eight
     {
     }
 
-    /** @return |Observable<Schema\Deployment>|Schema\CodeScanningAutofix|\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
+    /** @return |Observable<Schema\Deployment> */
     public function call(string $call, array $params, array $pathChunks): Json|Codespace|WithoutBody|TeamDiscussionComment|Reaction|EmptyObject|Ok|iterable|ProtectedBranchAdminEnforced|CodeScanningAutofix
     {
         if ($pathChunks[0] === '') {

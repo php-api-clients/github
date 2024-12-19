@@ -22,7 +22,7 @@ final class CodeSecurity
     {
     }
 
-    /** @return iterable<int,Schema\CodeSecurityConfiguration> */
+    /** @return Observable<Schema\CodeSecurityConfiguration> */
     public function getConfigurationsForEnterprise(array $params): iterable
     {
         $arguments = [];
@@ -115,7 +115,7 @@ final class CodeSecurity
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return iterable<int,Schema\CodeSecurityDefaultConfigurations> */
+    /** @return Observable<Schema\CodeSecurityDefaultConfigurations> */
     public function getDefaultConfigurationsForEnterprise(array $params): iterable
     {
         $arguments = [];
@@ -130,6 +130,7 @@ final class CodeSecurity
         return $operator->call($arguments['enterprise']);
     }
 
+    /** @return */
     public function getSingleConfigurationForEnterprise(array $params): CodeSecurityConfiguration|WithoutBody
     {
         $arguments = [];
@@ -186,7 +187,7 @@ final class CodeSecurity
         return $operator->call($arguments['org'], $arguments['configuration_id']);
     }
 
-    /** @return iterable<int,Schema\CodeSecurityConfigurationRepositories> */
+    /** @return Observable<Schema\CodeSecurityConfigurationRepositories> */
     public function getRepositoriesForEnterpriseConfiguration(array $params): iterable
     {
         $arguments = [];

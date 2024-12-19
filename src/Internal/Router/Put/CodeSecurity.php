@@ -20,6 +20,7 @@ final class CodeSecurity
     {
     }
 
+    /** @return */
     public function setConfigurationAsDefaultForEnterprise(array $params): Ok
     {
         $arguments = [];
@@ -40,6 +41,7 @@ final class CodeSecurity
         return $operator->call($arguments['enterprise'], $arguments['configuration_id'], $params);
     }
 
+    /** @return */
     public function setConfigurationAsDefault(array $params): Json
     {
         $arguments = [];

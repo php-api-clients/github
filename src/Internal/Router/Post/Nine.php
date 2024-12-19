@@ -18,7 +18,7 @@ final class Nine
     {
     }
 
-    /** @return |Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser>|Schema\CodeScanningAutofixCommitsResponse|\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
+    /** @return |Observable<string>|Observable<Schema\Integration>|Observable<Schema\Team>|Observable<Schema\SimpleUser> */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|iterable|CodeScanningAutofixCommitsResponse|Json|PullRequestReviewComment|PullRequestReview
     {
         if ($pathChunks[0] === '') {

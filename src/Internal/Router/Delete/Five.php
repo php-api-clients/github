@@ -14,6 +14,7 @@ final class Five
     {
     }
 
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
     public function call(string $call, array $params, array $pathChunks): WithoutBody
     {
         if ($pathChunks[0] === '') {
@@ -83,6 +84,12 @@ final class Five
                         if ($pathChunks[4] === '{username}') {
                             if ($call === 'DELETE /orgs/{org}/outside_collaborators/{username}') {
                                 return $this->routers->internal🔀Router🔀Delete🔀Orgs()->removeOutsideCollaborator($params);
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'private-registries') {
+                        if ($pathChunks[4] === '{secret_name}') {
+                            if ($call === 'DELETE /orgs/{org}/private-registries/{secret_name}') {
+                                return $this->routers->internal🔀Router🔀Delete🔀PrivateRegistries()->deleteOrgPrivateRegistry($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'public_members') {

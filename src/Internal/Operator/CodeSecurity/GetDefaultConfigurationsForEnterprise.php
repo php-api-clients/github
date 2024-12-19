@@ -24,7 +24,7 @@ final readonly class GetDefaultConfigurationsForEnterprise
     {
     }
 
-    /** @return iterable<int,Schema\CodeSecurityDefaultConfigurations> */
+    /** @return Observable<Schema\CodeSecurityDefaultConfigurations> */
     public function call(string $enterprise): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\GetDefaultConfigurationsForEnterprise($this->responseSchemaValidator, $this->hydrator, $enterprise);

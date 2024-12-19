@@ -23,6 +23,7 @@ final readonly class CodeScanningDefaultSetup
             "type": "array",
             "items": {
                 "enum": [
+                    "actions",
                     "c-cpp",
                     "csharp",
                     "go",

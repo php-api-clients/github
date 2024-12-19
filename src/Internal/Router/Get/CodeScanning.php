@@ -394,6 +394,7 @@ final class CodeScanning
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['sarif_id']);
     }
 
+    /** @return */
     public function getAutofix(array $params): CodeScanningAutofix
     {
         $arguments = [];

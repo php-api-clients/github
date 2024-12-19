@@ -24,7 +24,7 @@ final readonly class GetRepositoriesForEnterpriseConfiguration
     {
     }
 
-    /** @return iterable<int,Schema\CodeSecurityConfigurationRepositories> */
+    /** @return Observable<Schema\CodeSecurityConfigurationRepositories> */
     public function call(string $enterprise, int $configurationId, string $before, string $after, int $perPage = 30, string $status = 'all'): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\GetRepositoriesForEnterpriseConfiguration($this->responseSchemaValidator, $this->hydrator, $enterprise, $configurationId, $before, $after, $perPage, $status);

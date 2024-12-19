@@ -25,6 +25,7 @@ final readonly class UpdateEnterpriseConfiguration
     {
     }
 
+    /** @return */
     public function call(string $enterprise, int $configurationId, array $params): CodeSecurityConfiguration|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\UpdateEnterpriseConfiguration($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $enterprise, $configurationId);

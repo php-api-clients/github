@@ -24,6 +24,7 @@ final readonly class SetConfigurationAsDefaultForEnterprise
     {
     }
 
+    /** @return */
     public function call(string $enterprise, int $configurationId, array $params): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\SetConfigurationAsDefaultForEnterprise($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $enterprise, $configurationId);

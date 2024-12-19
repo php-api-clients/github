@@ -19,6 +19,7 @@ final class CodeSecurity
     {
     }
 
+    /** @return */
     public function deleteConfigurationForEnterprise(array $params): WithoutBody
     {
         $arguments = [];

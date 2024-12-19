@@ -140,6 +140,11 @@ final readonly class Operations implements OperationsInterface
         return new Operation\Migrations($this->operators);
     }
 
+    public function privateRegistries(): Operation\PrivateRegistries
+    {
+        return new Operation\PrivateRegistries($this->operators);
+    }
+
     public function projects(): Operation\Projects
     {
         return new Operation\Projects($this->operators);

@@ -24,6 +24,7 @@ final readonly class DeleteConfigurationForEnterprise
     {
     }
 
+    /** @return */
     public function call(string $enterprise, int $configurationId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\DeleteConfigurationForEnterprise($this->responseSchemaValidator, $this->hydrator, $enterprise, $configurationId);

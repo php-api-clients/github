@@ -24,6 +24,7 @@ final readonly class GetAutofix
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $alertNumber): CodeScanningAutofix
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\GetAutofix($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $alertNumber);

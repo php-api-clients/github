@@ -25,6 +25,7 @@ final readonly class GetSingleConfigurationForEnterprise
     {
     }
 
+    /** @return */
     public function call(string $enterprise, int $configurationId): CodeSecurityConfiguration|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\GetSingleConfigurationForEnterprise($this->responseSchemaValidator, $this->hydrator, $enterprise, $configurationId);

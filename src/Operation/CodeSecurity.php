@@ -18,49 +18,55 @@ final class CodeSecurity
     {
     }
 
-    /** @return iterable<int,Schema\CodeSecurityConfiguration> */
+    /** @return Observable<Schema\CodeSecurityConfiguration> */
     public function getConfigurationsForEnterprise(string $enterprise, string $before, string $after, int $perPage): iterable
     {
         return $this->operators->codeSecurity👷GetConfigurationsForEnterprise()->call($enterprise, $before, $after, $perPage);
     }
 
+    /** @return */
     public function createConfigurationForEnterprise(string $enterprise, array $params): CodeSecurityConfiguration
     {
         return $this->operators->codeSecurity👷CreateConfigurationForEnterprise()->call($enterprise, $params);
     }
 
-    /** @return iterable<int,Schema\CodeSecurityDefaultConfigurations> */
+    /** @return Observable<Schema\CodeSecurityDefaultConfigurations> */
     public function getDefaultConfigurationsForEnterprise(string $enterprise): iterable
     {
         return $this->operators->codeSecurity👷GetDefaultConfigurationsForEnterprise()->call($enterprise);
     }
 
+    /** @return */
     public function getSingleConfigurationForEnterprise(string $enterprise, int $configurationId): CodeSecurityConfiguration|WithoutBody
     {
         return $this->operators->codeSecurity👷GetSingleConfigurationForEnterprise()->call($enterprise, $configurationId);
     }
 
+    /** @return */
     public function deleteConfigurationForEnterprise(string $enterprise, int $configurationId): WithoutBody
     {
         return $this->operators->codeSecurity👷DeleteConfigurationForEnterprise()->call($enterprise, $configurationId);
     }
 
+    /** @return */
     public function updateEnterpriseConfiguration(string $enterprise, int $configurationId, array $params): CodeSecurityConfiguration|WithoutBody
     {
         return $this->operators->codeSecurity👷UpdateEnterpriseConfiguration()->call($enterprise, $configurationId, $params);
     }
 
+    /** @return */
     public function attachEnterpriseConfiguration(string $enterprise, int $configurationId, array $params): Json
     {
         return $this->operators->codeSecurity👷AttachEnterpriseConfiguration()->call($enterprise, $configurationId, $params);
     }
 
+    /** @return */
     public function setConfigurationAsDefaultForEnterprise(string $enterprise, int $configurationId, array $params): Ok
     {
         return $this->operators->codeSecurity👷SetConfigurationAsDefaultForEnterprise()->call($enterprise, $configurationId, $params);
     }
 
-    /** @return iterable<int,Schema\CodeSecurityConfigurationRepositories> */
+    /** @return Observable<Schema\CodeSecurityConfigurationRepositories> */
     public function getRepositoriesForEnterpriseConfiguration(string $enterprise, int $configurationId, string $before, string $after, int $perPage, string $status): iterable
     {
         return $this->operators->codeSecurity👷GetRepositoriesForEnterpriseConfiguration()->call($enterprise, $configurationId, $before, $after, $perPage, $status);
@@ -114,6 +120,7 @@ final class CodeSecurity
         return $this->operators->codeSecurity👷AttachConfiguration()->call($org, $configurationId, $params);
     }
 
+    /** @return */
     public function setConfigurationAsDefault(string $org, int $configurationId, array $params): \ApiClients\Client\GitHub\Schema\Operations\CodeSecurity\SetConfigurationAsDefault\Response\ApplicationJson\Ok\Application\Json
     {
         return $this->operators->codeSecurity👷SetConfigurationAsDefault()->call($org, $configurationId, $params);

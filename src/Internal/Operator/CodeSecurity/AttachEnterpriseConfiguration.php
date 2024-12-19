@@ -24,6 +24,7 @@ final readonly class AttachEnterpriseConfiguration
     {
     }
 
+    /** @return */
     public function call(string $enterprise, int $configurationId, array $params): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeSecurity\AttachEnterpriseConfiguration($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $enterprise, $configurationId);

@@ -21,8 +21,8 @@ final class Five
     {
     }
 
-    /** @return |Observable<Schema\CustomProperty> */
-    public function call(string $call, array $params, array $pathChunks): GistComment|OrgHook|iterable|WithoutBody|TeamFull|ProjectCard|Import|TeamDiscussion|OrgMembership
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody|Observable<Schema\CustomProperty> */
+    public function call(string $call, array $params, array $pathChunks): GistComment|OrgHook|WithoutBody|iterable|TeamFull|ProjectCard|Import|TeamDiscussion|OrgMembership
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'gists') {
@@ -41,6 +41,12 @@ final class Five
                         if ($pathChunks[4] === '{hook_id}') {
                             if ($call === 'PATCH /orgs/{org}/hooks/{hook_id}') {
                                 return $this->routers->internal🔀Router🔀Patch🔀Orgs()->updateWebhook($params);
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'private-registries') {
+                        if ($pathChunks[4] === '{secret_name}') {
+                            if ($call === 'PATCH /orgs/{org}/private-registries/{secret_name}') {
+                                return $this->routers->internal🔀Router🔀Patch🔀PrivateRegistries()->updateOrgPrivateRegistry($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'properties') {

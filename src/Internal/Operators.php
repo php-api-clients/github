@@ -335,6 +335,12 @@ final class Operators
     private Internal\Operator\Orgs\UpdatePatAccess|null $orgs👷UpdatePatAccess                                                                                                       = null;
     private Internal\Operator\Orgs\ListPatGrantRepositories|null $orgs👷ListPatGrantRepositories                                                                                     = null;
     private Internal\Operator\Orgs\ListPatGrantRepositoriesListing|null $orgs👷ListPatGrantRepositoriesListing                                                                       = null;
+    private Internal\Operator\PrivateRegistries\ListOrgPrivateRegistries|null $privateRegistries👷ListOrgPrivateRegistries                                                           = null;
+    private Internal\Operator\PrivateRegistries\CreateOrgPrivateRegistry|null $privateRegistries👷CreateOrgPrivateRegistry                                                           = null;
+    private Internal\Operator\PrivateRegistries\GetOrgPublicKey|null $privateRegistries👷GetOrgPublicKey                                                                             = null;
+    private Internal\Operator\PrivateRegistries\GetOrgPrivateRegistry|null $privateRegistries👷GetOrgPrivateRegistry                                                                 = null;
+    private Internal\Operator\PrivateRegistries\DeleteOrgPrivateRegistry|null $privateRegistries👷DeleteOrgPrivateRegistry                                                           = null;
+    private Internal\Operator\PrivateRegistries\UpdateOrgPrivateRegistry|null $privateRegistries👷UpdateOrgPrivateRegistry                                                           = null;
     private Internal\Operator\Projects\ListForOrg|null $projects👷ListForOrg                                                                                                         = null;
     private Internal\Operator\Projects\ListForOrgListing|null $projects👷ListForOrgListing                                                                                           = null;
     private Internal\Operator\Projects\CreateForOrg|null $projects👷CreateForOrg                                                                                                     = null;
@@ -4102,6 +4108,60 @@ final class Operators
         }
 
         return $this->orgs👷ListPatGrantRepositoriesListing;
+    }
+
+    public function privateRegistries👷ListOrgPrivateRegistries(): Internal\Operator\PrivateRegistries\ListOrgPrivateRegistries
+    {
+        if ($this->privateRegistries👷ListOrgPrivateRegistries instanceof Internal\Operator\PrivateRegistries\ListOrgPrivateRegistries === false) {
+            $this->privateRegistries👷ListOrgPrivateRegistries = new Internal\Operator\PrivateRegistries\ListOrgPrivateRegistries($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries());
+        }
+
+        return $this->privateRegistries👷ListOrgPrivateRegistries;
+    }
+
+    public function privateRegistries👷CreateOrgPrivateRegistry(): Internal\Operator\PrivateRegistries\CreateOrgPrivateRegistry
+    {
+        if ($this->privateRegistries👷CreateOrgPrivateRegistry instanceof Internal\Operator\PrivateRegistries\CreateOrgPrivateRegistry === false) {
+            $this->privateRegistries👷CreateOrgPrivateRegistry = new Internal\Operator\PrivateRegistries\CreateOrgPrivateRegistry($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries());
+        }
+
+        return $this->privateRegistries👷CreateOrgPrivateRegistry;
+    }
+
+    public function privateRegistries👷GetOrgPublicKey(): Internal\Operator\PrivateRegistries\GetOrgPublicKey
+    {
+        if ($this->privateRegistries👷GetOrgPublicKey instanceof Internal\Operator\PrivateRegistries\GetOrgPublicKey === false) {
+            $this->privateRegistries👷GetOrgPublicKey = new Internal\Operator\PrivateRegistries\GetOrgPublicKey($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries🌀PublicKey());
+        }
+
+        return $this->privateRegistries👷GetOrgPublicKey;
+    }
+
+    public function privateRegistries👷GetOrgPrivateRegistry(): Internal\Operator\PrivateRegistries\GetOrgPrivateRegistry
+    {
+        if ($this->privateRegistries👷GetOrgPrivateRegistry instanceof Internal\Operator\PrivateRegistries\GetOrgPrivateRegistry === false) {
+            $this->privateRegistries👷GetOrgPrivateRegistry = new Internal\Operator\PrivateRegistries\GetOrgPrivateRegistry($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries🌀SecretName());
+        }
+
+        return $this->privateRegistries👷GetOrgPrivateRegistry;
+    }
+
+    public function privateRegistries👷DeleteOrgPrivateRegistry(): Internal\Operator\PrivateRegistries\DeleteOrgPrivateRegistry
+    {
+        if ($this->privateRegistries👷DeleteOrgPrivateRegistry instanceof Internal\Operator\PrivateRegistries\DeleteOrgPrivateRegistry === false) {
+            $this->privateRegistries👷DeleteOrgPrivateRegistry = new Internal\Operator\PrivateRegistries\DeleteOrgPrivateRegistry($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries🌀SecretName());
+        }
+
+        return $this->privateRegistries👷DeleteOrgPrivateRegistry;
+    }
+
+    public function privateRegistries👷UpdateOrgPrivateRegistry(): Internal\Operator\PrivateRegistries\UpdateOrgPrivateRegistry
+    {
+        if ($this->privateRegistries👷UpdateOrgPrivateRegistry instanceof Internal\Operator\PrivateRegistries\UpdateOrgPrivateRegistry === false) {
+            $this->privateRegistries👷UpdateOrgPrivateRegistry = new Internal\Operator\PrivateRegistries\UpdateOrgPrivateRegistry($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries🌀SecretName());
+        }
+
+        return $this->privateRegistries👷UpdateOrgPrivateRegistry;
     }
 
     public function projects👷ListForOrg(): Internal\Operator\Projects\ListForOrg

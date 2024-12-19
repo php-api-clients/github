@@ -25,6 +25,7 @@ final readonly class CommitAutofix
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $alertNumber, array $params): CodeScanningAutofixCommitsResponse|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\CodeScanning\CommitAutofix($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $owner, $repo, $alertNumber);

@@ -33,6 +33,7 @@ final class Routers
     private Internal\Router\Get\Interactions|null $internal🔀Router🔀Get🔀Interactions                 = null;
     private Internal\Router\Get\Migrations|null $internal🔀Router🔀Get🔀Migrations                     = null;
     private Internal\Router\Get\Packages|null $internal🔀Router🔀Get🔀Packages                         = null;
+    private Internal\Router\Get\PrivateRegistries|null $internal🔀Router🔀Get🔀PrivateRegistries       = null;
     private Internal\Router\Get\CodeSecurity|null $internal🔀Router🔀Get🔀CodeSecurity                 = null;
     private Internal\Router\Get\Dependabot|null $internal🔀Router🔀Get🔀Dependabot                     = null;
     private Internal\Router\Get\SecretScanning|null $internal🔀Router🔀Get🔀SecretScanning             = null;
@@ -51,6 +52,7 @@ final class Routers
     private Internal\Router\Post\Gists|null $internal🔀Router🔀Post🔀Gists                             = null;
     private Internal\Router\Post\Orgs|null $internal🔀Router🔀Post🔀Orgs                               = null;
     private Internal\Router\Post\Migrations|null $internal🔀Router🔀Post🔀Migrations                   = null;
+    private Internal\Router\Post\PrivateRegistries|null $internal🔀Router🔀Post🔀PrivateRegistries     = null;
     private Internal\Router\Post\Projects|null $internal🔀Router🔀Post🔀Projects                       = null;
     private Internal\Router\Post\Repos|null $internal🔀Router🔀Post🔀Repos                             = null;
     private Internal\Router\Post\Teams|null $internal🔀Router🔀Post🔀Teams                             = null;
@@ -87,6 +89,7 @@ final class Routers
     private Internal\Router\Patch\SecurityAdvisories|null $internal🔀Router🔀Patch🔀SecurityAdvisories = null;
     private Internal\Router\Patch\Gists|null $internal🔀Router🔀Patch🔀Gists                           = null;
     private Internal\Router\Patch\Teams|null $internal🔀Router🔀Patch🔀Teams                           = null;
+    private Internal\Router\Patch\PrivateRegistries|null $internal🔀Router🔀Patch🔀PrivateRegistries   = null;
     private Internal\Router\Patch\Dependabot|null $internal🔀Router🔀Patch🔀Dependabot                 = null;
     private Internal\Router\Patch\Git|null $internal🔀Router🔀Patch🔀Git                               = null;
     private Internal\Router\Patch\SecretScanning|null $internal🔀Router🔀Patch🔀SecretScanning         = null;
@@ -120,6 +123,7 @@ final class Routers
     private Internal\Router\Delete\Users|null $internal🔀Router🔀Delete🔀Users                         = null;
     private Internal\Router\Delete\Codespaces|null $internal🔀Router🔀Delete🔀Codespaces               = null;
     private Internal\Router\Delete\Orgs|null $internal🔀Router🔀Delete🔀Orgs                           = null;
+    private Internal\Router\Delete\PrivateRegistries|null $internal🔀Router🔀Delete🔀PrivateRegistries = null;
     private Internal\Router\Delete\Teams|null $internal🔀Router🔀Delete🔀Teams                         = null;
     private Internal\Router\Delete\Migrations|null $internal🔀Router🔀Delete🔀Migrations               = null;
     private Internal\Router\Delete\Packages|null $internal🔀Router🔀Delete🔀Packages                   = null;
@@ -355,6 +359,15 @@ final class Routers
         return $this->internal🔀Router🔀Get🔀Packages;
     }
 
+    public function internal🔀Router🔀Get🔀PrivateRegistries(): Internal\Router\Get\PrivateRegistries
+    {
+        if ($this->internal🔀Router🔀Get🔀PrivateRegistries instanceof Internal\Router\Get\PrivateRegistries === false) {
+            $this->internal🔀Router🔀Get🔀PrivateRegistries = new Internal\Router\Get\PrivateRegistries(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀Get🔀PrivateRegistries;
+    }
+
     public function internal🔀Router🔀Get🔀CodeSecurity(): Internal\Router\Get\CodeSecurity
     {
         if ($this->internal🔀Router🔀Get🔀CodeSecurity instanceof Internal\Router\Get\CodeSecurity === false) {
@@ -515,6 +528,15 @@ final class Routers
         }
 
         return $this->internal🔀Router🔀Post🔀Migrations;
+    }
+
+    public function internal🔀Router🔀Post🔀PrivateRegistries(): Internal\Router\Post\PrivateRegistries
+    {
+        if ($this->internal🔀Router🔀Post🔀PrivateRegistries instanceof Internal\Router\Post\PrivateRegistries === false) {
+            $this->internal🔀Router🔀Post🔀PrivateRegistries = new Internal\Router\Post\PrivateRegistries(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀Post🔀PrivateRegistries;
     }
 
     public function internal🔀Router🔀Post🔀Projects(): Internal\Router\Post\Projects
@@ -841,6 +863,15 @@ final class Routers
         return $this->internal🔀Router🔀Patch🔀Teams;
     }
 
+    public function internal🔀Router🔀Patch🔀PrivateRegistries(): Internal\Router\Patch\PrivateRegistries
+    {
+        if ($this->internal🔀Router🔀Patch🔀PrivateRegistries instanceof Internal\Router\Patch\PrivateRegistries === false) {
+            $this->internal🔀Router🔀Patch🔀PrivateRegistries = new Internal\Router\Patch\PrivateRegistries(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀Patch🔀PrivateRegistries;
+    }
+
     public function internal🔀Router🔀Patch🔀Dependabot(): Internal\Router\Patch\Dependabot
     {
         if ($this->internal🔀Router🔀Patch🔀Dependabot instanceof Internal\Router\Patch\Dependabot === false) {
@@ -1136,6 +1167,15 @@ final class Routers
         }
 
         return $this->internal🔀Router🔀Delete🔀Orgs;
+    }
+
+    public function internal🔀Router🔀Delete🔀PrivateRegistries(): Internal\Router\Delete\PrivateRegistries
+    {
+        if ($this->internal🔀Router🔀Delete🔀PrivateRegistries instanceof Internal\Router\Delete\PrivateRegistries === false) {
+            $this->internal🔀Router🔀Delete🔀PrivateRegistries = new Internal\Router\Delete\PrivateRegistries(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀Delete🔀PrivateRegistries;
     }
 
     public function internal🔀Router🔀Delete🔀Teams(): Internal\Router\Delete\Teams

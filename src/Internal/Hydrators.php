@@ -204,6 +204,9 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Orgs\Org\PersonalAccessTokens|null $operation🌀Orgs🌀Org🌀PersonalAccessTokens                                                                                                                                                 = null;
     private Internal\Hydrator\Operation\Orgs\Org\PersonalAccessTokens\PatId|null $operation🌀Orgs🌀Org🌀PersonalAccessTokens🌀PatId                                                                                                                                     = null;
     private Internal\Hydrator\Operation\Orgs\Org\PersonalAccessTokens\PatId\Repositories|null $operation🌀Orgs🌀Org🌀PersonalAccessTokens🌀PatId🌀Repositories                                                                                                           = null;
+    private Internal\Hydrator\Operation\Orgs\Org\PrivateRegistries|null $operation🌀Orgs🌀Org🌀PrivateRegistries                                                                                                                                                       = null;
+    private Internal\Hydrator\Operation\Orgs\Org\PrivateRegistries\PublicKey|null $operation🌀Orgs🌀Org🌀PrivateRegistries🌀PublicKey                                                                                                                                   = null;
+    private Internal\Hydrator\Operation\Orgs\Org\PrivateRegistries\SecretName|null $operation🌀Orgs🌀Org🌀PrivateRegistries🌀SecretName                                                                                                                                 = null;
     private Internal\Hydrator\Operation\Orgs\Org\Projects|null $operation🌀Orgs🌀Org🌀Projects                                                                                                                                                                         = null;
     private Internal\Hydrator\Operation\Orgs\Org\Properties\Schema|null $operation🌀Orgs🌀Org🌀Properties🌀Schema                                                                                                                                                       = null;
     private Internal\Hydrator\Operation\Orgs\Org\Properties\Schema\CustomPropertyName|null $operation🌀Orgs🌀Org🌀Properties🌀Schema🌀CustomPropertyName                                                                                                                 = null;
@@ -838,6 +841,9 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata\\Container', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata\\Docker' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\ReviewPatGrantRequestsInBulk\\Response\\ApplicationJson\\Accepted\\Application\\Json' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokenRequests()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\UpdatePatAccesses\\Response\\ApplicationJson\\Accepted\\Application\\Json' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokens()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\PrivateRegistries\\ListOrgPrivateRegistries\\Response\\ApplicationJson\\Ok', '\\ApiClients\\Client\\GitHub\\Schema\\OrgPrivateRegistryConfigurationWithSelectedRepositories' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\PrivateRegistries\\GetOrgPublicKey\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries🌀PublicKey()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\OrgPrivateRegistryConfiguration' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries🌀SecretName()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\Project' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Projects()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\CustomProperty' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Schema🌀CustomPropertyName()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\FullRepository', '\\ApiClients\\Client\\GitHub\\Schema\\FullRepository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\Repository', '\\ApiClients\\Client\\GitHub\\Schema\\LicenseSimple', '\\ApiClients\\Client\\GitHub\\Schema\\Repository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\CodeOfConductSimple', '\\ApiClients\\Client\\GitHub\\Schema\\FullRepository\\CustomProperties' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Repos()->hydrateObject($className, $payload),
@@ -1203,6 +1209,9 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata\\Container', '\\ApiClients\\Client\\GitHub\\Schema\\PackageVersion\\Metadata\\Docker' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Packages🌀PackageType🌀PackageName🌀Versions🌀PackageVersionId()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\ReviewPatGrantRequestsInBulk\\Response\\ApplicationJson\\Accepted\\Application\\Json' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokenRequests()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\Orgs\\UpdatePatAccesses\\Response\\ApplicationJson\\Accepted\\Application\\Json' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokens()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\PrivateRegistries\\ListOrgPrivateRegistries\\Response\\ApplicationJson\\Ok', '\\ApiClients\\Client\\GitHub\\Schema\\OrgPrivateRegistryConfigurationWithSelectedRepositories' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\PrivateRegistries\\GetOrgPublicKey\\Response\\ApplicationJson\\Ok' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries🌀PublicKey()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\OrgPrivateRegistryConfiguration' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries🌀SecretName()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\Project' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Projects()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\CustomProperty' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Properties🌀Schema🌀CustomPropertyName()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\FullRepository', '\\ApiClients\\Client\\GitHub\\Schema\\FullRepository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\Repository', '\\ApiClients\\Client\\GitHub\\Schema\\LicenseSimple', '\\ApiClients\\Client\\GitHub\\Schema\\Repository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\CodeOfConductSimple', '\\ApiClients\\Client\\GitHub\\Schema\\FullRepository\\CustomProperties' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Repos()->serializeObject($object),
@@ -3205,6 +3214,33 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Orgs🌀Org🌀PersonalAccessTokens🌀PatId🌀Repositories;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries(): Internal\Hydrator\Operation\Orgs\Org\PrivateRegistries
+    {
+        if ($this->operation🌀Orgs🌀Org🌀PrivateRegistries instanceof Internal\Hydrator\Operation\Orgs\Org\PrivateRegistries === false) {
+            $this->operation🌀Orgs🌀Org🌀PrivateRegistries = new Internal\Hydrator\Operation\Orgs\Org\PrivateRegistries();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀PrivateRegistries;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries🌀PublicKey(): Internal\Hydrator\Operation\Orgs\Org\PrivateRegistries\PublicKey
+    {
+        if ($this->operation🌀Orgs🌀Org🌀PrivateRegistries🌀PublicKey instanceof Internal\Hydrator\Operation\Orgs\Org\PrivateRegistries\PublicKey === false) {
+            $this->operation🌀Orgs🌀Org🌀PrivateRegistries🌀PublicKey = new Internal\Hydrator\Operation\Orgs\Org\PrivateRegistries\PublicKey();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀PrivateRegistries🌀PublicKey;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀PrivateRegistries🌀SecretName(): Internal\Hydrator\Operation\Orgs\Org\PrivateRegistries\SecretName
+    {
+        if ($this->operation🌀Orgs🌀Org🌀PrivateRegistries🌀SecretName instanceof Internal\Hydrator\Operation\Orgs\Org\PrivateRegistries\SecretName === false) {
+            $this->operation🌀Orgs🌀Org🌀PrivateRegistries🌀SecretName = new Internal\Hydrator\Operation\Orgs\Org\PrivateRegistries\SecretName();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀PrivateRegistries🌀SecretName;
     }
 
     public function getObjectMapperOperation🌀Orgs🌀Org🌀Projects(): Internal\Hydrator\Operation\Orgs\Org\Projects

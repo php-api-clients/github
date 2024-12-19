@@ -65,6 +65,7 @@ final class CodeScanning
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
+    /** @return */
     public function createAutofix(array $params): CodeScanningAutofix|WithoutBody
     {
         $arguments = [];
@@ -91,6 +92,7 @@ final class CodeScanning
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['alert_number']);
     }
 
+    /** @return */
     public function commitAutofix(array $params): CodeScanningAutofixCommitsResponse|WithoutBody
     {
         $arguments = [];

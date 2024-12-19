@@ -7714,6 +7714,136 @@ $client->operations()->orgs()->listPatGrantRepositoriesListing(        org: 'gen
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/personal-access-tokens#list-repositories-a-fine-grained-personal-access-token-has-access-to).
 
 
+### private-registries/list-org-private-registries
+
+List private registries for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/private-registries', [
+        'org' => 'generated',
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->privateRegistries()->listOrgPrivateRegistries(        org: 'generated',
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/private-registries/organization-configurations#list-private-registries-for-an-organization).
+
+
+### private-registries/create-org-private-registry
+
+Create a private registry for an organization
+
+Using the `call` method:
+```php
+$client->call('POST /orgs/{org}/private-registries', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->privateRegistries()->createOrgPrivateRegistry(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/private-registries/organization-configurations#create-a-private-registry-for-an-organization).
+
+
+### private-registries/get-org-public-key
+
+Get private registries public key for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/private-registries/public-key', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->privateRegistries()->getOrgPublicKey(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/private-registries/organization-configurations#get-private-registries-public-key-for-an-organization).
+
+
+### private-registries/get-org-private-registry
+
+Get a private registry for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/private-registries/{secret_name}', [
+        'org' => 'generated',
+        'secret_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->privateRegistries()->getOrgPrivateRegistry(        org: 'generated',
+        secret_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/private-registries/organization-configurations#get-a-private-registry-for-an-organization).
+
+
+### private-registries/delete-org-private-registry
+
+Delete a private registry for an organization
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/private-registries/{secret_name}', [
+        'org' => 'generated',
+        'secret_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->privateRegistries()->deleteOrgPrivateRegistry(        org: 'generated',
+        secret_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/private-registries/organization-configurations#delete-a-private-registry-for-an-organization).
+
+
+### private-registries/update-org-private-registry
+
+Update a private registry for an organization
+
+Using the `call` method:
+```php
+$client->call('PATCH /orgs/{org}/private-registries/{secret_name}', [
+        'org' => 'generated',
+        'secret_name' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->privateRegistries()->updateOrgPrivateRegistry(        org: 'generated',
+        secret_name: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/private-registries/organization-configurations#update-a-private-registry-for-an-organization).
+
+
 ### projects/list-for-org
 
 List organization projects

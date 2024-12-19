@@ -63,16 +63,19 @@ final class CodeScanning
         return $this->operators->codeScanning👷UpdateAlert()->call($owner, $repo, $alertNumber, $params);
     }
 
+    /** @return */
     public function getAutofix(string $owner, string $repo, int $alertNumber): CodeScanningAutofix
     {
         return $this->operators->codeScanning👷GetAutofix()->call($owner, $repo, $alertNumber);
     }
 
+    /** @return */
     public function createAutofix(string $owner, string $repo, int $alertNumber): CodeScanningAutofix|WithoutBody
     {
         return $this->operators->codeScanning👷CreateAutofix()->call($owner, $repo, $alertNumber);
     }
 
+    /** @return */
     public function commitAutofix(string $owner, string $repo, int $alertNumber, array $params): CodeScanningAutofixCommitsResponse|WithoutBody
     {
         return $this->operators->codeScanning👷CommitAutofix()->call($owner, $repo, $alertNumber, $params);
