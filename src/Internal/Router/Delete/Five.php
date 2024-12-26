@@ -14,7 +14,6 @@ final class Five
     {
     }
 
-    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
     public function call(string $call, array $params, array $pathChunks): WithoutBody
     {
         if ($pathChunks[0] === '') {

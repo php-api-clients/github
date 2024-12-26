@@ -19,6 +19,7 @@ final class PrivateRegistries
     {
     }
 
+    /** @return */
     public function deleteOrgPrivateRegistry(array $params): WithoutBody
     {
         $arguments = [];

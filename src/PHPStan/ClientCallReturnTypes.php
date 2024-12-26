@@ -1340,27 +1340,27 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/private-registries') {
-            return $this->typeResolver->resolve('Schema\\Operations\\PrivateRegistries\\ListOrgPrivateRegistries\\Response\\ApplicationJson\\Ok');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'POST /orgs/{org}/private-registries') {
-            return $this->typeResolver->resolve('Schema\\OrgPrivateRegistryConfigurationWithSelectedRepositories');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/private-registries/public-key') {
-            return $this->typeResolver->resolve('Schema\\Operations\\PrivateRegistries\\GetOrgPublicKey\\Response\\ApplicationJson\\Ok');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/private-registries/{secret_name}') {
-            return $this->typeResolver->resolve('Schema\\OrgPrivateRegistryConfiguration');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/private-registries/{secret_name}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PATCH /orgs/{org}/private-registries/{secret_name}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/projects') {

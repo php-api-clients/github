@@ -24,6 +24,7 @@ final readonly class ListOrgPrivateRegistries
     {
     }
 
+    /** @return */
     public function call(string $org, int $perPage = 30, int $page = 1): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\PrivateRegistries\ListOrgPrivateRegistries($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

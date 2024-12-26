@@ -19,6 +19,7 @@ final class PrivateRegistries
     {
     }
 
+    /** @return */
     public function updateOrgPrivateRegistry(array $params): WithoutBody
     {
         $arguments = [];

@@ -1,5 +1,5 @@
 {
-    "specHash": "ffc57be6cdf0e66d7c933d6f52367abe",
+    "specHash": "c1e4d4617fb30b28dd9ff95dbcd32f2e",
     "generatedFiles": {
         "files": [
             {
@@ -892,7 +892,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningDefaultSetup.php",
-                "hash": "0546b04d3773a8123bf23476a8ed0c89"
+                "hash": "ea900565885622cc09536a142bdcc262"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CodeScanningDefaultSetupUpdate.php",
@@ -5572,7 +5572,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/CodeScanning.php",
-                "hash": "4aa88932e138f5023410872812484163"
+                "hash": "8afe9ac6d0e3ea7cf988c7adcd3de78f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Codespaces.php",
@@ -24848,11 +24848,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Four.php",
-                "hash": "4c11292ac64dd5b6086491893e29b16e"
+                "hash": "18a08639d99cec6fb1771a5fd26fd9e4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Five.php",
-                "hash": "ce887ab0baf56f722fffea5da3d12431"
+                "hash": "6a5aa32846ccb2807283067d8708433c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
@@ -24876,7 +24876,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Post\/Four.php",
-                "hash": "44a2f2604dba7b832ab639ac9add5e66"
+                "hash": "c0a4568cdfce7d871a323f6a36b3b3f7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Post\/Six.php",
@@ -24920,7 +24920,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/Five.php",
-                "hash": "fecce7ab0c6c4136a88dbe70a9a3cdd9"
+                "hash": "02b0af08f64abd5efe152b0f06fc7e6d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/Six.php",
@@ -24984,7 +24984,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Five.php",
-                "hash": "81e3794494f7a2c1f4f28c28986638f2"
+                "hash": "c41bc57f877914abf6e513e7ee9a28ee"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/Three.php",
@@ -26020,7 +26020,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/CodeScanning\/DefaultSetup.php",
-                "hash": "d9bb025213c7bdd91bc512fedcab9815"
+                "hash": "29cbf48f13fbedb980e03658ab0951da"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/CodeScanning\/Sarifs.php",
@@ -27632,11 +27632,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "4754372b8a074fc2d1a26d2df02d4e0d"
+                "hash": "71c82692707697c48cd324651981430e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "945c5080f48095c470c8e61c7a003f84"
+                "hash": "397be97be6943bb78495777ba0235cc1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -29612,7 +29612,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/CodeSecurity.php",
-                "hash": "42492ba185dd1ddb9f5101b31f41a904"
+                "hash": "d37df36897036d1eec5737dbf213b1ee"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/CodeSecurity\/Configurations.php",
@@ -31360,7 +31360,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/PrivateRegistries\/ListOrgPrivateRegistries.php",
-                "hash": "6de62d83e37bbb20ed0912361c4b30b4"
+                "hash": "7dd3f547126b090eeff93e527f4ec3d1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/PrivateRegistries\/ListOrgPrivateRegistriesTest.php",
@@ -31372,7 +31372,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/PrivateRegistries\/CreateOrgPrivateRegistry.php",
-                "hash": "3f183439ee0b2dc9f13cd3acda759d3f"
+                "hash": "d93f1e64c7ba4d300c3fb3a3b88ca16d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/PrivateRegistries\/CreateOrgPrivateRegistryTest.php",
@@ -31384,7 +31384,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/PrivateRegistries\/GetOrgPublicKey.php",
-                "hash": "6c4d966cf2c5d8a4f1b8dc2c65b1e839"
+                "hash": "00000e0e712155efef700b280c282f6f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/PrivateRegistries\/GetOrgPublicKeyTest.php",
@@ -31396,7 +31396,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/PrivateRegistries\/GetOrgPrivateRegistry.php",
-                "hash": "d1564d06e5dfa9a266b13e2dcea654d1"
+                "hash": "e633e98e80d7e035faf82fe6c7add479"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/PrivateRegistries\/GetOrgPrivateRegistryTest.php",
@@ -31408,7 +31408,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/PrivateRegistries\/DeleteOrgPrivateRegistry.php",
-                "hash": "b5b2b026a0a1e95bea3dd98a40410098"
+                "hash": "1509d01986a9c7e2d9e1eb2463a2c250"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/PrivateRegistries\/DeleteOrgPrivateRegistryTest.php",
@@ -31420,7 +31420,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/PrivateRegistries\/UpdateOrgPrivateRegistry.php",
-                "hash": "3f5ae9bfc1314bc94af5b9d34c62a247"
+                "hash": "39cc994d763f207bc82397078b5d5fac"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/PrivateRegistries\/UpdateOrgPrivateRegistryTest.php",
@@ -31452,23 +31452,23 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/PrivateRegistries.php",
-                "hash": "83282fa4c03ddbd1a0820c203de4b362"
+                "hash": "2fedab18d51cc0e1b713dcc52560fecf"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Post\/PrivateRegistries.php",
-                "hash": "2c13686ea99be7a399c031e498d3fb99"
+                "hash": "0a7ef41175fa1d757608f16424ef5cc1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Patch\/PrivateRegistries.php",
-                "hash": "a7081c0b472ab74018984449f38402c2"
+                "hash": "1b38420518eccf1d8e5e2323603ca747"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Delete\/PrivateRegistries.php",
-                "hash": "1b5ec8975f19267bbf86578a5096fc75"
+                "hash": "02c5c81c79f73cf0e857644e84c7004f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/PrivateRegistries.php",
-                "hash": "3e8df99a3c7577f5baec7c1bd4607149"
+                "hash": "8eb1b85a46ebf692eac4887162044dce"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/PrivateRegistries.php",

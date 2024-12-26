@@ -21,7 +21,7 @@ final class Five
     {
     }
 
-    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody|Observable<Schema\CustomProperty> */
+    /** @return |Observable<Schema\CustomProperty> */
     public function call(string $call, array $params, array $pathChunks): GistComment|OrgHook|WithoutBody|iterable|TeamFull|ProjectCard|Import|TeamDiscussion|OrgMembership
     {
         if ($pathChunks[0] === '') {

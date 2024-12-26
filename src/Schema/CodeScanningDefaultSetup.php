@@ -39,6 +39,28 @@ final readonly class CodeScanningDefaultSetup
             },
             "description": "Languages to be analyzed."
         },
+        "runner_type": {
+            "enum": [
+                "standard",
+                "labeled",
+                null
+            ],
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Runner type to be used."
+        },
+        "runner_label": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Runner label to be used if the runner type is labeled.",
+            "examples": [
+                "code-scanning"
+            ]
+        },
         "query_suite": {
             "enum": [
                 "default",
@@ -80,6 +102,8 @@ final readonly class CodeScanningDefaultSetup
         "generated",
         "generated"
     ],
+    "runner_type": "standard",
+    "runner_label": "code-scanning",
     "query_suite": "default",
     "updated_at": "2023-12-06T14:20:20.000Z",
     "schedule": "weekly"
@@ -88,11 +112,15 @@ final readonly class CodeScanningDefaultSetup
     /**
      * state: Code scanning default setup has been configured or not.
      * languages: Languages to be analyzed.
+     * runnerType: Runner type to be used.
+     * runnerLabel: Runner label to be used if the runner type is labeled.
      * querySuite: CodeQL query suite to be used.
      * updatedAt: Timestamp of latest configuration update.
      * schedule: The frequency of the periodic analysis.
      */
-    public function __construct(public string|null $state, public array|null $languages, #[MapFrom('query_suite')]
+    public function __construct(public string|null $state, public array|null $languages, #[MapFrom('runner_type')]
+    public string|null $runnerType, #[MapFrom('runner_label')]
+    public string|null $runnerLabel, #[MapFrom('query_suite')]
     public string|null $querySuite, #[MapFrom('updated_at')]
     public string|null $updatedAt, public string|null $schedule,)
     {

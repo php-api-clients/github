@@ -19,6 +19,7 @@ final class PrivateRegistries
     {
     }
 
+    /** @return */
     public function createOrgPrivateRegistry(array $params): OrgPrivateRegistryConfigurationWithSelectedRepositories
     {
         $arguments = [];

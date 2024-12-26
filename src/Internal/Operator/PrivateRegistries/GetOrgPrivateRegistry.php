@@ -24,6 +24,7 @@ final readonly class GetOrgPrivateRegistry
     {
     }
 
+    /** @return */
     public function call(string $org, string $secretName): OrgPrivateRegistryConfiguration
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\PrivateRegistries\GetOrgPrivateRegistry($this->responseSchemaValidator, $this->hydrator, $org, $secretName);

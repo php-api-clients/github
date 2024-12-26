@@ -24,6 +24,7 @@ final readonly class DeleteOrgPrivateRegistry
     {
     }
 
+    /** @return */
     public function call(string $org, string $secretName): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\PrivateRegistries\DeleteOrgPrivateRegistry($this->responseSchemaValidator, $this->hydrator, $org, $secretName);

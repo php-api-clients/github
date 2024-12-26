@@ -76,6 +76,28 @@ class DefaultSetup implements ObjectMapper
 
             after_languages:
 
+            $value = $payload['runner_type'] ?? null;
+
+            if ($value === null) {
+                $properties['runnerType'] = null;
+                goto after_runnerType;
+            }
+
+            $properties['runnerType'] = $value;
+
+            after_runnerType:
+
+            $value = $payload['runner_label'] ?? null;
+
+            if ($value === null) {
+                $properties['runnerLabel'] = null;
+                goto after_runnerLabel;
+            }
+
+            $properties['runnerLabel'] = $value;
+
+            after_runnerLabel:
+
             $value = $payload['query_suite'] ?? null;
 
             if ($value === null) {
@@ -403,6 +425,22 @@ class DefaultSetup implements ObjectMapper
 
         $languages                                   = $languagesSerializer0->serialize($languages, $this);
         after_languages:        $result['languages'] = $languages;
+
+        $runnerType = $object->runnerType;
+
+        if ($runnerType === null) {
+            goto after_runnerType;
+        }
+
+        after_runnerType:        $result['runner_type'] = $runnerType;
+
+        $runnerLabel = $object->runnerLabel;
+
+        if ($runnerLabel === null) {
+            goto after_runnerLabel;
+        }
+
+        after_runnerLabel:        $result['runner_label'] = $runnerLabel;
 
         $querySuite = $object->querySuite;
 

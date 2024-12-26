@@ -24,6 +24,7 @@ final readonly class GetOrgPublicKey
     {
     }
 
+    /** @return */
     public function call(string $org): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\PrivateRegistries\GetOrgPublicKey($this->responseSchemaValidator, $this->hydrator, $org);

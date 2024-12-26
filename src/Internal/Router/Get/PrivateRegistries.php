@@ -20,6 +20,7 @@ final class PrivateRegistries
     {
     }
 
+    /** @return */
     public function listOrgPrivateRegistries(array $params): Ok
     {
         $arguments = [];
@@ -46,6 +47,7 @@ final class PrivateRegistries
         return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function getOrgPublicKey(array $params): \ApiClients\Client\GitHub\Schema\Operations\PrivateRegistries\GetOrgPublicKey\Response\ApplicationJson\Ok
     {
         $arguments = [];
@@ -60,6 +62,7 @@ final class PrivateRegistries
         return $operator->call($arguments['org']);
     }
 
+    /** @return */
     public function getOrgPrivateRegistry(array $params): OrgPrivateRegistryConfiguration
     {
         $arguments = [];
