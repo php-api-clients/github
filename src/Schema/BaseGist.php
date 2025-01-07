@@ -109,6 +109,9 @@ final readonly class BaseGist
         "comments": {
             "type": "integer"
         },
+        "comments_enabled": {
+            "type": "boolean"
+        },
         "user": {
             "anyOf": [
                 {
@@ -487,6 +490,7 @@ final readonly class BaseGist
     "updated_at": "1970-01-01T00:00:00+00:00",
     "description": "generated",
     "comments": 8,
+    "comments_enabled": false,
     "user": {
         "name": "generated",
         "email": "generated",
@@ -558,7 +562,8 @@ final readonly class BaseGist
     public string $gitPushUrl, #[MapFrom('html_url')]
     public string $htmlUrl, public Schema\BaseGist\Files $files, public bool $public, #[MapFrom('created_at')]
     public string $createdAt, #[MapFrom('updated_at')]
-    public string $updatedAt, public string|null $description, public int $comments, public Schema\SimpleUser|null $user, #[MapFrom('comments_url')]
+    public string $updatedAt, public string|null $description, public int $comments, #[MapFrom('comments_enabled')]
+    public bool|null $commentsEnabled, public Schema\SimpleUser|null $user, #[MapFrom('comments_url')]
     public string $commentsUrl, public Schema\SimpleUser|null $owner, public bool|null $truncated, public array|null $forks, public array|null $history,)
     {
     }

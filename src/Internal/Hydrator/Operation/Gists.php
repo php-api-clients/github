@@ -329,6 +329,17 @@ class Gists implements ObjectMapper
 
             after_comments:
 
+            $value = $payload['comments_enabled'] ?? null;
+
+            if ($value === null) {
+                $properties['commentsEnabled'] = null;
+                goto after_commentsEnabled;
+            }
+
+            $properties['commentsEnabled'] = $value;
+
+            after_commentsEnabled:
+
             $value = $payload['user'] ?? null;
 
             if ($value === null) {
@@ -563,6 +574,17 @@ class Gists implements ObjectMapper
             $properties['comments'] = $value;
 
             after_comments:
+
+            $value = $payload['comments_enabled'] ?? null;
+
+            if ($value === null) {
+                $properties['commentsEnabled'] = null;
+                goto after_commentsEnabled;
+            }
+
+            $properties['commentsEnabled'] = $value;
+
+            after_commentsEnabled:
 
             $value = $payload['user'] ?? null;
 
@@ -1310,6 +1332,14 @@ class Gists implements ObjectMapper
 
         after_comments:        $result['comments'] = $comments;
 
+        $commentsEnabled = $object->commentsEnabled;
+
+        if ($commentsEnabled === null) {
+            goto after_commentsEnabled;
+        }
+
+        after_commentsEnabled:        $result['comments_enabled'] = $commentsEnabled;
+
         $user = $object->user;
 
         if ($user === null) {
@@ -1398,6 +1428,14 @@ class Gists implements ObjectMapper
 
         $comments                                  = $object->comments;
         after_comments:        $result['comments'] = $comments;
+
+        $commentsEnabled = $object->commentsEnabled;
+
+        if ($commentsEnabled === null) {
+            goto after_commentsEnabled;
+        }
+
+        after_commentsEnabled:        $result['comments_enabled'] = $commentsEnabled;
 
         $user = $object->user;
 

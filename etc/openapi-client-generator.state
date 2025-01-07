@@ -1,5 +1,5 @@
 {
-    "specHash": "c1e4d4617fb30b28dd9ff95dbcd32f2e",
+    "specHash": "d543c2cfa43a2dcdc9526a6061319dd0",
     "generatedFiles": {
         "files": [
             {
@@ -216,7 +216,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/BaseGist.php",
-                "hash": "6a4c0f624e46228684170909267749bb"
+                "hash": "3db403d0909d3622d6938216823ed029"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/PublicUser.php",
@@ -228,7 +228,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GistSimple.php",
-                "hash": "830ff132801cff2da8c06596d183f567"
+                "hash": "7dbbdfe3e6de7b333f5a55417d4a8d88"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GistComment.php",
@@ -2612,7 +2612,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GistSimple\/ForkOf.php",
-                "hash": "8ee1e1e01693a49c7d89564e80f0290e"
+                "hash": "6a2ecb3a9df1b563f1ac267ced489d0c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/GistSimple\/Files.php",
@@ -25156,7 +25156,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Gists.php",
-                "hash": "f3cd0b797cc4d04c11ef320706f1d418"
+                "hash": "4fb009673141dc515bd893aec88a5063"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Gists\/Public_.php",
@@ -25168,7 +25168,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Gists\/GistId.php",
-                "hash": "f59b327f24067b8fd169192ac6dc8f1c"
+                "hash": "9a072f8beece9100d403e1bbe946f866"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Gists\/GistId\/Comments.php",
@@ -25184,7 +25184,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Gists\/GistId\/Forks.php",
-                "hash": "dcacb75feea340a9887786655fe979a5"
+                "hash": "749382e1f6056dcf0f3a0eb4565196df"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Gists\/GistId\/Star.php",
@@ -25192,7 +25192,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Gists\/GistId\/Sha.php",
-                "hash": "2c721313d55016c2b8696ee71ba8efc0"
+                "hash": "26bd01f1069c35c11dd97e82322edc1f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Gitignore\/Templates\/Name.php",
@@ -31468,7 +31468,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/PrivateRegistries.php",
-                "hash": "8eb1b85a46ebf692eac4887162044dce"
+                "hash": "42129b777cab6a6ddff1350f6cde5015"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/PrivateRegistries.php",

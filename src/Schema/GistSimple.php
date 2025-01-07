@@ -591,6 +591,9 @@ final readonly class GistSimple
                 "comments": {
                     "type": "integer"
                 },
+                "comments_enabled": {
+                    "type": "boolean"
+                },
                 "user": {
                     "anyOf": [
                         {
@@ -1038,6 +1041,9 @@ final readonly class GistSimple
         "comments": {
             "type": "integer"
         },
+        "comments_enabled": {
+            "type": "boolean"
+        },
         "user": {
             "type": [
                 "string",
@@ -1241,6 +1247,7 @@ final readonly class GistSimple
         "updated_at": "1970-01-01T00:00:00+00:00",
         "description": "generated",
         "comments": 8,
+        "comments_enabled": false,
         "user": {
             "name": "generated",
             "email": "generated",
@@ -1314,6 +1321,7 @@ final readonly class GistSimple
     "updated_at": "generated",
     "description": "generated",
     "comments": 8,
+    "comments_enabled": false,
     "user": "generated",
     "comments_url": "generated",
     "owner": {
@@ -1356,7 +1364,8 @@ final readonly class GistSimple
     public string|null $gitPushUrl, #[MapFrom('html_url')]
     public string|null $htmlUrl, public Schema\GistSimple\Files|null $files, public bool|null $public, #[MapFrom('created_at')]
     public string|null $createdAt, #[MapFrom('updated_at')]
-    public string|null $updatedAt, public string|null $description, public int|null $comments, public string|null $user, #[MapFrom('comments_url')]
+    public string|null $updatedAt, public string|null $description, public int|null $comments, #[MapFrom('comments_enabled')]
+    public bool|null $commentsEnabled, public string|null $user, #[MapFrom('comments_url')]
     public string|null $commentsUrl, public Schema\SimpleUser|null $owner, public bool|null $truncated,)
     {
     }
