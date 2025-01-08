@@ -1,5 +1,5 @@
 {
-    "specHash": "d543c2cfa43a2dcdc9526a6061319dd0",
+    "specHash": "8a2dc25e1302b824ed48fe860969ca91",
     "generatedFiles": {
         "files": [
             {
@@ -5352,7 +5352,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Repos\/ReplaceAllTopics\/Request\/ApplicationJson.php",
-                "hash": "9eadf0940004495e8f679266d9f38522"
+                "hash": "d27ea283c7530921528adfd1e272e47f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Repos\/Transfer\/Request\/ApplicationJson.php",
