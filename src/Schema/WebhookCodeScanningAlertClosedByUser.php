@@ -151,6 +151,14 @@ final readonly class WebhookCodeScanningAlertClosedByUser
                         }
                     }
                 },
+                "dismissed_comment": {
+                    "maxLength": 280,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The dismissal comment associated with the dismissal of the alert."
+                },
                 "dismissed_reason": {
                     "enum": [
                         "false positive",
@@ -163,6 +171,12 @@ final readonly class WebhookCodeScanningAlertClosedByUser
                         "null"
                     ],
                     "description": "The reason for dismissing or closing the alert."
+                },
+                "fixed_at": {
+                    "type": [
+                        "null"
+                    ],
+                    "description": "The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`."
                 },
                 "html_url": {
                     "type": "string",
@@ -2263,7 +2277,9 @@ final readonly class WebhookCodeScanningAlertClosedByUser
             "url": "https:\\/\\/example.com\\/",
             "user_view_type": "generated"
         },
+        "dismissed_comment": "generated",
         "dismissed_reason": "used in tests",
+        "fixed_at": "generated",
         "html_url": "https:\\/\\/example.com\\/",
         "most_recent_instance": {
             "analysis_key": "generated",

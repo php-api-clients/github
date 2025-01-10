@@ -60,7 +60,8 @@ final readonly class Alert
         "fixed_at": {
             "type": [
                 "null"
-            ]
+            ],
+            "description": "The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`."
         },
         "html_url": {
             "type": "string",
@@ -221,7 +222,7 @@ final readonly class Alert
                 "string",
                 "null"
             ],
-            "description": "State of a code scanning alert."
+            "description": "State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed."
         },
         "tool": {
             "required": [
@@ -324,9 +325,10 @@ final readonly class Alert
      * dismissedAt: The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      * dismissedComment: The dismissal comment associated with the dismissal of the alert.
      * dismissedReason: The reason for dismissing or closing the alert. Can be one of: `false positive`, `won't fix`, and `used in tests`.
+     * fixedAt: The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      * htmlUrl: The GitHub URL of the alert resource.
      * number: The code scanning alert number.
-     * state: State of a code scanning alert.
+     * state: State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed.
      */
     public function __construct(#[MapFrom('created_at')]
     public string|null $createdAt, #[MapFrom('dismissed_at')]

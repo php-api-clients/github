@@ -154,6 +154,14 @@ final readonly class WebhookCodeScanningAlertAppearedInBranch
                         }
                     }
                 },
+                "dismissed_comment": {
+                    "maxLength": 280,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The dismissal comment associated with the dismissal of the alert."
+                },
                 "dismissed_reason": {
                     "enum": [
                         "false positive",
@@ -166,6 +174,12 @@ final readonly class WebhookCodeScanningAlertAppearedInBranch
                         "null"
                     ],
                     "description": "The reason for dismissing or closing the alert."
+                },
+                "fixed_at": {
+                    "type": [
+                        "null"
+                    ],
+                    "description": "The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`."
                 },
                 "html_url": {
                     "type": "string",
@@ -289,10 +303,14 @@ final readonly class WebhookCodeScanningAlertAppearedInBranch
                     "enum": [
                         "open",
                         "dismissed",
-                        "fixed"
+                        "fixed",
+                        null
                     ],
-                    "type": "string",
-                    "description": "State of a code scanning alert."
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed."
                 },
                 "tool": {
                     "required": [
@@ -2233,7 +2251,9 @@ final readonly class WebhookCodeScanningAlertAppearedInBranch
             "url": "https:\\/\\/example.com\\/",
             "user_view_type": "generated"
         },
+        "dismissed_comment": "generated",
         "dismissed_reason": "used in tests",
+        "fixed_at": "generated",
         "html_url": "https:\\/\\/example.com\\/",
         "most_recent_instance": {
             "analysis_key": "generated",

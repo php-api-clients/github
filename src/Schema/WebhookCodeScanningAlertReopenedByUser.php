@@ -58,11 +58,25 @@ final readonly class WebhookCodeScanningAlertReopenedByUser
                         "null"
                     ]
                 },
+                "dismissed_comment": {
+                    "maxLength": 280,
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The dismissal comment associated with the dismissal of the alert."
+                },
                 "dismissed_reason": {
                     "type": [
                         "null"
                     ],
                     "description": "The reason for dismissing or closing the alert. Can be one of: `false positive`, `won\'t fix`, and `used in tests`."
+                },
+                "fixed_at": {
+                    "type": [
+                        "null"
+                    ],
+                    "description": "The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`."
                 },
                 "html_url": {
                     "type": "string",
@@ -185,10 +199,14 @@ final readonly class WebhookCodeScanningAlertReopenedByUser
                 "state": {
                     "enum": [
                         "open",
-                        "fixed"
+                        "fixed",
+                        null
                     ],
-                    "type": "string",
-                    "description": "State of a code scanning alert."
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed."
                 },
                 "tool": {
                     "required": [
@@ -2106,7 +2124,9 @@ final readonly class WebhookCodeScanningAlertReopenedByUser
         "created_at": "1970-01-01T00:00:00+00:00",
         "dismissed_at": "generated",
         "dismissed_by": "generated",
+        "dismissed_comment": "generated",
         "dismissed_reason": "generated",
+        "fixed_at": "generated",
         "html_url": "https:\\/\\/example.com\\/",
         "most_recent_instance": {
             "analysis_key": "generated",

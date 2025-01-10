@@ -78,7 +78,8 @@ final readonly class WebhookCodeScanningAlertCreated
                 "fixed_at": {
                     "type": [
                         "null"
-                    ]
+                    ],
+                    "description": "The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`."
                 },
                 "html_url": {
                     "type": "string",
@@ -239,7 +240,7 @@ final readonly class WebhookCodeScanningAlertCreated
                         "string",
                         "null"
                     ],
-                    "description": "State of a code scanning alert."
+                    "description": "State of a code scanning alert. Events for alerts found outside the default branch will return a `null` value until they are dismissed or fixed."
                 },
                 "tool": {
                     "required": [

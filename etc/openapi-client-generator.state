@@ -1,5 +1,5 @@
 {
-    "specHash": "8a2dc25e1302b824ed48fe860969ca91",
+    "specHash": "4298b69a1afaf61496dd8894c7a47c3a",
     "generatedFiles": {
         "files": [
             {
@@ -1624,27 +1624,27 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertAppearedInBranch.php",
-                "hash": "c92c8d67d6b14865378c734c75f1a729"
+                "hash": "b39ab1976eb97f84e245a500e8e8d71b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertClosedByUser.php",
-                "hash": "be478d340d1d85a6848ea290e9735d3b"
+                "hash": "4b8833d38eb509de39d34cca6f7c7ff5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertCreated.php",
-                "hash": "55aeeccf1e283236c2831b6839d98e06"
+                "hash": "5824635ffd8c3f59e09c0aa1bbd2470d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertFixed.php",
-                "hash": "9eca6f909f5a20469869eac54251cb0a"
+                "hash": "2a9d365b62913dcd39717b8fb859f983"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertReopened.php",
-                "hash": "a7b8b44ffac038c3094267374c6318de"
+                "hash": "ff6a2580e48ee099253564dd611f1ea0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertReopenedByUser.php",
-                "hash": "496b15b5efecdc34bd6d949a415ba142"
+                "hash": "275a272bb4cdddd484a951726d885d79"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCommitCommentCreated.php",
@@ -3332,7 +3332,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertAppearedInBranch\/Alert.php",
-                "hash": "42b5ee892e0d4d73ba64851015755003"
+                "hash": "c29385de42e5d41701b419c5c04497a9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertAppearedInBranch\/Alert\/MostRecentInstance.php",
@@ -3352,7 +3352,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertClosedByUser\/Alert.php",
-                "hash": "f064a841194e360c80ac4198b0e51566"
+                "hash": "38c854f3de72f7810179e918f031ac10"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertClosedByUser\/Alert\/Rule.php",
@@ -3364,7 +3364,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertCreated\/Alert.php",
-                "hash": "10ddf4052d7f2518ed64c8545eb9641a"
+                "hash": "2c862c36988ab608ebecfe26ee3ed2fc"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertCreated\/Alert\/Tool.php",
@@ -3372,15 +3372,15 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertFixed\/Alert.php",
-                "hash": "b0c35ff95d7a8bacb6792f62592dbe26"
+                "hash": "919559b9dc18bd044534fbdeb177f368"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertReopened\/Alert.php",
-                "hash": "0384ebcd2ead9aef96d22506f130871b"
+                "hash": "7f7dfa66b7cf687e8a437cdf7d486cb7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertReopenedByUser\/Alert.php",
-                "hash": "8bbf0385291517da2458deb01a68f70a"
+                "hash": "ff1309de4bbfc58b748f22bc19a46f1c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCommitCommentCreated\/Comment.php",
@@ -27944,7 +27944,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/CodeScanningAlert.php",
-                "hash": "809600e12c796fbd6001bd6ea64107fb"
+                "hash": "7bb41a0c0b98973219dcd554c186333b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/CommitComment.php",

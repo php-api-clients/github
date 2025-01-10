@@ -133,6 +133,14 @@ final readonly class Alert
                 }
             }
         },
+        "dismissed_comment": {
+            "maxLength": 280,
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The dismissal comment associated with the dismissal of the alert."
+        },
         "dismissed_reason": {
             "enum": [
                 "false positive",
@@ -145,6 +153,12 @@ final readonly class Alert
                 "null"
             ],
             "description": "The reason for dismissing or closing the alert."
+        },
+        "fixed_at": {
+            "type": [
+                "null"
+            ],
+            "description": "The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`."
         },
         "html_url": {
             "type": "string",
@@ -362,7 +376,9 @@ final readonly class Alert
         "url": "https:\\/\\/example.com\\/",
         "user_view_type": "generated"
     },
+    "dismissed_comment": "generated",
     "dismissed_reason": "used in tests",
+    "fixed_at": "generated",
     "html_url": "https:\\/\\/example.com\\/",
     "most_recent_instance": {
         "analysis_key": "generated",
@@ -409,7 +425,9 @@ final readonly class Alert
     /**
      * createdAt: The time that the alert was created in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ.`
      * dismissedAt: The time that the alert was dismissed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
+     * dismissedComment: The dismissal comment associated with the dismissal of the alert.
      * dismissedReason: The reason for dismissing or closing the alert.
+     * fixedAt: The time that the alert was fixed in ISO 8601 format: `YYYY-MM-DDTHH:MM:SSZ`.
      * htmlUrl: The GitHub URL of the alert resource.
      * number: The code scanning alert number.
      * state: State of a code scanning alert.
@@ -417,8 +435,10 @@ final readonly class Alert
     public function __construct(#[MapFrom('created_at')]
     public string $createdAt, #[MapFrom('dismissed_at')]
     public string $dismissedAt, #[MapFrom('dismissed_by')]
-    public Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissedBy|null $dismissedBy, #[MapFrom('dismissed_reason')]
-    public string|null $dismissedReason, #[MapFrom('html_url')]
+    public Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissedBy|null $dismissedBy, #[MapFrom('dismissed_comment')]
+    public string|null $dismissedComment, #[MapFrom('dismissed_reason')]
+    public string|null $dismissedReason, #[MapFrom('fixed_at')]
+    public string $fixedAt, #[MapFrom('html_url')]
     public string $htmlUrl, #[MapFrom('most_recent_instance')]
     public Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance|null $mostRecentInstance, public int $number, public Schema\WebhookCodeScanningAlertClosedByUser\Alert\Rule $rule, public string $state, public Schema\WebhookCodeScanningAlertClosedByUser\Alert\Tool $tool, public string $url,)
     {

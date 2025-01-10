@@ -342,6 +342,17 @@ class CodeScanningAlert implements ObjectMapper
 
             after_dismissedBy:
 
+            $value = $payload['dismissed_comment'] ?? null;
+
+            if ($value === null) {
+                $properties['dismissedComment'] = null;
+                goto after_dismissedComment;
+            }
+
+            $properties['dismissedComment'] = $value;
+
+            after_dismissedComment:
+
             $value = $payload['dismissed_reason'] ?? null;
 
             if ($value === null) {
@@ -352,6 +363,17 @@ class CodeScanningAlert implements ObjectMapper
             $properties['dismissedReason'] = $value;
 
             after_dismissedReason:
+
+            $value = $payload['fixed_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'fixed_at';
+                goto after_fixedAt;
+            }
+
+            $properties['fixedAt'] = $value;
+
+            after_fixedAt:
 
             $value = $payload['html_url'] ?? null;
 
@@ -418,7 +440,7 @@ class CodeScanningAlert implements ObjectMapper
             $value = $payload['state'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'state';
+                $properties['state'] = null;
                 goto after_state;
             }
 
@@ -4483,6 +4505,17 @@ class CodeScanningAlert implements ObjectMapper
 
             after_dismissedBy:
 
+            $value = $payload['dismissed_comment'] ?? null;
+
+            if ($value === null) {
+                $properties['dismissedComment'] = null;
+                goto after_dismissedComment;
+            }
+
+            $properties['dismissedComment'] = $value;
+
+            after_dismissedComment:
+
             $value = $payload['dismissed_reason'] ?? null;
 
             if ($value === null) {
@@ -4493,6 +4526,17 @@ class CodeScanningAlert implements ObjectMapper
             $properties['dismissedReason'] = $value;
 
             after_dismissedReason:
+
+            $value = $payload['fixed_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'fixed_at';
+                goto after_fixedAt;
+            }
+
+            $properties['fixedAt'] = $value;
+
+            after_fixedAt:
 
             $value = $payload['html_url'] ?? null;
 
@@ -6273,6 +6317,17 @@ class CodeScanningAlert implements ObjectMapper
 
             after_dismissedBy:
 
+            $value = $payload['dismissed_comment'] ?? null;
+
+            if ($value === null) {
+                $properties['dismissedComment'] = null;
+                goto after_dismissedComment;
+            }
+
+            $properties['dismissedComment'] = $value;
+
+            after_dismissedComment:
+
             $value = $payload['dismissed_reason'] ?? null;
 
             if ($value === null) {
@@ -6283,6 +6338,17 @@ class CodeScanningAlert implements ObjectMapper
             $properties['dismissedReason'] = $value;
 
             after_dismissedReason:
+
+            $value = $payload['fixed_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'fixed_at';
+                goto after_fixedAt;
+            }
+
+            $properties['fixedAt'] = $value;
+
+            after_fixedAt:
 
             $value = $payload['html_url'] ?? null;
 
@@ -6360,7 +6426,7 @@ class CodeScanningAlert implements ObjectMapper
             $value = $payload['state'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'state';
+                $properties['state'] = null;
                 goto after_state;
             }
 
@@ -7292,6 +7358,17 @@ class CodeScanningAlert implements ObjectMapper
 
             after_dismissedBy:
 
+            $value = $payload['dismissed_comment'] ?? null;
+
+            if ($value === null) {
+                $properties['dismissedComment'] = null;
+                goto after_dismissedComment;
+            }
+
+            $properties['dismissedComment'] = $value;
+
+            after_dismissedComment:
+
             $value = $payload['dismissed_reason'] ?? null;
 
             if ($value === null) {
@@ -7302,6 +7379,17 @@ class CodeScanningAlert implements ObjectMapper
             $properties['dismissedReason'] = $value;
 
             after_dismissedReason:
+
+            $value = $payload['fixed_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'fixed_at';
+                goto after_fixedAt;
+            }
+
+            $properties['fixedAt'] = $value;
+
+            after_fixedAt:
 
             $value = $payload['html_url'] ?? null;
 
@@ -7368,7 +7456,7 @@ class CodeScanningAlert implements ObjectMapper
             $value = $payload['state'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'state';
+                $properties['state'] = null;
                 goto after_state;
             }
 
@@ -8030,6 +8118,17 @@ class CodeScanningAlert implements ObjectMapper
 
             after_dismissedBy:
 
+            $value = $payload['dismissed_comment'] ?? null;
+
+            if ($value === null) {
+                $properties['dismissedComment'] = null;
+                goto after_dismissedComment;
+            }
+
+            $properties['dismissedComment'] = $value;
+
+            after_dismissedComment:
+
             $value = $payload['dismissed_reason'] ?? null;
 
             if ($value === null) {
@@ -8040,6 +8139,17 @@ class CodeScanningAlert implements ObjectMapper
             $properties['dismissedReason'] = $value;
 
             after_dismissedReason:
+
+            $value = $payload['fixed_at'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'fixed_at';
+                goto after_fixedAt;
+            }
+
+            $properties['fixedAt'] = $value;
+
+            after_fixedAt:
 
             $value = $payload['html_url'] ?? null;
 
@@ -8106,7 +8216,7 @@ class CodeScanningAlert implements ObjectMapper
             $value = $payload['state'] ?? null;
 
             if ($value === null) {
-                $missingFields[] = 'state';
+                $properties['state'] = null;
                 goto after_state;
             }
 
@@ -8761,6 +8871,14 @@ class CodeScanningAlert implements ObjectMapper
         $dismissedBy                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️DismissedBy($dismissedBy);
         after_dismissedBy:        $result['dismissed_by'] = $dismissedBy;
 
+        $dismissedComment = $object->dismissedComment;
+
+        if ($dismissedComment === null) {
+            goto after_dismissedComment;
+        }
+
+        after_dismissedComment:        $result['dismissed_comment'] = $dismissedComment;
+
         $dismissedReason = $object->dismissedReason;
 
         if ($dismissedReason === null) {
@@ -8768,6 +8886,9 @@ class CodeScanningAlert implements ObjectMapper
         }
 
         after_dismissedReason:        $result['dismissed_reason'] = $dismissedReason;
+
+        $fixedAt                                  = $object->fixedAt;
+        after_fixedAt:        $result['fixed_at'] = $fixedAt;
 
         $htmlUrl                                  = $object->htmlUrl;
         after_htmlUrl:        $result['html_url'] = $htmlUrl;
@@ -8788,7 +8909,12 @@ class CodeScanningAlert implements ObjectMapper
         $rule                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertAppearedInBranch⚡️Alert⚡️Rule($rule);
         after_rule:        $result['rule'] = $rule;
 
-        $state                               = $object->state;
+        $state = $object->state;
+
+        if ($state === null) {
+            goto after_state;
+        }
+
         after_state:        $result['state'] = $state;
 
         $tool                              = $object->tool;
@@ -10928,6 +11054,14 @@ class CodeScanningAlert implements ObjectMapper
         $dismissedBy                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️DismissedBy($dismissedBy);
         after_dismissedBy:        $result['dismissed_by'] = $dismissedBy;
 
+        $dismissedComment = $object->dismissedComment;
+
+        if ($dismissedComment === null) {
+            goto after_dismissedComment;
+        }
+
+        after_dismissedComment:        $result['dismissed_comment'] = $dismissedComment;
+
         $dismissedReason = $object->dismissedReason;
 
         if ($dismissedReason === null) {
@@ -10935,6 +11069,9 @@ class CodeScanningAlert implements ObjectMapper
         }
 
         after_dismissedReason:        $result['dismissed_reason'] = $dismissedReason;
+
+        $fixedAt                                  = $object->fixedAt;
+        after_fixedAt:        $result['fixed_at'] = $fixedAt;
 
         $htmlUrl                                  = $object->htmlUrl;
         after_htmlUrl:        $result['html_url'] = $htmlUrl;
@@ -11828,6 +11965,14 @@ class CodeScanningAlert implements ObjectMapper
         $dismissedBy                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️DismissedBy($dismissedBy);
         after_dismissedBy:        $result['dismissed_by'] = $dismissedBy;
 
+        $dismissedComment = $object->dismissedComment;
+
+        if ($dismissedComment === null) {
+            goto after_dismissedComment;
+        }
+
+        after_dismissedComment:        $result['dismissed_comment'] = $dismissedComment;
+
         $dismissedReason = $object->dismissedReason;
 
         if ($dismissedReason === null) {
@@ -11835,6 +11980,9 @@ class CodeScanningAlert implements ObjectMapper
         }
 
         after_dismissedReason:        $result['dismissed_reason'] = $dismissedReason;
+
+        $fixedAt                                  = $object->fixedAt;
+        after_fixedAt:        $result['fixed_at'] = $fixedAt;
 
         $htmlUrl                                  = $object->htmlUrl;
         after_htmlUrl:        $result['html_url'] = $htmlUrl;
@@ -11863,7 +12011,12 @@ class CodeScanningAlert implements ObjectMapper
         $rule                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertFixed⚡️Alert⚡️Rule($rule);
         after_rule:        $result['rule'] = $rule;
 
-        $state                               = $object->state;
+        $state = $object->state;
+
+        if ($state === null) {
+            goto after_state;
+        }
+
         after_state:        $result['state'] = $state;
 
         $tool                              = $object->tool;
@@ -12375,6 +12528,14 @@ class CodeScanningAlert implements ObjectMapper
         $dismissedBy                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️DismissedBy($dismissedBy);
         after_dismissedBy:        $result['dismissed_by'] = $dismissedBy;
 
+        $dismissedComment = $object->dismissedComment;
+
+        if ($dismissedComment === null) {
+            goto after_dismissedComment;
+        }
+
+        after_dismissedComment:        $result['dismissed_comment'] = $dismissedComment;
+
         $dismissedReason = $object->dismissedReason;
 
         if ($dismissedReason === null) {
@@ -12382,6 +12543,9 @@ class CodeScanningAlert implements ObjectMapper
         }
 
         after_dismissedReason:        $result['dismissed_reason'] = $dismissedReason;
+
+        $fixedAt                                  = $object->fixedAt;
+        after_fixedAt:        $result['fixed_at'] = $fixedAt;
 
         $htmlUrl                                  = $object->htmlUrl;
         after_htmlUrl:        $result['html_url'] = $htmlUrl;
@@ -12402,7 +12566,12 @@ class CodeScanningAlert implements ObjectMapper
         $rule                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopened⚡️Alert⚡️Rule($rule);
         after_rule:        $result['rule'] = $rule;
 
-        $state                               = $object->state;
+        $state = $object->state;
+
+        if ($state === null) {
+            goto after_state;
+        }
+
         after_state:        $result['state'] = $state;
 
         $tool                              = $object->tool;
@@ -12714,8 +12883,19 @@ class CodeScanningAlert implements ObjectMapper
         $dismissedBy                                      = $object->dismissedBy;
         after_dismissedBy:        $result['dismissed_by'] = $dismissedBy;
 
+        $dismissedComment = $object->dismissedComment;
+
+        if ($dismissedComment === null) {
+            goto after_dismissedComment;
+        }
+
+        after_dismissedComment:        $result['dismissed_comment'] = $dismissedComment;
+
         $dismissedReason                                          = $object->dismissedReason;
         after_dismissedReason:        $result['dismissed_reason'] = $dismissedReason;
+
+        $fixedAt                                  = $object->fixedAt;
+        after_fixedAt:        $result['fixed_at'] = $fixedAt;
 
         $htmlUrl                                  = $object->htmlUrl;
         after_htmlUrl:        $result['html_url'] = $htmlUrl;
@@ -12736,7 +12916,12 @@ class CodeScanningAlert implements ObjectMapper
         $rule                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertReopenedByUser⚡️Alert⚡️Rule($rule);
         after_rule:        $result['rule'] = $rule;
 
-        $state                               = $object->state;
+        $state = $object->state;
+
+        if ($state === null) {
+            goto after_state;
+        }
+
         after_state:        $result['state'] = $state;
 
         $tool                              = $object->tool;
