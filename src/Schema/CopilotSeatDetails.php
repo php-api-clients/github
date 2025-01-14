@@ -552,6 +552,15 @@ final readonly class CopilotSeatDetails
                                 "62ab9291-fae2-468e-974b-7e45096d5021"
                             ]
                         },
+                        "group_name": {
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "examples": [
+                                "Justice League"
+                            ]
+                        },
                         "html_url": {
                             "type": "string",
                             "format": "uri",

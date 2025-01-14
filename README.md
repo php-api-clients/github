@@ -12781,7 +12781,7 @@ You can find more about this operation over at the [API method documentation](ht
 
 ### repos/check-automated-security-fixes
 
-Check if automated security fixes are enabled for a repository
+Check if Dependabot security updates are enabled for a repository
 
 Using the `call` method:
 ```php
@@ -12798,12 +12798,12 @@ $client->operations()->repos()->checkAutomatedSecurityFixes(        owner: 'gene
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#check-if-automated-security-fixes-are-enabled-for-a-repository).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#check-if-dependabot-security-updates-are-enabled-for-a-repository).
 
 
 ### repos/enable-automated-security-fixes
 
-Enable automated security fixes
+Enable Dependabot security updates
 
 Using the `call` method:
 ```php
@@ -12820,12 +12820,12 @@ $client->operations()->repos()->enableAutomatedSecurityFixes(        owner: 'gen
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#enable-automated-security-fixes).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#enable-dependabot-security-updates).
 
 
 ### repos/disable-automated-security-fixes
 
-Disable automated security fixes
+Disable Dependabot security updates
 
 Using the `call` method:
 ```php
@@ -12842,7 +12842,7 @@ $client->operations()->repos()->disableAutomatedSecurityFixes(        owner: 'ge
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#disable-automated-security-fixes).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/repos#disable-dependabot-security-updates).
 
 
 ### repos/list-branches

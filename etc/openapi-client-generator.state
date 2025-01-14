@@ -1,5 +1,5 @@
 {
-    "specHash": "4298b69a1afaf61496dd8894c7a47c3a",
+    "specHash": "529209138ca3f128f373739100dbd53c",
     "generatedFiles": {
         "files": [
             {
@@ -11588,11 +11588,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotSeatDetails.php",
-                "hash": "d6f19f23cdc6fe5278d7c13040ebea56"
+                "hash": "003304078fbde44a6ab6619c9187cc72"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Copilot\/ListCopilotSeats\/Response\/ApplicationJson\/Ok.php",
-                "hash": "5f65e0b6cd6d2af1cdd4dc734b2c02ba"
+                "hash": "ac127a9a68dedc61a4cd44f533bd6d49"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Copilot\/CancelCopilotSeatAssignmentForTeams\/Request\/ApplicationJson.php",
@@ -11616,7 +11616,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CheckAutomatedSecurityFixes.php",
-                "hash": "a75ea67ddca661703f2e47dd0ccf26ff"
+                "hash": "d060eb3636eaa4f0c49544da5eea2b43"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Orgs\/EnableOrDisableSecurityProductOnAllOrgRepos\/Request\/ApplicationJson.php",
@@ -24224,7 +24224,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Attribute\/CastUnionToType\/Schema\/CopilotSeatDetails\/AssigningTeam.php",
-                "hash": "86b25b1c2530248be880cee5d37b0759"
+                "hash": "8ce38f698adc69174916ccae39bcf6b0"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Attribute\/CastUnionToType\/Schema\/RepositoryRuleset\/Conditions.php",
@@ -29392,7 +29392,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/EnterpriseTeam.php",
-                "hash": "2ff06468420bec0b828b0d1d7b572714"
+                "hash": "6683f9956704100286df4bdaa14338b6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/TeamRoleAssignment.php",
@@ -31500,7 +31500,7 @@
             },
             {
                 "name": "..\/..\/composer.lock",
-                "hash": "9968921f0959a081d8998c22c95e7f44"
+                "hash": "ba3412e727d85b330527d34ff8accb9e"
             }
         ]
     }
