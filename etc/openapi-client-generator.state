@@ -1,5 +1,5 @@
 {
-    "specHash": "529209138ca3f128f373739100dbd53c",
+    "specHash": "2fa68ef1401ab1f8ecec407bb7c5d77b",
     "generatedFiles": {
         "files": [
             {
@@ -5528,7 +5528,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Dependabot.php",
-                "hash": "ff3851915c45c72e4d418768664f8a29"
+                "hash": "3a6517c15d8d3fd5de6d517e971ef7cb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/SecretScanning.php",
@@ -12336,11 +12336,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Dependabot\/ListAlertsForEnterprise.php",
-                "hash": "035dcd2b19df4bf05ed27dea99c47f43"
+                "hash": "71ff78f1fcc5211f990a057e6d5b5251"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Dependabot\/ListAlertsForEnterprise.php",
-                "hash": "0dc27f93e93d8d947e6bef4c295c75d1"
+                "hash": "ea28c2098c6763092cb86b0fcb51c78f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Dependabot\/ListAlertsForEnterpriseTest.php",
@@ -13884,11 +13884,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Dependabot\/ListAlertsForOrg.php",
-                "hash": "bb8788291d5eac5323cbf2a4da4907d6"
+                "hash": "171ecb7400b45fc4ae353e894abc79e5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Dependabot\/ListAlertsForOrg.php",
-                "hash": "e10c97c2b428a405c5a187d57e70b1c8"
+                "hash": "b20ebfd0ce6968c498688feebc0b52ab"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Dependabot\/ListAlertsForOrgTest.php",
@@ -18264,11 +18264,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Dependabot\/ListAlertsForRepo.php",
-                "hash": "dc4a5ffc44a88114630353349aa09257"
+                "hash": "08537d3cd7e1ad725f1c89af86c062a2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Dependabot\/ListAlertsForRepo.php",
-                "hash": "34f1cf4133d0b419f69bfebf5171849f"
+                "hash": "e436241a58d3e260c2eb58479031a779"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Dependabot\/ListAlertsForRepoTest.php",
@@ -18276,11 +18276,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Dependabot\/ListAlertsForRepoListing.php",
-                "hash": "aa0892806b90897ba6a93ae7e1ee7dd8"
+                "hash": "a9894332e673eecc67594ac1de69c1d2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Dependabot\/ListAlertsForRepoListing.php",
-                "hash": "65ccb463e32963488866088a37df2b8e"
+                "hash": "f14486ffb902e553f3a43e87d84dd146"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Dependabot\/ListAlertsForRepoListingTest.php",
@@ -24400,7 +24400,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Dependabot.php",
-                "hash": "ed719cca92aedb500a230e5644360803"
+                "hash": "00f2aa971a06e56bfef9c6f4f3f2ddba"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/SecretScanning.php",
@@ -24668,7 +24668,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Dependabot.php",
-                "hash": "2904f5501d22f0bb18e658d6ae9e32e0"
+                "hash": "e4d10d3de6be6a6af650db49b2fc09cd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Reactions.php",
@@ -24852,11 +24852,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Five.php",
-                "hash": "6a5aa32846ccb2807283067d8708433c"
+                "hash": "ff68911366f33955b0478aadf2534fa6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
-                "hash": "01d40f5a3f0322b086abaa90455a7ce3"
+                "hash": "9514e15f8163474624b106b01abd53e7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Seven.php",
@@ -24960,7 +24960,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Six.php",
-                "hash": "71625fca086e278619781593e380e8fb"
+                "hash": "ed11367ddbea9bae53fda7450797048c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Seven.php",
@@ -27632,11 +27632,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "71c82692707697c48cd324651981430e"
+                "hash": "4bef484ec1c9bf2a694431cdc1527182"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "397be97be6943bb78495777ba0235cc1"
+                "hash": "c59b57641584d1c139b7020e591e92d2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -31500,7 +31500,7 @@
             },
             {
                 "name": "..\/..\/composer.lock",
-                "hash": "ba3412e727d85b330527d34ff8accb9e"
+                "hash": "2832b76b2c15745b362f2029f3d31cbf"
             }
         ]
     }

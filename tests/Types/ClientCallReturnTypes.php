@@ -63,7 +63,7 @@ assertType('', $client->call('PATCH /enterprises/{enterprise}/code-security/conf
 assertType('', $client->call('POST /enterprises/{enterprise}/code-security/configurations/{configuration_id}/attach'));
 assertType('', $client->call('PUT /enterprises/{enterprise}/code-security/configurations/{configuration_id}/defaults'));
 assertType('Observable<Schema\\CodeSecurityConfigurationRepositories>', $client->call('GET /enterprises/{enterprise}/code-security/configurations/{configuration_id}/repositories'));
-assertType('Observable<Schema\\DependabotAlertWithRepository>|WithoutBody', $client->call('GET /enterprises/{enterprise}/dependabot/alerts'));
+assertType('iterable<int,Schema\\DependabotAlertWithRepository>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /enterprises/{enterprise}/dependabot/alerts'));
 assertType('Observable<Schema\\OrganizationSecretScanningAlert>', $client->call('GET /enterprises/{enterprise}/secret-scanning/alerts'));
 assertType('Observable<Schema\\Event>|WithoutBody', $client->call('GET /events'));
 assertType('Observable<Schema\\Event>|WithoutBody', $client->call('LIST /events'));
@@ -230,7 +230,7 @@ assertType('Observable<Schema\\CopilotUsageMetricsDay>', $client->call('GET /org
 assertType('Observable<Schema\\CopilotUsageMetricsDay>', $client->call('LIST /orgs/{org}/copilot/metrics'));
 assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('GET /orgs/{org}/copilot/usage'));
 assertType('Observable<Schema\\CopilotUsageMetrics>', $client->call('LIST /orgs/{org}/copilot/usage'));
-assertType('Observable<Schema\\DependabotAlertWithRepository>|WithoutBody', $client->call('GET /orgs/{org}/dependabot/alerts'));
+assertType('iterable<int,Schema\\DependabotAlertWithRepository>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /orgs/{org}/dependabot/alerts'));
 assertType('', $client->call('GET /orgs/{org}/dependabot/secrets'));
 assertType('', $client->call('GET /orgs/{org}/dependabot/secrets/public-key'));
 assertType('', $client->call('GET /orgs/{org}/dependabot/secrets/{secret_name}'));
@@ -669,8 +669,8 @@ assertType('', $client->call('PUT /repos/{owner}/{repo}/contents/{path}'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/contents/{path}'));
 assertType('Observable<Schema\\Contributor>|WithoutBody', $client->call('GET /repos/{owner}/{repo}/contributors'));
 assertType('Observable<Schema\\Contributor>|WithoutBody', $client->call('LIST /repos/{owner}/{repo}/contributors'));
-assertType('Observable<Schema\\DependabotAlert>|WithoutBody', $client->call('GET /repos/{owner}/{repo}/dependabot/alerts'));
-assertType('Observable<Schema\\DependabotAlert>|WithoutBody', $client->call('LIST /repos/{owner}/{repo}/dependabot/alerts'));
+assertType('iterable<int,Schema\\DependabotAlert>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /repos/{owner}/{repo}/dependabot/alerts'));
+assertType('iterable<int,Schema\\DependabotAlert>|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('LIST /repos/{owner}/{repo}/dependabot/alerts'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/dependabot/alerts/{alert_number}'));
 assertType('', $client->call('PATCH /repos/{owner}/{repo}/dependabot/alerts/{alert_number}'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/dependabot/secrets'));
