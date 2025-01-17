@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Patch;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema\ActionsHostedRunner;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\CheckRun;
 use ApiClients\Client\GitHub\Schema\CheckSuitePreference;
@@ -32,7 +33,8 @@ final class Six
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): CodeSecurityConfiguration|WithoutBody|RunnerGroupsOrg|WebhookConfig|CheckRun|CheckSuitePreference|EmptyObject|CodeScanningDefaultSetupUpdateResponse|CommitComment|Hook|Import|RepositoryInvitation|Issue|BasicError|Label|Milestone|PullRequest|Release|RepositoryAdvisory
+    /** @return |Schema\ActionsHostedRunner */
+    public function call(string $call, array $params, array $pathChunks): CodeSecurityConfiguration|WithoutBody|ActionsHostedRunner|RunnerGroupsOrg|WebhookConfig|CheckRun|CheckSuitePreference|EmptyObject|CodeScanningDefaultSetupUpdateResponse|CommitComment|Hook|Import|RepositoryInvitation|Issue|BasicError|Label|Milestone|PullRequest|Release|RepositoryAdvisory
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'enterprises') {
@@ -50,7 +52,13 @@ final class Six
             } elseif ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {
-                        if ($pathChunks[4] === 'runner-groups') {
+                        if ($pathChunks[4] === 'hosted-runners') {
+                            if ($pathChunks[5] === '{hosted_runner_id}') {
+                                if ($call === 'PATCH /orgs/{org}/actions/hosted-runners/{hosted_runner_id}') {
+                                    return $this->routers->internal🔀Router🔀Patch🔀Actions()->updateHostedRunnerForOrg($params);
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'runner-groups') {
                             if ($pathChunks[5] === '{runner_group_id}') {
                                 if ($call === 'PATCH /orgs/{org}/actions/runner-groups/{runner_group_id}') {
                                     return $this->routers->internal🔀Router🔀Patch🔀Actions()->updateSelfHostedRunnerGroupForOrg($params);

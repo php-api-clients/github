@@ -168,6 +168,17 @@ class RunnerGroups implements ObjectMapper
 
             after_hostedRunnersUrl:
 
+            $value = $payload['network_configuration_id'] ?? null;
+
+            if ($value === null) {
+                $properties['networkConfigurationId'] = null;
+                goto after_networkConfigurationId;
+            }
+
+            $properties['networkConfigurationId'] = $value;
+
+            after_networkConfigurationId:
+
             $value = $payload['inherited'] ?? null;
 
             if ($value === null) {
@@ -399,6 +410,14 @@ class RunnerGroups implements ObjectMapper
         }
 
         after_hostedRunnersUrl:        $result['hosted_runners_url'] = $hostedRunnersUrl;
+
+        $networkConfigurationId = $object->networkConfigurationId;
+
+        if ($networkConfigurationId === null) {
+            goto after_networkConfigurationId;
+        }
+
+        after_networkConfigurationId:        $result['network_configuration_id'] = $networkConfigurationId;
 
         $inherited                                   = $object->inherited;
         after_inherited:        $result['inherited'] = $inherited;

@@ -2678,6 +2678,216 @@ $client->operations()->actions()->getActionsCacheUsageByRepoForOrg(        org: 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/cache#list-repositories-with-github-actions-cache-usage-for-an-organization).
 
 
+### actions/list-hosted-runners-for-org
+
+List GitHub-hosted runners for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/actions/hosted-runners', [
+        'org' => 'generated',
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->listHostedRunnersForOrg(        org: 'generated',
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/hosted-runners#list-github-hosted-runners-for-an-organization).
+
+
+### actions/create-hosted-runner-for-org
+
+Create a GitHub-hosted runner for an organization
+
+Using the `call` method:
+```php
+$client->call('POST /orgs/{org}/actions/hosted-runners', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->createHostedRunnerForOrg(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/hosted-runners#create-a-github-hosted-runner-for-an-organization).
+
+
+### actions/get-hosted-runners-github-owned-images-for-org
+
+Get GitHub-owned images for GitHub-hosted runners in an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/actions/hosted-runners/images/github-owned', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->getHostedRunnersGithubOwnedImagesForOrg(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/hosted-runners#get-github-owned-images-for-github-hosted-runners-in-an-organization).
+
+
+### actions/get-hosted-runners-partner-images-for-org
+
+Get partner images for GitHub-hosted runners in an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/actions/hosted-runners/images/partner', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->getHostedRunnersPartnerImagesForOrg(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/hosted-runners#get-partner-images-for-github-hosted-runners-in-an-organization).
+
+
+### actions/get-hosted-runners-limits-for-org
+
+Get limits on GitHub-hosted runners for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/actions/hosted-runners/limits', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->getHostedRunnersLimitsForOrg(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/hosted-runners#get-limits-on-github-hosted-runners-for-an-organization).
+
+
+### actions/get-hosted-runners-machine-specs-for-org
+
+Get GitHub-hosted runners machine specs for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/actions/hosted-runners/machine-sizes', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->getHostedRunnersMachineSpecsForOrg(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/hosted-runners#get-github-hosted-runners-machine-specs-for-an-organization).
+
+
+### actions/get-hosted-runners-platforms-for-org
+
+Get platforms for GitHub-hosted runners in an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/actions/hosted-runners/platforms', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->getHostedRunnersPlatformsForOrg(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/hosted-runners#get-platforms-for-github-hosted-runners-in-an-organization).
+
+
+### actions/get-hosted-runner-for-org
+
+Get a GitHub-hosted runner for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/actions/hosted-runners/{hosted_runner_id}', [
+        'org' => 'generated',
+        'hosted_runner_id' => 16,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->getHostedRunnerForOrg(        org: 'generated',
+        hosted_runner_id: 16,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/hosted-runners#get-a-github-hosted-runner-for-an-organization).
+
+
+### actions/delete-hosted-runner-for-org
+
+Delete a GitHub-hosted runner for an organization
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/actions/hosted-runners/{hosted_runner_id}', [
+        'org' => 'generated',
+        'hosted_runner_id' => 16,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->deleteHostedRunnerForOrg(        org: 'generated',
+        hosted_runner_id: 16,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/hosted-runners#delete-a-github-hosted-runner-for-an-organization).
+
+
+### actions/update-hosted-runner-for-org
+
+Update a GitHub-hosted runner for an organization
+
+Using the `call` method:
+```php
+$client->call('PATCH /orgs/{org}/actions/hosted-runners/{hosted_runner_id}', [
+        'org' => 'generated',
+        'hosted_runner_id' => 16,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->updateHostedRunnerForOrg(        org: 'generated',
+        hosted_runner_id: 16,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/hosted-runners#update-a-github-hosted-runner-for-an-organization).
+
+
 ### oidc/get-oidc-custom-sub-template-for-org
 
 Get the customization template for an OIDC subject claim for an organization
@@ -3036,6 +3246,32 @@ $client->operations()->actions()->updateSelfHostedRunnerGroupForOrg(        org:
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#update-a-self-hosted-runner-group-for-an-organization).
+
+
+### actions/list-github-hosted-runners-in-group-for-org
+
+List GitHub-hosted runners in a group for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/actions/runner-groups/{runner_group_id}/hosted-runners', [
+        'org' => 'generated',
+        'runner_group_id' => 15,
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->actions()->listGithubHostedRunnersInGroupForOrg(        org: 'generated',
+        runner_group_id: 15,
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/actions/self-hosted-runner-groups#list-github-hosted-runners-in-a-group-for-an-organization).
 
 
 ### actions/list-repo-access-to-self-hosted-runner-group-in-org

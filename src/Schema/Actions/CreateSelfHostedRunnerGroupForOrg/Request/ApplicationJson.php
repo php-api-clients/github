@@ -64,6 +64,10 @@ final readonly class ApplicationJson
                 ]
             },
             "description": "List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`."
+        },
+        "network_configuration_id": {
+            "type": "string",
+            "description": "The identifier of a hosted compute network configuration."
         }
     }
 }';
@@ -85,7 +89,8 @@ final readonly class ApplicationJson
     "selected_workflows": [
         "generated",
         "generated"
-    ]
+    ],
+    "network_configuration_id": "generated"
 }';
 
     /**
@@ -96,12 +101,14 @@ final readonly class ApplicationJson
      * allowsPublicRepositories: Whether the runner group can be used by `public` repositories.
      * restrictedToWorkflows: If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
      * selectedWorkflows: List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
+     * networkConfigurationId: The identifier of a hosted compute network configuration.
      */
     public function __construct(public string $name, public string|null $visibility, #[MapFrom('selected_repository_ids')]
     public array|null $selectedRepositoryIds, public array|null $runners, #[MapFrom('allows_public_repositories')]
     public bool|null $allowsPublicRepositories, #[MapFrom('restricted_to_workflows')]
     public bool|null $restrictedToWorkflows, #[MapFrom('selected_workflows')]
-    public array|null $selectedWorkflows,)
+    public array|null $selectedWorkflows, #[MapFrom('network_configuration_id')]
+    public string|null $networkConfigurationId,)
     {
     }
 }

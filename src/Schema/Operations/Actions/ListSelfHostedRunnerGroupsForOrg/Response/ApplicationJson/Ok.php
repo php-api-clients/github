@@ -54,6 +54,10 @@ final readonly class Ok
                     "hosted_runners_url": {
                         "type": "string"
                     },
+                    "network_configuration_id": {
+                        "type": "string",
+                        "description": "The identifier of a hosted compute network configuration."
+                    },
                     "inherited": {
                         "type": "boolean"
                     },
@@ -102,6 +106,7 @@ final readonly class Ok
             "selected_repositories_url": "generated",
             "runners_url": "generated",
             "hosted_runners_url": "generated",
+            "network_configuration_id": "generated",
             "inherited": false,
             "inherited_allows_public_repositories": false,
             "allows_public_repositories": false,
@@ -120,6 +125,7 @@ final readonly class Ok
             "selected_repositories_url": "generated",
             "runners_url": "generated",
             "hosted_runners_url": "generated",
+            "network_configuration_id": "generated",
             "inherited": false,
             "inherited_allows_public_repositories": false,
             "allows_public_repositories": false,

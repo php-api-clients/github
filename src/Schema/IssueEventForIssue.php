@@ -272,10 +272,7 @@ final readonly class IssueEventForIssue
                                     ]
                                 },
                                 "owner": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
+                                    "oneOf": [
                                         {
                                             "title": "Simple User",
                                             "required": [
@@ -443,6 +440,96 @@ final readonly class IssueEventForIssue
                                                 }
                                             },
                                             "description": "A GitHub user."
+                                        },
+                                        {
+                                            "title": "Enterprise",
+                                            "required": [
+                                                "id",
+                                                "node_id",
+                                                "name",
+                                                "slug",
+                                                "html_url",
+                                                "created_at",
+                                                "updated_at",
+                                                "avatar_url"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "A short description of the enterprise."
+                                                },
+                                                "html_url": {
+                                                    "type": "string",
+                                                    "format": "uri",
+                                                    "examples": [
+                                                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                                    ]
+                                                },
+                                                "website_url": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "The enterprise\'s website URL.",
+                                                    "format": "uri"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "Unique identifier of the enterprise",
+                                                    "examples": [
+                                                        42
+                                                    ]
+                                                },
+                                                "node_id": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the enterprise.",
+                                                    "examples": [
+                                                        "Octo Business"
+                                                    ]
+                                                },
+                                                "slug": {
+                                                    "type": "string",
+                                                    "description": "The slug url identifier for the enterprise.",
+                                                    "examples": [
+                                                        "octo-business"
+                                                    ]
+                                                },
+                                                "created_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:01:12Z"
+                                                    ]
+                                                },
+                                                "updated_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:14:43Z"
+                                                    ]
+                                                },
+                                                "avatar_url": {
+                                                    "type": "string",
+                                                    "format": "uri"
+                                                }
+                                            },
+                                            "description": "An enterprise on GitHub."
                                         }
                                     ]
                                 },
@@ -843,10 +930,7 @@ final readonly class IssueEventForIssue
                                     ]
                                 },
                                 "owner": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
+                                    "oneOf": [
                                         {
                                             "title": "Simple User",
                                             "required": [
@@ -1014,6 +1098,96 @@ final readonly class IssueEventForIssue
                                                 }
                                             },
                                             "description": "A GitHub user."
+                                        },
+                                        {
+                                            "title": "Enterprise",
+                                            "required": [
+                                                "id",
+                                                "node_id",
+                                                "name",
+                                                "slug",
+                                                "html_url",
+                                                "created_at",
+                                                "updated_at",
+                                                "avatar_url"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "A short description of the enterprise."
+                                                },
+                                                "html_url": {
+                                                    "type": "string",
+                                                    "format": "uri",
+                                                    "examples": [
+                                                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                                    ]
+                                                },
+                                                "website_url": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "The enterprise\'s website URL.",
+                                                    "format": "uri"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "Unique identifier of the enterprise",
+                                                    "examples": [
+                                                        42
+                                                    ]
+                                                },
+                                                "node_id": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the enterprise.",
+                                                    "examples": [
+                                                        "Octo Business"
+                                                    ]
+                                                },
+                                                "slug": {
+                                                    "type": "string",
+                                                    "description": "The slug url identifier for the enterprise.",
+                                                    "examples": [
+                                                        "octo-business"
+                                                    ]
+                                                },
+                                                "created_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:01:12Z"
+                                                    ]
+                                                },
+                                                "updated_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:14:43Z"
+                                                    ]
+                                                },
+                                                "avatar_url": {
+                                                    "type": "string",
+                                                    "format": "uri"
+                                                }
+                                            },
+                                            "description": "An enterprise on GitHub."
                                         }
                                     ]
                                 },
@@ -1410,10 +1584,7 @@ final readonly class IssueEventForIssue
                             ]
                         },
                         "owner": {
-                            "anyOf": [
-                                {
-                                    "type": "null"
-                                },
+                            "oneOf": [
                                 {
                                     "title": "Simple User",
                                     "required": [
@@ -1581,6 +1752,96 @@ final readonly class IssueEventForIssue
                                         }
                                     },
                                     "description": "A GitHub user."
+                                },
+                                {
+                                    "title": "Enterprise",
+                                    "required": [
+                                        "id",
+                                        "node_id",
+                                        "name",
+                                        "slug",
+                                        "html_url",
+                                        "created_at",
+                                        "updated_at",
+                                        "avatar_url"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "description": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ],
+                                            "description": "A short description of the enterprise."
+                                        },
+                                        "html_url": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "examples": [
+                                                "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                            ]
+                                        },
+                                        "website_url": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ],
+                                            "description": "The enterprise\'s website URL.",
+                                            "format": "uri"
+                                        },
+                                        "id": {
+                                            "type": "integer",
+                                            "description": "Unique identifier of the enterprise",
+                                            "examples": [
+                                                42
+                                            ]
+                                        },
+                                        "node_id": {
+                                            "type": "string",
+                                            "examples": [
+                                                "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                            ]
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "description": "The name of the enterprise.",
+                                            "examples": [
+                                                "Octo Business"
+                                            ]
+                                        },
+                                        "slug": {
+                                            "type": "string",
+                                            "description": "The slug url identifier for the enterprise.",
+                                            "examples": [
+                                                "octo-business"
+                                            ]
+                                        },
+                                        "created_at": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ],
+                                            "format": "date-time",
+                                            "examples": [
+                                                "2019-01-26T19:01:12Z"
+                                            ]
+                                        },
+                                        "updated_at": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ],
+                                            "format": "date-time",
+                                            "examples": [
+                                                "2019-01-26T19:14:43Z"
+                                            ]
+                                        },
+                                        "avatar_url": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        }
+                                    },
+                                    "description": "An enterprise on GitHub."
                                 }
                             ]
                         },
@@ -2301,10 +2562,7 @@ final readonly class IssueEventForIssue
                                     ]
                                 },
                                 "owner": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
+                                    "oneOf": [
                                         {
                                             "title": "Simple User",
                                             "required": [
@@ -2472,6 +2730,96 @@ final readonly class IssueEventForIssue
                                                 }
                                             },
                                             "description": "A GitHub user."
+                                        },
+                                        {
+                                            "title": "Enterprise",
+                                            "required": [
+                                                "id",
+                                                "node_id",
+                                                "name",
+                                                "slug",
+                                                "html_url",
+                                                "created_at",
+                                                "updated_at",
+                                                "avatar_url"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "A short description of the enterprise."
+                                                },
+                                                "html_url": {
+                                                    "type": "string",
+                                                    "format": "uri",
+                                                    "examples": [
+                                                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                                    ]
+                                                },
+                                                "website_url": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "The enterprise\'s website URL.",
+                                                    "format": "uri"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "Unique identifier of the enterprise",
+                                                    "examples": [
+                                                        42
+                                                    ]
+                                                },
+                                                "node_id": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the enterprise.",
+                                                    "examples": [
+                                                        "Octo Business"
+                                                    ]
+                                                },
+                                                "slug": {
+                                                    "type": "string",
+                                                    "description": "The slug url identifier for the enterprise.",
+                                                    "examples": [
+                                                        "octo-business"
+                                                    ]
+                                                },
+                                                "created_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:01:12Z"
+                                                    ]
+                                                },
+                                                "updated_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:14:43Z"
+                                                    ]
+                                                },
+                                                "avatar_url": {
+                                                    "type": "string",
+                                                    "format": "uri"
+                                                }
+                                            },
+                                            "description": "An enterprise on GitHub."
                                         }
                                     ]
                                 },
@@ -3193,10 +3541,7 @@ final readonly class IssueEventForIssue
                                     ]
                                 },
                                 "owner": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
+                                    "oneOf": [
                                         {
                                             "title": "Simple User",
                                             "required": [
@@ -3364,6 +3709,96 @@ final readonly class IssueEventForIssue
                                                 }
                                             },
                                             "description": "A GitHub user."
+                                        },
+                                        {
+                                            "title": "Enterprise",
+                                            "required": [
+                                                "id",
+                                                "node_id",
+                                                "name",
+                                                "slug",
+                                                "html_url",
+                                                "created_at",
+                                                "updated_at",
+                                                "avatar_url"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "A short description of the enterprise."
+                                                },
+                                                "html_url": {
+                                                    "type": "string",
+                                                    "format": "uri",
+                                                    "examples": [
+                                                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                                    ]
+                                                },
+                                                "website_url": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "The enterprise\'s website URL.",
+                                                    "format": "uri"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "Unique identifier of the enterprise",
+                                                    "examples": [
+                                                        42
+                                                    ]
+                                                },
+                                                "node_id": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the enterprise.",
+                                                    "examples": [
+                                                        "Octo Business"
+                                                    ]
+                                                },
+                                                "slug": {
+                                                    "type": "string",
+                                                    "description": "The slug url identifier for the enterprise.",
+                                                    "examples": [
+                                                        "octo-business"
+                                                    ]
+                                                },
+                                                "created_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:01:12Z"
+                                                    ]
+                                                },
+                                                "updated_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:14:43Z"
+                                                    ]
+                                                },
+                                                "avatar_url": {
+                                                    "type": "string",
+                                                    "format": "uri"
+                                                }
+                                            },
+                                            "description": "An enterprise on GitHub."
                                         }
                                     ]
                                 },
@@ -3760,10 +4195,7 @@ final readonly class IssueEventForIssue
                                     ]
                                 },
                                 "owner": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
+                                    "oneOf": [
                                         {
                                             "title": "Simple User",
                                             "required": [
@@ -3931,6 +4363,96 @@ final readonly class IssueEventForIssue
                                                 }
                                             },
                                             "description": "A GitHub user."
+                                        },
+                                        {
+                                            "title": "Enterprise",
+                                            "required": [
+                                                "id",
+                                                "node_id",
+                                                "name",
+                                                "slug",
+                                                "html_url",
+                                                "created_at",
+                                                "updated_at",
+                                                "avatar_url"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "A short description of the enterprise."
+                                                },
+                                                "html_url": {
+                                                    "type": "string",
+                                                    "format": "uri",
+                                                    "examples": [
+                                                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                                    ]
+                                                },
+                                                "website_url": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "The enterprise\'s website URL.",
+                                                    "format": "uri"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "Unique identifier of the enterprise",
+                                                    "examples": [
+                                                        42
+                                                    ]
+                                                },
+                                                "node_id": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the enterprise.",
+                                                    "examples": [
+                                                        "Octo Business"
+                                                    ]
+                                                },
+                                                "slug": {
+                                                    "type": "string",
+                                                    "description": "The slug url identifier for the enterprise.",
+                                                    "examples": [
+                                                        "octo-business"
+                                                    ]
+                                                },
+                                                "created_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:01:12Z"
+                                                    ]
+                                                },
+                                                "updated_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:14:43Z"
+                                                    ]
+                                                },
+                                                "avatar_url": {
+                                                    "type": "string",
+                                                    "format": "uri"
+                                                }
+                                            },
+                                            "description": "An enterprise on GitHub."
                                         }
                                     ]
                                 },
@@ -4327,10 +4849,7 @@ final readonly class IssueEventForIssue
                                     ]
                                 },
                                 "owner": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
+                                    "oneOf": [
                                         {
                                             "title": "Simple User",
                                             "required": [
@@ -4498,6 +5017,96 @@ final readonly class IssueEventForIssue
                                                 }
                                             },
                                             "description": "A GitHub user."
+                                        },
+                                        {
+                                            "title": "Enterprise",
+                                            "required": [
+                                                "id",
+                                                "node_id",
+                                                "name",
+                                                "slug",
+                                                "html_url",
+                                                "created_at",
+                                                "updated_at",
+                                                "avatar_url"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "A short description of the enterprise."
+                                                },
+                                                "html_url": {
+                                                    "type": "string",
+                                                    "format": "uri",
+                                                    "examples": [
+                                                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                                    ]
+                                                },
+                                                "website_url": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "The enterprise\'s website URL.",
+                                                    "format": "uri"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "Unique identifier of the enterprise",
+                                                    "examples": [
+                                                        42
+                                                    ]
+                                                },
+                                                "node_id": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the enterprise.",
+                                                    "examples": [
+                                                        "Octo Business"
+                                                    ]
+                                                },
+                                                "slug": {
+                                                    "type": "string",
+                                                    "description": "The slug url identifier for the enterprise.",
+                                                    "examples": [
+                                                        "octo-business"
+                                                    ]
+                                                },
+                                                "created_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:01:12Z"
+                                                    ]
+                                                },
+                                                "updated_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:14:43Z"
+                                                    ]
+                                                },
+                                                "avatar_url": {
+                                                    "type": "string",
+                                                    "format": "uri"
+                                                }
+                                            },
+                                            "description": "An enterprise on GitHub."
                                         }
                                     ]
                                 },
@@ -4898,10 +5507,7 @@ final readonly class IssueEventForIssue
                                     ]
                                 },
                                 "owner": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
+                                    "oneOf": [
                                         {
                                             "title": "Simple User",
                                             "required": [
@@ -5069,6 +5675,96 @@ final readonly class IssueEventForIssue
                                                 }
                                             },
                                             "description": "A GitHub user."
+                                        },
+                                        {
+                                            "title": "Enterprise",
+                                            "required": [
+                                                "id",
+                                                "node_id",
+                                                "name",
+                                                "slug",
+                                                "html_url",
+                                                "created_at",
+                                                "updated_at",
+                                                "avatar_url"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "A short description of the enterprise."
+                                                },
+                                                "html_url": {
+                                                    "type": "string",
+                                                    "format": "uri",
+                                                    "examples": [
+                                                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                                    ]
+                                                },
+                                                "website_url": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "The enterprise\'s website URL.",
+                                                    "format": "uri"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "Unique identifier of the enterprise",
+                                                    "examples": [
+                                                        42
+                                                    ]
+                                                },
+                                                "node_id": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the enterprise.",
+                                                    "examples": [
+                                                        "Octo Business"
+                                                    ]
+                                                },
+                                                "slug": {
+                                                    "type": "string",
+                                                    "description": "The slug url identifier for the enterprise.",
+                                                    "examples": [
+                                                        "octo-business"
+                                                    ]
+                                                },
+                                                "created_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:01:12Z"
+                                                    ]
+                                                },
+                                                "updated_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:14:43Z"
+                                                    ]
+                                                },
+                                                "avatar_url": {
+                                                    "type": "string",
+                                                    "format": "uri"
+                                                }
+                                            },
+                                            "description": "An enterprise on GitHub."
                                         }
                                     ]
                                 },
@@ -6000,10 +6696,7 @@ final readonly class IssueEventForIssue
                                     ]
                                 },
                                 "owner": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
+                                    "oneOf": [
                                         {
                                             "title": "Simple User",
                                             "required": [
@@ -6171,6 +6864,96 @@ final readonly class IssueEventForIssue
                                                 }
                                             },
                                             "description": "A GitHub user."
+                                        },
+                                        {
+                                            "title": "Enterprise",
+                                            "required": [
+                                                "id",
+                                                "node_id",
+                                                "name",
+                                                "slug",
+                                                "html_url",
+                                                "created_at",
+                                                "updated_at",
+                                                "avatar_url"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "A short description of the enterprise."
+                                                },
+                                                "html_url": {
+                                                    "type": "string",
+                                                    "format": "uri",
+                                                    "examples": [
+                                                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                                    ]
+                                                },
+                                                "website_url": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "The enterprise\'s website URL.",
+                                                    "format": "uri"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "Unique identifier of the enterprise",
+                                                    "examples": [
+                                                        42
+                                                    ]
+                                                },
+                                                "node_id": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the enterprise.",
+                                                    "examples": [
+                                                        "Octo Business"
+                                                    ]
+                                                },
+                                                "slug": {
+                                                    "type": "string",
+                                                    "description": "The slug url identifier for the enterprise.",
+                                                    "examples": [
+                                                        "octo-business"
+                                                    ]
+                                                },
+                                                "created_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:01:12Z"
+                                                    ]
+                                                },
+                                                "updated_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:14:43Z"
+                                                    ]
+                                                },
+                                                "avatar_url": {
+                                                    "type": "string",
+                                                    "format": "uri"
+                                                }
+                                            },
+                                            "description": "An enterprise on GitHub."
                                         }
                                     ]
                                 },
@@ -7102,10 +7885,7 @@ final readonly class IssueEventForIssue
                                     ]
                                 },
                                 "owner": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
+                                    "oneOf": [
                                         {
                                             "title": "Simple User",
                                             "required": [
@@ -7273,6 +8053,96 @@ final readonly class IssueEventForIssue
                                                 }
                                             },
                                             "description": "A GitHub user."
+                                        },
+                                        {
+                                            "title": "Enterprise",
+                                            "required": [
+                                                "id",
+                                                "node_id",
+                                                "name",
+                                                "slug",
+                                                "html_url",
+                                                "created_at",
+                                                "updated_at",
+                                                "avatar_url"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "A short description of the enterprise."
+                                                },
+                                                "html_url": {
+                                                    "type": "string",
+                                                    "format": "uri",
+                                                    "examples": [
+                                                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                                    ]
+                                                },
+                                                "website_url": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "The enterprise\'s website URL.",
+                                                    "format": "uri"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "Unique identifier of the enterprise",
+                                                    "examples": [
+                                                        42
+                                                    ]
+                                                },
+                                                "node_id": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the enterprise.",
+                                                    "examples": [
+                                                        "Octo Business"
+                                                    ]
+                                                },
+                                                "slug": {
+                                                    "type": "string",
+                                                    "description": "The slug url identifier for the enterprise.",
+                                                    "examples": [
+                                                        "octo-business"
+                                                    ]
+                                                },
+                                                "created_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:01:12Z"
+                                                    ]
+                                                },
+                                                "updated_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:14:43Z"
+                                                    ]
+                                                },
+                                                "avatar_url": {
+                                                    "type": "string",
+                                                    "format": "uri"
+                                                }
+                                            },
+                                            "description": "An enterprise on GitHub."
                                         }
                                     ]
                                 },
@@ -7683,10 +8553,7 @@ final readonly class IssueEventForIssue
                                     ]
                                 },
                                 "owner": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
+                                    "oneOf": [
                                         {
                                             "title": "Simple User",
                                             "required": [
@@ -7854,6 +8721,96 @@ final readonly class IssueEventForIssue
                                                 }
                                             },
                                             "description": "A GitHub user."
+                                        },
+                                        {
+                                            "title": "Enterprise",
+                                            "required": [
+                                                "id",
+                                                "node_id",
+                                                "name",
+                                                "slug",
+                                                "html_url",
+                                                "created_at",
+                                                "updated_at",
+                                                "avatar_url"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "A short description of the enterprise."
+                                                },
+                                                "html_url": {
+                                                    "type": "string",
+                                                    "format": "uri",
+                                                    "examples": [
+                                                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                                    ]
+                                                },
+                                                "website_url": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "The enterprise\'s website URL.",
+                                                    "format": "uri"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "Unique identifier of the enterprise",
+                                                    "examples": [
+                                                        42
+                                                    ]
+                                                },
+                                                "node_id": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the enterprise.",
+                                                    "examples": [
+                                                        "Octo Business"
+                                                    ]
+                                                },
+                                                "slug": {
+                                                    "type": "string",
+                                                    "description": "The slug url identifier for the enterprise.",
+                                                    "examples": [
+                                                        "octo-business"
+                                                    ]
+                                                },
+                                                "created_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:01:12Z"
+                                                    ]
+                                                },
+                                                "updated_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:14:43Z"
+                                                    ]
+                                                },
+                                                "avatar_url": {
+                                                    "type": "string",
+                                                    "format": "uri"
+                                                }
+                                            },
+                                            "description": "An enterprise on GitHub."
                                         }
                                     ]
                                 },
@@ -8247,10 +9204,7 @@ final readonly class IssueEventForIssue
                                     ]
                                 },
                                 "owner": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
+                                    "oneOf": [
                                         {
                                             "title": "Simple User",
                                             "required": [
@@ -8418,6 +9372,96 @@ final readonly class IssueEventForIssue
                                                 }
                                             },
                                             "description": "A GitHub user."
+                                        },
+                                        {
+                                            "title": "Enterprise",
+                                            "required": [
+                                                "id",
+                                                "node_id",
+                                                "name",
+                                                "slug",
+                                                "html_url",
+                                                "created_at",
+                                                "updated_at",
+                                                "avatar_url"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "A short description of the enterprise."
+                                                },
+                                                "html_url": {
+                                                    "type": "string",
+                                                    "format": "uri",
+                                                    "examples": [
+                                                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                                    ]
+                                                },
+                                                "website_url": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "The enterprise\'s website URL.",
+                                                    "format": "uri"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "Unique identifier of the enterprise",
+                                                    "examples": [
+                                                        42
+                                                    ]
+                                                },
+                                                "node_id": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the enterprise.",
+                                                    "examples": [
+                                                        "Octo Business"
+                                                    ]
+                                                },
+                                                "slug": {
+                                                    "type": "string",
+                                                    "description": "The slug url identifier for the enterprise.",
+                                                    "examples": [
+                                                        "octo-business"
+                                                    ]
+                                                },
+                                                "created_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:01:12Z"
+                                                    ]
+                                                },
+                                                "updated_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:14:43Z"
+                                                    ]
+                                                },
+                                                "avatar_url": {
+                                                    "type": "string",
+                                                    "format": "uri"
+                                                }
+                                            },
+                                            "description": "An enterprise on GitHub."
                                         }
                                     ]
                                 },
@@ -8834,10 +9878,7 @@ final readonly class IssueEventForIssue
                                     ]
                                 },
                                 "owner": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
+                                    "oneOf": [
                                         {
                                             "title": "Simple User",
                                             "required": [
@@ -9005,6 +10046,96 @@ final readonly class IssueEventForIssue
                                                 }
                                             },
                                             "description": "A GitHub user."
+                                        },
+                                        {
+                                            "title": "Enterprise",
+                                            "required": [
+                                                "id",
+                                                "node_id",
+                                                "name",
+                                                "slug",
+                                                "html_url",
+                                                "created_at",
+                                                "updated_at",
+                                                "avatar_url"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "A short description of the enterprise."
+                                                },
+                                                "html_url": {
+                                                    "type": "string",
+                                                    "format": "uri",
+                                                    "examples": [
+                                                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                                    ]
+                                                },
+                                                "website_url": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "The enterprise\'s website URL.",
+                                                    "format": "uri"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "Unique identifier of the enterprise",
+                                                    "examples": [
+                                                        42
+                                                    ]
+                                                },
+                                                "node_id": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the enterprise.",
+                                                    "examples": [
+                                                        "Octo Business"
+                                                    ]
+                                                },
+                                                "slug": {
+                                                    "type": "string",
+                                                    "description": "The slug url identifier for the enterprise.",
+                                                    "examples": [
+                                                        "octo-business"
+                                                    ]
+                                                },
+                                                "created_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:01:12Z"
+                                                    ]
+                                                },
+                                                "updated_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:14:43Z"
+                                                    ]
+                                                },
+                                                "avatar_url": {
+                                                    "type": "string",
+                                                    "format": "uri"
+                                                }
+                                            },
+                                            "description": "An enterprise on GitHub."
                                         }
                                     ]
                                 },
@@ -9421,10 +10552,7 @@ final readonly class IssueEventForIssue
                                     ]
                                 },
                                 "owner": {
-                                    "anyOf": [
-                                        {
-                                            "type": "null"
-                                        },
+                                    "oneOf": [
                                         {
                                             "title": "Simple User",
                                             "required": [
@@ -9592,6 +10720,96 @@ final readonly class IssueEventForIssue
                                                 }
                                             },
                                             "description": "A GitHub user."
+                                        },
+                                        {
+                                            "title": "Enterprise",
+                                            "required": [
+                                                "id",
+                                                "node_id",
+                                                "name",
+                                                "slug",
+                                                "html_url",
+                                                "created_at",
+                                                "updated_at",
+                                                "avatar_url"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "description": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "A short description of the enterprise."
+                                                },
+                                                "html_url": {
+                                                    "type": "string",
+                                                    "format": "uri",
+                                                    "examples": [
+                                                        "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                                    ]
+                                                },
+                                                "website_url": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "The enterprise\'s website URL.",
+                                                    "format": "uri"
+                                                },
+                                                "id": {
+                                                    "type": "integer",
+                                                    "description": "Unique identifier of the enterprise",
+                                                    "examples": [
+                                                        42
+                                                    ]
+                                                },
+                                                "node_id": {
+                                                    "type": "string",
+                                                    "examples": [
+                                                        "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                                    ]
+                                                },
+                                                "name": {
+                                                    "type": "string",
+                                                    "description": "The name of the enterprise.",
+                                                    "examples": [
+                                                        "Octo Business"
+                                                    ]
+                                                },
+                                                "slug": {
+                                                    "type": "string",
+                                                    "description": "The slug url identifier for the enterprise.",
+                                                    "examples": [
+                                                        "octo-business"
+                                                    ]
+                                                },
+                                                "created_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:01:12Z"
+                                                    ]
+                                                },
+                                                "updated_at": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "format": "date-time",
+                                                    "examples": [
+                                                        "2019-01-26T19:14:43Z"
+                                                    ]
+                                                },
+                                                "avatar_url": {
+                                                    "type": "string",
+                                                    "format": "uri"
+                                                }
+                                            },
+                                            "description": "An enterprise on GitHub."
                                         }
                                     ]
                                 },
@@ -10003,10 +11221,7 @@ final readonly class IssueEventForIssue
                             ]
                         },
                         "owner": {
-                            "anyOf": [
-                                {
-                                    "type": "null"
-                                },
+                            "oneOf": [
                                 {
                                     "title": "Simple User",
                                     "required": [
@@ -10174,6 +11389,96 @@ final readonly class IssueEventForIssue
                                         }
                                     },
                                     "description": "A GitHub user."
+                                },
+                                {
+                                    "title": "Enterprise",
+                                    "required": [
+                                        "id",
+                                        "node_id",
+                                        "name",
+                                        "slug",
+                                        "html_url",
+                                        "created_at",
+                                        "updated_at",
+                                        "avatar_url"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "description": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ],
+                                            "description": "A short description of the enterprise."
+                                        },
+                                        "html_url": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "examples": [
+                                                "https:\\/\\/github.com\\/enterprises\\/octo-business"
+                                            ]
+                                        },
+                                        "website_url": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ],
+                                            "description": "The enterprise\'s website URL.",
+                                            "format": "uri"
+                                        },
+                                        "id": {
+                                            "type": "integer",
+                                            "description": "Unique identifier of the enterprise",
+                                            "examples": [
+                                                42
+                                            ]
+                                        },
+                                        "node_id": {
+                                            "type": "string",
+                                            "examples": [
+                                                "MDEwOlJlcG9zaXRvcnkxMjk2MjY5"
+                                            ]
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "description": "The name of the enterprise.",
+                                            "examples": [
+                                                "Octo Business"
+                                            ]
+                                        },
+                                        "slug": {
+                                            "type": "string",
+                                            "description": "The slug url identifier for the enterprise.",
+                                            "examples": [
+                                                "octo-business"
+                                            ]
+                                        },
+                                        "created_at": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ],
+                                            "format": "date-time",
+                                            "examples": [
+                                                "2019-01-26T19:01:12Z"
+                                            ]
+                                        },
+                                        "updated_at": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ],
+                                            "format": "date-time",
+                                            "examples": [
+                                                "2019-01-26T19:14:43Z"
+                                            ]
+                                        },
+                                        "avatar_url": {
+                                            "type": "string",
+                                            "format": "uri"
+                                        }
+                                    },
+                                    "description": "An enterprise on GitHub."
                                 }
                             ]
                         },

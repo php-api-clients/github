@@ -128,6 +128,16 @@ final class Operators
     private Internal\Operator\Orgs\Update|null $orgs👷Update                                                                                                                         = null;
     private Internal\Operator\Actions\GetActionsCacheUsageForOrg|null $actions👷GetActionsCacheUsageForOrg                                                                           = null;
     private Internal\Operator\Actions\GetActionsCacheUsageByRepoForOrg|null $actions👷GetActionsCacheUsageByRepoForOrg                                                               = null;
+    private Internal\Operator\Actions\ListHostedRunnersForOrg|null $actions👷ListHostedRunnersForOrg                                                                                 = null;
+    private Internal\Operator\Actions\CreateHostedRunnerForOrg|null $actions👷CreateHostedRunnerForOrg                                                                               = null;
+    private Internal\Operator\Actions\GetHostedRunnersGithubOwnedImagesForOrg|null $actions👷GetHostedRunnersGithubOwnedImagesForOrg                                                 = null;
+    private Internal\Operator\Actions\GetHostedRunnersPartnerImagesForOrg|null $actions👷GetHostedRunnersPartnerImagesForOrg                                                         = null;
+    private Internal\Operator\Actions\GetHostedRunnersLimitsForOrg|null $actions👷GetHostedRunnersLimitsForOrg                                                                       = null;
+    private Internal\Operator\Actions\GetHostedRunnersMachineSpecsForOrg|null $actions👷GetHostedRunnersMachineSpecsForOrg                                                           = null;
+    private Internal\Operator\Actions\GetHostedRunnersPlatformsForOrg|null $actions👷GetHostedRunnersPlatformsForOrg                                                                 = null;
+    private Internal\Operator\Actions\GetHostedRunnerForOrg|null $actions👷GetHostedRunnerForOrg                                                                                     = null;
+    private Internal\Operator\Actions\DeleteHostedRunnerForOrg|null $actions👷DeleteHostedRunnerForOrg                                                                               = null;
+    private Internal\Operator\Actions\UpdateHostedRunnerForOrg|null $actions👷UpdateHostedRunnerForOrg                                                                               = null;
     private Internal\Operator\Oidc\GetOidcCustomSubTemplateForOrg|null $oidc👷GetOidcCustomSubTemplateForOrg                                                                         = null;
     private Internal\Operator\Oidc\UpdateOidcCustomSubTemplateForOrg|null $oidc👷UpdateOidcCustomSubTemplateForOrg                                                                   = null;
     private Internal\Operator\Actions\GetGithubActionsPermissionsOrganization|null $actions👷GetGithubActionsPermissionsOrganization                                                 = null;
@@ -145,6 +155,7 @@ final class Operators
     private Internal\Operator\Actions\GetSelfHostedRunnerGroupForOrg|null $actions👷GetSelfHostedRunnerGroupForOrg                                                                   = null;
     private Internal\Operator\Actions\DeleteSelfHostedRunnerGroupFromOrg|null $actions👷DeleteSelfHostedRunnerGroupFromOrg                                                           = null;
     private Internal\Operator\Actions\UpdateSelfHostedRunnerGroupForOrg|null $actions👷UpdateSelfHostedRunnerGroupForOrg                                                             = null;
+    private Internal\Operator\Actions\ListGithubHostedRunnersInGroupForOrg|null $actions👷ListGithubHostedRunnersInGroupForOrg                                                       = null;
     private Internal\Operator\Actions\ListRepoAccessToSelfHostedRunnerGroupInOrg|null $actions👷ListRepoAccessToSelfHostedRunnerGroupInOrg                                           = null;
     private Internal\Operator\Actions\SetRepoAccessToSelfHostedRunnerGroupInOrg|null $actions👷SetRepoAccessToSelfHostedRunnerGroupInOrg                                             = null;
     private Internal\Operator\Actions\AddRepoAccessToSelfHostedRunnerGroupInOrg|null $actions👷AddRepoAccessToSelfHostedRunnerGroupInOrg                                             = null;
@@ -2247,6 +2258,96 @@ final class Operators
         return $this->actions👷GetActionsCacheUsageByRepoForOrg;
     }
 
+    public function actions👷ListHostedRunnersForOrg(): Internal\Operator\Actions\ListHostedRunnersForOrg
+    {
+        if ($this->actions👷ListHostedRunnersForOrg instanceof Internal\Operator\Actions\ListHostedRunnersForOrg === false) {
+            $this->actions👷ListHostedRunnersForOrg = new Internal\Operator\Actions\ListHostedRunnersForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀HostedRunners());
+        }
+
+        return $this->actions👷ListHostedRunnersForOrg;
+    }
+
+    public function actions👷CreateHostedRunnerForOrg(): Internal\Operator\Actions\CreateHostedRunnerForOrg
+    {
+        if ($this->actions👷CreateHostedRunnerForOrg instanceof Internal\Operator\Actions\CreateHostedRunnerForOrg === false) {
+            $this->actions👷CreateHostedRunnerForOrg = new Internal\Operator\Actions\CreateHostedRunnerForOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀HostedRunners());
+        }
+
+        return $this->actions👷CreateHostedRunnerForOrg;
+    }
+
+    public function actions👷GetHostedRunnersGithubOwnedImagesForOrg(): Internal\Operator\Actions\GetHostedRunnersGithubOwnedImagesForOrg
+    {
+        if ($this->actions👷GetHostedRunnersGithubOwnedImagesForOrg instanceof Internal\Operator\Actions\GetHostedRunnersGithubOwnedImagesForOrg === false) {
+            $this->actions👷GetHostedRunnersGithubOwnedImagesForOrg = new Internal\Operator\Actions\GetHostedRunnersGithubOwnedImagesForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀HostedRunners🌀Images🌀GithubOwned());
+        }
+
+        return $this->actions👷GetHostedRunnersGithubOwnedImagesForOrg;
+    }
+
+    public function actions👷GetHostedRunnersPartnerImagesForOrg(): Internal\Operator\Actions\GetHostedRunnersPartnerImagesForOrg
+    {
+        if ($this->actions👷GetHostedRunnersPartnerImagesForOrg instanceof Internal\Operator\Actions\GetHostedRunnersPartnerImagesForOrg === false) {
+            $this->actions👷GetHostedRunnersPartnerImagesForOrg = new Internal\Operator\Actions\GetHostedRunnersPartnerImagesForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀HostedRunners🌀Images🌀Partner());
+        }
+
+        return $this->actions👷GetHostedRunnersPartnerImagesForOrg;
+    }
+
+    public function actions👷GetHostedRunnersLimitsForOrg(): Internal\Operator\Actions\GetHostedRunnersLimitsForOrg
+    {
+        if ($this->actions👷GetHostedRunnersLimitsForOrg instanceof Internal\Operator\Actions\GetHostedRunnersLimitsForOrg === false) {
+            $this->actions👷GetHostedRunnersLimitsForOrg = new Internal\Operator\Actions\GetHostedRunnersLimitsForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀HostedRunners🌀Limits());
+        }
+
+        return $this->actions👷GetHostedRunnersLimitsForOrg;
+    }
+
+    public function actions👷GetHostedRunnersMachineSpecsForOrg(): Internal\Operator\Actions\GetHostedRunnersMachineSpecsForOrg
+    {
+        if ($this->actions👷GetHostedRunnersMachineSpecsForOrg instanceof Internal\Operator\Actions\GetHostedRunnersMachineSpecsForOrg === false) {
+            $this->actions👷GetHostedRunnersMachineSpecsForOrg = new Internal\Operator\Actions\GetHostedRunnersMachineSpecsForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀HostedRunners🌀MachineSizes());
+        }
+
+        return $this->actions👷GetHostedRunnersMachineSpecsForOrg;
+    }
+
+    public function actions👷GetHostedRunnersPlatformsForOrg(): Internal\Operator\Actions\GetHostedRunnersPlatformsForOrg
+    {
+        if ($this->actions👷GetHostedRunnersPlatformsForOrg instanceof Internal\Operator\Actions\GetHostedRunnersPlatformsForOrg === false) {
+            $this->actions👷GetHostedRunnersPlatformsForOrg = new Internal\Operator\Actions\GetHostedRunnersPlatformsForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀HostedRunners🌀Platforms());
+        }
+
+        return $this->actions👷GetHostedRunnersPlatformsForOrg;
+    }
+
+    public function actions👷GetHostedRunnerForOrg(): Internal\Operator\Actions\GetHostedRunnerForOrg
+    {
+        if ($this->actions👷GetHostedRunnerForOrg instanceof Internal\Operator\Actions\GetHostedRunnerForOrg === false) {
+            $this->actions👷GetHostedRunnerForOrg = new Internal\Operator\Actions\GetHostedRunnerForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀HostedRunners🌀HostedRunnerId());
+        }
+
+        return $this->actions👷GetHostedRunnerForOrg;
+    }
+
+    public function actions👷DeleteHostedRunnerForOrg(): Internal\Operator\Actions\DeleteHostedRunnerForOrg
+    {
+        if ($this->actions👷DeleteHostedRunnerForOrg instanceof Internal\Operator\Actions\DeleteHostedRunnerForOrg === false) {
+            $this->actions👷DeleteHostedRunnerForOrg = new Internal\Operator\Actions\DeleteHostedRunnerForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀HostedRunners🌀HostedRunnerId());
+        }
+
+        return $this->actions👷DeleteHostedRunnerForOrg;
+    }
+
+    public function actions👷UpdateHostedRunnerForOrg(): Internal\Operator\Actions\UpdateHostedRunnerForOrg
+    {
+        if ($this->actions👷UpdateHostedRunnerForOrg instanceof Internal\Operator\Actions\UpdateHostedRunnerForOrg === false) {
+            $this->actions👷UpdateHostedRunnerForOrg = new Internal\Operator\Actions\UpdateHostedRunnerForOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀HostedRunners🌀HostedRunnerId());
+        }
+
+        return $this->actions👷UpdateHostedRunnerForOrg;
+    }
+
     public function oidc👷GetOidcCustomSubTemplateForOrg(): Internal\Operator\Oidc\GetOidcCustomSubTemplateForOrg
     {
         if ($this->oidc👷GetOidcCustomSubTemplateForOrg instanceof Internal\Operator\Oidc\GetOidcCustomSubTemplateForOrg === false) {
@@ -2398,6 +2499,15 @@ final class Operators
         }
 
         return $this->actions👷UpdateSelfHostedRunnerGroupForOrg;
+    }
+
+    public function actions👷ListGithubHostedRunnersInGroupForOrg(): Internal\Operator\Actions\ListGithubHostedRunnersInGroupForOrg
+    {
+        if ($this->actions👷ListGithubHostedRunnersInGroupForOrg instanceof Internal\Operator\Actions\ListGithubHostedRunnersInGroupForOrg === false) {
+            $this->actions👷ListGithubHostedRunnersInGroupForOrg = new Internal\Operator\Actions\ListGithubHostedRunnersInGroupForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀RunnerGroups🌀RunnerGroupId🌀HostedRunners());
+        }
+
+        return $this->actions👷ListGithubHostedRunnersInGroupForOrg;
     }
 
     public function actions👷ListRepoAccessToSelfHostedRunnerGroupInOrg(): Internal\Operator\Actions\ListRepoAccessToSelfHostedRunnerGroupInOrg

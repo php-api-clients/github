@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Internal\Hydrator\Operation\Repos\Owner\Repo\Deployments\DeploymentId;
 
+use ApiClients\Client\GitHub\Internal\Attribute\CastUnionToType\Schema\Integration\Owner;
 use ApiClients\Client\GitHub\Schema\BasicError;
 use ApiClients\Client\GitHub\Schema\DeploymentStatus;
 use ApiClients\Client\GitHub\Schema\Integration;
@@ -633,17 +634,21 @@ class Statuses implements ObjectMapper
             $value = $payload['owner'] ?? null;
 
             if ($value === null) {
-                $properties['owner'] = null;
+                $missingFields[] = 'owner';
                 goto after_owner;
             }
 
-            if (is_array($value)) {
-                try {
-                    $this->hydrationStack[] = 'owner';
-                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
-                } finally {
-                    array_pop($this->hydrationStack);
-                }
+            static $ownerCaster1;
+
+            if ($ownerCaster1 === null) {
+                $ownerCaster1 = new Owner(...[]);
+            }
+
+            $value = $ownerCaster1->cast($value, $this);
+
+            if ($value === null) {
+                                $missingFields[] = 'owner';
+                goto after_owner;
             }
 
             $properties['owner'] = $value;
@@ -1277,12 +1282,10 @@ class Statuses implements ObjectMapper
         after_clientId:        $result['client_id'] = $clientId;
 
         $owner = $object->owner;
-
-        if ($owner === null) {
-            goto after_owner;
-        }
-
-        $owner                               = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($owner);
+        $owner = match ($owner::class) {
+                        'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($owner),
+            'ApiClients\Client\GitHub\Schema\Enterprise' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️Enterprise($owner),
+        };
         after_owner:        $result['owner'] = $owner;
 
         $name                              = $object->name;

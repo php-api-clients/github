@@ -42,6 +42,10 @@ final readonly class RunnerGroupsOrg
         "hosted_runners_url": {
             "type": "string"
         },
+        "network_configuration_id": {
+            "type": "string",
+            "description": "The identifier of a hosted compute network configuration."
+        },
         "inherited": {
             "type": "boolean"
         },
@@ -84,6 +88,7 @@ final readonly class RunnerGroupsOrg
     "selected_repositories_url": "generated",
     "runners_url": "generated",
     "hosted_runners_url": "generated",
+    "network_configuration_id": "generated",
     "inherited": false,
     "inherited_allows_public_repositories": false,
     "allows_public_repositories": false,
@@ -97,6 +102,7 @@ final readonly class RunnerGroupsOrg
 
     /**
      * selectedRepositoriesUrl: Link to the selected repositories resource for this runner group. Not present unless visibility was set to `selected`
+     * networkConfigurationId: The identifier of a hosted compute network configuration.
      * workflowRestrictionsReadOnly: If `true`, the `restricted_to_workflows` and `selected_workflows` fields cannot be modified.
      * restrictedToWorkflows: If `true`, the runner group will be restricted to running only the workflows specified in the `selected_workflows` array.
      * selectedWorkflows: List of workflows the runner group should be allowed to run. This setting will be ignored unless `restricted_to_workflows` is set to `true`.
@@ -104,7 +110,8 @@ final readonly class RunnerGroupsOrg
     public function __construct(public int|float $id, public string $name, public string $visibility, public bool $default, #[MapFrom('selected_repositories_url')]
     public string|null $selectedRepositoriesUrl, #[MapFrom('runners_url')]
     public string $runnersUrl, #[MapFrom('hosted_runners_url')]
-    public string|null $hostedRunnersUrl, public bool $inherited, #[MapFrom('inherited_allows_public_repositories')]
+    public string|null $hostedRunnersUrl, #[MapFrom('network_configuration_id')]
+    public string|null $networkConfigurationId, public bool $inherited, #[MapFrom('inherited_allows_public_repositories')]
     public bool|null $inheritedAllowsPublicRepositories, #[MapFrom('allows_public_repositories')]
     public bool $allowsPublicRepositories, #[MapFrom('workflow_restrictions_read_only')]
     public bool|null $workflowRestrictionsReadOnly, #[MapFrom('restricted_to_workflows')]

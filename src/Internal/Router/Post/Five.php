@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Router\Post;
 
 use ApiClients\Client\GitHub\Internal\Routers;
+use ApiClients\Client\GitHub\Schema\ActionsHostedRunner;
 use ApiClients\Client\GitHub\Schema\Authorization;
 use ApiClients\Client\GitHub\Schema\Autolink;
 use ApiClients\Client\GitHub\Schema\CheckRun;
@@ -44,7 +45,8 @@ final class Five
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|CodeSecurityConfiguration|RunnerGroupsOrg|EmptyObject|WithoutBody|ProjectCard|Json|Created|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|CodespaceExportDetails|CodespaceWithFullRepository
+    /** @return |Schema\ActionsHostedRunner */
+    public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|CodeSecurityConfiguration|ActionsHostedRunner|RunnerGroupsOrg|EmptyObject|WithoutBody|ProjectCard|Json|Created|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|CodespaceExportDetails|CodespaceWithFullRepository
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {
@@ -80,7 +82,11 @@ final class Five
             } elseif ($pathChunks[1] === 'orgs') {
                 if ($pathChunks[2] === '{org}') {
                     if ($pathChunks[3] === 'actions') {
-                        if ($pathChunks[4] === 'runner-groups') {
+                        if ($pathChunks[4] === 'hosted-runners') {
+                            if ($call === 'POST /orgs/{org}/actions/hosted-runners') {
+                                return $this->routers->internal🔀Router🔀Post🔀Actions()->createHostedRunnerForOrg($params);
+                            }
+                        } elseif ($pathChunks[4] === 'runner-groups') {
                             if ($call === 'POST /orgs/{org}/actions/runner-groups') {
                                 return $this->routers->internal🔀Router🔀Post🔀Actions()->createSelfHostedRunnerGroupForOrg($params);
                             }

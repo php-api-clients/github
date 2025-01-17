@@ -21,13 +21,13 @@ final class Dependabot
     {
     }
 
-    /** @return iterable<int,Schema\DependabotAlertWithRepository>|WithoutBody */
+    /** @return Observable<Schema\DependabotAlertWithRepository>|WithoutBody */
     public function listAlertsForEnterprise(string $enterprise, string $state, string $severity, string $ecosystem, string $package, string $scope, string $before, string $after, int $last, string $sort, string $direction, int $first, int $perPage): iterable|WithoutBody
     {
         return $this->operators->dependabot👷ListAlertsForEnterprise()->call($enterprise, $state, $severity, $ecosystem, $package, $scope, $before, $after, $last, $sort, $direction, $first, $perPage);
     }
 
-    /** @return iterable<int,Schema\DependabotAlertWithRepository>|WithoutBody */
+    /** @return Observable<Schema\DependabotAlertWithRepository>|WithoutBody */
     public function listAlertsForOrg(string $org, string $state, string $severity, string $ecosystem, string $package, string $scope, string $before, string $after, int $last, string $sort, string $direction, int $first, int $perPage): iterable|WithoutBody
     {
         return $this->operators->dependabot👷ListAlertsForOrg()->call($org, $state, $severity, $ecosystem, $package, $scope, $before, $after, $last, $sort, $direction, $first, $perPage);
@@ -87,13 +87,13 @@ final class Dependabot
         return $this->operators->dependabot👷RemoveSelectedRepoFromOrgSecret()->call($org, $secretName, $repositoryId);
     }
 
-    /** @return iterable<int,Schema\DependabotAlert>|WithoutBody */
+    /** @return Observable<Schema\DependabotAlert>|WithoutBody */
     public function listAlertsForRepo(string $owner, string $repo, string $state, string $severity, string $ecosystem, string $package, string $manifest, string $scope, string $before, string $after, int $last, string $sort, string $direction, int $page, int $perPage, int $first): iterable|WithoutBody
     {
         return $this->operators->dependabot👷ListAlertsForRepo()->call($owner, $repo, $state, $severity, $ecosystem, $package, $manifest, $scope, $before, $after, $last, $sort, $direction, $page, $perPage, $first);
     }
 
-    /** @return iterable<int,Schema\DependabotAlert>|WithoutBody */
+    /** @return Observable<Schema\DependabotAlert>|WithoutBody */
     public function listAlertsForRepoListing(string $owner, string $repo, string $state, string $severity, string $ecosystem, string $package, string $manifest, string $scope, string $before, string $after, int $last, string $sort, string $direction, int $page, int $perPage, int $first): iterable|WithoutBody
     {
         return $this->operators->dependabot👷ListAlertsForRepoListing()->call($owner, $repo, $state, $severity, $ecosystem, $package, $manifest, $scope, $before, $after, $last, $sort, $direction, $page, $perPage, $first);

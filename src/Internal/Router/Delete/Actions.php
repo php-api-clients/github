@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Delete;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema\ActionsCacheList;
+use ApiClients\Client\GitHub\Schema\ActionsHostedRunner;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\ListLabelsForSelfHostedRunnerForOrg\Response\ApplicationJson\Ok;
 use ApiClients\Client\GitHub\Schema\Operations\Actions\RemoveAllCustomLabelsFromSelfHostedRunnerForOrg\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
@@ -20,6 +21,26 @@ final class Actions
 {
     public function __construct(private SchemaValidator $requestSchemaValidator, private SchemaValidator $responseSchemaValidator, private Internal\Hydrators $hydrators, private Browser $browser, private AuthenticationInterface $authentication)
     {
+    }
+
+    public function deleteHostedRunnerForOrg(array $params): ActionsHostedRunner
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('hosted_runner_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: hosted_runner_id');
+        }
+
+        $arguments['hosted_runner_id'] = $params['hosted_runner_id'];
+        unset($params['hosted_runner_id']);
+        $operator = new Internal\Operator\Actions\DeleteHostedRunnerForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Actions🌀HostedRunners🌀HostedRunnerId());
+
+        return $operator->call($arguments['org'], $arguments['hosted_runner_id']);
     }
 
     /** @return */
