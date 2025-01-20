@@ -46,6 +46,13 @@ final class ListAlertsForRepo
     private string $package;
     /**A comma-separated list of full manifest paths. If specified, only alerts for these manifests will be returned. **/
     private string $manifest;
+    /**CVE Exploit Prediction Scoring System (EPSS) percentage. Can be specified as:
+    - An exact number (`n`)
+    - Comparators such as `>n`, `<n`, `>=n`, `<=n`
+    - A range like `n..n`, where `n` is a number from 0.0 to 1.0
+
+    Filters the list of alerts based on EPSS percentages. If specified, only alerts with the provided EPSS percentages will be returned. **/
+    private string $epssPercentage;
     /**The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned. **/
     private string $scope;
     /**A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
@@ -72,29 +79,30 @@ final class ListAlertsForRepo
     Instead, use `per_page` in combination with `after` to fetch the first page of results. **/
     private int $first;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Dependabot\Alerts $hydrator, string $owner, string $repo, string $state, string $severity, string $ecosystem, string $package, string $manifest, string $scope, string $before, string $after, int $last, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30, int $first = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Dependabot\Alerts $hydrator, string $owner, string $repo, string $state, string $severity, string $ecosystem, string $package, string $manifest, string $epssPercentage, string $scope, string $before, string $after, int $last, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30, int $first = 30)
     {
-        $this->owner     = $owner;
-        $this->repo      = $repo;
-        $this->state     = $state;
-        $this->severity  = $severity;
-        $this->ecosystem = $ecosystem;
-        $this->package   = $package;
-        $this->manifest  = $manifest;
-        $this->scope     = $scope;
-        $this->before    = $before;
-        $this->after     = $after;
-        $this->last      = $last;
-        $this->sort      = $sort;
-        $this->direction = $direction;
-        $this->page      = $page;
-        $this->perPage   = $perPage;
-        $this->first     = $first;
+        $this->owner          = $owner;
+        $this->repo           = $repo;
+        $this->state          = $state;
+        $this->severity       = $severity;
+        $this->ecosystem      = $ecosystem;
+        $this->package        = $package;
+        $this->manifest       = $manifest;
+        $this->epssPercentage = $epssPercentage;
+        $this->scope          = $scope;
+        $this->before         = $before;
+        $this->after          = $after;
+        $this->last           = $last;
+        $this->sort           = $sort;
+        $this->direction      = $direction;
+        $this->page           = $page;
+        $this->perPage        = $perPage;
+        $this->first          = $first;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{owner}', '{repo}', '{state}', '{severity}', '{ecosystem}', '{package}', '{manifest}', '{scope}', '{before}', '{after}', '{last}', '{sort}', '{direction}', '{page}', '{per_page}', '{first}'], [$this->owner, $this->repo, $this->state, $this->severity, $this->ecosystem, $this->package, $this->manifest, $this->scope, $this->before, $this->after, $this->last, $this->sort, $this->direction, $this->page, $this->perPage, $this->first], '/repos/{owner}/{repo}/dependabot/alerts' . '?state={state}&severity={severity}&ecosystem={ecosystem}&package={package}&manifest={manifest}&scope={scope}&before={before}&after={after}&last={last}&sort={sort}&direction={direction}&page={page}&per_page={per_page}&first={first}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{state}', '{severity}', '{ecosystem}', '{package}', '{manifest}', '{epss_percentage}', '{scope}', '{before}', '{after}', '{last}', '{sort}', '{direction}', '{page}', '{per_page}', '{first}'], [$this->owner, $this->repo, $this->state, $this->severity, $this->ecosystem, $this->package, $this->manifest, $this->epssPercentage, $this->scope, $this->before, $this->after, $this->last, $this->sort, $this->direction, $this->page, $this->perPage, $this->first], '/repos/{owner}/{repo}/dependabot/alerts' . '?state={state}&severity={severity}&ecosystem={ecosystem}&package={package}&manifest={manifest}&epss_percentage={epss_percentage}&scope={scope}&before={before}&after={after}&last={last}&sort={sort}&direction={direction}&page={page}&per_page={per_page}&first={first}'));
     }
 
     /** @return Observable<Schema\DependabotAlert>|WithoutBody */

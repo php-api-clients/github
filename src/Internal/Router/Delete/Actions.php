@@ -23,6 +23,7 @@ final class Actions
     {
     }
 
+    /** @return */
     public function deleteHostedRunnerForOrg(array $params): ActionsHostedRunner
     {
         $arguments = [];

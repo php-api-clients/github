@@ -24,6 +24,7 @@ final readonly class GetHostedRunnersPartnerImagesForOrg
     {
     }
 
+    /** @return */
     public function call(string $org): Json
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetHostedRunnersPartnerImagesForOrg($this->responseSchemaValidator, $this->hydrator, $org);

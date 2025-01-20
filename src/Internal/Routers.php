@@ -40,6 +40,7 @@ final class Routers
     private Internal\Router\Get\Actions|null $internal🔀Router🔀Get🔀Actions                           = null;
     private Internal\Router\Get\CodeScanning|null $internal🔀Router🔀Get🔀CodeScanning                 = null;
     private Internal\Router\Get\Copilot|null $internal🔀Router🔀Get🔀Copilot                           = null;
+    private Internal\Router\Get\HostedCompute|null $internal🔀Router🔀Get🔀HostedCompute               = null;
     private Internal\Router\Get\Pulls|null $internal🔀Router🔀Get🔀Pulls                               = null;
     private Internal\Router\Get\Billing|null $internal🔀Router🔀Get🔀Billing                           = null;
     private Internal\Router\Get\ApiInsights|null $internal🔀Router🔀Get🔀ApiInsights                   = null;
@@ -67,6 +68,7 @@ final class Routers
     private Internal\Router\Post\Reactions|null $internal🔀Router🔀Post🔀Reactions                     = null;
     private Internal\Router\Post\Packages|null $internal🔀Router🔀Post🔀Packages                       = null;
     private Internal\Router\Post\CodeSecurity|null $internal🔀Router🔀Post🔀CodeSecurity               = null;
+    private Internal\Router\Post\HostedCompute|null $internal🔀Router🔀Post🔀HostedCompute             = null;
     private Internal\Router\Post\Checks|null $internal🔀Router🔀Post🔀Checks                           = null;
     private Internal\Router\Post\Issues|null $internal🔀Router🔀Post🔀Issues                           = null;
     private Internal\Router\Post\Pulls|null $internal🔀Router🔀Post🔀Pulls                             = null;
@@ -81,6 +83,7 @@ final class Routers
     private Internal\Router\Patch\CodeSecurity|null $internal🔀Router🔀Patch🔀CodeSecurity             = null;
     private Internal\Router\Patch\Actions|null $internal🔀Router🔀Patch🔀Actions                       = null;
     private Internal\Router\Patch\Orgs|null $internal🔀Router🔀Patch🔀Orgs                             = null;
+    private Internal\Router\Patch\HostedCompute|null $internal🔀Router🔀Patch🔀HostedCompute           = null;
     private Internal\Router\Patch\Checks|null $internal🔀Router🔀Patch🔀Checks                         = null;
     private Internal\Router\Patch\CodeScanning|null $internal🔀Router🔀Patch🔀CodeScanning             = null;
     private Internal\Router\Patch\Migrations|null $internal🔀Router🔀Patch🔀Migrations                 = null;
@@ -131,6 +134,7 @@ final class Routers
     private Internal\Router\Delete\Actions|null $internal🔀Router🔀Delete🔀Actions                     = null;
     private Internal\Router\Delete\Copilot|null $internal🔀Router🔀Delete🔀Copilot                     = null;
     private Internal\Router\Delete\Dependabot|null $internal🔀Router🔀Delete🔀Dependabot               = null;
+    private Internal\Router\Delete\HostedCompute|null $internal🔀Router🔀Delete🔀HostedCompute         = null;
     private Internal\Router\Delete\Issues|null $internal🔀Router🔀Delete🔀Issues                       = null;
     private Internal\Router\Delete\CodeScanning|null $internal🔀Router🔀Delete🔀CodeScanning           = null;
     private Internal\Router\Delete\Git|null $internal🔀Router🔀Delete🔀Git                             = null;
@@ -422,6 +426,15 @@ final class Routers
         return $this->internal🔀Router🔀Get🔀Copilot;
     }
 
+    public function internal🔀Router🔀Get🔀HostedCompute(): Internal\Router\Get\HostedCompute
+    {
+        if ($this->internal🔀Router🔀Get🔀HostedCompute instanceof Internal\Router\Get\HostedCompute === false) {
+            $this->internal🔀Router🔀Get🔀HostedCompute = new Internal\Router\Get\HostedCompute(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀Get🔀HostedCompute;
+    }
+
     public function internal🔀Router🔀Get🔀Pulls(): Internal\Router\Get\Pulls
     {
         if ($this->internal🔀Router🔀Get🔀Pulls instanceof Internal\Router\Get\Pulls === false) {
@@ -665,6 +678,15 @@ final class Routers
         return $this->internal🔀Router🔀Post🔀CodeSecurity;
     }
 
+    public function internal🔀Router🔀Post🔀HostedCompute(): Internal\Router\Post\HostedCompute
+    {
+        if ($this->internal🔀Router🔀Post🔀HostedCompute instanceof Internal\Router\Post\HostedCompute === false) {
+            $this->internal🔀Router🔀Post🔀HostedCompute = new Internal\Router\Post\HostedCompute(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀Post🔀HostedCompute;
+    }
+
     public function internal🔀Router🔀Post🔀Checks(): Internal\Router\Post\Checks
     {
         if ($this->internal🔀Router🔀Post🔀Checks instanceof Internal\Router\Post\Checks === false) {
@@ -789,6 +811,15 @@ final class Routers
         }
 
         return $this->internal🔀Router🔀Patch🔀Orgs;
+    }
+
+    public function internal🔀Router🔀Patch🔀HostedCompute(): Internal\Router\Patch\HostedCompute
+    {
+        if ($this->internal🔀Router🔀Patch🔀HostedCompute instanceof Internal\Router\Patch\HostedCompute === false) {
+            $this->internal🔀Router🔀Patch🔀HostedCompute = new Internal\Router\Patch\HostedCompute(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀Patch🔀HostedCompute;
     }
 
     public function internal🔀Router🔀Patch🔀Checks(): Internal\Router\Patch\Checks
@@ -1239,6 +1270,15 @@ final class Routers
         }
 
         return $this->internal🔀Router🔀Delete🔀Dependabot;
+    }
+
+    public function internal🔀Router🔀Delete🔀HostedCompute(): Internal\Router\Delete\HostedCompute
+    {
+        if ($this->internal🔀Router🔀Delete🔀HostedCompute instanceof Internal\Router\Delete\HostedCompute === false) {
+            $this->internal🔀Router🔀Delete🔀HostedCompute = new Internal\Router\Delete\HostedCompute(browser: $this->browser, authentication: $this->authentication, requestSchemaValidator: $this->requestSchemaValidator, responseSchemaValidator: $this->responseSchemaValidator, hydrators: $this->hydrators);
+        }
+
+        return $this->internal🔀Router🔀Delete🔀HostedCompute;
     }
 
     public function internal🔀Router🔀Delete🔀Issues(): Internal\Router\Delete\Issues

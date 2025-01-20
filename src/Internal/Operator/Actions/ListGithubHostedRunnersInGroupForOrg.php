@@ -24,6 +24,7 @@ final readonly class ListGithubHostedRunnersInGroupForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, int $runnerGroupId, int $perPage = 30, int $page = 1): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\ListGithubHostedRunnersInGroupForOrg($this->responseSchemaValidator, $this->hydrator, $org, $runnerGroupId, $perPage, $page);

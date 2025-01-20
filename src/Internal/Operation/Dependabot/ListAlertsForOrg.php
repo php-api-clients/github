@@ -42,6 +42,13 @@ final class ListAlertsForOrg
     private string $ecosystem;
     /**A comma-separated list of package names. If specified, only alerts for these packages will be returned. **/
     private string $package;
+    /**CVE Exploit Prediction Scoring System (EPSS) percentage. Can be specified as:
+    - An exact number (`n`)
+    - Comparators such as `>n`, `<n`, `>=n`, `<=n`
+    - A range like `n..n`, where `n` is a number from 0.0 to 1.0
+
+    Filters the list of alerts based on EPSS percentages. If specified, only alerts with the provided EPSS percentages will be returned. **/
+    private string $epssPercentage;
     /**The scope of the vulnerable dependency. If specified, only alerts with this scope will be returned. **/
     private string $scope;
     /**A cursor, as given in the [Link header](https://docs.github.com/rest/guides/using-pagination-in-the-rest-api#using-link-headers). If specified, the query only searches for results before this cursor. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
@@ -66,26 +73,27 @@ final class ListAlertsForOrg
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Dependabot\Alerts $hydrator, string $org, string $state, string $severity, string $ecosystem, string $package, string $scope, string $before, string $after, int $last, string $sort = 'created', string $direction = 'desc', int $first = 30, int $perPage = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Dependabot\Alerts $hydrator, string $org, string $state, string $severity, string $ecosystem, string $package, string $epssPercentage, string $scope, string $before, string $after, int $last, string $sort = 'created', string $direction = 'desc', int $first = 30, int $perPage = 30)
     {
-        $this->org       = $org;
-        $this->state     = $state;
-        $this->severity  = $severity;
-        $this->ecosystem = $ecosystem;
-        $this->package   = $package;
-        $this->scope     = $scope;
-        $this->before    = $before;
-        $this->after     = $after;
-        $this->last      = $last;
-        $this->sort      = $sort;
-        $this->direction = $direction;
-        $this->first     = $first;
-        $this->perPage   = $perPage;
+        $this->org            = $org;
+        $this->state          = $state;
+        $this->severity       = $severity;
+        $this->ecosystem      = $ecosystem;
+        $this->package        = $package;
+        $this->epssPercentage = $epssPercentage;
+        $this->scope          = $scope;
+        $this->before         = $before;
+        $this->after          = $after;
+        $this->last           = $last;
+        $this->sort           = $sort;
+        $this->direction      = $direction;
+        $this->first          = $first;
+        $this->perPage        = $perPage;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{org}', '{state}', '{severity}', '{ecosystem}', '{package}', '{scope}', '{before}', '{after}', '{last}', '{sort}', '{direction}', '{first}', '{per_page}'], [$this->org, $this->state, $this->severity, $this->ecosystem, $this->package, $this->scope, $this->before, $this->after, $this->last, $this->sort, $this->direction, $this->first, $this->perPage], '/orgs/{org}/dependabot/alerts' . '?state={state}&severity={severity}&ecosystem={ecosystem}&package={package}&scope={scope}&before={before}&after={after}&last={last}&sort={sort}&direction={direction}&first={first}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{org}', '{state}', '{severity}', '{ecosystem}', '{package}', '{epss_percentage}', '{scope}', '{before}', '{after}', '{last}', '{sort}', '{direction}', '{first}', '{per_page}'], [$this->org, $this->state, $this->severity, $this->ecosystem, $this->package, $this->epssPercentage, $this->scope, $this->before, $this->after, $this->last, $this->sort, $this->direction, $this->first, $this->perPage], '/orgs/{org}/dependabot/alerts' . '?state={state}&severity={severity}&ecosystem={ecosystem}&package={package}&epss_percentage={epss_percentage}&scope={scope}&before={before}&after={after}&last={last}&sort={sort}&direction={direction}&first={first}&per_page={per_page}'));
     }
 
     /** @return Observable<Schema\DependabotAlertWithRepository>|WithoutBody */

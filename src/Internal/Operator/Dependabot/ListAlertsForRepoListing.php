@@ -25,10 +25,10 @@ final readonly class ListAlertsForRepoListing
     {
     }
 
-    /** @return Observable<Schema\DependabotAlert>|WithoutBody */
-    public function call(string $owner, string $repo, string $state, string $severity, string $ecosystem, string $package, string $manifest, string $scope, string $before, string $after, int $last, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30, int $first = 30): iterable|WithoutBody
+    /** @return iterable<int,Schema\DependabotAlert>|WithoutBody */
+    public function call(string $owner, string $repo, string $state, string $severity, string $ecosystem, string $package, string $manifest, string $epssPercentage, string $scope, string $before, string $after, int $last, string $sort = 'created', string $direction = 'desc', int $page = 1, int $perPage = 30, int $first = 30): iterable|WithoutBody
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Dependabot\ListAlertsForRepoListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $state, $severity, $ecosystem, $package, $manifest, $scope, $before, $after, $last, $sort, $direction, $page, $perPage, $first);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Dependabot\ListAlertsForRepoListing($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $state, $severity, $ecosystem, $package, $manifest, $epssPercentage, $scope, $before, $after, $last, $sort, $direction, $page, $perPage, $first);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Observable|WithoutBody {
             return $operation->createResponse($response);

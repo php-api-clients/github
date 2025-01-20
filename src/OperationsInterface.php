@@ -64,6 +64,8 @@ interface OperationsInterface
 
     public function repos(): Operation\Repos;
 
+    public function hostedCompute(): Operation\HostedCompute;
+
     public function teams(): Operation\Teams;
 
     public function reactions(): Operation\Reactions;

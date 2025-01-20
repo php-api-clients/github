@@ -233,6 +233,9 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Orgs\Org\Settings\Billing\Actions|null $operation🌀Orgs🌀Org🌀Settings🌀Billing🌀Actions                                                                                                                                         = null;
     private Internal\Hydrator\Operation\Orgs\Org\Settings\Billing\Packages|null $operation🌀Orgs🌀Org🌀Settings🌀Billing🌀Packages                                                                                                                                       = null;
     private Internal\Hydrator\Operation\Orgs\Org\Settings\Billing\SharedStorage|null $operation🌀Orgs🌀Org🌀Settings🌀Billing🌀SharedStorage                                                                                                                             = null;
+    private Internal\Hydrator\Operation\Orgs\Org\Settings\NetworkConfigurations|null $operation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations                                                                                                                             = null;
+    private Internal\Hydrator\Operation\Orgs\Org\Settings\NetworkConfigurations\NetworkConfigurationId|null $operation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations🌀NetworkConfigurationId                                                                               = null;
+    private Internal\Hydrator\Operation\Orgs\Org\Settings\NetworkSettings\NetworkSettingsId|null $operation🌀Orgs🌀Org🌀Settings🌀NetworkSettings🌀NetworkSettingsId                                                                                                     = null;
     private Internal\Hydrator\Operation\Orgs\Org\Team\TeamSlug\Copilot\Metrics|null $operation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Metrics                                                                                                                               = null;
     private Internal\Hydrator\Operation\Orgs\Org\Team\TeamSlug\Copilot\Usage|null $operation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Usage                                                                                                                                   = null;
     private Internal\Hydrator\Operation\Orgs\Org\Teams|null $operation🌀Orgs🌀Org🌀Teams                                                                                                                                                                               = null;
@@ -867,6 +870,8 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\ActionsBillingUsage', '\\ApiClients\\Client\\GitHub\\Schema\\ActionsBillingUsage\\MinutesUsedBreakdown' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀Billing🌀Actions()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\PackagesBillingUsage' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀Billing🌀Packages()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\CombinedBillingUsage' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀Billing🌀SharedStorage()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\HostedCompute\\ListNetworkConfigurationsForOrg\\Response\\ApplicationJson\\Ok', '\\ApiClients\\Client\\GitHub\\Schema\\NetworkConfiguration' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\NetworkSettings' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀NetworkSettings🌀NetworkSettingsId()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\TeamFull', '\\ApiClients\\Client\\GitHub\\Schema\\TeamSimple', '\\ApiClients\\Client\\GitHub\\Schema\\TeamOrganization', '\\ApiClients\\Client\\GitHub\\Schema\\TeamOrganization\\Plan' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Teams()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\TeamDiscussion', '\\ApiClients\\Client\\GitHub\\Schema\\ReactionRollup' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Discussions()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\TeamDiscussionComment' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Discussions🌀DiscussionNumber🌀Comments()->hydrateObject($className, $payload),
@@ -1242,6 +1247,8 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\ActionsBillingUsage', '\\ApiClients\\Client\\GitHub\\Schema\\ActionsBillingUsage\\MinutesUsedBreakdown' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀Billing🌀Actions()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\PackagesBillingUsage' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀Billing🌀Packages()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\CombinedBillingUsage' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀Billing🌀SharedStorage()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\Operations\\HostedCompute\\ListNetworkConfigurationsForOrg\\Response\\ApplicationJson\\Ok', '\\ApiClients\\Client\\GitHub\\Schema\\NetworkConfiguration' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\NetworkSettings' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀NetworkSettings🌀NetworkSettingsId()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\TeamFull', '\\ApiClients\\Client\\GitHub\\Schema\\TeamSimple', '\\ApiClients\\Client\\GitHub\\Schema\\TeamOrganization', '\\ApiClients\\Client\\GitHub\\Schema\\TeamOrganization\\Plan' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Teams()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\TeamDiscussion', '\\ApiClients\\Client\\GitHub\\Schema\\ReactionRollup' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Discussions()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\TeamDiscussionComment' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Teams🌀TeamSlug🌀Discussions🌀DiscussionNumber🌀Comments()->serializeObject($object),
@@ -3497,6 +3504,33 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Orgs🌀Org🌀Settings🌀Billing🌀SharedStorage;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations(): Internal\Hydrator\Operation\Orgs\Org\Settings\NetworkConfigurations
+    {
+        if ($this->operation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations instanceof Internal\Hydrator\Operation\Orgs\Org\Settings\NetworkConfigurations === false) {
+            $this->operation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations = new Internal\Hydrator\Operation\Orgs\Org\Settings\NetworkConfigurations();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations🌀NetworkConfigurationId(): Internal\Hydrator\Operation\Orgs\Org\Settings\NetworkConfigurations\NetworkConfigurationId
+    {
+        if ($this->operation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations🌀NetworkConfigurationId instanceof Internal\Hydrator\Operation\Orgs\Org\Settings\NetworkConfigurations\NetworkConfigurationId === false) {
+            $this->operation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations🌀NetworkConfigurationId = new Internal\Hydrator\Operation\Orgs\Org\Settings\NetworkConfigurations\NetworkConfigurationId();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations🌀NetworkConfigurationId;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀NetworkSettings🌀NetworkSettingsId(): Internal\Hydrator\Operation\Orgs\Org\Settings\NetworkSettings\NetworkSettingsId
+    {
+        if ($this->operation🌀Orgs🌀Org🌀Settings🌀NetworkSettings🌀NetworkSettingsId instanceof Internal\Hydrator\Operation\Orgs\Org\Settings\NetworkSettings\NetworkSettingsId === false) {
+            $this->operation🌀Orgs🌀Org🌀Settings🌀NetworkSettings🌀NetworkSettingsId = new Internal\Hydrator\Operation\Orgs\Org\Settings\NetworkSettings\NetworkSettingsId();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀Settings🌀NetworkSettings🌀NetworkSettingsId;
     }
 
     public function getObjectMapperOperation🌀Orgs🌀Org🌀Team🌀TeamSlug🌀Copilot🌀Metrics(): Internal\Hydrator\Operation\Orgs\Org\Team\TeamSlug\Copilot\Metrics

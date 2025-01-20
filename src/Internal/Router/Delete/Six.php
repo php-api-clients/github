@@ -18,7 +18,7 @@ final class Six
     {
     }
 
-    /** @return |Schema\ActionsHostedRunner */
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|ActionsHostedRunner|Ok|\ApiClients\Client\GitHub\Schema\Operations\Copilot\CancelCopilotSeatAssignmentForUsers\Response\ApplicationJson\Ok|ActionsCacheList|FileCommit
     {
         if ($pathChunks[0] === '') {
@@ -157,6 +157,14 @@ final class Six
                             if ($pathChunks[5] === '{team_slug}') {
                                 if ($call === 'DELETE /orgs/{org}/security-managers/teams/{team_slug}') {
                                     return $this->routers->internal🔀Router🔀Delete🔀Orgs()->removeSecurityManagerTeam($params);
+                                }
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'settings') {
+                        if ($pathChunks[4] === 'network-configurations') {
+                            if ($pathChunks[5] === '{network_configuration_id}') {
+                                if ($call === 'DELETE /orgs/{org}/settings/network-configurations/{network_configuration_id}') {
+                                    return $this->routers->internal🔀Router🔀Delete🔀HostedCompute()->deleteNetworkConfigurationFromOrg($params);
                                 }
                             }
                         }

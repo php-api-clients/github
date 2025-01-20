@@ -16,7 +16,7 @@ final readonly class ApplicationJson
     "properties": {
         "sub_issue_id": {
             "type": "integer",
-            "description": "The sub-issue to remove"
+            "description": "The id of the sub-issue to remove"
         }
     }
 }';
@@ -27,7 +27,7 @@ final readonly class ApplicationJson
 }';
 
     /**
-     * subIssueId: The sub-issue to remove
+     * subIssueId: The id of the sub-issue to remove
      */
     public function __construct(#[MapFrom('sub_issue_id')]
     public int $subIssueId,)

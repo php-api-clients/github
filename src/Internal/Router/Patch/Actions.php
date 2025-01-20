@@ -21,6 +21,7 @@ final class Actions
     {
     }
 
+    /** @return */
     public function updateHostedRunnerForOrg(array $params): ActionsHostedRunner
     {
         $arguments = [];

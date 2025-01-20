@@ -24,6 +24,7 @@ final readonly class DeleteHostedRunnerForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, int $hostedRunnerId): ActionsHostedRunner
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\DeleteHostedRunnerForOrg($this->responseSchemaValidator, $this->hydrator, $org, $hostedRunnerId);

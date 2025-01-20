@@ -31,25 +31,26 @@ final class ListAlertsForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Dependabot\ListAlertsForRepoListing::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner']     = 'generated';
-            $data['repo']      = 'generated';
-            $data['state']     = 'generated';
-            $data['severity']  = 'generated';
-            $data['ecosystem'] = 'generated';
-            $data['package']   = 'generated';
-            $data['manifest']  = 'generated';
-            $data['scope']     = 'generated';
-            $data['before']    = 'generated';
-            $data['after']     = 'generated';
-            $data['last']      = 4;
-            $data['sort']      = 'generated';
-            $data['direction'] = 'generated';
-            $data['page']      = 1;
-            $data['per_page']  = 8;
-            $data['first']     = 5;
+            $data['owner']           = 'generated';
+            $data['repo']            = 'generated';
+            $data['state']           = 'generated';
+            $data['severity']        = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['package']         = 'generated';
+            $data['manifest']        = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['scope']           = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['last']            = 4;
+            $data['sort']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['page']            = 1;
+            $data['per_page']        = 8;
+            $data['first']           = 5;
 
             return $data;
         })([]));
@@ -67,9 +68,9 @@ final class ListAlertsForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->dependabot()->listAlertsForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 1, 8, 5);
+        $result = $client->operations()->dependabot()->listAlertsForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 1, 8, 5);
         foreach ($result as $item) {
         }
     }
@@ -84,25 +85,26 @@ final class ListAlertsForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Dependabot\ListAlertsForRepoListing::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner']     = 'generated';
-            $data['repo']      = 'generated';
-            $data['state']     = 'generated';
-            $data['severity']  = 'generated';
-            $data['ecosystem'] = 'generated';
-            $data['package']   = 'generated';
-            $data['manifest']  = 'generated';
-            $data['scope']     = 'generated';
-            $data['before']    = 'generated';
-            $data['after']     = 'generated';
-            $data['last']      = 4;
-            $data['sort']      = 'generated';
-            $data['direction'] = 'generated';
-            $data['page']      = 1;
-            $data['per_page']  = 8;
-            $data['first']     = 5;
+            $data['owner']           = 'generated';
+            $data['repo']            = 'generated';
+            $data['state']           = 'generated';
+            $data['severity']        = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['package']         = 'generated';
+            $data['manifest']        = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['scope']           = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['last']            = 4;
+            $data['sort']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['page']            = 1;
+            $data['per_page']        = 8;
+            $data['first']           = 5;
 
             return $data;
         })([]));
@@ -120,9 +122,9 @@ final class ListAlertsForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->dependabot()->listAlertsForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 1, 8, 5);
+        $result = $client->operations()->dependabot()->listAlertsForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 1, 8, 5);
         foreach ($result as $item) {
         }
     }
@@ -137,25 +139,26 @@ final class ListAlertsForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Dependabot\ListAlertsForRepoListing::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner']     = 'generated';
-            $data['repo']      = 'generated';
-            $data['state']     = 'generated';
-            $data['severity']  = 'generated';
-            $data['ecosystem'] = 'generated';
-            $data['package']   = 'generated';
-            $data['manifest']  = 'generated';
-            $data['scope']     = 'generated';
-            $data['before']    = 'generated';
-            $data['after']     = 'generated';
-            $data['last']      = 4;
-            $data['sort']      = 'generated';
-            $data['direction'] = 'generated';
-            $data['page']      = 1;
-            $data['per_page']  = 8;
-            $data['first']     = 5;
+            $data['owner']           = 'generated';
+            $data['repo']            = 'generated';
+            $data['state']           = 'generated';
+            $data['severity']        = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['package']         = 'generated';
+            $data['manifest']        = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['scope']           = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['last']            = 4;
+            $data['sort']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['page']            = 1;
+            $data['per_page']        = 8;
+            $data['first']           = 5;
 
             return $data;
         })([]));
@@ -173,9 +176,9 @@ final class ListAlertsForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->dependabot()->listAlertsForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 1, 8, 5);
+        $result = $client->operations()->dependabot()->listAlertsForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 1, 8, 5);
         foreach ($result as $item) {
         }
     }
@@ -190,25 +193,26 @@ final class ListAlertsForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Dependabot\ListAlertsForRepoListing::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner']     = 'generated';
-            $data['repo']      = 'generated';
-            $data['state']     = 'generated';
-            $data['severity']  = 'generated';
-            $data['ecosystem'] = 'generated';
-            $data['package']   = 'generated';
-            $data['manifest']  = 'generated';
-            $data['scope']     = 'generated';
-            $data['before']    = 'generated';
-            $data['after']     = 'generated';
-            $data['last']      = 4;
-            $data['sort']      = 'generated';
-            $data['direction'] = 'generated';
-            $data['page']      = 1;
-            $data['per_page']  = 8;
-            $data['first']     = 5;
+            $data['owner']           = 'generated';
+            $data['repo']            = 'generated';
+            $data['state']           = 'generated';
+            $data['severity']        = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['package']         = 'generated';
+            $data['manifest']        = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['scope']           = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['last']            = 4;
+            $data['sort']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['page']            = 1;
+            $data['per_page']        = 8;
+            $data['first']           = 5;
 
             return $data;
         })([]));
@@ -226,9 +230,9 @@ final class ListAlertsForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->dependabot()->listAlertsForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 1, 8, 5);
+        $result = $client->operations()->dependabot()->listAlertsForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 1, 8, 5);
         foreach ($result as $item) {
         }
     }
@@ -243,25 +247,26 @@ final class ListAlertsForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Dependabot\ListAlertsForRepoListing::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner']     = 'generated';
-            $data['repo']      = 'generated';
-            $data['state']     = 'generated';
-            $data['severity']  = 'generated';
-            $data['ecosystem'] = 'generated';
-            $data['package']   = 'generated';
-            $data['manifest']  = 'generated';
-            $data['scope']     = 'generated';
-            $data['before']    = 'generated';
-            $data['after']     = 'generated';
-            $data['last']      = 4;
-            $data['sort']      = 'generated';
-            $data['direction'] = 'generated';
-            $data['page']      = 1;
-            $data['per_page']  = 8;
-            $data['first']     = 5;
+            $data['owner']           = 'generated';
+            $data['repo']            = 'generated';
+            $data['state']           = 'generated';
+            $data['severity']        = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['package']         = 'generated';
+            $data['manifest']        = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['scope']           = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['last']            = 4;
+            $data['sort']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['page']            = 1;
+            $data['per_page']        = 8;
+            $data['first']           = 5;
 
             return $data;
         })([]));
@@ -279,9 +284,9 @@ final class ListAlertsForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->dependabot()->listAlertsForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 1, 8, 5);
+        $result = $client->operations()->dependabot()->listAlertsForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 1, 8, 5);
         foreach ($result as $item) {
         }
     }
@@ -295,25 +300,26 @@ final class ListAlertsForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Dependabot\ListAlertsForRepoListing::OPERATION_MATCH, (static function (array $data): array {
-            $data['owner']     = 'generated';
-            $data['repo']      = 'generated';
-            $data['state']     = 'generated';
-            $data['severity']  = 'generated';
-            $data['ecosystem'] = 'generated';
-            $data['package']   = 'generated';
-            $data['manifest']  = 'generated';
-            $data['scope']     = 'generated';
-            $data['before']    = 'generated';
-            $data['after']     = 'generated';
-            $data['last']      = 4;
-            $data['sort']      = 'generated';
-            $data['direction'] = 'generated';
-            $data['page']      = 1;
-            $data['per_page']  = 8;
-            $data['first']     = 5;
+            $data['owner']           = 'generated';
+            $data['repo']            = 'generated';
+            $data['state']           = 'generated';
+            $data['severity']        = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['package']         = 'generated';
+            $data['manifest']        = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['scope']           = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['last']            = 4;
+            $data['sort']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['page']            = 1;
+            $data['per_page']        = 8;
+            $data['first']           = 5;
 
             return $data;
         })([]));
@@ -330,9 +336,9 @@ final class ListAlertsForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&manifest=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&page=1&per_page=8&first=5', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->dependabot()->listAlertsForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 1, 8, 5);
+        $result = $client->operations()->dependabot()->listAlertsForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 1, 8, 5);
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
         foreach ($result as $item) {

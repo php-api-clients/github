@@ -24,6 +24,7 @@ final readonly class GetHostedRunnersGithubOwnedImagesForOrg
     {
     }
 
+    /** @return */
     public function call(string $org): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Actions\GetHostedRunnersGithubOwnedImagesForOrg($this->responseSchemaValidator, $this->hydrator, $org);

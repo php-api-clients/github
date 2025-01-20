@@ -26,6 +26,7 @@ use ApiClients\Client\GitHub\Schema\Label;
 use ApiClients\Client\GitHub\Schema\MergedUpstream;
 use ApiClients\Client\GitHub\Schema\Milestone;
 use ApiClients\Client\GitHub\Schema\MinimalRepository;
+use ApiClients\Client\GitHub\Schema\NetworkConfiguration;
 use ApiClients\Client\GitHub\Schema\Operations\Projects\MoveColumn\Response\ApplicationJson\Created\Application\Json;
 use ApiClients\Client\GitHub\Schema\Operations\Repos\CreateAttestation\Response\ApplicationJson\Created;
 use ApiClients\Client\GitHub\Schema\Page;
@@ -45,8 +46,8 @@ final class Five
     {
     }
 
-    /** @return |Schema\ActionsHostedRunner */
-    public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|CodeSecurityConfiguration|ActionsHostedRunner|RunnerGroupsOrg|EmptyObject|WithoutBody|ProjectCard|Json|Created|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|CodespaceExportDetails|CodespaceWithFullRepository
+    /** @return |Schema\NetworkConfiguration */
+    public function call(string $call, array $params, array $pathChunks): InstallationToken|Authorization|CodeSecurityConfiguration|ActionsHostedRunner|RunnerGroupsOrg|EmptyObject|WithoutBody|NetworkConfiguration|ProjectCard|Json|Created|Autolink|CheckRun|CheckSuite|Codespace|Deployment|\ApiClients\Client\GitHub\Schema\Operations\Repos\CreateDeployment\Response\ApplicationJson\Accepted\Application\Json|FullRepository|Hook|Issue|DeployKey|Label|MergedUpstream|Commit|Milestone|Page|Project|PullRequest|Release|RepositoryRuleset|RepositoryAdvisory|MinimalRepository|CodespaceExportDetails|CodespaceWithFullRepository
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {
@@ -111,6 +112,12 @@ final class Five
                         if ($pathChunks[4] === '{pat_id}') {
                             if ($call === 'POST /orgs/{org}/personal-access-tokens/{pat_id}') {
                                 return $this->routers->internal🔀Router🔀Post🔀Orgs()->updatePatAccess($params);
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'settings') {
+                        if ($pathChunks[4] === 'network-configurations') {
+                            if ($call === 'POST /orgs/{org}/settings/network-configurations') {
+                                return $this->routers->internal🔀Router🔀Post🔀HostedCompute()->createNetworkConfigurationForOrg($params);
                             }
                         }
                     } elseif ($pathChunks[3] === '{security_product}') {

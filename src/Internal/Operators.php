@@ -389,6 +389,12 @@ final class Operators
     private Internal\Operator\Billing\GetGithubActionsBillingOrg|null $billing👷GetGithubActionsBillingOrg                                                                           = null;
     private Internal\Operator\Billing\GetGithubPackagesBillingOrg|null $billing👷GetGithubPackagesBillingOrg                                                                         = null;
     private Internal\Operator\Billing\GetSharedStorageBillingOrg|null $billing👷GetSharedStorageBillingOrg                                                                           = null;
+    private Internal\Operator\HostedCompute\ListNetworkConfigurationsForOrg|null $hostedCompute👷ListNetworkConfigurationsForOrg                                                     = null;
+    private Internal\Operator\HostedCompute\CreateNetworkConfigurationForOrg|null $hostedCompute👷CreateNetworkConfigurationForOrg                                                   = null;
+    private Internal\Operator\HostedCompute\GetNetworkConfigurationForOrg|null $hostedCompute👷GetNetworkConfigurationForOrg                                                         = null;
+    private Internal\Operator\HostedCompute\DeleteNetworkConfigurationFromOrg|null $hostedCompute👷DeleteNetworkConfigurationFromOrg                                                 = null;
+    private Internal\Operator\HostedCompute\UpdateNetworkConfigurationForOrg|null $hostedCompute👷UpdateNetworkConfigurationForOrg                                                   = null;
+    private Internal\Operator\HostedCompute\GetNetworkSettingsForOrg|null $hostedCompute👷GetNetworkSettingsForOrg                                                                   = null;
     private Internal\Operator\Copilot\CopilotMetricsForTeam|null $copilot👷CopilotMetricsForTeam                                                                                     = null;
     private Internal\Operator\Copilot\CopilotMetricsForTeamListing|null $copilot👷CopilotMetricsForTeamListing                                                                       = null;
     private Internal\Operator\Copilot\UsageMetricsForTeam|null $copilot👷UsageMetricsForTeam                                                                                         = null;
@@ -4605,6 +4611,60 @@ final class Operators
         }
 
         return $this->billing👷GetSharedStorageBillingOrg;
+    }
+
+    public function hostedCompute👷ListNetworkConfigurationsForOrg(): Internal\Operator\HostedCompute\ListNetworkConfigurationsForOrg
+    {
+        if ($this->hostedCompute👷ListNetworkConfigurationsForOrg instanceof Internal\Operator\HostedCompute\ListNetworkConfigurationsForOrg === false) {
+            $this->hostedCompute👷ListNetworkConfigurationsForOrg = new Internal\Operator\HostedCompute\ListNetworkConfigurationsForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations());
+        }
+
+        return $this->hostedCompute👷ListNetworkConfigurationsForOrg;
+    }
+
+    public function hostedCompute👷CreateNetworkConfigurationForOrg(): Internal\Operator\HostedCompute\CreateNetworkConfigurationForOrg
+    {
+        if ($this->hostedCompute👷CreateNetworkConfigurationForOrg instanceof Internal\Operator\HostedCompute\CreateNetworkConfigurationForOrg === false) {
+            $this->hostedCompute👷CreateNetworkConfigurationForOrg = new Internal\Operator\HostedCompute\CreateNetworkConfigurationForOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations());
+        }
+
+        return $this->hostedCompute👷CreateNetworkConfigurationForOrg;
+    }
+
+    public function hostedCompute👷GetNetworkConfigurationForOrg(): Internal\Operator\HostedCompute\GetNetworkConfigurationForOrg
+    {
+        if ($this->hostedCompute👷GetNetworkConfigurationForOrg instanceof Internal\Operator\HostedCompute\GetNetworkConfigurationForOrg === false) {
+            $this->hostedCompute👷GetNetworkConfigurationForOrg = new Internal\Operator\HostedCompute\GetNetworkConfigurationForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations🌀NetworkConfigurationId());
+        }
+
+        return $this->hostedCompute👷GetNetworkConfigurationForOrg;
+    }
+
+    public function hostedCompute👷DeleteNetworkConfigurationFromOrg(): Internal\Operator\HostedCompute\DeleteNetworkConfigurationFromOrg
+    {
+        if ($this->hostedCompute👷DeleteNetworkConfigurationFromOrg instanceof Internal\Operator\HostedCompute\DeleteNetworkConfigurationFromOrg === false) {
+            $this->hostedCompute👷DeleteNetworkConfigurationFromOrg = new Internal\Operator\HostedCompute\DeleteNetworkConfigurationFromOrg($this->browser, $this->authentication);
+        }
+
+        return $this->hostedCompute👷DeleteNetworkConfigurationFromOrg;
+    }
+
+    public function hostedCompute👷UpdateNetworkConfigurationForOrg(): Internal\Operator\HostedCompute\UpdateNetworkConfigurationForOrg
+    {
+        if ($this->hostedCompute👷UpdateNetworkConfigurationForOrg instanceof Internal\Operator\HostedCompute\UpdateNetworkConfigurationForOrg === false) {
+            $this->hostedCompute👷UpdateNetworkConfigurationForOrg = new Internal\Operator\HostedCompute\UpdateNetworkConfigurationForOrg($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀NetworkConfigurations🌀NetworkConfigurationId());
+        }
+
+        return $this->hostedCompute👷UpdateNetworkConfigurationForOrg;
+    }
+
+    public function hostedCompute👷GetNetworkSettingsForOrg(): Internal\Operator\HostedCompute\GetNetworkSettingsForOrg
+    {
+        if ($this->hostedCompute👷GetNetworkSettingsForOrg instanceof Internal\Operator\HostedCompute\GetNetworkSettingsForOrg === false) {
+            $this->hostedCompute👷GetNetworkSettingsForOrg = new Internal\Operator\HostedCompute\GetNetworkSettingsForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀NetworkSettings🌀NetworkSettingsId());
+        }
+
+        return $this->hostedCompute👷GetNetworkSettingsForOrg;
     }
 
     public function copilot👷CopilotMetricsForTeam(): Internal\Operator\Copilot\CopilotMetricsForTeam

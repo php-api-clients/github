@@ -21,7 +21,7 @@ final class Dependabot
     {
     }
 
-    /** @return Observable<Schema\DependabotAlert>|WithoutBody */
+    /** @return iterable<int,Schema\DependabotAlert>|WithoutBody */
     public function listAlertsForRepoListing(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -67,6 +67,12 @@ final class Dependabot
 
         $arguments['manifest'] = $params['manifest'];
         unset($params['manifest']);
+        if (array_key_exists('epss_percentage', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: epss_percentage');
+        }
+
+        $arguments['epss_percentage'] = $params['epss_percentage'];
+        unset($params['epss_percentage']);
         if (array_key_exists('scope', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: scope');
         }
@@ -124,7 +130,7 @@ final class Dependabot
         $arguments['page'] = 1;
         do {
             $operator = new Internal\Operator\Dependabot\ListAlertsForRepoListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Dependabot🌀Alerts());
-            $items    = [...$operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['manifest'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page'], $arguments['first'])];
+            $items    = [...$operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['manifest'], $arguments['epss_percentage'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page'], $arguments['first'])];
 
             yield from $items;
 

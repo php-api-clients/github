@@ -31,22 +31,23 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']       = 'generated';
-            $data['state']     = 'generated';
-            $data['severity']  = 'generated';
-            $data['ecosystem'] = 'generated';
-            $data['package']   = 'generated';
-            $data['scope']     = 'generated';
-            $data['before']    = 'generated';
-            $data['after']     = 'generated';
-            $data['last']      = 4;
-            $data['sort']      = 'generated';
-            $data['direction'] = 'generated';
-            $data['first']     = 5;
-            $data['per_page']  = 8;
+            $data['org']             = 'generated';
+            $data['state']           = 'generated';
+            $data['severity']        = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['package']         = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['scope']           = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['last']            = 4;
+            $data['sort']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['first']           = 5;
+            $data['per_page']        = 8;
 
             return $data;
         })([]));
@@ -62,9 +63,9 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->dependabot()->listAlertsForOrg('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 5, 8);
+        $result = $client->operations()->dependabot()->listAlertsForOrg('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 5, 8);
     }
 
     /** @test */
@@ -77,22 +78,23 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']       = 'generated';
-            $data['state']     = 'generated';
-            $data['severity']  = 'generated';
-            $data['ecosystem'] = 'generated';
-            $data['package']   = 'generated';
-            $data['scope']     = 'generated';
-            $data['before']    = 'generated';
-            $data['after']     = 'generated';
-            $data['last']      = 4;
-            $data['sort']      = 'generated';
-            $data['direction'] = 'generated';
-            $data['first']     = 5;
-            $data['per_page']  = 8;
+            $data['org']             = 'generated';
+            $data['state']           = 'generated';
+            $data['severity']        = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['package']         = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['scope']           = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['last']            = 4;
+            $data['sort']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['first']           = 5;
+            $data['per_page']        = 8;
 
             return $data;
         })([]));
@@ -108,9 +110,9 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->dependabot()->listAlertsForOrg('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 5, 8);
+        $result = $client->operations()->dependabot()->listAlertsForOrg('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 5, 8);
     }
 
     /** @test */
@@ -123,22 +125,23 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']       = 'generated';
-            $data['state']     = 'generated';
-            $data['severity']  = 'generated';
-            $data['ecosystem'] = 'generated';
-            $data['package']   = 'generated';
-            $data['scope']     = 'generated';
-            $data['before']    = 'generated';
-            $data['after']     = 'generated';
-            $data['last']      = 4;
-            $data['sort']      = 'generated';
-            $data['direction'] = 'generated';
-            $data['first']     = 5;
-            $data['per_page']  = 8;
+            $data['org']             = 'generated';
+            $data['state']           = 'generated';
+            $data['severity']        = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['package']         = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['scope']           = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['last']            = 4;
+            $data['sort']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['first']           = 5;
+            $data['per_page']        = 8;
 
             return $data;
         })([]));
@@ -154,9 +157,9 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->dependabot()->listAlertsForOrg('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 5, 8);
+        $result = $client->operations()->dependabot()->listAlertsForOrg('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 5, 8);
     }
 
     /** @test */
@@ -169,22 +172,23 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']       = 'generated';
-            $data['state']     = 'generated';
-            $data['severity']  = 'generated';
-            $data['ecosystem'] = 'generated';
-            $data['package']   = 'generated';
-            $data['scope']     = 'generated';
-            $data['before']    = 'generated';
-            $data['after']     = 'generated';
-            $data['last']      = 4;
-            $data['sort']      = 'generated';
-            $data['direction'] = 'generated';
-            $data['first']     = 5;
-            $data['per_page']  = 8;
+            $data['org']             = 'generated';
+            $data['state']           = 'generated';
+            $data['severity']        = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['package']         = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['scope']           = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['last']            = 4;
+            $data['sort']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['first']           = 5;
+            $data['per_page']        = 8;
 
             return $data;
         })([]));
@@ -200,9 +204,9 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->dependabot()->listAlertsForOrg('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 5, 8);
+        $result = $client->operations()->dependabot()->listAlertsForOrg('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 5, 8);
     }
 
     /** @test */
@@ -215,22 +219,23 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']       = 'generated';
-            $data['state']     = 'generated';
-            $data['severity']  = 'generated';
-            $data['ecosystem'] = 'generated';
-            $data['package']   = 'generated';
-            $data['scope']     = 'generated';
-            $data['before']    = 'generated';
-            $data['after']     = 'generated';
-            $data['last']      = 4;
-            $data['sort']      = 'generated';
-            $data['direction'] = 'generated';
-            $data['first']     = 5;
-            $data['per_page']  = 8;
+            $data['org']             = 'generated';
+            $data['state']           = 'generated';
+            $data['severity']        = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['package']         = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['scope']           = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['last']            = 4;
+            $data['sort']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['first']           = 5;
+            $data['per_page']        = 8;
 
             return $data;
         })([]));
@@ -246,9 +251,9 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->dependabot()->listAlertsForOrg('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 5, 8);
+        $result = $client->operations()->dependabot()->listAlertsForOrg('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 5, 8);
     }
 
     /** @test */
@@ -260,22 +265,23 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Dependabot\ListAlertsForOrg::OPERATION_MATCH, (static function (array $data): array {
-            $data['org']       = 'generated';
-            $data['state']     = 'generated';
-            $data['severity']  = 'generated';
-            $data['ecosystem'] = 'generated';
-            $data['package']   = 'generated';
-            $data['scope']     = 'generated';
-            $data['before']    = 'generated';
-            $data['after']     = 'generated';
-            $data['last']      = 4;
-            $data['sort']      = 'generated';
-            $data['direction'] = 'generated';
-            $data['first']     = 5;
-            $data['per_page']  = 8;
+            $data['org']             = 'generated';
+            $data['state']           = 'generated';
+            $data['severity']        = 'generated';
+            $data['ecosystem']       = 'generated';
+            $data['package']         = 'generated';
+            $data['epss_percentage'] = 'generated';
+            $data['scope']           = 'generated';
+            $data['before']          = 'generated';
+            $data['after']           = 'generated';
+            $data['last']            = 4;
+            $data['sort']            = 'generated';
+            $data['direction']       = 'generated';
+            $data['first']           = 5;
+            $data['per_page']        = 8;
 
             return $data;
         })([]));
@@ -290,9 +296,9 @@ final class ListAlertsForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/dependabot/alerts?state=generated&severity=generated&ecosystem=generated&package=generated&epss_percentage=generated&scope=generated&before=generated&after=generated&last=4&sort=generated&direction=generated&first=5&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->dependabot()->listAlertsForOrg('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 5, 8);
+        $result = $client->operations()->dependabot()->listAlertsForOrg('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 4, 'generated', 'generated', 5, 8);
         self::assertArrayHasKey('code', $result);
         self::assertSame(304, $result['code']);
     }

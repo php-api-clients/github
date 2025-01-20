@@ -26,7 +26,7 @@ final class Dependabot
     {
     }
 
-    /** @return Observable<Schema\DependabotAlertWithRepository>|WithoutBody */
+    /** @return iterable<int,Schema\DependabotAlertWithRepository>|WithoutBody */
     public function listAlertsForEnterprise(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -60,6 +60,12 @@ final class Dependabot
 
         $arguments['package'] = $params['package'];
         unset($params['package']);
+        if (array_key_exists('epss_percentage', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: epss_percentage');
+        }
+
+        $arguments['epss_percentage'] = $params['epss_percentage'];
+        unset($params['epss_percentage']);
         if (array_key_exists('scope', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: scope');
         }
@@ -110,10 +116,10 @@ final class Dependabot
         unset($params['per_page']);
         $operator = new Internal\Operator\Dependabot\ListAlertsForEnterprise($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Enterprises🌀Enterprise🌀Dependabot🌀Alerts());
 
-        return $operator->call($arguments['enterprise'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['first'], $arguments['per_page']);
+        return $operator->call($arguments['enterprise'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['epss_percentage'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['first'], $arguments['per_page']);
     }
 
-    /** @return Observable<Schema\DependabotAlertWithRepository>|WithoutBody */
+    /** @return iterable<int,Schema\DependabotAlertWithRepository>|WithoutBody */
     public function listAlertsForOrg(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -147,6 +153,12 @@ final class Dependabot
 
         $arguments['package'] = $params['package'];
         unset($params['package']);
+        if (array_key_exists('epss_percentage', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: epss_percentage');
+        }
+
+        $arguments['epss_percentage'] = $params['epss_percentage'];
+        unset($params['epss_percentage']);
         if (array_key_exists('scope', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: scope');
         }
@@ -197,7 +209,7 @@ final class Dependabot
         unset($params['per_page']);
         $operator = new Internal\Operator\Dependabot\ListAlertsForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Dependabot🌀Alerts());
 
-        return $operator->call($arguments['org'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['first'], $arguments['per_page']);
+        return $operator->call($arguments['org'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['epss_percentage'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['first'], $arguments['per_page']);
     }
 
     /** @return */
@@ -263,7 +275,7 @@ final class Dependabot
         return $operator->call($arguments['org'], $arguments['secret_name']);
     }
 
-    /** @return Observable<Schema\DependabotAlert>|WithoutBody */
+    /** @return iterable<int,Schema\DependabotAlert>|WithoutBody */
     public function listAlertsForRepo(array $params): iterable|WithoutBody
     {
         $arguments = [];
@@ -309,6 +321,12 @@ final class Dependabot
 
         $arguments['manifest'] = $params['manifest'];
         unset($params['manifest']);
+        if (array_key_exists('epss_percentage', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: epss_percentage');
+        }
+
+        $arguments['epss_percentage'] = $params['epss_percentage'];
+        unset($params['epss_percentage']);
         if (array_key_exists('scope', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: scope');
         }
@@ -365,7 +383,7 @@ final class Dependabot
         unset($params['first']);
         $operator = new Internal\Operator\Dependabot\ListAlertsForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Dependabot🌀Alerts());
 
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['manifest'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page'], $arguments['first']);
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['state'], $arguments['severity'], $arguments['ecosystem'], $arguments['package'], $arguments['manifest'], $arguments['epss_percentage'], $arguments['scope'], $arguments['before'], $arguments['after'], $arguments['last'], $arguments['sort'], $arguments['direction'], $arguments['page'], $arguments['per_page'], $arguments['first']);
     }
 
     /** @return */
