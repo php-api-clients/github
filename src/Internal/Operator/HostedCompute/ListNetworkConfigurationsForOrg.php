@@ -24,6 +24,7 @@ final readonly class ListNetworkConfigurationsForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, int $perPage = 30, int $page = 1): Ok
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\HostedCompute\ListNetworkConfigurationsForOrg($this->responseSchemaValidator, $this->hydrator, $org, $perPage, $page);

@@ -21,6 +21,7 @@ final class HostedCompute
     {
     }
 
+    /** @return */
     public function listNetworkConfigurationsForOrg(array $params): Ok
     {
         $arguments = [];
@@ -47,6 +48,7 @@ final class HostedCompute
         return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function getNetworkConfigurationForOrg(array $params): NetworkConfiguration
     {
         $arguments = [];
@@ -67,6 +69,7 @@ final class HostedCompute
         return $operator->call($arguments['org'], $arguments['network_configuration_id']);
     }
 
+    /** @return */
     public function getNetworkSettingsForOrg(array $params): NetworkSettings
     {
         $arguments = [];

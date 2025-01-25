@@ -24,6 +24,7 @@ final readonly class GetNetworkSettingsForOrg
     {
     }
 
+    /** @return */
     public function call(string $org, string $networkSettingsId): NetworkSettings
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\HostedCompute\GetNetworkSettingsForOrg($this->responseSchemaValidator, $this->hydrator, $org, $networkSettingsId);

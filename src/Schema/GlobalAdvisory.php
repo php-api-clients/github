@@ -365,6 +365,26 @@ final readonly class GlobalAdvisory
                 }
             }
         },
+        "epss": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "percentage": {
+                    "maximum": 100,
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "percentile": {
+                    "maximum": 100,
+                    "minimum": 0,
+                    "type": "number"
+                }
+            },
+            "description": "The EPSS scores as calculated by the [Exploit Prediction Scoring System](https:\\/\\/www.first.org\\/epss).",
+            "readOnly": true
+        },
         "cwes": {
             "type": [
                 "array",
@@ -386,20 +406,6 @@ final readonly class GlobalAdvisory
                         "description": "The name of the CWE.",
                         "readOnly": true
                     }
-                }
-            }
-        },
-        "epss": {
-            "type": [
-                "object",
-                "null"
-            ],
-            "properties": {
-                "percentage": {
-                    "type": "number"
-                },
-                "percentile": {
-                    "type": "number"
                 }
             }
         },
@@ -643,11 +649,11 @@ final readonly class GlobalAdvisory
             "score": 0.5
         }
     },
-    "cwes": null,
     "epss": {
         "percentage": 1,
         "percentile": 1
     },
+    "cwes": null,
     "credits": null
 }';
 
@@ -669,6 +675,7 @@ final readonly class GlobalAdvisory
     This field is only populated when the advisory is imported from the National Vulnerability Database.
      * withdrawnAt: The date and time of when the advisory was withdrawn, in ISO 8601 format.
      * vulnerabilities: The products and respective version ranges affected by the advisory.
+     * epss: The EPSS scores as calculated by the [Exploit Prediction Scoring System](https://www.first.org/epss).
      * credits: The users who contributed to the advisory.
      */
     public function __construct(#[MapFrom('ghsa_id')]
@@ -682,7 +689,7 @@ final readonly class GlobalAdvisory
     public string|null $githubReviewedAt, #[MapFrom('nvd_published_at')]
     public string|null $nvdPublishedAt, #[MapFrom('withdrawn_at')]
     public string|null $withdrawnAt, public array|null $vulnerabilities, public Schema\GlobalAdvisory\Cvss|null $cvss, #[MapFrom('cvss_severities')]
-    public Schema\CvssSeverities|null $cvssSeverities, public array|null $cwes, public Schema\GlobalAdvisory\Epss|null $epss, public array|null $credits,)
+    public Schema\CvssSeverities|null $cvssSeverities, public Schema\SecurityAdvisoryEpss|null $epss, public array|null $cwes, public array|null $credits,)
     {
     }
 }

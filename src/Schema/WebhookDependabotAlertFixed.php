@@ -328,6 +328,26 @@ final readonly class WebhookDependabotAlertFixed
                                 }
                             }
                         },
+                        "epss": {
+                            "type": [
+                                "object",
+                                "null"
+                            ],
+                            "properties": {
+                                "percentage": {
+                                    "maximum": 100,
+                                    "minimum": 0,
+                                    "type": "number"
+                                },
+                                "percentile": {
+                                    "maximum": 100,
+                                    "minimum": 0,
+                                    "type": "number"
+                                }
+                            },
+                            "description": "The EPSS scores as calculated by the [Exploit Prediction Scoring System](https:\\/\\/www.first.org\\/epss).",
+                            "readOnly": true
+                        },
                         "cwes": {
                             "type": "array",
                             "items": {
@@ -2689,6 +2709,10 @@ final readonly class WebhookDependabotAlertFixed
                     "vector_string": "generated",
                     "score": 0.5
                 }
+            },
+            "epss": {
+                "percentage": 1,
+                "percentile": 1
             },
             "cwes": [
                 {

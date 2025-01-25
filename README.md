@@ -9021,7 +9021,7 @@ $client->operations()->hostedCompute()->listNetworkConfigurationsForOrg(        
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/settings/network-configurations#list-hosted-compute-network-configurations-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/network-configurations#list-hosted-compute-network-configurations-for-an-organization).
 
 
 ### hosted-compute/create-network-configuration-for-org
@@ -9041,7 +9041,7 @@ $client->operations()->hostedCompute()->createNetworkConfigurationForOrg(       
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/settings/network-configurations#create-a-hosted-compute-network-configuration-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/network-configurations#create-a-hosted-compute-network-configuration-for-an-organization).
 
 
 ### hosted-compute/get-network-configuration-for-org
@@ -9063,7 +9063,7 @@ $client->operations()->hostedCompute()->getNetworkConfigurationForOrg(        or
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/settings/network-configurations#get-a-hosted-compute-network-configuration-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/network-configurations#get-a-hosted-compute-network-configuration-for-an-organization).
 
 
 ### hosted-compute/delete-network-configuration-from-org
@@ -9085,7 +9085,7 @@ $client->operations()->hostedCompute()->deleteNetworkConfigurationFromOrg(      
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/settings/network-configurations#delete-a-hosted-compute-network-configuration-from-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/network-configurations#delete-a-hosted-compute-network-configuration-from-an-organization).
 
 
 ### hosted-compute/update-network-configuration-for-org
@@ -9107,7 +9107,7 @@ $client->operations()->hostedCompute()->updateNetworkConfigurationForOrg(       
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/settings/network-configurations#update-a-hosted-compute-network-configuration-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/network-configurations#update-a-hosted-compute-network-configuration-for-an-organization).
 
 
 ### hosted-compute/get-network-settings-for-org
@@ -9129,7 +9129,7 @@ $client->operations()->hostedCompute()->getNetworkSettingsForOrg(        org: 'g
 );
 ```
 
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/settings/network-configurations#get-a-hosted-compute-network-settings-resource-for-an-organization).
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/network-configurations#get-a-hosted-compute-network-settings-resource-for-an-organization).
 
 
 ### copilot/copilot-metrics-for-team

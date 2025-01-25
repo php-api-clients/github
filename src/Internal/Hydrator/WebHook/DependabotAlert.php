@@ -21,6 +21,7 @@ use ApiClients\Client\GitHub\Schema\RepositoryWebhooks\CustomProperties;
 use ApiClients\Client\GitHub\Schema\RepositoryWebhooks\Permissions;
 use ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository;
 use ApiClients\Client\GitHub\Schema\RepositoryWebhooks\TemplateRepository\Owner;
+use ApiClients\Client\GitHub\Schema\SecurityAdvisoryEpss;
 use ApiClients\Client\GitHub\Schema\SimpleInstallation;
 use ApiClients\Client\GitHub\Schema\SimpleUser;
 use ApiClients\Client\GitHub\Schema\WebhookDependabotAlertAutoDismissed;
@@ -74,6 +75,7 @@ class DependabotAlert implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\CvssSeverities' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities($payload),
                 'ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVThree' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVThree($payload),
                 'ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVFour' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVFour($payload),
+                'ApiClients\Client\GitHub\Schema\SecurityAdvisoryEpss' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAdvisoryEpss($payload),
                 'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability($payload),
                 'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability⚡️FirstPatchedVersion($payload),
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
@@ -680,6 +682,26 @@ class DependabotAlert implements ObjectMapper
 
             after_cvssSeverities:
 
+            $value = $payload['epss'] ?? null;
+
+            if ($value === null) {
+                $properties['epss'] = null;
+                goto after_epss;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'epss';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAdvisoryEpss($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['epss'] = $value;
+
+            after_epss:
+
             $value = $payload['cwes'] ?? null;
 
             if ($value === null) {
@@ -939,6 +961,47 @@ class DependabotAlert implements ObjectMapper
             return new CvssVFour(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVFour', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAdvisoryEpss(array $payload): SecurityAdvisoryEpss
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['percentage'] ?? null;
+
+            if ($value === null) {
+                $properties['percentage'] = null;
+                goto after_percentage;
+            }
+
+            $properties['percentage'] = $value;
+
+            after_percentage:
+
+            $value = $payload['percentile'] ?? null;
+
+            if ($value === null) {
+                $properties['percentile'] = null;
+                goto after_percentile;
+            }
+
+            $properties['percentile'] = $value;
+
+            after_percentile:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecurityAdvisoryEpss', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(SecurityAdvisoryEpss::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new SecurityAdvisoryEpss(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecurityAdvisoryEpss', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -5212,6 +5275,7 @@ class DependabotAlert implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\CvssSeverities' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities($object),
                 'ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVThree' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVThree($object),
                 'ApiClients\Client\GitHub\Schema\CvssSeverities\CvssVFour' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities⚡️CvssVFour($object),
+                'ApiClients\Client\GitHub\Schema\SecurityAdvisoryEpss' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAdvisoryEpss($object),
                 'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability($object),
                 'ApiClients\Client\GitHub\Schema\DependabotAlertSecurityVulnerability\FirstPatchedVersion' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️DependabotAlertSecurityVulnerability⚡️FirstPatchedVersion($object),
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
@@ -5524,6 +5588,15 @@ class DependabotAlert implements ObjectMapper
         $cvssSeverities                                         = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CvssSeverities($cvssSeverities);
         after_cvssSeverities:        $result['cvss_severities'] = $cvssSeverities;
 
+        $epss = $object->epss;
+
+        if ($epss === null) {
+            goto after_epss;
+        }
+
+        $epss                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAdvisoryEpss($epss);
+        after_epss:        $result['epss'] = $epss;
+
         $cwes = $object->cwes;
         static $cwesSerializer0;
 
@@ -5660,6 +5733,30 @@ class DependabotAlert implements ObjectMapper
         }
 
         after_score:        $result['score'] = $score;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SecurityAdvisoryEpss(mixed $object): mixed
+    {
+        assert($object instanceof SecurityAdvisoryEpss);
+        $result = [];
+
+        $percentage = $object->percentage;
+
+        if ($percentage === null) {
+            goto after_percentage;
+        }
+
+        after_percentage:        $result['percentage'] = $percentage;
+
+        $percentile = $object->percentile;
+
+        if ($percentile === null) {
+            goto after_percentile;
+        }
+
+        after_percentile:        $result['percentile'] = $percentile;
 
         return $result;
     }

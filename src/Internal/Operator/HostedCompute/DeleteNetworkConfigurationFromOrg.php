@@ -22,6 +22,7 @@ final readonly class DeleteNetworkConfigurationFromOrg
     {
     }
 
+    /** @return */
     public function call(string $org, string $networkConfigurationId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\HostedCompute\DeleteNetworkConfigurationFromOrg($org, $networkConfigurationId);

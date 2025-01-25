@@ -19,6 +19,7 @@ final class HostedCompute
     {
     }
 
+    /** @return */
     public function deleteNetworkConfigurationFromOrg(array $params): WithoutBody
     {
         $arguments = [];

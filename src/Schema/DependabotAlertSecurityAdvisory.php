@@ -231,6 +231,26 @@ final readonly class DependabotAlertSecurityAdvisory
                 }
             }
         },
+        "epss": {
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "percentage": {
+                    "maximum": 100,
+                    "minimum": 0,
+                    "type": "number"
+                },
+                "percentile": {
+                    "maximum": 100,
+                    "minimum": 0,
+                    "type": "number"
+                }
+            },
+            "description": "The EPSS scores as calculated by the [Exploit Prediction Scoring System](https:\\/\\/www.first.org\\/epss).",
+            "readOnly": true
+        },
         "cwes": {
             "type": "array",
             "items": {
@@ -383,6 +403,10 @@ final readonly class DependabotAlertSecurityAdvisory
             "score": 0.5
         }
     },
+    "epss": {
+        "percentage": 1,
+        "percentile": 1
+    },
     "cwes": [
         {
             "cwe_id": "generated",
@@ -424,6 +448,7 @@ final readonly class DependabotAlertSecurityAdvisory
      * vulnerabilities: Vulnerable version range information for the advisory.
      * severity: The severity of the advisory.
      * cvss: Details for the advisory pertaining to the Common Vulnerability Scoring System.
+     * epss: The EPSS scores as calculated by the [Exploit Prediction Scoring System](https://www.first.org/epss).
      * cwes: Details for the advisory pertaining to Common Weakness Enumeration.
      * identifiers: Values that identify this advisory among security information sources.
      * references: Links to additional advisory information.
@@ -434,7 +459,7 @@ final readonly class DependabotAlertSecurityAdvisory
     public function __construct(#[MapFrom('ghsa_id')]
     public string $ghsaId, #[MapFrom('cve_id')]
     public string|null $cveId, public string $summary, public string $description, public array $vulnerabilities, public string $severity, public Schema\DependabotAlertSecurityAdvisory\Cvss $cvss, #[MapFrom('cvss_severities')]
-    public Schema\CvssSeverities|null $cvssSeverities, public array $cwes, public array $identifiers, public array $references, #[MapFrom('published_at')]
+    public Schema\CvssSeverities|null $cvssSeverities, public Schema\SecurityAdvisoryEpss|null $epss, public array $cwes, public array $identifiers, public array $references, #[MapFrom('published_at')]
     public string $publishedAt, #[MapFrom('updated_at')]
     public string $updatedAt, #[MapFrom('withdrawn_at')]
     public string|null $withdrawnAt,)

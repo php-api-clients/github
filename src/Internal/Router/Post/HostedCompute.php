@@ -19,6 +19,7 @@ final class HostedCompute
     {
     }
 
+    /** @return */
     public function createNetworkConfigurationForOrg(array $params): NetworkConfiguration
     {
         $arguments = [];
