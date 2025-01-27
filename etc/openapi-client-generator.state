@@ -1,5 +1,5 @@
 {
-    "specHash": "7fb0426f383ed9712cce3fdba9572d5a",
+    "specHash": "ba2ca3d90a48285fabb706f923b03b78",
     "generatedFiles": {
         "files": [
             {
@@ -5528,7 +5528,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Dependabot.php",
-                "hash": "a878768800cea0352b3fd41b7491b113"
+                "hash": "d6366f72dbfa63e902fa9fe1c3958e6d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/SecretScanning.php",
@@ -30576,7 +30576,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotDotcomChat.php",
-                "hash": "376fb8e2768f8ca737564289a4daff10"
+                "hash": "47501da86697fe61877a3101cbf97dfe"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotDotcomPullRequests.php",
@@ -30584,7 +30584,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotUsageMetricsDay.php",
-                "hash": "699a25a7d01ac976f72289325d79b193"
+                "hash": "135ddc4798f98df143508bf262646ccf"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotIdeCodeCompletions\/Languages.php",
@@ -31824,7 +31824,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/HostedCompute.php",
-                "hash": "31de88ed4071f8d1de18948f96aa2d4c"
+                "hash": "074ada5da83b74934b735b985c372c74"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Settings\/NetworkConfigurations.php",

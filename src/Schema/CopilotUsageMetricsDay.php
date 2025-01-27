@@ -255,7 +255,7 @@ final readonly class CopilotUsageMetricsDay
                     "description": "List of model metrics for a custom models and the default model."
                 }
             },
-            "description": "Usage metrics for Copilot Chat in github.com",
+            "description": "Usage metrics for Copilot Chat in GitHub.com",
             "additionalProperties": true
         },
         "copilot_dotcom_pull_requests": {
@@ -579,7 +579,7 @@ final readonly class CopilotUsageMetricsDay
      * totalEngagedUsers: The total number of Copilot users who engaged with any Copilot feature, for the given day. Examples include but are not limited to accepting a code suggestion, prompting Copilot chat, or triggering a PR Summary. Does not include authentication events. Is not limited to the individual features detailed on the endpoint.
      * copilotIdeCodeCompletions: Usage metrics for Copilot editor code completions in the IDE.
      * copilotIdeChat: Usage metrics for Copilot Chat in the IDE.
-     * copilotDotcomChat: Usage metrics for Copilot Chat in github.com
+     * copilotDotcomChat: Usage metrics for Copilot Chat in GitHub.com
      * copilotDotcomPullRequests: Usage metrics for Copilot for pull requests.
      */
     public function __construct(public string $date, #[MapFrom('total_active_users')]

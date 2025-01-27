@@ -51,11 +51,11 @@ final readonly class CopilotDotcomChat
             "description": "List of model metrics for a custom models and the default model."
         }
     },
-    "description": "Usage metrics for Copilot Chat in github.com",
+    "description": "Usage metrics for Copilot Chat in GitHub.com",
     "additionalProperties": true
 }';
     public const SCHEMA_TITLE        = '';
-    public const SCHEMA_DESCRIPTION  = 'Usage metrics for Copilot Chat in github.com';
+    public const SCHEMA_DESCRIPTION  = 'Usage metrics for Copilot Chat in GitHub.com';
     public const SCHEMA_EXAMPLE_DATA = '{
     "total_engaged_users": 19,
     "models": [
