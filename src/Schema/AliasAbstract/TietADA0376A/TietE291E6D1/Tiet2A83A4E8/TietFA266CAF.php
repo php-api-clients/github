@@ -2,18 +2,19 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietE746E247\Tiet29FCA330\Tiet8C6E229F;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietADA0376A\TietE291E6D1\Tiet2A83A4E8;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class TietB9C53521
+abstract readonly class TietFA266CAF
 {
     public const SCHEMA_JSON         = '{
     "required": [
         "verified",
         "reason",
         "signature",
-        "payload"
+        "payload",
+        "verified_at"
     ],
     "type": "object",
     "properties": {

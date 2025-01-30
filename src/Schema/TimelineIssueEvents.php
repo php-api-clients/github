@@ -13665,7 +13665,8 @@ final readonly class TimelineIssueEvents
                         "verified",
                         "reason",
                         "signature",
-                        "payload"
+                        "payload",
+                        "verified_at"
                     ],
                     "type": "object",
                     "properties": {

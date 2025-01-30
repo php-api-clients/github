@@ -136,7 +136,8 @@ final readonly class CommitSearchResultItem
                         "verified",
                         "reason",
                         "payload",
-                        "signature"
+                        "signature",
+                        "verified_at"
                     ],
                     "type": "object",
                     "properties": {

@@ -330,7 +330,8 @@ final readonly class WebhookStatus
                                 "verified",
                                 "reason",
                                 "signature",
-                                "payload"
+                                "payload",
+                                "verified_at"
                             ],
                             "type": "object",
                             "properties": {

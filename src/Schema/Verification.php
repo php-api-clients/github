@@ -14,7 +14,8 @@ final readonly class Verification
         "verified",
         "reason",
         "payload",
-        "signature"
+        "signature",
+        "verified_at"
     ],
     "type": "object",
     "properties": {

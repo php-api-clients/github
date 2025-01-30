@@ -9,6 +9,10 @@ use EventSauce\ObjectHydrator\MapFrom;
 final readonly class ApplicationJson
 {
     public const SCHEMA_JSON         = '{
+    "required": [
+        "encrypted_value",
+        "key_id"
+    ],
     "type": "object",
     "properties": {
         "encrypted_value": {
@@ -34,8 +38,8 @@ final readonly class ApplicationJson
      * keyId: ID of the key you used to encrypt the secret.
      */
     public function __construct(#[MapFrom('encrypted_value')]
-    public string|null $encryptedValue, #[MapFrom('key_id')]
-    public string|null $keyId,)
+    public string $encryptedValue, #[MapFrom('key_id')]
+    public string $keyId,)
     {
     }
 }

@@ -152,7 +152,8 @@ final readonly class Commit
                 "verified",
                 "reason",
                 "signature",
-                "payload"
+                "payload",
+                "verified_at"
             ],
             "type": "object",
             "properties": {

@@ -194,7 +194,8 @@ final readonly class BranchWithProtection
                                 "verified",
                                 "reason",
                                 "payload",
-                                "signature"
+                                "signature",
+                                "verified_at"
                             ],
                             "type": "object",
                             "properties": {

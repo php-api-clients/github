@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\TimelineCommittedEvent;
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Verification extends Schema\AliasAbstract\TietE746E247\Tiet29FCA330\Tiet8C6E229F\TietB9C53521
+final readonly class Verification extends Schema\AliasAbstract\TietADA0376A\TietE291E6D1\Tiet2A83A4E8\TietFA266CAF
 {
 }

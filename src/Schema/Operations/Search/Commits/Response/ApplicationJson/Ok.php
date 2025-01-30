@@ -151,7 +151,8 @@ final readonly class Ok
                                     "verified",
                                     "reason",
                                     "payload",
-                                    "signature"
+                                    "signature",
+                                    "verified_at"
                                 ],
                                 "type": "object",
                                 "properties": {

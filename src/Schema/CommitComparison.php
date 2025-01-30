@@ -232,7 +232,8 @@ final readonly class CommitComparison
                                 "verified",
                                 "reason",
                                 "payload",
-                                "signature"
+                                "signature",
+                                "verified_at"
                             ],
                             "type": "object",
                             "properties": {
@@ -948,7 +949,8 @@ final readonly class CommitComparison
                                 "verified",
                                 "reason",
                                 "payload",
-                                "signature"
+                                "signature",
+                                "verified_at"
                             ],
                             "type": "object",
                             "properties": {
@@ -1696,7 +1698,8 @@ final readonly class CommitComparison
                                     "verified",
                                     "reason",
                                     "payload",
-                                    "signature"
+                                    "signature",
+                                    "verified_at"
                                 ],
                                 "type": "object",
                                 "properties": {
