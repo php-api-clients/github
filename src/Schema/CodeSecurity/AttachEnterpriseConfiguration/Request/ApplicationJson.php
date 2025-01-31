@@ -18,7 +18,7 @@ final readonly class ApplicationJson
                 "all_without_configurations"
             ],
             "type": "string",
-            "description": "The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`"
+            "description": "The type of repositories to attach the configuration to."
         }
     },
     "additionalProperties": false
@@ -30,7 +30,7 @@ final readonly class ApplicationJson
 }';
 
     /**
-     * scope: The type of repositories to attach the configuration to. `selected` means the configuration will be attached to only the repositories specified by `selected_repository_ids`
+     * scope: The type of repositories to attach the configuration to.
      */
     public function __construct(public string $scope)
     {

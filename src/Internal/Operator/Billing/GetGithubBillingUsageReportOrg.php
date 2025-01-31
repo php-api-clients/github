@@ -24,7 +24,6 @@ final readonly class GetGithubBillingUsageReportOrg
     {
     }
 
-    /** @return */
     public function call(string $org, int $year, int $month, int $day, int $hour): BillingUsageReport
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Billing\GetGithubBillingUsageReportOrg($this->responseSchemaValidator, $this->hydrator, $org, $year, $month, $day, $hour);

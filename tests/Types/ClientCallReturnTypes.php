@@ -128,7 +128,7 @@ assertType('', $client->call('PUT /notifications/threads/{thread_id}/subscriptio
 assertType('', $client->call('DELETE /notifications/threads/{thread_id}/subscription'));
 assertType('', $client->call('GET /octocat'));
 assertType('Observable<Schema\\OrganizationSimple>|WithoutBody', $client->call('GET /organizations'));
-assertType('', $client->call('GET /organizations/{org}/settings/billing/usage'));
+assertType('Schema\\BillingUsageReport', $client->call('GET /organizations/{org}/settings/billing/usage'));
 assertType('', $client->call('GET /orgs/{org}'));
 assertType('', $client->call('DELETE /orgs/{org}'));
 assertType('', $client->call('PATCH /orgs/{org}'));

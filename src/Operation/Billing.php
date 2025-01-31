@@ -16,7 +16,6 @@ final class Billing
     {
     }
 
-    /** @return */
     public function getGithubBillingUsageReportOrg(string $org, int $year, int $month, int $day, int $hour): BillingUsageReport
     {
         return $this->operators->billing👷GetGithubBillingUsageReportOrg()->call($org, $year, $month, $day, $hour);
