@@ -488,7 +488,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /organizations/{org}/settings/billing/usage') {
-            return $this->typeResolver->resolve('Schema\\BillingUsageReport');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}') {
@@ -664,7 +664,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'POST /orgs/{org}/actions/runners/generate-jitconfig') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\GenerateRunnerJitconfigForOrg\\Response\\ApplicationJson\\Created');
         }
 
         if ($call === 'POST /orgs/{org}/actions/runners/registration-token') {
@@ -1992,7 +1992,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\GenerateRunnerJitconfigForOrg\\Response\\ApplicationJson\\Created');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/actions/runners/registration-token') {

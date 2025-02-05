@@ -182,6 +182,17 @@ class GenerateJitconfig implements ObjectMapper
             $properties['labels'] = $value;
 
             after_labels:
+
+            $value = $payload['ephemeral'] ?? null;
+
+            if ($value === null) {
+                $properties['ephemeral'] = null;
+                goto after_ephemeral;
+            }
+
+            $properties['ephemeral'] = $value;
+
+            after_ephemeral:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\Runner', $exception, stack: $this->hydrationStack);
         }
@@ -461,6 +472,14 @@ class GenerateJitconfig implements ObjectMapper
 
         $labels                                = $labelsSerializer0->serialize($labels, $this);
         after_labels:        $result['labels'] = $labels;
+
+        $ephemeral = $object->ephemeral;
+
+        if ($ephemeral === null) {
+            goto after_ephemeral;
+        }
+
+        after_ephemeral:        $result['ephemeral'] = $ephemeral;
 
         return $result;
     }

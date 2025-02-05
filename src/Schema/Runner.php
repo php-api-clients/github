@@ -86,6 +86,9 @@ final readonly class Runner
                 },
                 "description": "A label for a self hosted runner"
             }
+        },
+        "ephemeral": {
+            "type": "boolean"
         }
     },
     "description": "A self hosted runner"
@@ -110,7 +113,8 @@ final readonly class Runner
             "name": "generated",
             "type": "custom"
         }
-    ]
+    ],
+    "ephemeral": false
 }';
 
     /**
@@ -121,7 +125,7 @@ final readonly class Runner
      * status: The status of the runner.
      */
     public function __construct(public int $id, #[MapFrom('runner_group_id')]
-    public int|null $runnerGroupId, public string $name, public string $os, public string $status, public bool $busy, public array $labels,)
+    public int|null $runnerGroupId, public string $name, public string $os, public string $status, public bool $busy, public array $labels, public bool|null $ephemeral,)
     {
     }
 }

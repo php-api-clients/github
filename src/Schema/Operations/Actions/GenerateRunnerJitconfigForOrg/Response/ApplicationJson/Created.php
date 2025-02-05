@@ -94,6 +94,9 @@ final readonly class Created
                         },
                         "description": "A label for a self hosted runner"
                     }
+                },
+                "ephemeral": {
+                    "type": "boolean"
                 }
             },
             "description": "A self hosted runner"
@@ -125,7 +128,8 @@ final readonly class Created
                 "name": "generated",
                 "type": "custom"
             }
-        ]
+        ],
+        "ephemeral": false
     },
     "encoded_jit_config": "generated"
 }';
