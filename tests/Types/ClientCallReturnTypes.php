@@ -172,7 +172,7 @@ assertType('', $client->call('PUT /orgs/{org}/actions/runner-groups/{runner_grou
 assertType('', $client->call('DELETE /orgs/{org}/actions/runner-groups/{runner_group_id}/runners/{runner_id}'));
 assertType('', $client->call('GET /orgs/{org}/actions/runners'));
 assertType('Observable<Schema\\RunnerApplication>', $client->call('GET /orgs/{org}/actions/runners/downloads'));
-assertType('Schema\\Operations\\Actions\\GenerateRunnerJitconfigForOrg\\Response\\ApplicationJson\\Created', $client->call('POST /orgs/{org}/actions/runners/generate-jitconfig'));
+assertType('', $client->call('POST /orgs/{org}/actions/runners/generate-jitconfig'));
 assertType('', $client->call('POST /orgs/{org}/actions/runners/registration-token'));
 assertType('', $client->call('POST /orgs/{org}/actions/runners/remove-token'));
 assertType('', $client->call('GET /orgs/{org}/actions/runners/{runner_id}'));
@@ -504,7 +504,7 @@ assertType('', $client->call('GET /repos/{owner}/{repo}/actions/permissions/work
 assertType('', $client->call('PUT /repos/{owner}/{repo}/actions/permissions/workflow'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/actions/runners'));
 assertType('Observable<Schema\\RunnerApplication>', $client->call('GET /repos/{owner}/{repo}/actions/runners/downloads'));
-assertType('Schema\\Operations\\Actions\\GenerateRunnerJitconfigForOrg\\Response\\ApplicationJson\\Created', $client->call('POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig'));
+assertType('', $client->call('POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/actions/runners/registration-token'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/actions/runners/remove-token'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/actions/runners/{runner_id}'));

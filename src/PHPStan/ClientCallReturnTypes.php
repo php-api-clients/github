@@ -664,7 +664,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'POST /orgs/{org}/actions/runners/generate-jitconfig') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\GenerateRunnerJitconfigForOrg\\Response\\ApplicationJson\\Created');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'POST /orgs/{org}/actions/runners/registration-token') {
@@ -1992,7 +1992,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/actions/runners/generate-jitconfig') {
-            return $this->typeResolver->resolve('Schema\\Operations\\Actions\\GenerateRunnerJitconfigForOrg\\Response\\ApplicationJson\\Created');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/actions/runners/registration-token') {
