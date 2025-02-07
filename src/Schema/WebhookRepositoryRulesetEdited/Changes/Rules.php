@@ -698,7 +698,7 @@ final readonly class Rules
                                 }
                             }
                         },
-                        "description": "Prevent commits that exceed a specified file size limit from being pushed to the commit."
+                        "description": "Prevent commits that exceed a specified file size limit from being pushed to the commit graph."
                     },
                     {
                         "title": "workflows",
@@ -1517,7 +1517,7 @@ final readonly class Rules
                                 }
                             }
                         },
-                        "description": "Prevent commits that exceed a specified file size limit from being pushed to the commit."
+                        "description": "Prevent commits that exceed a specified file size limit from being pushed to the commit graph."
                     },
                     {
                         "title": "workflows",
@@ -2339,7 +2339,7 @@ final readonly class Rules
                                         }
                                     }
                                 },
-                                "description": "Prevent commits that exceed a specified file size limit from being pushed to the commit."
+                                "description": "Prevent commits that exceed a specified file size limit from being pushed to the commit graph."
                             },
                             {
                                 "title": "workflows",

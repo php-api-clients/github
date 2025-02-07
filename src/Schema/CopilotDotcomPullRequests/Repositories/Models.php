@@ -13,7 +13,7 @@ final readonly class Models
     "properties": {
         "name": {
             "type": "string",
-            "description": "Name of the model used for Copilot code completion suggestions. If the default model is used will appear as \'default\'."
+            "description": "Name of the model used for Copilot pull request summaries. If the default model is used will appear as \'default\'."
         },
         "is_custom_model": {
             "type": "boolean",
@@ -47,7 +47,7 @@ final readonly class Models
 }';
 
     /**
-     * name: Name of the model used for Copilot code completion suggestions. If the default model is used will appear as 'default'.
+     * name: Name of the model used for Copilot pull request summaries. If the default model is used will appear as 'default'.
      * isCustomModel: Indicates whether a model is custom or default.
      * customModelTrainingDate: The training date for the custom model.
      * totalPrSummariesCreated: The number of pull request summaries generated using Copilot for Pull Requests in the given repository.
