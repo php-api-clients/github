@@ -1341,4 +1341,49 @@ final class Repos
             $arguments['page']++;
         } while (count($items) > 0);
     }
+
+    /** @return iterable<int,Schema\RulesetVersion> */
+    public function getRepoRulesetHistoryListing(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('ruleset_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ruleset_id');
+        }
+
+        $arguments['ruleset_id'] = $params['ruleset_id'];
+        unset($params['ruleset_id']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $arguments['page'] = 1;
+        do {
+            $operator = new Internal\Operator\Repos\GetRepoRulesetHistoryListing($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId🌀History());
+            $items    = [...$operator->call($arguments['owner'], $arguments['repo'], $arguments['ruleset_id'], $arguments['per_page'], $arguments['page'])];
+
+            yield from $items;
+
+            $arguments['page']++;
+        } while (count($items) > 0);
+    }
 }

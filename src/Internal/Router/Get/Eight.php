@@ -24,6 +24,7 @@ use ApiClients\Client\GitHub\Schema\PackageVersion;
 use ApiClients\Client\GitHub\Schema\ProtectedBranchAdminEnforced;
 use ApiClients\Client\GitHub\Schema\ProtectedBranchPullRequestReview;
 use ApiClients\Client\GitHub\Schema\PullRequestReview;
+use ApiClients\Client\GitHub\Schema\RulesetVersion;
 use ApiClients\Client\GitHub\Schema\StatusCheckPolicy;
 use ApiClients\Client\GitHub\Schema\TeamRepository;
 use ApiClients\Client\GitHub\Schema\WorkflowRunUsage;
@@ -37,8 +38,8 @@ final class Eight
     {
     }
 
-    /** @return Observable<Schema\ApiInsightsRouteStats>||Observable<Schema\ApiInsightsTimeStats>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\EnvironmentApprovals>|Observable<Schema\PendingDeployment>|Observable<Schema\CodeScanningAlertInstance>|Observable<Schema\SecretScanningLocation>|WithoutBody */
-    public function call(string $call, array $params, array $pathChunks): iterable|ApiInsightsSummaryStats|PackageVersion|TeamRepository|WithoutBody|OidcCustomSubRepo|Ok|Json|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|WorkflowRunUsage|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|WorkflowUsage|ProtectedBranchAdminEnforced|ProtectedBranchPullRequestReview|StatusCheckPolicy|BranchRestrictionPolicy|CodeScanningAutofix|CodeScanningCodeqlDatabase|CodeScanningVariantAnalysis|DeploymentStatus|DeploymentBranchPolicy|\ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|DeploymentProtectionRule|ActionsPublicKey|ActionsSecret|ActionsVariable|HookDelivery|PullRequestReview
+    /** @return Observable<Schema\ApiInsightsRouteStats>||Observable<Schema\ApiInsightsTimeStats>|Observable<Schema\TeamDiscussionComment>|Observable<Schema\Reaction>|Observable<Schema\EnvironmentApprovals>|Observable<Schema\PendingDeployment>|Observable<Schema\CodeScanningAlertInstance>|Schema\RulesetVersion|Observable<Schema\SecretScanningLocation>|WithoutBody */
+    public function call(string $call, array $params, array $pathChunks): iterable|ApiInsightsSummaryStats|PackageVersion|TeamRepository|WithoutBody|OidcCustomSubRepo|Ok|Json|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListJobsForWorkflowRun\Response\ApplicationJson\Ok\Application\Json|WorkflowRunUsage|\ApiClients\Client\GitHub\Schema\Operations\Actions\ListWorkflowRuns\Response\ApplicationJson\Ok\Application\Json|WorkflowUsage|ProtectedBranchAdminEnforced|ProtectedBranchPullRequestReview|StatusCheckPolicy|BranchRestrictionPolicy|CodeScanningAutofix|CodeScanningCodeqlDatabase|CodeScanningVariantAnalysis|DeploymentStatus|DeploymentBranchPolicy|\ApiClients\Client\GitHub\Schema\Operations\Repos\ListCustomDeploymentRuleIntegrations\Response\ApplicationJson\Ok|DeploymentProtectionRule|ActionsPublicKey|ActionsSecret|ActionsVariable|HookDelivery|PullRequestReview|RulesetVersion
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'orgs') {
@@ -340,6 +341,16 @@ final class Eight
                                     if ($pathChunks[7] === '{review_id}') {
                                         if ($call === 'GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews/{review_id}') {
                                             return $this->routers->internal🔀Router🔀Get🔀Pulls()->getReview($params);
+                                        }
+                                    }
+                                }
+                            }
+                        } elseif ($pathChunks[4] === 'rulesets') {
+                            if ($pathChunks[5] === '{ruleset_id}') {
+                                if ($pathChunks[6] === 'history') {
+                                    if ($pathChunks[7] === '{version_id}') {
+                                        if ($call === 'GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history/{version_id}') {
+                                            return $this->routers->internal🔀Router🔀Get🔀Repos()->getRepoRulesetVersion($params);
                                         }
                                     }
                                 }

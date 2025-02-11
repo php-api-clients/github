@@ -8756,6 +8756,82 @@ $client->operations()->repos()->deleteOrgRuleset(        org: 'generated',
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/rules#delete-an-organization-repository-ruleset).
 
 
+### orgs/get-org-ruleset-history
+
+Get organization ruleset history
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/rulesets/{ruleset_id}/history', [
+        'org' => 'generated',
+        'ruleset_id' => 10,
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->getOrgRulesetHistory(        org: 'generated',
+        ruleset_id: 10,
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/rules#get-organization-ruleset-history).
+
+
+### orgs/get-org-ruleset-history
+
+Get organization ruleset history
+
+Using the `call` method:
+```php
+$client->call('LIST /orgs/{org}/rulesets/{ruleset_id}/history', [
+        'org' => 'generated',
+        'ruleset_id' => 10,
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->getOrgRulesetHistoryListing(        org: 'generated',
+        ruleset_id: 10,
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/rules#get-organization-ruleset-history).
+
+
+### orgs/get-org-ruleset-version
+
+Get organization ruleset version
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/rulesets/{ruleset_id}/history/{version_id}', [
+        'org' => 'generated',
+        'ruleset_id' => 10,
+        'version_id' => 10,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->getOrgRulesetVersion(        org: 'generated',
+        ruleset_id: 10,
+        version_id: 10,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/rules#get-organization-ruleset-version).
+
+
 ### secret-scanning/list-alerts-for-org
 
 List secret scanning alerts for an organization
@@ -22911,6 +22987,88 @@ $client->operations()->repos()->deleteRepoRuleset(        owner: 'generated',
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/rules#delete-a-repository-ruleset).
+
+
+### repos/get-repo-ruleset-history
+
+Get repository ruleset history
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'ruleset_id' => 10,
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->getRepoRulesetHistory(        owner: 'generated',
+        repo: 'generated',
+        ruleset_id: 10,
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/rules#get-repository-ruleset-history).
+
+
+### repos/get-repo-ruleset-history
+
+Get repository ruleset history
+
+Using the `call` method:
+```php
+$client->call('LIST /repos/{owner}/{repo}/rulesets/{ruleset_id}/history', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'ruleset_id' => 10,
+        'per_page' => 8,
+        'page' => 1,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->getRepoRulesetHistoryListing(        owner: 'generated',
+        repo: 'generated',
+        ruleset_id: 10,
+        per_page: 8,
+        page: 1,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/rules#get-repository-ruleset-history).
+
+
+### repos/get-repo-ruleset-version
+
+Get repository ruleset version
+
+Using the `call` method:
+```php
+$client->call('GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history/{version_id}', [
+        'owner' => 'generated',
+        'repo' => 'generated',
+        'ruleset_id' => 10,
+        'version_id' => 10,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->repos()->getRepoRulesetVersion(        owner: 'generated',
+        repo: 'generated',
+        ruleset_id: 10,
+        version_id: 10,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/repos/rules#get-repository-ruleset-version).
 
 
 ### secret-scanning/list-alerts-for-repo

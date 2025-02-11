@@ -13,6 +13,7 @@ use ApiClients\Client\GitHub\Schema\OrganizationFull;
 use ApiClients\Client\GitHub\Schema\OrganizationRole;
 use ApiClients\Client\GitHub\Schema\OrgHook;
 use ApiClients\Client\GitHub\Schema\OrgMembership;
+use ApiClients\Client\GitHub\Schema\RulesetVersion;
 use ApiClients\Client\GitHub\Schema\WebhookConfig;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
@@ -1021,6 +1022,39 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['custom_property_name']);
     }
 
+    /** @return iterable<int,Schema\RulesetVersion> */
+    public function getOrgRulesetHistory(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('ruleset_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ruleset_id');
+        }
+
+        $arguments['ruleset_id'] = $params['ruleset_id'];
+        unset($params['ruleset_id']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $operator = new Internal\Operator\Orgs\GetOrgRulesetHistory($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History());
+
+        return $operator->call($arguments['org'], $arguments['ruleset_id'], $arguments['per_page'], $arguments['page']);
+    }
+
     /** @return */
     public function getWebhookDelivery(array $params): HookDelivery
     {
@@ -1046,5 +1080,31 @@ final class Orgs
         $operator = new Internal\Operator\Orgs\GetWebhookDelivery($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Hooks🌀HookId🌀Deliveries🌀DeliveryId());
 
         return $operator->call($arguments['org'], $arguments['hook_id'], $arguments['delivery_id']);
+    }
+
+    public function getOrgRulesetVersion(array $params): RulesetVersion
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('ruleset_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ruleset_id');
+        }
+
+        $arguments['ruleset_id'] = $params['ruleset_id'];
+        unset($params['ruleset_id']);
+        if (array_key_exists('version_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: version_id');
+        }
+
+        $arguments['version_id'] = $params['version_id'];
+        unset($params['version_id']);
+        $operator = new Internal\Operator\Orgs\GetOrgRulesetVersion($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History🌀VersionId());
+
+        return $operator->call($arguments['org'], $arguments['ruleset_id'], $arguments['version_id']);
     }
 }

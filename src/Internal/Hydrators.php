@@ -226,6 +226,8 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Orgs\Org\Rulesets\RuleSuites|null $operation🌀Orgs🌀Org🌀Rulesets🌀RuleSuites                                                                                                                                                   = null;
     private Internal\Hydrator\Operation\Orgs\Org\Rulesets\RuleSuites\RuleSuiteId|null $operation🌀Orgs🌀Org🌀Rulesets🌀RuleSuites🌀RuleSuiteId                                                                                                                           = null;
     private Internal\Hydrator\Operation\Orgs\Org\Rulesets\RulesetId|null $operation🌀Orgs🌀Org🌀Rulesets🌀RulesetId                                                                                                                                                     = null;
+    private Internal\Hydrator\Operation\Orgs\Org\Rulesets\RulesetId\History|null $operation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History                                                                                                                                     = null;
+    private Internal\Hydrator\Operation\Orgs\Org\Rulesets\RulesetId\History\VersionId|null $operation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History🌀VersionId                                                                                                                 = null;
     private Internal\Hydrator\Operation\Orgs\Org\SecretScanning\Alerts|null $operation🌀Orgs🌀Org🌀SecretScanning🌀Alerts                                                                                                                                               = null;
     private Internal\Hydrator\Operation\Orgs\Org\SecurityAdvisories|null $operation🌀Orgs🌀Org🌀SecurityAdvisories                                                                                                                                                     = null;
     private Internal\Hydrator\Operation\Orgs\Org\SecurityManagers|null $operation🌀Orgs🌀Org🌀SecurityManagers                                                                                                                                                         = null;
@@ -532,6 +534,8 @@ final class Hydrators implements ObjectMapper
     private Internal\Hydrator\Operation\Repos\Owner\Repo\Rulesets\RuleSuites|null $operation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RuleSuites                                                                                                                                   = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\Rulesets\RuleSuites\RuleSuiteId|null $operation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RuleSuites🌀RuleSuiteId                                                                                                           = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId|null $operation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId                                                                                                                                     = null;
+    private Internal\Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId\History|null $operation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId🌀History                                                                                                                     = null;
+    private Internal\Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId\History\VersionId|null $operation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId🌀History🌀VersionId                                                                                                 = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\SecretScanning\Alerts|null $operation🌀Repos🌀Owner🌀Repo🌀SecretScanning🌀Alerts                                                                                                                               = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\SecretScanning\Alerts\AlertNumber|null $operation🌀Repos🌀Owner🌀Repo🌀SecretScanning🌀Alerts🌀AlertNumber                                                                                                       = null;
     private Internal\Hydrator\Operation\Repos\Owner\Repo\SecretScanning\Alerts\AlertNumber\Locations|null $operation🌀Repos🌀Owner🌀Repo🌀SecretScanning🌀Alerts🌀AlertNumber🌀Locations                                                                                   = null;
@@ -867,6 +871,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\FullRepository', '\\ApiClients\\Client\\GitHub\\Schema\\FullRepository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\Repository', '\\ApiClients\\Client\\GitHub\\Schema\\LicenseSimple', '\\ApiClients\\Client\\GitHub\\Schema\\Repository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\CodeOfConductSimple', '\\ApiClients\\Client\\GitHub\\Schema\\FullRepository\\CustomProperties' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Repos()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\RepositoryRuleset', '\\ApiClients\\Client\\GitHub\\Schema\\RepositoryRuleset\\Links', '\\ApiClients\\Client\\GitHub\\Schema\\RepositoryRuleset\\Links\\Self_', '\\ApiClients\\Client\\GitHub\\Schema\\RepositoryRuleset\\Links\\Html' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\RuleSuite' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RuleSuites🌀RuleSuiteId()->hydrateObject($className, $payload),
+            '\\ApiClients\\Client\\GitHub\\Schema\\RulesetVersion', '\\ApiClients\\Client\\GitHub\\Schema\\RulesetVersion\\Actor' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History🌀VersionId()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\ActionsBillingUsage', '\\ApiClients\\Client\\GitHub\\Schema\\ActionsBillingUsage\\MinutesUsedBreakdown' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀Billing🌀Actions()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\PackagesBillingUsage' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀Billing🌀Packages()->hydrateObject($className, $payload),
             '\\ApiClients\\Client\\GitHub\\Schema\\CombinedBillingUsage' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀Billing🌀SharedStorage()->hydrateObject($className, $payload),
@@ -1244,6 +1249,7 @@ final class Hydrators implements ObjectMapper
             '\\ApiClients\\Client\\GitHub\\Schema\\FullRepository', '\\ApiClients\\Client\\GitHub\\Schema\\FullRepository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\Repository', '\\ApiClients\\Client\\GitHub\\Schema\\LicenseSimple', '\\ApiClients\\Client\\GitHub\\Schema\\Repository\\Permissions', '\\ApiClients\\Client\\GitHub\\Schema\\CodeOfConductSimple', '\\ApiClients\\Client\\GitHub\\Schema\\FullRepository\\CustomProperties' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Repos()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\RepositoryRuleset', '\\ApiClients\\Client\\GitHub\\Schema\\RepositoryRuleset\\Links', '\\ApiClients\\Client\\GitHub\\Schema\\RepositoryRuleset\\Links\\Self_', '\\ApiClients\\Client\\GitHub\\Schema\\RepositoryRuleset\\Links\\Html' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\RuleSuite' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RuleSuites🌀RuleSuiteId()->serializeObject($object),
+            '\\ApiClients\\Client\\GitHub\\Schema\\RulesetVersion', '\\ApiClients\\Client\\GitHub\\Schema\\RulesetVersion\\Actor' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History🌀VersionId()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\ActionsBillingUsage', '\\ApiClients\\Client\\GitHub\\Schema\\ActionsBillingUsage\\MinutesUsedBreakdown' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀Billing🌀Actions()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\PackagesBillingUsage' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀Billing🌀Packages()->serializeObject($object),
             '\\ApiClients\\Client\\GitHub\\Schema\\CombinedBillingUsage' => $this->getObjectMapperOperation🌀Orgs🌀Org🌀Settings🌀Billing🌀SharedStorage()->serializeObject($object),
@@ -3441,6 +3447,24 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Orgs🌀Org🌀Rulesets🌀RulesetId;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History(): Internal\Hydrator\Operation\Orgs\Org\Rulesets\RulesetId\History
+    {
+        if ($this->operation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History instanceof Internal\Hydrator\Operation\Orgs\Org\Rulesets\RulesetId\History === false) {
+            $this->operation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History = new Internal\Hydrator\Operation\Orgs\Org\Rulesets\RulesetId\History();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History;
+    }
+
+    public function getObjectMapperOperation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History🌀VersionId(): Internal\Hydrator\Operation\Orgs\Org\Rulesets\RulesetId\History\VersionId
+    {
+        if ($this->operation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History🌀VersionId instanceof Internal\Hydrator\Operation\Orgs\Org\Rulesets\RulesetId\History\VersionId === false) {
+            $this->operation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History🌀VersionId = new Internal\Hydrator\Operation\Orgs\Org\Rulesets\RulesetId\History\VersionId();
+        }
+
+        return $this->operation🌀Orgs🌀Org🌀Rulesets🌀RulesetId🌀History🌀VersionId;
     }
 
     public function getObjectMapperOperation🌀Orgs🌀Org🌀SecretScanning🌀Alerts(): Internal\Hydrator\Operation\Orgs\Org\SecretScanning\Alerts
@@ -6195,6 +6219,24 @@ final class Hydrators implements ObjectMapper
         }
 
         return $this->operation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId;
+    }
+
+    public function getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId🌀History(): Internal\Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId\History
+    {
+        if ($this->operation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId🌀History instanceof Internal\Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId\History === false) {
+            $this->operation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId🌀History = new Internal\Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId\History();
+        }
+
+        return $this->operation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId🌀History;
+    }
+
+    public function getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId🌀History🌀VersionId(): Internal\Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId\History\VersionId
+    {
+        if ($this->operation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId🌀History🌀VersionId instanceof Internal\Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId\History\VersionId === false) {
+            $this->operation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId🌀History🌀VersionId = new Internal\Hydrator\Operation\Repos\Owner\Repo\Rulesets\RulesetId\History\VersionId();
+        }
+
+        return $this->operation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId🌀History🌀VersionId;
     }
 
     public function getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀SecretScanning🌀Alerts(): Internal\Hydrator\Operation\Repos\Owner\Repo\SecretScanning\Alerts

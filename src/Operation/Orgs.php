@@ -15,6 +15,7 @@ use ApiClients\Client\GitHub\Schema\OrganizationInvitation;
 use ApiClients\Client\GitHub\Schema\OrganizationRole;
 use ApiClients\Client\GitHub\Schema\OrgHook;
 use ApiClients\Client\GitHub\Schema\OrgMembership;
+use ApiClients\Client\GitHub\Schema\RulesetVersion;
 use ApiClients\Client\GitHub\Schema\WebhookConfig;
 use ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody;
 
@@ -496,6 +497,23 @@ final class Orgs
     public function removePublicMembershipForAuthenticatedUser(string $org, string $username): WithoutBody
     {
         return $this->operators->orgs👷RemovePublicMembershipForAuthenticatedUser()->call($org, $username);
+    }
+
+    /** @return iterable<int,Schema\RulesetVersion> */
+    public function getOrgRulesetHistory(string $org, int $rulesetId, int $perPage, int $page): iterable
+    {
+        return $this->operators->orgs👷GetOrgRulesetHistory()->call($org, $rulesetId, $perPage, $page);
+    }
+
+    /** @return iterable<int,Schema\RulesetVersion> */
+    public function getOrgRulesetHistoryListing(string $org, int $rulesetId, int $perPage, int $page): iterable
+    {
+        return $this->operators->orgs👷GetOrgRulesetHistoryListing()->call($org, $rulesetId, $perPage, $page);
+    }
+
+    public function getOrgRulesetVersion(string $org, int $rulesetId, int $versionId): RulesetVersion
+    {
+        return $this->operators->orgs👷GetOrgRulesetVersion()->call($org, $rulesetId, $versionId);
     }
 
     /** @return Observable<Schema\TeamSimple> */

@@ -47,6 +47,7 @@ use ApiClients\Client\GitHub\Schema\Release;
 use ApiClients\Client\GitHub\Schema\ReleaseAsset;
 use ApiClients\Client\GitHub\Schema\RepositoryCollaboratorPermission;
 use ApiClients\Client\GitHub\Schema\RepositoryRuleset;
+use ApiClients\Client\GitHub\Schema\RulesetVersion;
 use ApiClients\Client\GitHub\Schema\RuleSuite;
 use ApiClients\Client\GitHub\Schema\StatusCheckPolicy;
 use ApiClients\Client\GitHub\Schema\Topic;
@@ -2802,6 +2803,45 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['rule_suite_id']);
     }
 
+    /** @return iterable<int,Schema\RulesetVersion> */
+    public function getRepoRulesetHistory(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('ruleset_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ruleset_id');
+        }
+
+        $arguments['ruleset_id'] = $params['ruleset_id'];
+        unset($params['ruleset_id']);
+        if (array_key_exists('per_page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: per_page');
+        }
+
+        $arguments['per_page'] = $params['per_page'];
+        unset($params['per_page']);
+        if (array_key_exists('page', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: page');
+        }
+
+        $arguments['page'] = $params['page'];
+        unset($params['page']);
+        $operator = new Internal\Operator\Repos\GetRepoRulesetHistory($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId🌀History());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ruleset_id'], $arguments['per_page'], $arguments['page']);
+    }
+
     /** @return Observable<Schema\ContentTraffic> */
     public function getTopPaths(array $params): iterable
     {
@@ -3148,6 +3188,38 @@ final class Repos
         $operator = new Internal\Operator\Repos\GetWebhookDelivery($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Hooks🌀HookId🌀Deliveries🌀DeliveryId());
 
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id'], $arguments['delivery_id']);
+    }
+
+    public function getRepoRulesetVersion(array $params): RulesetVersion
+    {
+        $arguments = [];
+        if (array_key_exists('owner', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: owner');
+        }
+
+        $arguments['owner'] = $params['owner'];
+        unset($params['owner']);
+        if (array_key_exists('repo', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: repo');
+        }
+
+        $arguments['repo'] = $params['repo'];
+        unset($params['repo']);
+        if (array_key_exists('ruleset_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: ruleset_id');
+        }
+
+        $arguments['ruleset_id'] = $params['ruleset_id'];
+        unset($params['ruleset_id']);
+        if (array_key_exists('version_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: version_id');
+        }
+
+        $arguments['version_id'] = $params['version_id'];
+        unset($params['version_id']);
+        $operator = new Internal\Operator\Repos\GetRepoRulesetVersion($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Rulesets🌀RulesetId🌀History🌀VersionId());
+
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['ruleset_id'], $arguments['version_id']);
     }
 
     /** @return Observable<string> */
