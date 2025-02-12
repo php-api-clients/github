@@ -24,7 +24,7 @@ final readonly class GetRepoRulesetHistory
     {
     }
 
-    /** @return iterable<int,Schema\RulesetVersion> */
+    /** @return Observable<Schema\RulesetVersion> */
     public function call(string $owner, string $repo, int $rulesetId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetRepoRulesetHistory($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $rulesetId, $perPage, $page);

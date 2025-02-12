@@ -386,9 +386,9 @@ assertType('', $client->call('GET /orgs/{org}/rulesets/rule-suites/{rule_suite_i
 assertType('', $client->call('GET /orgs/{org}/rulesets/{ruleset_id}'));
 assertType('', $client->call('PUT /orgs/{org}/rulesets/{ruleset_id}'));
 assertType('', $client->call('DELETE /orgs/{org}/rulesets/{ruleset_id}'));
-assertType('iterable<int,Schema\\RulesetVersion>', $client->call('GET /orgs/{org}/rulesets/{ruleset_id}/history'));
-assertType('iterable<int,Schema\\RulesetVersion>', $client->call('LIST /orgs/{org}/rulesets/{ruleset_id}/history'));
-assertType('Schema\\RulesetVersion', $client->call('GET /orgs/{org}/rulesets/{ruleset_id}/history/{version_id}'));
+assertType('Observable<Schema\\RulesetVersion>', $client->call('GET /orgs/{org}/rulesets/{ruleset_id}/history'));
+assertType('Observable<Schema\\RulesetVersion>', $client->call('LIST /orgs/{org}/rulesets/{ruleset_id}/history'));
+assertType('', $client->call('GET /orgs/{org}/rulesets/{ruleset_id}/history/{version_id}'));
 assertType('Observable<Schema\\OrganizationSecretScanningAlert>', $client->call('GET /orgs/{org}/secret-scanning/alerts'));
 assertType('Observable<Schema\\OrganizationSecretScanningAlert>', $client->call('LIST /orgs/{org}/secret-scanning/alerts'));
 assertType('Observable<Schema\\RepositoryAdvisory>', $client->call('GET /orgs/{org}/security-advisories'));
@@ -944,9 +944,9 @@ assertType('', $client->call('GET /repos/{owner}/{repo}/rulesets/rule-suites/{ru
 assertType('', $client->call('GET /repos/{owner}/{repo}/rulesets/{ruleset_id}'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/rulesets/{ruleset_id}'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/rulesets/{ruleset_id}'));
-assertType('iterable<int,Schema\\RulesetVersion>', $client->call('GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history'));
-assertType('iterable<int,Schema\\RulesetVersion>', $client->call('LIST /repos/{owner}/{repo}/rulesets/{ruleset_id}/history'));
-assertType('Schema\\RulesetVersion', $client->call('GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history/{version_id}'));
+assertType('Observable<Schema\\RulesetVersion>', $client->call('GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history'));
+assertType('Observable<Schema\\RulesetVersion>', $client->call('LIST /repos/{owner}/{repo}/rulesets/{ruleset_id}/history'));
+assertType('', $client->call('GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history/{version_id}'));
 assertType('Observable<Schema\\SecretScanningAlert>|WithoutBody', $client->call('GET /repos/{owner}/{repo}/secret-scanning/alerts'));
 assertType('Observable<Schema\\SecretScanningAlert>|WithoutBody', $client->call('LIST /repos/{owner}/{repo}/secret-scanning/alerts'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/secret-scanning/alerts/{alert_number}'));

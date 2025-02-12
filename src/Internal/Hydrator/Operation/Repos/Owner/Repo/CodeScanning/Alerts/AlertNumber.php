@@ -266,6 +266,26 @@ class AlertNumber implements ObjectMapper
             $properties['mostRecentInstance'] = $value;
 
             after_mostRecentInstance:
+
+            $value = $payload['dismissal_approved_by'] ?? null;
+
+            if ($value === null) {
+                $properties['dismissalApprovedBy'] = null;
+                goto after_dismissalApprovedBy;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'dismissalApprovedBy';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['dismissalApprovedBy'] = $value;
+
+            after_dismissalApprovedBy:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\CodeScanningAlert', $exception, stack: $this->hydrationStack);
         }
@@ -1268,6 +1288,15 @@ class AlertNumber implements ObjectMapper
         $mostRecentInstance                                              = $object->mostRecentInstance;
         $mostRecentInstance                                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeScanningAlertInstance($mostRecentInstance);
         after_mostRecentInstance:        $result['most_recent_instance'] = $mostRecentInstance;
+
+        $dismissalApprovedBy = $object->dismissalApprovedBy;
+
+        if ($dismissalApprovedBy === null) {
+            goto after_dismissalApprovedBy;
+        }
+
+        $dismissalApprovedBy                                               = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($dismissalApprovedBy);
+        after_dismissalApprovedBy:        $result['dismissal_approved_by'] = $dismissalApprovedBy;
 
         return $result;
     }

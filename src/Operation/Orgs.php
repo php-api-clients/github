@@ -499,18 +499,19 @@ final class Orgs
         return $this->operators->orgs👷RemovePublicMembershipForAuthenticatedUser()->call($org, $username);
     }
 
-    /** @return iterable<int,Schema\RulesetVersion> */
+    /** @return Observable<Schema\RulesetVersion> */
     public function getOrgRulesetHistory(string $org, int $rulesetId, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷GetOrgRulesetHistory()->call($org, $rulesetId, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\RulesetVersion> */
+    /** @return Observable<Schema\RulesetVersion> */
     public function getOrgRulesetHistoryListing(string $org, int $rulesetId, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷GetOrgRulesetHistoryListing()->call($org, $rulesetId, $perPage, $page);
     }
 
+    /** @return */
     public function getOrgRulesetVersion(string $org, int $rulesetId, int $versionId): RulesetVersion
     {
         return $this->operators->orgs👷GetOrgRulesetVersion()->call($org, $rulesetId, $versionId);

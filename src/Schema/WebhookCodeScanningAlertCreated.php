@@ -280,6 +280,11 @@ final readonly class WebhookCodeScanningAlertCreated
                 "url": {
                     "type": "string",
                     "format": "uri"
+                },
+                "dismissal_approved_by": {
+                    "type": [
+                        "null"
+                    ]
                 }
             },
             "description": "The code scanning alert involved in the event."
@@ -2218,7 +2223,8 @@ final readonly class WebhookCodeScanningAlertCreated
             "version": "generated"
         },
         "updated_at": "generated",
-        "url": "https:\\/\\/example.com\\/"
+        "url": "https:\\/\\/example.com\\/",
+        "dismissal_approved_by": "generated"
     },
     "commit_oid": "generated",
     "enterprise": {

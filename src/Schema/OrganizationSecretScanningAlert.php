@@ -1237,6 +1237,13 @@ final readonly class OrganizationSecretScanningAlert
                 "null"
             ],
             "description": "Whether the detected secret was found in multiple repositories in the same organization or enterprise."
+        },
+        "is_base64_encoded": {
+            "type": [
+                "boolean",
+                "null"
+            ],
+            "description": "A boolean value representing whether or not alert is base64 encoded"
         }
     }
 }';
@@ -1406,7 +1413,8 @@ final readonly class OrganizationSecretScanningAlert
     "resolution_comment": "generated",
     "validity": "unknown",
     "publicly_leaked": false,
-    "multi_repo": false
+    "multi_repo": false,
+    "is_base64_encoded": false
 }';
 
     /**
@@ -1432,6 +1440,7 @@ final readonly class OrganizationSecretScanningAlert
      * validity: The token status as of the latest validity check.
      * publiclyLeaked: Whether the secret was publicly leaked.
      * multiRepo: Whether the detected secret was found in multiple repositories in the same organization or enterprise.
+     * isBaseSixtyFourEncoded: A boolean value representing whether or not alert is base64 encoded
      */
     public function __construct(public int|null $number, #[MapFrom('created_at')]
     public string|null $createdAt, #[MapFrom('updated_at')]
@@ -1451,7 +1460,8 @@ final readonly class OrganizationSecretScanningAlert
     public string|null $pushProtectionBypassRequestHtmlUrl, #[MapFrom('resolution_comment')]
     public string|null $resolutionComment, public string|null $validity, #[MapFrom('publicly_leaked')]
     public bool|null $publiclyLeaked, #[MapFrom('multi_repo')]
-    public bool|null $multiRepo,)
+    public bool|null $multiRepo, #[MapFrom('is_base64_encoded')]
+    public bool|null $isBaseSixtyFourEncoded,)
     {
     }
 }

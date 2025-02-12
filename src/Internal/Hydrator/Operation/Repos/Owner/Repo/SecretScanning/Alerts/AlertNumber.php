@@ -344,6 +344,17 @@ class AlertNumber implements ObjectMapper
             $properties['multiRepo'] = $value;
 
             after_multiRepo:
+
+            $value = $payload['is_base64_encoded'] ?? null;
+
+            if ($value === null) {
+                $properties['isBaseSixtyFourEncoded'] = null;
+                goto after_isBaseSixtyFourEncoded;
+            }
+
+            $properties['isBaseSixtyFourEncoded'] = $value;
+
+            after_isBaseSixtyFourEncoded:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\SecretScanningAlert', $exception, stack: $this->hydrationStack);
         }
@@ -967,6 +978,14 @@ class AlertNumber implements ObjectMapper
         }
 
         after_multiRepo:        $result['multi_repo'] = $multiRepo;
+
+        $isBaseSixtyFourEncoded = $object->isBaseSixtyFourEncoded;
+
+        if ($isBaseSixtyFourEncoded === null) {
+            goto after_isBaseSixtyFourEncoded;
+        }
+
+        after_isBaseSixtyFourEncoded:        $result['is_base64_encoded'] = $isBaseSixtyFourEncoded;
 
         return $result;
     }

@@ -1218,18 +1218,19 @@ final class Repos
         return $this->operators->repos👷DeleteRepoRuleset()->call($owner, $repo, $rulesetId);
     }
 
-    /** @return iterable<int,Schema\RulesetVersion> */
+    /** @return Observable<Schema\RulesetVersion> */
     public function getRepoRulesetHistory(string $owner, string $repo, int $rulesetId, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷GetRepoRulesetHistory()->call($owner, $repo, $rulesetId, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\RulesetVersion> */
+    /** @return Observable<Schema\RulesetVersion> */
     public function getRepoRulesetHistoryListing(string $owner, string $repo, int $rulesetId, int $perPage, int $page): iterable
     {
         return $this->operators->repos👷GetRepoRulesetHistoryListing()->call($owner, $repo, $rulesetId, $perPage, $page);
     }
 
+    /** @return */
     public function getRepoRulesetVersion(string $owner, string $repo, int $rulesetId, int $versionId): RulesetVersion
     {
         return $this->operators->repos👷GetRepoRulesetVersion()->call($owner, $repo, $rulesetId, $versionId);

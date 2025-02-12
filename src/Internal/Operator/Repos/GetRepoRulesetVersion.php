@@ -24,6 +24,7 @@ final readonly class GetRepoRulesetVersion
     {
     }
 
+    /** @return */
     public function call(string $owner, string $repo, int $rulesetId, int $versionId): RulesetVersion
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Repos\GetRepoRulesetVersion($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $rulesetId, $versionId);

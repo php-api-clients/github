@@ -1342,7 +1342,7 @@ final class Repos
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\RulesetVersion> */
+    /** @return Observable<Schema\RulesetVersion> */
     public function getRepoRulesetHistoryListing(array $params): iterable
     {
         $arguments = [];

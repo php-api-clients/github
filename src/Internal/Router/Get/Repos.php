@@ -2803,7 +2803,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['rule_suite_id']);
     }
 
-    /** @return iterable<int,Schema\RulesetVersion> */
+    /** @return Observable<Schema\RulesetVersion> */
     public function getRepoRulesetHistory(array $params): iterable
     {
         $arguments = [];
@@ -3190,6 +3190,7 @@ final class Repos
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['hook_id'], $arguments['delivery_id']);
     }
 
+    /** @return */
     public function getRepoRulesetVersion(array $params): RulesetVersion
     {
         $arguments = [];

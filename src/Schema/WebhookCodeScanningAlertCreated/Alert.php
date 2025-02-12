@@ -262,6 +262,11 @@ final readonly class Alert
         "url": {
             "type": "string",
             "format": "uri"
+        },
+        "dismissal_approved_by": {
+            "type": [
+                "null"
+            ]
         }
     },
     "description": "The code scanning alert involved in the event."
@@ -317,7 +322,8 @@ final readonly class Alert
         "version": "generated"
     },
     "updated_at": "generated",
-    "url": "https:\\/\\/example.com\\/"
+    "url": "https:\\/\\/example.com\\/",
+    "dismissal_approved_by": "generated"
 }';
 
     /**
@@ -340,7 +346,8 @@ final readonly class Alert
     public string $htmlUrl, #[MapFrom('instances_url')]
     public string|null $instancesUrl, #[MapFrom('most_recent_instance')]
     public Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance|null $mostRecentInstance, public int $number, public Schema\WebhookCodeScanningAlertCreated\Alert\Rule $rule, public string|null $state, public Schema\WebhookCodeScanningAlertCreated\Alert\Tool|null $tool, #[MapFrom('updated_at')]
-    public string|null $updatedAt, public string $url,)
+    public string|null $updatedAt, public string $url, #[MapFrom('dismissal_approved_by')]
+    public string $dismissalApprovedBy,)
     {
     }
 }

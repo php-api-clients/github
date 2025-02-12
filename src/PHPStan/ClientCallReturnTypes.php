@@ -1520,15 +1520,15 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/rulesets/{ruleset_id}/history') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\RulesetVersion>');
+            return $this->typeResolver->resolve('Observable<Schema\\RulesetVersion>');
         }
 
         if ($call === 'LIST /orgs/{org}/rulesets/{ruleset_id}/history') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\RulesetVersion>');
+            return $this->typeResolver->resolve('Observable<Schema\\RulesetVersion>');
         }
 
         if ($call === 'GET /orgs/{org}/rulesets/{ruleset_id}/history/{version_id}') {
-            return $this->typeResolver->resolve('Schema\\RulesetVersion');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/secret-scanning/alerts') {
@@ -3752,15 +3752,15 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\RulesetVersion>');
+            return $this->typeResolver->resolve('Observable<Schema\\RulesetVersion>');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/rulesets/{ruleset_id}/history') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\RulesetVersion>');
+            return $this->typeResolver->resolve('Observable<Schema\\RulesetVersion>');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/rulesets/{ruleset_id}/history/{version_id}') {
-            return $this->typeResolver->resolve('Schema\\RulesetVersion');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/secret-scanning/alerts') {

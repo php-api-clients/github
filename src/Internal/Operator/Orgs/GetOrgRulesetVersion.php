@@ -24,6 +24,7 @@ final readonly class GetOrgRulesetVersion
     {
     }
 
+    /** @return */
     public function call(string $org, int $rulesetId, int $versionId): RulesetVersion
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\GetOrgRulesetVersion($this->responseSchemaValidator, $this->hydrator, $org, $rulesetId, $versionId);

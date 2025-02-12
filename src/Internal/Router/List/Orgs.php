@@ -759,7 +759,7 @@ final class Orgs
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\RulesetVersion> */
+    /** @return Observable<Schema\RulesetVersion> */
     public function getOrgRulesetHistoryListing(array $params): iterable
     {
         $arguments = [];

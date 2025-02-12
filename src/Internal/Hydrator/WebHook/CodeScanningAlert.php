@@ -23,6 +23,7 @@ use ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Ale
 use ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\Rule;
 use ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertAppearedInBranch\Alert\Tool;
 use ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser;
+use ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissalApprovedBy;
 use ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated;
 use ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertFixed;
 use ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertReopened;
@@ -88,6 +89,7 @@ class CodeScanningAlert implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Message' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Rule' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Tool' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Tool($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissalApprovedBy' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️DismissalApprovedBy($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance($payload),
@@ -4641,6 +4643,26 @@ class CodeScanningAlert implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['dismissal_approved_by'] ?? null;
+
+            if ($value === null) {
+                $properties['dismissalApprovedBy'] = null;
+                goto after_dismissalApprovedBy;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'dismissalApprovedBy';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️DismissalApprovedBy($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['dismissalApprovedBy'] = $value;
+
+            after_dismissalApprovedBy:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert', $exception, stack: $this->hydrationStack);
         }
@@ -5316,6 +5338,267 @@ class CodeScanningAlert implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️DismissalApprovedBy(array $payload): DismissalApprovedBy
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['avatar_url'] ?? null;
+
+            if ($value === null) {
+                $properties['avatarUrl'] = null;
+                goto after_avatarUrl;
+            }
+
+            $properties['avatarUrl'] = $value;
+
+            after_avatarUrl:
+
+            $value = $payload['deleted'] ?? null;
+
+            if ($value === null) {
+                $properties['deleted'] = null;
+                goto after_deleted;
+            }
+
+            $properties['deleted'] = $value;
+
+            after_deleted:
+
+            $value = $payload['email'] ?? null;
+
+            if ($value === null) {
+                $properties['email'] = null;
+                goto after_email;
+            }
+
+            $properties['email'] = $value;
+
+            after_email:
+
+            $value = $payload['events_url'] ?? null;
+
+            if ($value === null) {
+                $properties['eventsUrl'] = null;
+                goto after_eventsUrl;
+            }
+
+            $properties['eventsUrl'] = $value;
+
+            after_eventsUrl:
+
+            $value = $payload['followers_url'] ?? null;
+
+            if ($value === null) {
+                $properties['followersUrl'] = null;
+                goto after_followersUrl;
+            }
+
+            $properties['followersUrl'] = $value;
+
+            after_followersUrl:
+
+            $value = $payload['following_url'] ?? null;
+
+            if ($value === null) {
+                $properties['followingUrl'] = null;
+                goto after_followingUrl;
+            }
+
+            $properties['followingUrl'] = $value;
+
+            after_followingUrl:
+
+            $value = $payload['gists_url'] ?? null;
+
+            if ($value === null) {
+                $properties['gistsUrl'] = null;
+                goto after_gistsUrl;
+            }
+
+            $properties['gistsUrl'] = $value;
+
+            after_gistsUrl:
+
+            $value = $payload['gravatar_id'] ?? null;
+
+            if ($value === null) {
+                $properties['gravatarId'] = null;
+                goto after_gravatarId;
+            }
+
+            $properties['gravatarId'] = $value;
+
+            after_gravatarId:
+
+            $value = $payload['html_url'] ?? null;
+
+            if ($value === null) {
+                $properties['htmlUrl'] = null;
+                goto after_htmlUrl;
+            }
+
+            $properties['htmlUrl'] = $value;
+
+            after_htmlUrl:
+
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['login'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'login';
+                goto after_login;
+            }
+
+            $properties['login'] = $value;
+
+            after_login:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $properties['name'] = null;
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $properties['nodeId'] = null;
+                goto after_nodeId;
+            }
+
+            $properties['nodeId'] = $value;
+
+            after_nodeId:
+
+            $value = $payload['organizations_url'] ?? null;
+
+            if ($value === null) {
+                $properties['organizationsUrl'] = null;
+                goto after_organizationsUrl;
+            }
+
+            $properties['organizationsUrl'] = $value;
+
+            after_organizationsUrl:
+
+            $value = $payload['received_events_url'] ?? null;
+
+            if ($value === null) {
+                $properties['receivedEventsUrl'] = null;
+                goto after_receivedEventsUrl;
+            }
+
+            $properties['receivedEventsUrl'] = $value;
+
+            after_receivedEventsUrl:
+
+            $value = $payload['repos_url'] ?? null;
+
+            if ($value === null) {
+                $properties['reposUrl'] = null;
+                goto after_reposUrl;
+            }
+
+            $properties['reposUrl'] = $value;
+
+            after_reposUrl:
+
+            $value = $payload['site_admin'] ?? null;
+
+            if ($value === null) {
+                $properties['siteAdmin'] = null;
+                goto after_siteAdmin;
+            }
+
+            $properties['siteAdmin'] = $value;
+
+            after_siteAdmin:
+
+            $value = $payload['starred_url'] ?? null;
+
+            if ($value === null) {
+                $properties['starredUrl'] = null;
+                goto after_starredUrl;
+            }
+
+            $properties['starredUrl'] = $value;
+
+            after_starredUrl:
+
+            $value = $payload['subscriptions_url'] ?? null;
+
+            if ($value === null) {
+                $properties['subscriptionsUrl'] = null;
+                goto after_subscriptionsUrl;
+            }
+
+            $properties['subscriptionsUrl'] = $value;
+
+            after_subscriptionsUrl:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
+
+            $value = $payload['url'] ?? null;
+
+            if ($value === null) {
+                $properties['url'] = null;
+                goto after_url;
+            }
+
+            $properties['url'] = $value;
+
+            after_url:
+
+            $value = $payload['user_view_type'] ?? null;
+
+            if ($value === null) {
+                $properties['userViewType'] = null;
+                goto after_userViewType;
+            }
+
+            $properties['userViewType'] = $value;
+
+            after_userViewType:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissalApprovedBy', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(DismissalApprovedBy::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new DismissalApprovedBy(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissalApprovedBy', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated(array $payload): WebhookCodeScanningAlertCreated
     {
         $properties    = [];
@@ -5684,6 +5967,17 @@ class CodeScanningAlert implements ObjectMapper
             $properties['url'] = $value;
 
             after_url:
+
+            $value = $payload['dismissal_approved_by'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'dismissal_approved_by';
+                goto after_dismissalApprovedBy;
+            }
+
+            $properties['dismissalApprovedBy'] = $value;
+
+            after_dismissalApprovedBy:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert', $exception, stack: $this->hydrationStack);
         }
@@ -8699,6 +8993,7 @@ class CodeScanningAlert implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\MostRecentInstance\Message' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️MostRecentInstance⚡️Message($object),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Rule' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Rule($object),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\Tool' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️Tool($object),
+                'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertClosedByUser\Alert\DismissalApprovedBy' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️DismissalApprovedBy($object),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated($object),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert($object),
                 'ApiClients\Client\GitHub\Schema\WebhookCodeScanningAlertCreated\Alert\MostRecentInstance' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated⚡️Alert⚡️MostRecentInstance($object),
@@ -11102,6 +11397,15 @@ class CodeScanningAlert implements ObjectMapper
         $url                             = $object->url;
         after_url:        $result['url'] = $url;
 
+        $dismissalApprovedBy = $object->dismissalApprovedBy;
+
+        if ($dismissalApprovedBy === null) {
+            goto after_dismissalApprovedBy;
+        }
+
+        $dismissalApprovedBy                                               = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️DismissalApprovedBy($dismissalApprovedBy);
+        after_dismissalApprovedBy:        $result['dismissal_approved_by'] = $dismissalApprovedBy;
+
         return $result;
     }
 
@@ -11508,6 +11812,180 @@ class CodeScanningAlert implements ObjectMapper
         return $result;
     }
 
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertClosedByUser⚡️Alert⚡️DismissalApprovedBy(mixed $object): mixed
+    {
+        assert($object instanceof DismissalApprovedBy);
+        $result = [];
+
+        $avatarUrl = $object->avatarUrl;
+
+        if ($avatarUrl === null) {
+            goto after_avatarUrl;
+        }
+
+        after_avatarUrl:        $result['avatar_url'] = $avatarUrl;
+
+        $deleted = $object->deleted;
+
+        if ($deleted === null) {
+            goto after_deleted;
+        }
+
+        after_deleted:        $result['deleted'] = $deleted;
+
+        $email = $object->email;
+
+        if ($email === null) {
+            goto after_email;
+        }
+
+        after_email:        $result['email'] = $email;
+
+        $eventsUrl = $object->eventsUrl;
+
+        if ($eventsUrl === null) {
+            goto after_eventsUrl;
+        }
+
+        after_eventsUrl:        $result['events_url'] = $eventsUrl;
+
+        $followersUrl = $object->followersUrl;
+
+        if ($followersUrl === null) {
+            goto after_followersUrl;
+        }
+
+        after_followersUrl:        $result['followers_url'] = $followersUrl;
+
+        $followingUrl = $object->followingUrl;
+
+        if ($followingUrl === null) {
+            goto after_followingUrl;
+        }
+
+        after_followingUrl:        $result['following_url'] = $followingUrl;
+
+        $gistsUrl = $object->gistsUrl;
+
+        if ($gistsUrl === null) {
+            goto after_gistsUrl;
+        }
+
+        after_gistsUrl:        $result['gists_url'] = $gistsUrl;
+
+        $gravatarId = $object->gravatarId;
+
+        if ($gravatarId === null) {
+            goto after_gravatarId;
+        }
+
+        after_gravatarId:        $result['gravatar_id'] = $gravatarId;
+
+        $htmlUrl = $object->htmlUrl;
+
+        if ($htmlUrl === null) {
+            goto after_htmlUrl;
+        }
+
+        after_htmlUrl:        $result['html_url'] = $htmlUrl;
+
+        $id                            = $object->id;
+        after_id:        $result['id'] = $id;
+
+        $login                               = $object->login;
+        after_login:        $result['login'] = $login;
+
+        $name = $object->name;
+
+        if ($name === null) {
+            goto after_name;
+        }
+
+        after_name:        $result['name'] = $name;
+
+        $nodeId = $object->nodeId;
+
+        if ($nodeId === null) {
+            goto after_nodeId;
+        }
+
+        after_nodeId:        $result['node_id'] = $nodeId;
+
+        $organizationsUrl = $object->organizationsUrl;
+
+        if ($organizationsUrl === null) {
+            goto after_organizationsUrl;
+        }
+
+        after_organizationsUrl:        $result['organizations_url'] = $organizationsUrl;
+
+        $receivedEventsUrl = $object->receivedEventsUrl;
+
+        if ($receivedEventsUrl === null) {
+            goto after_receivedEventsUrl;
+        }
+
+        after_receivedEventsUrl:        $result['received_events_url'] = $receivedEventsUrl;
+
+        $reposUrl = $object->reposUrl;
+
+        if ($reposUrl === null) {
+            goto after_reposUrl;
+        }
+
+        after_reposUrl:        $result['repos_url'] = $reposUrl;
+
+        $siteAdmin = $object->siteAdmin;
+
+        if ($siteAdmin === null) {
+            goto after_siteAdmin;
+        }
+
+        after_siteAdmin:        $result['site_admin'] = $siteAdmin;
+
+        $starredUrl = $object->starredUrl;
+
+        if ($starredUrl === null) {
+            goto after_starredUrl;
+        }
+
+        after_starredUrl:        $result['starred_url'] = $starredUrl;
+
+        $subscriptionsUrl = $object->subscriptionsUrl;
+
+        if ($subscriptionsUrl === null) {
+            goto after_subscriptionsUrl;
+        }
+
+        after_subscriptionsUrl:        $result['subscriptions_url'] = $subscriptionsUrl;
+
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        after_type:        $result['type'] = $type;
+
+        $url = $object->url;
+
+        if ($url === null) {
+            goto after_url;
+        }
+
+        after_url:        $result['url'] = $url;
+
+        $userViewType = $object->userViewType;
+
+        if ($userViewType === null) {
+            goto after_userViewType;
+        }
+
+        after_userViewType:        $result['user_view_type'] = $userViewType;
+
+        return $result;
+    }
+
     private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCodeScanningAlertCreated(mixed $object): mixed
     {
         assert($object instanceof WebhookCodeScanningAlertCreated);
@@ -11651,6 +12129,9 @@ class CodeScanningAlert implements ObjectMapper
 
         $url                             = $object->url;
         after_url:        $result['url'] = $url;
+
+        $dismissalApprovedBy                                               = $object->dismissalApprovedBy;
+        after_dismissalApprovedBy:        $result['dismissal_approved_by'] = $dismissalApprovedBy;
 
         return $result;
     }

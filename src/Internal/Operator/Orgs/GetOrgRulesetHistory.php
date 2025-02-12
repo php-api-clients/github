@@ -24,7 +24,7 @@ final readonly class GetOrgRulesetHistory
     {
     }
 
-    /** @return iterable<int,Schema\RulesetVersion> */
+    /** @return Observable<Schema\RulesetVersion> */
     public function call(string $org, int $rulesetId, int $perPage = 30, int $page = 1): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\GetOrgRulesetHistory($this->responseSchemaValidator, $this->hydrator, $org, $rulesetId, $perPage, $page);
