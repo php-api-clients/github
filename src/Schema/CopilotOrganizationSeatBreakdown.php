@@ -6,10 +6,10 @@ namespace ApiClients\Client\GitHub\Schema;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-final readonly class CopilotSeatBreakdown
+final readonly class CopilotOrganizationSeatBreakdown
 {
     public const SCHEMA_JSON         = '{
-    "title": "Copilot Business Seat Breakdown",
+    "title": "Copilot Seat Breakdown",
     "type": "object",
     "properties": {
         "total": {
@@ -26,7 +26,7 @@ final readonly class CopilotSeatBreakdown
         },
         "pending_invitation": {
             "type": "integer",
-            "description": "The number of seats that have been assigned to users that have not yet accepted an invitation to this organization."
+            "description": "The number of users who have been invited to receive a Copilot seat through this organization."
         },
         "active_this_cycle": {
             "type": "integer",
@@ -39,7 +39,7 @@ final readonly class CopilotSeatBreakdown
     },
     "description": "The breakdown of Copilot Business seats for the organization."
 }';
-    public const SCHEMA_TITLE        = 'Copilot Business Seat Breakdown';
+    public const SCHEMA_TITLE        = 'Copilot Seat Breakdown';
     public const SCHEMA_DESCRIPTION  = 'The breakdown of Copilot Business seats for the organization.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "total": 5,
@@ -54,7 +54,7 @@ final readonly class CopilotSeatBreakdown
      * total: The total number of seats being billed for the organization as of the current billing cycle.
      * addedThisCycle: Seats added during the current billing cycle.
      * pendingCancellation: The number of seats that are pending cancellation at the end of the current billing cycle.
-     * pendingInvitation: The number of seats that have been assigned to users that have not yet accepted an invitation to this organization.
+     * pendingInvitation: The number of users who have been invited to receive a Copilot seat through this organization.
      * activeThisCycle: The number of seats that have used Copilot during the current billing cycle.
      * inactiveThisCycle: The number of seats that have not used Copilot during the current billing cycle.
      */

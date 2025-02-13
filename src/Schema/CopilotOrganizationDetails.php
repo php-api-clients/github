@@ -19,7 +19,7 @@ final readonly class CopilotOrganizationDetails
     "type": "object",
     "properties": {
         "seat_breakdown": {
-            "title": "Copilot Business Seat Breakdown",
+            "title": "Copilot Seat Breakdown",
             "type": "object",
             "properties": {
                 "total": {
@@ -36,7 +36,7 @@ final readonly class CopilotOrganizationDetails
                 },
                 "pending_invitation": {
                     "type": "integer",
-                    "description": "The number of seats that have been assigned to users that have not yet accepted an invitation to this organization."
+                    "description": "The number of users who have been invited to receive a Copilot seat through this organization."
                 },
                 "active_this_cycle": {
                     "type": "integer",
@@ -53,11 +53,10 @@ final readonly class CopilotOrganizationDetails
             "enum": [
                 "allow",
                 "block",
-                "unconfigured",
-                "unknown"
+                "unconfigured"
             ],
             "type": "string",
-            "description": "The organization policy for allowing or disallowing Copilot to make suggestions that match public code."
+            "description": "The organization policy for allowing or blocking suggestions matching public code (duplication detection filter)."
         },
         "ide_chat": {
             "enum": [
@@ -66,7 +65,7 @@ final readonly class CopilotOrganizationDetails
                 "unconfigured"
             ],
             "type": "string",
-            "description": "The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor."
+            "description": "The organization policy for allowing or disallowing Copilot Chat in the IDE."
         },
         "platform_chat": {
             "enum": [
@@ -75,7 +74,7 @@ final readonly class CopilotOrganizationDetails
                 "unconfigured"
             ],
             "type": "string",
-            "description": "The organization policy for allowing or disallowing organization members to use Copilot features within github.com."
+            "description": "The organization policy for allowing or disallowing Copilot features on GitHub.com."
         },
         "cli": {
             "enum": [
@@ -84,7 +83,7 @@ final readonly class CopilotOrganizationDetails
                 "unconfigured"
             ],
             "type": "string",
-            "description": "The organization policy for allowing or disallowing organization members to use Copilot within their CLI."
+            "description": "The organization policy for allowing or disallowing Copilot in the CLI."
         },
         "seat_management_setting": {
             "enum": [
@@ -99,8 +98,7 @@ final readonly class CopilotOrganizationDetails
         "plan_type": {
             "enum": [
                 "business",
-                "enterprise",
-                "unknown"
+                "enterprise"
             ],
             "type": "string",
             "description": "The Copilot plan of the organization, or the parent enterprise, when applicable."
@@ -130,15 +128,15 @@ final readonly class CopilotOrganizationDetails
 
     /**
      * seatBreakdown: The breakdown of Copilot Business seats for the organization.
-     * publicCodeSuggestions: The organization policy for allowing or disallowing Copilot to make suggestions that match public code.
-     * ideChat: The organization policy for allowing or disallowing organization members to use Copilot Chat within their editor.
-     * platformChat: The organization policy for allowing or disallowing organization members to use Copilot features within github.com.
-     * cli: The organization policy for allowing or disallowing organization members to use Copilot within their CLI.
+     * publicCodeSuggestions: The organization policy for allowing or blocking suggestions matching public code (duplication detection filter).
+     * ideChat: The organization policy for allowing or disallowing Copilot Chat in the IDE.
+     * platformChat: The organization policy for allowing or disallowing Copilot features on GitHub.com.
+     * cli: The organization policy for allowing or disallowing Copilot in the CLI.
      * seatManagementSetting: The mode of assigning new seats.
      * planType: The Copilot plan of the organization, or the parent enterprise, when applicable.
      */
     public function __construct(#[MapFrom('seat_breakdown')]
-    public Schema\CopilotSeatBreakdown $seatBreakdown, #[MapFrom('public_code_suggestions')]
+    public Schema\CopilotOrganizationSeatBreakdown $seatBreakdown, #[MapFrom('public_code_suggestions')]
     public string $publicCodeSuggestions, #[MapFrom('ide_chat')]
     public string|null $ideChat, #[MapFrom('platform_chat')]
     public string|null $platformChat, public string|null $cli, #[MapFrom('seat_management_setting')]

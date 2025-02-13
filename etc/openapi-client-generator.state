@@ -1,5 +1,5 @@
 {
-    "specHash": "975ed3e1d762d10ff749fca3c2105b5a",
+    "specHash": "db98add04ce623b04585203c6ced5d4b",
     "generatedFiles": {
         "files": [
             {
@@ -5560,7 +5560,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Orgs.php",
-                "hash": "69c5de1d9c2ea9c9f4a47c99a158f37c"
+                "hash": "2af451090a9b56d1994a6dcd8e65f4e2"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Actions.php",
@@ -5596,7 +5596,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "db17b23c5ac1efafd63ff36b1638e622"
+                "hash": "946c8e10b9dede0d909c097dff038341"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -11575,12 +11575,8 @@
                 "hash": "2ddf01f931848dc8dae3093027c68aa4"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotSeatBreakdown.php",
-                "hash": "329771699046cdadace0eee81bf5c272"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotOrganizationDetails.php",
-                "hash": "2050773bcb76af8cf988458a3bfd22a1"
+                "hash": "2a7341605329a119bd65d5b5e83785a1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotSeatDetails.php",
@@ -25380,7 +25376,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Copilot\/Billing.php",
-                "hash": "ba0ebdf9ed5de7f8bbfe345861748d2c"
+                "hash": "3f27e0be70b44a105dbe2f55c5b16945"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Copilot\/Billing\/Seats.php",
@@ -27048,7 +27044,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrators.php",
-                "hash": "627acdf6598fb53e73251e26d698c749"
+                "hash": "f364c8dc89d92f50fd9dbcbd2c7c9bde"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrganizationSimpleWebhooks.php",
@@ -31945,6 +31941,10 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCodeScanningAlertClosedByUser\/Alert\/DismissalApprovedBy.php",
                 "hash": "2d3e43a91657c1977300fdbc36d37723"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotOrganizationSeatBreakdown.php",
+                "hash": "4260c5a9ab97fe4ce33b3eb89a8b73d0"
             }
         ]
     },
