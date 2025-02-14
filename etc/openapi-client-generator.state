@@ -1,5 +1,5 @@
 {
-    "specHash": "db98add04ce623b04585203c6ced5d4b",
+    "specHash": "ce11a30340deb9560fca3f8049e3f57b",
     "generatedFiles": {
         "files": [
             {
@@ -31032,7 +31032,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Issues\/AddSubIssue\/Request\/ApplicationJson.php",
-                "hash": "5544462daa352f25470f3bd85eb81674"
+                "hash": "e85802fff24da90c532fa15831d154cd"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Issues\/ReprioritizeSubIssue\/Request\/ApplicationJson.php",

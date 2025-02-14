@@ -16,7 +16,7 @@ final readonly class ApplicationJson
     "properties": {
         "sub_issue_id": {
             "type": "integer",
-            "description": "The id of the sub-issue to add. The sub-issue must belong to the same repository as the parent issue"
+            "description": "The id of the sub-issue to add. The sub-issue must belong to the same repository owner as the parent issue"
         },
         "replace_parent": {
             "type": "boolean",
@@ -32,7 +32,7 @@ final readonly class ApplicationJson
 }';
 
     /**
-     * subIssueId: The id of the sub-issue to add. The sub-issue must belong to the same repository as the parent issue
+     * subIssueId: The id of the sub-issue to add. The sub-issue must belong to the same repository owner as the parent issue
      * replaceParent: Option that, when true, instructs the operation to replace the sub-issues current parent issue
      */
     public function __construct(#[MapFrom('sub_issue_id')]
