@@ -162,6 +162,17 @@ class ArtifactId implements ObjectMapper
 
             after_updatedAt:
 
+            $value = $payload['digest'] ?? null;
+
+            if ($value === null) {
+                $properties['digest'] = null;
+                goto after_digest;
+            }
+
+            $properties['digest'] = $value;
+
+            after_digest:
+
             $value = $payload['workflow_run'] ?? null;
 
             if ($value === null) {
@@ -414,6 +425,14 @@ class ArtifactId implements ObjectMapper
         }
 
         after_updatedAt:        $result['updated_at'] = $updatedAt;
+
+        $digest = $object->digest;
+
+        if ($digest === null) {
+            goto after_digest;
+        }
+
+        after_digest:        $result['digest'] = $digest;
 
         $workflowRun = $object->workflowRun;
 

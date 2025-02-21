@@ -88,6 +88,16 @@ final readonly class Artifact
             ],
             "format": "date-time"
         },
+        "digest": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The SHA256 digest of the artifact. This field will only be populated on artifacts uploaded with upload-artifact v4 or newer. For older versions, this field will be null.",
+            "examples": [
+                "sha256:cfc3236bdad15b5898bca8408945c9e19e1917da8704adc20eaa618444290a8c"
+            ]
+        },
         "workflow_run": {
             "type": [
                 "object",
@@ -142,6 +152,7 @@ final readonly class Artifact
     "created_at": "1970-01-01T00:00:00+00:00",
     "expires_at": "1970-01-01T00:00:00+00:00",
     "updated_at": "1970-01-01T00:00:00+00:00",
+    "digest": "sha256:cfc3236bdad15b5898bca8408945c9e19e1917da8704adc20eaa618444290a8c",
     "workflow_run": {
         "id": 10,
         "repository_id": 42,
@@ -155,6 +166,7 @@ final readonly class Artifact
      * name: The name of the artifact.
      * sizeInBytes: The size in bytes of the artifact.
      * expired: Whether or not the artifact has expired.
+     * digest: The SHA256 digest of the artifact. This field will only be populated on artifacts uploaded with upload-artifact v4 or newer. For older versions, this field will be null.
      */
     public function __construct(public int $id, #[MapFrom('node_id')]
     public string $nodeId, public string $name, #[MapFrom('size_in_bytes')]
@@ -162,7 +174,7 @@ final readonly class Artifact
     public string $archiveDownloadUrl, public bool $expired, #[MapFrom('created_at')]
     public string|null $createdAt, #[MapFrom('expires_at')]
     public string|null $expiresAt, #[MapFrom('updated_at')]
-    public string|null $updatedAt, #[MapFrom('workflow_run')]
+    public string|null $updatedAt, public string|null $digest, #[MapFrom('workflow_run')]
     public Schema\Artifact\WorkflowRun|null $workflowRun,)
     {
     }

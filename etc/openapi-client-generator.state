@@ -1,5 +1,5 @@
 {
-    "specHash": "ce11a30340deb9560fca3f8049e3f57b",
+    "specHash": "95c17fdaedbd73d404bbf04c1d953250",
     "generatedFiles": {
         "files": [
             {
@@ -684,7 +684,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Artifact.php",
-                "hash": "fd09cd8c7bcdeda855b354f19aa2b8b1"
+                "hash": "47b70e77957d4716e9027dfa01a957cb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ActionsCacheList.php",
@@ -4740,7 +4740,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Actions\/ListArtifactsForRepo\/Response\/ApplicationJson\/Ok.php",
-                "hash": "b83bdb23d2c75157eded7df88f0457aa"
+                "hash": "042dbc72b222a4f77370945bb814c5d9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Actions\/ReRunJobForWorkflowRun\/Request\/ApplicationJson.php",
@@ -11279,16 +11279,12 @@
                 "hash": "35fa29afe24228075d28b0112c59b450"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/Tiet1A91B16F\/TietBF38476A\/Tiet7587BB22\/TietE0507C4B.php",
-                "hash": "5c0b1e8d552f3cc6e00d57b4b8b0ad4e"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Actions\/ListWorkflowRunArtifacts\/Response\/ApplicationJson\/Ok.php",
-                "hash": "368af30dd5851c7af10171c1befe7593"
+                "hash": "740c79e6c2927713dafaddda25829029"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Operations\/Actions\/ListWorkflowRunArtifacts\/Response\/ApplicationJson\/Ok\/Application\/Json.php",
-                "hash": "8c6108860dde759112c703c17b9d2f42"
+                "hash": "cd9890bfef8bad68e18a3b6a3b0df5e8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietD2A75913\/Tiet0388E4E1\/TietCC684AA9\/Tiet46754F39.php",
@@ -25712,7 +25708,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/Actions\/Artifacts\/ArtifactId.php",
-                "hash": "ddfbd076dc337130a24318369561bc59"
+                "hash": "f3297697a86724b9ddbfec991ec3ed8b"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/Actions\/Artifacts\/ArtifactId\/ArchiveFormat.php",
@@ -31945,6 +31941,10 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotOrganizationSeatBreakdown.php",
                 "hash": "4260c5a9ab97fe4ce33b3eb89a8b73d0"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietCF22D054\/Tiet02EB2DC0\/Tiet6BB5072C\/Tiet3B86314A.php",
+                "hash": "779373dbfefbae34d8f946010c1d6e8e"
             }
         ]
     },

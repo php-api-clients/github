@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet1A91B16F\TietBF38476A\Tiet7587BB22;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietCF22D054\Tiet02EB2DC0\Tiet6BB5072C;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class TietE0507C4B
+abstract readonly class Tiet3B86314A
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -99,6 +99,16 @@ abstract readonly class TietE0507C4B
                         ],
                         "format": "date-time"
                     },
+                    "digest": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The SHA256 digest of the artifact. This field will only be populated on artifacts uploaded with upload-artifact v4 or newer. For older versions, this field will be null.",
+                        "examples": [
+                            "sha256:cfc3236bdad15b5898bca8408945c9e19e1917da8704adc20eaa618444290a8c"
+                        ]
+                    },
                     "workflow_run": {
                         "type": [
                             "object",
@@ -159,6 +169,7 @@ abstract readonly class TietE0507C4B
             "created_at": "1970-01-01T00:00:00+00:00",
             "expires_at": "1970-01-01T00:00:00+00:00",
             "updated_at": "1970-01-01T00:00:00+00:00",
+            "digest": "sha256:cfc3236bdad15b5898bca8408945c9e19e1917da8704adc20eaa618444290a8c",
             "workflow_run": {
                 "id": 10,
                 "repository_id": 42,
@@ -178,6 +189,7 @@ abstract readonly class TietE0507C4B
             "created_at": "1970-01-01T00:00:00+00:00",
             "expires_at": "1970-01-01T00:00:00+00:00",
             "updated_at": "1970-01-01T00:00:00+00:00",
+            "digest": "sha256:cfc3236bdad15b5898bca8408945c9e19e1917da8704adc20eaa618444290a8c",
             "workflow_run": {
                 "id": 10,
                 "repository_id": 42,
