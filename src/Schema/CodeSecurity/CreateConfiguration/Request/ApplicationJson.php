@@ -201,6 +201,15 @@ final readonly class ApplicationJson
             "description": "The enablement status of secret scanning non provider patterns",
             "default": "disabled"
         },
+        "secret_scanning_delegated_alert_dismissal": {
+            "enum": [
+                "enabled",
+                "disabled",
+                "not_set"
+            ],
+            "type": "string",
+            "description": "The enablement status of secret scanning delegated alert dismissal"
+        },
         "private_vulnerability_reporting": {
             "enum": [
                 "enabled",
@@ -258,6 +267,7 @@ final readonly class ApplicationJson
     },
     "secret_scanning_validity_checks": "enabled",
     "secret_scanning_non_provider_patterns": "enabled",
+    "secret_scanning_delegated_alert_dismissal": "enabled",
     "private_vulnerability_reporting": "enabled",
     "enforcement": "enforced"
 }';
@@ -279,6 +289,7 @@ final readonly class ApplicationJson
      * secretScanningDelegatedBypassOptions: Feature options for secret scanning delegated bypass
      * secretScanningValidityChecks: The enablement status of secret scanning validity checks
      * secretScanningNonProviderPatterns: The enablement status of secret scanning non provider patterns
+     * secretScanningDelegatedAlertDismissal: The enablement status of secret scanning delegated alert dismissal
      * privateVulnerabilityReporting: The enablement status of private vulnerability reporting
      * enforcement: The enforcement status for a security configuration
      */
@@ -296,7 +307,8 @@ final readonly class ApplicationJson
     public string|null $secretScanningDelegatedBypass, #[MapFrom('secret_scanning_delegated_bypass_options')]
     public Schema\CodeSecurity\CreateConfiguration\Request\ApplicationJson\SecretScanningDelegatedBypassOptions|null $secretScanningDelegatedBypassOptions, #[MapFrom('secret_scanning_validity_checks')]
     public string|null $secretScanningValidityChecks, #[MapFrom('secret_scanning_non_provider_patterns')]
-    public string|null $secretScanningNonProviderPatterns, #[MapFrom('private_vulnerability_reporting')]
+    public string|null $secretScanningNonProviderPatterns, #[MapFrom('secret_scanning_delegated_alert_dismissal')]
+    public string|null $secretScanningDelegatedAlertDismissal, #[MapFrom('private_vulnerability_reporting')]
     public string|null $privateVulnerabilityReporting, public string|null $enforcement,)
     {
     }

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet07CEC6F7\Tiet1DE9A5A0\Tiet17BD6D01;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet40F01C12\Tiet17FC06A8\Tiet7006072F;
 
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class Tiet0890CA07
+abstract readonly class TietBCEFF0FF
 {
     public const SCHEMA_JSON         = '{
     "type": "object",
@@ -214,6 +214,15 @@ abstract readonly class Tiet0890CA07
                     "type": "string",
                     "description": "The enablement status of secret scanning non-provider patterns"
                 },
+                "secret_scanning_delegated_alert_dismissal": {
+                    "enum": [
+                        "enabled",
+                        "disabled",
+                        "not_set"
+                    ],
+                    "type": "string",
+                    "description": "The enablement status of secret scanning delegated alert dismissal"
+                },
                 "private_vulnerability_reporting": {
                     "enum": [
                         "enabled",
@@ -293,6 +302,7 @@ abstract readonly class Tiet0890CA07
         },
         "secret_scanning_validity_checks": "enabled",
         "secret_scanning_non_provider_patterns": "enabled",
+        "secret_scanning_delegated_alert_dismissal": "enabled",
         "private_vulnerability_reporting": "enabled",
         "enforcement": "enforced",
         "url": "https:\\/\\/example.com\\/",

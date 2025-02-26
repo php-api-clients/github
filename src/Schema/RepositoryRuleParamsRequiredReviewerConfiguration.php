@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ApiClients\Client\GitHub\Schema;
 
+use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
 final readonly class RepositoryRuleParamsRequiredReviewerConfiguration
@@ -12,8 +13,7 @@ final readonly class RepositoryRuleParamsRequiredReviewerConfiguration
     "title": "RequiredReviewerConfiguration",
     "required": [
         "file_patterns",
-        "minimum_approvals",
-        "reviewer_id"
+        "minimum_approvals"
     ],
     "type": "object",
     "properties": {
@@ -28,9 +28,27 @@ final readonly class RepositoryRuleParamsRequiredReviewerConfiguration
             "type": "integer",
             "description": "Minimum number of approvals required from the specified team. If set to zero, the team will be added to the pull request but approval is optional."
         },
-        "reviewer_id": {
-            "type": "string",
-            "description": "Node ID of the team which must review changes to matching files."
+        "reviewer": {
+            "title": "Reviewer",
+            "required": [
+                "id",
+                "type"
+            ],
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "ID of the reviewer which must review changes to matching files."
+                },
+                "type": {
+                    "enum": [
+                        "Team"
+                    ],
+                    "type": "string",
+                    "description": "The type of the reviewer"
+                }
+            },
+            "description": "A required reviewing team"
         }
     },
     "description": "A reviewing team, and file patterns describing which files they must approve changes to."
@@ -43,18 +61,20 @@ final readonly class RepositoryRuleParamsRequiredReviewerConfiguration
         "generated"
     ],
     "minimum_approvals": 17,
-    "reviewer_id": "generated"
+    "reviewer": {
+        "id": 2,
+        "type": "Team"
+    }
 }';
 
     /**
      * filePatterns: Array of file patterns. Pull requests which change matching files must be approved by the specified team. File patterns use the same syntax as `.gitignore` files.
      * minimumApprovals: Minimum number of approvals required from the specified team. If set to zero, the team will be added to the pull request but approval is optional.
-     * reviewerId: Node ID of the team which must review changes to matching files.
+     * reviewer: A required reviewing team
      */
     public function __construct(#[MapFrom('file_patterns')]
     public array $filePatterns, #[MapFrom('minimum_approvals')]
-    public int $minimumApprovals, #[MapFrom('reviewer_id')]
-    public string $reviewerId,)
+    public int $minimumApprovals, public Schema\RepositoryRuleParamsReviewer|null $reviewer,)
     {
     }
 }
