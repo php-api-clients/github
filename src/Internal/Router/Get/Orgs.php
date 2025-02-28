@@ -554,7 +554,6 @@ final class Orgs
         return $operator->call($arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
     public function listAttestations(array $params): \ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAttestations\Response\ApplicationJson\Ok
     {
         $arguments = [];
@@ -582,6 +581,12 @@ final class Orgs
 
         $arguments['subject_digest'] = $params['subject_digest'];
         unset($params['subject_digest']);
+        if (array_key_exists('predicate_type', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: predicate_type');
+        }
+
+        $arguments['predicate_type'] = $params['predicate_type'];
+        unset($params['predicate_type']);
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
         }
@@ -590,7 +595,7 @@ final class Orgs
         unset($params['per_page']);
         $operator = new Internal\Operator\Orgs\ListAttestations($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Attestations🌀SubjectDigest());
 
-        return $operator->call($arguments['before'], $arguments['after'], $arguments['org'], $arguments['subject_digest'], $arguments['per_page']);
+        return $operator->call($arguments['before'], $arguments['after'], $arguments['org'], $arguments['subject_digest'], $arguments['predicate_type'], $arguments['per_page']);
     }
 
     /** @return */

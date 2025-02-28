@@ -10,7 +10,7 @@ use ApiClients\Client\GitHub\Schema\EmptyObject;
 use ApiClients\Client\GitHub\Schema\GpgKey;
 use ApiClients\Client\GitHub\Schema\Hovercard;
 use ApiClients\Client\GitHub\Schema\Key;
-use ApiClients\Client\GitHub\Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok;
+use ApiClients\Client\GitHub\Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Client\GitHub\Schema\PrivateUser;
 use ApiClients\Client\GitHub\Schema\PublicUser;
 use ApiClients\Client\GitHub\Schema\SshSigningKey;
@@ -280,10 +280,9 @@ final class Users
         return $this->operators->users👷GetByUsername()->call($username);
     }
 
-    /** @return */
-    public function listAttestations(string $before, string $after, string $username, string $subjectDigest, int $perPage): Ok|EmptyObject|WithoutBody
+    public function listAttestations(string $before, string $after, string $username, string $subjectDigest, string $predicateType, int $perPage): Json|EmptyObject|WithoutBody
     {
-        return $this->operators->users👷ListAttestations()->call($before, $after, $username, $subjectDigest, $perPage);
+        return $this->operators->users👷ListAttestations()->call($before, $after, $username, $subjectDigest, $predicateType, $perPage);
     }
 
     /** @return Observable<Schema\SimpleUser> */

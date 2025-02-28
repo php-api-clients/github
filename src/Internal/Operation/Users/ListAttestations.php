@@ -31,24 +31,28 @@ final class ListAttestations
     private string $username;
     /**Subject Digest **/
     private string $subjectDigest;
+    /**Optional filter for fetching attestations with a given predicate type.
+    This option accepts `provenance`, `sbom`, or freeform text for custom predicate types. **/
+    private string $predicateType;
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Users\Username\Attestations\SubjectDigest $hydrator, string $before, string $after, string $username, string $subjectDigest, int $perPage = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Users\Username\Attestations\SubjectDigest $hydrator, string $before, string $after, string $username, string $subjectDigest, string $predicateType, int $perPage = 30)
     {
         $this->before        = $before;
         $this->after         = $after;
         $this->username      = $username;
         $this->subjectDigest = $subjectDigest;
+        $this->predicateType = $predicateType;
         $this->perPage       = $perPage;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{before}', '{after}', '{username}', '{subject_digest}', '{per_page}'], [$this->before, $this->after, $this->username, $this->subjectDigest, $this->perPage], '/users/{username}/attestations/{subject_digest}' . '?before={before}&after={after}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{before}', '{after}', '{username}', '{subject_digest}', '{predicate_type}', '{per_page}'], [$this->before, $this->after, $this->username, $this->subjectDigest, $this->predicateType, $this->perPage], '/users/{username}/attestations/{subject_digest}' . '?before={before}&after={after}&predicate_type={predicate_type}&per_page={per_page}'));
     }
 
-    public function createResponse(ResponseInterface $response): Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok|Schema\EmptyObject|WithoutBody
+    public function createResponse(ResponseInterface $response): Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok\Application\Json|Schema\EmptyObject|WithoutBody
     {
         $code          = $response->getStatusCode();
         [$contentType] = explode(';', $response->getHeaderLine('Content-Type'));
@@ -60,9 +64,9 @@ final class ListAttestations
                      * Response
                      **/
                     case 200:
-                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
+                        $this->responseSchemaValidator->validate($body, Reader::readFromJson(Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok\Application\Json::SCHEMA_JSON, \cebe\openapi\spec\Schema::class));
 
-                        return $this->hydrator->hydrateObject(Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok::class, $body);
+                        return $this->hydrator->hydrateObject(Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok\Application\Json::class, $body);
                     /**
                      * Response
                      **/

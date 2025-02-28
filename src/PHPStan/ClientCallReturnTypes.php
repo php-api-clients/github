@@ -776,7 +776,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/attestations/{subject_digest}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\Orgs\\ListAttestations\\Response\\ApplicationJson\\Ok');
         }
 
         if ($call === 'GET /orgs/{org}/blocks') {
@@ -2220,7 +2220,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/attestations/{subject_digest}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\Repos\\ListAttestations\\Response\\ApplicationJson\\Ok\\Application\\Json');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/autolinks') {
@@ -4640,7 +4640,7 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /users/{username}/attestations/{subject_digest}') {
-            return $this->typeResolver->resolve('');
+            return $this->typeResolver->resolve('Schema\\Operations\\Users\\ListAttestations\\Response\\ApplicationJson\\Ok\\Application\\Json|Schema\\EmptyObject|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
         }
 
         if ($call === 'GET /users/{username}/docker/conflicts') {

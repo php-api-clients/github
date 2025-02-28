@@ -24,10 +24,9 @@ final readonly class ListAttestations
     {
     }
 
-    /** @return */
-    public function call(string $before, string $after, string $org, string $subjectDigest, int $perPage = 30): Ok
+    public function call(string $before, string $after, string $org, string $subjectDigest, string $predicateType, int $perPage = 30): Ok
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListAttestations($this->responseSchemaValidator, $this->hydrator, $before, $after, $org, $subjectDigest, $perPage);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\ListAttestations($this->responseSchemaValidator, $this->hydrator, $before, $after, $org, $subjectDigest, $predicateType, $perPage);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok {
             return $operation->createResponse($response);

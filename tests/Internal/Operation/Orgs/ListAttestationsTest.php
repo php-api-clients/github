@@ -29,13 +29,14 @@ final class ListAttestationsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/attestations/generated?before=generated&after=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/attestations/generated?before=generated&after=generated&predicate_type=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Orgs\ListAttestations::OPERATION_MATCH, (static function (array $data): array {
             $data['before']         = 'generated';
             $data['after']          = 'generated';
             $data['org']            = 'generated';
             $data['subject_digest'] = 'generated';
+            $data['predicate_type'] = 'generated';
             $data['per_page']       = 8;
 
             return $data;
@@ -51,8 +52,8 @@ final class ListAttestationsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/attestations/generated?before=generated&after=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/attestations/generated?before=generated&after=generated&predicate_type=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->orgs()->listAttestations('generated', 'generated', 'generated', 'generated', 8);
+        $result = $client->operations()->orgs()->listAttestations('generated', 'generated', 'generated', 'generated', 'generated', 8);
     }
 }

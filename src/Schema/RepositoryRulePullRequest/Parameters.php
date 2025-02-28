@@ -23,7 +23,7 @@ final readonly class Parameters
             "items": {
                 "type": "string"
             },
-            "description": "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled."
+            "description": "Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled."
         },
         "dismiss_stale_reviews_on_push": {
             "type": "boolean",
@@ -64,7 +64,7 @@ final readonly class Parameters
 }';
 
     /**
-     * allowedMergeMethods: When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled.
+     * allowedMergeMethods: Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled.
      * dismissStaleReviewsOnPush: New, reviewable commits pushed will dismiss previous pull request review approvals.
      * requireCodeOwnerReview: Require an approving review in pull requests that modify files that have a designated code owner.
      * requireLastPushApproval: Whether the most recent reviewable push must be approved by someone other than the person who pushed it.

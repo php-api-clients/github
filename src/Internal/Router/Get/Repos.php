@@ -1261,7 +1261,6 @@ final class Repos
         return $operator->call($arguments['org'], $arguments['rule_suite_id']);
     }
 
-    /** @return */
     public function listAttestations(array $params): Json
     {
         $arguments = [];
@@ -1295,6 +1294,12 @@ final class Repos
 
         $arguments['subject_digest'] = $params['subject_digest'];
         unset($params['subject_digest']);
+        if (array_key_exists('predicate_type', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: predicate_type');
+        }
+
+        $arguments['predicate_type'] = $params['predicate_type'];
+        unset($params['predicate_type']);
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
         }
@@ -1303,7 +1308,7 @@ final class Repos
         unset($params['per_page']);
         $operator = new Internal\Operator\Repos\ListAttestations($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Attestations🌀SubjectDigest());
 
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['before'], $arguments['after'], $arguments['subject_digest'], $arguments['per_page']);
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['before'], $arguments['after'], $arguments['subject_digest'], $arguments['predicate_type'], $arguments['per_page']);
     }
 
     /** @return */

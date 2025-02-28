@@ -4153,6 +4153,7 @@ $client->call('GET /orgs/{org}/attestations/{subject_digest}', [
         'after' => 'generated',
         'org' => 'generated',
         'subject_digest' => 'generated',
+        'predicate_type' => 'generated',
         'per_page' => 8,
 ]);
 ```
@@ -4163,6 +4164,7 @@ $client->operations()->orgs()->listAttestations(        before: 'generated',
         after: 'generated',
         org: 'generated',
         subject_digest: 'generated',
+        predicate_type: 'generated',
         per_page: 8,
 );
 ```
@@ -13117,6 +13119,7 @@ $client->call('GET /repos/{owner}/{repo}/attestations/{subject_digest}', [
         'before' => 'generated',
         'after' => 'generated',
         'subject_digest' => 'generated',
+        'predicate_type' => 'generated',
         'per_page' => 8,
 ]);
 ```
@@ -13128,6 +13131,7 @@ $client->operations()->repos()->listAttestations(        owner: 'generated',
         before: 'generated',
         after: 'generated',
         subject_digest: 'generated',
+        predicate_type: 'generated',
         per_page: 8,
 );
 ```
@@ -28087,6 +28091,7 @@ $client->call('GET /users/{username}/attestations/{subject_digest}', [
         'after' => 'generated',
         'username' => 'generated',
         'subject_digest' => 'generated',
+        'predicate_type' => 'generated',
         'per_page' => 8,
 ]);
 ```
@@ -28097,6 +28102,7 @@ $client->operations()->users()->listAttestations(        before: 'generated',
         after: 'generated',
         username: 'generated',
         subject_digest: 'generated',
+        predicate_type: 'generated',
         per_page: 8,
 );
 ```

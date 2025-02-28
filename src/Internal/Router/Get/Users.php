@@ -10,7 +10,7 @@ use ApiClients\Client\GitHub\Schema\EmptyObject;
 use ApiClients\Client\GitHub\Schema\GpgKey;
 use ApiClients\Client\GitHub\Schema\Hovercard;
 use ApiClients\Client\GitHub\Schema\Key;
-use ApiClients\Client\GitHub\Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok;
+use ApiClients\Client\GitHub\Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok\Application\Json;
 use ApiClients\Client\GitHub\Schema\PrivateUser;
 use ApiClients\Client\GitHub\Schema\PublicUser;
 use ApiClients\Client\GitHub\Schema\SshSigningKey;
@@ -540,8 +540,7 @@ final class Users
         return $operator->call($arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
-    public function listAttestations(array $params): Ok|EmptyObject|WithoutBody
+    public function listAttestations(array $params): Json|EmptyObject|WithoutBody
     {
         $arguments = [];
         if (array_key_exists('before', $params) === false) {
@@ -568,6 +567,12 @@ final class Users
 
         $arguments['subject_digest'] = $params['subject_digest'];
         unset($params['subject_digest']);
+        if (array_key_exists('predicate_type', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: predicate_type');
+        }
+
+        $arguments['predicate_type'] = $params['predicate_type'];
+        unset($params['predicate_type']);
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
         }
@@ -576,7 +581,7 @@ final class Users
         unset($params['per_page']);
         $operator = new Internal\Operator\Users\ListAttestations($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Users🌀Username🌀Attestations🌀SubjectDigest());
 
-        return $operator->call($arguments['before'], $arguments['after'], $arguments['username'], $arguments['subject_digest'], $arguments['per_page']);
+        return $operator->call($arguments['before'], $arguments['after'], $arguments['username'], $arguments['subject_digest'], $arguments['predicate_type'], $arguments['per_page']);
     }
 
     /** @return */

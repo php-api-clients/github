@@ -24,19 +24,20 @@ final class ListAttestationsTest extends AsyncTestCase
     /** @test */
     public function call_httpCode_200_responseContentType_application_json_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA, true)));
+        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok\Application\Json::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&predicate_type=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Users\ListAttestations::OPERATION_MATCH, (static function (array $data): array {
             $data['before']         = 'generated';
             $data['after']          = 'generated';
             $data['username']       = 'generated';
             $data['subject_digest'] = 'generated';
+            $data['predicate_type'] = 'generated';
             $data['per_page']       = 8;
 
             return $data;
@@ -46,15 +47,15 @@ final class ListAttestationsTest extends AsyncTestCase
     /** @test */
     public function operations_httpCode_200_responseContentType_application_json_zero(): void
     {
-        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok::SCHEMA_EXAMPLE_DATA, true)));
+        $response = new Response(200, ['Content-Type' => 'application/json'], json_encode(json_decode(Schema\Operations\Users\ListAttestations\Response\ApplicationJson\Ok\Application\Json::SCHEMA_EXAMPLE_DATA, true)));
         $auth     = $this->prophesize(AuthenticationInterface::class);
         $auth->authHeader(Argument::any())->willReturn('Bearer beer')->shouldBeCalled();
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&predicate_type=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->users()->listAttestations('generated', 'generated', 'generated', 'generated', 8);
+        $result = $client->operations()->users()->listAttestations('generated', 'generated', 'generated', 'generated', 'generated', 8);
     }
 
     /** @test */
@@ -66,13 +67,14 @@ final class ListAttestationsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&predicate_type=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Users\ListAttestations::OPERATION_MATCH, (static function (array $data): array {
             $data['before']         = 'generated';
             $data['after']          = 'generated';
             $data['username']       = 'generated';
             $data['subject_digest'] = 'generated';
+            $data['predicate_type'] = 'generated';
             $data['per_page']       = 8;
 
             return $data;
@@ -88,9 +90,9 @@ final class ListAttestationsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&predicate_type=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->users()->listAttestations('generated', 'generated', 'generated', 'generated', 8);
+        $result = $client->operations()->users()->listAttestations('generated', 'generated', 'generated', 'generated', 'generated', 8);
     }
 
     /** @test */
@@ -103,13 +105,14 @@ final class ListAttestationsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&predicate_type=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Users\ListAttestations::OPERATION_MATCH, (static function (array $data): array {
             $data['before']         = 'generated';
             $data['after']          = 'generated';
             $data['username']       = 'generated';
             $data['subject_digest'] = 'generated';
+            $data['predicate_type'] = 'generated';
             $data['per_page']       = 8;
 
             return $data;
@@ -126,9 +129,9 @@ final class ListAttestationsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&predicate_type=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->users()->listAttestations('generated', 'generated', 'generated', 'generated', 8);
+        $result = $client->operations()->users()->listAttestations('generated', 'generated', 'generated', 'generated', 'generated', 8);
     }
 
     /** @test */
@@ -140,13 +143,14 @@ final class ListAttestationsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&predicate_type=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Users\ListAttestations::OPERATION_MATCH, (static function (array $data): array {
             $data['before']         = 'generated';
             $data['after']          = 'generated';
             $data['username']       = 'generated';
             $data['subject_digest'] = 'generated';
+            $data['predicate_type'] = 'generated';
             $data['per_page']       = 8;
 
             return $data;
@@ -162,9 +166,9 @@ final class ListAttestationsTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/users/generated/attestations/generated?before=generated&after=generated&predicate_type=generated&per_page=8', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->users()->listAttestations('generated', 'generated', 'generated', 'generated', 8);
+        $result = $client->operations()->users()->listAttestations('generated', 'generated', 'generated', 'generated', 'generated', 8);
         self::assertArrayHasKey('code', $result);
         self::assertSame(204, $result['code']);
     }

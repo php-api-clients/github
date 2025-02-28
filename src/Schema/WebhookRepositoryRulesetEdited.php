@@ -2368,7 +2368,7 @@ final readonly class WebhookRepositoryRulesetEdited
                                                 "items": {
                                                     "type": "string"
                                                 },
-                                                "description": "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled."
+                                                "description": "Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled."
                                             },
                                             "dismiss_stale_reviews_on_push": {
                                                 "type": "boolean",
@@ -3360,7 +3360,7 @@ final readonly class WebhookRepositoryRulesetEdited
                                                         "items": {
                                                             "type": "string"
                                                         },
-                                                        "description": "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled."
+                                                        "description": "Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled."
                                                     },
                                                     "dismiss_stale_reviews_on_push": {
                                                         "type": "boolean",
@@ -4179,7 +4179,7 @@ final readonly class WebhookRepositoryRulesetEdited
                                                         "items": {
                                                             "type": "string"
                                                         },
-                                                        "description": "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled."
+                                                        "description": "Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled."
                                                     },
                                                     "dismiss_stale_reviews_on_push": {
                                                         "type": "boolean",
@@ -5001,7 +5001,7 @@ final readonly class WebhookRepositoryRulesetEdited
                                                                 "items": {
                                                                     "type": "string"
                                                                 },
-                                                                "description": "When merging pull requests, you can allow any combination of merge commits, squashing, or rebasing. At least one option must be enabled."
+                                                                "description": "Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled."
                                                             },
                                                             "dismiss_stale_reviews_on_push": {
                                                                 "type": "boolean",

@@ -29,21 +29,25 @@ final class ListAttestations
     private string $org;
     /**The parameter should be set to the attestation's subject's SHA256 digest, in the form `sha256:HEX_DIGEST`. **/
     private string $subjectDigest;
+    /**Optional filter for fetching attestations with a given predicate type.
+    This option accepts `provenance`, `sbom`, or freeform text for custom predicate types. **/
+    private string $predicateType;
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Attestations\SubjectDigest $hydrator, string $before, string $after, string $org, string $subjectDigest, int $perPage = 30)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Attestations\SubjectDigest $hydrator, string $before, string $after, string $org, string $subjectDigest, string $predicateType, int $perPage = 30)
     {
         $this->before        = $before;
         $this->after         = $after;
         $this->org           = $org;
         $this->subjectDigest = $subjectDigest;
+        $this->predicateType = $predicateType;
         $this->perPage       = $perPage;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{before}', '{after}', '{org}', '{subject_digest}', '{per_page}'], [$this->before, $this->after, $this->org, $this->subjectDigest, $this->perPage], '/orgs/{org}/attestations/{subject_digest}' . '?before={before}&after={after}&per_page={per_page}'));
+        return new Request('GET', str_replace(['{before}', '{after}', '{org}', '{subject_digest}', '{predicate_type}', '{per_page}'], [$this->before, $this->after, $this->org, $this->subjectDigest, $this->predicateType, $this->perPage], '/orgs/{org}/attestations/{subject_digest}' . '?before={before}&after={after}&predicate_type={predicate_type}&per_page={per_page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Orgs\ListAttestations\Response\ApplicationJson\Ok
