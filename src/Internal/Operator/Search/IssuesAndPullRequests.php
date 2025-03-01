@@ -25,10 +25,9 @@ final readonly class IssuesAndPullRequests
     {
     }
 
-    /** @return */
-    public function call(string $q, string $sort, string $order = 'desc', int $perPage = 30, int $page = 1): Ok|WithoutBody
+    public function call(string $q, string $sort, string $advancedSearch, string $order = 'desc', int $perPage = 30, int $page = 1): Ok|WithoutBody
     {
-        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Search\IssuesAndPullRequests($this->responseSchemaValidator, $this->hydrator, $q, $sort, $order, $perPage, $page);
+        $operation = new \ApiClients\Client\GitHub\Internal\Operation\Search\IssuesAndPullRequests($this->responseSchemaValidator, $this->hydrator, $q, $sort, $advancedSearch, $order, $perPage, $page);
         $request   = $operation->createRequest();
         $result    = await($this->browser->request($request->getMethod(), (string) $request->getUri(), $request->withHeader('Authorization', $this->authentication->authHeader())->getHeaders(), (string) $request->getBody())->then(static function (ResponseInterface $response) use ($operation): Ok|WithoutBody {
             return $operation->createResponse($response);

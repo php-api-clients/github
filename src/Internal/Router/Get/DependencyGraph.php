@@ -41,7 +41,7 @@ final class DependencyGraph
         return $operator->call($arguments['owner'], $arguments['repo']);
     }
 
-    /** @return Observable<Schema\DependencyGraphDiff> */
+    /** @return iterable<int,Schema\DependencyGraphDiff> */
     public function diffRange(array $params): iterable
     {
         $arguments = [];

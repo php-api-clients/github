@@ -26,10 +26,9 @@ final class Search
         return $this->operators->search👷Commits()->call($q, $sort, $order, $perPage, $page);
     }
 
-    /** @return */
-    public function issuesAndPullRequests(string $q, string $sort, string $order, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|WithoutBody
+    public function issuesAndPullRequests(string $q, string $sort, string $advancedSearch, string $order, int $perPage, int $page): \ApiClients\Client\GitHub\Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|WithoutBody
     {
-        return $this->operators->search👷IssuesAndPullRequests()->call($q, $sort, $order, $perPage, $page);
+        return $this->operators->search👷IssuesAndPullRequests()->call($q, $sort, $advancedSearch, $order, $perPage, $page);
     }
 
     /** @return */

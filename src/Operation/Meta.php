@@ -40,7 +40,6 @@ final class Meta
         return $this->operators->meta👷GetAllVersions()->call();
     }
 
-    /** @return */
     public function getZen(): string
     {
         return $this->operators->meta👷GetZen()->call();

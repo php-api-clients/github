@@ -24,7 +24,7 @@ final readonly class DiffRange
     {
     }
 
-    /** @return Observable<Schema\DependencyGraphDiff> */
+    /** @return iterable<int,Schema\DependencyGraphDiff> */
     public function call(string $owner, string $repo, string $basehead, string $name): iterable
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\DependencyGraph\DiffRange($this->responseSchemaValidator, $this->hydrator, $owner, $repo, $basehead, $name);

@@ -280,6 +280,7 @@ final class Users
         return $this->operators->users👷GetByUsername()->call($username);
     }
 
+    /** @return */
     public function listAttestations(string $before, string $after, string $username, string $subjectDigest, string $predicateType, int $perPage): Json|EmptyObject|WithoutBody
     {
         return $this->operators->users👷ListAttestations()->call($before, $after, $username, $subjectDigest, $predicateType, $perPage);

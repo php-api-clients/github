@@ -540,6 +540,7 @@ final class Users
         return $operator->call($arguments['username'], $arguments['per_page'], $arguments['page']);
     }
 
+    /** @return */
     public function listAttestations(array $params): Json|EmptyObject|WithoutBody
     {
         $arguments = [];

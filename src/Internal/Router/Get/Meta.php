@@ -61,7 +61,6 @@ final class Meta
         return $operator->call();
     }
 
-    /** @return */
     public function getZen(array $params): string
     {
         $operator = new Internal\Operator\Meta\GetZen($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Zen());

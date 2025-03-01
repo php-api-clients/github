@@ -174,6 +174,7 @@ final class Repos
         return $this->operators->repos👷CreateAttestation()->call($owner, $repo, $params);
     }
 
+    /** @return */
     public function listAttestations(string $owner, string $repo, string $before, string $after, string $subjectDigest, string $predicateType, int $perPage): Json
     {
         return $this->operators->repos👷ListAttestations()->call($owner, $repo, $before, $after, $subjectDigest, $predicateType, $perPage);

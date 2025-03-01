@@ -26,6 +26,7 @@ final readonly class ListAttestations
     {
     }
 
+    /** @return */
     public function call(string $before, string $after, string $username, string $subjectDigest, string $predicateType, int $perPage = 30): Json|EmptyObject|WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Users\ListAttestations($this->responseSchemaValidator, $this->hydrator, $before, $after, $username, $subjectDigest, $predicateType, $perPage);

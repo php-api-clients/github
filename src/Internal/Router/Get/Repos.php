@@ -1261,6 +1261,7 @@ final class Repos
         return $operator->call($arguments['org'], $arguments['rule_suite_id']);
     }
 
+    /** @return */
     public function listAttestations(array $params): Json
     {
         $arguments = [];

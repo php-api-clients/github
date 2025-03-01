@@ -98,7 +98,6 @@ final class Search
         return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return */
     public function issuesAndPullRequests(array $params): \ApiClients\Client\GitHub\Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|WithoutBody
     {
         $arguments = [];
@@ -114,6 +113,12 @@ final class Search
 
         $arguments['sort'] = $params['sort'];
         unset($params['sort']);
+        if (array_key_exists('advanced_search', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: advanced_search');
+        }
+
+        $arguments['advanced_search'] = $params['advanced_search'];
+        unset($params['advanced_search']);
         if (array_key_exists('order', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: order');
         }
@@ -134,7 +139,7 @@ final class Search
         unset($params['page']);
         $operator = new Internal\Operator\Search\IssuesAndPullRequests($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Search🌀Issues());
 
-        return $operator->call($arguments['q'], $arguments['sort'], $arguments['order'], $arguments['per_page'], $arguments['page']);
+        return $operator->call($arguments['q'], $arguments['sort'], $arguments['advanced_search'], $arguments['order'], $arguments['per_page'], $arguments['page']);
     }
 
     /** @return */

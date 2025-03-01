@@ -27,6 +27,9 @@ final class IssuesAndPullRequests
     private string $q;
     /**Sorts the results of your query by the number of `comments`, `reactions`, `reactions-+1`, `reactions--1`, `reactions-smile`, `reactions-thinking_face`, `reactions-heart`, `reactions-tada`, or `interactions`. You can also sort results by how recently the items were `created` or `updated`, Default: [best match](https://docs.github.com/rest/search/search#ranking-search-results) **/
     private string $sort;
+    /**Set to `true` to use advanced search.
+    Example: `http://api.github.com/search/issues?q={query}&advanced_search=true` **/
+    private string $advancedSearch;
     /**Determines whether the first search result returned is the highest number of matches (`desc`) or lowest number of matches (`asc`). This parameter is ignored unless you provide `sort`. **/
     private string $order;
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
@@ -34,18 +37,19 @@ final class IssuesAndPullRequests
     /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Search\Issues $hydrator, string $q, string $sort, string $order = 'desc', int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Search\Issues $hydrator, string $q, string $sort, string $advancedSearch, string $order = 'desc', int $perPage = 30, int $page = 1)
     {
-        $this->q       = $q;
-        $this->sort    = $sort;
-        $this->order   = $order;
-        $this->perPage = $perPage;
-        $this->page    = $page;
+        $this->q              = $q;
+        $this->sort           = $sort;
+        $this->advancedSearch = $advancedSearch;
+        $this->order          = $order;
+        $this->perPage        = $perPage;
+        $this->page           = $page;
     }
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{q}', '{sort}', '{order}', '{per_page}', '{page}'], [$this->q, $this->sort, $this->order, $this->perPage, $this->page], '/search/issues' . '?q={q}&sort={sort}&order={order}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{q}', '{sort}', '{advanced_search}', '{order}', '{per_page}', '{page}'], [$this->q, $this->sort, $this->advancedSearch, $this->order, $this->perPage, $this->page], '/search/issues' . '?q={q}&sort={sort}&advanced_search={advanced_search}&order={order}&per_page={per_page}&page={page}'));
     }
 
     public function createResponse(ResponseInterface $response): Schema\Operations\Search\IssuesAndPullRequests\Response\ApplicationJson\Ok|WithoutBody

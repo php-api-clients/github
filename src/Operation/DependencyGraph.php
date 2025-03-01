@@ -15,7 +15,7 @@ final class DependencyGraph
     {
     }
 
-    /** @return Observable<Schema\DependencyGraphDiff> */
+    /** @return iterable<int,Schema\DependencyGraphDiff> */
     public function diffRange(string $owner, string $repo, string $basehead, string $name): iterable
     {
         return $this->operators->dependencyGraph👷DiffRange()->call($owner, $repo, $basehead, $name);
