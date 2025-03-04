@@ -51,6 +51,18 @@ final readonly class WebhookReleaseEdited
                         }
                     }
                 },
+                "tag_name": {
+                    "required": [
+                        "from"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "from": {
+                            "type": "string",
+                            "description": "The previous version of the tag_name if the action was `edited`."
+                        }
+                    }
+                },
                 "make_latest": {
                     "required": [
                         "to"
@@ -2372,6 +2384,9 @@ final readonly class WebhookReleaseEdited
             "from": "generated"
         },
         "name": {
+            "from": "generated"
+        },
+        "tag_name": {
             "from": "generated"
         },
         "make_latest": {

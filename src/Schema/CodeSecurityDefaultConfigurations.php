@@ -212,6 +212,15 @@ final readonly class CodeSecurityDefaultConfigurations
                     "type": "string",
                     "description": "The enablement status of secret scanning non-provider patterns"
                 },
+                "secret_scanning_generic_secrets": {
+                    "enum": [
+                        "enabled",
+                        "disabled",
+                        "not_set"
+                    ],
+                    "type": "string",
+                    "description": "The enablement status of Copilot secret scanning"
+                },
                 "secret_scanning_delegated_alert_dismissal": {
                     "enum": [
                         "enabled",
@@ -300,6 +309,7 @@ final readonly class CodeSecurityDefaultConfigurations
         },
         "secret_scanning_validity_checks": "enabled",
         "secret_scanning_non_provider_patterns": "enabled",
+        "secret_scanning_generic_secrets": "enabled",
         "secret_scanning_delegated_alert_dismissal": "enabled",
         "private_vulnerability_reporting": "enabled",
         "enforcement": "enforced",

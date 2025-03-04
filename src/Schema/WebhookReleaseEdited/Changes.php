@@ -36,6 +36,18 @@ final readonly class Changes
                 }
             }
         },
+        "tag_name": {
+            "required": [
+                "from"
+            ],
+            "type": "object",
+            "properties": {
+                "from": {
+                    "type": "string",
+                    "description": "The previous version of the tag_name if the action was `edited`."
+                }
+            }
+        },
         "make_latest": {
             "required": [
                 "to"
@@ -59,12 +71,16 @@ final readonly class Changes
     "name": {
         "from": "generated"
     },
+    "tag_name": {
+        "from": "generated"
+    },
     "make_latest": {
         "to": false
     }
 }';
 
-    public function __construct(public Schema\WebhookReleaseEdited\Changes\Body|null $body, public Schema\WebhookReleaseEdited\Changes\Name|null $name, #[MapFrom('make_latest')]
+    public function __construct(public Schema\WebhookReleaseEdited\Changes\Body|null $body, public Schema\WebhookReleaseEdited\Changes\Name|null $name, #[MapFrom('tag_name')]
+    public Schema\WebhookReleaseEdited\Changes\TagName|null $tagName, #[MapFrom('make_latest')]
     public Schema\WebhookReleaseEdited\Changes\MakeLatest|null $makeLatest,)
     {
     }

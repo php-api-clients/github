@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet40F01C12\Tiet17FC06A8\Tiet7006072F;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet93141EDA\Tiet7E1CE92E\Tiet73282F1D;
 
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class TietBCEFF0FF
+abstract readonly class Tiet55BAEBBF
 {
     public const SCHEMA_JSON         = '{
     "type": "object",
@@ -214,6 +214,15 @@ abstract readonly class TietBCEFF0FF
                     "type": "string",
                     "description": "The enablement status of secret scanning non-provider patterns"
                 },
+                "secret_scanning_generic_secrets": {
+                    "enum": [
+                        "enabled",
+                        "disabled",
+                        "not_set"
+                    ],
+                    "type": "string",
+                    "description": "The enablement status of Copilot secret scanning"
+                },
                 "secret_scanning_delegated_alert_dismissal": {
                     "enum": [
                         "enabled",
@@ -302,6 +311,7 @@ abstract readonly class TietBCEFF0FF
         },
         "secret_scanning_validity_checks": "enabled",
         "secret_scanning_non_provider_patterns": "enabled",
+        "secret_scanning_generic_secrets": "enabled",
         "secret_scanning_delegated_alert_dismissal": "enabled",
         "private_vulnerability_reporting": "enabled",
         "enforcement": "enforced",

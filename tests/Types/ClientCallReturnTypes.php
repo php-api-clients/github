@@ -698,7 +698,7 @@ assertType('', $client->call('GET /repos/{owner}/{repo}/dependabot/secrets/publi
 assertType('', $client->call('GET /repos/{owner}/{repo}/dependabot/secrets/{secret_name}'));
 assertType('', $client->call('PUT /repos/{owner}/{repo}/dependabot/secrets/{secret_name}'));
 assertType('', $client->call('DELETE /repos/{owner}/{repo}/dependabot/secrets/{secret_name}'));
-assertType('iterable<int,Schema\\DependencyGraphDiff>', $client->call('GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}'));
+assertType('Observable<Schema\\DependencyGraphDiff>', $client->call('GET /repos/{owner}/{repo}/dependency-graph/compare/{basehead}'));
 assertType('', $client->call('GET /repos/{owner}/{repo}/dependency-graph/sbom'));
 assertType('', $client->call('POST /repos/{owner}/{repo}/dependency-graph/snapshots'));
 assertType('Observable<Schema\\Deployment>', $client->call('GET /repos/{owner}/{repo}/deployments'));
@@ -999,7 +999,7 @@ assertType('', $client->call('POST /repos/{template_owner}/{template_repo}/gener
 assertType('Observable<Schema\\MinimalRepository>|WithoutBody', $client->call('GET /repositories'));
 assertType('', $client->call('GET /search/code'));
 assertType('', $client->call('GET /search/commits'));
-assertType('Schema\\Operations\\Search\\IssuesAndPullRequests\\Response\\ApplicationJson\\Ok|\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody', $client->call('GET /search/issues'));
+assertType('', $client->call('GET /search/issues'));
 assertType('', $client->call('GET /search/labels'));
 assertType('', $client->call('GET /search/repositories'));
 assertType('', $client->call('GET /search/topics'));
@@ -1217,4 +1217,4 @@ assertType('', $client->call('GET /users/{username}/starred'));
 assertType('Observable<Schema\\MinimalRepository>', $client->call('GET /users/{username}/subscriptions'));
 assertType('Observable<Schema\\MinimalRepository>', $client->call('LIST /users/{username}/subscriptions'));
 assertType('Observable<string>', $client->call('GET /versions'));
-assertType('string', $client->call('GET /zen'));
+assertType('', $client->call('GET /zen'));

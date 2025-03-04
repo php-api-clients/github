@@ -285,6 +285,17 @@ class ConfigurationId implements ObjectMapper
 
             after_secretScanningNonProviderPatterns:
 
+            $value = $payload['secret_scanning_generic_secrets'] ?? null;
+
+            if ($value === null) {
+                $properties['secretScanningGenericSecrets'] = null;
+                goto after_secretScanningGenericSecrets;
+            }
+
+            $properties['secretScanningGenericSecrets'] = $value;
+
+            after_secretScanningGenericSecrets:
+
             $value = $payload['secret_scanning_delegated_alert_dismissal'] ?? null;
 
             if ($value === null) {
@@ -875,6 +886,14 @@ class ConfigurationId implements ObjectMapper
         }
 
         after_secretScanningNonProviderPatterns:        $result['secret_scanning_non_provider_patterns'] = $secretScanningNonProviderPatterns;
+
+        $secretScanningGenericSecrets = $object->secretScanningGenericSecrets;
+
+        if ($secretScanningGenericSecrets === null) {
+            goto after_secretScanningGenericSecrets;
+        }
+
+        after_secretScanningGenericSecrets:        $result['secret_scanning_generic_secrets'] = $secretScanningGenericSecrets;
 
         $secretScanningDelegatedAlertDismissal = $object->secretScanningDelegatedAlertDismissal;
 
