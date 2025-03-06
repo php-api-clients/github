@@ -101,6 +101,20 @@ final readonly class WebhookDependabotAlertReopened
                             ],
                             "description": "The execution scope of the vulnerable dependency.",
                             "readOnly": true
+                        },
+                        "relationship": {
+                            "enum": [
+                                "unknown",
+                                "direct",
+                                "transitive",
+                                null
+                            ],
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "description": "The vulnerable dependency\'s relationship to your project.\\n\\n> [!NOTE]\\n> We are rolling out support for dependency relationship across ecosystems. This value will be \\"unknown\\" for all dependencies in unsupported ecosystems.\\n",
+                            "readOnly": true
                         }
                     },
                     "description": "Details for the vulnerable dependency.",
@@ -2664,7 +2678,8 @@ final readonly class WebhookDependabotAlertReopened
                 "name": "generated"
             },
             "manifest_path": "generated",
-            "scope": "development"
+            "scope": "development",
+            "relationship": "transitive"
         },
         "security_advisory": {
             "ghsa_id": "generated",

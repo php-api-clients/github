@@ -259,6 +259,17 @@ class CodeSecurityConfiguration implements ObjectMapper
 
             after_codeScanningDefaultSetupOptions:
 
+            $value = $payload['code_scanning_delegated_alert_dismissal'] ?? null;
+
+            if ($value === null) {
+                $properties['codeScanningDelegatedAlertDismissal'] = null;
+                goto after_codeScanningDelegatedAlertDismissal;
+            }
+
+            $properties['codeScanningDelegatedAlertDismissal'] = $value;
+
+            after_codeScanningDelegatedAlertDismissal:
+
             $value = $payload['secret_scanning'] ?? null;
 
             if ($value === null) {
@@ -826,6 +837,14 @@ class CodeSecurityConfiguration implements ObjectMapper
 
         $codeScanningDefaultSetupOptions                                                             = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CodeSecurityConfiguration⚡️CodeScanningDefaultSetupOptions($codeScanningDefaultSetupOptions);
         after_codeScanningDefaultSetupOptions:        $result['code_scanning_default_setup_options'] = $codeScanningDefaultSetupOptions;
+
+        $codeScanningDelegatedAlertDismissal = $object->codeScanningDelegatedAlertDismissal;
+
+        if ($codeScanningDelegatedAlertDismissal === null) {
+            goto after_codeScanningDelegatedAlertDismissal;
+        }
+
+        after_codeScanningDelegatedAlertDismissal:        $result['code_scanning_delegated_alert_dismissal'] = $codeScanningDelegatedAlertDismissal;
 
         $secretScanning = $object->secretScanning;
 

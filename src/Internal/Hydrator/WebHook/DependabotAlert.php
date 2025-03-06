@@ -515,6 +515,17 @@ class DependabotAlert implements ObjectMapper
             $properties['scope'] = $value;
 
             after_scope:
+
+            $value = $payload['relationship'] ?? null;
+
+            if ($value === null) {
+                $properties['relationship'] = null;
+                goto after_relationship;
+            }
+
+            $properties['relationship'] = $value;
+
+            after_relationship:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\DependabotAlert\Dependency', $exception, stack: $this->hydrationStack);
         }
@@ -5522,6 +5533,14 @@ class DependabotAlert implements ObjectMapper
         }
 
         after_scope:        $result['scope'] = $scope;
+
+        $relationship = $object->relationship;
+
+        if ($relationship === null) {
+            goto after_relationship;
+        }
+
+        after_relationship:        $result['relationship'] = $relationship;
 
         return $result;
     }

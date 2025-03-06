@@ -136,6 +136,15 @@ final readonly class CodeSecurityDefaultConfigurations
                     },
                     "description": "Feature options for code scanning default setup"
                 },
+                "code_scanning_delegated_alert_dismissal": {
+                    "enum": [
+                        "enabled",
+                        "disabled",
+                        "not_set"
+                    ],
+                    "type": "string",
+                    "description": "The enablement status of code scanning delegated alert dismissal"
+                },
                 "secret_scanning": {
                     "enum": [
                         "enabled",
@@ -292,6 +301,7 @@ final readonly class CodeSecurityDefaultConfigurations
             "runner_type": "standard",
             "runner_label": "generated"
         },
+        "code_scanning_delegated_alert_dismissal": "enabled",
         "secret_scanning": "enabled",
         "secret_scanning_push_protection": "enabled",
         "secret_scanning_delegated_bypass": "not_set",

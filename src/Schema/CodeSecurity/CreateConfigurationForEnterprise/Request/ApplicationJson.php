@@ -120,6 +120,16 @@ final readonly class ApplicationJson
             },
             "description": "Feature options for code scanning default setup"
         },
+        "code_scanning_delegated_alert_dismissal": {
+            "enum": [
+                "enabled",
+                "disabled",
+                "not_set"
+            ],
+            "type": "string",
+            "description": "The enablement status of code scanning delegated alert dismissal",
+            "default": "disabled"
+        },
         "secret_scanning": {
             "enum": [
                 "enabled",
@@ -170,6 +180,16 @@ final readonly class ApplicationJson
             "description": "The enablement status of Copilot secret scanning",
             "default": "disabled"
         },
+        "secret_scanning_delegated_alert_dismissal": {
+            "enum": [
+                "enabled",
+                "disabled",
+                "not_set"
+            ],
+            "type": "string",
+            "description": "The enablement status of secret scanning delegated alert dismissal",
+            "default": "disabled"
+        },
         "private_vulnerability_reporting": {
             "enum": [
                 "enabled",
@@ -210,11 +230,13 @@ final readonly class ApplicationJson
         "runner_type": "standard",
         "runner_label": "generated"
     },
+    "code_scanning_delegated_alert_dismissal": "enabled",
     "secret_scanning": "enabled",
     "secret_scanning_push_protection": "enabled",
     "secret_scanning_validity_checks": "enabled",
     "secret_scanning_non_provider_patterns": "enabled",
     "secret_scanning_generic_secrets": "enabled",
+    "secret_scanning_delegated_alert_dismissal": "enabled",
     "private_vulnerability_reporting": "enabled",
     "enforcement": "enforced"
 }';
@@ -230,11 +252,13 @@ final readonly class ApplicationJson
      * dependabotSecurityUpdates: The enablement status of Dependabot security updates
      * codeScanningDefaultSetup: The enablement status of code scanning default setup
      * codeScanningDefaultSetupOptions: Feature options for code scanning default setup
+     * codeScanningDelegatedAlertDismissal: The enablement status of code scanning delegated alert dismissal
      * secretScanning: The enablement status of secret scanning
      * secretScanningPushProtection: The enablement status of secret scanning push protection
      * secretScanningValidityChecks: The enablement status of secret scanning validity checks
      * secretScanningNonProviderPatterns: The enablement status of secret scanning non provider patterns
      * secretScanningGenericSecrets: The enablement status of Copilot secret scanning
+     * secretScanningDelegatedAlertDismissal: The enablement status of secret scanning delegated alert dismissal
      * privateVulnerabilityReporting: The enablement status of private vulnerability reporting
      * enforcement: The enforcement status for a security configuration
      */
@@ -246,12 +270,14 @@ final readonly class ApplicationJson
     public string|null $dependabotAlerts, #[MapFrom('dependabot_security_updates')]
     public string|null $dependabotSecurityUpdates, #[MapFrom('code_scanning_default_setup')]
     public string|null $codeScanningDefaultSetup, #[MapFrom('code_scanning_default_setup_options')]
-    public Schema\CodeScanningDefaultSetupOptions|null $codeScanningDefaultSetupOptions, #[MapFrom('secret_scanning')]
+    public Schema\CodeScanningDefaultSetupOptions|null $codeScanningDefaultSetupOptions, #[MapFrom('code_scanning_delegated_alert_dismissal')]
+    public string|null $codeScanningDelegatedAlertDismissal, #[MapFrom('secret_scanning')]
     public string|null $secretScanning, #[MapFrom('secret_scanning_push_protection')]
     public string|null $secretScanningPushProtection, #[MapFrom('secret_scanning_validity_checks')]
     public string|null $secretScanningValidityChecks, #[MapFrom('secret_scanning_non_provider_patterns')]
     public string|null $secretScanningNonProviderPatterns, #[MapFrom('secret_scanning_generic_secrets')]
-    public string|null $secretScanningGenericSecrets, #[MapFrom('private_vulnerability_reporting')]
+    public string|null $secretScanningGenericSecrets, #[MapFrom('secret_scanning_delegated_alert_dismissal')]
+    public string|null $secretScanningDelegatedAlertDismissal, #[MapFrom('private_vulnerability_reporting')]
     public string|null $privateVulnerabilityReporting, public string|null $enforcement,)
     {
     }

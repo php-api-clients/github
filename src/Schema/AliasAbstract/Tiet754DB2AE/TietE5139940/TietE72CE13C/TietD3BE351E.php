@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet93141EDA\Tiet7E1CE92E\Tiet73282F1D;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet754DB2AE\TietE5139940\TietE72CE13C;
 
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class Tiet55BAEBBF
+abstract readonly class TietD3BE351E
 {
     public const SCHEMA_JSON         = '{
     "type": "object",
@@ -137,6 +137,15 @@ abstract readonly class Tiet55BAEBBF
                         }
                     },
                     "description": "Feature options for code scanning default setup"
+                },
+                "code_scanning_delegated_alert_dismissal": {
+                    "enum": [
+                        "enabled",
+                        "disabled",
+                        "not_set"
+                    ],
+                    "type": "string",
+                    "description": "The enablement status of code scanning delegated alert dismissal"
                 },
                 "secret_scanning": {
                     "enum": [
@@ -294,6 +303,7 @@ abstract readonly class Tiet55BAEBBF
             "runner_type": "standard",
             "runner_label": "generated"
         },
+        "code_scanning_delegated_alert_dismissal": "enabled",
         "secret_scanning": "enabled",
         "secret_scanning_push_protection": "enabled",
         "secret_scanning_delegated_bypass": "not_set",

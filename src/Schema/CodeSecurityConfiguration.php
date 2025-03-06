@@ -125,6 +125,15 @@ final readonly class CodeSecurityConfiguration
             },
             "description": "Feature options for code scanning default setup"
         },
+        "code_scanning_delegated_alert_dismissal": {
+            "enum": [
+                "enabled",
+                "disabled",
+                "not_set"
+            ],
+            "type": "string",
+            "description": "The enablement status of code scanning delegated alert dismissal"
+        },
         "secret_scanning": {
             "enum": [
                 "enabled",
@@ -277,6 +286,7 @@ final readonly class CodeSecurityConfiguration
         "runner_type": "standard",
         "runner_label": "generated"
     },
+    "code_scanning_delegated_alert_dismissal": "enabled",
     "secret_scanning": "enabled",
     "secret_scanning_push_protection": "enabled",
     "secret_scanning_delegated_bypass": "not_set",
@@ -317,6 +327,7 @@ final readonly class CodeSecurityConfiguration
      * dependabotSecurityUpdates: The enablement status of Dependabot security updates
      * codeScanningDefaultSetup: The enablement status of code scanning default setup
      * codeScanningDefaultSetupOptions: Feature options for code scanning default setup
+     * codeScanningDelegatedAlertDismissal: The enablement status of code scanning delegated alert dismissal
      * secretScanning: The enablement status of secret scanning
      * secretScanningPushProtection: The enablement status of secret scanning push protection
      * secretScanningDelegatedBypass: The enablement status of secret scanning delegated bypass
@@ -339,7 +350,8 @@ final readonly class CodeSecurityConfiguration
     public string|null $dependabotAlerts, #[MapFrom('dependabot_security_updates')]
     public string|null $dependabotSecurityUpdates, #[MapFrom('code_scanning_default_setup')]
     public string|null $codeScanningDefaultSetup, #[MapFrom('code_scanning_default_setup_options')]
-    public Schema\CodeSecurityConfiguration\CodeScanningDefaultSetupOptions|null $codeScanningDefaultSetupOptions, #[MapFrom('secret_scanning')]
+    public Schema\CodeSecurityConfiguration\CodeScanningDefaultSetupOptions|null $codeScanningDefaultSetupOptions, #[MapFrom('code_scanning_delegated_alert_dismissal')]
+    public string|null $codeScanningDelegatedAlertDismissal, #[MapFrom('secret_scanning')]
     public string|null $secretScanning, #[MapFrom('secret_scanning_push_protection')]
     public string|null $secretScanningPushProtection, #[MapFrom('secret_scanning_delegated_bypass')]
     public string|null $secretScanningDelegatedBypass, #[MapFrom('secret_scanning_delegated_bypass_options')]
