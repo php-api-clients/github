@@ -42,7 +42,6 @@ final class CodeScanning
         return $operator->call($arguments['owner'], $arguments['repo'], $params);
     }
 
-    /** @return */
     public function updateAlert(array $params): CodeScanningAlert
     {
         $arguments = [];

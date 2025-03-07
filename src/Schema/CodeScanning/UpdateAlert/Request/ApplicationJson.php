@@ -42,6 +42,10 @@ final readonly class ApplicationJson
                 "null"
             ],
             "description": "The dismissal comment associated with the dismissal of the alert."
+        },
+        "create_request": {
+            "type": "boolean",
+            "description": "If `true`, attempt to create an alert dismissal request."
         }
     }
 }';
@@ -50,17 +54,20 @@ final readonly class ApplicationJson
     public const SCHEMA_EXAMPLE_DATA = '{
     "state": "open",
     "dismissed_reason": "used in tests",
-    "dismissed_comment": "generated"
+    "dismissed_comment": "generated",
+    "create_request": false
 }';
 
     /**
      * state: Sets the state of the code scanning alert. You must provide `dismissed_reason` when you set the state to `dismissed`.
      * dismissedReason: **Required when the state is dismissed.** The reason for dismissing or closing the alert.
      * dismissedComment: The dismissal comment associated with the dismissal of the alert.
+     * createRequest: If `true`, attempt to create an alert dismissal request.
      */
     public function __construct(public string $state, #[MapFrom('dismissed_reason')]
     public string|null $dismissedReason, #[MapFrom('dismissed_comment')]
-    public string|null $dismissedComment,)
+    public string|null $dismissedComment, #[MapFrom('create_request')]
+    public bool|null $createRequest,)
     {
     }
 }
