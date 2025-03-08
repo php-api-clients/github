@@ -57,6 +57,7 @@ final class CodeScanning
         return $this->operators->codeScanning👷GetAlert()->call($owner, $repo, $alertNumber);
     }
 
+    /** @return */
     public function updateAlert(string $owner, string $repo, int $alertNumber, array $params): CodeScanningAlert
     {
         return $this->operators->codeScanning👷UpdateAlert()->call($owner, $repo, $alertNumber, $params);

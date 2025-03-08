@@ -21,13 +21,6 @@ final readonly class Image
             ],
             "type": "string",
             "description": "The source of the runner image."
-        },
-        "version": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "description": "The version of the runner image to deploy. This is relevant only for runners using custom images."
         }
     },
     "description": "The image of runner. To list all available images, use `GET \\/actions\\/hosted-runners\\/images\\/github-owned` or `GET \\/actions\\/hosted-runners\\/images\\/partner`."
@@ -36,16 +29,14 @@ final readonly class Image
     public const SCHEMA_DESCRIPTION  = 'The image of runner. To list all available images, use `GET /actions/hosted-runners/images/github-owned` or `GET /actions/hosted-runners/images/partner`.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "id": "generated",
-    "source": "custom",
-    "version": "generated"
+    "source": "custom"
 }';
 
     /**
      * id: The unique identifier of the runner image.
      * source: The source of the runner image.
-     * version: The version of the runner image to deploy. This is relevant only for runners using custom images.
      */
-    public function __construct(public string|null $id, public string|null $source, public string|null $version)
+    public function __construct(public string|null $id, public string|null $source)
     {
     }
 }

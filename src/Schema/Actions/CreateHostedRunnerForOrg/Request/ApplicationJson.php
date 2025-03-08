@@ -37,13 +37,6 @@ final readonly class ApplicationJson
                     ],
                     "type": "string",
                     "description": "The source of the runner image."
-                },
-                "version": {
-                    "type": [
-                        "string",
-                        "null"
-                    ],
-                    "description": "The version of the runner image to deploy. This is relevant only for runners using custom images."
                 }
             },
             "description": "The image of runner. To list all available images, use `GET \\/actions\\/hosted-runners\\/images\\/github-owned` or `GET \\/actions\\/hosted-runners\\/images\\/partner`."
@@ -72,8 +65,7 @@ final readonly class ApplicationJson
     "name": "generated",
     "image": {
         "id": "generated",
-        "source": "custom",
-        "version": "generated"
+        "source": "custom"
     },
     "size": "generated",
     "runner_group_id": 15,

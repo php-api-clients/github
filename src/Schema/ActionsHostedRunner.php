@@ -88,13 +88,6 @@ final readonly class ActionsHostedRunner
                             ],
                             "type": "string",
                             "description": "The image provider."
-                        },
-                        "version": {
-                            "type": "string",
-                            "description": "The image version of the hosted runner pool.",
-                            "examples": [
-                                "latest"
-                            ]
                         }
                     },
                     "description": "Provides details of a hosted runner image"
@@ -234,8 +227,7 @@ final readonly class ActionsHostedRunner
         "id": "ubuntu-20.04",
         "size_gb": 86,
         "display_name": 20.04,
-        "source": "custom",
-        "version": "latest"
+        "source": "custom"
     },
     "machine_size_details": {
         "id": "8-core",

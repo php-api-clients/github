@@ -255,17 +255,6 @@ class HostedRunnerId implements ObjectMapper
             $properties['source'] = $value;
 
             after_source:
-
-            $value = $payload['version'] ?? null;
-
-            if ($value === null) {
-                $missingFields[] = 'version';
-                goto after_version;
-            }
-
-            $properties['version'] = $value;
-
-            after_version:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\ActionsHostedRunnerPoolImage', $exception, stack: $this->hydrationStack);
         }
@@ -531,9 +520,6 @@ class HostedRunnerId implements ObjectMapper
 
         $source                                = $object->source;
         after_source:        $result['source'] = $source;
-
-        $version                                 = $object->version;
-        after_version:        $result['version'] = $version;
 
         return $result;
     }

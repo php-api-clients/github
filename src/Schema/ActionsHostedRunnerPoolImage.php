@@ -48,13 +48,6 @@ final readonly class ActionsHostedRunnerPoolImage
             ],
             "type": "string",
             "description": "The image provider."
-        },
-        "version": {
-            "type": "string",
-            "description": "The image version of the hosted runner pool.",
-            "examples": [
-                "latest"
-            ]
         }
     },
     "description": "Provides details of a hosted runner image"
@@ -65,8 +58,7 @@ final readonly class ActionsHostedRunnerPoolImage
     "id": "ubuntu-20.04",
     "size_gb": 86,
     "display_name": 20.04,
-    "source": "custom",
-    "version": "latest"
+    "source": "custom"
 }';
 
     /**
@@ -74,11 +66,10 @@ final readonly class ActionsHostedRunnerPoolImage
      * sizeGb: Image size in GB.
      * displayName: Display name for this image.
      * source: The image provider.
-     * version: The image version of the hosted runner pool.
      */
     public function __construct(public string $id, #[MapFrom('size_gb')]
     public int $sizeGb, #[MapFrom('display_name')]
-    public string $displayName, public string $source, public string $version,)
+    public string $displayName, public string $source,)
     {
     }
 }
