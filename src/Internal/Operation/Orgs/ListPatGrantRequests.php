@@ -37,6 +37,8 @@ final class ListPatGrantRequests
     private string $lastUsedBefore;
     /**Only show fine-grained personal access tokens used after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
     private string $lastUsedAfter;
+    /**The ID of the token **/
+    private array $tokenId;
     /**The number of results per page (max 100). For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $perPage;
     /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
@@ -46,7 +48,7 @@ final class ListPatGrantRequests
     /**The direction to sort the results by. **/
     private string $direction;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests $hydrator, string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage = 30, int $page = 1, string $sort = 'created_at', string $direction = 'desc')
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\PersonalAccessTokenRequests $hydrator, string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, array $tokenId, int $perPage = 30, int $page = 1, string $sort = 'created_at', string $direction = 'desc')
     {
         $this->org            = $org;
         $this->owner          = $owner;
@@ -54,6 +56,7 @@ final class ListPatGrantRequests
         $this->permission     = $permission;
         $this->lastUsedBefore = $lastUsedBefore;
         $this->lastUsedAfter  = $lastUsedAfter;
+        $this->tokenId        = $tokenId;
         $this->perPage        = $perPage;
         $this->page           = $page;
         $this->sort           = $sort;
@@ -62,7 +65,7 @@ final class ListPatGrantRequests
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{org}', '{owner}', '{repository}', '{permission}', '{last_used_before}', '{last_used_after}', '{per_page}', '{page}', '{sort}', '{direction}'], [$this->org, $this->owner, $this->repository, $this->permission, $this->lastUsedBefore, $this->lastUsedAfter, $this->perPage, $this->page, $this->sort, $this->direction], '/orgs/{org}/personal-access-token-requests' . '?owner={owner}&repository={repository}&permission={permission}&last_used_before={last_used_before}&last_used_after={last_used_after}&per_page={per_page}&page={page}&sort={sort}&direction={direction}'));
+        return new Request('GET', str_replace(['{org}', '{owner}', '{repository}', '{permission}', '{last_used_before}', '{last_used_after}', '{token_id}', '{per_page}', '{page}', '{sort}', '{direction}'], [$this->org, $this->owner, $this->repository, $this->permission, $this->lastUsedBefore, $this->lastUsedAfter, $this->tokenId, $this->perPage, $this->page, $this->sort, $this->direction], '/orgs/{org}/personal-access-token-requests' . '?owner={owner}&repository={repository}&permission={permission}&last_used_before={last_used_before}&last_used_after={last_used_after}&token_id={token_id}&per_page={per_page}&page={page}&sort={sort}&direction={direction}'));
     }
 
     /** @return Observable<Schema\OrganizationProgrammaticAccessGrantRequest> */

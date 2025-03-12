@@ -320,7 +320,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['filter'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\OrganizationProgrammaticAccessGrantRequest> */
+    /** @return iterable<int,Schema\OrganizationProgrammaticAccessGrantRequest> */
     public function listPatGrantRequests(array $params): iterable
     {
         $arguments = [];
@@ -360,6 +360,12 @@ final class Orgs
 
         $arguments['last_used_after'] = $params['last_used_after'];
         unset($params['last_used_after']);
+        if (array_key_exists('token_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: token_id');
+        }
+
+        $arguments['token_id'] = $params['token_id'];
+        unset($params['token_id']);
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
         }
@@ -386,10 +392,10 @@ final class Orgs
         unset($params['direction']);
         $operator = new Internal\Operator\Orgs\ListPatGrantRequests($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokenRequests());
 
-        return $operator->call($arguments['org'], $arguments['owner'], $arguments['repository'], $arguments['permission'], $arguments['last_used_before'], $arguments['last_used_after'], $arguments['per_page'], $arguments['page'], $arguments['sort'], $arguments['direction']);
+        return $operator->call($arguments['org'], $arguments['owner'], $arguments['repository'], $arguments['permission'], $arguments['last_used_before'], $arguments['last_used_after'], $arguments['token_id'], $arguments['per_page'], $arguments['page'], $arguments['sort'], $arguments['direction']);
     }
 
-    /** @return Observable<Schema\OrganizationProgrammaticAccessGrant> */
+    /** @return iterable<int,Schema\OrganizationProgrammaticAccessGrant> */
     public function listPatGrants(array $params): iterable
     {
         $arguments = [];
@@ -429,6 +435,12 @@ final class Orgs
 
         $arguments['last_used_after'] = $params['last_used_after'];
         unset($params['last_used_after']);
+        if (array_key_exists('token_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: token_id');
+        }
+
+        $arguments['token_id'] = $params['token_id'];
+        unset($params['token_id']);
         if (array_key_exists('per_page', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: per_page');
         }
@@ -455,7 +467,7 @@ final class Orgs
         unset($params['direction']);
         $operator = new Internal\Operator\Orgs\ListPatGrants($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀PersonalAccessTokens());
 
-        return $operator->call($arguments['org'], $arguments['owner'], $arguments['repository'], $arguments['permission'], $arguments['last_used_before'], $arguments['last_used_after'], $arguments['per_page'], $arguments['page'], $arguments['sort'], $arguments['direction']);
+        return $operator->call($arguments['org'], $arguments['owner'], $arguments['repository'], $arguments['permission'], $arguments['last_used_before'], $arguments['last_used_after'], $arguments['token_id'], $arguments['per_page'], $arguments['page'], $arguments['sort'], $arguments['direction']);
     }
 
     /** @return Observable<Schema\SimpleUser> */

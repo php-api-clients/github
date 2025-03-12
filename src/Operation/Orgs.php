@@ -349,16 +349,16 @@ final class Orgs
         return $this->operators->orgs👷RemoveOutsideCollaborator()->call($org, $username);
     }
 
-    /** @return Observable<Schema\OrganizationProgrammaticAccessGrantRequest> */
-    public function listPatGrantRequests(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage, int $page, string $sort, string $direction): iterable
+    /** @return iterable<int,Schema\OrganizationProgrammaticAccessGrantRequest> */
+    public function listPatGrantRequests(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, array $tokenId, int $perPage, int $page, string $sort, string $direction): iterable
     {
-        return $this->operators->orgs👷ListPatGrantRequests()->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $perPage, $page, $sort, $direction);
+        return $this->operators->orgs👷ListPatGrantRequests()->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $tokenId, $perPage, $page, $sort, $direction);
     }
 
-    /** @return Observable<Schema\OrganizationProgrammaticAccessGrantRequest> */
-    public function listPatGrantRequestsListing(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage, int $page, string $sort, string $direction): iterable
+    /** @return iterable<int,Schema\OrganizationProgrammaticAccessGrantRequest> */
+    public function listPatGrantRequestsListing(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, array $tokenId, int $perPage, int $page, string $sort, string $direction): iterable
     {
-        return $this->operators->orgs👷ListPatGrantRequestsListing()->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $perPage, $page, $sort, $direction);
+        return $this->operators->orgs👷ListPatGrantRequestsListing()->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $tokenId, $perPage, $page, $sort, $direction);
     }
 
     /** @return */
@@ -385,16 +385,16 @@ final class Orgs
         return $this->operators->orgs👷ListPatGrantRequestRepositoriesListing()->call($org, $patRequestId, $perPage, $page);
     }
 
-    /** @return Observable<Schema\OrganizationProgrammaticAccessGrant> */
-    public function listPatGrants(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage, int $page, string $sort, string $direction): iterable
+    /** @return iterable<int,Schema\OrganizationProgrammaticAccessGrant> */
+    public function listPatGrants(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, array $tokenId, int $perPage, int $page, string $sort, string $direction): iterable
     {
-        return $this->operators->orgs👷ListPatGrants()->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $perPage, $page, $sort, $direction);
+        return $this->operators->orgs👷ListPatGrants()->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $tokenId, $perPage, $page, $sort, $direction);
     }
 
-    /** @return Observable<Schema\OrganizationProgrammaticAccessGrant> */
-    public function listPatGrantsListing(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, int $perPage, int $page, string $sort, string $direction): iterable
+    /** @return iterable<int,Schema\OrganizationProgrammaticAccessGrant> */
+    public function listPatGrantsListing(string $org, array $owner, string $repository, string $permission, string $lastUsedBefore, string $lastUsedAfter, array $tokenId, int $perPage, int $page, string $sort, string $direction): iterable
     {
-        return $this->operators->orgs👷ListPatGrantsListing()->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $perPage, $page, $sort, $direction);
+        return $this->operators->orgs👷ListPatGrantsListing()->call($org, $owner, $repository, $permission, $lastUsedBefore, $lastUsedAfter, $tokenId, $perPage, $page, $sort, $direction);
     }
 
     /** @return */

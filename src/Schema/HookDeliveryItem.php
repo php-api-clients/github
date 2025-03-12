@@ -28,6 +28,7 @@ final readonly class HookDeliveryItem
         "id": {
             "type": "integer",
             "description": "Unique identifier of the webhook delivery.",
+            "format": "int64",
             "examples": [
                 42
             ]
@@ -98,6 +99,7 @@ final readonly class HookDeliveryItem
                 "null"
             ],
             "description": "The id of the GitHub App installation associated with this event.",
+            "format": "int64",
             "examples": [
                 123
             ]
@@ -108,6 +110,7 @@ final readonly class HookDeliveryItem
                 "null"
             ],
             "description": "The id of the repository associated with this event.",
+            "format": "int64",
             "examples": [
                 123
             ]
