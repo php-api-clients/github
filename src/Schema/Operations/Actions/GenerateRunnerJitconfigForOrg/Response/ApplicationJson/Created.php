@@ -30,14 +30,14 @@ final readonly class Created
             "properties": {
                 "id": {
                     "type": "integer",
-                    "description": "The id of the runner.",
+                    "description": "The ID of the runner.",
                     "examples": [
                         5
                     ]
                 },
                 "runner_group_id": {
                     "type": "integer",
-                    "description": "The id of the runner group.",
+                    "description": "The ID of the runner group.",
                     "examples": [
                         1
                     ]

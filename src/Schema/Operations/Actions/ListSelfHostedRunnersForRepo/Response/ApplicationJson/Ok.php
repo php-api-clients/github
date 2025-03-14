@@ -6,6 +6,6 @@ namespace ApiClients\Client\GitHub\Schema\Operations\Actions\ListSelfHostedRunne
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Ok extends Schema\AliasAbstract\TietEAB1E353\TietA691FF98\TietCADB7922\TietA4382CA1
+final readonly class Ok extends Schema\AliasAbstract\TietE8D41C9A\Tiet1255E585\Tiet44FA9DEE\Tiet93E2B36C
 {
 }

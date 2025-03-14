@@ -22,14 +22,14 @@ final readonly class Runner
     "properties": {
         "id": {
             "type": "integer",
-            "description": "The id of the runner.",
+            "description": "The ID of the runner.",
             "examples": [
                 5
             ]
         },
         "runner_group_id": {
             "type": "integer",
-            "description": "The id of the runner group.",
+            "description": "The ID of the runner group.",
             "examples": [
                 1
             ]
@@ -118,8 +118,8 @@ final readonly class Runner
 }';
 
     /**
-     * id: The id of the runner.
-     * runnerGroupId: The id of the runner group.
+     * id: The ID of the runner.
+     * runnerGroupId: The ID of the runner group.
      * name: The name of the runner.
      * os: The Operating System of the runner.
      * status: The status of the runner.
