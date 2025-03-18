@@ -164,7 +164,7 @@ final class Issues
         return $operator->call($arguments['labels'], $arguments['since'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Issue> */
+    /** @return iterable<int,Schema\Issue> */
     public function listForOrg(array $params): iterable
     {
         $arguments = [];
@@ -180,6 +180,12 @@ final class Issues
 
         $arguments['labels'] = $params['labels'];
         unset($params['labels']);
+        if (array_key_exists('type', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: type');
+        }
+
+        $arguments['type'] = $params['type'];
+        unset($params['type']);
         if (array_key_exists('since', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: since');
         }
@@ -224,7 +230,7 @@ final class Issues
         unset($params['page']);
         $operator = new Internal\Operator\Issues\ListForOrg($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Issues());
 
-        return $operator->call($arguments['org'], $arguments['labels'], $arguments['since'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
+        return $operator->call($arguments['org'], $arguments['labels'], $arguments['type'], $arguments['since'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
     /** @return Observable<Schema\SimpleUser> */
@@ -260,7 +266,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return Observable<Schema\Issue>|Schema\BasicError */
+    /** @return iterable<int,Schema\Issue>|Schema\BasicError */
     public function listForRepo(array $params): iterable|BasicError
     {
         $arguments = [];
@@ -288,6 +294,12 @@ final class Issues
 
         $arguments['assignee'] = $params['assignee'];
         unset($params['assignee']);
+        if (array_key_exists('type', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: type');
+        }
+
+        $arguments['type'] = $params['type'];
+        unset($params['type']);
         if (array_key_exists('creator', $params) === false) {
             throw new InvalidArgumentException('Missing mandatory field: creator');
         }
@@ -344,7 +356,7 @@ final class Issues
         unset($params['page']);
         $operator = new Internal\Operator\Issues\ListForRepo($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Repos🌀Owner🌀Repo🌀Issues());
 
-        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone'], $arguments['assignee'], $arguments['creator'], $arguments['mentioned'], $arguments['labels'], $arguments['since'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
+        return $operator->call($arguments['owner'], $arguments['repo'], $arguments['milestone'], $arguments['assignee'], $arguments['type'], $arguments['creator'], $arguments['mentioned'], $arguments['labels'], $arguments['since'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
     /** @return Observable<Schema\Label> */

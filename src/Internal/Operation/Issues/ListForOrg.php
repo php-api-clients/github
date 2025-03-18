@@ -29,6 +29,8 @@ final class ListForOrg
     private string $org;
     /**A list of comma separated label names. Example: `bug,ui,@high` **/
     private string $labels;
+    /**Can be the name of an issue type. **/
+    private string $type;
     /**Only show results that were last updated after the given time. This is a timestamp in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format: `YYYY-MM-DDTHH:MM:SSZ`. **/
     private string $since;
     /**Indicates which sorts of issues to return. `assigned` means issues assigned to you. `created` means issues created by you. `mentioned` means issues mentioning you. `subscribed` means issues you're subscribed to updates for. `all` or `repos` means all issues you can see, regardless of participation or creation. **/
@@ -44,10 +46,11 @@ final class ListForOrg
     /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Issues $hydrator, string $org, string $labels, string $since, string $filter = 'assigned', string $state = 'open', string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Orgs\Org\Issues $hydrator, string $org, string $labels, string $type, string $since, string $filter = 'assigned', string $state = 'open', string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1)
     {
         $this->org       = $org;
         $this->labels    = $labels;
+        $this->type      = $type;
         $this->since     = $since;
         $this->filter    = $filter;
         $this->state     = $state;
@@ -59,7 +62,7 @@ final class ListForOrg
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{org}', '{labels}', '{since}', '{filter}', '{state}', '{sort}', '{direction}', '{per_page}', '{page}'], [$this->org, $this->labels, $this->since, $this->filter, $this->state, $this->sort, $this->direction, $this->perPage, $this->page], '/orgs/{org}/issues' . '?labels={labels}&since={since}&filter={filter}&state={state}&sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{org}', '{labels}', '{type}', '{since}', '{filter}', '{state}', '{sort}', '{direction}', '{per_page}', '{page}'], [$this->org, $this->labels, $this->type, $this->since, $this->filter, $this->state, $this->sort, $this->direction, $this->perPage, $this->page], '/orgs/{org}/issues' . '?labels={labels}&type={type}&since={since}&filter={filter}&state={state}&sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\Issue> */

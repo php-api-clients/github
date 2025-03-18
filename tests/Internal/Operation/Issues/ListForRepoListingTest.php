@@ -30,13 +30,14 @@ final class ListForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/issues?milestone=generated&assignee=generated&creator=generated&mentioned=generated&labels=generated&since=1970-01-01T00:00:00+00:00&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/issues?milestone=generated&assignee=generated&type=generated&creator=generated&mentioned=generated&labels=generated&since=1970-01-01T00:00:00+00:00&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Issues\ListForRepoListing::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
             $data['repo']      = 'generated';
             $data['milestone'] = 'generated';
             $data['assignee']  = 'generated';
+            $data['type']      = 'generated';
             $data['creator']   = 'generated';
             $data['mentioned'] = 'generated';
             $data['labels']    = 'generated';
@@ -62,9 +63,9 @@ final class ListForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/issues?milestone=generated&assignee=generated&creator=generated&mentioned=generated&labels=generated&since=1970-01-01T00:00:00+00:00&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/issues?milestone=generated&assignee=generated&type=generated&creator=generated&mentioned=generated&labels=generated&since=1970-01-01T00:00:00+00:00&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->issues()->listForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', 'generated', 'generated', 'generated', 8, 1);
+        $result = $client->operations()->issues()->listForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', 'generated', 'generated', 'generated', 8, 1);
         foreach ($result as $item) {
         }
     }
@@ -79,13 +80,14 @@ final class ListForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/issues?milestone=generated&assignee=generated&creator=generated&mentioned=generated&labels=generated&since=1970-01-01T00:00:00+00:00&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/issues?milestone=generated&assignee=generated&type=generated&creator=generated&mentioned=generated&labels=generated&since=1970-01-01T00:00:00+00:00&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Issues\ListForRepoListing::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
             $data['repo']      = 'generated';
             $data['milestone'] = 'generated';
             $data['assignee']  = 'generated';
+            $data['type']      = 'generated';
             $data['creator']   = 'generated';
             $data['mentioned'] = 'generated';
             $data['labels']    = 'generated';
@@ -112,9 +114,9 @@ final class ListForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/issues?milestone=generated&assignee=generated&creator=generated&mentioned=generated&labels=generated&since=1970-01-01T00:00:00+00:00&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/issues?milestone=generated&assignee=generated&type=generated&creator=generated&mentioned=generated&labels=generated&since=1970-01-01T00:00:00+00:00&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->issues()->listForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', 'generated', 'generated', 'generated', 8, 1);
+        $result = $client->operations()->issues()->listForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', 'generated', 'generated', 'generated', 8, 1);
         foreach ($result as $item) {
         }
     }
@@ -129,13 +131,14 @@ final class ListForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/issues?milestone=generated&assignee=generated&creator=generated&mentioned=generated&labels=generated&since=1970-01-01T00:00:00+00:00&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/issues?milestone=generated&assignee=generated&type=generated&creator=generated&mentioned=generated&labels=generated&since=1970-01-01T00:00:00+00:00&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Issues\ListForRepoListing::OPERATION_MATCH, (static function (array $data): array {
             $data['owner']     = 'generated';
             $data['repo']      = 'generated';
             $data['milestone'] = 'generated';
             $data['assignee']  = 'generated';
+            $data['type']      = 'generated';
             $data['creator']   = 'generated';
             $data['mentioned'] = 'generated';
             $data['labels']    = 'generated';
@@ -162,9 +165,9 @@ final class ListForRepoListingTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/repos/generated/generated/issues?milestone=generated&assignee=generated&creator=generated&mentioned=generated&labels=generated&since=1970-01-01T00:00:00+00:00&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/repos/generated/generated/issues?milestone=generated&assignee=generated&type=generated&creator=generated&mentioned=generated&labels=generated&since=1970-01-01T00:00:00+00:00&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->issues()->listForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', 'generated', 'generated', 'generated', 8, 1);
+        $result = $client->operations()->issues()->listForRepoListing('generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', 'generated', 'generated', 'generated', 8, 1);
         foreach ($result as $item) {
         }
     }

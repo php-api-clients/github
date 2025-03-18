@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet4E41CFE9\TietB1CF9F2A\Tiet0DDE7646;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet51EA4D6F\TietC18C5433\Tiet6E6BD4C9;
 
 use ApiClients\Client\GitHub\Schema;
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class Tiet0D084088
+abstract readonly class Tiet4D9F7CB9
 {
     public const SCHEMA_JSON         = '{
     "title": "Issue",
@@ -135,7 +135,8 @@ abstract readonly class Tiet0D084088
                     "enum": [
                         "Bot",
                         "User",
-                        "Organization"
+                        "Organization",
+                        "Mannequin"
                     ],
                     "type": "string"
                 },
@@ -236,7 +237,8 @@ abstract readonly class Tiet0D084088
                         "enum": [
                             "Bot",
                             "User",
-                            "Organization"
+                            "Organization",
+                            "Mannequin"
                         ],
                         "type": "string"
                     },
@@ -483,7 +485,8 @@ abstract readonly class Tiet0D084088
                             "enum": [
                                 "Bot",
                                 "User",
-                                "Organization"
+                                "Organization",
+                                "Mannequin"
                             ],
                             "type": "string"
                         },
@@ -638,7 +641,9 @@ abstract readonly class Tiet0D084088
                             "team_add",
                             "watch",
                             "workflow_dispatch",
-                            "workflow_run"
+                            "workflow_run",
+                            "reminder",
+                            "pull_request_review_thread"
                         ],
                         "type": "string"
                     },
@@ -893,7 +898,8 @@ abstract readonly class Tiet0D084088
                         "organization_projects": {
                             "enum": [
                                 "read",
-                                "write"
+                                "write",
+                                "admin"
                             ],
                             "type": "string"
                         },
@@ -1156,6 +1162,73 @@ abstract readonly class Tiet0D084088
             "type": "string",
             "description": "Title of the issue"
         },
+        "type": {
+            "title": "Issue Type",
+            "required": [
+                "id",
+                "node_id",
+                "name",
+                "description"
+            ],
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The unique identifier of the issue type."
+                },
+                "node_id": {
+                    "type": "string",
+                    "description": "The node identifier of the issue type."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the issue type."
+                },
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The description of the issue type."
+                },
+                "color": {
+                    "enum": [
+                        "gray",
+                        "blue",
+                        "green",
+                        "yellow",
+                        "orange",
+                        "red",
+                        "pink",
+                        "purple",
+                        null
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The color of the issue type."
+                },
+                "created_at": {
+                    "type": "string",
+                    "description": "The time the issue type created.",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "description": "The time the issue type last updated.",
+                    "format": "date-time"
+                },
+                "is_enabled": {
+                    "type": "boolean",
+                    "description": "The enabled state of the issue type."
+                }
+            },
+            "description": "The type of issue."
+        },
         "updated_at": {
             "type": "string",
             "format": "date-time"
@@ -1252,7 +1325,8 @@ abstract readonly class Tiet0D084088
                     "enum": [
                         "Bot",
                         "User",
-                        "Organization"
+                        "Organization",
+                        "Mannequin"
                     ],
                     "type": "string"
                 },
@@ -1292,7 +1366,7 @@ abstract readonly class Tiet0D084088
         "site_admin": false,
         "starred_url": "generated",
         "subscriptions_url": "https:\\/\\/example.com\\/",
-        "type": "Organization",
+        "type": "Mannequin",
         "url": "https:\\/\\/example.com\\/",
         "user_view_type": "generated"
     },
@@ -1317,7 +1391,7 @@ abstract readonly class Tiet0D084088
             "site_admin": false,
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
-            "type": "Organization",
+            "type": "Mannequin",
             "url": "https:\\/\\/example.com\\/",
             "user_view_type": "generated"
         },
@@ -1341,7 +1415,7 @@ abstract readonly class Tiet0D084088
             "site_admin": false,
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
-            "type": "Organization",
+            "type": "Mannequin",
             "url": "https:\\/\\/example.com\\/",
             "user_view_type": "generated"
         }
@@ -1402,7 +1476,7 @@ abstract readonly class Tiet0D084088
             "site_admin": false,
             "starred_url": "generated",
             "subscriptions_url": "https:\\/\\/example.com\\/",
-            "type": "Organization",
+            "type": "Mannequin",
             "url": "https:\\/\\/example.com\\/",
             "user_view_type": "generated"
         },
@@ -1526,6 +1600,16 @@ abstract readonly class Tiet0D084088
     "state_reason": "generated",
     "timeline_url": "https:\\/\\/example.com\\/",
     "title": "generated",
+    "type": {
+        "id": 2,
+        "node_id": "generated",
+        "name": "generated",
+        "description": "generated",
+        "color": "gray",
+        "created_at": "1970-01-01T00:00:00+00:00",
+        "updated_at": "1970-01-01T00:00:00+00:00",
+        "is_enabled": false
+    },
     "updated_at": "1970-01-01T00:00:00+00:00",
     "url": "https:\\/\\/example.com\\/",
     "user": {
@@ -1548,7 +1632,7 @@ abstract readonly class Tiet0D084088
         "site_admin": false,
         "starred_url": "generated",
         "subscriptions_url": "https:\\/\\/example.com\\/",
-        "type": "Organization",
+        "type": "Mannequin",
         "url": "https:\\/\\/example.com\\/",
         "user_view_type": "generated"
     }
@@ -1561,25 +1645,26 @@ abstract readonly class Tiet0D084088
      * performedViaGithubApp: GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
      * state: State of the issue; either 'open' or 'closed'
      * title: Title of the issue
+     * type: The type of issue.
      * url: URL for the issue
      */
     public function __construct(#[MapFrom('active_lock_reason')]
-    public string|null $activeLockReason, public Schema\WebhooksIssue2\Assignee|null $assignee, public array $assignees, #[MapFrom('author_association')]
+    public string|null $activeLockReason, public Schema\WebhooksIssue\Assignee|null $assignee, public array $assignees, #[MapFrom('author_association')]
     public string $authorAssociation, public string|null $body, #[MapFrom('closed_at')]
     public string|null $closedAt, public int $comments, #[MapFrom('comments_url')]
     public string $commentsUrl, #[MapFrom('created_at')]
     public string $createdAt, public bool|null $draft, #[MapFrom('events_url')]
     public string $eventsUrl, #[MapFrom('html_url')]
     public string $htmlUrl, public int $id, public array|null $labels, #[MapFrom('labels_url')]
-    public string $labelsUrl, public bool|null $locked, public Schema\WebhooksIssue2\Milestone|null $milestone, #[MapFrom('node_id')]
+    public string $labelsUrl, public bool|null $locked, public Schema\WebhooksIssue\Milestone|null $milestone, #[MapFrom('node_id')]
     public string $nodeId, public int $number, #[MapFrom('performed_via_github_app')]
-    public Schema\WebhooksIssue2\PerformedViaGithubApp|null $performedViaGithubApp, #[MapFrom('pull_request')]
-    public Schema\WebhooksIssue2\PullRequest|null $pullRequest, public Schema\WebhooksIssue2\Reactions $reactions, #[MapFrom('repository_url')]
+    public Schema\WebhooksIssue\PerformedViaGithubApp|null $performedViaGithubApp, #[MapFrom('pull_request')]
+    public Schema\WebhooksIssue\PullRequest|null $pullRequest, public Schema\WebhooksIssue\Reactions $reactions, #[MapFrom('repository_url')]
     public string $repositoryUrl, #[MapFrom('sub_issues_summary')]
-    public Schema\WebhooksIssue2\SubIssuesSummary|null $subIssuesSummary, public string|null $state, #[MapFrom('state_reason')]
+    public Schema\WebhooksIssue\SubIssuesSummary|null $subIssuesSummary, public string|null $state, #[MapFrom('state_reason')]
     public string|null $stateReason, #[MapFrom('timeline_url')]
-    public string|null $timelineUrl, public string $title, #[MapFrom('updated_at')]
-    public string $updatedAt, public string $url, public Schema\WebhooksIssue2\User|null $user,)
+    public string|null $timelineUrl, public string $title, public Schema\IssueType|null $type, #[MapFrom('updated_at')]
+    public string $updatedAt, public string $url, public Schema\WebhooksIssue\User|null $user,)
     {
     }
 }

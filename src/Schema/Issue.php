@@ -1272,6 +1272,73 @@ final readonly class Issue
             "type": "string",
             "format": "uri"
         },
+        "type": {
+            "title": "Issue Type",
+            "required": [
+                "id",
+                "node_id",
+                "name",
+                "description"
+            ],
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The unique identifier of the issue type."
+                },
+                "node_id": {
+                    "type": "string",
+                    "description": "The node identifier of the issue type."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the issue type."
+                },
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The description of the issue type."
+                },
+                "color": {
+                    "enum": [
+                        "gray",
+                        "blue",
+                        "green",
+                        "yellow",
+                        "orange",
+                        "red",
+                        "pink",
+                        "purple",
+                        null
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The color of the issue type."
+                },
+                "created_at": {
+                    "type": "string",
+                    "description": "The time the issue type created.",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "description": "The time the issue type last updated.",
+                    "format": "date-time"
+                },
+                "is_enabled": {
+                    "type": "boolean",
+                    "description": "The enabled state of the issue type."
+                }
+            },
+            "description": "The type of issue."
+        },
         "repository": {
             "title": "Repository",
             "required": [
@@ -2879,6 +2946,16 @@ final readonly class Issue
     "body_html": "generated",
     "body_text": "generated",
     "timeline_url": "https:\\/\\/example.com\\/",
+    "type": {
+        "id": 2,
+        "node_id": "generated",
+        "name": "generated",
+        "description": "generated",
+        "color": "gray",
+        "created_at": "1970-01-01T00:00:00+00:00",
+        "updated_at": "1970-01-01T00:00:00+00:00",
+        "is_enabled": false
+    },
     "repository": {
         "id": 42,
         "node_id": "MDEwOlJlcG9zaXRvcnkxMjk2MjY5",
@@ -3071,6 +3148,7 @@ final readonly class Issue
      * title: Title of the issue
      * body: Contents of the issue
      * labels: Labels to associate with this issue; pass one or more label names to replace the set of labels on this issue; send an empty array to clear all labels from the issue; note that the labels are silently dropped for users without push access to the repository
+     * type: The type of issue.
      * repository: A repository on GitHub.
      * authorAssociation: How the author is associated with the repository.
      */
@@ -3090,7 +3168,7 @@ final readonly class Issue
     public Schema\SimpleUser|null $closedBy, #[MapFrom('body_html')]
     public string|null $bodyHtml, #[MapFrom('body_text')]
     public string|null $bodyText, #[MapFrom('timeline_url')]
-    public string|null $timelineUrl, public Schema\Repository|null $repository, #[MapFrom('performed_via_github_app')]
+    public string|null $timelineUrl, public Schema\IssueType|null $type, public Schema\Repository|null $repository, #[MapFrom('performed_via_github_app')]
     public Schema\Integration|null $performedViaGithubApp, #[MapFrom('author_association')]
     public string $authorAssociation, public Schema\ReactionRollup|null $reactions, #[MapFrom('sub_issues_summary')]
     public Schema\SubIssuesSummary|null $subIssuesSummary,)

@@ -1156,6 +1156,73 @@ final readonly class Issue
             "type": "string",
             "description": "Title of the issue"
         },
+        "type": {
+            "title": "Issue Type",
+            "required": [
+                "id",
+                "node_id",
+                "name",
+                "description"
+            ],
+            "type": [
+                "object",
+                "null"
+            ],
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "The unique identifier of the issue type."
+                },
+                "node_id": {
+                    "type": "string",
+                    "description": "The node identifier of the issue type."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "The name of the issue type."
+                },
+                "description": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The description of the issue type."
+                },
+                "color": {
+                    "enum": [
+                        "gray",
+                        "blue",
+                        "green",
+                        "yellow",
+                        "orange",
+                        "red",
+                        "pink",
+                        "purple",
+                        null
+                    ],
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "description": "The color of the issue type."
+                },
+                "created_at": {
+                    "type": "string",
+                    "description": "The time the issue type created.",
+                    "format": "date-time"
+                },
+                "updated_at": {
+                    "type": "string",
+                    "description": "The time the issue type last updated.",
+                    "format": "date-time"
+                },
+                "is_enabled": {
+                    "type": "boolean",
+                    "description": "The enabled state of the issue type."
+                }
+            },
+            "description": "The type of issue."
+        },
         "updated_at": {
             "type": "string",
             "format": "date-time"
@@ -1523,6 +1590,16 @@ final readonly class Issue
     "state_reason": "generated",
     "timeline_url": "https:\\/\\/example.com\\/",
     "title": "generated",
+    "type": {
+        "id": 2,
+        "node_id": "generated",
+        "name": "generated",
+        "description": "generated",
+        "color": "gray",
+        "created_at": "1970-01-01T00:00:00+00:00",
+        "updated_at": "1970-01-01T00:00:00+00:00",
+        "is_enabled": false
+    },
     "updated_at": "1970-01-01T00:00:00+00:00",
     "url": "https:\\/\\/example.com\\/",
     "user": {
@@ -1558,6 +1635,7 @@ final readonly class Issue
      * performedViaGithubApp: GitHub apps are a new way to extend GitHub. They can be installed directly on organizations and user accounts and granted access to specific repositories. They come with granular permissions and built-in webhooks. GitHub apps are first class actors within GitHub.
      * state: State of the issue; either 'open' or 'closed'
      * title: Title of the issue
+     * type: The type of issue.
      * url: URL for the issue
      */
     public function __construct(#[MapFrom('active_lock_reason')]
@@ -1575,7 +1653,7 @@ final readonly class Issue
     public string $repositoryUrl, #[MapFrom('sub_issues_summary')]
     public Schema\WebhookIssuesMilestoned\Issue\SubIssuesSummary|null $subIssuesSummary, public string|null $state, #[MapFrom('state_reason')]
     public string|null $stateReason, #[MapFrom('timeline_url')]
-    public string|null $timelineUrl, public string $title, #[MapFrom('updated_at')]
+    public string|null $timelineUrl, public string $title, public Schema\IssueType|null $type, #[MapFrom('updated_at')]
     public string $updatedAt, public string $url, public Schema\WebhookIssuesMilestoned\Issue\User|null $user,)
     {
     }

@@ -8,6 +8,7 @@ use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema;
 use ApiClients\Client\GitHub\Schema\CustomProperty;
 use ApiClients\Client\GitHub\Schema\HookDelivery;
+use ApiClients\Client\GitHub\Schema\IssueType;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\Delete\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\ListAttestations\Response\ApplicationJson\Ok;
 use ApiClients\Client\GitHub\Schema\OrganizationFull;
@@ -209,6 +210,27 @@ final class Orgs
     public function listInvitationTeamsListing(string $org, int $invitationId, int $perPage, int $page): iterable
     {
         return $this->operators->orgs👷ListInvitationTeamsListing()->call($org, $invitationId, $perPage, $page);
+    }
+
+    /** @return iterable<int,Schema\IssueType> */
+    public function listIssueTypes(string $org): iterable
+    {
+        return $this->operators->orgs👷ListIssueTypes()->call($org);
+    }
+
+    public function createIssueType(string $org, array $params): IssueType
+    {
+        return $this->operators->orgs👷CreateIssueType()->call($org, $params);
+    }
+
+    public function updateIssueType(string $org, int $issueTypeId, array $params): IssueType
+    {
+        return $this->operators->orgs👷UpdateIssueType()->call($org, $issueTypeId, $params);
+    }
+
+    public function deleteIssueType(string $org, int $issueTypeId): WithoutBody
+    {
+        return $this->operators->orgs👷DeleteIssueType()->call($org, $issueTypeId);
     }
 
     /** @return Observable<Schema\SimpleUser> */

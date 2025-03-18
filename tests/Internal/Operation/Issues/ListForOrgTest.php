@@ -31,11 +31,12 @@ final class ListForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/issues?labels=generated&since=1970-01-01T00:00:00+00:00&filter=generated&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/issues?labels=generated&type=generated&since=1970-01-01T00:00:00+00:00&filter=generated&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
         $result = $client->call(Internal\Operation\Issues\ListForOrg::OPERATION_MATCH, (static function (array $data): array {
             $data['org']       = 'generated';
             $data['labels']    = 'generated';
+            $data['type']      = 'generated';
             $data['since']     = '1970-01-01T00:00:00+00:00';
             $data['filter']    = 'generated';
             $data['state']     = 'generated';
@@ -58,8 +59,8 @@ final class ListForOrgTest extends AsyncTestCase
         $browser = $this->prophesize(Browser::class);
         $browser->withBase(Argument::any())->willReturn($browser->reveal());
         $browser->withFollowRedirects(Argument::any())->willReturn($browser->reveal());
-        $browser->request('GET', '/orgs/generated/issues?labels=generated&since=1970-01-01T00:00:00+00:00&filter=generated&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
+        $browser->request('GET', '/orgs/generated/issues?labels=generated&type=generated&since=1970-01-01T00:00:00+00:00&filter=generated&state=generated&sort=generated&direction=generated&per_page=8&page=1', Argument::type('array'), Argument::any())->willReturn(resolve($response))->shouldBeCalled();
         $client = new Client($auth->reveal(), $browser->reveal());
-        $result = $client->operations()->issues()->listForOrg('generated', 'generated', '1970-01-01T00:00:00+00:00', 'generated', 'generated', 'generated', 'generated', 8, 1);
+        $result = $client->operations()->issues()->listForOrg('generated', 'generated', 'generated', '1970-01-01T00:00:00+00:00', 'generated', 'generated', 'generated', 'generated', 8, 1);
     }
 }

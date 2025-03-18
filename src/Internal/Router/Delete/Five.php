@@ -14,6 +14,7 @@ final class Five
     {
     }
 
+    /** @return |\ApiClients\Tools\OpenApiClient\Utils\Response\WithoutBody */
     public function call(string $call, array $params, array $pathChunks): WithoutBody
     {
         if ($pathChunks[0] === '') {
@@ -65,6 +66,12 @@ final class Five
                         if ($pathChunks[4] === '{invitation_id}') {
                             if ($call === 'DELETE /orgs/{org}/invitations/{invitation_id}') {
                                 return $this->routers->internal🔀Router🔀Delete🔀Orgs()->cancelInvitation($params);
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'issue-types') {
+                        if ($pathChunks[4] === '{issue_type_id}') {
+                            if ($call === 'DELETE /orgs/{org}/issue-types/{issue_type_id}') {
+                                return $this->routers->internal🔀Router🔀Delete🔀Orgs()->deleteIssueType($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'members') {

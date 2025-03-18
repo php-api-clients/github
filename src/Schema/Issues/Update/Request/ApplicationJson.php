@@ -121,6 +121,16 @@ final readonly class ApplicationJson
                 "type": "string"
             },
             "description": "Usernames to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this issue. Send an empty array (`[]`) to clear all assignees from the issue. Only users with push access can set assignees for new issues. Without push access to the repository, assignee changes are silently dropped."
+        },
+        "type": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "The name of the issue type to associate with this issue or use `null` to remove the current issue type.",
+            "examples": [
+                "Epic"
+            ]
         }
     }
 }';
@@ -140,7 +150,8 @@ final readonly class ApplicationJson
     "assignees": [
         "generated",
         "generated"
-    ]
+    ],
+    "type": "Epic"
 }';
 
     /**
@@ -151,9 +162,10 @@ final readonly class ApplicationJson
      * stateReason: The reason for the state change. Ignored unless `state` is changed.
      * labels: Labels to associate with this issue. Pass one or more labels to _replace_ the set of labels on this issue. Send an empty array (`[]`) to clear all labels from the issue. Only users with push access can set labels for issues. Without push access to the repository, label changes are silently dropped.
      * assignees: Usernames to assign to this issue. Pass one or more user logins to _replace_ the set of assignees on this issue. Send an empty array (`[]`) to clear all assignees from the issue. Only users with push access can set assignees for new issues. Without push access to the repository, assignee changes are silently dropped.
+     * type: The name of the issue type to associate with this issue or use `null` to remove the current issue type.
      */
     public function __construct(public string|int|null $title, public string|null $body, public string|null $assignee, public string|null $state, #[MapFrom('state_reason')]
-    public string|null $stateReason, public string|int|null $milestone, public array|null $labels, public array|null $assignees,)
+    public string|null $stateReason, public string|int|null $milestone, public array|null $labels, public array|null $assignees, public string|null $type,)
     {
     }
 }

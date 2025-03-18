@@ -1139,12 +1139,28 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
             return $this->typeResolver->resolve('Observable<Schema\\Team>');
         }
 
+        if ($call === 'GET /orgs/{org}/issue-types') {
+            return $this->typeResolver->resolve('iterable<int,Schema\\IssueType>');
+        }
+
+        if ($call === 'POST /orgs/{org}/issue-types') {
+            return $this->typeResolver->resolve('Schema\\IssueType');
+        }
+
+        if ($call === 'PUT /orgs/{org}/issue-types/{issue_type_id}') {
+            return $this->typeResolver->resolve('Schema\\IssueType');
+        }
+
+        if ($call === 'DELETE /orgs/{org}/issue-types/{issue_type_id}') {
+            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+        }
+
         if ($call === 'GET /orgs/{org}/issues') {
-            return $this->typeResolver->resolve('Observable<Schema\\Issue>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\Issue>');
         }
 
         if ($call === 'LIST /orgs/{org}/issues') {
-            return $this->typeResolver->resolve('Observable<Schema\\Issue>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\Issue>');
         }
 
         if ($call === 'GET /orgs/{org}/members') {
@@ -3104,11 +3120,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/issues') {
-            return $this->typeResolver->resolve('Observable<Schema\\Issue>|Schema\\BasicError');
+            return $this->typeResolver->resolve('iterable<int,Schema\\Issue>|Schema\\BasicError');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/issues') {
-            return $this->typeResolver->resolve('Observable<Schema\\Issue>|Schema\\BasicError');
+            return $this->typeResolver->resolve('iterable<int,Schema\\Issue>|Schema\\BasicError');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/issues') {

@@ -8,6 +8,7 @@ use ApiClients\Client\GitHub\Internal\Routers;
 use ApiClients\Client\GitHub\Schema\EmptyObject;
 use ApiClients\Client\GitHub\Schema\Import;
 use ApiClients\Client\GitHub\Schema\InteractionLimitResponse;
+use ApiClients\Client\GitHub\Schema\IssueType;
 use ApiClients\Client\GitHub\Schema\Operations\Activity\MarkRepoNotificationsAsRead\Response\ApplicationJson\Accepted;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\OrgMembership;
@@ -25,7 +26,8 @@ final class Five
     {
     }
 
-    public function call(string $call, array $params, array $pathChunks): WithoutBody|ThreadSubscription|OrgMembership|Json|RepositoryRuleset|Import|InteractionLimitResponse|Accepted|RepositorySubscription|Topic|TeamMembership|EmptyObject
+    /** @return |Schema\IssueType */
+    public function call(string $call, array $params, array $pathChunks): WithoutBody|ThreadSubscription|IssueType|OrgMembership|Json|RepositoryRuleset|Import|InteractionLimitResponse|Accepted|RepositorySubscription|Topic|TeamMembership|EmptyObject
     {
         if ($pathChunks[0] === '') {
             if ($pathChunks[1] === 'app') {
@@ -66,6 +68,12 @@ final class Five
                         if ($pathChunks[4] === 'access') {
                             if ($call === 'PUT /orgs/{org}/codespaces/access') {
                                 return $this->routers->internal🔀Router🔀Put🔀Codespaces()->setCodespacesAccess($params);
+                            }
+                        }
+                    } elseif ($pathChunks[3] === 'issue-types') {
+                        if ($pathChunks[4] === '{issue_type_id}') {
+                            if ($call === 'PUT /orgs/{org}/issue-types/{issue_type_id}') {
+                                return $this->routers->internal🔀Router🔀Put🔀Orgs()->updateIssueType($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'memberships') {

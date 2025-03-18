@@ -233,6 +233,21 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page'], $arguments['role'], $arguments['invitation_source']);
     }
 
+    /** @return iterable<int,Schema\IssueType> */
+    public function listIssueTypes(array $params): iterable
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        $operator = new Internal\Operator\Orgs\ListIssueTypes($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀IssueTypes());
+
+        return $operator->call($arguments['org']);
+    }
+
     /** @return Observable<Schema\SimpleUser> */
     public function listMembers(array $params): iterable
     {

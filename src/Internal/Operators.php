@@ -285,6 +285,10 @@ final class Operators
     private Internal\Operator\Orgs\CancelInvitation|null $orgs👷CancelInvitation                                                                                                     = null;
     private Internal\Operator\Orgs\ListInvitationTeams|null $orgs👷ListInvitationTeams                                                                                               = null;
     private Internal\Operator\Orgs\ListInvitationTeamsListing|null $orgs👷ListInvitationTeamsListing                                                                                 = null;
+    private Internal\Operator\Orgs\ListIssueTypes|null $orgs👷ListIssueTypes                                                                                                         = null;
+    private Internal\Operator\Orgs\CreateIssueType|null $orgs👷CreateIssueType                                                                                                       = null;
+    private Internal\Operator\Orgs\UpdateIssueType|null $orgs👷UpdateIssueType                                                                                                       = null;
+    private Internal\Operator\Orgs\DeleteIssueType|null $orgs👷DeleteIssueType                                                                                                       = null;
     private Internal\Operator\Issues\ListForOrg|null $issues👷ListForOrg                                                                                                             = null;
     private Internal\Operator\Issues\ListForOrgListing|null $issues👷ListForOrgListing                                                                                               = null;
     private Internal\Operator\Orgs\ListMembers|null $orgs👷ListMembers                                                                                                               = null;
@@ -3681,6 +3685,42 @@ final class Operators
         }
 
         return $this->orgs👷ListInvitationTeamsListing;
+    }
+
+    public function orgs👷ListIssueTypes(): Internal\Operator\Orgs\ListIssueTypes
+    {
+        if ($this->orgs👷ListIssueTypes instanceof Internal\Operator\Orgs\ListIssueTypes === false) {
+            $this->orgs👷ListIssueTypes = new Internal\Operator\Orgs\ListIssueTypes($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀IssueTypes());
+        }
+
+        return $this->orgs👷ListIssueTypes;
+    }
+
+    public function orgs👷CreateIssueType(): Internal\Operator\Orgs\CreateIssueType
+    {
+        if ($this->orgs👷CreateIssueType instanceof Internal\Operator\Orgs\CreateIssueType === false) {
+            $this->orgs👷CreateIssueType = new Internal\Operator\Orgs\CreateIssueType($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀IssueTypes());
+        }
+
+        return $this->orgs👷CreateIssueType;
+    }
+
+    public function orgs👷UpdateIssueType(): Internal\Operator\Orgs\UpdateIssueType
+    {
+        if ($this->orgs👷UpdateIssueType instanceof Internal\Operator\Orgs\UpdateIssueType === false) {
+            $this->orgs👷UpdateIssueType = new Internal\Operator\Orgs\UpdateIssueType($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀IssueTypes🌀IssueTypeId());
+        }
+
+        return $this->orgs👷UpdateIssueType;
+    }
+
+    public function orgs👷DeleteIssueType(): Internal\Operator\Orgs\DeleteIssueType
+    {
+        if ($this->orgs👷DeleteIssueType instanceof Internal\Operator\Orgs\DeleteIssueType === false) {
+            $this->orgs👷DeleteIssueType = new Internal\Operator\Orgs\DeleteIssueType($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀IssueTypes🌀IssueTypeId());
+        }
+
+        return $this->orgs👷DeleteIssueType;
     }
 
     public function issues👷ListForOrg(): Internal\Operator\Issues\ListForOrg

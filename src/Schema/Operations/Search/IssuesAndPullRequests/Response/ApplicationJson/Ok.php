@@ -2083,6 +2083,73 @@ final readonly class Ok
                         "type": "string",
                         "format": "uri"
                     },
+                    "type": {
+                        "title": "Issue Type",
+                        "required": [
+                            "id",
+                            "node_id",
+                            "name",
+                            "description"
+                        ],
+                        "type": [
+                            "object",
+                            "null"
+                        ],
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "description": "The unique identifier of the issue type."
+                            },
+                            "node_id": {
+                                "type": "string",
+                                "description": "The node identifier of the issue type."
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "The name of the issue type."
+                            },
+                            "description": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "description": "The description of the issue type."
+                            },
+                            "color": {
+                                "enum": [
+                                    "gray",
+                                    "blue",
+                                    "green",
+                                    "yellow",
+                                    "orange",
+                                    "red",
+                                    "pink",
+                                    "purple",
+                                    null
+                                ],
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "description": "The color of the issue type."
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "description": "The time the issue type created.",
+                                "format": "date-time"
+                            },
+                            "updated_at": {
+                                "type": "string",
+                                "description": "The time the issue type last updated.",
+                                "format": "date-time"
+                            },
+                            "is_enabled": {
+                                "type": "boolean",
+                                "description": "The enabled state of the issue type."
+                            }
+                        },
+                        "description": "The type of issue."
+                    },
                     "performed_via_github_app": {
                         "anyOf": [
                             {
@@ -2903,6 +2970,16 @@ final readonly class Ok
             "body_html": "generated",
             "body_text": "generated",
             "timeline_url": "https:\\/\\/example.com\\/",
+            "type": {
+                "id": 2,
+                "node_id": "generated",
+                "name": "generated",
+                "description": "generated",
+                "color": "gray",
+                "created_at": "1970-01-01T00:00:00+00:00",
+                "updated_at": "1970-01-01T00:00:00+00:00",
+                "is_enabled": false
+            },
             "performed_via_github_app": {
                 "id": 37,
                 "slug": "probot-owners",
@@ -3274,6 +3351,16 @@ final readonly class Ok
             "body_html": "generated",
             "body_text": "generated",
             "timeline_url": "https:\\/\\/example.com\\/",
+            "type": {
+                "id": 2,
+                "node_id": "generated",
+                "name": "generated",
+                "description": "generated",
+                "color": "gray",
+                "created_at": "1970-01-01T00:00:00+00:00",
+                "updated_at": "1970-01-01T00:00:00+00:00",
+                "is_enabled": false
+            },
             "performed_via_github_app": {
                 "id": 37,
                 "slug": "probot-owners",

@@ -58,7 +58,7 @@ final readonly class AppPermissions
                 "write"
             ],
             "type": "string",
-            "description": "The leve of permission to grant the access token to manage Dependabot secrets."
+            "description": "The level of permission to grant the access token to manage Dependabot secrets."
         },
         "deployments": {
             "enum": [
@@ -462,7 +462,7 @@ final readonly class AppPermissions
      * checks: The level of permission to grant the access token for checks on code.
      * codespaces: The level of permission to grant the access token to create, edit, delete, and list Codespaces.
      * contents: The level of permission to grant the access token for repository contents, commits, branches, downloads, releases, and merges.
-     * dependabotSecrets: The leve of permission to grant the access token to manage Dependabot secrets.
+     * dependabotSecrets: The level of permission to grant the access token to manage Dependabot secrets.
      * deployments: The level of permission to grant the access token for deployments and deployment statuses.
      * environments: The level of permission to grant the access token for managing repository environments.
      * issues: The level of permission to grant the access token for issues and related comments, assignees, labels, and milestones.

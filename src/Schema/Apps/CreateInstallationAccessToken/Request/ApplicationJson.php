@@ -82,7 +82,7 @@ final readonly class ApplicationJson
                         "write"
                     ],
                     "type": "string",
-                    "description": "The leve of permission to grant the access token to manage Dependabot secrets."
+                    "description": "The level of permission to grant the access token to manage Dependabot secrets."
                 },
                 "deployments": {
                     "enum": [

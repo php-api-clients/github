@@ -12045,6 +12045,73 @@ final readonly class TimelineIssueEvents
                                     "type": "string",
                                     "format": "uri"
                                 },
+                                "type": {
+                                    "title": "Issue Type",
+                                    "required": [
+                                        "id",
+                                        "node_id",
+                                        "name",
+                                        "description"
+                                    ],
+                                    "type": [
+                                        "object",
+                                        "null"
+                                    ],
+                                    "properties": {
+                                        "id": {
+                                            "type": "integer",
+                                            "description": "The unique identifier of the issue type."
+                                        },
+                                        "node_id": {
+                                            "type": "string",
+                                            "description": "The node identifier of the issue type."
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "description": "The name of the issue type."
+                                        },
+                                        "description": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ],
+                                            "description": "The description of the issue type."
+                                        },
+                                        "color": {
+                                            "enum": [
+                                                "gray",
+                                                "blue",
+                                                "green",
+                                                "yellow",
+                                                "orange",
+                                                "red",
+                                                "pink",
+                                                "purple",
+                                                null
+                                            ],
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ],
+                                            "description": "The color of the issue type."
+                                        },
+                                        "created_at": {
+                                            "type": "string",
+                                            "description": "The time the issue type created.",
+                                            "format": "date-time"
+                                        },
+                                        "updated_at": {
+                                            "type": "string",
+                                            "description": "The time the issue type last updated.",
+                                            "format": "date-time"
+                                        },
+                                        "is_enabled": {
+                                            "type": "boolean",
+                                            "description": "The enabled state of the issue type."
+                                        }
+                                    },
+                                    "description": "The type of issue."
+                                },
                                 "repository": {
                                     "title": "Repository",
                                     "required": [

@@ -6394,6 +6394,90 @@ $client->operations()->orgs()->listInvitationTeamsListing(        org: 'generate
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/members#list-organization-invitation-teams).
 
 
+### orgs/list-issue-types
+
+List issue types for an organization
+
+Using the `call` method:
+```php
+$client->call('GET /orgs/{org}/issue-types', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->listIssueTypes(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/issue-types#list-issue-types-for-an-organization).
+
+
+### orgs/create-issue-type
+
+Create issue type for an organization
+
+Using the `call` method:
+```php
+$client->call('POST /orgs/{org}/issue-types', [
+        'org' => 'generated',
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->createIssueType(        org: 'generated',
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/issue-types#create-issue-type-for-an-organization).
+
+
+### orgs/update-issue-type
+
+Update issue type for an organization
+
+Using the `call` method:
+```php
+$client->call('PUT /orgs/{org}/issue-types/{issue_type_id}', [
+        'org' => 'generated',
+        'issue_type_id' => 13,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->updateIssueType(        org: 'generated',
+        issue_type_id: 13,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/issue-types#update-issue-type-for-an-organization).
+
+
+### orgs/delete-issue-type
+
+Delete issue type for an organization
+
+Using the `call` method:
+```php
+$client->call('DELETE /orgs/{org}/issue-types/{issue_type_id}', [
+        'org' => 'generated',
+        'issue_type_id' => 13,
+]);
+```
+
+Operations method:
+```php
+$client->operations()->orgs()->deleteIssueType(        org: 'generated',
+        issue_type_id: 13,
+);
+```
+
+You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/orgs/issue-types#delete-issue-type-for-an-organization).
+
+
 ### issues/list-for-org
 
 List organization issues assigned to the authenticated user
@@ -6403,6 +6487,7 @@ Using the `call` method:
 $client->call('GET /orgs/{org}/issues', [
         'org' => 'generated',
         'labels' => 'generated',
+        'type' => 'generated',
         'since' => '1970-01-01T00:00:00+00:00',
         'filter' => 'generated',
         'state' => 'generated',
@@ -6417,6 +6502,7 @@ Operations method:
 ```php
 $client->operations()->issues()->listForOrg(        org: 'generated',
         labels: 'generated',
+        type: 'generated',
         since: '1970-01-01T00:00:00+00:00',
         filter: 'generated',
         state: 'generated',
@@ -6439,6 +6525,7 @@ Using the `call` method:
 $client->call('LIST /orgs/{org}/issues', [
         'org' => 'generated',
         'labels' => 'generated',
+        'type' => 'generated',
         'since' => '1970-01-01T00:00:00+00:00',
         'filter' => 'generated',
         'state' => 'generated',
@@ -6453,6 +6540,7 @@ Operations method:
 ```php
 $client->operations()->issues()->listForOrgListing(        org: 'generated',
         labels: 'generated',
+        type: 'generated',
         since: '1970-01-01T00:00:00+00:00',
         filter: 'generated',
         state: 'generated',
@@ -18782,6 +18870,7 @@ $client->call('GET /repos/{owner}/{repo}/issues', [
         'repo' => 'generated',
         'milestone' => 'generated',
         'assignee' => 'generated',
+        'type' => 'generated',
         'creator' => 'generated',
         'mentioned' => 'generated',
         'labels' => 'generated',
@@ -18800,6 +18889,7 @@ $client->operations()->issues()->listForRepo(        owner: 'generated',
         repo: 'generated',
         milestone: 'generated',
         assignee: 'generated',
+        type: 'generated',
         creator: 'generated',
         mentioned: 'generated',
         labels: 'generated',
@@ -18826,6 +18916,7 @@ $client->call('LIST /repos/{owner}/{repo}/issues', [
         'repo' => 'generated',
         'milestone' => 'generated',
         'assignee' => 'generated',
+        'type' => 'generated',
         'creator' => 'generated',
         'mentioned' => 'generated',
         'labels' => 'generated',
@@ -18844,6 +18935,7 @@ $client->operations()->issues()->listForRepoListing(        owner: 'generated',
         repo: 'generated',
         milestone: 'generated',
         assignee: 'generated',
+        type: 'generated',
         creator: 'generated',
         mentioned: 'generated',
         labels: 'generated',

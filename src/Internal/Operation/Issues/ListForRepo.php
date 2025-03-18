@@ -33,6 +33,8 @@ final class ListForRepo
     private string $milestone;
     /**Can be the name of a user. Pass in `none` for issues with no assigned user, and `*` for issues assigned to any user. **/
     private string $assignee;
+    /**Can be the name of an issue type. If the string `*` is passed, issues with any type are accepted. If the string `none` is passed, issues without type are returned. **/
+    private string $type;
     /**The user that created the issue. **/
     private string $creator;
     /**A user that's mentioned in the issue. **/
@@ -52,12 +54,13 @@ final class ListForRepo
     /**The page number of the results to fetch. For more information, see "[Using pagination in the REST API](https://docs.github.com/rest/using-the-rest-api/using-pagination-in-the-rest-api)." **/
     private int $page;
 
-    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Issues $hydrator, string $owner, string $repo, string $milestone, string $assignee, string $creator, string $mentioned, string $labels, string $since, string $state = 'open', string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1)
+    public function __construct(private readonly SchemaValidator $responseSchemaValidator, private readonly Internal\Hydrator\Operation\Repos\Owner\Repo\Issues $hydrator, string $owner, string $repo, string $milestone, string $assignee, string $type, string $creator, string $mentioned, string $labels, string $since, string $state = 'open', string $sort = 'created', string $direction = 'desc', int $perPage = 30, int $page = 1)
     {
         $this->owner     = $owner;
         $this->repo      = $repo;
         $this->milestone = $milestone;
         $this->assignee  = $assignee;
+        $this->type      = $type;
         $this->creator   = $creator;
         $this->mentioned = $mentioned;
         $this->labels    = $labels;
@@ -71,7 +74,7 @@ final class ListForRepo
 
     public function createRequest(): RequestInterface
     {
-        return new Request('GET', str_replace(['{owner}', '{repo}', '{milestone}', '{assignee}', '{creator}', '{mentioned}', '{labels}', '{since}', '{state}', '{sort}', '{direction}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->milestone, $this->assignee, $this->creator, $this->mentioned, $this->labels, $this->since, $this->state, $this->sort, $this->direction, $this->perPage, $this->page], '/repos/{owner}/{repo}/issues' . '?milestone={milestone}&assignee={assignee}&creator={creator}&mentioned={mentioned}&labels={labels}&since={since}&state={state}&sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
+        return new Request('GET', str_replace(['{owner}', '{repo}', '{milestone}', '{assignee}', '{type}', '{creator}', '{mentioned}', '{labels}', '{since}', '{state}', '{sort}', '{direction}', '{per_page}', '{page}'], [$this->owner, $this->repo, $this->milestone, $this->assignee, $this->type, $this->creator, $this->mentioned, $this->labels, $this->since, $this->state, $this->sort, $this->direction, $this->perPage, $this->page], '/repos/{owner}/{repo}/issues' . '?milestone={milestone}&assignee={assignee}&type={type}&creator={creator}&mentioned={mentioned}&labels={labels}&since={since}&state={state}&sort={sort}&direction={direction}&per_page={per_page}&page={page}'));
     }
 
     /** @return Observable<Schema\Issue>|Schema\BasicError */

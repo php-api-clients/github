@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace ApiClients\Client\GitHub\Internal\Hydrator\WebHook;
 
 use ApiClients\Client\GitHub\Schema\EnterpriseWebhooks;
+use ApiClients\Client\GitHub\Schema\IssueType;
 use ApiClients\Client\GitHub\Schema\LicenseSimple;
 use ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks;
 use ApiClients\Client\GitHub\Schema\RepositoryWebhooks;
@@ -102,6 +103,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\PullRequest' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️PullRequest($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\Reactions' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️Reactions($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️SubIssuesSummary($payload),
+                'ApiClients\Client\GitHub\Schema\IssueType' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($payload),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\User' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️User($payload),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($payload),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($payload),
@@ -1260,6 +1262,26 @@ class Issues implements ObjectMapper
             $properties['title'] = $value;
 
             after_title:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'type';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
 
             $value = $payload['updated_at'] ?? null;
 
@@ -3129,6 +3151,113 @@ class Issues implements ObjectMapper
             return new SubIssuesSummary(...$properties);
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary', $exception, stack: $this->hydrationStack);
+        }
+    }
+
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType(array $payload): IssueType
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'id';
+                goto after_id;
+            }
+
+            $properties['id'] = $value;
+
+            after_id:
+
+            $value = $payload['node_id'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'node_id';
+                goto after_nodeId;
+            }
+
+            $properties['nodeId'] = $value;
+
+            after_nodeId:
+
+            $value = $payload['name'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'name';
+                goto after_name;
+            }
+
+            $properties['name'] = $value;
+
+            after_name:
+
+            $value = $payload['description'] ?? null;
+
+            if ($value === null) {
+                $properties['description'] = null;
+                goto after_description;
+            }
+
+            $properties['description'] = $value;
+
+            after_description:
+
+            $value = $payload['color'] ?? null;
+
+            if ($value === null) {
+                $properties['color'] = null;
+                goto after_color;
+            }
+
+            $properties['color'] = $value;
+
+            after_color:
+
+            $value = $payload['created_at'] ?? null;
+
+            if ($value === null) {
+                $properties['createdAt'] = null;
+                goto after_createdAt;
+            }
+
+            $properties['createdAt'] = $value;
+
+            after_createdAt:
+
+            $value = $payload['updated_at'] ?? null;
+
+            if ($value === null) {
+                $properties['updatedAt'] = null;
+                goto after_updatedAt;
+            }
+
+            $properties['updatedAt'] = $value;
+
+            after_updatedAt:
+
+            $value = $payload['is_enabled'] ?? null;
+
+            if ($value === null) {
+                $properties['isEnabled'] = null;
+                goto after_isEnabled;
+            }
+
+            $properties['isEnabled'] = $value;
+
+            after_isEnabled:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\IssueType', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(IssueType::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new IssueType(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\IssueType', $exception, stack: $this->hydrationStack);
         }
     }
 
@@ -6939,6 +7068,26 @@ class Issues implements ObjectMapper
 
             after_title:
 
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'type';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
+
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
@@ -9587,6 +9736,26 @@ class Issues implements ObjectMapper
             $properties['title'] = $value;
 
             after_title:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'type';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
 
             $value = $payload['updated_at'] ?? null;
 
@@ -12256,6 +12425,26 @@ class Issues implements ObjectMapper
             $properties['title'] = $value;
 
             after_title:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'type';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
 
             $value = $payload['updated_at'] ?? null;
 
@@ -15508,6 +15697,26 @@ class Issues implements ObjectMapper
 
             after_timelineUrl:
 
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'type';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
+
             $value = $payload['title'] ?? null;
 
             if ($value === null) {
@@ -18273,6 +18482,26 @@ class Issues implements ObjectMapper
 
             after_timelineUrl:
 
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'type';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
+
             $value = $payload['title'] ?? null;
 
             if ($value === null) {
@@ -20921,6 +21150,26 @@ class Issues implements ObjectMapper
             $properties['timelineUrl'] = $value;
 
             after_timelineUrl:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'type';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
 
             $value = $payload['title'] ?? null;
 
@@ -23601,6 +23850,26 @@ class Issues implements ObjectMapper
             $properties['title'] = $value;
 
             after_title:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'type';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
 
             $value = $payload['updated_at'] ?? null;
 
@@ -30294,6 +30563,26 @@ class Issues implements ObjectMapper
 
             after_title:
 
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'type';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
+
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
@@ -32942,6 +33231,26 @@ class Issues implements ObjectMapper
             $properties['title'] = $value;
 
             after_title:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'type';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
 
             $value = $payload['updated_at'] ?? null;
 
@@ -35633,6 +35942,26 @@ class Issues implements ObjectMapper
             $properties['user'] = $value;
 
             after_user:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'type';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
         } catch (Throwable $exception) {
             throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookIssuesReopened\Issue', $exception, stack: $this->hydrationStack);
         }
@@ -38308,6 +38637,26 @@ class Issues implements ObjectMapper
             $properties['title'] = $value;
 
             after_title:
+
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'type';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
 
             $value = $payload['updated_at'] ?? null;
 
@@ -43035,6 +43384,26 @@ class Issues implements ObjectMapper
 
             after_title:
 
+            $value = $payload['type'] ?? null;
+
+            if ($value === null) {
+                $properties['type'] = null;
+                goto after_type;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'type';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['type'] = $value;
+
+            after_type:
+
             $value = $payload['updated_at'] ?? null;
 
             if ($value === null) {
@@ -45422,6 +45791,7 @@ class Issues implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\PullRequest' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️PullRequest($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\Reactions' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️Reactions($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\SubIssuesSummary' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️SubIssuesSummary($object),
+                'ApiClients\Client\GitHub\Schema\IssueType' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($object),
                 'ApiClients\Client\GitHub\Schema\WebhooksIssue\User' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhooksIssue⚡️User($object),
                 'ApiClients\Client\GitHub\Schema\OrganizationSimpleWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($object),
                 'ApiClients\Client\GitHub\Schema\RepositoryWebhooks' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️RepositoryWebhooks($object),
@@ -46151,6 +46521,15 @@ class Issues implements ObjectMapper
 
         $title                               = $object->title;
         after_title:        $result['title'] = $title;
+
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        $type                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($type);
+        after_type:        $result['type'] = $type;
 
         $updatedAt                                    = $object->updatedAt;
         after_updatedAt:        $result['updated_at'] = $updatedAt;
@@ -47254,6 +47633,63 @@ class Issues implements ObjectMapper
 
         $percentCompleted                                           = $object->percentCompleted;
         after_percentCompleted:        $result['percent_completed'] = $percentCompleted;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType(mixed $object): mixed
+    {
+        assert($object instanceof IssueType);
+        $result = [];
+
+        $id                            = $object->id;
+        after_id:        $result['id'] = $id;
+
+        $nodeId                                 = $object->nodeId;
+        after_nodeId:        $result['node_id'] = $nodeId;
+
+        $name                              = $object->name;
+        after_name:        $result['name'] = $name;
+
+        $description = $object->description;
+
+        if ($description === null) {
+            goto after_description;
+        }
+
+        after_description:        $result['description'] = $description;
+
+        $color = $object->color;
+
+        if ($color === null) {
+            goto after_color;
+        }
+
+        after_color:        $result['color'] = $color;
+
+        $createdAt = $object->createdAt;
+
+        if ($createdAt === null) {
+            goto after_createdAt;
+        }
+
+        after_createdAt:        $result['created_at'] = $createdAt;
+
+        $updatedAt = $object->updatedAt;
+
+        if ($updatedAt === null) {
+            goto after_updatedAt;
+        }
+
+        after_updatedAt:        $result['updated_at'] = $updatedAt;
+
+        $isEnabled = $object->isEnabled;
+
+        if ($isEnabled === null) {
+            goto after_isEnabled;
+        }
+
+        after_isEnabled:        $result['is_enabled'] = $isEnabled;
 
         return $result;
     }
@@ -49292,6 +49728,15 @@ class Issues implements ObjectMapper
         $title                               = $object->title;
         after_title:        $result['title'] = $title;
 
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        $type                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($type);
+        after_type:        $result['type'] = $type;
+
         $updatedAt                                    = $object->updatedAt;
         after_updatedAt:        $result['updated_at'] = $updatedAt;
 
@@ -50800,6 +51245,15 @@ class Issues implements ObjectMapper
 
         $title                               = $object->title;
         after_title:        $result['title'] = $title;
+
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        $type                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($type);
+        after_type:        $result['type'] = $type;
 
         $updatedAt                                    = $object->updatedAt;
         after_updatedAt:        $result['updated_at'] = $updatedAt;
@@ -52318,6 +52772,15 @@ class Issues implements ObjectMapper
 
         $title                               = $object->title;
         after_title:        $result['title'] = $title;
+
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        $type                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($type);
+        after_type:        $result['type'] = $type;
 
         $updatedAt                                    = $object->updatedAt;
         after_updatedAt:        $result['updated_at'] = $updatedAt;
@@ -54129,6 +54592,15 @@ class Issues implements ObjectMapper
 
         after_timelineUrl:        $result['timeline_url'] = $timelineUrl;
 
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        $type                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($type);
+        after_type:        $result['type'] = $type;
+
         $title                               = $object->title;
         after_title:        $result['title'] = $title;
 
@@ -55681,6 +56153,15 @@ class Issues implements ObjectMapper
 
         after_timelineUrl:        $result['timeline_url'] = $timelineUrl;
 
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        $type                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($type);
+        after_type:        $result['type'] = $type;
+
         $title                               = $object->title;
         after_title:        $result['title'] = $title;
 
@@ -57184,6 +57665,15 @@ class Issues implements ObjectMapper
         }
 
         after_timelineUrl:        $result['timeline_url'] = $timelineUrl;
+
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        $type                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($type);
+        after_type:        $result['type'] = $type;
 
         $title                               = $object->title;
         after_title:        $result['title'] = $title;
@@ -58700,6 +59190,15 @@ class Issues implements ObjectMapper
 
         $title                               = $object->title;
         after_title:        $result['title'] = $title;
+
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        $type                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($type);
+        after_type:        $result['type'] = $type;
 
         $updatedAt                                    = $object->updatedAt;
         after_updatedAt:        $result['updated_at'] = $updatedAt;
@@ -62341,6 +62840,15 @@ class Issues implements ObjectMapper
         $title                               = $object->title;
         after_title:        $result['title'] = $title;
 
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        $type                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($type);
+        after_type:        $result['type'] = $type;
+
         $updatedAt                                    = $object->updatedAt;
         after_updatedAt:        $result['updated_at'] = $updatedAt;
 
@@ -63849,6 +64357,15 @@ class Issues implements ObjectMapper
 
         $title                               = $object->title;
         after_title:        $result['title'] = $title;
+
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        $type                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($type);
+        after_type:        $result['type'] = $type;
 
         $updatedAt                                    = $object->updatedAt;
         after_updatedAt:        $result['updated_at'] = $updatedAt;
@@ -65369,6 +65886,15 @@ class Issues implements ObjectMapper
         $user                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookIssuesReopened⚡️Issue⚡️User($user);
         after_user:        $result['user'] = $user;
 
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        $type                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($type);
+        after_type:        $result['type'] = $type;
+
         return $result;
     }
 
@@ -66874,6 +67400,15 @@ class Issues implements ObjectMapper
 
         $title                               = $object->title;
         after_title:        $result['title'] = $title;
+
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        $type                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($type);
+        after_type:        $result['type'] = $type;
 
         $updatedAt                                    = $object->updatedAt;
         after_updatedAt:        $result['updated_at'] = $updatedAt;
@@ -69315,6 +69850,15 @@ class Issues implements ObjectMapper
 
         $title                               = $object->title;
         after_title:        $result['title'] = $title;
+
+        $type = $object->type;
+
+        if ($type === null) {
+            goto after_type;
+        }
+
+        $type                              = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️IssueType($type);
+        after_type:        $result['type'] = $type;
 
         $updatedAt                                    = $object->updatedAt;
         after_updatedAt:        $result['updated_at'] = $updatedAt;

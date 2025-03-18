@@ -6,6 +6,7 @@ namespace ApiClients\Client\GitHub\Internal\Router\Put;
 
 use ApiClients\Client\GitHub\Internal;
 use ApiClients\Client\GitHub\Schema\CustomProperty;
+use ApiClients\Client\GitHub\Schema\IssueType;
 use ApiClients\Client\GitHub\Schema\Operations\Orgs\ConvertMemberToOutsideCollaborator\Response\ApplicationJson\Accepted\Application\Json;
 use ApiClients\Client\GitHub\Schema\OrgMembership;
 use ApiClients\Contracts\HTTP\Headers\AuthenticationInterface;
@@ -41,6 +42,26 @@ final class Orgs
         $operator = new Internal\Operator\Orgs\BlockUser($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀Blocks🌀Username());
 
         return $operator->call($arguments['org'], $arguments['username']);
+    }
+
+    public function updateIssueType(array $params): IssueType
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('issue_type_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: issue_type_id');
+        }
+
+        $arguments['issue_type_id'] = $params['issue_type_id'];
+        unset($params['issue_type_id']);
+        $operator = new Internal\Operator\Orgs\UpdateIssueType($this->browser, $this->authentication, $this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀IssueTypes🌀IssueTypeId());
+
+        return $operator->call($arguments['org'], $arguments['issue_type_id'], $params);
     }
 
     /** @return */

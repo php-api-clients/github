@@ -83,6 +83,26 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['invitation_id']);
     }
 
+    public function deleteIssueType(array $params): WithoutBody
+    {
+        $arguments = [];
+        if (array_key_exists('org', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: org');
+        }
+
+        $arguments['org'] = $params['org'];
+        unset($params['org']);
+        if (array_key_exists('issue_type_id', $params) === false) {
+            throw new InvalidArgumentException('Missing mandatory field: issue_type_id');
+        }
+
+        $arguments['issue_type_id'] = $params['issue_type_id'];
+        unset($params['issue_type_id']);
+        $operator = new Internal\Operator\Orgs\DeleteIssueType($this->browser, $this->authentication, $this->responseSchemaValidator, $this->hydrators->getObjectMapperOperation🌀Orgs🌀Org🌀IssueTypes🌀IssueTypeId());
+
+        return $operator->call($arguments['org'], $arguments['issue_type_id']);
+    }
+
     /** @return */
     public function removeMember(array $params): WithoutBody
     {

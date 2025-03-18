@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\AliasAbstract\Tiet69A6FC90\TietEF30F65A\Tiet9798C033;
+namespace ApiClients\Client\GitHub\Schema\AliasAbstract\TietA6754E69\Tiet89E7A5A9\Tiet4D165B48;
 
 use EventSauce\ObjectHydrator\MapFrom;
 
-abstract readonly class Tiet5960D0A8
+abstract readonly class TietE1DB3DED
 {
     public const SCHEMA_JSON         = '{
     "required": [
@@ -411,7 +411,7 @@ abstract readonly class Tiet5960D0A8
                                     "write"
                                 ],
                                 "type": "string",
-                                "description": "The leve of permission to grant the access token to manage Dependabot secrets."
+                                "description": "The level of permission to grant the access token to manage Dependabot secrets."
                             },
                             "deployments": {
                                 "enum": [

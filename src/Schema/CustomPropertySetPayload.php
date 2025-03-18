@@ -69,6 +69,21 @@ final readonly class CustomPropertySetPayload
                 "type": "string"
             },
             "description": "An ordered list of the allowed values of the property.\\nThe property can have up to 200 allowed values."
+        },
+        "values_editable_by": {
+            "enum": [
+                "org_actors",
+                "org_and_repo_actors",
+                null
+            ],
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Who can edit the values of the property",
+            "examples": [
+                "org_actors"
+            ]
         }
     },
     "description": "Custom property set payload"
@@ -80,7 +95,8 @@ final readonly class CustomPropertySetPayload
     "required": false,
     "default_value": null,
     "description": "generated",
-    "allowed_values": null
+    "allowed_values": null,
+    "values_editable_by": "org_actors"
 }';
 
     /**
@@ -90,11 +106,13 @@ final readonly class CustomPropertySetPayload
      * description: Short description of the property
      * allowedValues: An ordered list of the allowed values of the property.
     The property can have up to 200 allowed values.
+     * valuesEditableBy: Who can edit the values of the property
      */
     public function __construct(#[MapFrom('value_type')]
     public string $valueType, public bool|null $required, #[MapFrom('default_value')]
     public string|array|null $defaultValue, public string|null $description, #[MapFrom('allowed_values')]
-    public array|null $allowedValues,)
+    public array|null $allowedValues, #[MapFrom('values_editable_by')]
+    public string|null $valuesEditableBy,)
     {
     }
 }
