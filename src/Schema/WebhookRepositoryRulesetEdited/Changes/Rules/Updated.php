@@ -242,6 +242,11 @@ final readonly class Updated
                                 "allowed_merge_methods": {
                                     "type": "array",
                                     "items": {
+                                        "enum": [
+                                            "merge",
+                                            "squash",
+                                            "rebase"
+                                        ],
                                         "type": "string"
                                     },
                                     "description": "Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled."
@@ -880,7 +885,7 @@ final readonly class Updated
      * rule: A repository rule.
      */
     public function __construct(#[Rule]
-    public Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleMergeQueue|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern|Schema\RepositoryRuleset\Rules\Fifteen|Schema\RepositoryRuleset\Rules\Sixteen|Schema\RepositoryRuleset\Rules\Seventeen|Schema\RepositoryRuleset\Rules\Eighteen|Schema\RepositoryRuleWorkflows|Schema\RepositoryRuleCodeScanning|null $rule, public Schema\WebhookRepositoryRulesetEdited\Changes\Rules\Updated\Changes|null $changes,)
+    public Schema\RepositoryRuleCreation|Schema\RepositoryRuleUpdate|Schema\RepositoryRuleDeletion|Schema\RepositoryRuleRequiredLinearHistory|Schema\RepositoryRuleMergeQueue|Schema\RepositoryRuleRequiredDeployments|Schema\RepositoryRuleRequiredSignatures|Schema\RepositoryRulePullRequest|Schema\RepositoryRuleRequiredStatusChecks|Schema\RepositoryRuleNonFastForward|Schema\RepositoryRuleCommitMessagePattern|Schema\RepositoryRuleCommitAuthorEmailPattern|Schema\RepositoryRuleCommitterEmailPattern|Schema\RepositoryRuleBranchNamePattern|Schema\RepositoryRuleTagNamePattern|Schema\RepositoryRuleFilePathRestriction|Schema\RepositoryRuleMaxFilePathLength|Schema\RepositoryRuleFileExtensionRestriction|Schema\RepositoryRuleMaxFileSize|Schema\RepositoryRuleWorkflows|Schema\RepositoryRuleCodeScanning|null $rule, public Schema\WebhookRepositoryRulesetEdited\Changes\Rules\Updated\Changes|null $changes,)
     {
     }
 }

@@ -164,7 +164,7 @@ final class Issues
         return $operator->call($arguments['labels'], $arguments['since'], $arguments['filter'], $arguments['state'], $arguments['sort'], $arguments['direction'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\Issue> */
+    /** @return Observable<Schema\Issue> */
     public function listForOrg(array $params): iterable
     {
         $arguments = [];
@@ -266,7 +266,7 @@ final class Issues
         return $operator->call($arguments['owner'], $arguments['repo'], $arguments['per_page'], $arguments['page']);
     }
 
-    /** @return iterable<int,Schema\Issue>|Schema\BasicError */
+    /** @return Observable<Schema\Issue>|Schema\BasicError */
     public function listForRepo(array $params): iterable|BasicError
     {
         $arguments = [];

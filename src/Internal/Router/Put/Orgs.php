@@ -44,6 +44,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['username']);
     }
 
+    /** @return */
     public function updateIssueType(array $params): IssueType
     {
         $arguments = [];

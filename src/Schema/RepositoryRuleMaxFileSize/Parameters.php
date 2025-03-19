@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\RepositoryRuleset\Rules\Eighteen;
+namespace ApiClients\Client\GitHub\Schema\RepositoryRuleMaxFileSize;
 
 use EventSauce\ObjectHydrator\MapFrom;
 

@@ -24,6 +24,7 @@ final readonly class DeleteIssueType
     {
     }
 
+    /** @return */
     public function call(string $org, int $issueTypeId): WithoutBody
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\DeleteIssueType($this->responseSchemaValidator, $this->hydrator, $org, $issueTypeId);

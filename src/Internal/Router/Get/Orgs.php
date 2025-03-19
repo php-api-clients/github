@@ -233,7 +233,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['per_page'], $arguments['page'], $arguments['role'], $arguments['invitation_source']);
     }
 
-    /** @return iterable<int,Schema\IssueType> */
+    /** @return Observable<Schema\IssueType> */
     public function listIssueTypes(array $params): iterable
     {
         $arguments = [];

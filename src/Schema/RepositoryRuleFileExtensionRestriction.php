@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\RepositoryRuleset\Rules;
+namespace ApiClients\Client\GitHub\Schema;
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Seventeen
+final readonly class RepositoryRuleFileExtensionRestriction
 {
     public const SCHEMA_JSON         = '{
     "title": "file_extension_restriction",
@@ -51,7 +51,7 @@ final readonly class Seventeen
     }
 }';
 
-    public function __construct(public string $type, public Schema\RepositoryRuleset\Rules\Seventeen\Parameters|null $parameters)
+    public function __construct(public string $type, public Schema\RepositoryRuleFileExtensionRestriction\Parameters|null $parameters)
     {
     }
 }

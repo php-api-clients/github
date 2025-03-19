@@ -1140,27 +1140,27 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /orgs/{org}/issue-types') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\IssueType>');
+            return $this->typeResolver->resolve('Observable<Schema\\IssueType>');
         }
 
         if ($call === 'POST /orgs/{org}/issue-types') {
-            return $this->typeResolver->resolve('Schema\\IssueType');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'PUT /orgs/{org}/issue-types/{issue_type_id}') {
-            return $this->typeResolver->resolve('Schema\\IssueType');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'DELETE /orgs/{org}/issue-types/{issue_type_id}') {
-            return $this->typeResolver->resolve('\\ApiClients\\Tools\\OpenApiClient\\Utils\\Response\\WithoutBody');
+            return $this->typeResolver->resolve('');
         }
 
         if ($call === 'GET /orgs/{org}/issues') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\Issue>');
+            return $this->typeResolver->resolve('Observable<Schema\\Issue>');
         }
 
         if ($call === 'LIST /orgs/{org}/issues') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\Issue>');
+            return $this->typeResolver->resolve('Observable<Schema\\Issue>');
         }
 
         if ($call === 'GET /orgs/{org}/members') {
@@ -3120,11 +3120,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/issues') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\Issue>|Schema\\BasicError');
+            return $this->typeResolver->resolve('Observable<Schema\\Issue>|Schema\\BasicError');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/issues') {
-            return $this->typeResolver->resolve('iterable<int,Schema\\Issue>|Schema\\BasicError');
+            return $this->typeResolver->resolve('Observable<Schema\\Issue>|Schema\\BasicError');
         }
 
         if ($call === 'POST /repos/{owner}/{repo}/issues') {
@@ -3724,11 +3724,11 @@ final readonly class ClientCallReturnTypes implements DynamicMethodReturnTypeExt
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/rules/branches/{branch}') {
-            return $this->typeResolver->resolve('Observable<Schema\\RepositoryRuleCreation|Schema\\RepositoryRuleUpdate|Schema\\RepositoryRuleDeletion|Schema\\RepositoryRuleRequiredLinearHistory|Schema\\RepositoryRuleMergeQueue|Schema\\RepositoryRuleRequiredDeployments|Schema\\RepositoryRuleRequiredSignatures|Schema\\RepositoryRulePullRequest|Schema\\RepositoryRuleRequiredStatusChecks|Schema\\RepositoryRuleNonFastForward|Schema\\RepositoryRuleCommitMessagePattern|Schema\\RepositoryRuleCommitAuthorEmailPattern|Schema\\RepositoryRuleCommitterEmailPattern|Schema\\RepositoryRuleBranchNamePattern|Schema\\RepositoryRuleTagNamePattern|Schema\\RepositoryRuleWorkflows|Schema\\RepositoryRuleCodeScanning>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\RepositoryRuleCreation|Schema\\RepositoryRuleUpdate|Schema\\RepositoryRuleDeletion|Schema\\RepositoryRuleRequiredLinearHistory|Schema\\RepositoryRuleMergeQueue|Schema\\RepositoryRuleRequiredDeployments|Schema\\RepositoryRuleRequiredSignatures|Schema\\RepositoryRulePullRequest|Schema\\RepositoryRuleRequiredStatusChecks|Schema\\RepositoryRuleNonFastForward|Schema\\RepositoryRuleCommitMessagePattern|Schema\\RepositoryRuleCommitAuthorEmailPattern|Schema\\RepositoryRuleCommitterEmailPattern|Schema\\RepositoryRuleBranchNamePattern|Schema\\RepositoryRuleTagNamePattern|Schema\\RepositoryRuleFilePathRestriction|Schema\\RepositoryRuleMaxFilePathLength|Schema\\RepositoryRuleFileExtensionRestriction|Schema\\RepositoryRuleMaxFileSize|Schema\\RepositoryRuleWorkflows|Schema\\RepositoryRuleCodeScanning>');
         }
 
         if ($call === 'LIST /repos/{owner}/{repo}/rules/branches/{branch}') {
-            return $this->typeResolver->resolve('Observable<Schema\\RepositoryRuleCreation|Schema\\RepositoryRuleUpdate|Schema\\RepositoryRuleDeletion|Schema\\RepositoryRuleRequiredLinearHistory|Schema\\RepositoryRuleMergeQueue|Schema\\RepositoryRuleRequiredDeployments|Schema\\RepositoryRuleRequiredSignatures|Schema\\RepositoryRulePullRequest|Schema\\RepositoryRuleRequiredStatusChecks|Schema\\RepositoryRuleNonFastForward|Schema\\RepositoryRuleCommitMessagePattern|Schema\\RepositoryRuleCommitAuthorEmailPattern|Schema\\RepositoryRuleCommitterEmailPattern|Schema\\RepositoryRuleBranchNamePattern|Schema\\RepositoryRuleTagNamePattern|Schema\\RepositoryRuleWorkflows|Schema\\RepositoryRuleCodeScanning>');
+            return $this->typeResolver->resolve('iterable<int,Schema\\RepositoryRuleCreation|Schema\\RepositoryRuleUpdate|Schema\\RepositoryRuleDeletion|Schema\\RepositoryRuleRequiredLinearHistory|Schema\\RepositoryRuleMergeQueue|Schema\\RepositoryRuleRequiredDeployments|Schema\\RepositoryRuleRequiredSignatures|Schema\\RepositoryRulePullRequest|Schema\\RepositoryRuleRequiredStatusChecks|Schema\\RepositoryRuleNonFastForward|Schema\\RepositoryRuleCommitMessagePattern|Schema\\RepositoryRuleCommitAuthorEmailPattern|Schema\\RepositoryRuleCommitterEmailPattern|Schema\\RepositoryRuleBranchNamePattern|Schema\\RepositoryRuleTagNamePattern|Schema\\RepositoryRuleFilePathRestriction|Schema\\RepositoryRuleMaxFilePathLength|Schema\\RepositoryRuleFileExtensionRestriction|Schema\\RepositoryRuleMaxFileSize|Schema\\RepositoryRuleWorkflows|Schema\\RepositoryRuleCodeScanning>');
         }
 
         if ($call === 'GET /repos/{owner}/{repo}/rulesets') {

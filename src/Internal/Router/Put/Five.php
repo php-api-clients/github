@@ -26,7 +26,6 @@ final class Five
     {
     }
 
-    /** @return |Schema\IssueType */
     public function call(string $call, array $params, array $pathChunks): WithoutBody|ThreadSubscription|IssueType|OrgMembership|Json|RepositoryRuleset|Import|InteractionLimitResponse|Accepted|RepositorySubscription|Topic|TeamMembership|EmptyObject
     {
         if ($pathChunks[0] === '') {

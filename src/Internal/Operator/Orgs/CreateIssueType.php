@@ -24,6 +24,7 @@ final readonly class CreateIssueType
     {
     }
 
+    /** @return */
     public function call(string $org, array $params): IssueType
     {
         $operation = new \ApiClients\Client\GitHub\Internal\Operation\Orgs\CreateIssueType($this->requestSchemaValidator, $this->responseSchemaValidator, $this->hydrator, $org);

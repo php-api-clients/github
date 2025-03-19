@@ -212,22 +212,25 @@ final class Orgs
         return $this->operators->orgs👷ListInvitationTeamsListing()->call($org, $invitationId, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\IssueType> */
+    /** @return Observable<Schema\IssueType> */
     public function listIssueTypes(string $org): iterable
     {
         return $this->operators->orgs👷ListIssueTypes()->call($org);
     }
 
+    /** @return */
     public function createIssueType(string $org, array $params): IssueType
     {
         return $this->operators->orgs👷CreateIssueType()->call($org, $params);
     }
 
+    /** @return */
     public function updateIssueType(string $org, int $issueTypeId, array $params): IssueType
     {
         return $this->operators->orgs👷UpdateIssueType()->call($org, $issueTypeId, $params);
     }
 
+    /** @return */
     public function deleteIssueType(string $org, int $issueTypeId): WithoutBody
     {
         return $this->operators->orgs👷DeleteIssueType()->call($org, $issueTypeId);

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace ApiClients\Client\GitHub\Schema\RepositoryRuleset\Rules;
+namespace ApiClients\Client\GitHub\Schema;
 
 use ApiClients\Client\GitHub\Schema;
 
-final readonly class Sixteen
+final readonly class RepositoryRuleMaxFilePathLength
 {
     public const SCHEMA_JSON         = '{
     "title": "max_file_path_length",
@@ -47,7 +47,7 @@ final readonly class Sixteen
     }
 }';
 
-    public function __construct(public string $type, public Schema\RepositoryRuleset\Rules\Sixteen\Parameters|null $parameters)
+    public function __construct(public string $type, public Schema\RepositoryRuleMaxFilePathLength\Parameters|null $parameters)
     {
     }
 }

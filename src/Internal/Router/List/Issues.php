@@ -85,7 +85,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Issue> */
+    /** @return Observable<Schema\Issue> */
     public function listForOrgListing(array $params): iterable
     {
         $arguments = [];
@@ -286,7 +286,7 @@ final class Issues
         } while (count($items) > 0);
     }
 
-    /** @return iterable<int,Schema\Issue>|Schema\BasicError */
+    /** @return Observable<Schema\Issue>|Schema\BasicError */
     public function listForRepoListing(array $params): iterable|BasicError
     {
         $arguments = [];

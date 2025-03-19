@@ -32,13 +32,13 @@ final class Issues
         return $this->operators->issues👷ListListing()->call($labels, $since, $collab, $orgs, $owned, $pulls, $filter, $state, $sort, $direction, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\Issue> */
+    /** @return Observable<Schema\Issue> */
     public function listForOrg(string $org, string $labels, string $type, string $since, string $filter, string $state, string $sort, string $direction, int $perPage, int $page): iterable
     {
         return $this->operators->issues👷ListForOrg()->call($org, $labels, $type, $since, $filter, $state, $sort, $direction, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\Issue> */
+    /** @return Observable<Schema\Issue> */
     public function listForOrgListing(string $org, string $labels, string $type, string $since, string $filter, string $state, string $sort, string $direction, int $perPage, int $page): iterable
     {
         return $this->operators->issues👷ListForOrgListing()->call($org, $labels, $type, $since, $filter, $state, $sort, $direction, $perPage, $page);
@@ -62,13 +62,13 @@ final class Issues
         return $this->operators->issues👷CheckUserCanBeAssigned()->call($owner, $repo, $assignee);
     }
 
-    /** @return iterable<int,Schema\Issue>|Schema\BasicError */
+    /** @return Observable<Schema\Issue>|Schema\BasicError */
     public function listForRepo(string $owner, string $repo, string $milestone, string $assignee, string $type, string $creator, string $mentioned, string $labels, string $since, string $state, string $sort, string $direction, int $perPage, int $page): iterable|BasicError
     {
         return $this->operators->issues👷ListForRepo()->call($owner, $repo, $milestone, $assignee, $type, $creator, $mentioned, $labels, $since, $state, $sort, $direction, $perPage, $page);
     }
 
-    /** @return iterable<int,Schema\Issue>|Schema\BasicError */
+    /** @return Observable<Schema\Issue>|Schema\BasicError */
     public function listForRepoListing(string $owner, string $repo, string $milestone, string $assignee, string $type, string $creator, string $mentioned, string $labels, string $since, string $state, string $sort, string $direction, int $perPage, int $page): iterable|BasicError
     {
         return $this->operators->issues👷ListForRepoListing()->call($owner, $repo, $milestone, $assignee, $type, $creator, $mentioned, $labels, $since, $state, $sort, $direction, $perPage, $page);

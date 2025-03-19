@@ -83,6 +83,7 @@ final class Orgs
         return $operator->call($arguments['org'], $arguments['invitation_id']);
     }
 
+    /** @return */
     public function deleteIssueType(array $params): WithoutBody
     {
         $arguments = [];

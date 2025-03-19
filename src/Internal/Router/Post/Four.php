@@ -30,7 +30,6 @@ final class Four
     {
     }
 
-    /** @return |Schema\IssueType */
     public function call(string $call, array $params, array $pathChunks): Integration|Authorization|GistComment|WithoutBody|BaseGist|OrgHook|OrganizationInvitation|IssueType|Migration|Json|\ApiClients\Client\GitHub\Schema\Operations\Orgs\UpdatePatAccesses\Response\ApplicationJson\Accepted\Application\Json|OrgPrivateRegistryConfigurationWithSelectedRepositories|Project|FullRepository|RepositoryRuleset|TeamFull|ProjectColumn|TeamDiscussion
     {
         if ($pathChunks[0] === '') {
