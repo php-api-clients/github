@@ -37,10 +37,10 @@ final readonly class RepositoryRuleFilePathRestriction
             }
         }
     },
-    "description": "Prevent commits that include changes in specified file paths from being pushed to the commit graph."
+    "description": "Prevent commits that include changes in specified file and folder paths from being pushed to the commit graph. This includes absolute paths that contain file names."
 }';
     public const SCHEMA_TITLE        = 'file_path_restriction';
-    public const SCHEMA_DESCRIPTION  = 'Prevent commits that include changes in specified file paths from being pushed to the commit graph.';
+    public const SCHEMA_DESCRIPTION  = 'Prevent commits that include changes in specified file and folder paths from being pushed to the commit graph. This includes absolute paths that contain file names.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "type": "file_path_restriction",
     "parameters": {

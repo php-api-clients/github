@@ -773,7 +773,7 @@ final readonly class Changes
                                         }
                                     }
                                 },
-                                "description": "Prevent commits that include changes in specified file paths from being pushed to the commit graph."
+                                "description": "Prevent commits that include changes in specified file and folder paths from being pushed to the commit graph. This includes absolute paths that contain file names."
                             },
                             {
                                 "title": "max_file_path_length",
@@ -798,12 +798,12 @@ final readonly class Changes
                                                 "maximum": 256,
                                                 "minimum": 1,
                                                 "type": "integer",
-                                                "description": "The maximum amount of characters allowed in file paths"
+                                                "description": "The maximum amount of characters allowed in file paths."
                                             }
                                         }
                                     }
                                 },
-                                "description": "Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+                                "description": "Prevent commits that include file paths that exceed the specified character limit from being pushed to the commit graph."
                             },
                             {
                                 "title": "file_extension_restriction",
@@ -864,7 +864,7 @@ final readonly class Changes
                                         }
                                     }
                                 },
-                                "description": "Prevent commits that exceed a specified file size limit from being pushed to the commit graph."
+                                "description": "Prevent commits with individual files that exceed the specified limit from being pushed to the commit graph."
                             },
                             {
                                 "title": "workflows",
@@ -1597,7 +1597,7 @@ final readonly class Changes
                                         }
                                     }
                                 },
-                                "description": "Prevent commits that include changes in specified file paths from being pushed to the commit graph."
+                                "description": "Prevent commits that include changes in specified file and folder paths from being pushed to the commit graph. This includes absolute paths that contain file names."
                             },
                             {
                                 "title": "max_file_path_length",
@@ -1622,12 +1622,12 @@ final readonly class Changes
                                                 "maximum": 256,
                                                 "minimum": 1,
                                                 "type": "integer",
-                                                "description": "The maximum amount of characters allowed in file paths"
+                                                "description": "The maximum amount of characters allowed in file paths."
                                             }
                                         }
                                     }
                                 },
-                                "description": "Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+                                "description": "Prevent commits that include file paths that exceed the specified character limit from being pushed to the commit graph."
                             },
                             {
                                 "title": "file_extension_restriction",
@@ -1688,7 +1688,7 @@ final readonly class Changes
                                         }
                                     }
                                 },
-                                "description": "Prevent commits that exceed a specified file size limit from being pushed to the commit graph."
+                                "description": "Prevent commits with individual files that exceed the specified limit from being pushed to the commit graph."
                             },
                             {
                                 "title": "workflows",
@@ -2424,7 +2424,7 @@ final readonly class Changes
                                                 }
                                             }
                                         },
-                                        "description": "Prevent commits that include changes in specified file paths from being pushed to the commit graph."
+                                        "description": "Prevent commits that include changes in specified file and folder paths from being pushed to the commit graph. This includes absolute paths that contain file names."
                                     },
                                     {
                                         "title": "max_file_path_length",
@@ -2449,12 +2449,12 @@ final readonly class Changes
                                                         "maximum": 256,
                                                         "minimum": 1,
                                                         "type": "integer",
-                                                        "description": "The maximum amount of characters allowed in file paths"
+                                                        "description": "The maximum amount of characters allowed in file paths."
                                                     }
                                                 }
                                             }
                                         },
-                                        "description": "Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+                                        "description": "Prevent commits that include file paths that exceed the specified character limit from being pushed to the commit graph."
                                     },
                                     {
                                         "title": "file_extension_restriction",
@@ -2515,7 +2515,7 @@ final readonly class Changes
                                                 }
                                             }
                                         },
-                                        "description": "Prevent commits that exceed a specified file size limit from being pushed to the commit graph."
+                                        "description": "Prevent commits with individual files that exceed the specified limit from being pushed to the commit graph."
                                     },
                                     {
                                         "title": "workflows",

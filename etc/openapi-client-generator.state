@@ -1,5 +1,5 @@
 {
-    "specHash": "85662c80b53f38fb1fdf4e581c839168",
+    "specHash": "4bfe6378be3ffa1aed95dac111e07ebb",
     "generatedFiles": {
         "files": [
             {
@@ -600,11 +600,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRule.php",
-                "hash": "91c7ac9573eb32fb3215679ff2902ba7"
+                "hash": "8519cdec25b5fee363ea63e478fc3cb1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRuleset.php",
-                "hash": "b148af999781e1841d4bbeb1729b0bb5"
+                "hash": "e94cb4b94aa570dacbc81a5fa6877dad"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/ActionsBillingUsage.php",
@@ -4612,11 +4612,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Repos\/CreateOrgRuleset\/Request\/ApplicationJson.php",
-                "hash": "b189dccda6487b31c78efbd3547ff0c5"
+                "hash": "7d5d76e6c4bd5b18815d84d687645aea"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Repos\/UpdateOrgRuleset\/Request\/ApplicationJson.php",
-                "hash": "5ded3557f7313bbfaa871698a53da4fd"
+                "hash": "1522d3c75fc09e21c47ddd8ec31d128f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Teams\/Create\/Request\/ApplicationJson.php",
@@ -5132,7 +5132,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Issues\/Create\/Request\/ApplicationJson.php",
-                "hash": "58d9cbfc582af8b196b8c88b0f0d48fe"
+                "hash": "bb6b1baeb9a4e2d9791a30e6efd19ac5"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Issues\/Create\/Request\/ApplicationJson\/Labels\/One.php",
@@ -5148,7 +5148,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Issues\/Update\/Request\/ApplicationJson.php",
-                "hash": "fbf6609d1b12d0daa1e76dfec693c212"
+                "hash": "8d5c34465f28b7faba9cd19b2c57e24a"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Issues\/AddAssignees\/Request\/ApplicationJson.php",
@@ -5320,11 +5320,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Repos\/CreateRepoRuleset\/Request\/ApplicationJson.php",
-                "hash": "3b6ef56edb2b344b2735ed73210447c0"
+                "hash": "45024c3728f6216dfa91bb2ff7784c65"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/Repos\/UpdateRepoRuleset\/Request\/ApplicationJson.php",
-                "hash": "dedd1b228f943df806c2d320ff2fb07a"
+                "hash": "afa74463bd4af840f60b42d627bf8008"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/SecretScanning\/UpdateAlert\/Request\/ApplicationJson.php",
@@ -5548,7 +5548,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Issues.php",
-                "hash": "b3afb3b7a3a5974c497eaeb747b1a589"
+                "hash": "dd6985fc102c83faa9ab2042e7c1aea8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Licenses.php",
@@ -5560,7 +5560,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Orgs.php",
-                "hash": "4652d7fe02e0830faa310d7d91dec8ba"
+                "hash": "3c3f57468d30f949b1989bbbac7bbe31"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Actions.php",
@@ -5596,7 +5596,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Repos.php",
-                "hash": "871931cc603472974d1eb4aedea5f80f"
+                "hash": "44cc22eab5e09a25e5462f975ff982ea"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Billing.php",
@@ -11564,7 +11564,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRuleDetailed.php",
-                "hash": "00c4bbb14b11e0b8cc64c43f8a08539f"
+                "hash": "224cd2140c2b1e934ba658ceff52d1a4"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotOrganizationDetails.php",
@@ -11680,15 +11680,15 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryRulesetCreated.php",
-                "hash": "6374f7a8d4cdd286c4e283c3d533dc22"
+                "hash": "8865cd10465ff9425eb76ee95f6c429f"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryRulesetDeleted.php",
-                "hash": "da43fa70197a959e803f75ea4292e5cc"
+                "hash": "1ec01b75b354ac454f0564d0b38476d1"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryRulesetEdited.php",
-                "hash": "66a02e2499a17f932a12da2ac53f6f58"
+                "hash": "88d095541c692b12b3c270a30d21304d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookDeploymentReviewApproved\/WorkflowRun\/Actor.php",
@@ -11920,7 +11920,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryRulesetEdited\/Changes.php",
-                "hash": "b0f593db7c96615e2dad6e1469ce5849"
+                "hash": "1c33fb881508bc7da4ae82aac02d9542"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryRulesetEdited\/Changes\/Conditions.php",
@@ -11948,11 +11948,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryRulesetEdited\/Changes\/Rules.php",
-                "hash": "26883f33ae868b27d6603830d137643e"
+                "hash": "b49c288f03f3e7ba40e660d937401c70"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryRulesetEdited\/Changes\/Rules\/Updated.php",
-                "hash": "bdbfe86e35b8c68c323750f840cef84e"
+                "hash": "309f7abf85dd75cbde9cb01092799db7"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookRepositoryRulesetEdited\/Changes\/Rules\/Updated\/Changes.php",
@@ -20872,7 +20872,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/GetBranchRules.php",
-                "hash": "d3d4c1d3680ec79d451d87878dd1d32e"
+                "hash": "4e24ef4cc4992ce313a521b0e1830799"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/GetBranchRulesTest.php",
@@ -20884,7 +20884,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Repos\/GetBranchRulesListing.php",
-                "hash": "97e7c705cefd4c931ea0306482da04db"
+                "hash": "20dbf4c6284ff6955ec87c5b018e5ece"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Repos\/GetBranchRulesListingTest.php",
@@ -24340,7 +24340,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Repos.php",
-                "hash": "c844bbb8acb7a53860f417408706cf84"
+                "hash": "cbba7a48f557af815a48ac1f7a6521e6"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Users.php",
@@ -24616,7 +24616,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Repos.php",
-                "hash": "02db131d7a46cc7db66c77922882bb32"
+                "hash": "53a1d6e0b1f8979b31f0dc4acbd08646"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Activity.php",
@@ -24840,7 +24840,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Seven.php",
-                "hash": "1592d438d90b74b5de8e22353e18a4e0"
+                "hash": "07a5439e2e2ba1ce74ee3b591b121aea"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Eight.php",
@@ -24944,7 +24944,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Seven.php",
-                "hash": "63d0c6b7c1dd7ec9eca9728d2c1ca4ec"
+                "hash": "7579a0df9b97ccb18fd4808677b0fb20"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Eight.php",
@@ -27612,11 +27612,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "23580fdcd0f3080d5c2b11ed768d1bf8"
+                "hash": "4f02e5b34a80cfafc1844f8d4fe755f8"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "04f52ce89ea0d42bac5e418c6d413ab2"
+                "hash": "082aa496c548d70ebcb9479d705b81ca"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -31972,11 +31972,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRuleFilePathRestriction.php",
-                "hash": "6d184a7e43345415008725c652cdf6e3"
+                "hash": "d8cd900c0da1fe69fb7fbf72af2cb266"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRuleMaxFilePathLength.php",
-                "hash": "953005a0443948fed5909fdc0e5356ca"
+                "hash": "67823099e744effef9dfa39b156e2594"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRuleFileExtensionRestriction.php",
@@ -31984,7 +31984,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRuleMaxFileSize.php",
-                "hash": "b744cee366dd40e98b0fd5fc7d305ddb"
+                "hash": "fa28cf82ac5d40afd3bdb882889c6153"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRuleFilePathRestriction\/Parameters.php",
@@ -31992,7 +31992,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRuleMaxFilePathLength\/Parameters.php",
-                "hash": "09fdf9035f0115ec0de2a01d77d50253"
+                "hash": "863a68e02be2d1703023b83f2ed2c589"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/RepositoryRuleFileExtensionRestriction\/Parameters.php",

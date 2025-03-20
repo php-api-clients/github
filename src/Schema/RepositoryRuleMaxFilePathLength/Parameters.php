@@ -18,7 +18,7 @@ final readonly class Parameters
             "maximum": 256,
             "minimum": 1,
             "type": "integer",
-            "description": "The maximum amount of characters allowed in file paths"
+            "description": "The maximum amount of characters allowed in file paths."
         }
     }
 }';
@@ -29,7 +29,7 @@ final readonly class Parameters
 }';
 
     /**
-     * maxFilePathLength: The maximum amount of characters allowed in file paths
+     * maxFilePathLength: The maximum amount of characters allowed in file paths.
      */
     public function __construct(#[MapFrom('max_file_path_length')]
     public int $maxFilePathLength,)

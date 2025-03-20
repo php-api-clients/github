@@ -36,10 +36,10 @@ final readonly class RepositoryRuleMaxFileSize
             }
         }
     },
-    "description": "Prevent commits that exceed a specified file size limit from being pushed to the commit graph."
+    "description": "Prevent commits with individual files that exceed the specified limit from being pushed to the commit graph."
 }';
     public const SCHEMA_TITLE        = 'max_file_size';
-    public const SCHEMA_DESCRIPTION  = 'Prevent commits that exceed a specified file size limit from being pushed to the commit graph.';
+    public const SCHEMA_DESCRIPTION  = 'Prevent commits with individual files that exceed the specified limit from being pushed to the commit graph.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "type": "max_file_size",
     "parameters": {

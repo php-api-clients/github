@@ -31,15 +31,15 @@ final readonly class RepositoryRuleMaxFilePathLength
                     "maximum": 256,
                     "minimum": 1,
                     "type": "integer",
-                    "description": "The maximum amount of characters allowed in file paths"
+                    "description": "The maximum amount of characters allowed in file paths."
                 }
             }
         }
     },
-    "description": "Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph."
+    "description": "Prevent commits that include file paths that exceed the specified character limit from being pushed to the commit graph."
 }';
     public const SCHEMA_TITLE        = 'max_file_path_length';
-    public const SCHEMA_DESCRIPTION  = 'Prevent commits that include file paths that exceed a specified character limit from being pushed to the commit graph.';
+    public const SCHEMA_DESCRIPTION  = 'Prevent commits that include file paths that exceed the specified character limit from being pushed to the commit graph.';
     public const SCHEMA_EXAMPLE_DATA = '{
     "type": "max_file_path_length",
     "parameters": {
