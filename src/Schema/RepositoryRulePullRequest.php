@@ -43,6 +43,10 @@ final readonly class RepositoryRulePullRequest
                     },
                     "description": "Array of allowed merge methods. Allowed values include `merge`, `squash`, and `rebase`. At least one option must be enabled."
                 },
+                "automatic_copilot_code_review_enabled": {
+                    "type": "boolean",
+                    "description": "> [!NOTE]\\n> `automatic_copilot_code_review_enabled` is in beta and subject to change.\\n\\nAutomatically request review from Copilot for new pull requests, if the author has access to Copilot code review."
+                },
                 "dismiss_stale_reviews_on_push": {
                     "type": "boolean",
                     "description": "New, reviewable commits pushed will dismiss previous pull request review approvals."
@@ -79,6 +83,7 @@ final readonly class RepositoryRulePullRequest
             "generated",
             "generated"
         ],
+        "automatic_copilot_code_review_enabled": false,
         "dismiss_stale_reviews_on_push": false,
         "require_code_owner_review": false,
         "require_last_push_approval": false,

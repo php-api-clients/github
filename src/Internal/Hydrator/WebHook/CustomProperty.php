@@ -11,6 +11,7 @@ use ApiClients\Client\GitHub\Schema\SimpleUser;
 use ApiClients\Client\GitHub\Schema\WebhookCustomPropertyCreated;
 use ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted;
 use ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted\Definition;
+use ApiClients\Client\GitHub\Schema\WebhookCustomPropertyPromotedToEnterprise;
 use ApiClients\Client\GitHub\Schema\WebhookCustomPropertyUpdated;
 use EventSauce\ObjectHydrator\IterableList;
 use EventSauce\ObjectHydrator\ObjectMapper;
@@ -55,6 +56,7 @@ class CustomProperty implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyDeleted($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted\Definition' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyDeleted⚡️Definition($payload),
+                'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyPromotedToEnterprise' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyPromotedToEnterprise($payload),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyUpdated' => $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyUpdated($payload),
             default => throw UnableToHydrateObject::noHydrationDefined($className, $this->hydrationStack),
         };
@@ -1050,6 +1052,136 @@ class CustomProperty implements ObjectMapper
         }
     }
 
+    private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyPromotedToEnterprise(array $payload): WebhookCustomPropertyPromotedToEnterprise
+    {
+        $properties    = [];
+        $missingFields = [];
+        try {
+            $value = $payload['action'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'action';
+                goto after_action;
+            }
+
+            $properties['action'] = $value;
+
+            after_action:
+
+            $value = $payload['definition'] ?? null;
+
+            if ($value === null) {
+                $missingFields[] = 'definition';
+                goto after_definition;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'definition';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CustomProperty($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['definition'] = $value;
+
+            after_definition:
+
+            $value = $payload['enterprise'] ?? null;
+
+            if ($value === null) {
+                $properties['enterprise'] = null;
+                goto after_enterprise;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'enterprise';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['enterprise'] = $value;
+
+            after_enterprise:
+
+            $value = $payload['installation'] ?? null;
+
+            if ($value === null) {
+                $properties['installation'] = null;
+                goto after_installation;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'installation';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['installation'] = $value;
+
+            after_installation:
+
+            $value = $payload['organization'] ?? null;
+
+            if ($value === null) {
+                $properties['organization'] = null;
+                goto after_organization;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'organization';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['organization'] = $value;
+
+            after_organization:
+
+            $value = $payload['sender'] ?? null;
+
+            if ($value === null) {
+                $properties['sender'] = null;
+                goto after_sender;
+            }
+
+            if (is_array($value)) {
+                try {
+                    $this->hydrationStack[] = 'sender';
+                    $value                  = $this->hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($value);
+                } finally {
+                    array_pop($this->hydrationStack);
+                }
+            }
+
+            $properties['sender'] = $value;
+
+            after_sender:
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCustomPropertyPromotedToEnterprise', $exception, stack: $this->hydrationStack);
+        }
+
+        if (count($missingFields) > 0) {
+            throw UnableToHydrateObject::dueToMissingFields(WebhookCustomPropertyPromotedToEnterprise::class, $missingFields, stack: $this->hydrationStack);
+        }
+
+        try {
+            return new WebhookCustomPropertyPromotedToEnterprise(...$properties);
+        } catch (Throwable $exception) {
+            throw UnableToHydrateObject::dueToError('ApiClients\Client\GitHub\Schema\WebhookCustomPropertyPromotedToEnterprise', $exception, stack: $this->hydrationStack);
+        }
+    }
+
     private function hydrateApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyUpdated(array $payload): WebhookCustomPropertyUpdated
     {
         $properties    = [];
@@ -1219,6 +1351,7 @@ class CustomProperty implements ObjectMapper
                 'ApiClients\Client\GitHub\Schema\SimpleUser' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($object),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyDeleted($object),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyDeleted\Definition' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyDeleted⚡️Definition($object),
+                'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyPromotedToEnterprise' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyPromotedToEnterprise($object),
                 'ApiClients\Client\GitHub\Schema\WebhookCustomPropertyUpdated' => $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyUpdated($object),
                 default => throw new LogicException("No serialization defined for $className"),
             };
@@ -1695,6 +1828,57 @@ class CustomProperty implements ObjectMapper
 
         $propertyName                                       = $object->propertyName;
         after_propertyName:        $result['property_name'] = $propertyName;
+
+        return $result;
+    }
+
+    private function serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️WebhookCustomPropertyPromotedToEnterprise(mixed $object): mixed
+    {
+        assert($object instanceof WebhookCustomPropertyPromotedToEnterprise);
+        $result = [];
+
+        $action                                = $object->action;
+        after_action:        $result['action'] = $action;
+
+        $definition                                    = $object->definition;
+        $definition                                    = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️CustomProperty($definition);
+        after_definition:        $result['definition'] = $definition;
+
+        $enterprise = $object->enterprise;
+
+        if ($enterprise === null) {
+            goto after_enterprise;
+        }
+
+        $enterprise                                    = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️EnterpriseWebhooks($enterprise);
+        after_enterprise:        $result['enterprise'] = $enterprise;
+
+        $installation = $object->installation;
+
+        if ($installation === null) {
+            goto after_installation;
+        }
+
+        $installation                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleInstallation($installation);
+        after_installation:        $result['installation'] = $installation;
+
+        $organization = $object->organization;
+
+        if ($organization === null) {
+            goto after_organization;
+        }
+
+        $organization                                      = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️OrganizationSimpleWebhooks($organization);
+        after_organization:        $result['organization'] = $organization;
+
+        $sender = $object->sender;
+
+        if ($sender === null) {
+            goto after_sender;
+        }
+
+        $sender                                = $this->serializeObjectApiClients⚡️Client⚡️GitHub⚡️Schema⚡️SimpleUser($sender);
+        after_sender:        $result['sender'] = $sender;
 
         return $result;
     }
