@@ -16,7 +16,7 @@ final class Five
     {
     }
 
-    /** @return Observable<Schema\MarketplacePurchase>|Observable<Schema\Event>|Schema\BasicError|WithoutBody|Observable<Schema\CodeScanningOrganizationAlertItems>|Observable<Schema\CopilotUsageMetricsDay>|Observable<Schema\CopilotUsageMetrics>|Observable<Schema\OrgRepoCustomPropertyValues>|Observable<Schema\RuleSuites>|Observable<Schema\OrganizationSecretScanningAlert>|Observable<Schema\ProjectCard>|Observable<Schema\SimpleUser>|Observable<Schema\ShortBranch>|Observable<Schema\Collaborator>|Observable<Schema\CommitComment>|Observable<Schema\Commit>|Observable<Schema\Contributor>|Observable<Schema\Deployment>|Observable<Schema\MinimalRepository>|Observable<Schema\Hook>|Observable<Schema\RepositoryInvitation>|Observable<Schema\Issue>|Observable<Schema\DeployKey>|Observable<Schema\Label>|Observable<Schema\Milestone>|Observable<Schema\Thread>|Observable<Schema\Project>|Observable<Schema\PullRequestSimple>|Observable<Schema\Release>|Observable<Schema\RepositoryRuleset>|Observable<Schema\Tag>|Observable<Schema\Team> */
+    /** @return Observable<Schema\MarketplacePurchase>|Observable<Schema\Event>|Schema\BasicError|WithoutBody|Observable<Schema\CodeScanningOrganizationAlertItems>|Observable<Schema\CopilotUsageMetricsDay>|Observable<Schema\OrgRepoCustomPropertyValues>|Observable<Schema\RuleSuites>|Observable<Schema\OrganizationSecretScanningAlert>|Observable<Schema\ProjectCard>|Observable<Schema\SimpleUser>|Observable<Schema\ShortBranch>|Observable<Schema\Collaborator>|Observable<Schema\CommitComment>|Observable<Schema\Commit>|Observable<Schema\Contributor>|Observable<Schema\Deployment>|Observable<Schema\MinimalRepository>|Observable<Schema\Hook>|Observable<Schema\RepositoryInvitation>|Observable<Schema\Issue>|Observable<Schema\DeployKey>|Observable<Schema\Label>|Observable<Schema\Milestone>|Observable<Schema\Thread>|Observable<Schema\Project>|Observable<Schema\PullRequestSimple>|Observable<Schema\Release>|Observable<Schema\RepositoryRuleset>|Observable<Schema\Tag>|Observable<Schema\Team> */
     public function call(string $call, array $params, array $pathChunks): iterable|BasicError|WithoutBody
     {
         if ($pathChunks[0] === '') {
@@ -52,10 +52,6 @@ final class Five
                         if ($pathChunks[4] === 'metrics') {
                             if ($call === 'LIST /orgs/{org}/copilot/metrics') {
                                 return $this->routers->internal🔀Router🔀List🔀Copilot()->copilotMetricsForOrganizationListing($params);
-                            }
-                        } elseif ($pathChunks[4] === 'usage') {
-                            if ($call === 'LIST /orgs/{org}/copilot/usage') {
-                                return $this->routers->internal🔀Router🔀List🔀Copilot()->usageMetricsForOrgListing($params);
                             }
                         }
                     } elseif ($pathChunks[3] === 'properties') {

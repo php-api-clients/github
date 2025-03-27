@@ -1,5 +1,5 @@
 {
-    "specHash": "82b1087a8dddd5516c99b2197699c7e0",
+    "specHash": "55d97765ea3cb2894a2648379d436234",
     "generatedFiles": {
         "files": [
             {
@@ -5648,7 +5648,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/WebHooks.php",
-                "hash": "8e06faae0c1f83928f13fca56c080687"
+                "hash": "5e87e17620f2a239e6f7196fcd4a0a98"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/AliasAbstract\/TietEB301A03\/Tiet504AADCF\/Tiet2FEB0C19\/TietF58BE94A.php",
@@ -11596,7 +11596,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Operation\/Copilot.php",
-                "hash": "5386ba4f053f8b06addfd3e116f8f239"
+                "hash": "7e8fc207164af17a15c60afa4a5096cf"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CheckAutomatedSecurityFixes.php",
@@ -24396,7 +24396,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Copilot.php",
-                "hash": "8870c549432ff6bf472984f40ad36d03"
+                "hash": "e421affeb5724d2e223a833a9b099c6d"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Pulls.php",
@@ -24832,7 +24832,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Five.php",
-                "hash": "f5ec8d2962554a8e1637fe776cd73689"
+                "hash": "1470151f57b0bb2ed984fbcf0a6479fa"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Six.php",
@@ -24840,7 +24840,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Seven.php",
-                "hash": "07a5439e2e2ba1ce74ee3b591b121aea"
+                "hash": "92bf43c403f0f05df8f79db9dc8c3068"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Get\/Eight.php",
@@ -24936,7 +24936,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Five.php",
-                "hash": "7516af6b41f8a9d3b475684f306347be"
+                "hash": "b81eaa835bb21072d3811764248d3b57"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Six.php",
@@ -24944,7 +24944,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Seven.php",
-                "hash": "7579a0df9b97ccb18fd4808677b0fb20"
+                "hash": "87ee70baea774f897f7d4c1491a32786"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Eight.php",
@@ -25040,7 +25040,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operators.php",
-                "hash": "f2ceef7e71ccd284a09ce93ae9c220ff"
+                "hash": "ed308ca7a7ccf5c7eebd61022dfd4ed9"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Root.php",
@@ -27032,7 +27032,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrators.php",
-                "hash": "245c69396bc3105967a88ad7efe55ac0"
+                "hash": "bc5667333bc20d054926ba14c188578e"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/OrganizationSimpleWebhooks.php",
@@ -27612,11 +27612,11 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/PHPStan\/ClientCallReturnTypes.php",
-                "hash": "4f02e5b34a80cfafc1844f8d4fe755f8"
+                "hash": "8485757d6d972f201b9c70db93c29e29"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Types\/ClientCallReturnTypes.php",
-                "hash": "082aa496c548d70ebcb9479d705b81ca"
+                "hash": "9becc8bfb24bfd145592db2e53c7d381"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/..\/etc\/phpstan-extension.neon",
@@ -27724,7 +27724,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/WebHook\/Issues.php",
-                "hash": "8a83f8f543b2926d4a0f6f0f21198796"
+                "hash": "3723c4483e1b12a682b9cbdc39ee24fb"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/WebHook\/Label.php",
@@ -28008,7 +28008,7 @@
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/Issues.php",
-                "hash": "dc9c2dfe3a3aa4364434212e630c4b94"
+                "hash": "bd23d29e18e4082ea0fac363f9858904"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/WebHook\/Label.php",
@@ -28595,44 +28595,8 @@
                 "hash": "d94656843729ac738d0d39b3c9c434c4"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Copilot\/UsageMetricsForOrg.php",
-                "hash": "5bca15d0e2a35430dd664b5782752716"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Copilot\/UsageMetricsForOrg.php",
-                "hash": "1ac482eba473efd056d763adfd064add"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Copilot\/UsageMetricsForOrgTest.php",
-                "hash": "114b8da8e69c9c9e8c5edf8a505fdfdf"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Copilot\/UsageMetricsForOrgListing.php",
-                "hash": "0fd83f6a977ebf1d5cbd36721eee9d42"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Copilot\/UsageMetricsForOrgListing.php",
-                "hash": "50c1c053446f7b46b8bc54ea8969884c"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Copilot\/UsageMetricsForOrgListingTest.php",
-                "hash": "fb300544d3616bd54c9079321779e656"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotUsageMetrics.php",
-                "hash": "566784795617796c70ef6618bc1b5d7b"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/CopilotUsageMetrics\/Breakdown.php",
-                "hash": "8cfce05d0569f5890f9931c256c8c1f9"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/List\/Copilot.php",
-                "hash": "e546bd03456028ce830f55778d2051f1"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Copilot\/Usage.php",
-                "hash": "8371ad7c6ffb9c94a5d5bd32db118807"
+                "hash": "f2f2ec5f12dd1893b65eeac5f4355a27"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhooksCodeScanningCommitOid.php",
@@ -29855,30 +29819,6 @@
                 "hash": "63ead8aaf1cd72853d94b3eb5ff59de1"
             },
             {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Copilot\/UsageMetricsForTeam.php",
-                "hash": "113b3a54860b29bc12312d2cc4af45ce"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Copilot\/UsageMetricsForTeam.php",
-                "hash": "69f9eecd27b4e8f83fdf9a703960383c"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Copilot\/UsageMetricsForTeamTest.php",
-                "hash": "0941b1c9be05e43f7c68a610b167787a"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/Copilot\/UsageMetricsForTeamListing.php",
-                "hash": "8330bcfe41dbe83811fe156c079af711"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operator\/Copilot\/UsageMetricsForTeamListing.php",
-                "hash": "f512dfba05563759a7300fb1d783d57b"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/tests\/\/Internal\/Operation\/Copilot\/UsageMetricsForTeamListingTest.php",
-                "hash": "a129221a550089c22fc71b36beb1beb4"
-            },
-            {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Operation\/SecretScanning\/CreatePushProtectionBypass.php",
                 "hash": "0fdf70664c2f874a8b95b7a28b30c57b"
             },
@@ -29929,10 +29869,6 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Router\/Post\/SecretScanning.php",
                 "hash": "e9b48e37f29f3d15231b927f237b8828"
-            },
-            {
-                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Orgs\/Org\/Team\/TeamSlug\/Copilot\/Usage.php",
-                "hash": "2b00fb60528bfaeb5f964cd186782e4c"
             },
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Internal\/Hydrator\/Operation\/Repos\/Owner\/Repo\/SecretScanning\/PushProtectionBypasses.php",
@@ -32005,6 +31941,14 @@
             {
                 "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookCustomPropertyPromotedToEnterprise.php",
                 "hash": "ae2c793115e89b5b5acde4596bc61330"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesTyped.php",
+                "hash": "6b74b6a8490ebaa6af4bc7f656c28537"
+            },
+            {
+                "name": ".\/clients\/GitHub\/etc\/..\/\/src\/\/Schema\/WebhookIssuesUntyped.php",
+                "hash": "9130c6b8acbb8251bfbfa85c424f74b6"
             }
         ]
     },

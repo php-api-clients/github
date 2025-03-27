@@ -19,7 +19,7 @@ final class Issues implements WebHookInterface
     {
     }
 
-    public function resolve(array $headers, array $data): Schema\WebhookIssuesAssigned|Schema\WebhookIssuesClosed|Schema\WebhookIssuesDeleted|Schema\WebhookIssuesDemilestoned|Schema\WebhookIssuesEdited|Schema\WebhookIssuesLabeled|Schema\WebhookIssuesLocked|Schema\WebhookIssuesMilestoned|Schema\WebhookIssuesOpened|Schema\WebhookIssuesPinned|Schema\WebhookIssuesReopened|Schema\WebhookIssuesTransferred|Schema\WebhookIssuesUnassigned|Schema\WebhookIssuesUnlabeled|Schema\WebhookIssuesUnlocked|Schema\WebhookIssuesUnpinned
+    public function resolve(array $headers, array $data): Schema\WebhookIssuesAssigned|Schema\WebhookIssuesClosed|Schema\WebhookIssuesDeleted|Schema\WebhookIssuesDemilestoned|Schema\WebhookIssuesEdited|Schema\WebhookIssuesLabeled|Schema\WebhookIssuesLocked|Schema\WebhookIssuesMilestoned|Schema\WebhookIssuesOpened|Schema\WebhookIssuesPinned|Schema\WebhookIssuesReopened|Schema\WebhookIssuesTransferred|Schema\WebhookIssuesTyped|Schema\WebhookIssuesUnassigned|Schema\WebhookIssuesUnlabeled|Schema\WebhookIssuesUnlocked|Schema\WebhookIssuesUnpinned|Schema\WebhookIssuesUntyped
     {
         $error = new RuntimeException('No action matching given headers and data');
         if ($headers['content-type'] === 'application/json') {
@@ -247,9 +247,9 @@ final class Issues implements WebHookInterface
                 $this->requestSchemaValidator->validate($headers['x-github-hook-installation-target-type'], Reader::readFromJson(Schema\WebHookHeader\XGithubHookInstallationTargetType::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                 $this->requestSchemaValidator->validate($headers['x-github-delivery'], Reader::readFromJson(Schema\WebHookHeader\XGitHubDelivery::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                 $this->requestSchemaValidator->validate($headers['x-hub-signature-256'], Reader::readFromJson(Schema\WebHookHeader\XHubSignature::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\WebhookIssuesUnassigned::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\WebhookIssuesTyped::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                return $this->hydrator->hydrateObject(Schema\WebhookIssuesUnassigned::class, $data);
+                return $this->hydrator->hydrateObject(Schema\WebhookIssuesTyped::class, $data);
             } catch (Throwable) {
                 goto actions_aaaam;
             }
@@ -265,9 +265,9 @@ final class Issues implements WebHookInterface
                 $this->requestSchemaValidator->validate($headers['x-github-hook-installation-target-type'], Reader::readFromJson(Schema\WebHookHeader\XGithubHookInstallationTargetType::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                 $this->requestSchemaValidator->validate($headers['x-github-delivery'], Reader::readFromJson(Schema\WebHookHeader\XGitHubDelivery::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                 $this->requestSchemaValidator->validate($headers['x-hub-signature-256'], Reader::readFromJson(Schema\WebHookHeader\XHubSignature::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\WebhookIssuesUnlabeled::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\WebhookIssuesUnassigned::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                return $this->hydrator->hydrateObject(Schema\WebhookIssuesUnlabeled::class, $data);
+                return $this->hydrator->hydrateObject(Schema\WebhookIssuesUnassigned::class, $data);
             } catch (Throwable) {
                 goto actions_aaaan;
             }
@@ -283,9 +283,9 @@ final class Issues implements WebHookInterface
                 $this->requestSchemaValidator->validate($headers['x-github-hook-installation-target-type'], Reader::readFromJson(Schema\WebHookHeader\XGithubHookInstallationTargetType::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                 $this->requestSchemaValidator->validate($headers['x-github-delivery'], Reader::readFromJson(Schema\WebHookHeader\XGitHubDelivery::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                 $this->requestSchemaValidator->validate($headers['x-hub-signature-256'], Reader::readFromJson(Schema\WebHookHeader\XHubSignature::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\WebhookIssuesUnlocked::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\WebhookIssuesUnlabeled::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                return $this->hydrator->hydrateObject(Schema\WebhookIssuesUnlocked::class, $data);
+                return $this->hydrator->hydrateObject(Schema\WebhookIssuesUnlabeled::class, $data);
             } catch (Throwable) {
                 goto actions_aaaao;
             }
@@ -301,15 +301,51 @@ final class Issues implements WebHookInterface
                 $this->requestSchemaValidator->validate($headers['x-github-hook-installation-target-type'], Reader::readFromJson(Schema\WebHookHeader\XGithubHookInstallationTargetType::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                 $this->requestSchemaValidator->validate($headers['x-github-delivery'], Reader::readFromJson(Schema\WebHookHeader\XGitHubDelivery::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
                 $this->requestSchemaValidator->validate($headers['x-hub-signature-256'], Reader::readFromJson(Schema\WebHookHeader\XHubSignature::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
-                $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\WebhookIssuesUnpinned::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\WebhookIssuesUnlocked::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
 
-                return $this->hydrator->hydrateObject(Schema\WebhookIssuesUnpinned::class, $data);
+                return $this->hydrator->hydrateObject(Schema\WebhookIssuesUnlocked::class, $data);
             } catch (Throwable) {
                 goto actions_aaaap;
             }
         }
 
         actions_aaaap:
+        if ($headers['content-type'] === 'application/json') {
+            try {
+                $this->requestSchemaValidator->validate($headers['user-agent'], Reader::readFromJson(Schema\WebHookHeader\UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-hook-id'], Reader::readFromJson(Schema\WebHookHeader\XGithubHookId::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-event'], Reader::readFromJson(Schema\WebHookHeader\XGithubEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-hook-installation-target-id'], Reader::readFromJson(Schema\WebHookHeader\XGithubHookInstallationTargetId::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-hook-installation-target-type'], Reader::readFromJson(Schema\WebHookHeader\XGithubHookInstallationTargetType::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-delivery'], Reader::readFromJson(Schema\WebHookHeader\XGitHubDelivery::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-hub-signature-256'], Reader::readFromJson(Schema\WebHookHeader\XHubSignature::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\WebhookIssuesUnpinned::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                return $this->hydrator->hydrateObject(Schema\WebhookIssuesUnpinned::class, $data);
+            } catch (Throwable) {
+                goto actions_aaaaq;
+            }
+        }
+
+        actions_aaaaq:
+        if ($headers['content-type'] === 'application/json') {
+            try {
+                $this->requestSchemaValidator->validate($headers['user-agent'], Reader::readFromJson(Schema\WebHookHeader\UserAgent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-hook-id'], Reader::readFromJson(Schema\WebHookHeader\XGithubHookId::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-event'], Reader::readFromJson(Schema\WebHookHeader\XGithubEvent::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-hook-installation-target-id'], Reader::readFromJson(Schema\WebHookHeader\XGithubHookInstallationTargetId::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-hook-installation-target-type'], Reader::readFromJson(Schema\WebHookHeader\XGithubHookInstallationTargetType::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-github-delivery'], Reader::readFromJson(Schema\WebHookHeader\XGitHubDelivery::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($headers['x-hub-signature-256'], Reader::readFromJson(Schema\WebHookHeader\XHubSignature::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+                $this->requestSchemaValidator->validate($data, Reader::readFromJson(Schema\WebhookIssuesUntyped::SCHEMA_JSON, '\\cebe\\openapi\\spec\\Schema'));
+
+                return $this->hydrator->hydrateObject(Schema\WebhookIssuesUntyped::class, $data);
+            } catch (Throwable) {
+                goto actions_aaaar;
+            }
+        }
+
+        actions_aaaar:
         throw $error;
     }
 }

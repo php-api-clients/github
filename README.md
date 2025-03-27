@@ -5064,62 +5064,6 @@ $client->operations()->copilot()->copilotMetricsForOrganizationListing(        o
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-metrics#get-copilot-metrics-for-an-organization).
 
 
-### copilot/usage-metrics-for-org
-
-Get a summary of Copilot usage for organization members
-
-Using the `call` method:
-```php
-$client->call('GET /orgs/{org}/copilot/usage', [
-        'org' => 'generated',
-        'since' => 'generated',
-        'until' => 'generated',
-        'page' => 1,
-        'per_page' => 8,
-]);
-```
-
-Operations method:
-```php
-$client->operations()->copilot()->usageMetricsForOrg(        org: 'generated',
-        since: 'generated',
-        until: 'generated',
-        page: 1,
-        per_page: 8,
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-organization-members).
-
-
-### copilot/usage-metrics-for-org
-
-Get a summary of Copilot usage for organization members
-
-Using the `call` method:
-```php
-$client->call('LIST /orgs/{org}/copilot/usage', [
-        'org' => 'generated',
-        'since' => 'generated',
-        'until' => 'generated',
-        'page' => 1,
-        'per_page' => 8,
-]);
-```
-
-Operations method:
-```php
-$client->operations()->copilot()->usageMetricsForOrgListing(        org: 'generated',
-        since: 'generated',
-        until: 'generated',
-        page: 1,
-        per_page: 8,
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-organization-members).
-
-
 ### dependabot/list-alerts-for-org
 
 List Dependabot alerts for an organization
@@ -9364,66 +9308,6 @@ $client->operations()->copilot()->copilotMetricsForTeamListing(        org: 'gen
 ```
 
 You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-metrics#get-copilot-metrics-for-a-team).
-
-
-### copilot/usage-metrics-for-team
-
-Get a summary of Copilot usage for a team
-
-Using the `call` method:
-```php
-$client->call('GET /orgs/{org}/team/{team_slug}/copilot/usage', [
-        'org' => 'generated',
-        'team_slug' => 'generated',
-        'since' => 'generated',
-        'until' => 'generated',
-        'page' => 1,
-        'per_page' => 8,
-]);
-```
-
-Operations method:
-```php
-$client->operations()->copilot()->usageMetricsForTeam(        org: 'generated',
-        team_slug: 'generated',
-        since: 'generated',
-        until: 'generated',
-        page: 1,
-        per_page: 8,
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-a-team).
-
-
-### copilot/usage-metrics-for-team
-
-Get a summary of Copilot usage for a team
-
-Using the `call` method:
-```php
-$client->call('LIST /orgs/{org}/team/{team_slug}/copilot/usage', [
-        'org' => 'generated',
-        'team_slug' => 'generated',
-        'since' => 'generated',
-        'until' => 'generated',
-        'page' => 1,
-        'per_page' => 8,
-]);
-```
-
-Operations method:
-```php
-$client->operations()->copilot()->usageMetricsForTeamListing(        org: 'generated',
-        team_slug: 'generated',
-        since: 'generated',
-        until: 'generated',
-        page: 1,
-        per_page: 8,
-);
-```
-
-You can find more about this operation over at the [API method documentation](https://docs.github.com/rest/copilot/copilot-usage#get-a-summary-of-copilot-usage-for-a-team).
 
 
 ### teams/list
